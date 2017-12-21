@@ -1,0 +1,20 @@
+{
+  "launch_path": "index.html",
+  "default_locale": "en",
+  "activities": {
+    "dhis": {
+      "href": ".."
+    }
+  },
+  "appType": "APP",
+  "name": "DHIS2 App Template",
+  "version": "0.1.0",
+  "description": "DHIS2 App Template",
+  "icons": {
+    "48": "icon.png"
+  },
+  "developer": {
+    "name": "DHIS2"
+  },
+  "manifest_generated_at": "Thu Dec 21 2017 12:07:28 GMT+0000 (WET)"
+}
