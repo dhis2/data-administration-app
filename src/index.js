@@ -11,6 +11,7 @@ import log from 'loglevel';
 
 import './index.css';
 import App from './App';
+import appTheme from './theme';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -25,6 +26,7 @@ getManifest('manifest.webapp').then(manifest => {
 
     ReactDOM.render(
         <D2UIApp
+            muiTheme={appTheme}
             initConfig={{
                 baseUrl: `${baseUrl}/api/${process.env.REACT_APP_DHIS2_API_VERSION}`,
             }}
