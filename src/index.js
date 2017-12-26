@@ -46,7 +46,7 @@ getManifest('manifest.webapp').then(manifest => {
               <App />
             </I18nextProvider>              
         </D2UIApp>,
-        document.getElementById('root')
+        document.getElementById('app')
     );
 }).then(getUserSettings).then(configLocale);
 
