@@ -33,7 +33,7 @@ getManifest('manifest.webapp').then(manifest => {
         >
             <App />
         </D2UIApp>,
-        document.getElementById('root')
+        document.getElementById('app')
     );
 });
 
