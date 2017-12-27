@@ -11,7 +11,7 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import './App.css';
 
 // Components
-import HomePageComponent from './components/homepage.component';
+import HomePageComponent from './components/homepage/homepage.component';
 import DataIntegrity from './components/dataIntegrity.component';
 import MaintenanceComponent from './components/maintenance.component';
 import ResourceTableComponent from './components/resourceTable.component';
@@ -44,16 +44,16 @@ class App extends Component {
     super();
 
     this.state = {
-      container: <HomePageComponent />,
+      container: <HomePageComponent setContainer={this.setContainer.bind(this)}/>,
       currentSection: HOME_SECTION_KEY
     };
   }
 
   setContainer(sectionKey) {
-    let container = <HomePageComponent />;
+    let container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
     switch(sectionKey) {
       case HOME_SECTION_KEY:
-        container = <HomePageComponent />;
+        container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
         break;
       case DATA_INTEGRITY_SECTION_KEY:
         container = <DataIntegrity />;
@@ -83,7 +83,7 @@ class App extends Component {
         container = <SchedulingComponent />;
         break;
       default:
-        container = <HomePageComponent />;
+        container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
     }
 
     this.setState(
@@ -99,13 +99,13 @@ class App extends Component {
     const translatedSections = sections.map((section) => {
         return Object.assign(section, {label: t(section.label)});
     });
-
+    console.log('Gonna render app for current section ', this.state.currentSection);
     return (
       <div className="container">
           <HeaderBar />
           <Sidebar
               sections={translatedSections}
-              currentSection={this.currentSection}
+              currentSection={this.state.currentSection}
               onChangeSection={this.setContainer.bind(this)}
           />
           <div className="content-area">
