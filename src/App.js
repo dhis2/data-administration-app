@@ -14,7 +14,7 @@ import './App.css';
 import HomePageComponent from './components/homepage/homepage.component';
 import DataIntegrity from './components/dataIntegrity.component';
 import MaintenanceComponent from './components/maintenance/maintenance.component';
-import ResourceTableComponent from './components/resourceTable.component';
+import ResourceTableComponent from './components/resource-table/resourceTable.component';
 import LocaleComponent from './components/locale.component';
 import SqlViewComponent from './components/sqlView.component';
 import DataStatisticsComponent from './components/dataStatistics.component';

@@ -1,0 +1,23 @@
+.resource-table-action-button {
+  background-color: #ff9800;
+  height: 36px;
+  color: white !important;
+}
+
+.resource-table-grid-container {
+  margin-bottom: 42px !important;
+}
+
+.resource-table-grid-title {
+  display: block;
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #000000;
+}
+
+.resource-table-grid-sub-title {
+  display: block;
+  color: #bcbcbc;
+}

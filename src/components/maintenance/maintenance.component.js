@@ -44,7 +44,7 @@ class MaintenanceComponent extends Component {
     });
   }
 
-  performMaintenance() {    
+  performMaintenance() {
     for (let key in this.state.checkboxes) {
       console.log(`${key} -  ${this.state.checkboxes[key].checked}`);
     }
@@ -80,7 +80,11 @@ class MaintenanceComponent extends Component {
               <Checkbox className='maintenance-check-all'
                 checked={this.state.checkAll}
                 onCheck={this.toggleCheckAll.bind(this)}/>
-              <GridList className='maintenance-grid-container' cellHeight='auto' cols={3}>
+              <GridList
+                className='maintenance-grid-container'
+                cellHeight='auto'
+                cols={3}
+                padding={16}>
                 {gridElements}
               </GridList>
               <FlatButton

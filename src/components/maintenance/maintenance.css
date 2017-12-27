@@ -5,6 +5,7 @@
 }
 
 .maintenance-grid-container {
+  margin-top: 8px !important;
   margin-bottom: 42px !important;
 }
 
