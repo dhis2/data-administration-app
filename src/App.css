@@ -5,6 +5,7 @@ html {
 
 .container {
   padding-top: 3rem;
+  margin-right: 20px;
 }
 
 .left-bar {
@@ -18,7 +19,6 @@ html {
 
 .content-area {
   padding-left: 295px;
-  max-width: 750px;
   min-width: 400px;
   margin-bottom: 64px;
 }

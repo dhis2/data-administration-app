@@ -1,0 +1,13 @@
+.maintenance-action-button {
+  background-color: #ff9800;
+  height: 36px;
+  color: white !important;
+}
+
+.maintenance-grid-container {
+  margin-bottom: 42px !important;
+}
+
+.maintenance-check-all {
+  display: block;
+}

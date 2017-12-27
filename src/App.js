@@ -13,7 +13,7 @@ import './App.css';
 // Components
 import HomePageComponent from './components/homepage/homepage.component';
 import DataIntegrity from './components/dataIntegrity.component';
-import MaintenanceComponent from './components/maintenance.component';
+import MaintenanceComponent from './components/maintenance/maintenance.component';
 import ResourceTableComponent from './components/resourceTable.component';
 import LocaleComponent from './components/locale.component';
 import SqlViewComponent from './components/sqlView.component';
@@ -99,7 +99,7 @@ class App extends Component {
     const translatedSections = sections.map((section) => {
         return Object.assign(section, {label: t(section.label)});
     });
-    console.log('Gonna render app for current section ', this.state.currentSection);
+
     return (
       <div className="container">
           <HeaderBar />
