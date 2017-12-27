@@ -18,13 +18,16 @@ html {
 
 .content-area {
   padding-left: 295px;
+  max-width: 750px;
   min-width: 400px;
   margin-bottom: 64px;
 }
 
 h1 {
+  font-family: Roboto;
   font-size: 24px;
   font-weight: 300;
+  letter-spacing: 1.2px;
   color: rgba(0, 0, 0, 0.87);
   padding: '24px 0 12px 16px';
 }
