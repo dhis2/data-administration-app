@@ -17,7 +17,7 @@ import MaintenanceComponent from './components/maintenance/maintenance.component
 import ResourceTableComponent from './components/resource-table/resourceTable.component';
 import LocaleComponent from './components/locale.component';
 import SqlViewComponent from './components/sqlView.component';
-import DataStatisticsComponent from './components/dataStatistics.component';
+import DataStatisticsComponent from './components/data-statistics/dataStatistics.component';
 import LockExceptionComponent from './components/lockException.component';
 import MinMaxValueGenerationComponent from './components/minMaxValueGeneration.component';
 import SchedulingComponent from './components/scheduling.component';
