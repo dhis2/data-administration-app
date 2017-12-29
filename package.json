@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "i18next-conv": "^6.0.0"
-  },  
+  },
   "dependencies": {
     "d2": "^28.3.0",
     "d2-manifest": "^1.0.0",
