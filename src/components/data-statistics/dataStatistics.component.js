@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// React i18next
-import { translate } from 'react-i18next';
-
 // Material UI
 import {
   Table,
@@ -50,7 +47,10 @@ class DataStatisticsComponent extends Component {
   }
 
   render() {
-    const t = this.props.t;
+    let t = this.props.t;
+    if (!t) {
+      t = ((key) => key);
+    }
     const tables = this.state.tables.map((table) => {
       const rows = table.elements.map((element) => {
         return(
@@ -91,4 +91,4 @@ class DataStatisticsComponent extends Component {
   }
 }
 
-export default translate()(DataStatisticsComponent);
+export default DataStatisticsComponent;

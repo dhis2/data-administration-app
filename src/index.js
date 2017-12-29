@@ -10,7 +10,7 @@ import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 import log from 'loglevel';
 
 // Internatinalization: i18next
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider, translate } from 'react-i18next';
 import i18n from './i18n';
 
 import './index.css';
@@ -18,6 +18,8 @@ import App from './App';
 import appTheme from './theme';
 
 import registerServiceWorker from './registerServiceWorker';
+
+const TranslatedApp = translate()(App);
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
@@ -43,8 +45,8 @@ getManifest('manifest.webapp').then(manifest => {
             }}
         >
             <I18nextProvider i18n={ i18n }>
-              <App />
-            </I18nextProvider>              
+              <TranslatedApp />
+            </I18nextProvider>
         </D2UIApp>,
         document.getElementById('app')
     );

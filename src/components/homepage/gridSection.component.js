@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// React i18next
-import { translate } from 'react-i18next';
-
 // Material UI
 import {GridTile} from 'material-ui/GridList';
 import FontIcon from 'material-ui/FontIcon';
@@ -25,4 +22,4 @@ class GridSectionComponent extends Component {
   }
 }
 
-export default translate()(GridSectionComponent);
+export default GridSectionComponent;

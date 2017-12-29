@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// React i18next
-import { translate } from 'react-i18next';
-
 // Material UI
 import {GridList} from 'material-ui/GridList';
 
@@ -22,7 +19,7 @@ class HomePageComponent extends Component {
     const setContainer = this.props.setContainer;
     const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map((section) => {
       return (
-        <GridSectionComponent key={section.key} section={section} setContainer={setContainer} />
+        <GridSectionComponent t={this.props.t} key={section.key} section={section} setContainer={setContainer} />
       );
     });
 
@@ -36,4 +33,4 @@ class HomePageComponent extends Component {
   }
 }
 
-export default translate()(HomePageComponent);
+export default HomePageComponent;

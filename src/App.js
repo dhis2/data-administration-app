@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// React i18next
-import { translate } from 'react-i18next';
-
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
@@ -40,50 +37,50 @@ import {
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      container: <HomePageComponent setContainer={this.setContainer.bind(this)}/>,
+      container: <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>,
       currentSection: HOME_SECTION_KEY
     };
   }
 
   setContainer(sectionKey) {
-    let container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
+    let container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
     switch(sectionKey) {
       case HOME_SECTION_KEY:
-        container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
+        container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
         break;
       case DATA_INTEGRITY_SECTION_KEY:
-        container = <DataIntegrity />;
+        container = <DataIntegrity t={this.props.t}/>;
         break;
       case MAINTENANCE_SECTION_KEY:
-        container = <MaintenanceComponent />;
+        container = <MaintenanceComponent t={this.props.t}/>;
         break;
       case RESOURCE_TABLE_SECTION_KEY:
-        container = <ResourceTableComponent />;
+        container = <ResourceTableComponent t={this.props.t}/>;
         break;
       case LOCALE_SECTION_KEY:
-        container = <LocaleComponent />;
+        container = <LocaleComponent t={this.props.t}/>;
         break;
       case SQL_VIEW_SECTION_KEY:
-        container = <SqlViewComponent />;
+        container = <SqlViewComponent t={this.props.t}/>;
         break;
       case DATA_STATISTICS_SECTION_KEY:
-        container = <DataStatisticsComponent />;
+        container = <DataStatisticsComponent t={this.props.t}/>;
         break;
       case LOCK_EXCEPTION_SECTION_KEY:
-        container = <LockExceptionComponent />;
+        container = <LockExceptionComponent t={this.props.t}/>;
         break;
       case MIN_MAX_VALUE_GENERATION_SECTION_KEY:
-        container = <MinMaxValueGenerationComponent />;
+        container = <MinMaxValueGenerationComponent t={this.props.t}/>;
         break;
       case SCHEDULING_SECTION_KEY:
-        container = <SchedulingComponent />;
+        container = <SchedulingComponent t={this.props.t}/>;
         break;
       default:
-        container = <HomePageComponent setContainer={this.setContainer.bind(this)}/>;
+        container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
     }
 
     this.setState(
@@ -116,4 +113,4 @@ class App extends Component {
   }
 }
 
-export default translate()(App);
+export default App;

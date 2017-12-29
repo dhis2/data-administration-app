@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// React i18next
-import { translate } from 'react-i18next';
-
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 import {GridList, GridTile} from 'material-ui/GridList';
@@ -54,4 +51,4 @@ class ResourceTableComponent extends Component {
   }
 }
 
-export default translate()(ResourceTableComponent);
+export default ResourceTableComponent;

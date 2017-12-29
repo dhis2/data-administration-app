@@ -25,3 +25,7 @@ public/manifest.webapp
 
 # e2e tests
 allure-results
+e2e/results
+
+# i18n json files
+public/i18n/*.json
