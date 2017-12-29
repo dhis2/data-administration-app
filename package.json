@@ -3,7 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "i18next-conv": "^6.0.0"
+    "chai": "^4.1.2",
+    "cucumber": "^3.2.0",
+    "i18next-conv": "^6.0.0",
+    "wdio-allure-reporter": "^0.1.2",
+    "wdio-cucumber-framework": "^1.0.2",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "^0.1.3",
+    "webdriverio": "^4.9.11"
   },
   "dependencies": {
     "d2": "^28.3.0",
@@ -26,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-e2e": "wdio ./e2e/config/wdio.conf.js"
   },
   "manifest.webapp": {
     "name": "DHIS2 Maintenance Data Admin App",

@@ -22,3 +22,6 @@ yarn-error.log*
 
 # d2 manifest
 public/manifest.webapp
+
+# e2e tests
+allure-results
