@@ -5,6 +5,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
+    "eslint-config-dhis2": "^3.0.7",
     "i18next-conv": "^6.0.0",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-cucumber-framework": "^1.0.2",
@@ -34,7 +35,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "test-e2e": "wdio ./e2e/config/wdio.conf.js"
+    "test-e2e": "wdio ./e2e/config/wdio.conf.js",
+    "lint": "eslint src/"
   },
   "manifest.webapp": {
     "name": "DHIS2 Maintenance Data Admin App",

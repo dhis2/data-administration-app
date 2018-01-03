@@ -24,14 +24,14 @@ const TranslatedApp = translate()(App);
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
 const configLocale = (userSettings) => {
-  const uiLocale = userSettings.keyUiLocale;
-  if (uiLocale && uiLocale !== 'en') {
-    i18n.changeLanguage(uiLocale);
-  }
+    const uiLocale = userSettings.keyUiLocale;
+    if (uiLocale && uiLocale !== 'en') {
+        i18n.changeLanguage(uiLocale);
+    }
 };
 
 // init d2
-getManifest('manifest.webapp').then(manifest => {
+getManifest('manifest.webapp').then((manifest) => {
     const baseUrl =
         process.env.NODE_ENV === 'production'
             ? manifest.getBaseUrl()
@@ -44,11 +44,11 @@ getManifest('manifest.webapp').then(manifest => {
                 baseUrl: `${baseUrl}/api/${process.env.REACT_APP_DHIS2_API_VERSION}`,
             }}
         >
-            <I18nextProvider i18n={ i18n }>
-              <TranslatedApp />
+            <I18nextProvider i18n={i18n}>
+                <TranslatedApp />
             </I18nextProvider>
         </D2UIApp>,
-        document.getElementById('app')
+        document.getElementById('app'),
     );
 }).then(getUserSettings).then(configLocale);
 

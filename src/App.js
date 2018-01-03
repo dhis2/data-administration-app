@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
@@ -21,96 +22,98 @@ import SchedulingComponent from './components/scheduling.component';
 
 // App configs
 import {
-  sections,
-  HOME_SECTION_KEY,
-  DATA_INTEGRITY_SECTION_KEY,
-  MAINTENANCE_SECTION_KEY,
-  RESOURCE_TABLE_SECTION_KEY,
-  LOCALE_SECTION_KEY,
-  SQL_VIEW_SECTION_KEY,
-  DATA_STATISTICS_SECTION_KEY,
-  LOCK_EXCEPTION_SECTION_KEY,
-  MIN_MAX_VALUE_GENERATION_SECTION_KEY,
-  SCHEDULING_SECTION_KEY
-} from './configs/sections.conf'
+    sections,
+    HOME_SECTION_KEY,
+    DATA_INTEGRITY_SECTION_KEY,
+    MAINTENANCE_SECTION_KEY,
+    RESOURCE_TABLE_SECTION_KEY,
+    LOCALE_SECTION_KEY,
+    SQL_VIEW_SECTION_KEY,
+    DATA_STATISTICS_SECTION_KEY,
+    LOCK_EXCEPTION_SECTION_KEY,
+    MIN_MAX_VALUE_GENERATION_SECTION_KEY,
+    SCHEDULING_SECTION_KEY,
+} from './configs/sections.conf';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      container: <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>,
-      currentSection: HOME_SECTION_KEY
-    };
-  }
-
-  setContainer(sectionKey) {
-    let container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
-    switch(sectionKey) {
-      case HOME_SECTION_KEY:
-        container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
-        break;
-      case DATA_INTEGRITY_SECTION_KEY:
-        container = <DataIntegrity t={this.props.t}/>;
-        break;
-      case MAINTENANCE_SECTION_KEY:
-        container = <MaintenanceComponent t={this.props.t}/>;
-        break;
-      case RESOURCE_TABLE_SECTION_KEY:
-        container = <ResourceTableComponent t={this.props.t}/>;
-        break;
-      case LOCALE_SECTION_KEY:
-        container = <LocaleComponent t={this.props.t}/>;
-        break;
-      case SQL_VIEW_SECTION_KEY:
-        container = <SqlViewComponent t={this.props.t}/>;
-        break;
-      case DATA_STATISTICS_SECTION_KEY:
-        container = <DataStatisticsComponent t={this.props.t}/>;
-        break;
-      case LOCK_EXCEPTION_SECTION_KEY:
-        container = <LockExceptionComponent t={this.props.t}/>;
-        break;
-      case MIN_MAX_VALUE_GENERATION_SECTION_KEY:
-        container = <MinMaxValueGenerationComponent t={this.props.t}/>;
-        break;
-      case SCHEDULING_SECTION_KEY:
-        container = <SchedulingComponent t={this.props.t}/>;
-        break;
-      default:
-        container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)}/>;
+    static propTypes = {
+        t: PropTypes.func.isRequired,
     }
 
-    this.setState(
-      {
-        container: container,
-        currentSection: sectionKey
-      }
-    )
-  }
+    constructor(props) {
+        super(props);
 
-  render() {
-    const t = this.props.t;
-    const translatedSections = sections.map((section) => {
-        return Object.assign(section, {label: t(section.label)});
-    });
+        this.state = {
+            container: <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />,
+            currentSection: HOME_SECTION_KEY,
+        };
+    }
 
-    return (
-      <div className="container">
-          <HeaderBar />
-          <Sidebar
-              sections={translatedSections}
-              currentSection={this.state.currentSection}
-              onChangeSection={this.setContainer.bind(this)}
-          />
-          <div className="content-area">
-            {this.state.container}
-          </div>
-      </div>
-    );
-  }
+    setContainer(sectionKey) {
+        let container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+        switch (sectionKey) {
+        case HOME_SECTION_KEY:
+            container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+            break;
+        case DATA_INTEGRITY_SECTION_KEY:
+            container = <DataIntegrity t={this.props.t} />;
+            break;
+        case MAINTENANCE_SECTION_KEY:
+            container = <MaintenanceComponent t={this.props.t} />;
+            break;
+        case RESOURCE_TABLE_SECTION_KEY:
+            container = <ResourceTableComponent t={this.props.t} />;
+            break;
+        case LOCALE_SECTION_KEY:
+            container = <LocaleComponent t={this.props.t} />;
+            break;
+        case SQL_VIEW_SECTION_KEY:
+            container = <SqlViewComponent t={this.props.t} />;
+            break;
+        case DATA_STATISTICS_SECTION_KEY:
+            container = <DataStatisticsComponent t={this.props.t} />;
+            break;
+        case LOCK_EXCEPTION_SECTION_KEY:
+            container = <LockExceptionComponent t={this.props.t} />;
+            break;
+        case MIN_MAX_VALUE_GENERATION_SECTION_KEY:
+            container = <MinMaxValueGenerationComponent t={this.props.t} />;
+            break;
+        case SCHEDULING_SECTION_KEY:
+            container = <SchedulingComponent t={this.props.t} />;
+            break;
+        default:
+            container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+        }
+
+        this.setState(
+            {
+                container,
+                currentSection: sectionKey,
+            },
+        );
+    }
+
+    render() {
+        const t = this.props.t;
+        const translatedSections = sections.map(section => Object.assign(section, { label: t(section.label) }));
+
+        return (
+            <div className="container">
+                <HeaderBar />
+                <Sidebar
+                    sections={translatedSections}
+                    currentSection={this.state.currentSection}
+                    onChangeSection={this.setContainer.bind(this)}
+                />
+                <div className="content-area">
+                    {this.state.container}
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
