@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { GridList } from 'material-ui/GridList';
 
 // Components
-import GridSectionComponent from './gridSection.component';
+import GridSection from './GridSection';
 
-import './homepage.css';
+import './Homepage.css';
 
 // App configs
 import {
@@ -15,10 +15,10 @@ import {
     HOME_SECTION_KEY,
 } from '../../configs/sections.conf';
 
-const HomePageComponent = (props) => {
+const HomePage = (props) => {
     const setContainer = props.setContainer;
     const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
-        <GridSectionComponent t={props.t} key={section.key} section={section} setContainer={setContainer} />
+        <GridSection t={props.t} key={section.key} section={section} setContainer={setContainer} />
     ));
 
     return (
@@ -30,10 +30,10 @@ const HomePageComponent = (props) => {
     );
 };
 
-HomePageComponent.propTypes = {
+HomePage.propTypes = {
     setContainer: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
 };
 
 
-export default HomePageComponent;
+export default HomePage;

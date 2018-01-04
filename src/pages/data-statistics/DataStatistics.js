@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Material UI
@@ -11,9 +11,9 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
-import './dataStatistics.css';
+import './DataStatistics.css';
 
-class DataStatisticsComponent extends Component {
+class DataStatistics extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
     }
@@ -27,7 +27,7 @@ class DataStatisticsComponent extends Component {
     }
 
     componentWillMount() {
-    // TODO request statistics to backend
+        // TODO request statistics to backend
         const tables = [
             {
                 label: 'Object type',
@@ -96,4 +96,4 @@ class DataStatisticsComponent extends Component {
     }
 }
 
-export default DataStatisticsComponent;
+export default DataStatistics;

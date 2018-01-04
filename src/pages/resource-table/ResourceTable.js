@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 // App configs
 import resourceTable from '../../configs/resourceTable.conf';
 
-import './resourceTable.css';
+import './ResourceTable.css';
 
 class ResourceTableComponent extends Component {
     static propTypes = {

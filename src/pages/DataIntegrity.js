@@ -3,7 +3,7 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
-const DataIntegrityComponent = () => (
+const DataIntegrity = () => (
     <div>
         <h1>Data Integrity</h1>
         <Card>
@@ -12,4 +12,4 @@ const DataIntegrityComponent = () => (
     </div>
 );
 
-export default DataIntegrityComponent;
+export default DataIntegrity;

@@ -3,7 +3,7 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
-const LockExceptionComponent = () => (
+const LockException = () => (
     <div>
         <h1>Lock Exception</h1>
         <Card>
@@ -12,4 +12,4 @@ const LockExceptionComponent = () => (
     </div>
 );
 
-export default LockExceptionComponent;
+export default LockException;

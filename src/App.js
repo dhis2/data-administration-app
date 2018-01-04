@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
@@ -9,16 +9,16 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import './App.css';
 
 // Components
-import HomePageComponent from './components/homepage/homepage.component';
-import DataIntegrity from './components/dataIntegrity.component';
-import MaintenanceComponent from './components/maintenance/maintenance.component';
-import ResourceTableComponent from './components/resource-table/resourceTable.component';
-import LocaleComponent from './components/locale.component';
-import SqlViewComponent from './components/sqlView.component';
-import DataStatisticsComponent from './components/data-statistics/dataStatistics.component';
-import LockExceptionComponent from './components/lockException.component';
-import MinMaxValueGenerationComponent from './components/minMaxValueGeneration.component';
-import SchedulingComponent from './components/scheduling.component';
+import HomePage from './pages/homepage/Homepage';
+import DataIntegrity from './pages/DataIntegrity';
+import Maintenance from './pages/maintenance/Maintenance';
+import ResourceTable from './pages/resource-table/ResourceTable';
+import Locale from './pages/Locale';
+import SqlView from './pages/SqlView';
+import DataStatistics from './pages/data-statistics/DataStatistics';
+import LockException from './pages/LockException';
+import MinMaxValueGeneration from './pages/MinMaxValueGeneration';
+import Scheduling from './pages/Scheduling';
 
 // App configs
 import {
@@ -37,7 +37,7 @@ import {
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
-class App extends Component {
+class App extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
     }
@@ -46,46 +46,46 @@ class App extends Component {
         super(props);
 
         this.state = {
-            container: <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />,
+            container: <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />,
             currentSection: HOME_SECTION_KEY,
         };
     }
 
     setContainer(sectionKey) {
-        let container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+        let container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
         switch (sectionKey) {
         case HOME_SECTION_KEY:
-            container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+            container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
             break;
         case DATA_INTEGRITY_SECTION_KEY:
             container = <DataIntegrity t={this.props.t} />;
             break;
         case MAINTENANCE_SECTION_KEY:
-            container = <MaintenanceComponent t={this.props.t} />;
+            container = <Maintenance t={this.props.t} />;
             break;
         case RESOURCE_TABLE_SECTION_KEY:
-            container = <ResourceTableComponent t={this.props.t} />;
+            container = <ResourceTable t={this.props.t} />;
             break;
         case LOCALE_SECTION_KEY:
-            container = <LocaleComponent t={this.props.t} />;
+            container = <Locale t={this.props.t} />;
             break;
         case SQL_VIEW_SECTION_KEY:
-            container = <SqlViewComponent t={this.props.t} />;
+            container = <SqlView t={this.props.t} />;
             break;
         case DATA_STATISTICS_SECTION_KEY:
-            container = <DataStatisticsComponent t={this.props.t} />;
+            container = <DataStatistics t={this.props.t} />;
             break;
         case LOCK_EXCEPTION_SECTION_KEY:
-            container = <LockExceptionComponent t={this.props.t} />;
+            container = <LockException t={this.props.t} />;
             break;
         case MIN_MAX_VALUE_GENERATION_SECTION_KEY:
-            container = <MinMaxValueGenerationComponent t={this.props.t} />;
+            container = <MinMaxValueGeneration t={this.props.t} />;
             break;
         case SCHEDULING_SECTION_KEY:
-            container = <SchedulingComponent t={this.props.t} />;
+            container = <Scheduling t={this.props.t} />;
             break;
         default:
-            container = <HomePageComponent t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+            container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
         }
 
         this.setState(

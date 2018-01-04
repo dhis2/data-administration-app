@@ -3,13 +3,13 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
-const SchedulingComponent = () => (
+const Locale = () => (
     <div>
-        <h1>Scheduling</h1>
+        <h1>Locale</h1>
         <Card>
-            <CardText>Scheduling</CardText>
+            <CardText>Locale</CardText>
         </Card>
     </div>
 );
 
-export default SchedulingComponent;
+export default Locale;

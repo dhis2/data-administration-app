@@ -3,13 +3,13 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
-const SqlViewComponent = () => (
+const Scheduling = () => (
     <div>
-        <h1>SQL View</h1>
+        <h1>Scheduling</h1>
         <Card>
-            <CardText>SQL View</CardText>
+            <CardText>Scheduling</CardText>
         </Card>
     </div>
 );
 
-export default SqlViewComponent;
+export default Scheduling;

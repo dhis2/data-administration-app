@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Material UI
@@ -6,7 +6,7 @@ import { GridTile } from 'material-ui/GridList';
 import FontIcon from 'material-ui/FontIcon';
 import { blue500 } from 'material-ui/styles/colors';
 
-class GridSectionComponent extends Component {
+class GridSection extends PureComponent {
     static propTypes = {
         setContainer: PropTypes.func.isRequired,
         t: PropTypes.func.isRequired,
@@ -29,4 +29,4 @@ class GridSectionComponent extends Component {
     }
 }
 
-export default GridSectionComponent;
+export default GridSection;

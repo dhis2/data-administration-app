@@ -3,7 +3,7 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
-const MinMaxValueGenerationComponent = () => (
+const MinMaxValueGeneration = () => (
     <div>
         <h1>Min Max Value Generation</h1>
         <Card>
@@ -12,4 +12,4 @@ const MinMaxValueGenerationComponent = () => (
     </div>
 );
 
-export default MinMaxValueGenerationComponent;
+export default MinMaxValueGeneration;

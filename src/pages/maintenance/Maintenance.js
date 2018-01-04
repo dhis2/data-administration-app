@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 // App configs
 import maintenanceCheckboxes from '../../configs/maintenance.conf';
 
-import './maintenance.css';
+import './Maintenance.css';
 
 class MaintenanceComponent extends Component {
     static propTypes = {
