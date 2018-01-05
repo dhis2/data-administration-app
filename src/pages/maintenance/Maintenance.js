@@ -32,6 +32,9 @@ class MaintenanceComponent extends Component {
             checkAll: false,
             checkboxes,
         };
+
+        this.performMaintenance = this.performMaintenance.bind(this);
+        this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
 
     toggleCheckAll() {
@@ -54,7 +57,7 @@ class MaintenanceComponent extends Component {
         const checkboxKeys = Object.keys(this.state.checkboxes);
         for (let i = 0; i < checkboxKeys.length; i++) {
             const key = checkboxKeys[i];
-            console.log(`${key} -  ${this.state.checkboxes[key].checked}`);
+            console.log(`${key} -  ${this.state.checkboxes[key].checked}`); // eslint-disable-line
         }
 
         // TODO request to server
@@ -66,15 +69,16 @@ class MaintenanceComponent extends Component {
         const checkboxes = this.state.checkboxes;
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
+            const toggleCheckbox = (() => {
+                checkboxes[checkbox.key].checked = !checkboxState;
+                this.setState({ checkboxes });
+            });
             return (
                 <GridTile key={checkbox.key}>
                     <Checkbox
                         label={t(checkbox.label)}
                         checked={checkboxState}
-                        onCheck={(() => {
-                            checkboxes[checkbox.key].checked = !checkboxState;
-                            this.setState({ checkboxes });
-                        })}
+                        onCheck={toggleCheckbox}
                     />
                 </GridTile>
             );
@@ -88,7 +92,7 @@ class MaintenanceComponent extends Component {
                         <Checkbox
                             className="maintenance-check-all"
                             checked={this.state.checkAll}
-                            onCheck={this.toggleCheckAll.bind(this)}
+                            onCheck={this.toggleCheckAll}
                         />
                         <GridList
                             className="maintenance-grid-container"
@@ -102,7 +106,7 @@ class MaintenanceComponent extends Component {
                             className="maintenance-action-button"
                             backgroundColor={orange500}
                             label={t('PERFORM MAINTENANCE')}
-                            onClick={this.performMaintenance.bind(this)}
+                            onClick={this.performMaintenance}
                         />
                     </CardText>
                 </Card>

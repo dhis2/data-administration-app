@@ -46,16 +46,18 @@ class App extends PureComponent {
         super(props);
 
         this.state = {
-            container: <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />,
+            container: <HomePage t={this.props.t} setContainer={this.setContainer} />,
             currentSection: HOME_SECTION_KEY,
         };
+
+        this.setContainer = this.setContainer.bind(this);
     }
 
     setContainer(sectionKey) {
-        let container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+        let container = <HomePage t={this.props.t} setContainer={this.setContainer} />;
         switch (sectionKey) {
         case HOME_SECTION_KEY:
-            container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+            container = <HomePage t={this.props.t} setContainer={this.setContainer} />;
             break;
         case DATA_INTEGRITY_SECTION_KEY:
             container = <DataIntegrity t={this.props.t} />;
@@ -85,7 +87,7 @@ class App extends PureComponent {
             container = <Scheduling t={this.props.t} />;
             break;
         default:
-            container = <HomePage t={this.props.t} setContainer={this.setContainer.bind(this)} />;
+            container = <HomePage t={this.props.t} setContainer={this.setContainer} />;
         }
 
         this.setState(
@@ -106,7 +108,7 @@ class App extends PureComponent {
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
-                    onChangeSection={this.setContainer.bind(this)}
+                    onChangeSection={this.setContainer}
                 />
                 <div className="content-area">
                     {this.state.container}

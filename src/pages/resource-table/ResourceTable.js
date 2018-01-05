@@ -6,6 +6,9 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import FlatButton from 'material-ui/FlatButton';
 import { orange500 } from 'material-ui/styles/colors';
 
+// d2
+import { getInstance } from 'd2/lib/d2';
+
 import PropTypes from 'prop-types';
 
 // App configs
@@ -18,9 +21,16 @@ class ResourceTableComponent extends Component {
         t: PropTypes.func.isRequired,
     }
 
+    constructor(props) {
+        super(props);
+        this.generateTables = this.generateTables.bind(this);
+    }
+
     generateTables() {
-        // TODO
-        this.state({ tables: [] });
+        getInstance().then((d2) => {
+            const api = d2.Api.getApi();
+            api.get('system/tasks/RESOURCETABLE_UPDATE');
+        });
     }
 
     render() {
@@ -48,7 +58,7 @@ class ResourceTableComponent extends Component {
                             className="resource-table-action-button"
                             backgroundColor={orange500}
                             label={t('GENERATE TABLES')}
-                            onClick={this.generateTables.bind(this)}
+                            onClick={this.generateTables}
                         />
                     </CardText>
                 </Card>

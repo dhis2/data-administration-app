@@ -13,6 +13,11 @@ class GridSection extends PureComponent {
         section: PropTypes.object.isRequired,
     }
 
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+    }
+
     onClick() {
         this.props.setContainer(this.props.section.key);
     }
@@ -20,7 +25,7 @@ class GridSection extends PureComponent {
     render() {
         const t = this.props.t;
         return (
-            <GridTile key={this.props.section.key} className="grid-element" onClick={this.onClick.bind(this)}>
+            <GridTile key={this.props.section.key} className="grid-element" onClick={this.onClick}>
                 <FontIcon className="material-icons grid-icon" color={blue500}>{this.props.section.icon}</FontIcon>
                 <div className="grid-description">{t(this.props.section.description)}</div>
                 <div className="grid-title">{t(this.props.section.label)}</div>
