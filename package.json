@@ -36,8 +36,15 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "lint": "eslint src/"
+    "validate": "npm ls --depth 0",
+    "lint": "eslint src/",
+    "deploy": "npm run build && mvn clean deploy"
   },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
   "manifest.webapp": {
     "name": "DHIS2 Maintenance Data Admin App",
     "description": "DHIS2 Maintenance Data Admin App",
