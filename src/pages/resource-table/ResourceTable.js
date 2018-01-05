@@ -6,6 +6,9 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import FlatButton from 'material-ui/FlatButton';
 import { orange500 } from 'material-ui/styles/colors';
 
+// d2
+import { getInstance } from 'd2/lib/d2';
+
 import PropTypes from 'prop-types';
 
 // App configs
@@ -24,8 +27,10 @@ class ResourceTableComponent extends Component {
     }
 
     generateTables() {
-        // TODO
-        this.state({ tables: [] });
+        getInstance().then((d2) => {
+            const api = d2.Api.getApi();
+            api.get('system/tasks/RESOURCETABLE_UPDATE');
+        });
     }
 
     render() {
