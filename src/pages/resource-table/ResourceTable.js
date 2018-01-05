@@ -18,6 +18,11 @@ class ResourceTableComponent extends Component {
         t: PropTypes.func.isRequired,
     }
 
+    constructor(props) {
+        super(props);
+        this.generateTables = this.generateTables.bind(this);
+    }
+
     generateTables() {
         // TODO
         this.state({ tables: [] });
@@ -48,7 +53,7 @@ class ResourceTableComponent extends Component {
                             className="resource-table-action-button"
                             backgroundColor={orange500}
                             label={t('GENERATE TABLES')}
-                            onClick={this.generateTables.bind(this)}
+                            onClick={this.generateTables}
                         />
                     </CardText>
                 </Card>
