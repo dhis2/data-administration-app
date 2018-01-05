@@ -30,6 +30,9 @@ class ResourceTableComponent extends Component {
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
             api.get('system/tasks/RESOURCETABLE_UPDATE');
+
+            // TODO
+            this.setState({});
         });
     }
 
