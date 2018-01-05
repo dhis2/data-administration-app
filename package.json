@@ -7,6 +7,7 @@
     "cucumber": "^3.2.0",
     "eslint-config-dhis2": "^3.0.7",
     "i18next-conv": "^6.0.0",
+    "pre-commit": "^1.2.2",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-cucumber-framework": "^1.0.2",
     "wdio-selenium-standalone-service": "0.0.9",
@@ -36,6 +37,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
+    "test-no-iterative": "CI=true react-scripts test --env=jsdom",
     "validate": "npm ls --depth 0",
     "lint": "eslint src/",
     "deploy": "npm run build && mvn clean deploy"
@@ -43,7 +45,7 @@
   "pre-commit": [
     "lint",
     "validate",
-    "test"
+    "test-no-iterative"
   ],
   "manifest.webapp": {
     "name": "DHIS2 Maintenance Data Admin App",
