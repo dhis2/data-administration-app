@@ -8,7 +8,7 @@
     <artifactId>dhis-data-administration-app</artifactId>
     <version>2.28-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Settings</name>
+    <name>Data Administration</name>
     <description>DHIS 2 Data Administration app</description>
     <url>https://github.com/dhis2/data-administration-app</url>
 
@@ -21,6 +21,12 @@
         <developer>
             <name>João Antunes</name>
             <email>joao.antunes@present-technologies.com</email>
+            <organization>Present</organization>
+            <organizationUrl>http://www.present-technologies.com/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Mário Homem</name>
+            <email>mdhomem@present-technologies.com</email>
             <organization>Present</organization>
             <organizationUrl>http://www.present-technologies.com/</organizationUrl>
         </developer>
