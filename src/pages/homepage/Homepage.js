@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+// Internatinalization: i18next
+import { translate } from 'react-i18next';
 
 // Material UI
 import { GridList } from 'material-ui/GridList';
@@ -15,10 +17,10 @@ import {
     HOME_SECTION_KEY,
 } from '../../configs/sections.conf';
 
-const HomePage = (props) => {
-    const setContainer = props.setContainer;
+const HomePage = () => {
+    const GridSectionComponent = translate()(GridSection);
     const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
-        <GridSection t={props.t} key={section.key} section={section} setContainer={setContainer} />
+        <GridSectionComponent key={section.key} section={section} />
     ));
 
     return (
@@ -29,11 +31,5 @@ const HomePage = (props) => {
         </div>
     );
 };
-
-HomePage.propTypes = {
-    setContainer: PropTypes.func.isRequired,
-    t: PropTypes.func.isRequired,
-};
-
 
 export default HomePage;

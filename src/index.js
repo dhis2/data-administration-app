@@ -1,6 +1,7 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, withRouter } from 'react-router-dom';
 
 // D2
 import { getManifest, getUserSettings } from 'd2/lib/d2';
@@ -19,7 +20,7 @@ import appTheme from './theme';
 
 import registerServiceWorker from './registerServiceWorker';
 
-const TranslatedApp = translate()(App);
+const AppComponent = withRouter(translate()(App));
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
@@ -45,7 +46,9 @@ getManifest('manifest.webapp').then((manifest) => {
             }}
         >
             <I18nextProvider i18n={i18n}>
-                <TranslatedApp />
+                <HashRouter>
+                    <AppComponent />
+                </HashRouter>
             </I18nextProvider>
         </D2UIApp>,
         document.getElementById('app'),
