@@ -19,6 +19,7 @@ import './ResourceTable.css';
 class ResourceTableComponent extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
+        showSnackbar: PropTypes.func.isRequired,
     }
 
     constructor(props) {
@@ -27,12 +28,16 @@ class ResourceTableComponent extends Component {
     }
 
     generateTables() {
+        const showSnackbar = this.props.showSnackbar;
+        const t = this.props.t;
+
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
-            api.get('system/tasks/RESOURCETABLE_UPDATE');
-
-            // TODO
-            this.setState({});
+            api.get('system/tasks/RESOURCETABLE_UPDATE').then(() => {
+                showSnackbar(t('Resource tables generated'));
+            }).catch(() => {
+                showSnackbar(t('Not possible to generate resource tables'));
+            });
         });
     }
 

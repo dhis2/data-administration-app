@@ -1,62 +1,62 @@
 const maintenanceCheckboxes = [
     {
-        key: 'clearAnalyticsTables',
+        key: 'analyticsTableClear',
         label: 'Clear analytics tables',
     },
     {
-        key: 'analyzeAnalyticsTables',
+        key: 'analyticsTableAnalyze',
         label: 'Analyze analytics tables',
     },
     {
-        key: 'removeZeroDataValues',
+        key: 'zeroDataValueRemoval',
         label: 'Remove zero data values',
     },
     {
-        key: 'permRemoveSoftDeletedValues',
+        key: 'softDeletedDataValueRemoval',
         label: 'Permanently remove soft deleted data values',
     },
     {
-        key: 'permRemoveSofDeletedEvents',
+        key: 'softDeletedEventRemoval',
         label: 'Permanently remove soft deleted events',
     },
     {
-        key: 'permRemoveSoftDeletedEnrollments',
+        key: 'softDeletedEnrollmentRemoval',
         label: 'Permanently remove soft deleted enrollments',
     },
     {
-        key: 'permRemoveSoftDeletedTrackedEntityInstances',
+        key: 'softDeletedTrackedEntityInstanceRemoval',
         label: 'Permanently remove soft deleted tracked entity instances',
     },
     {
-        key: 'prunePeriods',
+        key: 'periodPruning',
         label: 'Prune periods',
     },
     {
-        key: 'removeExpiredInvitations',
+        key: 'expiredInvitationsClear',
         label: 'Remove expired invitations',
     },
     {
-        key: 'dropSqlViews',
+        key: 'sqlViewsDrop',
         label: 'Drop SQL views',
     },
     {
-        key: 'createSqlViews',
+        key: 'sqlViewsCreate',
         label: 'Create SQL views',
     },
     {
-        key: 'updateCategoryOptionsCombinations',
+        key: 'categoryOptionComboUpdate',
         label: 'Update category option combinations',
     },
     {
-        key: 'updateOrganisationUnitPaths',
+        key: 'ouPathsUpdate',
         label: 'Update organisation unit paths',
     },
     {
-        key: 'clearApplicationCache',
+        key: 'cacheClear',
         label: 'Clear application cache',
     },
     {
-        key: 'reloadApps',
+        key: 'appReload',
         label: 'Reload apps',
     },
 ];

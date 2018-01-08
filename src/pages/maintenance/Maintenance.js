@@ -7,6 +7,9 @@ import FlatButton from 'material-ui/FlatButton';
 import Checkbox from 'material-ui/Checkbox';
 import { orange500 } from 'material-ui/styles/colors';
 
+// d2
+import { getInstance } from 'd2/lib/d2';
+
 import PropTypes from 'prop-types';
 
 // App configs
@@ -17,6 +20,7 @@ import './Maintenance.css';
 class MaintenanceComponent extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
+        showSnackbar: PropTypes.func.isRequired,
     }
 
     constructor() {
@@ -55,13 +59,33 @@ class MaintenanceComponent extends Component {
 
     performMaintenance() {
         const checkboxKeys = Object.keys(this.state.checkboxes);
+        const formData = new FormData();
+        let oneOptionChecked = false;
         for (let i = 0; i < checkboxKeys.length; i++) {
             const key = checkboxKeys[i];
-            console.log(`${key} -  ${this.state.checkboxes[key].checked}`); // eslint-disable-line
+            formData.append(key, this.state.checkboxes[key].checked);
+            if (!oneOptionChecked && this.state.checkboxes[key].checked) {
+                oneOptionChecked = true;
+            }
         }
 
-        // TODO request to server
-        // TODO loader
+        const showSnackbar = this.props.showSnackbar;
+        const t = this.props.t;
+
+        if (oneOptionChecked) {
+            getInstance().then((d2) => {
+                showSnackbar(t('Starting maintenance'));
+                const api = d2.Api.getApi();
+                api.post('maintenance', formData).then(() => {
+                    showSnackbar(t('Maintenance was performed'));
+                    // console.log('request succeeded with data response status: ' + JSON.stringify(response, null, 2));
+                }).catch(() => {
+                    showSnackbar(t('Not possible to perform maintenance'));
+                });
+            });
+        } else {
+            showSnackbar(t('Please select at least one option'));
+        }
     }
 
     render() {
