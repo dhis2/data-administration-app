@@ -3,8 +3,6 @@ import HomePage from '../pages/homepage/Homepage';
 import DataIntegrity from '../pages/DataIntegrity';
 import Maintenance from '../pages/maintenance/Maintenance';
 import ResourceTable from '../pages/resource-table/ResourceTable';
-import Locale from '../pages/Locale';
-import SqlView from '../pages/SqlView';
 import DataStatistics from '../pages/data-statistics/DataStatistics';
 import LockException from '../pages/LockException';
 import MinMaxValueGeneration from '../pages/MinMaxValueGeneration';
@@ -52,22 +50,6 @@ export const sections = [
         description: 'Generate resource database tables for the organisation unit hierarchy and group set structure among others.',
         path: '/resource-table',
         component: ResourceTable,
-    },
-    {
-        key: LOCALE_SECTION_KEY,
-        label: 'Locale',
-        icon: 'library_books',
-        description: 'Create and manage locales for database content. A locale is a combination of language and country.',
-        path: '/locale',
-        component: Locale,
-    },
-    {
-        key: SQL_VIEW_SECTION_KEY,
-        label: 'SQL View',
-        icon: 'assessment',
-        description: 'Create SQL database views. These views will typically use the resource tables to provide convenient views for third-party tools.',
-        path: '/sql-view',
-        component: SqlView,
     },
     {
         key: DATA_STATISTICS_SECTION_KEY,
