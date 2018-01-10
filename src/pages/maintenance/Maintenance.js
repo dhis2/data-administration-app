@@ -13,7 +13,7 @@ import { getInstance } from 'd2/lib/d2';
 import PropTypes from 'prop-types';
 
 // App configs
-import maintenanceCheckboxes from '../../configs/maintenance.conf';
+import maintenanceCheckboxes from './maintenance.conf';
 
 import './Maintenance.css';
 

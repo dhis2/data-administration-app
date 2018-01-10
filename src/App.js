@@ -18,7 +18,7 @@ import './App.css';
 import {
     sections,
     HOME_SECTION_KEY,
-} from './configs/sections.conf';
+} from './pages/homepage/sections.conf';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 

@@ -12,7 +12,7 @@ import { getInstance } from 'd2/lib/d2';
 import PropTypes from 'prop-types';
 
 // App configs
-import resourceTable from '../../configs/resourceTable.conf';
+import resourceTable from './resourceTable.conf';
 
 import './ResourceTable.css';
 

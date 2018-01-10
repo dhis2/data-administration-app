@@ -1,12 +1,12 @@
 // Components
-import HomePage from '../pages/homepage/Homepage';
-import DataIntegrity from '../pages/DataIntegrity';
-import Maintenance from '../pages/maintenance/Maintenance';
-import ResourceTable from '../pages/resource-table/ResourceTable';
-import DataStatistics from '../pages/data-statistics/DataStatistics';
-import LockException from '../pages/LockException';
-import MinMaxValueGeneration from '../pages/MinMaxValueGeneration';
-import Scheduling from '../pages/Scheduling';
+import HomePage from './Homepage';
+import DataIntegrity from '../DataIntegrity';
+import Maintenance from '../maintenance/Maintenance';
+import ResourceTable from '../resource-table/ResourceTable';
+import DataStatistics from '../data-statistics/DataStatistics';
+import LockException from '../LockException';
+import MinMaxValueGeneration from '../MinMaxValueGeneration';
+import Scheduling from '../Scheduling';
 
 export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';

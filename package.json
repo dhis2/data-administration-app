@@ -5,9 +5,13 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-dhis2": "^3.0.7",
     "i18next-conv": "^6.0.0",
+    "jest-enzyme": "^4.0.2",
     "pre-commit": "^1.2.2",
+    "react-test-renderer": "^16.2.0",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-cucumber-framework": "^1.0.2",
     "wdio-selenium-standalone-service": "0.0.9",
@@ -32,8 +36,9 @@
     "rxjs": "^5.5.5"
   },
   "scripts": {
-    "prestart": "d2-manifest package.json ./public/manifest.webapp",
+    "prestart": "npm run manifest",
     "start": "react-scripts start",
+    "prebuild": "npm run manifest",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -42,7 +47,8 @@
     "validate": "npm ls --depth 0",
     "lint": "eslint src/",
     "deploy": "npm run build && mvn clean deploy",
-    "coverage": "npm test -- --coverage"
+    "coverage": "npm test -- --coverage",
+    "manifest": "d2-manifest package.json ./public/manifest.webapp"
   },
   "pre-commit": [
     "lint",

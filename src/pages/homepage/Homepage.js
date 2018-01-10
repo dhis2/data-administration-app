@@ -15,7 +15,7 @@ import './Homepage.css';
 import {
     sections,
     HOME_SECTION_KEY,
-} from '../../configs/sections.conf';
+} from './sections.conf';
 
 const HomePage = () => {
     const GridSectionComponent = translate()(GridSection);
