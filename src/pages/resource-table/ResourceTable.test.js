@@ -3,7 +3,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { GridList, GridTile } from 'material-ui/GridList';
-import FlatButton from 'material-ui/FlatButton';
 
 import ResourceTablePage from './ResourceTablePage';
 import PageContainer from "../PageContainer";
