@@ -36,18 +36,18 @@
     "rxjs": "^5.5.5"
   },
   "scripts": {
-    "prestart": "npm run manifest",
+    "prestart": "yarn run manifest",
     "start": "react-scripts start",
-    "prebuild": "npm run manifest",
+    "prebuild": "yarn run manifest",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
     "test-no-iterative": "CI=true react-scripts test --env=jsdom",
-    "validate": "npm ls --depth 0",
+    "validate": "yarn list",
     "lint": "eslint src/",
-    "deploy": "npm run build && mvn clean deploy",
-    "coverage": "npm test -- --coverage",
+    "deploy": "yarn run build && mvn clean deploy",
+    "coverage": "yarn test -- --coverage",
     "manifest": "d2-manifest package.json ./public/manifest.webapp"
   },
   "pre-commit": [
