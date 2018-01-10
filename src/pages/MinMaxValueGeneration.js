@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import PageContainer from './PageContainer';
 
-// Material UI
-import { Card, CardText } from 'material-ui/Card';
-
-const MinMaxValueGeneration = () => (
-    <div>
-        <h1>Min Max Value Generation</h1>
-        <Card>
-            <CardText>Min Max Value Generation</CardText>
-        </Card>
-    </div>
+const MinMaxValueGeneration = props => (
+    <PageContainer header={props.t(props.pageInfo.label)}>MinMaxValueGeneration</PageContainer>
 );
+
+MinMaxValueGeneration.propTypes = {
+    t: PropTypes.func.isRequired,
+    pageInfo: PropTypes.object.isRequired,
+};
 
 export default MinMaxValueGeneration;

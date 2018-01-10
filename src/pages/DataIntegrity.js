@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import PageContainer from './PageContainer';
 
-// Material UI
-import { Card, CardText } from 'material-ui/Card';
-
-const DataIntegrity = () => (
-    <div>
-        <h1>Data Integrity</h1>
-        <Card>
-            <CardText>Data Integrity</CardText>
-        </Card>
-    </div>
+const DataIntegrity = props => (
+    <PageContainer header={props.t(props.pageInfo.label)}>Data Integrity</PageContainer>
 );
+
+DataIntegrity.propTypes = {
+    t: PropTypes.func.isRequired,
+    pageInfo: PropTypes.object.isRequired,
+};
 
 export default DataIntegrity;

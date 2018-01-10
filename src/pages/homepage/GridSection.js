@@ -18,9 +18,9 @@ class GridSection extends PureComponent {
         return (
             <Link to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className="grid-element">
-                    <FontIcon className="material-icons grid-icon" color={blue500}>{this.props.section.icon}</FontIcon>
-                    <div className="grid-description">{t(this.props.section.description)}</div>
-                    <div className="grid-title">{t(this.props.section.label)}</div>
+                    <FontIcon className="material-icons grid-icon" color={blue500}>{this.props.section.info.icon}</FontIcon>
+                    <div className="grid-description">{t(this.props.section.info.description)}</div>
+                    <div className="grid-title">{t(this.props.section.info.label)}</div>
                 </GridTile>
             </Link>
         );

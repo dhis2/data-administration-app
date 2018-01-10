@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // Material UI
-import { Card, CardText } from 'material-ui/Card';
 import { GridList, GridTile } from 'material-ui/GridList';
 import FlatButton from 'material-ui/FlatButton';
 import { orange500 } from 'material-ui/styles/colors';
@@ -16,7 +15,7 @@ import resourceTable from './resourceTable.conf';
 
 import './ResourceTable.css';
 
-class ResourceTableComponent extends Component {
+class ResourceTableContainer extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
         showSnackbar: PropTypes.func.isRequired,
@@ -51,28 +50,23 @@ class ResourceTableComponent extends Component {
         ));
         return (
             <div>
-                <h1>{t('Resource Table')}</h1>
-                <Card>
-                    <CardText>
-                        <GridList
-                            className="resource-table-grid-container"
-                            cellHeight="auto"
-                            cols={3}
-                            padding={16}
-                        >
-                            {gridElements}
-                        </GridList>
-                        <FlatButton
-                            className="resource-table-action-button"
-                            backgroundColor={orange500}
-                            label={t('GENERATE TABLES')}
-                            onClick={this.generateTables}
-                        />
-                    </CardText>
-                </Card>
+                <GridList
+                    className="resource-table-grid-container"
+                    cellHeight="auto"
+                    cols={3}
+                    padding={16}
+                >
+                    {gridElements}
+                </GridList>
+                <FlatButton
+                    className="resource-table-action-button"
+                    backgroundColor={orange500}
+                    label={t('GENERATE TABLES')}
+                    onClick={this.generateTables}
+                />
             </div>
         );
     }
 }
 
-export default ResourceTableComponent;
+export default ResourceTableContainer;

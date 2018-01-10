@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-import ResourceTable from './ResourceTable';
+import ResourceTable from './ResourceTableContainer';
 
 it('renders without crashing', () => {
     const t = key => key;

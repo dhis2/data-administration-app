@@ -15,7 +15,7 @@ import './Homepage.css';
 import {
     sections,
     HOME_SECTION_KEY,
-} from './sections.conf';
+} from '../sections.conf';
 
 const HomePage = () => {
     const GridSectionComponent = translate()(GridSection);
@@ -24,11 +24,9 @@ const HomePage = () => {
     ));
 
     return (
-        <div>
-            <GridList className="grid-container" cellHeight={218} cols={3} padding={8}>
-                {gridElements}
-            </GridList>
-        </div>
+        <GridList className="grid-container" cellHeight={218} cols={3} padding={8}>
+            {gridElements}
+        </GridList>
     );
 };
 

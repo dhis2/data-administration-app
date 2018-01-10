@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import PageContainer from './PageContainer';
 
-// Material UI
-import { Card, CardText } from 'material-ui/Card';
-
-const LockException = () => (
-    <div>
-        <h1>Lock Exception</h1>
-        <Card>
-            <CardText>Lock Exception</CardText>
-        </Card>
-    </div>
+const LockException = props => (
+    <PageContainer header={props.t(props.pageInfo.label)}>LockException</PageContainer>
 );
+
+LockException.propTypes = {
+    t: PropTypes.func.isRequired,
+    pageInfo: PropTypes.object.isRequired,
+};
 
 export default LockException;

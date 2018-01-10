@@ -1,15 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import PageContainer from './PageContainer';
 
-// Material UI
-import { Card, CardText } from 'material-ui/Card';
-
-const Scheduling = () => (
-    <div>
-        <h1>Scheduling</h1>
-        <Card>
-            <CardText>Scheduling</CardText>
-        </Card>
-    </div>
+const Scheduling = props => (
+    <PageContainer header={props.t(props.pageInfo.label)}>Scheduling</PageContainer>
 );
+
+Scheduling.propTypes = {
+    t: PropTypes.func.isRequired,
+    pageInfo: PropTypes.object.isRequired,
+};
 
 export default Scheduling;
