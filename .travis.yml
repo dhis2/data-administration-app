@@ -1,15 +1,22 @@
 language: node_js
 node_js:
-  - 'node'
+- node
 env:
   global:
-    - CC_TEST_REPORTER_ID=daeae58060a32f8d37e835457e8b2a1f9af55a38694826f4f6628a30383314f6
+  - CC_TEST_REPORTER_ID=daeae58060a32f8d37e835457e8b2a1f9af55a38694826f4f6628a30383314f6
+  - secure: 4CQlYOTIfkJH39et9hn7R0fdb1d+49XJA7Hf029jFyLLILFJhUTLgoheFAetmpPaJlxM0KkEBMOwzHDcP0P0A90xCrtjbgHqihyZnQBoo6Q3YD2gpNN7toaufZUoa0Opzjne6AKRAwO2pn1WRmbHxUQ8Lq6SJWI2idlAwecJ18+f1w9kQwZmhSPY8hq1yo8rDQdW8D0J9JCzUYT2sNhstXutGGS+Wl3QmmaKY/6yQLbV83ZTyBImHsiAX+5nwry/owzDo5xc+GyFI//oHtImjyg7BMbO7kqz6YEyK9JwX76xF6HtlI5pHVzg1FQkTlA65QHPw80d/zno47amjuRs24Z0Zew9dQyZIz1tG/awSqoAnT8Skfa0O62L0z7UNMnzQyFac+UINOR+6j6eMNLQ2uOG9abondI0qk0ozWgneoiiQvdaGql62WmaJ+nbt/icUoYKWnihbU+BuL5zI+/ugl1DA+W7w4YlxHfslIogoaSgu/hczis2yDhosL5ik2ABgPOk3EF1fc5L55ZadLqKcfw28+FOGJ7tEY+ytz8SBwXZwEFTGXku8q63P4BYvTgPk3/Bjr3MrzE3Gffz5blb4gwq51YZJr6m/Kxv8dgIhNNGgQYmoP1w1fjWPTrnHXZCBuBlo+2Skfw3Os3cyWcnY89cKNtXXZ35iBm+tBEkURw=
+  - secure: rfF0QekJX7ZiunkjXskj0rhHbicH2tYI3vn+53Aw52s96TUSYJYHygA+OSnsPPKLaZ4sULGgW0tlSShC9bzi7IryYUBZRuzBc+QVSVlmWZCGblw2culvFpZjjlvtg+ULhtAjx9a3ctlV2HMvOvuIvmjdU8EEL0GWHk5Jl9LqwxzcokDI/oEo7zXdLd0u6T9UjEfxfAkYV0vM2Z0v5ZEz1SLIjW0H7cSJ6Sd48JlyQv92CVJvBkuR7FIDfjhBIx3MLicvyCg3pmDrC/9XnmtK7UrfSTAZWaReAtsgJT+pZpfJOYPPst6BKZ9bUyaJY2Iy0KhlYFNX0tRilv89jUizvVgS20wBrkwFtS6UDc0Kx1kEDucC4YCW9U/27u7GN6FBTg/j8Ng0mbkzD7AG+9cwtxxUVuLYRYRIdZgbE09x8Vr2UOgZRJayovxqEwmcjpo8vBt+Op4dSF+AxtsmoYcvn5ABehrhPXmDFgJdPsZ3BgPiq16Amq1FNdeYqT+PHNph9z+wwLpKZsIx+RNlG9eVkdLsKoR9Yjuz5qZMIklEk0JnFDQEHD2wJZ4WFqbQswariLLqLcq7wD4XPLw0MbThYTa4dM6uGKB69wiLlIbatm9zkBW3zbUxCPZp1jjneWGnDsAUeqvpkbcHtn0eUXrGrcgg0+6D6TWYXMpfeL0GvU8=
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - yarn lint
-  - yarn coverage
+- yarn lint
+- yarn coverage
+- npm run build
 after_script:
-  - ./cc-test-reporter after-build -d --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build -d --exit-code $TRAVIS_TEST_RESULT"
+- if ( [ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ] ) && [ "$TRAVIS_REPO_SLUG"
+  == "dhis2/data-administration-app" ]  &&  [ "$TRAVIS_PULL_REQUEST" == "false" ]
+  ; then mvn clean deploy --settings deploy/settings.xml && exit 0; fi
