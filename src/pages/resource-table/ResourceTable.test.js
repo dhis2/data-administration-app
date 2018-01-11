@@ -3,6 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { GridList, GridTile } from 'material-ui/GridList';
+import FlatButton from 'material-ui/FlatButton';
 
 import ResourceTablePage from './ResourceTablePage';
 import PageContainer from "../PageContainer";
@@ -49,7 +50,7 @@ it('ResourceTableContainer renders a Button', () => {
 it('ResourceTableContainer calls generateTables function when button is clicked', () => {
     const spy = spyOn(ResourceTableContainer.prototype, 'generateTables')
     const wrapper = shallow(<ResourceTableContainer t={t} showSnackbar={showSnackbar} />);
-    wrapper.find('.resource-table-action-button').simulate('click');
+    wrapper.find(FlatButton).simulate('click');
     expect(spy).toHaveBeenCalled();
 });
 

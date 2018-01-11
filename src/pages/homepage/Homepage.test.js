@@ -3,12 +3,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { GridList, GridTile } from 'material-ui/GridList';
+import { Link } from 'react-router-dom';
 
 import Homepage from './Homepage';
 import GridSection from './GridSection';
 
 import { sections } from '../sections.conf';
-import ResourceTableContainer from "../resource-table/ResourceTableContainer";
 
 const t = key => key;
 
@@ -34,7 +34,7 @@ it('GridSection renders without crashing', () => {
 it('GridSection renders a Link', () => {
     const section = sections[0];
     const wrapper = shallow(<GridSection t={t} section={section}/>);
-    expect(wrapper.find('.link')).toHaveLength(1);
+    expect(wrapper.find(Link)).toHaveLength(1);
 });
 
 it('GridSection renders a GridTile', () => {

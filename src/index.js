@@ -1,7 +1,7 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, withRouter } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 
 // D2
 import { getManifest, getUserSettings } from 'd2/lib/d2';
@@ -46,9 +46,9 @@ getManifest('manifest.webapp').then((manifest) => {
             }}
         >
             <I18nextProvider i18n={i18n}>
-                <HashRouter>
+                <BrowserRouter>
                     <AppComponent />
-                </HashRouter>
+                </BrowserRouter>
             </I18nextProvider>
         </D2UIApp>,
         document.getElementById('app'),
