@@ -1,7 +1,7 @@
 // Components
 import HomePage from './homepage/Homepage';
 import DataIntegrity from './DataIntegrity';
-import Maintenance from './maintenance/Maintenance';
+import MaintenancePage from './maintenance/MaintenancePage';
 import ResourceTablePage from './resource-table/ResourceTablePage';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './LockException';
@@ -40,7 +40,7 @@ export const sections = [
     {
         key: MAINTENANCE_SECTION_KEY,
         path: '/maintenance',
-        component: Maintenance,
+        component: MaintenancePage,
         info: {
             label: 'Maintenance',
             icon: 'settings',

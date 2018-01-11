@@ -47,7 +47,7 @@ it('ResourceTableContainer renders a Button', () => {
     expect(wrapper.find('.resource-table-action-button')).toHaveLength(1);
 });
 
-it('ResourceTableContainer calls generateTables function when button is clicked', () => {
+it('ResourceTableContainer calls generateTables method when button is clicked', () => {
     const spy = spyOn(ResourceTableContainer.prototype, 'generateTables')
     const wrapper = shallow(<ResourceTableContainer t={t} showSnackbar={showSnackbar} />);
     wrapper.find(FlatButton).simulate('click');

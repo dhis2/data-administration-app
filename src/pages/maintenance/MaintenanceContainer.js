@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 // Material UI
-import { Card, CardText } from 'material-ui/Card';
 import { GridList, GridTile } from 'material-ui/GridList';
 import FlatButton from 'material-ui/FlatButton';
 import Checkbox from 'material-ui/Checkbox';
@@ -17,7 +16,7 @@ import maintenanceCheckboxes from './maintenance.conf';
 
 import './Maintenance.css';
 
-class MaintenanceComponent extends Component {
+class MaintenanceContainer extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
         showSnackbar: PropTypes.func.isRequired,
@@ -98,8 +97,9 @@ class MaintenanceComponent extends Component {
                 this.setState({ checkboxes });
             });
             return (
-                <GridTile key={checkbox.key}>
+                <GridTile key={checkbox.key} className="maintenance-option">
                     <Checkbox
+                        className="maintenance-checkbox"
                         label={t(checkbox.label)}
                         checked={checkboxState}
                         onCheck={toggleCheckbox}
@@ -110,33 +110,28 @@ class MaintenanceComponent extends Component {
 
         return (
             <div>
-                <h1>{t('Maintenance')}</h1>
-                <Card>
-                    <CardText>
-                        <Checkbox
-                            className="maintenance-check-all"
-                            checked={this.state.checkAll}
-                            onCheck={this.toggleCheckAll}
-                        />
-                        <GridList
-                            className="maintenance-grid-container"
-                            cellHeight="auto"
-                            cols={3}
-                            padding={16}
-                        >
-                            {gridElements}
-                        </GridList>
-                        <FlatButton
-                            className="maintenance-action-button"
-                            backgroundColor={orange500}
-                            label={t('PERFORM MAINTENANCE')}
-                            onClick={this.performMaintenance}
-                        />
-                    </CardText>
-                </Card>
+                <Checkbox
+                    className="maintenance-check-all"
+                    checked={this.state.checkAll}
+                    onCheck={this.toggleCheckAll}
+                />
+                <GridList
+                    className="maintenance-grid-container"
+                    cellHeight="auto"
+                    cols={3}
+                    padding={16}
+                >
+                    {gridElements}
+                </GridList>
+                <FlatButton
+                    className="maintenance-action-button"
+                    backgroundColor={orange500}
+                    label={t('PERFORM MAINTENANCE')}
+                    onClick={this.performMaintenance}
+                />
             </div>
         );
     }
 }
 
-export default MaintenanceComponent;
+export default MaintenanceContainer;
