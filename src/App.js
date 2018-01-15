@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 // Internatinalization: i18next
 import { translate } from 'react-i18next';
 
-import Snackbar from 'material-ui/Snackbar';
-
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
@@ -46,8 +44,6 @@ class App extends PureComponent {
         };
 
         this.setContainer = this.setContainer.bind(this);
-        this.showSnackbar = this.showSnackbar.bind(this);
-        this.closeSnackbar = this.closeSnackbar.bind(this);
     }
 
     componentWillMount() {
@@ -73,14 +69,6 @@ class App extends PureComponent {
         }
     }
 
-    closeSnackbar() {
-        this.setState({ snackbar: undefined });
-    }
-
-    showSnackbar(message) {
-        this.setState({ snackbar: message });
-    }
-
     render() {
         const routes = sections.map(section => (
             <Route
@@ -89,23 +77,16 @@ class App extends PureComponent {
                 path={section.path}
                 render={() => {
                     const Component = translate()(section.component);
-                    return (<Component pageInfo={section.info} showSnackbar={this.showSnackbar} />);
+                    return (<Component pageInfo={section.info} />);
                 }}
             />));
         routes.push(<Route key="no-match-route" component={NoMatch} />);
 
-        const translatedSections = sections.map(section => Object.assign(section, { label: this.props.t(section.info.label) }));
+        const translatedSections = sections.map(section => Object.assign(section, { label: this.props.t(section.info.label), icon: section.info.icon }));
 
         return (
             <div className="container">
                 <HeaderBar />
-                <Snackbar
-                    className="snackbar"
-                    message={this.state.snackbar || ''}
-                    autoHideDuration={2500}
-                    onRequestClose={this.closeSnackbar}
-                    open={!!this.state.snackbar}
-                />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}

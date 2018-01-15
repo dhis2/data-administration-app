@@ -18,7 +18,6 @@ import './ResourceTable.css';
 class ResourceTableContainer extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        showSnackbar: PropTypes.func.isRequired,
     }
 
     constructor(props) {
@@ -27,15 +26,13 @@ class ResourceTableContainer extends PureComponent {
     }
 
     generateTables() {
-        const showSnackbar = this.props.showSnackbar;
         const t = this.props.t;
-
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
             api.get('system/tasks/RESOURCETABLE_UPDATE').then(() => {
-                showSnackbar(t('Resource tables generated'));
+                console.log(t('Resource Table Update Task'));
             }).catch(() => {
-                showSnackbar(t('Not possible to generate resource tables'));
+                console.log(t('Resource Table Update Task Error'));
             });
         });
     }

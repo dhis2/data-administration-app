@@ -6,13 +6,12 @@ import MaintenanceContainer from './MaintenanceContainer';
 
 const MaintenancePage = props => (
     <PageContainer header={props.pageInfo.label}>
-        <MaintenanceContainer t={props.t} showSnackbar={props.showSnackbar} />
+        <MaintenanceContainer t={props.t} />
     </PageContainer>
 );
 
 MaintenancePage.propTypes = {
     t: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
     pageInfo: PropTypes.object.isRequired,
 };
 

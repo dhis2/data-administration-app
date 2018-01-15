@@ -6,13 +6,12 @@ import ResourceTableContainer from './ResourceTableContainer';
 
 const ResourceTablePage = props => (
     <PageContainer header={props.pageInfo.label}>
-        <ResourceTableContainer t={props.t} showSnackbar={props.showSnackbar} />
+        <ResourceTableContainer t={props.t} />
     </PageContainer>
 );
 
 ResourceTablePage.propTypes = {
     t: PropTypes.func.isRequired,
-    showSnackbar: PropTypes.func.isRequired,
     pageInfo: PropTypes.object.isRequired,
 };
 
