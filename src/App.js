@@ -1,16 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// Internatinalization: i18next
-import { translate } from 'react-i18next';
 
 import Snackbar from 'material-ui/Snackbar';
 
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
 import './App.css';
 
@@ -20,22 +15,14 @@ import {
     HOME_SECTION_KEY,
 } from './pages/sections.conf';
 
+import SidebarMenu from './components/sidebar-menu/SidebarMenu';
+import AppRouter from './components/app-router/AppRouter';
+
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
-
-const NoMatch = ({ location }) => (
-    <div>
-        <h3>No match for <code>{location.pathname}</code></h3>
-    </div>
-);
-
-NoMatch.propTypes = {
-    location: PropTypes.object.isRequired,
-};
 
 class App extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        history: PropTypes.object.isRequired,
     }
 
     constructor(props) {
@@ -45,32 +32,13 @@ class App extends PureComponent {
             currentSection: HOME_SECTION_KEY,
         };
 
-        this.setContainer = this.setContainer.bind(this);
+        this.handleSelectedMenu = this.handleSelectedMenu.bind(this);
         this.showSnackbar = this.showSnackbar.bind(this);
         this.closeSnackbar = this.closeSnackbar.bind(this);
     }
 
-    componentWillMount() {
-        this.props.history.listen((location) => {
-            for (let i = 0; i < sections.length; i++) {
-                const section = sections[i];
-                if (section.path === location.pathname) {
-                    this.setState({
-                        currentSection: section.key,
-                    });
-                }
-            }
-        });
-    }
-
-    setContainer(sectionKey) {
-        for (let i = 0; i < sections.length; i++) {
-            const section = sections[i];
-            if (sectionKey === section.key) {
-                this.props.history.push(section.path);
-                break;
-            }
-        }
+    handleSelectedMenu(sectionKey) {
+        this.setState({ currentSection: sectionKey });
     }
 
     closeSnackbar() {
@@ -82,19 +50,12 @@ class App extends PureComponent {
     }
 
     render() {
-        const routes = sections.map(section => (
-            <Route
-                key={section.key}
-                exact
-                path={section.path}
-                render={() => {
-                    const Component = translate()(section.component);
-                    return (<Component pageInfo={section.info} showSnackbar={this.showSnackbar} />);
-                }}
-            />));
-        routes.push(<Route key="no-match-route" component={NoMatch} />);
-
-        const translatedSections = sections.map(section => Object.assign(section, { label: this.props.t(section.info.label) }));
+        const translatedSections = sections.map(section => Object.assign(
+            section,
+            {
+                label: this.props.t(section.info.label),
+            },
+        ));
 
         return (
             <div className="container">
@@ -106,15 +67,9 @@ class App extends PureComponent {
                     onRequestClose={this.closeSnackbar}
                     open={!!this.state.snackbar}
                 />
-                <Sidebar
-                    sections={translatedSections}
-                    currentSection={this.state.currentSection}
-                    onChangeSection={this.setContainer}
-                />
+                <SidebarMenu sections={translatedSections} currentSection={this.state.currentSection} />
                 <div className="content-area">
-                    <Switch>
-                        {routes}
-                    </Switch>
+                    <AppRouter updateSelectedMenu={this.handleSelectedMenu} />
                 </div>
             </div>
         );
