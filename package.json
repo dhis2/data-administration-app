@@ -31,6 +31,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-i18next": "^7.3.0",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "rxjs": "^5.5.5"
@@ -43,7 +44,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "test-no-iterative": "CI=true react-scripts test --env=jsdom",
     "validate": "yarn list",
     "lint": "eslint src/",
     "deploy": "yarn run build && mvn clean deploy",
@@ -53,7 +53,7 @@
   "pre-commit": [
     "lint",
     "validate",
-    "test-no-iterative"
+    "test"
   ],
   "manifest.webapp": {
     "name": "DHIS2 Maintenance Data Admin App",
