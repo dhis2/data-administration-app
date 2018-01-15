@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {FontIcon, List, ListItem} from "material-ui";
-import {Link} from "react-router-dom";
+import { FontIcon, List, ListItem } from 'material-ui';
+import { Link } from 'react-router-dom';
 
 const styles = {
     container: {
@@ -48,11 +48,10 @@ const styles = {
 };
 
 class SidebarMenu extends PureComponent {
-
     constructor(props) {
         super(props);
         this.state = {
-            currentSection: this.props.sections[0].key
+            currentSection: this.props.sections[0].key,
         };
     }
 
@@ -61,7 +60,7 @@ class SidebarMenu extends PureComponent {
     }
 
     render() {
-        const menu =
+        const menu = (
             <List style={styles.list}>
                 {
                     this.props.sections.map((section) => {
@@ -81,10 +80,9 @@ class SidebarMenu extends PureComponent {
                         );
                     })
                 }
-            </List>
-        ;
+            </List>);
         return (
-            <div  style={Object.assign(styles.sidebar)} className="left-bar">
+            <div style={Object.assign(styles.sidebar)} className="left-bar">
                 {menu}
             </div>
         );
@@ -99,7 +97,7 @@ SidebarMenu.propTypes = {
             PropTypes.string,
             PropTypes.element,
         ]),
-    })).isRequired
+    })).isRequired,
 };
 
-export default SidebarMenu
+export default SidebarMenu;
