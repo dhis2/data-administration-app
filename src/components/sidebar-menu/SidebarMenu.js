@@ -67,9 +67,9 @@ class SidebarMenu extends PureComponent {
                         const listItemStyle = section.key === this.state.currentSection
                             ? styles.activeItem
                             : styles.item;
-                        const icon = typeof section.icon === 'string' || section.icon instanceof String
-                            ? <FontIcon className="material-icons">{section.icon}</FontIcon>
-                            : section.icon;
+                        const icon = typeof section.info.icon === 'string' || section.info.icon instanceof String
+                            ? <FontIcon className="material-icons">{section.info.icon}</FontIcon>
+                            : section.info.icon;
 
                         return (
                             <Link key={section.key} style={styles.itemLink} to={section.path}>
@@ -93,10 +93,14 @@ SidebarMenu.propTypes = {
     sections: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string,
         label: PropTypes.string,
-        icon: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.element,
-        ]),
+        info: PropTypes.shape({
+            label: PropTypes.string,
+            description: PropTypes.string,
+            icon: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.element,
+            ]),
+        }),
     })).isRequired,
 };
 
