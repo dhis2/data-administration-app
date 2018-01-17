@@ -1,23 +1,21 @@
 .statistics-table {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
-.statistics-table th {
-	font-size: 14px !important;
-	letter-spacing: 0.7px !important;
-	color: #757575 !important;
-}
-
-.statistics-table tr {
-	font-size: 14px !important;
-	letter-spacing: 0.7px !important;
+.statistics-table-header tr th {
+	font-size: 24px !important;
+	letter-spacing: 1.2px !important;
 	color: #000000 !important;
 }
 
+.statistics-table-header tr {
+    height: 78px !important;
+}
+
 .statistics-table tr:nth-child(even) {
-  background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 .statistics-table tr:nth-child(odd) {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }

@@ -3,7 +3,7 @@ import HomePage from './homepage/Homepage';
 import DataIntegrity from './DataIntegrity';
 import MaintenancePage from './maintenance/MaintenancePage';
 import ResourceTablePage from './resource-table/ResourceTablePage';
-import DataStatistics from './data-statistics/DataStatistics';
+import DataStatistics from './data-statistics/DataStatisticsPage';
 import LockException from './LockException';
 import MinMaxValueGeneration from './MinMaxValueGeneration';
 import Scheduling from './Scheduling';
