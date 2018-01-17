@@ -1,7 +1,7 @@
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, withRouter } from 'react-router-dom';
+import { HashRouter, withRouter } from 'react-router-dom';
 
 // D2
 import { getManifest, getUserSettings } from 'd2/lib/d2';
@@ -33,22 +33,24 @@ const configLocale = (userSettings) => {
 
 // init d2
 getManifest('manifest.webapp').then((manifest) => {
-    const baseUrl =
+    let baseUrl =
         process.env.NODE_ENV === 'production'
             ? manifest.getBaseUrl()
             : process.env.REACT_APP_DHIS2_BASE_URL;
+    const apiUrl = process.env.REACT_APP_DHIS2_API_VERSION ? `/${process.env.REACT_APP_DHIS2_API_VERSION}` : '';
+    baseUrl += `/api${apiUrl}`;
 
     ReactDOM.render(
         <D2UIApp
             muiTheme={appTheme}
             initConfig={{
-                baseUrl: `${baseUrl}/api/${process.env.REACT_APP_DHIS2_API_VERSION}`,
+                baseUrl,
             }}
         >
             <I18nextProvider i18n={i18n}>
-                <BrowserRouter>
+                <HashRouter>
                     <AppComponent />
-                </BrowserRouter>
+                </HashRouter>
             </I18nextProvider>
         </D2UIApp>,
         document.getElementById('app'),

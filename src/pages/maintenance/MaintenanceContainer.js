@@ -19,7 +19,6 @@ import './Maintenance.css';
 class MaintenanceContainer extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        showSnackbar: PropTypes.func.isRequired,
     }
 
     constructor() {
@@ -68,22 +67,15 @@ class MaintenanceContainer extends Component {
             }
         }
 
-        const showSnackbar = this.props.showSnackbar;
-        const t = this.props.t;
-
         if (oneOptionChecked) {
             getInstance().then((d2) => {
-                showSnackbar(t('Starting maintenance'));
                 const api = d2.Api.getApi();
                 api.post('maintenance', formData).then(() => {
-                    showSnackbar(t('Maintenance was performed'));
-                    // console.log('request succeeded with data response status: ' + JSON.stringify(response, null, 2));
+
                 }).catch(() => {
-                    showSnackbar(t('Not possible to perform maintenance'));
+
                 });
             });
-        } else {
-            showSnackbar(t('Please select at least one option'));
         }
     }
 
