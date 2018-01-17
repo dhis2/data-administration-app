@@ -73,7 +73,12 @@ class SidebarMenu extends PureComponent {
 
                         return (
                             <Link key={section.key} style={styles.itemLink} to={section.path}>
-                                <ListItem key={section.key} style={listItemStyle} leftIcon={icon} onClick={this.setSection.bind(this, section.key)}>
+                                <ListItem
+                                    key={section.key}
+                                    style={listItemStyle}
+                                    leftIcon={icon}
+                                    onClick={this.setSection.bind(this, section.key)}
+                                >
                                     {section.label}
                                 </ListItem>
                             </Link>

@@ -34,20 +34,24 @@ export default class AppRouter extends React.Component {
     }
 
     render() {
-        const routes = sections.map(section => (
-            <Route
-                key={section.key}
-                exact
-                path={section.path}
-                render={() => {
-                    const Component = translate()(section.component);
-                    return (
-                        <Component
-                            pageInfo={section.info}
-                        />
-                    );
-                }}
-            />));
+        const routes = sections.map((section) => {
+            const routeRender = () => {
+                const Component = translate()(section.component);
+                return (
+                    <Component
+                        pageInfo={section.info}
+                    />
+                );
+            };
+            return (
+                <Route
+                    key={section.key}
+                    exact
+                    path={section.path}
+                    render={routeRender}
+                />
+            );
+        });
         routes.push(<Route key="no-match-route" component={NoMatch} />);
         return (
             <main>
