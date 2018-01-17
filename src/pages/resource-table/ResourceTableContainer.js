@@ -30,9 +30,13 @@ class ResourceTableContainer extends PureComponent {
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
             api.get('system/tasks/RESOURCETABLE_UPDATE').then(() => {
-                console.log(t('Resource Table Update Task'));
+                // FIXME:
+                // console.log(t('Resource Table Update Task'));
+                t('Resource Table Update Task');
             }).catch(() => {
-                console.log(t('Resource Table Update Task Error'));
+                // FIXME:
+                // console.log(t('Resource Table Update Task Error'));
+                t('Resource Table Update Task Error');
             });
         });
     }
