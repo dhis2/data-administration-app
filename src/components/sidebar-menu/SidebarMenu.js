@@ -13,10 +13,6 @@ class SidebarMenu extends PureComponent {
         };
     }
 
-    setSection(sectionKey) {
-        this.setState({ currentSection: sectionKey });
-    }
-
     render() {
         const menu = (
             <List style={styles.list}>
@@ -28,6 +24,9 @@ class SidebarMenu extends PureComponent {
                         const icon = typeof section.info.icon === 'string' || section.info.icon instanceof String
                             ? <FontIcon className="material-icons">{section.info.icon}</FontIcon>
                             : section.info.icon;
+                        const handleMenuClick = () => {
+                            this.setState({ currentSection: section.key });
+                        };
 
                         return (
                             <Link key={section.key} className={styles.itemLink} to={section.path}>
@@ -35,7 +34,7 @@ class SidebarMenu extends PureComponent {
                                     key={section.key}
                                     className={listItemStyle}
                                     leftIcon={icon}
-                                    onClick={this.setSection.bind(this, section.key)}
+                                    onClick={handleMenuClick}
                                 >
                                     {section.label}
                                 </ListItem>
