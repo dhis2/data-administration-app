@@ -63,7 +63,7 @@ export const sections = [
         component: DataStatistics,
         info: {
             label: 'Data Statistics',
-            icon: 'pie_chart',
+            icon: 'timeline',
             description: 'Browse the number of objects in the database, like data elements, indicators, data sets and data values.',
         },
     },
@@ -83,7 +83,7 @@ export const sections = [
         component: MinMaxValueGeneration,
         info: {
             label: 'Min-Max Value Generation',
-            icon: 'compare-arrows',
+            icon: 'compare_arrows',
             description: 'Generate min-max values which can be used for data validation during data entry and validation processes.',
         },
     },
