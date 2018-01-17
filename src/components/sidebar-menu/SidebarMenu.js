@@ -3,49 +3,7 @@ import PropTypes from 'prop-types';
 import { FontIcon, List, ListItem } from 'material-ui';
 import { Link } from 'react-router-dom';
 
-const styles = {
-    container: {
-        padding: '16px 32px 0 24px',
-        position: 'relative',
-        flex: 1,
-    },
-    closeButton: {
-        position: 'absolute',
-        cursor: 'pointer',
-        top: '2rem',
-        right: '.75rem',
-        fontSize: '1rem',
-        color: '#AAA',
-    },
-    list: {
-        paddingTop: 0,
-        paddingBottom: 0,
-        backgroundColor: 'transparent',
-        marginTop: 16,
-    },
-    item: {
-        fontSize: 14,
-        borderRadius: 5,
-        margin: '0 8px',
-    },
-    itemLink: {
-        textDecoration: 'none',
-        margin: 0,
-    },
-    activeItem: {
-        fontSize: 14,
-        fontWeight: 700,
-        color: '#2196f3',
-        backgroundColor: '#e0e0e0',
-        borderRadius: 5,
-        margin: '0 8px',
-    },
-    sidebar: {
-        backgroundColor: '#f3f3f3',
-        overflowY: 'auto',
-        width: 295,
-    },
-};
+import styles from './SidebarMenu.css';
 
 class SidebarMenu extends PureComponent {
     constructor(props) {
@@ -72,10 +30,10 @@ class SidebarMenu extends PureComponent {
                             : section.info.icon;
 
                         return (
-                            <Link key={section.key} style={styles.itemLink} to={section.path}>
+                            <Link key={section.key} className={styles.itemLink} to={section.path}>
                                 <ListItem
                                     key={section.key}
-                                    style={listItemStyle}
+                                    className={listItemStyle}
                                     leftIcon={icon}
                                     onClick={this.setSection.bind(this, section.key)}
                                 >
@@ -87,7 +45,7 @@ class SidebarMenu extends PureComponent {
                 }
             </List>);
         return (
-            <div style={Object.assign(styles.sidebar)} className="left-bar">
+            <div style={Object.assign(styles.sidebar)} className={styles.leftBar}>
                 {menu}
             </div>
         );
