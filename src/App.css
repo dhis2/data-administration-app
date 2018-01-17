@@ -8,15 +8,6 @@ html {
   margin-right: 20px;
 }
 
-.leftBar {
-  width: 295px;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  padding-top: 3rem;
-}
-
 .contentArea {
   padding-left: 295px;
   min-width: 400px;
