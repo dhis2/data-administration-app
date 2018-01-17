@@ -66,12 +66,13 @@
     },
     "activities": {
       "dhis": {
-        "href": ".."
+        "href": "/"
       }
     }
   },
+  "homepage": ".",
   "proxy": {
-    "..": {
+    "/": {
       "target": "http://localhost:8080"
     }
   }
