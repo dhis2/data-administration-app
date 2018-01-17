@@ -33,10 +33,11 @@ const configLocale = (userSettings) => {
 
 // init d2
 getManifest('manifest.webapp').then((manifest) => {
+    const api = process.env.REACT_APP_DHIS2_API_VERSION ? `/${process.env.REACT_APP_DHIS2_API_VERSION}` : '/';
     const baseUrl =
         process.env.NODE_ENV === 'production'
-            ? `${manifest.getBaseUrl()}api/${process.env.REACT_APP_DHIS2_API_VERSION}`
-            : `${process.env.REACT_APP_DHIS2_BASE_URL}/api/${process.env.REACT_APP_DHIS2_API_VERSION}`;
+            ? `${manifest.getBaseUrl()}`
+            : `${process.env.REACT_APP_DHIS2_BASE_URL}/api${api}`;
 
     ReactDOM.render(
         <D2UIApp
