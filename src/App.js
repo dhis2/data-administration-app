@@ -12,7 +12,7 @@ import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 
-import './App.css';
+import styles from './App.css';
 
 // App configs
 import {
@@ -94,24 +94,31 @@ class App extends PureComponent {
             />));
         routes.push(<Route key="no-match-route" component={NoMatch} />);
 
-        const translatedSections = sections.map(section => Object.assign(section, { label: this.props.t(section.info.label) }));
+        const translatedSections = sections.map(section => Object.assign(
+            section,
+            {
+                label: this.props.t(section.info.label),
+            },
+        ));
 
         return (
-            <div className="container">
+            <div className={styles.container}>
                 <HeaderBar />
                 <Snackbar
-                    className="snackbar"
+                    className={styles.snackbar}
                     message={this.state.snackbar || ''}
                     autoHideDuration={2500}
                     onRequestClose={this.closeSnackbar}
                     open={!!this.state.snackbar}
                 />
-                <Sidebar
-                    sections={translatedSections}
-                    currentSection={this.state.currentSection}
-                    onChangeSection={this.setContainer}
-                />
-                <div className="content-area">
+                <div className={styles.leftBar}>
+                    <Sidebar
+                        sections={translatedSections}
+                        currentSection={this.state.currentSection}
+                        onChangeSection={this.setContainer}
+                    />
+                </div>
+                <div className={styles.contentArea}>
                     <Switch>
                         {routes}
                     </Switch>

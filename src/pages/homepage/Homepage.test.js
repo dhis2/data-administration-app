@@ -6,7 +6,7 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import { Link } from 'react-router-dom';
 
 import Homepage from './Homepage';
-import GridSection from './GridSection';
+import GridSection from './grid-section/GridSection';
 
 import { sections } from '../sections.conf';
 
