@@ -50,7 +50,7 @@ class App extends PureComponent {
                 <HeaderBar />
                 <SidebarMenu sections={translatedSections} currentSection={this.state.currentSection} />
                 <div className={styles.contentArea}>
-                    <AppRouter updateSelectedMenu={this.handleSelectedMenu} />
+                    <AppRouter />
                 </div>
             </div>
         );
