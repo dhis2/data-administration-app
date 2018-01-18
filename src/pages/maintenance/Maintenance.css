@@ -1,14 +1,14 @@
-.maintenance-action-button {
+.maintenanceActionButton {
   background-color: #ff9800;
   height: 36px;
   color: white !important;
 }
 
-.maintenance-grid-container {
+.maintenanceGridContainer {
   margin-top: 8px !important;
   margin-bottom: 42px !important;
 }
 
-.maintenance-check-all {
+.maintenanceCheckAll {
   display: block;
 }

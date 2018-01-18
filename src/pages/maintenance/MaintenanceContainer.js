@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 // App configs
 import maintenanceCheckboxes from './maintenance.conf';
 
-import './Maintenance.css';
+import styles from './Maintenance.css';
 
 class MaintenanceContainer extends Component {
     static propTypes = {
@@ -89,9 +89,8 @@ class MaintenanceContainer extends Component {
                 this.setState({ checkboxes });
             });
             return (
-                <GridTile key={checkbox.key} className="maintenance-option">
+                <GridTile key={checkbox.key}>
                     <Checkbox
-                        className="maintenance-checkbox"
                         label={t(checkbox.label)}
                         checked={checkboxState}
                         onCheck={toggleCheckbox}
@@ -103,12 +102,13 @@ class MaintenanceContainer extends Component {
         return (
             <div>
                 <Checkbox
-                    className="maintenance-check-all"
+                    id="maintenance-check-all"
+                    className={styles.maintenanceCheckAll}
                     checked={this.state.checkAll}
                     onCheck={this.toggleCheckAll}
                 />
                 <GridList
-                    className="maintenance-grid-container"
+                    className={styles.maintenanceGridContainer}
                     cellHeight="auto"
                     cols={3}
                     padding={16}
@@ -116,7 +116,7 @@ class MaintenanceContainer extends Component {
                     {gridElements}
                 </GridList>
                 <FlatButton
-                    className="maintenance-action-button"
+                    className={styles.maintenanceActionButton}
                     backgroundColor={orange500}
                     label={t('PERFORM MAINTENANCE')}
                     onClick={this.performMaintenance}
