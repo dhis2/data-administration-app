@@ -56,19 +56,19 @@ it('MaintenanceContainer calls performMaintenance method when button is clicked'
 
 it('MaintenanceContainer renders Checkbox to select or unselect all', () => {
     const wrapper = shallow(<MaintenanceContainer t={t} />);
-    expect(wrapper.find(Checkbox).find('.maintenance-check-all')).toHaveLength(1);
+    expect(wrapper.find(Checkbox).find('#maintenance-check-all')).toHaveLength(1);
 });
 
 it('MaintenanceContainer calls toggleCheckAll method when Checkbox to select or unselect all is checked', () => {
     const spy = spyOn(MaintenanceContainer.prototype, 'toggleCheckAll')
     const wrapper = shallow(<MaintenanceContainer t={t} />);
-    wrapper.find(Checkbox).find('.maintenance-check-all').simulate('check');
+    wrapper.find(Checkbox).find('#maintenance-check-all').simulate('check');
     expect(spy).toHaveBeenCalled();
 });
 
 it('MaintenanceContainer state changes when Checkbox to select or unselect all is checked', () => {
     const wrapper = shallow(<MaintenanceContainer t={t} />);
-    wrapper.find(Checkbox).find('.maintenance-check-all').simulate('check');
+    wrapper.find(Checkbox).find('#maintenance-check-all').simulate('check');
     const state = wrapper.state();
     expect(state.checkAll).toBe(true);
 
@@ -83,7 +83,8 @@ it('MaintenanceContainer state changes when Checkbox to select or unselect all i
 it('MaintenanceContainer state changes Checkbox state when a Checkbox is checked', () => {
     const wrapper = shallow(<MaintenanceContainer t={t} />);
     const state = wrapper.state();
-    const maintenanceCheckbox = wrapper.find('.maintenance-option').first();
+    const grid = wrapper.find(GridList).first();
+    const maintenanceCheckbox = grid.find(GridTile).first();
     maintenanceCheckbox.find(Checkbox).first().simulate('check');
 
     // assert checkbox states

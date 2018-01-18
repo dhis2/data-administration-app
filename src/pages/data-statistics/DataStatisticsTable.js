@@ -11,7 +11,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
-import './DataStatistics.css';
+import styles from './DataStatistics.css';
 
 const DataStatisticsTable = ({ t, label, elements }) => {
     const rows = elements.map(element => (
@@ -21,10 +21,10 @@ const DataStatisticsTable = ({ t, label, elements }) => {
         </TableRow>
     ));
     return (
-        <div className="statistics-table">
+        <div className={styles.statisticsTable}>
             <Table selectable={false}>
                 <TableHeader
-                    className="statistics-table-header"
+                    className={styles.statisticsTableHeader}
                     displaySelectAll={false}
                     adjustForCheckbox={false}
                     enableSelectAll={false}

@@ -9,8 +9,6 @@ import { Card, CardText } from 'material-ui/Card';
 
 import DataStatisticsTable from './DataStatisticsTable';
 
-import './DataStatistics.css';
-
 const OBJECT_COUNTS_KEY = 'objectCounts';
 const ACTIVE_USERS_KEY = 'activeUsers';
 const USER_INVITATIONS_KEY = 'userInvitations';
@@ -19,28 +17,6 @@ const EVENT_COUNT_KEY = 'eventCount';
 
 const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
-
-const OBJECT_KEYS_TO_LABEL = {
-    DASHBOARD: 'Dashboards',
-    USER: 'Users',
-    VALIDATIONRULE: 'Validation rules',
-    ORGANISATIONUNIT: 'Organisation units',
-    PROGRAM: 'Programs',
-    INDICATORTYPE: 'Indicator types',
-    DATAELEMENT: 'Data elements',
-    PERIOD: 'Periods',
-    INDICATORGROUP: 'Indicator groups',
-    DATAVALUE: 'Data values',
-    DATAELEMENTGROUP: 'Data element groups',
-    REPORTTABLE: 'Pivot tables',
-    ORGANISATIONUNITGROUP: 'Organisation unit groups',
-    INDICATOR: 'Indicators',
-    USERGROUP: 'User groups',
-    PROGRAMSTAGEINSTANCE: 'Events',
-    CHART: 'Charts',
-    DATASET: 'Data sets',
-    MAP: 'Maps',
-};
 
 class DataStatisticsPage extends PureComponent {
     static propTypes = {
@@ -68,7 +44,7 @@ class DataStatisticsPage extends PureComponent {
                 for (let i = 0; i < objectCountsKeys.length; i++) {
                     const key = objectCountsKeys[i];
                     objectCountsTable.elements.push({
-                        label: OBJECT_KEYS_TO_LABEL[key],
+                        label: key,
                         count: objectCountsResponse[key],
                     });
                 }
@@ -119,19 +95,21 @@ class DataStatisticsPage extends PureComponent {
                     elements: [],
                 };
 
-                if (userInvitationsResponse[PENDING_INVITATION_ALL_KEY]) {
+                if (userInvitationsResponse.hasOwnProperty(PENDING_INVITATION_ALL_KEY)) {
                     userInvitationsTable.elements.push({
                         label: 'Pending invitations',
                         count: userInvitationsResponse[PENDING_INVITATION_ALL_KEY],
                     });
                 }
 
-                if (userInvitationsResponse[EXPIRED_INVITATION_KEY]) {
+                if (userInvitationsResponse.hasOwnProperty(EXPIRED_INVITATION_KEY)) {
                     userInvitationsTable.elements.push({
                         label: 'Expired invitations',
                         count: userInvitationsResponse[EXPIRED_INVITATION_KEY],
                     });
                 }
+
+                return userInvitationsTable;
             }
 
             return {};

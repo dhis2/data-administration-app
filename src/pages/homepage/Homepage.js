@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { GridList } from 'material-ui/GridList';
 
 // Components
-import GridSection from './GridSection';
+import GridSection from './grid-section/GridSection';
 
-import './Homepage.css';
+import styles from './Homepage.css';
 
 // App configs
 import {
@@ -21,7 +21,7 @@ const HomePage = (props) => {
     ));
 
     return (
-        <GridList className="grid-container" cellHeight={218} cols={3} padding={8}>
+        <GridList className={styles.gridContainer} cellHeight={218} cols={3} padding={8}>
             {gridElements}
         </GridList>
     );

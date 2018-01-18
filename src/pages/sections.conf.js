@@ -44,7 +44,8 @@ export const sections = [
         info: {
             label: 'Maintenance',
             icon: 'settings',
-            description: 'Perform maintenance tasks such as pruning of data values and periods and clearing of database resource tables.',
+            description: 'Perform maintenance tasks such as pruning of data values and periods and clearing' +
+            ' of database resource tables.',
         },
     },
     {
@@ -54,7 +55,8 @@ export const sections = [
         info: {
             label: 'Resource Table',
             icon: 'view_list',
-            description: 'Generate resource database tables for the organisation unit hierarchy and group set structure among others.',
+            description: 'Generate resource database tables for the organisation unit hierarchy and group set' +
+            ' structure among others.',
         },
     },
     {
@@ -64,7 +66,8 @@ export const sections = [
         info: {
             label: 'Data Statistics',
             icon: 'timeline',
-            description: 'Browse the number of objects in the database, like data elements, indicators, data sets and data values.',
+            description: 'Browse the number of objects in the database, like data elements, indicators,' +
+            ' data sets and data values.',
         },
     },
     {
@@ -84,7 +87,8 @@ export const sections = [
         info: {
             label: 'Min-Max Value Generation',
             icon: 'compare_arrows',
-            description: 'Generate min-max values which can be used for data validation during data entry and validation processes.',
+            description: 'Generate min-max values which can be used for data validation during data entry and ' +
+            'validation processes.',
         },
     },
     {
@@ -94,7 +98,8 @@ export const sections = [
         info: {
             label: 'Scheduling',
             icon: 'schedule',
-            description: 'Manage scheduled tasks such as data mart exports, where you can set period types, aggregation level and frequency.',
+            description: 'Manage scheduled tasks such as data mart exports, where you can set period types, ' +
+            'aggregation level and frequency.',
         },
     },
 ];

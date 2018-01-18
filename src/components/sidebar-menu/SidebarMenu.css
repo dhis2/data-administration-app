@@ -1,38 +1,47 @@
 .list {
-    paddingTop: 0;
-    paddingBottom: 0;
-    backgroundColor: transparent;
-    marginTop: 16;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: transparent !important;
+    margin-top: 16px !important;
 }
 
 .item {
-    fontSize: 14;
-    borderRadius: 5;
-    margin: 0 8px;
+    font-size: 14px !important;;
+    border-radius: 5px !important;;
+    margin: 0 8px !important;;
 }
 
 .itemLink {
     color: rgba(0, 0, 0, 0.87);
-    textDecoration: none;
+    text-decoration: none;
     margin: 0;
 }
 
 .active {
     color: #2196f3;
-    textDecoration: none;
+    text-decoration: none;
 }
 
 .activeItem {
-    fontSize: 14;
-    fontWeight: 700;
-    color: #2196f3;
-    backgroundColor: #e0e0e0;
-    borderRadius: 5;
-    margin: 0 8px;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #2196f3 !important;
+    background-color: #e0e0e0 !important;
+    border-radius: 5px !important;
+    margin: 0 8px !important;
 }
 
 .sidebar {
-    backgroundColor: #f3f3f3;
-    overflowY: auto;
+    background-color: #f3f3f3;
+    overflow-y: auto;
     width: 295px;
+}
+
+.leftBar {
+    width: 295px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    padding-top: 3rem;
 }

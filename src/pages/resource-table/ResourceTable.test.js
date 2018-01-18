@@ -43,7 +43,7 @@ it('ResourceTableContainer renders the correct number of GridTiles', () => {
 
 it('ResourceTableContainer renders a Button', () => {
     const wrapper = shallow(<ResourceTableContainer t={t} />);
-    expect(wrapper.find('.resource-table-action-button')).toHaveLength(1);
+    expect(wrapper.find(FlatButton)).toHaveLength(1);
 });
 
 it('ResourceTableContainer calls generateTables method when button is clicked', () => {

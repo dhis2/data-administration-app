@@ -8,7 +8,7 @@ import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import SidebarMenu from './components/sidebar-menu/SidebarMenu';
 import AppRouter from './components/app-router/AppRouter';
 
-import './App.css';
+import styles from './App.css';
 
 // App configs
 import {
@@ -46,11 +46,11 @@ class App extends PureComponent {
         ));
 
         return (
-            <div className="container">
+            <div className={styles.container}>
                 <HeaderBar />
                 <SidebarMenu sections={translatedSections} currentSection={this.state.currentSection} />
-                <div className="content-area">
-                    <AppRouter updateSelectedMenu={this.handleSelectedMenu} />
+                <div className={styles.contentArea}>
+                    <AppRouter />
                 </div>
             </div>
         );
