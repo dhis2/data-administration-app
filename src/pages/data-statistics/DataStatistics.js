@@ -11,7 +11,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
-import './DataStatistics.css';
+import styles from './DataStatistics.css';
 
 class DataStatistics extends PureComponent {
     static propTypes = {
@@ -64,7 +64,7 @@ class DataStatistics extends PureComponent {
                 </TableRow>
             ));
             return (
-                <div key={table.label} className="statistics-table">
+                <div key={table.label} className={styles.statisticsTable}>
                     <Table selectable={false}>
                         <TableHeader
                             displaySelectAll={false}

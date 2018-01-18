@@ -1,23 +1,23 @@
-.statistics-table {
+.statisticsTable {
   margin-bottom: 16px;
 }
 
-.statistics-table th {
+.statisticsTable th {
 	font-size: 14px !important;
 	letter-spacing: 0.7px !important;
 	color: #757575 !important;
 }
 
-.statistics-table tr {
+.statisticsTable tr {
 	font-size: 14px !important;
 	letter-spacing: 0.7px !important;
 	color: #000000 !important;
 }
 
-.statistics-table tr:nth-child(even) {
+.statisticsTable tr:nth-child(even) {
   background-color: #fafafa;
 }
 
-.statistics-table tr:nth-child(odd) {
+.statisticsTable tr:nth-child(odd) {
   background-color: #ffffff;
 }
