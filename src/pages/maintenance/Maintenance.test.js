@@ -10,8 +10,6 @@ import MaintenanceContainer from "./MaintenanceContainer";
 
 import maintenanceCheckboxes from "./maintenance.conf";
 
-import styles from './Maintenance.css';
-
 import {
     sections,
     MAINTENANCE_SECTION_KEY,
