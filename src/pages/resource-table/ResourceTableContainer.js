@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 // App configs
 import resourceTable from './resourceTable.conf';
 
-import './ResourceTable.css';
+import styles from './ResourceTable.css';
 
 class ResourceTableContainer extends PureComponent {
     static propTypes = {
@@ -45,14 +45,14 @@ class ResourceTableContainer extends PureComponent {
         const t = this.props.t;
         const gridElements = resourceTable.map(resource => (
             <GridTile key={resource.key}>
-                <span className="resource-table-grid-title">{resource.label}</span>
-                <span className="resource-table-grid-sub-title">{resource.description}</span>
+                <span className={styles.resourceTableTitle}>{resource.label}</span>
+                <span className={styles.resourceTableSubTitle}>{resource.description}</span>
             </GridTile>
         ));
         return (
             <div>
                 <GridList
-                    className="resource-table-grid-container"
+                    className={styles.resourceTableGridContainer}
                     cellHeight="auto"
                     cols={3}
                     padding={16}
@@ -60,7 +60,7 @@ class ResourceTableContainer extends PureComponent {
                     {gridElements}
                 </GridList>
                 <FlatButton
-                    className="resource-table-action-button"
+                    className={styles.resourceTableActionButton}
                     backgroundColor={orange500}
                     label={t('GENERATE TABLES')}
                     onClick={this.generateTables}
