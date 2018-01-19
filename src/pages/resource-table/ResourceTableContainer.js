@@ -29,7 +29,7 @@ class ResourceTableContainer extends PureComponent {
         const t = this.props.t;
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
-            api.get('system/tasks/RESOURCETABLE_UPDATE').then(() => {
+            api.update('resourceTables').then(() => {
                 // FIXME:
                 // console.log(t('Resource Table Update Task'));
                 t('Resource Table Update Task');
