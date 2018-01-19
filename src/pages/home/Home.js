@@ -7,7 +7,7 @@ import { GridList } from 'material-ui/GridList';
 // Components
 import GridSection from './grid-section/GridSection';
 
-import styles from './Homepage.css';
+import styles from './Home.css';
 
 // App configs
 import {

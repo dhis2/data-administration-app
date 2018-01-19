@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import DataStatisticsPage from './DataStatisticsPage';
+import DataStatistics from './DataStatistics';
 import DataStatisticsTable from './DataStatisticsTable';
 
 const t = key => key;
@@ -23,17 +23,17 @@ const stateWithTablesForDataStatistics = [
     },
 ];
 
-it('DataStatisticsPage renders without crashing', () => {
-    shallow(<DataStatisticsPage t={t}/>);
+it('DataStatistics renders without crashing', () => {
+    shallow(<DataStatistics t={t}/>);
 });
 
-it('DataStatisticsPage renders no DataStatisticsTable', () => {
-    const wrapper = shallow(<DataStatisticsPage t={t}/>);
+it('DataStatistics renders no DataStatisticsTable', () => {
+    const wrapper = shallow(<DataStatistics t={t}/>);
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
 });
 
-it('DataStatisticsPage renders DataStatisticsTable define on state', () => {
-    const wrapper = shallow(<DataStatisticsPage t={t}/>);
+it('DataStatistics renders DataStatisticsTable define on state', () => {
+    const wrapper = shallow(<DataStatistics t={t}/>);
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
     wrapper.setState({tables: stateWithTablesForDataStatistics});
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(stateWithTablesForDataStatistics.length);

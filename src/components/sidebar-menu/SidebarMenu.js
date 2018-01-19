@@ -15,7 +15,7 @@ class SidebarMenu extends PureComponent {
 
     render() {
         const menu = (
-            <List style={styles.list}>
+            <List className={styles.list}>
                 {
                     this.props.sections.map((section) => {
                         const listItemStyle = section.key === this.state.currentSection
