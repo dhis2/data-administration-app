@@ -6,7 +6,6 @@ import ResourceTablePage from './resource-table/ResourceTable';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './LockException';
 import MinMaxValueGeneration from './MinMaxValueGeneration';
-import Scheduling from './Scheduling';
 
 export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
@@ -15,7 +14,6 @@ export const RESOURCE_TABLE_SECTION_KEY = 'resourceTable';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
 export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
 export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
-export const SCHEDULING_SECTION_KEY = 'schedule';
 
 export const sections = [
     {
@@ -89,17 +87,6 @@ export const sections = [
             icon: 'compare_arrows',
             description: 'Generate min-max values which can be used for data validation during data entry and ' +
             'validation processes.',
-        },
-    },
-    {
-        key: SCHEDULING_SECTION_KEY,
-        path: '/schedule',
-        component: Scheduling,
-        info: {
-            label: 'Scheduling',
-            icon: 'schedule',
-            description: 'Manage scheduled tasks such as data mart exports, where you can set period types, ' +
-            'aggregation level and frequency.',
         },
     },
 ];
