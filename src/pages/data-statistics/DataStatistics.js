@@ -162,7 +162,7 @@ class DataStatisticsPage extends PureComponent {
         // request to GET statistics
         getInstance().then((d2) => {
             const api = d2.Api.getApi();
-            api.get('system/statistics').then((response) => {
+            api.get('dataSummary').then((response) => {
                 this.setState({
                     tables: [
                         objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
