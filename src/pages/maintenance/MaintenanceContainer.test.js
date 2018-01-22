@@ -8,7 +8,7 @@ import Checkbox from 'material-ui/Checkbox';
 
 import MaintenanceContainer from "./MaintenanceContainer";
 
-import maintenanceCheckboxes from "./maintenance.conf";
+import { maintenanceCheckboxes } from "./maintenance.conf";
 
 import {
     sections,
