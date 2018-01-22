@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Material UI
 import { GridList, GridTile } from 'material-ui/GridList';
@@ -8,8 +9,6 @@ import { orange500 } from 'material-ui/styles/colors';
 
 // d2
 import { getInstance } from 'd2/lib/d2';
-
-import PropTypes from 'prop-types';
 
 // App configs
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY } from './maintenance.conf';
@@ -59,22 +58,20 @@ class MaintenanceContainer extends Component {
         const checkboxKeys = Object.keys(this.state.checkboxes);
         const formData = new FormData();
 
-        let isResourceTableSelected = false;
-        let oneOptionChecked = false;
+        let optionsSelected = 0;
         for (let i = 0; i < checkboxKeys.length; i++) {
             const key = checkboxKeys[i];
             const checked = this.state.checkboxes[key].checked;
-            if (key === RESOURCE_TABLES_OPTION_KEY && checked) {
-                isResourceTableSelected = true;
-            } else if (checked) {
-                oneOptionChecked = true;
+            if (key !== RESOURCE_TABLES_OPTION_KEY && checked) {
+                optionsSelected += 1;
                 formData.append(key, checked);
             }
         }
 
+        const requests = [];
         // FIX ME perform concurrent request. Similar to all in axios
-        if (oneOptionChecked) {
-            getInstance().then((d2) => {
+        if (optionsSelected > 0) {
+            const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.post('maintenance', formData).then(() => {
 
@@ -82,10 +79,12 @@ class MaintenanceContainer extends Component {
 
                 });
             });
+            requests.push(request);
         }
 
-        if (isResourceTableSelected) {
-            getInstance().then((d2) => {
+        // resource table option is checked. It is treated differently
+        if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
+            const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.update('resourceTables').then(() => {
 
@@ -93,6 +92,7 @@ class MaintenanceContainer extends Component {
 
                 });
             });
+            requests.push(request);
         }
     }
 
@@ -102,8 +102,13 @@ class MaintenanceContainer extends Component {
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
             const toggleCheckbox = (() => {
+                const checked = !checkboxState;
                 checkboxes[checkbox.key].checked = !checkboxState;
                 this.setState({ checkboxes });
+
+                if (checkbox.key === RESOURCE_TABLES_OPTION_KEY) {
+                    this.isResourceTableSelected = checked;
+                }
             });
             return (
                 <GridTile key={checkbox.key}>
