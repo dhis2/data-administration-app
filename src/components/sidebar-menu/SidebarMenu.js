@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FontIcon, List, ListItem } from 'material-ui';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 import styles from './SidebarMenu.css';
 
@@ -33,7 +34,7 @@ class SidebarMenu extends PureComponent {
                 }
             </List>);
         return (
-            <div style={Object.assign(styles.sidebar)} className={styles.leftBar}>
+            <div className={classNames(styles.sidebar, styles.leftBar)}>
                 {menu}
             </div>
         );
