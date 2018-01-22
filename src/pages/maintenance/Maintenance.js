@@ -6,7 +6,10 @@ import MaintenanceContainer from './MaintenanceContainer';
 
 const Maintenance = props => (
     <PageContainer header={props.pageInfo.label}>
-        <MaintenanceContainer t={props.t} />
+        <MaintenanceContainer
+            t={props.t}
+            toggleLoading={props.toggleLoading}
+        />
     </PageContainer>
 );
 
@@ -15,6 +18,7 @@ Maintenance.propTypes = {
     pageInfo: PropTypes.shape({
         label: PropTypes.string,
     }).isRequired,
+    toggleLoading: PropTypes.func.isRequired,
 };
 
 export default Maintenance;
