@@ -1,4 +1,6 @@
-const maintenanceCheckboxes = [
+export const RESOURCE_TABLES_OPTION_KEY = 'home';
+
+export const maintenanceCheckboxes = [
     {
         key: 'analyticsTableClear',
         label: 'Clear analytics tables',
@@ -59,6 +61,8 @@ const maintenanceCheckboxes = [
         key: 'appReload',
         label: 'Reload apps',
     },
+    {
+        key: RESOURCE_TABLES_OPTION_KEY,
+        label: 'Resource Tables',
+    },
 ];
-
-export default maintenanceCheckboxes;

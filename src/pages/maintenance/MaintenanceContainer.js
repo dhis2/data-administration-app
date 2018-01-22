@@ -12,7 +12,7 @@ import { getInstance } from 'd2/lib/d2';
 import PropTypes from 'prop-types';
 
 // App configs
-import maintenanceCheckboxes from './maintenance.conf';
+import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY } from './maintenance.conf';
 
 import styles from './Maintenance.css';
 
@@ -58,19 +58,36 @@ class MaintenanceContainer extends Component {
     performMaintenance() {
         const checkboxKeys = Object.keys(this.state.checkboxes);
         const formData = new FormData();
+
+        let isResourceTableSelected = false;
         let oneOptionChecked = false;
         for (let i = 0; i < checkboxKeys.length; i++) {
             const key = checkboxKeys[i];
-            formData.append(key, this.state.checkboxes[key].checked);
-            if (!oneOptionChecked && this.state.checkboxes[key].checked) {
+            const checked = this.state.checkboxes[key].checked;
+            if (key === RESOURCE_TABLES_OPTION_KEY && checked) {
+                isResourceTableSelected = true;
+            } else if (checked) {
                 oneOptionChecked = true;
+                formData.append(key, checked);
             }
         }
 
+        // FIX ME perform concurrent request. Similar to all in axios
         if (oneOptionChecked) {
             getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.post('maintenance', formData).then(() => {
+
+                }).catch(() => {
+
+                });
+            });
+        }
+
+        if (isResourceTableSelected) {
+            getInstance().then((d2) => {
+                const api = d2.Api.getApi();
+                api.update('resourceTables').then(() => {
 
                 }).catch(() => {
 

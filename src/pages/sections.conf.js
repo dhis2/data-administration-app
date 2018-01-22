@@ -9,7 +9,6 @@ import MinMaxValueGeneration from './MinMaxValueGeneration';
 export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
 export const MAINTENANCE_SECTION_KEY = 'maintenance';
-export const RESOURCE_TABLE_SECTION_KEY = 'resourceTable';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
 export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
 export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
