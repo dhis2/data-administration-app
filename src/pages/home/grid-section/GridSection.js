@@ -13,7 +13,16 @@ import styles from './GridSection.css';
 class GridSection extends PureComponent {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        section: PropTypes.object.isRequired,
+        section: PropTypes.shape({
+            key: PropTypes.string,
+            path: PropTypes.string,
+            info: PropTypes.shape({
+                label: PropTypes.string,
+                description: PropTypes.string,
+                icon: PropTypes.string,
+                actionText: PropTypes.string,
+            }),
+        }).isRequired,
     }
 
     render() {
