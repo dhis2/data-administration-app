@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import PageContainer from '../PageContainer';
 import MaintenanceContainer from './MaintenanceContainer';
 
-const MaintenancePage = props => (
+const Maintenance = props => (
     <PageContainer header={props.pageInfo.label}>
         <MaintenanceContainer t={props.t} />
     </PageContainer>
 );
 
-MaintenancePage.propTypes = {
+Maintenance.propTypes = {
     t: PropTypes.func.isRequired,
-    pageInfo: PropTypes.object.isRequired,
+    pageInfo: PropTypes.shape({
+        label: PropTypes.string,
+    }).isRequired,
 };
 
-export default MaintenancePage;
+export default Maintenance;

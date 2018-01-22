@@ -8,7 +8,7 @@ import {
     sections,
     MAINTENANCE_SECTION_KEY,
 } from '../sections.conf';
-import MaintenancePage from "./MaintenancePage";
+import MaintenancePage from "./Maintenance";
 import PageContainer from "../PageContainer";
 
 let maintenancePageInfo = {};
@@ -22,16 +22,16 @@ for(let i = 0; i < sections.length; i++) {
 
 const t = key => key;
 
-it('MaintenancePage renders without crashing', () => {
+it('Maintenance renders without crashing', () => {
     shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
 });
 
-it('MaintenancePage renders a PageContainer', () => {
+it('Maintenance renders a PageContainer', () => {
     const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
     expect(wrapper.find(PageContainer)).toHaveLength(1);
 });
 
-it('MaintenancePage renders a MaintenanceContainer', () => {
+it('Maintenance renders a MaintenanceContainer', () => {
     const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
     expect(wrapper.find(MaintenanceContainer)).toHaveLength(1);
 });
