@@ -1,10 +1,10 @@
 // Components
 import HomePage from './home/Home';
-import DataIntegrity from './DataIntegrity';
+import DataIntegrity from './data-integrity/DataIntegrity';
 import Maintenance from './maintenance/Maintenance';
 import DataStatistics from './data-statistics/DataStatistics';
-import LockException from './LockException';
-import MinMaxValueGeneration from './MinMaxValueGeneration';
+import LockException from './lock-exception/LockException';
+import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
 
 export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';

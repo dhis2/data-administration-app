@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // Material UI
@@ -11,15 +11,17 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
+import Page from '../Page';
+
 import styles from './DataStatistics.css';
 
-class DataStatistics extends PureComponent {
+class DataStatistics extends Page {
     static propTypes = {
         t: PropTypes.func.isRequired,
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             tables: [],
@@ -52,10 +54,6 @@ class DataStatistics extends PureComponent {
     }
 
     render() {
-        let t = this.props.t;
-        if (!t) {
-            t = (key => key);
-        }
         const tables = this.state.tables.map((table) => {
             const rows = table.elements.map(element => (
                 <TableRow key={element.label}>
@@ -73,7 +71,7 @@ class DataStatistics extends PureComponent {
                         >
                             <TableRow>
                                 <TableHeaderColumn>{table.label}</TableHeaderColumn>
-                                <TableHeaderColumn>{t('Number')}</TableHeaderColumn>
+                                <TableHeaderColumn>{this.props.t('Number')}</TableHeaderColumn>
                             </TableRow>
                         </TableHeader>
                         <TableBody
@@ -89,7 +87,7 @@ class DataStatistics extends PureComponent {
 
         return (
             <div>
-                <h1>{ t('Data Statistics') }</h1>
+                <h1>{ this.props.t('Data Statistics') }</h1>
                 {tables}
             </div>
         );

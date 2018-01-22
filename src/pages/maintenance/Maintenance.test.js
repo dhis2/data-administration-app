@@ -20,18 +20,28 @@ for(let i = 0; i < sections.length; i++) {
     }
 }
 
-const t = key => key;
+const t = jest.fn();
+const notifySidebar = jest.fn();
+
+const ownShallow = () => {
+    return shallow(
+        <MaintenancePage pageInfo={maintenancePageInfo} t={t} notifySidebar={notifySidebar} />,
+        {
+            disableLifecycleMethods: true
+        }
+    );
+};
 
 it('Maintenance renders without crashing', () => {
-    shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    ownShallow();
 });
 
 it('Maintenance renders a PageContainer', () => {
-    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    const wrapper = ownShallow();
     expect(wrapper.find(PageContainer)).toHaveLength(1);
 });
 
 it('Maintenance renders a MaintenanceContainer', () => {
-    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    const wrapper = ownShallow();
     expect(wrapper.find(MaintenanceContainer)).toHaveLength(1);
 });
