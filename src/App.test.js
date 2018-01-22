@@ -2,25 +2,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Route } from 'react-router-dom';
-import { List  } from 'material-ui';
-
 import HeaderBar from 'd2-ui/lib/app-header/HeaderBar';
 
-import App from './App';
+import SidebarMenu from './components/sidebar-menu/SidebarMenu';
+import AppRouter from './components/app-router/AppRouter';
 
-import { sections } from './pages/sections.conf';
+import App from './App';
 
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
 jest.mock('d2-ui/lib/app-header/headerBar.store', () => ({}));
 jest.mock('d2-ui/lib/component-helpers/withStateFrom', () => () => ('HeaderBar'));
 
 const t = jest.fn();
-const notifySidebar = jest.fn();
 
 const ownShallow = () => {
     return shallow(
-        <App t={t} notifySidebar={notifySidebar}/>,
+        <App t={t} />,
         {
             disableLifecycleMethods: true
         }
@@ -36,12 +33,12 @@ it('App renders a HeaderBar Component', () => {
     expect(wrapper.find(HeaderBar)).toHaveLength(1);
 });
 
-it('App renders a List Component for the Sidebar', () => {
+it('App renders a SidebarMenu', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(List)).toHaveLength(1);
+    expect(wrapper.find(SidebarMenu)).toHaveLength(1);
 });
 
-it('App renders the correct number of Route components', () => {
+it('App renders a AppRouter', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(Route)).toHaveLength(sections.length + 1);  // section routes plus no match route
+    expect(wrapper.find(AppRouter)).toHaveLength(1);
 });

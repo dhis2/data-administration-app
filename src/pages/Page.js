@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 class Page extends PureComponent {
     static propTypes = {
         sectionKey: PropTypes.string.isRequired,
-        notifiySidebar: PropTypes.func.isRequired,
+        notifySidebar: PropTypes.func.isRequired,
     }
 
     componentDidMount() {
-        this.props.notifiySidebar(this.props.sectionKey);
+        this.props.notifySidebar(this.props.sectionKey);
     }
 }
 
