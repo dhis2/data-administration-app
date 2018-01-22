@@ -2,7 +2,6 @@
 import HomePage from './home/Home';
 import DataIntegrity from './DataIntegrity';
 import MaintenancePage from './maintenance/MaintenancePage';
-import ResourceTablePage from './resource-table/ResourceTable';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './LockException';
 import MinMaxValueGeneration from './MinMaxValueGeneration';
@@ -33,6 +32,7 @@ export const sections = [
             label: 'Data Integrity',
             icon: 'filter_list',
             description: 'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
+            actionText: 'Check Data Integrity',
         },
     },
     {
@@ -42,19 +42,9 @@ export const sections = [
         info: {
             label: 'Maintenance',
             icon: 'settings',
-            description: 'Perform maintenance tasks such as pruning of data values and periods and clearing' +
-            ' of database resource tables.',
-        },
-    },
-    {
-        key: RESOURCE_TABLE_SECTION_KEY,
-        path: '/resource-table',
-        component: ResourceTablePage,
-        info: {
-            label: 'Resource Table',
-            icon: 'view_list',
-            description: 'Generate resource database tables for the organisation unit hierarchy and group set' +
-            ' structure among others.',
+            description: 'Perform maintenance tasks and generate resource database tables for the organisation unit' +
+            ' hierarchy and group set structure.',
+            actionText: 'Perform Maintenance',
         },
     },
     {
@@ -66,6 +56,7 @@ export const sections = [
             icon: 'timeline',
             description: 'Browse the number of objects in the database, like data elements, indicators,' +
             ' data sets and data values.',
+            actionText: 'Overview Data Statistics',
         },
     },
     {
@@ -76,6 +67,7 @@ export const sections = [
             label: 'Lock Exception',
             icon: 'lock',
             description: 'Add or remove exceptions to the the standard rules for locking of data entry forms.',
+            actionText: 'Lock Exception Management',
         },
     },
     {
@@ -87,6 +79,7 @@ export const sections = [
             icon: 'compare_arrows',
             description: 'Generate min-max values which can be used for data validation during data entry and ' +
             'validation processes.',
+            actionText: 'Generate Min-Max Value',
         },
     },
 ];

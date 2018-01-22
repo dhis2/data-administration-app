@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 // Material UI
 import { GridTile } from 'material-ui/GridList';
 import FontIcon from 'material-ui/FontIcon';
-import { blue500 } from 'material-ui/styles/colors';
 
 import classNames from 'classnames';
 
@@ -22,14 +21,16 @@ class GridSection extends PureComponent {
         return (
             <Link className="link" to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={styles.gridElement}>
-                    <FontIcon
-                        className={classNames('material-icons', styles.gridIcon)}
-                        color={blue500}
-                    >
-                        {this.props.section.info.icon}
-                    </FontIcon>
-                    <div className={styles.gridDescription}>{t(this.props.section.info.description)}</div>
-                    <div className={styles.gridTitle}>{t(this.props.section.info.label)}</div>
+                    <div className={styles.gridTitleBar}>
+                        <span className={styles.gridTitleDescription}>{this.props.section.info.label}</span>
+                        <FontIcon
+                            className={classNames('material-icons', styles.gridIcon)}
+                        >
+                            {this.props.section.info.icon}
+                        </FontIcon>
+                    </div>
+                    <span className={styles.gridDescription}>{t(this.props.section.info.description)}</span>
+                    <span className={styles.gridActionText}>{t(this.props.section.info.actionText)}</span>
                 </GridTile>
             </Link>
         );
