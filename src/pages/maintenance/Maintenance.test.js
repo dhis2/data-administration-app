@@ -12,6 +12,7 @@ import MaintenancePage from "./MaintenancePage";
 import PageContainer from "../PageContainer";
 
 let maintenancePageInfo = {};
+let toggleLoading = () => {};
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === MAINTENANCE_SECTION_KEY) {
@@ -23,15 +24,15 @@ for(let i = 0; i < sections.length; i++) {
 const t = key => key;
 
 it('MaintenancePage renders without crashing', () => {
-    shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    shallow(<MaintenancePage pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
 });
 
 it('MaintenancePage renders a PageContainer', () => {
-    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
     expect(wrapper.find(PageContainer)).toHaveLength(1);
 });
 
 it('MaintenancePage renders a MaintenanceContainer', () => {
-    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} t={t} />);
+    const wrapper = shallow(<MaintenancePage pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
     expect(wrapper.find(MaintenanceContainer)).toHaveLength(1);
 });

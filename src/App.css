@@ -3,15 +3,25 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.container .loader{
+  height: 100vh;
+}
+
+.leftBar {
+  width: 295px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
   padding-top: 3rem;
-  margin-right: 20px;
+}
+
+.contentWrapper {
+  margin-left: 295px;
 }
 
 .contentArea {
-  padding-left: 295px;
-  min-width: 400px;
-  margin-bottom: 64px;
+  padding: 4rem 20px 20px 20px;
 }
 
 h1 {
@@ -20,5 +30,4 @@ h1 {
   font-weight: 300;
   letter-spacing: 1.2px;
   color: rgba(0, 0, 0, 0.87);
-  padding: 24px 0 12px 16px;
 }
