@@ -18,13 +18,16 @@ NoMatch.propTypes = {
     location: PropTypes.object.isRequired,
 };
 
-const AppRouter = () => {
+const AppRouter = ({ notifySidebar, toggleLoading }) => {
     const routes = sections.map((section) => {
         const routeRender = () => {
-            const Component = translate()(section.component);
+            const Page = translate()(section.component);
             return (
-                <Component
+                <Page
+                    notifySidebar={notifySidebar}
+                    toggleLoading={toggleLoading}
                     pageInfo={section.info}
+                    sectionKey={section.key}
                 />
             );
         };
@@ -45,6 +48,11 @@ const AppRouter = () => {
             </Switch>
         </main>
     );
+};
+
+AppRouter.propTypes = {
+    notifySidebar: PropTypes.func.isRequired,
+    toggleLoading: PropTypes.func.isRequired,
 };
 
 export default AppRouter;

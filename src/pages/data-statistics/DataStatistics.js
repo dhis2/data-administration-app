@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // d2
@@ -7,8 +7,10 @@ import { getInstance } from 'd2/lib/d2';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
+import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
+/* constants */
 const OBJECT_COUNTS_KEY = 'objectCounts';
 const ACTIVE_USERS_KEY = 'activeUsers';
 const USER_INVITATIONS_KEY = 'userInvitations';
@@ -18,7 +20,7 @@ const EVENT_COUNT_KEY = 'eventCount';
 const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
 
-class DataStatisticsPage extends PureComponent {
+class DataStatistics extends Page {
     static propTypes = {
         t: PropTypes.func.isRequired,
     }
@@ -213,4 +215,4 @@ class DataStatisticsPage extends PureComponent {
     }
 }
 
-export default DataStatisticsPage;
+export default DataStatistics;

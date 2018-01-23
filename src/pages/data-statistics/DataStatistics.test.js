@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import DataStatistics from './DataStatistics';
 import DataStatisticsTable from './DataStatisticsTable';
 
-const t = key => key;
+const t = jest.fn();
 const stateWithTablesForDataStatistics = [
     {
         label: 'Object type',
@@ -23,17 +23,26 @@ const stateWithTablesForDataStatistics = [
     },
 ];
 
+const ownShallow = () => {
+    return shallow(
+        <DataStatistics t={t} />,
+        {
+            disableLifecycleMethods: true
+        }
+    );
+};
+
 it('DataStatistics renders without crashing', () => {
-    shallow(<DataStatistics t={t}/>);
+    ownShallow();
 });
 
 it('DataStatistics renders no DataStatisticsTable', () => {
-    const wrapper = shallow(<DataStatistics t={t}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
 });
 
 it('DataStatistics renders DataStatisticsTable define on state', () => {
-    const wrapper = shallow(<DataStatistics t={t}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
     wrapper.setState({tables: stateWithTablesForDataStatistics});
     expect(wrapper.find(DataStatisticsTable)).toHaveLength(stateWithTablesForDataStatistics.length);

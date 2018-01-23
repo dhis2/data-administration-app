@@ -13,7 +13,7 @@ import {
 
 import DataStatisticsTable from './DataStatisticsTable';
 
-const t = key => key;
+const t = jest.fn();
 const tableSample = {
     label: 'Object type',
     elements: [
@@ -22,31 +22,40 @@ const tableSample = {
     ],
 };
 
+const ownShallow = () => {
+    return shallow(
+        <DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements} />,
+        {
+            disableLifecycleMethods: true
+        }
+    );
+};
+
 it('DataStatisticsTable renders without crashing', () => {
-    shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    ownShallow();
 });
 
 it('DataStatisticsTable renders a Table', () => {
-    const wrapper = shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(Table)).toHaveLength(1);
 });
 
 it('DataStatisticsTable renders a TableHeader inside Table', () => {
-    const wrapper = shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(Table).find(TableHeader)).toHaveLength(1);
 });
 
 it('DataStatisticsTable renders a TableRow inside TableHeader', () => {
-    const wrapper = shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(Table).find(TableHeader).find(TableRow)).toHaveLength(1);
 });
 
 it('DataStatisticsTable renders a TableBody inside Table', () => {
-    const wrapper = shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(Table).find(TableBody)).toHaveLength(1);
 });
 
 it('DataStatisticsTable renders the correct number of TableRows', () => {
-    const wrapper = shallow(<DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements}/>);
+    const wrapper = ownShallow();
     expect(wrapper.find(Table).find(TableBody).find(TableRow)).toHaveLength(tableSample.elements.length);
 });
