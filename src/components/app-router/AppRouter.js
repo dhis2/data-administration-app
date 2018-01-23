@@ -18,50 +18,41 @@ NoMatch.propTypes = {
     location: PropTypes.object.isRequired,
 };
 
-export default class AppRouter extends React.Component {
-    static propTypes = {
-        toggleLoading: PropTypes.func.isRequired,
-    }
-
-    constructor(props) {
-        super(props);
-        this.toggleLoading = this.toggleLoading.bind(this);
-    }
-
-    toggleLoading() {
-        this.props.toggleLoading();
-    }
-
-    render() {
-        const routes = sections.map((section) => {
-            const routeRender = () => {
-                const Component = translate()(section.component);
-                const toggleLoading = () => {
-                    this.toggleLoading();
-                };
-                return (
-                    <Component
-                        pageInfo={section.info}
-                        toggleLoading={toggleLoading}
-                    />
-                );
-            };
+const AppRouter = ({ notifySidebar, toggleLoading }) => {
+    const routes = sections.map((section) => {
+        const routeRender = () => {
+            const Page = translate()(section.component);
             return (
-                <Route
-                    key={section.key}
-                    exact
-                    path={section.path}
-                    render={routeRender}
+                <Page
+                    notifySidebar={notifySidebar}
+                    toggleLoading={toggleLoading}
+                    pageInfo={section.info}
+                    sectionKey={section.key}
                 />
             );
-        });
-        routes.push(<Route key="no-match-route" component={NoMatch} />);
+        };
         return (
-            <main>
-                <Switch>
-                    {routes}
-                </Switch>
-            </main>
+            <Route
+                key={section.key}
+                exact
+                path={section.path}
+                render={routeRender}
+            />
         );
-    }
-}
+    });
+    routes.push(<Route key="no-match-route" component={NoMatch} />);
+    return (
+        <main>
+            <Switch>
+                {routes}
+            </Switch>
+        </main>
+    );
+};
+
+AppRouter.propTypes = {
+    notifySidebar: PropTypes.func.isRequired,
+    toggleLoading: PropTypes.func.isRequired,
+};
+
+export default AppRouter;

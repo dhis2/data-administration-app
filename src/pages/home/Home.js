@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { GridList } from 'material-ui/GridList';
 
 // Components
+import Page from '../Page';
 import GridSection from './grid-section/GridSection';
 
 import styles from './Home.css';
@@ -15,20 +16,23 @@ import {
     HOME_SECTION_KEY,
 } from '../sections.conf';
 
-const HomePage = (props) => {
-    const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
-        <GridSection key={section.key} t={props.t} section={section} />
-    ));
 
-    return (
-        <GridList className={styles.gridContainer} cellHeight={218} cols={3} padding={8}>
-            {gridElements}
-        </GridList>
-    );
-};
+class Home extends Page {
+    static propTypes = {
+        t: PropTypes.func.isRequired,
+    }
 
-HomePage.propTypes = {
-    t: PropTypes.func.isRequired,
-};
+    render() {
+        const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
+            <GridSection key={section.key} t={this.props.t} section={section} />
+        ));
 
-export default HomePage;
+        return (
+            <GridList className={styles.gridContainer} cellHeight={218} cols={3} padding={8}>
+                {gridElements}
+            </GridList>
+        );
+    }
+}
+
+export default Home;

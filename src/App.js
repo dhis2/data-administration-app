@@ -8,6 +8,7 @@ import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 
 import Loader from 'react-loader-advanced';
 import SidebarMenu from './components/sidebar-menu/SidebarMenu';
+import AppRouter from './components/app-router/AppRouter';
 
 import styles from './App.css';
 
@@ -16,7 +17,6 @@ import {
     sections,
     HOME_SECTION_KEY,
 } from './pages/sections.conf';
-import AppRouter from './components/app-router/AppRouter';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -57,7 +57,7 @@ class App extends PureComponent {
         const loadingCombo = (
             <span>
                 <div><CircularProgress /></div>
-                <h3>Loading...</h3>
+                <h3>{ this.props.t('Loading...') }</h3>
             </span>
         );
 
@@ -70,6 +70,7 @@ class App extends PureComponent {
                         <div className={styles.loader}>
                             <div className={styles.contentArea}>
                                 <AppRouter
+                                    notifySidebar={this.handleSelectedMenu}
                                     toggleLoading={this.toggleLoading}
                                 />
                             </div>

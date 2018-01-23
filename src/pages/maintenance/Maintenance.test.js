@@ -2,17 +2,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import Maintenance from "./Maintenance";
 import MaintenanceContainer from "./MaintenanceContainer";
+import PageContainer from "../PageContainer";
 
 import {
     sections,
     MAINTENANCE_SECTION_KEY,
 } from '../sections.conf';
-import Maintenance from "./Maintenance";
-import PageContainer from "../PageContainer";
 
 let maintenancePageInfo = {};
-let toggleLoading = () => {};
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === MAINTENANCE_SECTION_KEY) {
@@ -21,18 +20,34 @@ for(let i = 0; i < sections.length; i++) {
     }
 }
 
-const t = key => key;
+const t = jest.fn();
+const notifySidebar = jest.fn();
+const toggleLoading = jest.fn();
+
+const ownShallow = () => {
+    return shallow(
+        <Maintenance
+            notifySidebar={notifySidebar}
+            pageInfo={maintenancePageInfo}
+            toggleLoading={toggleLoading}
+            t={t}
+        />,
+        {
+            disableLifecycleMethods: true
+        }
+    );
+};
 
 it('Maintenance renders without crashing', () => {
-    shallow(<Maintenance pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
+    ownShallow();
 });
 
 it('Maintenance renders a PageContainer', () => {
-    const wrapper = shallow(<Maintenance pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
+    const wrapper = ownShallow();
     expect(wrapper.find(PageContainer)).toHaveLength(1);
 });
 
 it('Maintenance renders a MaintenanceContainer', () => {
-    const wrapper = shallow(<Maintenance pageInfo={maintenancePageInfo} toggleLoading={toggleLoading} t={t} />);
+    const wrapper = ownShallow();
     expect(wrapper.find(MaintenanceContainer)).toHaveLength(1);
 });

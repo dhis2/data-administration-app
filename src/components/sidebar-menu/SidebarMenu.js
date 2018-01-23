@@ -2,31 +2,22 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { FontIcon, List, ListItem } from 'material-ui';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 import styles from './SidebarMenu.css';
 
 class SidebarMenu extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentSection: this.props.sections[0].key,
-        };
-    }
-
     render() {
         const menu = (
             <List className={styles.list}>
                 {
                     this.props.sections.map((section) => {
-                        const listItemStyle = section.key === this.state.currentSection
+                        const listItemStyle = section.key === this.props.currentSection
                             ? styles.activeItem
                             : styles.item;
                         const icon = typeof section.info.icon === 'string' || section.info.icon instanceof String
                             ? <FontIcon className="material-icons">{section.info.icon}</FontIcon>
                             : section.info.icon;
-                        const handleMenuClick = () => {
-                            this.setState({ currentSection: section.key });
-                        };
 
                         return (
                             <Link key={section.key} className={styles.itemLink} to={section.path}>
@@ -34,7 +25,6 @@ class SidebarMenu extends PureComponent {
                                     key={section.key}
                                     className={listItemStyle}
                                     leftIcon={icon}
-                                    onClick={handleMenuClick}
                                 >
                                     {section.label}
                                 </ListItem>
@@ -44,7 +34,7 @@ class SidebarMenu extends PureComponent {
                 }
             </List>);
         return (
-            <div style={Object.assign(styles.sidebar)} className={styles.leftBar}>
+            <div className={classNames(styles.sidebar, styles.leftBar)}>
                 {menu}
             </div>
         );
@@ -52,6 +42,7 @@ class SidebarMenu extends PureComponent {
 }
 
 SidebarMenu.propTypes = {
+    currentSection: PropTypes.string.isRequired,
     sections: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string,
         label: PropTypes.string,

@@ -16,21 +16,30 @@ jest.mock('d2-ui/lib/circular-progress/CircularProgress', () => ('CircularProgre
 
 const t = jest.fn();
 
+const ownShallow = () => {
+    return shallow(
+        <App t={t} />,
+        {
+            disableLifecycleMethods: true
+        }
+    );
+};
+
 it('renders without crashing', () => {
-    shallow(<App t={t} />);
+    ownShallow();
 });
 
 it('App renders a HeaderBar Component', () => {
-    const wrapper = shallow(<App t={t} />);
+    const wrapper = ownShallow();
     expect(wrapper.find(HeaderBar)).toHaveLength(1);
 });
 
-it('App renders a SidebarMenu Component', () => {
-    const wrapper = shallow(<App t={t} />);
+it('App renders a SidebarMenu', () => {
+    const wrapper = ownShallow();
     expect(wrapper.find(SidebarMenu)).toHaveLength(1);
 });
 
-it('App renders an AppRouter Component', () => {
-    const wrapper = shallow(<App t={t} />);
+it('App renders a AppRouter', () => {
+    const wrapper = ownShallow();
     expect(wrapper.find(AppRouter)).toHaveLength(1);
 });

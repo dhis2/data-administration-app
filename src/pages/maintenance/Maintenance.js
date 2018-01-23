@@ -1,24 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Page from '../Page';
 import PageContainer from '../PageContainer';
 import MaintenanceContainer from './MaintenanceContainer';
 
-const Maintenance = props => (
-    <PageContainer header={props.pageInfo.label}>
-        <MaintenanceContainer
-            t={props.t}
-            toggleLoading={props.toggleLoading}
-        />
-    </PageContainer>
-);
+class Maintenance extends Page {
+   static propTypes = {
+       t: PropTypes.func.isRequired,
+       pageInfo: PropTypes.shape({
+           label: PropTypes.string,
+       }).isRequired,
+   }
 
-Maintenance.propTypes = {
-    t: PropTypes.func.isRequired,
-    pageInfo: PropTypes.shape({
-        label: PropTypes.string,
-    }).isRequired,
-    toggleLoading: PropTypes.func.isRequired,
-};
+   render() {
+       return (
+           <PageContainer header={this.props.pageInfo.label}>
+               <MaintenanceContainer
+                   t={this.props.t}
+                   toggleLoading={this.props.toggleLoading}
+               />
+           </PageContainer>
+       );
+   }
+}
 
 export default Maintenance;
