@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 import DataStatistics from './DataStatistics';
 import DataStatisticsTable from './DataStatisticsTable';
 
-const t = jest.fn();
 const stateWithTablesForDataStatistics = [
     {
         label: 'Object type',
@@ -23,9 +22,12 @@ const stateWithTablesForDataStatistics = [
     },
 ];
 
+const t = jest.fn();
+const updateAppState = jest.fn();
+
 const ownShallow = () => {
     return shallow(
-        <DataStatistics t={t} />,
+        <DataStatistics t={t} updateAppState={updateAppState}/>,
         {
             disableLifecycleMethods: true
         }

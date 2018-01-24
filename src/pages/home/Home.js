@@ -22,19 +22,6 @@ class Home extends Page {
         t: PropTypes.func.isRequired,
     }
 
-    componentWillMount() {
-        this.props.updateAppState({
-            loading: true,
-            currentSection: this.props.sectionKey,
-        });
-    }
-
-    componentDidMount() {
-        this.props.updateAppState({
-            loading: false,
-        });
-    }
-
     render() {
         const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
             <GridSection key={section.key} t={this.props.t} section={section} />

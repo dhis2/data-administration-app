@@ -13,25 +13,13 @@ class Maintenance extends Page {
        }).isRequired,
    }
 
-   componentWillMount() {
-       this.props.updateAppState({
-           loading: true,
-           currentSection: this.props.sectionKey,
-       });
-   }
-
-   componentDidMount() {
-       this.props.updateAppState({
-           loading: false,
-       });
-   }
-
    render() {
        return (
            <PageContainer header={this.props.pageInfo.label}>
                <MaintenanceContainer
                    t={this.props.t}
                    updateAppState={this.props.updateAppState}
+                   {...this.props}
                />
            </PageContainer>
        );

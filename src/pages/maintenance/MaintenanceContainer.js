@@ -24,17 +24,23 @@ class MaintenanceContainer extends Component {
     constructor(props) {
         super(props);
 
-        const checkboxes = {};
-        for (let i = 0; i < maintenanceCheckboxes.length; i++) {
-            const checkbox = maintenanceCheckboxes[i];
-            checkboxes[checkbox.key] = { checked: false };
+        this.state = props ? { ...props } : {};
+
+        // state defaults
+        if (!this.state.hasOwnProperty('checkboxes')) {
+            const checkboxes = {};
+            for (let i = 0; i < maintenanceCheckboxes.length; i++) {
+                const checkbox = maintenanceCheckboxes[i];
+                checkboxes[checkbox.key] = { checked: false };
+            }
+            this.state.checkboxes = checkboxes;
         }
 
-        this.state = {
-            checkAll: false,
-            checkboxes,
-        };
+        if (!this.state.hasOwnProperty('checkAll')) {
+            this.state.checkAll = false;
+        }
 
+        // actions
         this.performMaintenance = this.performMaintenance.bind(this);
         this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
@@ -56,7 +62,12 @@ class MaintenanceContainer extends Component {
     }
 
     performMaintenance() {
-        this.props.updateAppState();
+        this.props.updateAppState({
+            loading: true,
+            checkboxes: this.state.checkboxes,
+            checkAll: this.state.checkAll,
+        });
+
         const checkboxKeys = Object.keys(this.state.checkboxes);
         const formData = new FormData();
 
@@ -76,9 +87,17 @@ class MaintenanceContainer extends Component {
             const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.post('maintenance', formData).then(() => {
-                    this.props.updateAppState();
+                    this.props.updateAppState({
+                        loading: false,
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    });
                 }).catch(() => {
-                    this.props.updateAppState();
+                    this.props.updateAppState({
+                        loading: false,
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    });
                 });
             });
             requests.push(request);
@@ -86,12 +105,27 @@ class MaintenanceContainer extends Component {
 
         // resource table option is checked. It is treated differently
         if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
+            this.props.updateAppState({
+                loading: true,
+                checkboxes: this.state.checkboxes,
+                checkAll: this.state.checkAll,
+            });
             const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.update('resourceTables').then(() => {
-
+                    this.props.updateAppState({
+                        loading: false,
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    });
                 }).catch(() => {
-
+                    /*
+                    this.props.updateAppState({
+                        loading: false,
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    });
+                    */
                 });
             });
             requests.push(request);
@@ -104,13 +138,8 @@ class MaintenanceContainer extends Component {
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
             const toggleCheckbox = (() => {
-                const checked = !checkboxState;
                 checkboxes[checkbox.key].checked = !checkboxState;
                 this.setState({ checkboxes });
-
-                if (checkbox.key === RESOURCE_TABLES_OPTION_KEY) {
-                    this.isResourceTableSelected = checked;
-                }
             });
             return (
                 <GridTile key={checkbox.key}>

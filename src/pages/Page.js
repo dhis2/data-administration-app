@@ -1,17 +1,32 @@
 import { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class Page extends PureComponent {
-    /*
     static propTypes = {
-        currentSection: PropTypes.string.isRequired,
+        updateAppState: PropTypes.func.isRequired,
+        loading: PropTypes.bool.isRequired,
+        sectionKey: PropTypes.string.isRequired,
     }
-    */
+
     constructor(props) {
         super(props);
 
-        this.state = { ...props };
+        this.state = props ? { ...props } : {};
     }
+
+    componentWillMount() {
+        this.props.updateAppState({
+            loading: this.props.hasOwnProperty('loading') ? this.props.loading : true,
+            currentSection: this.props.sectionKey,
+        });
+    }
+
+    componentDidMount() {
+        this.props.updateAppState({
+            loading: this.props.hasOwnProperty('loading') ? this.props.loading : false,
+        });
+    }
+
     /*
     componentWillMount() {
         console.log('COMPONENT WILL MOUNT: ', this.props.currentSection);
