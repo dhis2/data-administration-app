@@ -27,7 +27,7 @@ it('Homepage renders without crashing', () => {
 
 it('Homepage renders a GridList', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(GridList)).toHaveLength(1);
+    expect(wrapper.find('#grid-list-id')).toHaveLength(1);
 });
 
 it('ResourceTableContainer renders the correct number of GridSection', () => {

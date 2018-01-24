@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Material UI
-import { GridList } from 'material-ui/GridList';
+import classNames from 'classnames';
 
 // Components
 import Page from '../Page';
@@ -24,13 +23,15 @@ class Home extends Page {
 
     render() {
         const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
-            <GridSection key={section.key} t={this.props.t} section={section} />
+            <div key={section.key} className={classNames('col-sm-12 col-md-6 col-lg-4', styles.gridContainer)}>
+                <GridSection key={section.key} t={this.props.t} section={section} />
+            </div>
         ));
 
         return (
-            <GridList className={styles.gridContainer} cellHeight={218} cols={3} padding={8}>
+            <div id="grid-list-id" className="row">
                 {gridElements}
-            </GridList>
+            </div>
         );
     }
 }
