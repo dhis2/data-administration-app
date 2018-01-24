@@ -1,10 +1,10 @@
 // Components
-import HomePage from './home/Home';
 import DataIntegrity from './data-integrity/DataIntegrity';
 import Maintenance from './maintenance/Maintenance';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
+import Home from './home/Home';
 
 export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
@@ -17,7 +17,7 @@ export const sections = [
     {
         key: HOME_SECTION_KEY,
         path: '/',
-        component: HomePage,
+        component: Home,
         info: {
             label: 'Home',
             icon: 'home',
@@ -29,7 +29,7 @@ export const sections = [
         component: DataIntegrity,
         info: {
             label: 'Data Integrity',
-            icon: 'filter_list',
+            icon: 'link',
             description: 'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
             actionText: 'Check Data Integrity',
         },
