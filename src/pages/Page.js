@@ -6,12 +6,14 @@ class Page extends PureComponent {
         updateAppState: PropTypes.func.isRequired,
         loading: PropTypes.bool.isRequired,
         sectionKey: PropTypes.string.isRequired,
+        pageState: PropTypes.object.isRequired,
     }
 
     constructor(props) {
         super(props);
 
-        this.state = props ? { ...props } : {};
+        this.state = props && props.pageState ? { ...props.pageState } : {};
+        this.state.loading = props && props.hasOwnProperty('loading') ? props.loading : false;
     }
 
     componentWillMount() {

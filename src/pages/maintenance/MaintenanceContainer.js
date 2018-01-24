@@ -64,8 +64,10 @@ class MaintenanceContainer extends Component {
     performMaintenance() {
         this.props.updateAppState({
             loading: true,
-            checkboxes: this.state.checkboxes,
-            checkAll: this.state.checkAll,
+            pageState: {
+                checkboxes: this.state.checkboxes,
+                checkAll: this.state.checkAll,
+            },
         });
 
         const checkboxKeys = Object.keys(this.state.checkboxes);
@@ -89,14 +91,18 @@ class MaintenanceContainer extends Component {
                 api.post('maintenance', formData).then(() => {
                     this.props.updateAppState({
                         loading: false,
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
                     });
                 }).catch(() => {
                     this.props.updateAppState({
                         loading: false,
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
                     });
                 });
             });
@@ -107,25 +113,29 @@ class MaintenanceContainer extends Component {
         if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
             this.props.updateAppState({
                 loading: true,
-                checkboxes: this.state.checkboxes,
-                checkAll: this.state.checkAll,
+                pageState: {
+                    checkboxes: this.state.checkboxes,
+                    checkAll: this.state.checkAll,
+                },
             });
             const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.update('resourceTables').then(() => {
                     this.props.updateAppState({
                         loading: false,
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
                     });
                 }).catch(() => {
-                    /*
                     this.props.updateAppState({
                         loading: false,
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
                     });
-                    */
                 });
             });
             requests.push(request);

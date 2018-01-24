@@ -19,7 +19,7 @@ class Maintenance extends Page {
                <MaintenanceContainer
                    t={this.props.t}
                    updateAppState={this.props.updateAppState}
-                   {...this.props}
+                   {...this.props.pageState}
                />
            </PageContainer>
        );

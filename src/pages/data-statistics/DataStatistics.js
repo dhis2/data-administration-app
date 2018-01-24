@@ -163,9 +163,11 @@ class DataStatistics extends Page {
         if (!this.state.loading && !this.state.loaded) {
             this.props.updateAppState({
                 loading: true,
-                loaded: false,
-                tables: this.state.tables,
                 currentSection: this.props.sectionKey,
+                pageState: {
+                    loaded: false,
+                    tables: this.state.tables,
+                },
             });
 
             getInstance().then((d2) => {
@@ -183,17 +185,21 @@ class DataStatistics extends Page {
 
                     this.props.updateAppState({
                         loading: false,
-                        loaded: true,
-                        tables,
                         currentSection: this.props.sectionKey,
+                        pageState: {
+                            loaded: true,
+                            tables,
+                        },
                     });
                 }).catch(() => {
                     // TODO show error
                     this.props.updateAppState({
                         loading: false,
-                        loaded: false,
-                        tables: [],
                         currentSection: this.props.sectionKey,
+                        pageState: {
+                            loaded: false,
+                            tables: [],
+                        },
                     });
                 });
             });

@@ -37,7 +37,12 @@ class App extends PureComponent {
     }
 
     updateAppState(appState) {
-        this.setState(appState);
+        // clear page state because we are updating page
+        if (appState.currentSection && !appState.pageState && this.state.currentSection !== appState.currentSection) {
+            this.setState({ ...appState, pageState: undefined });
+        } else {
+            this.setState(appState);
+        }
     }
 
     render() {
