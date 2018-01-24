@@ -18,11 +18,11 @@ import styles from './Maintenance.css';
 class MaintenanceContainer extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired,
-        toggleLoading: PropTypes.func.isRequired,
+        updateAppState: PropTypes.func.isRequired,
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         const checkboxes = {};
         for (let i = 0; i < maintenanceCheckboxes.length; i++) {
@@ -56,7 +56,7 @@ class MaintenanceContainer extends Component {
     }
 
     performMaintenance() {
-        this.props.toggleLoading();
+        this.props.updateAppState();
         const checkboxKeys = Object.keys(this.state.checkboxes);
         const formData = new FormData();
 
@@ -76,9 +76,9 @@ class MaintenanceContainer extends Component {
             const request = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.post('maintenance', formData).then(() => {
-                    this.props.toggleLoading();
+                    this.props.updateAppState();
                 }).catch(() => {
-                    this.props.toggleLoading();
+                    this.props.updateAppState();
                 });
             });
             requests.push(request);

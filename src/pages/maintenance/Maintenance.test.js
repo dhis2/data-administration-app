@@ -21,15 +21,13 @@ for(let i = 0; i < sections.length; i++) {
 }
 
 const t = jest.fn();
-const notifySidebar = jest.fn();
-const toggleLoading = jest.fn();
+const updateAppState = jest.fn();
 
 const ownShallow = () => {
     return shallow(
         <Maintenance
-            notifySidebar={notifySidebar}
             pageInfo={maintenancePageInfo}
-            toggleLoading={toggleLoading}
+            updateAppState={updateAppState}
             t={t}
         />,
         {

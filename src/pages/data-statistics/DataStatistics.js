@@ -161,7 +161,13 @@ class DataStatistics extends Page {
     componentDidMount() {
         // request to GET statistics
         if (!this.state.loading && !this.state.loaded) {
-            this.props.toggleLoading({ loading: true, loaded: false, tables: this.state.tables });
+            this.props.updateAppState({
+                loading: true,
+                loaded: false,
+                tables: this.state.tables,
+                currentSection: this.props.sectionKey,
+            });
+
             getInstance().then((d2) => {
                 const api = d2.Api.getApi();
                 api.get('dataSummary').then((response) => {
@@ -174,10 +180,21 @@ class DataStatistics extends Page {
                             .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
                         DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
                     ];
-                    this.props.toggleLoading({ loading: false, loaded: true, tables });
+
+                    this.props.updateAppState({
+                        loading: false,
+                        loaded: true,
+                        tables,
+                        currentSection: this.props.sectionKey,
+                    });
                 }).catch(() => {
                     // TODO show error
-                    this.props.toggleLoading({ loading: false, loaded: false, tables: [] });
+                    this.props.updateAppState({
+                        loading: false,
+                        loaded: false,
+                        tables: [],
+                        currentSection: this.props.sectionKey,
+                    });
                 });
             });
         }

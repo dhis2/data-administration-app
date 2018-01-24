@@ -9,12 +9,14 @@ import {sections} from "../../pages/sections.conf";
 
 const notifySidebar = jest.fn();
 const toggleLoading = jest.fn();
+const pageState = {}
 
 const ownShallow = () => {
     return shallow(
         <AppRouter
             notifySidebar={notifySidebar}
-            toggleLoading={toggleLoading}
+            updateAppState={toggleLoading}
+            appState={pageState}
         />,
         {
             disableLifecycleMethods: true

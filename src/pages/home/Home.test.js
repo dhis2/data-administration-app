@@ -10,11 +10,11 @@ import GridSection from './grid-section/GridSection';
 import { sections } from '../sections.conf';
 
 const t = jest.fn();
-const notifySidebar = jest.fn();
+const updateAppState = jest.fn();
 
 const ownShallow = () => {
     return shallow(
-        <Homepage t={t} notifySidebar={notifySidebar}/>,
+        <Homepage t={t} updateAppState={updateAppState}/>,
         {
             disableLifecycleMethods: true
         }

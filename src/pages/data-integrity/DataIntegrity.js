@@ -10,6 +10,19 @@ class DataIntegrity extends Page {
         pageInfo: PropTypes.object.isRequired,
     }
 
+    componentWillMount() {
+        this.props.updateAppState({
+            loading: true,
+            currentSection: this.props.sectionKey,
+        });
+    }
+
+    componentDidMount() {
+        this.props.updateAppState({
+            loading: false,
+        });
+    }
+
     render() {
         return (
             <PageContainer header={this.props.t(this.props.pageInfo.label)}>Data Integrity</PageContainer>

@@ -18,17 +18,16 @@ NoMatch.propTypes = {
     location: PropTypes.object.isRequired,
 };
 
-const AppRouter = ({ notifySidebar, toggleLoading, pageState }) => {
+const AppRouter = ({ updateAppState, appState }) => {
     const routes = sections.map((section) => {
         const routeRender = () => {
             const Page = translate()(section.component);
             return (
                 <Page
-                    notifySidebar={notifySidebar}
-                    toggleLoading={toggleLoading}
+                    updateAppState={updateAppState}
                     pageInfo={section.info}
                     sectionKey={section.key}
-                    {...pageState}
+                    {...appState}
                 />
             );
         };
@@ -52,9 +51,8 @@ const AppRouter = ({ notifySidebar, toggleLoading, pageState }) => {
 };
 
 AppRouter.propTypes = {
-    notifySidebar: PropTypes.func.isRequired,
-    toggleLoading: PropTypes.func.isRequired,
-    pageState: PropTypes.object.isRequired,
+    updateAppState: PropTypes.func.isRequired,
+    appState: PropTypes.object.isRequired,
 };
 
 export default AppRouter;

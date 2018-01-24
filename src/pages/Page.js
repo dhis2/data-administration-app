@@ -4,7 +4,7 @@ import { PureComponent } from 'react';
 class Page extends PureComponent {
     /*
     static propTypes = {
-        sectionKey: PropTypes.string.isRequired,
+        currentSection: PropTypes.string.isRequired,
     }
     */
     constructor(props) {
@@ -14,27 +14,27 @@ class Page extends PureComponent {
     }
     /*
     componentWillMount() {
-        console.log('COMPONENT WILL MOUNT: ', this.props.sectionKey);
+        console.log('COMPONENT WILL MOUNT: ', this.props.currentSection);
     }
 
     componentDidMount() {
-        console.log('COMPONENT DID MOUNT: ', this.props.sectionKey);
+        console.log('COMPONENT DID MOUNT: ', this.props.currentSection);
     }
 
     componentWillReceiveProps() {
-        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.sectionKey);
+        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.currentSection);
     }
 
     componentWillUpdate() {
-        console.log('COMPONENT WILL UPDATE: ', this.props.sectionKey);
+        console.log('COMPONENT WILL UPDATE: ', this.props.currentSection);
     }
 
     componentDidUpdate() {
-        console.log('COMPONENT DID UPDATE: ', this.props.sectionKey);
+        console.log('COMPONENT DID UPDATE: ', this.props.currentSection);
     }
 
     componentWillUnmount() {
-        console.log('COMPONENT WILL UNMOUNT: ', this.props.sectionKey);
+        console.log('COMPONENT WILL UNMOUNT: ', this.props.currentSection);
     }
     */
 }
