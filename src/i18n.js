@@ -6,7 +6,7 @@ i18n
     .use(Backend)
     .use(reactI18nextModule)
     .init({
-        debug: process.env.NODE_ENV === 'development',
+        debug: false /* process.env.NODE_ENV === 'development' */,
         returnEmptyString: false,
         fallbackLng: false,
         keySeparator: '|',

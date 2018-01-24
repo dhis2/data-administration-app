@@ -41,8 +41,8 @@ class App extends PureComponent {
         this.setState({ currentSection: sectionKey });
     }
 
-    toggleLoading() {
-        this.setState({ loading: !this.state.loading });
+    toggleLoading(pageState) {
+        this.setState({ loading: pageState.loading, pageState });
     }
 
     render() {
@@ -53,6 +53,7 @@ class App extends PureComponent {
             },
         ));
 
+        const pageState = this.state.pageState || {};
         const isLoading = this.state.loading;
         const loadingCombo = (
             <span>
@@ -70,6 +71,7 @@ class App extends PureComponent {
                         <div className={styles.loader}>
                             <div className={styles.contentArea}>
                                 <AppRouter
+                                    pageState={pageState}
                                     notifySidebar={this.handleSelectedMenu}
                                     toggleLoading={this.toggleLoading}
                                 />
