@@ -9,6 +9,10 @@ class Page extends PureComponent {
         pageState: PropTypes.object.isRequired,
     }
 
+    static contextTypes = {
+        d2: PropTypes.object,
+    }
+
     constructor(props) {
         super(props);
 

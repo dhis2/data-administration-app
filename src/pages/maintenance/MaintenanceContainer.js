@@ -7,9 +7,6 @@ import FlatButton from 'material-ui/FlatButton';
 import Checkbox from 'material-ui/Checkbox';
 import { orange500 } from 'material-ui/styles/colors';
 
-// d2
-import { getInstance } from 'd2/lib/d2';
-
 // App configs
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY } from './maintenance.conf';
 
@@ -20,6 +17,10 @@ class MaintenanceContainer extends Component {
         t: PropTypes.func.isRequired,
         updateAppState: PropTypes.func.isRequired,
     }
+
+    static contextTypes = {
+        d2: PropTypes.object,
+    };
 
     constructor(props) {
         super(props);
@@ -78,26 +79,18 @@ class MaintenanceContainer extends Component {
 
     performMaintenance() {
         const formData = this.buildFormData();
+        const api = this.context.d2.Api.getApi();
         const apiRequests = [];
-        const d2Promises = [];
         if (formData) {
-            const d2Promise = getInstance().then((d2) => {
-                const api = d2.Api.getApi();
-                apiRequests.push(api.post('maintenance', formData));
-            });
-            d2Promises.push(d2Promise);
+            apiRequests.push(api.post('maintenance', formData));
         }
 
         // resource table option is checked. It is treated differently
         if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
-            const d2Promise = getInstance().then((d2) => {
-                const api = d2.Api.getApi();
-                apiRequests.push(api.update('resourceTables'));
-            });
-            d2Promises.push(d2Promise);
+            apiRequests.push(api.update('resourceTables'));
         }
 
-        Promise.all(d2Promises).then(() => {
+        if (apiRequests.length > 0) {
             this.props.updateAppState({
                 loading: true,
                 pageState: {
@@ -123,7 +116,7 @@ class MaintenanceContainer extends Component {
                     },
                 });
             });
-        });
+        }
     }
 
     render() {

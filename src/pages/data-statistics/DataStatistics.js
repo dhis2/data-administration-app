@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// d2
-import { getInstance } from 'd2/lib/d2';
-
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
@@ -159,6 +156,10 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
+        super.componentDidMount();
+
+        const api = this.context.d2.Api.getApi();
+
         // request to GET statistics
         if (!this.state.loading && !this.state.loaded) {
             this.props.updateAppState({
@@ -170,37 +171,34 @@ class DataStatistics extends Page {
                 },
             });
 
-            getInstance().then((d2) => {
-                const api = d2.Api.getApi();
-                api.get('dataSummary').then((response) => {
-                    const tables = [
-                        DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
-                        DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
-                        DataStatistics
-                            .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
-                        DataStatistics
-                            .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
-                        DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
-                    ];
+            api.get('dataSummary').then((response) => {
+                const tables = [
+                    DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
+                    DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
+                    DataStatistics
+                        .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
+                    DataStatistics
+                        .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
+                    DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
+                ];
 
-                    this.props.updateAppState({
-                        loading: false,
-                        currentSection: this.props.sectionKey,
-                        pageState: {
-                            loaded: true,
-                            tables,
-                        },
-                    });
-                }).catch(() => {
-                    // TODO show error
-                    this.props.updateAppState({
-                        loading: false,
-                        currentSection: this.props.sectionKey,
-                        pageState: {
-                            loaded: true,
-                            tables: [],
-                        },
-                    });
+                this.props.updateAppState({
+                    loading: false,
+                    currentSection: this.props.sectionKey,
+                    pageState: {
+                        loaded: true,
+                        tables,
+                    },
+                });
+            }).catch(() => {
+                // TODO show error
+                this.props.updateAppState({
+                    loading: false,
+                    currentSection: this.props.sectionKey,
+                    pageState: {
+                        loaded: true,
+                        tables: [],
+                    },
                 });
             });
         }
