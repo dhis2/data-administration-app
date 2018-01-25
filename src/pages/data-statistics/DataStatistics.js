@@ -197,7 +197,7 @@ class DataStatistics extends Page {
                         loading: false,
                         currentSection: this.props.sectionKey,
                         pageState: {
-                            loaded: false,
+                            loaded: true,
                             tables: [],
                         },
                     });

@@ -45,6 +45,21 @@ class MaintenanceContainer extends Component {
         this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
 
+    buildFormData() {
+        let formData = null;
+        const checkboxKeys = Object.keys(this.state.checkboxes);
+        for (let i = 0; i < checkboxKeys.length; i++) {
+            const key = checkboxKeys[i];
+            const checked = this.state.checkboxes[key].checked;
+            if (key !== RESOURCE_TABLES_OPTION_KEY && checked) {
+                formData = formData || new FormData();
+                formData.append(key, checked);
+            }
+        }
+
+        return formData;
+    }
+
     toggleCheckAll() {
         const checked = !this.state.checkAll;
 
@@ -62,55 +77,27 @@ class MaintenanceContainer extends Component {
     }
 
     performMaintenance() {
-        this.props.updateAppState({
-            loading: true,
-            pageState: {
-                checkboxes: this.state.checkboxes,
-                checkAll: this.state.checkAll,
-            },
-        });
-
-        const checkboxKeys = Object.keys(this.state.checkboxes);
-        const formData = new FormData();
-
-        let optionsSelected = 0;
-        for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i];
-            const checked = this.state.checkboxes[key].checked;
-            if (key !== RESOURCE_TABLES_OPTION_KEY && checked) {
-                optionsSelected += 1;
-                formData.append(key, checked);
-            }
-        }
-
-        const requests = [];
-        // FIX ME perform concurrent request. Similar to all in axios
-        if (optionsSelected > 0) {
-            const request = getInstance().then((d2) => {
+        const formData = this.buildFormData();
+        const apiRequests = [];
+        const d2Promises = [];
+        if (formData) {
+            const d2Promise = getInstance().then((d2) => {
                 const api = d2.Api.getApi();
-                api.post('maintenance', formData).then(() => {
-                    this.props.updateAppState({
-                        loading: false,
-                        pageState: {
-                            checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
-                        },
-                    });
-                }).catch(() => {
-                    this.props.updateAppState({
-                        loading: false,
-                        pageState: {
-                            checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
-                        },
-                    });
-                });
+                apiRequests.push(api.post('maintenance', formData));
             });
-            requests.push(request);
+            d2Promises.push(d2Promise);
         }
 
         // resource table option is checked. It is treated differently
         if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
+            const d2Promise = getInstance().then((d2) => {
+                const api = d2.Api.getApi();
+                apiRequests.push(api.update('resourceTables'));
+            });
+            d2Promises.push(d2Promise);
+        }
+
+        Promise.all(d2Promises).then(() => {
             this.props.updateAppState({
                 loading: true,
                 pageState: {
@@ -118,28 +105,25 @@ class MaintenanceContainer extends Component {
                     checkAll: this.state.checkAll,
                 },
             });
-            const request = getInstance().then((d2) => {
-                const api = d2.Api.getApi();
-                api.update('resourceTables').then(() => {
-                    this.props.updateAppState({
-                        loading: false,
-                        pageState: {
-                            checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
-                        },
-                    });
-                }).catch(() => {
-                    this.props.updateAppState({
-                        loading: false,
-                        pageState: {
-                            checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
-                        },
-                    });
+
+            Promise.all(apiRequests).then(() => {
+                this.props.updateAppState({
+                    loading: false,
+                    pageState: {
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    },
+                });
+            }).catch(() => {
+                this.props.updateAppState({
+                    loading: false,
+                    pageState: {
+                        checkboxes: this.state.checkboxes,
+                        checkAll: this.state.checkAll,
+                    },
                 });
             });
-            requests.push(request);
-        }
+        });
     }
 
     render() {

@@ -17,6 +17,7 @@ class Page extends PureComponent {
     }
 
     componentWillMount() {
+        // console.log('COMPONENT WILL MOUNT: ', this.props.sectionKey);
         this.props.updateAppState({
             loading: this.props.hasOwnProperty('loading') ? this.props.loading : true,
             currentSection: this.props.sectionKey,
@@ -24,34 +25,26 @@ class Page extends PureComponent {
     }
 
     componentDidMount() {
+        // console.log('COMPONENT DID MOUNT: ', this.props.sectionKey);
         this.props.updateAppState({
             loading: this.props.hasOwnProperty('loading') ? this.props.loading : false,
         });
     }
-
     /*
-    componentWillMount() {
-        console.log('COMPONENT WILL MOUNT: ', this.props.currentSection);
-    }
-
-    componentDidMount() {
-        console.log('COMPONENT DID MOUNT: ', this.props.currentSection);
-    }
-
     componentWillReceiveProps() {
-        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.currentSection);
+        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.sectionKey);
     }
 
     componentWillUpdate() {
-        console.log('COMPONENT WILL UPDATE: ', this.props.currentSection);
+        console.log('COMPONENT WILL UPDATE: ', this.props.sectionKey);
     }
 
     componentDidUpdate() {
-        console.log('COMPONENT DID UPDATE: ', this.props.currentSection);
+        console.log('COMPONENT DID UPDATE: ', this.props.sectionKey);
     }
 
     componentWillUnmount() {
-        console.log('COMPONENT WILL UNMOUNT: ', this.props.currentSection);
+        console.log('COMPONENT WILL UNMOUNT: ', this.props.sectionKey);
     }
     */
 }
