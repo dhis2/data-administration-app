@@ -20,12 +20,15 @@ class MaintenanceContainer extends Component {
 
     static contextTypes = {
         d2: PropTypes.object,
+        loading: PropTypes.bool,
+        currentSection: PropTypes.string,
+        pageState: PropTypes.object,
     };
 
-    constructor(props) {
+    constructor(props, context) {
         super(props);
 
-        this.state = props ? { ...props } : {};
+        this.state = context && context.pageState ? { ...context.pageState } : {};
 
         // state defaults
         if (!this.state.hasOwnProperty('checkboxes')) {

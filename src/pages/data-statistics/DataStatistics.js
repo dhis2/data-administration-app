@@ -22,8 +22,8 @@ class DataStatistics extends Page {
         t: PropTypes.func.isRequired,
     }
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
         this.state.tables = this.state.tables || [];
     }
@@ -156,12 +156,10 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
-        super.componentDidMount();
-
         const api = this.context.d2.Api.getApi();
 
         // request to GET statistics
-        if (!this.state.loading && !this.state.loaded) {
+        if (!this.context.loading && !this.state.loaded) {
             this.props.updateAppState({
                 loading: true,
                 currentSection: this.props.sectionKey,

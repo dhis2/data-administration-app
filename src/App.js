@@ -25,6 +25,12 @@ class App extends PureComponent {
         t: PropTypes.func.isRequired,
     }
 
+    static childContextTypes = {
+        loading: PropTypes.bool,
+        currentSection: PropTypes.string,
+        pageState: PropTypes.object,
+    }
+
     constructor(props) {
         super(props);
 
@@ -36,10 +42,18 @@ class App extends PureComponent {
         this.updateAppState = this.updateAppState.bind(this);
     }
 
+    getChildContext() {
+        return {
+            loading: this.state.loading,
+            currentSection: this.state.currentSection,
+            pageState: this.state.pageState,
+        };
+    }
+
     updateAppState(appState) {
         // clear page state because we are updating page
         if (appState.currentSection && !appState.pageState && this.state.currentSection !== appState.currentSection) {
-            this.setState({ ...appState, pageState: undefined });
+            this.setState({ ...appState, pageState: undefined, loading: false });
         } else {
             this.setState(appState);
         }
