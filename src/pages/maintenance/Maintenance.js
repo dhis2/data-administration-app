@@ -6,7 +6,6 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import FlatButton from 'material-ui/FlatButton';
 import Checkbox from 'material-ui/Checkbox';
 import { Card, CardText } from 'material-ui/Card';
-import { orange500 } from 'material-ui/styles/colors';
 
 import Page from '../Page';
 
@@ -94,7 +93,7 @@ class Maintenance extends Page {
 
         // resource table option is checked. It is treated differently
         if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
-            apiRequests.push(api.update('resourceTables'));
+            apiRequests.push(api.post('resourceTables'));
         }
 
         if (apiRequests.length > 0) {
@@ -154,6 +153,7 @@ class Maintenance extends Page {
                         <Checkbox
                             id="maintenance-check-all"
                             className={styles.maintenanceCheckAll}
+                            label={t('Select all')}
                             checked={this.state.checkAll}
                             onCheck={this.toggleCheckAll}
                         />
@@ -167,7 +167,7 @@ class Maintenance extends Page {
                         </GridList>
                         <FlatButton
                             className={styles.maintenanceActionButton}
-                            backgroundColor={orange500}
+                            backgroundColor="#004ba0"
                             label={t('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
                         />
