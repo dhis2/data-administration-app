@@ -10,10 +10,7 @@ import GridSection from './grid-section/GridSection';
 import styles from './Home.css';
 
 // App configs
-import {
-    sections,
-    HOME_SECTION_KEY,
-} from '../sections.conf';
+import { sections } from '../sections.conf';
 
 
 class Home extends Page {
@@ -22,7 +19,7 @@ class Home extends Page {
     }
 
     render() {
-        const gridElements = sections.filter(section => section.key !== HOME_SECTION_KEY).map(section => (
+        const gridElements = sections.map(section => (
             <div key={section.key} className={classNames('col-sm-12 col-md-6 col-lg-4', styles.gridContainer)}>
                 <GridSection key={section.key} t={this.props.t} section={section} />
             </div>

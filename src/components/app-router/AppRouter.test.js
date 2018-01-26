@@ -35,6 +35,6 @@ it('AppRouter renders a Switch', () => {
 
 it('AppRouter renders the correct number of Route', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(Route)).toHaveLength(sections.length + 1);    // Pages plus no match route
+    expect(wrapper.find(Route)).toHaveLength(sections.length + 2);    // Pages plus home and no match route
 });
 

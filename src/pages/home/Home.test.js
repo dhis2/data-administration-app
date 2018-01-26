@@ -30,8 +30,8 @@ it('Homepage renders a GridList', () => {
     expect(wrapper.find('#grid-list-id')).toHaveLength(1);
 });
 
-it('ResourceTableContainer renders the correct number of GridSection', () => {
+it('Home renders the correct number of GridSection', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(GridSection)).toHaveLength(sections.length - 1);    // Home should not be rendered to the list
+    expect(wrapper.find(GridSection)).toHaveLength(sections.length);
 });
 

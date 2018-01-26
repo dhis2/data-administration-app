@@ -5,6 +5,8 @@ import { translate } from 'react-i18next';
 
 import { Route, Switch } from 'react-router-dom';
 
+import Home from '../../pages/home/Home';
+
 // App configs
 import { sections } from '../../pages/sections.conf';
 
@@ -40,7 +42,21 @@ const AppRouter = ({ updateAppState, appState }) => {
             />
         );
     });
+
+    /* Home route */
+    const HomeTranslate = translate()(Home);
+    const homeRouteRender = () => (
+        <HomeTranslate
+            updateAppState={updateAppState}
+            sectionKey="home"
+        />
+    );
+
+    routes.push(<Route key="home" exact path="/" render={homeRouteRender} />);
+
+    /* No Match Route */
     routes.push(<Route key="no-match-route" component={NoMatch} />);
+
     return (
         <main>
             <Switch>

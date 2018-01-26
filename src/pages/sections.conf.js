@@ -4,9 +4,7 @@ import Maintenance from './maintenance/Maintenance';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
-import Home from './home/Home';
 
-export const HOME_SECTION_KEY = 'home';
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
 export const MAINTENANCE_SECTION_KEY = 'maintenance';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
@@ -14,15 +12,6 @@ export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
 export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
 
 export const sections = [
-    {
-        key: HOME_SECTION_KEY,
-        path: '/',
-        component: Home,
-        info: {
-            label: 'Home',
-            icon: 'home',
-        },
-    },
     {
         key: DATA_INTEGRITY_SECTION_KEY,
         path: '/data-integrity',

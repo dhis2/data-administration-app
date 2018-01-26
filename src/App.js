@@ -13,10 +13,7 @@ import AppRouter from './components/app-router/AppRouter';
 import styles from './App.css';
 
 // App configs
-import {
-    sections,
-    HOME_SECTION_KEY,
-} from './pages/sections.conf';
+import { sections } from './pages/sections.conf';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -35,7 +32,7 @@ class App extends PureComponent {
         super(props);
 
         this.state = {
-            currentSection: HOME_SECTION_KEY,
+            currentSection: '',
             loading: false,
         };
 
