@@ -11,7 +11,7 @@ i18n
         fallbackLng: false,
         keySeparator: '|',
         backend: {
-            loadPath: '/i18n/{{lng}}.json',
+            loadPath: './i18n/{{lng}}.json',
         },
         react: {
             wait: true,
