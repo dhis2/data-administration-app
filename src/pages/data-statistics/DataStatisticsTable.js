@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Material UI
@@ -13,41 +13,47 @@ import {
 
 import styles from './DataStatistics.css';
 
-const DataStatisticsTable = ({ t, label, elements }) => {
-    const rows = elements.map(element => (
-        <TableRow key={element.label}>
-            <TableRowColumn>{t(element.label)}</TableRowColumn>
-            <TableRowColumn>{element.count}</TableRowColumn>
-        </TableRow>
-    ));
-    return (
-        <div className={styles.statisticsTable}>
-            <Table selectable={false}>
-                <TableHeader
-                    className={styles.statisticsTableHeader}
-                    displaySelectAll={false}
-                    adjustForCheckbox={false}
-                    enableSelectAll={false}
-                >
-                    <TableRow>
-                        <TableHeaderColumn>{t(label)}</TableHeaderColumn>
-                    </TableRow>
-                </TableHeader>
-                <TableBody
-                    displayRowCheckbox={false}
-                    stripedRows={false}
-                >
-                    {rows}
-                </TableBody>
-            </Table>
-        </div>
-    );
-};
+class DataStatisticsTable extends PureComponent {
+    static propTypes = {
+        label: PropTypes.string.isRequired,
+        elements: PropTypes.array.isRequired,
+    }
 
-DataStatisticsTable.propTypes = {
-    t: PropTypes.func.isRequired,
-    label: PropTypes.string.isRequired,
-    elements: PropTypes.array.isRequired,
-};
+    static contextTypes = {
+        t: PropTypes.func.isRequired,
+    }
+
+    render() {
+        const t = this.context.t;
+        const rows = this.props.elements.map(element => (
+            <TableRow key={element.label}>
+                <TableRowColumn>{t(element.label)}</TableRowColumn>
+                <TableRowColumn>{element.count}</TableRowColumn>
+            </TableRow>
+        ));
+        return (
+            <div className={styles.statisticsTable}>
+                <Table selectable={false}>
+                    <TableHeader
+                        className={styles.statisticsTableHeader}
+                        displaySelectAll={false}
+                        adjustForCheckbox={false}
+                        enableSelectAll={false}
+                    >
+                        <TableRow>
+                            <TableHeaderColumn>{t(this.props.label)}</TableHeaderColumn>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody
+                        displayRowCheckbox={false}
+                        stripedRows={false}
+                    >
+                        {rows}
+                    </TableBody>
+                </Table>
+            </div>
+        );
+    }
+}
 
 export default DataStatisticsTable;

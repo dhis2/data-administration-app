@@ -26,6 +26,8 @@ class App extends PureComponent {
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
         pageState: PropTypes.object,
+        updateAppState: PropTypes.func,
+        t: PropTypes.func,
     }
 
     constructor(props) {
@@ -44,6 +46,8 @@ class App extends PureComponent {
             loading: this.state.loading,
             currentSection: this.state.currentSection,
             pageState: this.state.pageState,
+            updateAppState: this.updateAppState,
+            t: this.props.t,
         };
     }
 

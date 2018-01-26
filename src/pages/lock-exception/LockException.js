@@ -8,16 +8,15 @@ import Page from '../Page';
 
 class LockException extends Page {
     static propTypes = {
-        t: PropTypes.func.isRequired,
         pageInfo: PropTypes.object.isRequired,
     }
 
     render() {
         return (
             <div className="page-wrapper">
-                <h1>{this.props.t(this.props.pageInfo.label)}</h1>
+                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
                 <Card>
-                    <CardText>{this.props.t(this.props.pageInfo.label)}</CardText>
+                    <CardText>{this.context.t(this.props.pageInfo.label)}</CardText>
                 </Card>
             </div>
         );

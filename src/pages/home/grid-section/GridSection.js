@@ -12,7 +12,6 @@ import styles from './GridSection.css';
 
 class GridSection extends PureComponent {
     static propTypes = {
-        t: PropTypes.func.isRequired,
         section: PropTypes.shape({
             key: PropTypes.string,
             path: PropTypes.string,
@@ -25,8 +24,12 @@ class GridSection extends PureComponent {
         }).isRequired,
     }
 
+    static contextTypes = {
+        t: PropTypes.func,
+    }
+
     render() {
-        const t = this.props.t;
+        const t = this.context.t;
         return (
             <Link className="link" to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={styles.gridElement}>

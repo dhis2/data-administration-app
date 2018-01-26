@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class Page extends Component {
     static propTypes = {
-        updateAppState: PropTypes.func.isRequired,
         sectionKey: PropTypes.string.isRequired,
     }
 
@@ -12,6 +11,8 @@ class Page extends Component {
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
         pageState: PropTypes.object,
+        updateAppState: PropTypes.func,
+        t: PropTypes.func,
     }
 
     constructor(props, context) {
@@ -24,7 +25,7 @@ class Page extends Component {
     componentWillMount() {
         // console.log('COMPONENT WILL MOUNT: ', this.props.sectionKey);
         // console.log('CURRENT SECTION: ', this.context.currentSection);
-        this.props.updateAppState({
+        this.context.updateAppState({
             currentSection: this.props.sectionKey,
         });
     }

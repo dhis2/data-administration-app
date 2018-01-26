@@ -17,8 +17,6 @@ import styles from './Maintenance.css';
 
 class Maintenance extends Page {
     static propTypes = {
-        t: PropTypes.func.isRequired,
-        updateAppState: PropTypes.func.isRequired,
         pageInfo: PropTypes.object.isRequired,
     }
 
@@ -27,6 +25,8 @@ class Maintenance extends Page {
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
         pageState: PropTypes.object,
+        t: PropTypes.func,
+        updateAppState: PropTypes.func,
     };
 
     constructor(props, context) {
@@ -98,7 +98,7 @@ class Maintenance extends Page {
         }
 
         if (apiRequests.length > 0) {
-            this.props.updateAppState({
+            this.context.updateAppState({
                 loading: true,
                 pageState: {
                     checkboxes: this.state.checkboxes,
@@ -107,7 +107,7 @@ class Maintenance extends Page {
             });
 
             Promise.all(apiRequests).then(() => {
-                this.props.updateAppState({
+                this.context.updateAppState({
                     loading: false,
                     pageState: {
                         checkboxes: this.state.checkboxes,
@@ -115,7 +115,7 @@ class Maintenance extends Page {
                     },
                 });
             }).catch(() => {
-                this.props.updateAppState({
+                this.context.updateAppState({
                     loading: false,
                     pageState: {
                         checkboxes: this.state.checkboxes,
@@ -127,7 +127,7 @@ class Maintenance extends Page {
     }
 
     render() {
-        const t = this.props.t;
+        const t = this.context.t;
         const checkboxes = this.state.checkboxes;
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
@@ -148,7 +148,7 @@ class Maintenance extends Page {
 
         return (
             <div className="page-wrapper">
-                <h1>{this.props.t(this.props.pageInfo.label)}</h1>
+                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
                 <Card>
                     <CardText>
                         <Checkbox

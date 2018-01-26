@@ -2,21 +2,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { GridList } from 'material-ui/GridList';
-
 import Homepage from './Home';
 import GridSection from './grid-section/GridSection';
 
 import { sections } from '../sections.conf';
 
-const t = jest.fn();
-const updateAppState = jest.fn();
-
 const ownShallow = () => {
     return shallow(
-        <Homepage t={t} updateAppState={updateAppState}/>,
+        <Homepage sectionKey="home" />,
         {
-            disableLifecycleMethods: true
+            disableLifecycleMethods: true,
+            context: {
+                updateAppState: jest.fn(),
+                t: (key) => key,
+            }
         }
     );
 };

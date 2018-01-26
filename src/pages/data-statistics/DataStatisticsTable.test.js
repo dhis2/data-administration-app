@@ -7,13 +7,11 @@ import {
     Table,
     TableBody,
     TableHeader,
-    TableHeaderColumn,
     TableRow,
 } from 'material-ui/Table';
 
 import DataStatisticsTable from './DataStatisticsTable';
 
-const t = jest.fn();
 const tableSample = {
     label: 'Object type',
     elements: [
@@ -24,9 +22,12 @@ const tableSample = {
 
 const ownShallow = () => {
     return shallow(
-        <DataStatisticsTable t={t} label={tableSample.label} elements={tableSample.elements} />,
+        <DataStatisticsTable label={tableSample.label} elements={tableSample.elements} />,
         {
-            disableLifecycleMethods: true
+            disableLifecycleMethods: true,
+            context: {
+                t: (key) => key,
+            }
         }
     );
 };

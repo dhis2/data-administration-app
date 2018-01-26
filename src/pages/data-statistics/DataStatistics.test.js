@@ -5,6 +5,8 @@ import { shallow } from 'enzyme';
 import DataStatistics from './DataStatistics';
 import DataStatisticsTable from './DataStatisticsTable';
 
+import { DATA_STATISTICS_SECTION_KEY } from '../sections.conf';
+
 const stateWithTablesForDataStatistics = [
     {
         label: 'Object type',
@@ -22,14 +24,15 @@ const stateWithTablesForDataStatistics = [
     },
 ];
 
-const t = jest.fn();
-const updateAppState = jest.fn();
-
 const ownShallow = () => {
     return shallow(
-        <DataStatistics t={t} updateAppState={updateAppState}/>,
+        <DataStatistics sectionKey={DATA_STATISTICS_SECTION_KEY} />,
         {
-            disableLifecycleMethods: true
+            disableLifecycleMethods: true,
+            context: {
+                updateAppState: jest.fn(),
+                t: (key) => key,
+            }
         }
     );
 };

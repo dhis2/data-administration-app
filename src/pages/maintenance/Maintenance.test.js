@@ -24,17 +24,17 @@ for(let i = 0; i < sections.length; i++) {
     }
 }
 
-const t = key => key;
-const updateAppState = jest.fn();
-
 const ownShallow = () => {
     return shallow(
         <Maintenance
+            sectionKey={MAINTENANCE_SECTION_KEY}
             pageInfo={maintenancePageInfo}
-            updateAppState={updateAppState}
-            t={t}
         />,
         {
+            context: {
+                updateAppState: jest.fn(),
+                t: (key) => key,
+            },
             disableLifecycleMethods: true
         }
     );
