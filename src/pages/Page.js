@@ -1,7 +1,7 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Page extends PureComponent {
+class Page extends Component {
     static propTypes = {
         updateAppState: PropTypes.func.isRequired,
         sectionKey: PropTypes.string.isRequired,

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Material UI
+import { Card, CardText } from 'material-ui/Card';
+
 import Page from '../Page';
-import PageContainer from '../PageContainer';
 
 class MinMaxValueGeneration extends Page {
     static propTypes = {
@@ -12,7 +14,12 @@ class MinMaxValueGeneration extends Page {
 
     render() {
         return (
-            <PageContainer header={this.props.t(this.props.pageInfo.label)}>MinMaxValueGeneration</PageContainer>
+            <div className="page-wrapper">
+                <h1>{this.props.t(this.props.pageInfo.label)}</h1>
+                <Card>
+                    <CardText>{this.props.t(this.props.pageInfo.label)}</CardText>
+                </Card>
+            </div>
         );
     }
 }
