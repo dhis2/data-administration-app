@@ -9,6 +9,6 @@ defineSupportCode(({ Given, When, Then }) => {
   });
 
   Then(/^I should see the correct title$/, () => {
-    expect(homePage.title).to.equal('DHIS2 Maintenance Data Admin App');
+    expect(homePage.title).to.equal('Data Administration');
   });
 });

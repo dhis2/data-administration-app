@@ -93,7 +93,7 @@
   ],
   "manifest.webapp": {
     "name": "Data Administration",
-    "description": "DHIS2 Maintenance Data Admin App",
+    "description": "Data Administration",
     "icons": {
       "48": "icon.png"
     },
