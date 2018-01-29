@@ -98,7 +98,7 @@
       "48": "icon.png"
     },
     "developer": {
-      "url": "",
+      "url": "https://dhis2.github.io",
       "name": "DHIS2"
     },
     "activities": {
@@ -108,11 +108,6 @@
     }
   },
   "homepage": ".",
-  "proxy": {
-    "/": {
-      "target": "http://localhost:8080"
-    }
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
