@@ -2016,8 +2016,8 @@ d2-manifest@^1.0.0:
     readline-sync "^1.4.1"
 
 d2-ui@^28.0.8:
-  version "28.0.8"
-  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-28.0.8.tgz#651e877299bf09163f36a03af7f9886dc932ef6c"
+  version "28.1.1"
+  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-28.1.1.tgz#ec40e5609cb2a8bd33ff9368f84950448f8b222b"
 
 d2-utilizr@^0.2.15:
   version "0.2.15"
@@ -4896,8 +4896,8 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
 marked@~0.3.6:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.7.tgz#80ef3bbf1bd00d1c9cfebe42ba1b8c85da258d0d"
+  version "0.3.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.12.tgz#7cf25ff2252632f3fe2406bde258e94eee927519"
 
 material-ui@^0.20.0:
   version "0.20.0"
