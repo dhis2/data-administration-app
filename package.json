@@ -103,7 +103,7 @@
     },
     "activities": {
       "dhis": {
-        "href": "/api/29"
+        "href": ".."
       }
     }
   },
