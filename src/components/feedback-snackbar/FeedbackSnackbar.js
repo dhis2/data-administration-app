@@ -26,14 +26,22 @@ class FeedbackSnackbar extends PureComponent {
         this.state = {
             show: false,
             duration: 4000,
+            delayLoading: false,
         };
     }
 
     componentWillReceiveProps(props) {
         this.setState({
             show: props.show,
-            duration: props.conf.type === LOADING ? -1 : 4000,
+            duration: 4000,
         });
+        if (props.conf.type === LOADING) {
+            setTimeout(() => { this.setState({ delayLoading: false }); }, 500);
+            this.setState({
+                delayLoading: true,
+                duration: -1,
+            });
+        }
         this.forceUpdate();
     }
 
@@ -47,9 +55,10 @@ class FeedbackSnackbar extends PureComponent {
     }
 
     render() {
-        if (!this.state.show) {
+        if (!this.state.show || this.state.delayLoading) {
             return null;
         }
+
         const translator = this.context.t;
         let snackStyleType;
         let icon;
