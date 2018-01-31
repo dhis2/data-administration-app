@@ -26,7 +26,11 @@ class App extends PureComponent {
     static childContextTypes = {
         loading: PropTypes.bool,
         showSnackbar: PropTypes.bool,
-        snackbarConf: PropTypes.object,
+        snackbarConf: PropTypes.shape({
+            type: PropTypes.string,
+            message: PropTypes.string,
+            duration: PropTypes.number,
+        }),
         currentSection: PropTypes.string,
         pageState: PropTypes.object,
         updateAppState: PropTypes.func,
@@ -40,7 +44,10 @@ class App extends PureComponent {
             currentSection: '',
             loading: false,
             showSnackbar: false,
-            snackbarConf: {},
+            snackbarConf: {
+                type: '',
+                message: '',
+            },
         };
 
         this.updateAppState = this.updateAppState.bind(this);
@@ -61,7 +68,7 @@ class App extends PureComponent {
     updateAppState(appState) {
         // clear page state because we are updating page
         if (appState.currentSection && !appState.pageState && this.state.currentSection !== appState.currentSection) {
-            this.setState({ ...appState, pageState: undefined, loading: false, showSnackbar: false, snackbarConf: {} });
+            this.setState({ ...appState, pageState: undefined, loading: false, showSnackbar: false });
         } else {
             this.setState(appState);
         }
@@ -82,7 +89,6 @@ class App extends PureComponent {
                 <h3>{ this.props.t('Loading...') }</h3>
             </span>
         );
-
         return (
             <div className={styles.container}>
                 <HeaderBar />
@@ -99,7 +105,10 @@ class App extends PureComponent {
                         </div>
                     </Loader>
                 </div>
-                <FeedbackSnackbar show={this.state.showSnackbar} />
+                <FeedbackSnackbar
+                    show={this.state.showSnackbar}
+                    conf={this.state.snackbarConf}
+                />
             </div>
         );
     }
