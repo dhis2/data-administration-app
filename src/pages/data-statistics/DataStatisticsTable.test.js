@@ -12,6 +12,14 @@ import {
 
 import DataStatisticsTable from './DataStatisticsTable';
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
+jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
+jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
+jest.mock('d2-ui/lib/org-unit-tree/utils', () => ({}));
+
 const tableSample = {
     label: 'Object type',
     elements: [

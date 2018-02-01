@@ -1,0 +1,44 @@
+.lockExceptionForm {
+    width: 1052px;
+}
+
+.card {
+    display: inline-block;
+    margin: 16px;
+    width: 510px;
+    transition: all 175ms ease-out;
+}
+
+.cardText {
+    padding-top: 0;
+}
+
+.cardHeader {
+    padding: 16px;
+    margin: 16px -16px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.left {
+    display: inline-block;
+    position: absolute;
+    height: 350px;
+    width: 524px;
+    overflow-y: scroll;
+    margin-bottom: 16px;
+}
+
+.right {
+    display: inline-block;
+    position: absolute;
+    width: 475px;
+    right: 16px;
+}
+
+.ouLabel {
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1px 6px 1px 3px;
+    font-style: italic;
+}
