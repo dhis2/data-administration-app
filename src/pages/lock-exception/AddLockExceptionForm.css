@@ -1,38 +1,26 @@
-.lockExceptionForm {
-    width: 1052px;
-}
-
-.card {
-    display: inline-block;
-    margin: 16px;
-    width: 510px;
-    transition: all 175ms ease-out;
-}
-
-.cardText {
-    padding-top: 0;
-}
-
-.cardHeader {
-    padding: 16px;
-    margin: 16px -16px;
-    border-bottom: 1px solid #eeeeee;
-}
-
 .left {
     display: inline-block;
-    position: absolute;
-    height: 350px;
-    width: 524px;
-    overflow-y: scroll;
-    margin-bottom: 16px;
+    height: 280px;
+    width: 350px;
+    overflow: auto;
+    padding: 4px;
+    margin: 4px 0;
+    vertical-align: top;
 }
 
 .right {
-    display: inline-block;
-    position: absolute;
     width: 475px;
-    right: 16px;
+    display: inline-block;
+    z-index: 1;
+    background: white;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.dropdown {
+    float: left;
+    width: 360px;
+    margin-right: 20px;
 }
 
 .ouLabel {

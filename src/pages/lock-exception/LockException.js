@@ -327,7 +327,7 @@ class LockException extends Page {
                     actions={addDialogActions}
                     modal={false}
                     open={this.state && this.state.showAddDialogOpen}
-                    contentStyle={{ maxWidth: '1100px' }}
+                    contentStyle={{ maxWidth: '1100px', overflowY: 'auto' }}
                     onRequestClose={closeAddDialogHandler}
                 >
                     {this.state.levels && this.state.groups && this.state.rootWithMembers && this.state.dataSets.length > 0 &&

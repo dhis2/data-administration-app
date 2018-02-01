@@ -94,8 +94,8 @@ class AddLockExceptionForm extends Component {
 
         return (
             <div>
-                <Card className={styles.lockExceptionForm}>
-                    <CardText style={Object.assign({}, styles.cardText, { height: 260, position: 'relative' })}>
+                <Card>
+                    <CardText>
                         <div className={styles.left}>
                             <OrgUnitTree
                                 root={this.props.rootWithMembers}
@@ -110,27 +110,23 @@ class AddLockExceptionForm extends Component {
                         <div className={styles.right}>
                             <div>
                                 {this.state.currentRoot ? (
-                                    <div>For organisation units within <span className={styles.ouLabel}>{
+                                    <div>{ t('For organisation units within') } <span className={styles.ouLabel}>{
                                         this.state.currentRoot.displayName
                                     }</span>:</div>
                                 ) : <div>For all organisation units:</div>}
-                                <div style={{ marginBottom: -24, marginTop: -16 }}>
-                                    <OrgUnitSelectByLevel
-                                        levels={this.props.levels}
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={this.handleSelectionUpdate}
-                                    />
-                                </div>
-                                <div>
-                                    <OrgUnitSelectByGroup
-                                        groups={this.props.groups}
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={this.handleSelectionUpdate}
-                                    />
-                                </div>
-                                <div style={{ float: 'right' }}>
+                                <OrgUnitSelectByLevel
+                                    levels={this.props.levels}
+                                    selected={this.state.selected}
+                                    currentRoot={this.state.currentRoot}
+                                    onUpdateSelection={this.handleSelectionUpdate}
+                                />
+                                <OrgUnitSelectByGroup
+                                    groups={this.props.groups}
+                                    selected={this.state.selected}
+                                    currentRoot={this.state.currentRoot}
+                                    onUpdateSelection={this.handleSelectionUpdate}
+                                />
+                                <div style={{ marginTop: 16 }}>
                                     <OrgUnitSelectAll
                                         selected={this.state.selected}
                                         currentRoot={this.state.currentRoot}
@@ -143,12 +139,15 @@ class AddLockExceptionForm extends Component {
                 </Card>
                 <div>
                     <SelectField
+                        style={{ float: 'left', width: 360, marginRight: 20 }}
                         label={this.state.dataSet ? this.state.dataSet.name : t('Select dataset')}
                         items={dataSetItems}
                         onChange={dataSetChange}
                     />
                     {this.state.dataSet &&
                         <PeriodPicker
+                            style={{ float: 'left' }}
+                            className={styles.dropdown}
                             periodType={this.state.dataSet.periodType}
                             onPickPeriod={(value) => {
                                 this.props.updateSelectedPeriodId(value);
