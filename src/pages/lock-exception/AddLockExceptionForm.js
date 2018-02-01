@@ -12,8 +12,6 @@ import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.compone
 import SelectField from 'd2-ui/lib/select-field/SelectField';
 import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
 
-import { mergeChildren, incrementMemberCount, decrementMemberCount } from 'd2-ui/lib/org-unit-tree/utils';
-
 import styles from './AddLockExceptionForm.css';
 
 class AddLockExceptionForm extends Component {
@@ -48,7 +46,6 @@ class AddLockExceptionForm extends Component {
 
         this.handleSelectionUpdate = this.handleSelectionUpdate.bind(this);
         this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
-        this.handleChildrenLoaded = this.handleChildrenLoaded.bind(this);
     }
 
     handleSelectionUpdate(newSelection) {
@@ -60,22 +57,13 @@ class AddLockExceptionForm extends Component {
         if (this.state.selected.includes(orgUnit.path)) {
             const selected = this.state.selected;
             selected.splice(selected.indexOf(orgUnit.path), 1);
-
-            decrementMemberCount(this.state.rootWithMembers, orgUnit);
             this.setState({ selected });
         } else {
-            incrementMemberCount(this.state.rootWithMembers, orgUnit);
             const selected = this.state.selected;
             selected.push(orgUnit.path);
             this.setState({ selected });
         }
         this.props.updateSelectedOrgUnits(this.state.selected);
-    }
-
-    handleChildrenLoaded(children) {
-        this.setState(state => ({
-            rootWithMembers: mergeChildren(state.rootWithMembers, children),
-        }));
     }
 
     render() {
@@ -84,12 +72,19 @@ class AddLockExceptionForm extends Component {
             this.setState({ currentRoot });
         };
 
-        const dataSetItems = this.props.dataSets.map(dataSet => ({ id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }));
+        const dataSetItems = this.props.dataSets.map(dataSet => (
+            { id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }),
+        );
+
         const dataSetChange = (item) => {
             this.setState({
                 dataSet: item,
             });
             this.props.updateSeletedDataSetId(item.id);
+        };
+
+        const onPickPeriod = (value) => {
+            this.props.updateSelectedPeriodId(value);
         };
 
         return (
@@ -104,7 +99,6 @@ class AddLockExceptionForm extends Component {
                                 initiallyExpanded={[`/${this.props.rootWithMembers.id}`]}
                                 onSelectClick={this.handleOrgUnitClick}
                                 onChangeCurrentRoot={changeRoot}
-                                onChildrenLoaded={this.handleChildrenLoaded}
                             />
                         </div>
                         <div className={styles.right}>
@@ -149,9 +143,7 @@ class AddLockExceptionForm extends Component {
                             style={{ float: 'left' }}
                             className={styles.dropdown}
                             periodType={this.state.dataSet.periodType}
-                            onPickPeriod={(value) => {
-                                this.props.updateSelectedPeriodId(value);
-                            }}
+                            onPickPeriod={onPickPeriod}
                         />
                     }
                 </div>

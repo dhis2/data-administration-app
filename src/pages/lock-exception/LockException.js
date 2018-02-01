@@ -185,7 +185,10 @@ class LockException extends Page {
 
         const showAddDialogHandler = () => {
             const d2 = this.context.d2;
-            if (this.state.levels && this.state.groups && this.state.rootWithMembers && this.state.dataSets.length > 0) {
+            if (this.state.levels &&
+                this.state.groups &&
+                this.state.rootWithMembers &&
+                this.state.dataSets.length > 0) {
                 this.setState({ showAddDialogOpen: true });
             } else {
                 // FIXME Hack in some translations
@@ -246,8 +249,10 @@ class LockException extends Page {
                     return orgUnitPathSplitted[orgUnitPathSplitted.length - 1];
                 });
                 const api = this.context.d2.Api.getApi();
-                const apiRequests = orgUnitIds.map((orgUnitId) => {
-                    const postUrl = `lockExceptions?ou=${orgUnitId}&pe=${this.state.selectedPeriodId}&ds=${this.state.selectedDataSetId}`;
+                const apiRequests = orgUnitIds.map((ou) => {
+                    const pe = this.state.selectedPeriodId;
+                    const ds = this.state.selectedDataSetId;
+                    const postUrl = `lockExceptions?ou=${ou}&pe=${pe}&ds=${ds}`;
                     return api.post(postUrl);
                 });
 
@@ -330,16 +335,19 @@ class LockException extends Page {
                     contentStyle={{ maxWidth: '1100px', overflowY: 'auto' }}
                     onRequestClose={closeAddDialogHandler}
                 >
-                    {this.state.levels && this.state.groups && this.state.rootWithMembers && this.state.dataSets.length > 0 &&
-                        <AddLockExceptionForm
-                            levels={this.state.levels}
-                            groups={this.state.groups}
-                            rootWithMembers={this.state.rootWithMembers}
-                            dataSets={this.state.dataSets}
-                            updateSelectedOrgUnits={this.updateSelectedOrgUnits}
-                            updateSeletedDataSetId={this.updateSeletedDataSetId}
-                            updateSelectedPeriodId={this.updateSelectedPeriodId}
-                        />
+                    {this.state.levels &&
+                     this.state.groups &&
+                     this.state.rootWithMembers &&
+                     this.state.dataSets.length > 0 &&
+                     <AddLockExceptionForm
+                         levels={this.state.levels}
+                         groups={this.state.groups}
+                         rootWithMembers={this.state.rootWithMembers}
+                         dataSets={this.state.dataSets}
+                         updateSelectedOrgUnits={this.updateSelectedOrgUnits}
+                         updateSeletedDataSetId={this.updateSeletedDataSetId}
+                         updateSelectedPeriodId={this.updateSelectedPeriodId}
+                     />
                     }
                 </Dialog>
             </div>
