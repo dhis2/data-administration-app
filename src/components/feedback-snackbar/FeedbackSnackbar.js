@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { FontIcon, Snackbar } from 'material-ui';
-import CircularProgress from 'material-ui/CircularProgress';
-import classNames from 'classnames';
+import { Snackbar } from 'material-ui';
 
 import styles from './FeedbackSnackbar.css';
 
 import { LOADING, SUCCESS, ERROR } from './SnackbarTypes';
+import FeedbackSnackbarBody from './feedback-snackbar-body/FeedbackSnackbarBody';
 
 class FeedbackSnackbar extends PureComponent {
     static propTypes = {
@@ -27,10 +26,25 @@ class FeedbackSnackbar extends PureComponent {
             show: false,
             duration: 4000,
             delayLoading: false,
+            style: styles.warning,
         };
     }
 
     componentWillReceiveProps(props) {
+        switch (props.conf.type) {
+        case SUCCESS:
+            this.setState({ style: styles.success });
+            break;
+        case LOADING:
+            this.setState({ style: styles.loading });
+            break;
+        case ERROR:
+            this.setState({ style: styles.error });
+            break;
+        default:
+            this.setState({ style: styles.warning });
+            break;
+        }
         this.setState({
             show: props.show,
             duration: 4000,
@@ -58,53 +72,8 @@ class FeedbackSnackbar extends PureComponent {
         if (!this.state.show || this.state.delayLoading) {
             return null;
         }
-
-        const translator = this.context.t;
-        let snackStyleType;
-        let icon;
-        const snackBarBodyStyle = {
-            lineHeight: 'normal',
-            padding: '10px',
-            height: 'auto',
-        };
-        switch (this.props.conf.type) {
-        case SUCCESS:
-            snackStyleType = styles.success;
-            icon = (
-                <FontIcon className={classNames('material-icons', styles.icon)}>
-                    done
-                </FontIcon>
-            );
-            break;
-        case LOADING:
-            snackStyleType = styles.loading;
-            icon = <CircularProgress className={styles.icon} color={'#ffffff'} size={28} thickness={2} />;
-            break;
-        case ERROR:
-            snackStyleType = styles.error;
-            icon = (
-                <FontIcon className={classNames('material-icons', styles.icon)}>
-                    error
-                </FontIcon>
-            );
-            break;
-        default:
-            snackStyleType = styles.warning;
-            icon = (
-                <FontIcon className={classNames('material-icons', styles.icon)}>
-                    warning
-                </FontIcon>
-            );
-            break;
-        }
-        const snackBarContent = (
-            <div className={styles.content}>
-                <div>
-                    {translator(this.props.conf.message)}
-                </div>
-                {icon}
-            </div>
-        );
+        const snackBarBodyStyle = { lineHeight: 'normal', padding: '10px', height: 'auto' };
+        const snackBarContent = <FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />;
         return (
             <Snackbar
                 open={this.state.show}
@@ -112,7 +81,7 @@ class FeedbackSnackbar extends PureComponent {
                 message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
                 bodyStyle={snackBarBodyStyle}
-                className={snackStyleType}
+                className={this.state.style}
             />
         );
     }
