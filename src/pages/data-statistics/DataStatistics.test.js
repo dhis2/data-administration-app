@@ -13,6 +13,7 @@ jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('Or
 jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
 jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
 jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
 
 const stateWithTablesForDataStatistics = [
     {

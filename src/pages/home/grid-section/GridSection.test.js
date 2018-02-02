@@ -16,6 +16,7 @@ jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUni
 jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
 jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
 jest.mock('d2-ui/lib/org-unit-tree/utils', () => ({}));
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
 
 const section = sections[0];
 const ownShallow = () => {

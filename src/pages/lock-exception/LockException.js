@@ -1,25 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Material UI
-import {
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaderColumn,
-    TableRow,
-    TableRowColumn,
-} from 'material-ui/Table';
-
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import Delete from 'material-ui/svg-icons/action/delete';
-import Info from 'material-ui/svg-icons/action/info';
-
+/* Material UI */
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
+import DataTable from 'd2-ui/lib/data-table/DataTable.component';
+import 'd2-ui/scss/DataTable.scss';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
@@ -50,6 +39,22 @@ class LockException extends Page {
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this);
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this);
+
+        // FIXME Hack in some translations
+        const t = context.t;
+        const d2 = context.d2;
+        Object.assign(d2.i18n.translations, {
+            organisation_unit_group: t('Organisation Unit Group'),
+            organisation_unit_level: t('Organisation Unit Level'),
+            select: t('Select'),
+            deselect: t('Deselect'),
+            select_all: t('Select All Org Units'),
+            deselect_all: t('Deselect All Org Units'),
+            name: t('Name'),
+            show: t('Show Details'),
+            remove: t('Remove'),
+            actions: t('Actions'),
+        });
     }
 
     componentDidMount() {
@@ -62,6 +67,11 @@ class LockException extends Page {
 
     loadLockExceptions() {
         const api = this.context.d2.Api.getApi();
+        const url = 'lockExceptions?' +
+            'fields=name,' +
+            'period[id,displayName],' +
+            'organisationUnit[id,displayName],' +
+            'dataSet[id,displayName]';
 
         // request to GET statistics
         if (!this.context.loading && !this.state.loaded) {
@@ -74,7 +84,8 @@ class LockException extends Page {
                 },
             });
 
-            api.get('lockExceptions?fields=name,period[id,name],organisationUnit[id,name],dataSet[id,name]')
+
+            api.get(url)
                 .then((response) => {
                     this.context.updateAppState({
                         loading: false,
@@ -110,67 +121,40 @@ class LockException extends Page {
 
     render() {
         const t = this.context.t;
-        const rows = this.state.lockExceptions.map((le) => {
-            const lockExceptionKey
-                = `${le.organisationUnit.id}-${le.dataSet.id}-${le.period.id}`;
-            const showDetailsHandler = () => {
-                this.setState(
-                    {
-                        showDetailsDialogOpen: true,
-                        selectedLockException: le,
-                    },
-                );
-            };
-
-            const removeHandler = () => {
-                const api = this.context.d2.Api.getApi();
-                const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
-                this.context.updateAppState({
-                    loading: true,
-                });
-
-                api.delete(deleteUrl).then(() => {
-                    const lockExceptions = this.state.lockExceptions
-                        .filter(lockException => lockException.organisationUnit.id !== le.organisationUnit.id
-                            && lockException.period.id !== le.period.id
-                            && lockException.dataSet.id !== le.dataSet.id);
-                    this.context.updateAppState({
-                        loading: false,
-                        pageState: {
-                            lockExceptions,
-                        },
-                    });
-                }).catch(() => {
-                    // TODO show error
-                    this.context.updateAppState({
-                        loading: false,
-                    });
-                });
-            };
-            return (
-                <TableRow key={lockExceptionKey}>
-                    <TableRowColumn>{le.name}</TableRowColumn>
-                    <TableRowColumn>
-                        <IconMenu
-                            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                            anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-                            targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-                        >
-                            <MenuItem
-                                primaryText={t('Remove')}
-                                leftIcon={<Delete />}
-                                onClick={removeHandler}
-                            />
-                            <MenuItem
-                                primaryText={t('Show Details')}
-                                leftIcon={<Info />}
-                                onClick={showDetailsHandler}
-                            />
-                        </IconMenu>
-                    </TableRowColumn>
-                </TableRow>
+        const showDetailsHandler = (le) => {
+            this.setState(
+                {
+                    showDetailsDialogOpen: true,
+                    selectedLockException: le,
+                },
             );
-        });
+        };
+
+        const removeHandler = (le) => {
+            const api = this.context.d2.Api.getApi();
+            const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
+            this.context.updateAppState({
+                loading: true,
+            });
+
+            api.delete(deleteUrl).then(() => {
+                const lockExceptions = this.state.lockExceptions
+                    .filter(lockException => lockException.organisationUnit.id !== le.organisationUnit.id
+                        && lockException.period.id !== le.period.id
+                        && lockException.dataSet.id !== le.dataSet.id);
+                this.context.updateAppState({
+                    loading: false,
+                    pageState: {
+                        lockExceptions,
+                    },
+                });
+            }).catch(() => {
+                // TODO show error
+                this.context.updateAppState({
+                    loading: false,
+                });
+            });
+        };
 
         const closeShowDetailsDialogHandler = () => {
             this.setState({ showDetailsDialogOpen: false });
@@ -191,16 +175,6 @@ class LockException extends Page {
                 this.state.dataSets.length > 0) {
                 this.setState({ showAddDialogOpen: true });
             } else {
-                // FIXME Hack in some translations
-                Object.assign(d2.i18n.translations, {
-                    organisation_unit_group: t('Organisation Unit Group'),
-                    organisation_unit_level: t('Organisation Unit Level'),
-                    select: t('Select'),
-                    deselect: t('Deselect'),
-                    select_all: t('Select All Org Units'),
-                    deselect_all: t('Deselect All Org Units'),
-                });
-
                 Promise.all([
                     d2.models.organisationUnitLevel.list({
                         paging: false,
@@ -286,30 +260,22 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 <h1>{this.context.t(this.props.pageInfo.label)}</h1>
-                <Table selectable={false}>
-                    <TableHeader
-                        className={styles.lockExceptionsTableHeader}
-                        displaySelectAll={false}
-                        adjustForCheckbox={false}
-                        enableSelectAll={false}
-                    >
-                        <TableRow>
-                            <TableHeaderColumn>{t('Name')}</TableHeaderColumn>
-                            <TableHeaderColumn>
-                                <FlatButton
-                                    label={t('ADD')}
-                                    onClick={showAddDialogHandler}
-                                />
-                            </TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody
-                        displayRowCheckbox={false}
-                        stripedRows={false}
-                    >
-                        {rows}
-                    </TableBody>
-                </Table>
+                <div className={styles.listDetailsWrap}>
+                    <div className={styles.dataTableWrap}>
+                        <DataTable
+                            columns={['name']}
+                            rows={this.state.lockExceptions}
+                            contextMenuActions={{
+                                show: showDetailsHandler,
+                                remove: removeHandler,
+                            }}
+                            contextMenuIcons={{
+                                show: 'info',
+                                remove: 'delete',
+                            }}
+                        />
+                    </div>
+                </div>
                 {this.state.selectedLockException != null &&
                     <Dialog
                         className={styles.lockExceptionDialog}
@@ -320,11 +286,11 @@ class LockException extends Page {
                         onRequestClose={closeShowDetailsDialogHandler}
                     >
                         <h3>{t('Organisation Unit')}</h3>
-                        <span>{this.state.selectedLockException.organisationUnit.name}</span>
+                        <span>{this.state.selectedLockException.organisationUnit.displayName}</span>
                         <h3>{t('Data Set')}</h3>
-                        <span>{this.state.selectedLockException.dataSet.name}</span>
+                        <span>{this.state.selectedLockException.dataSet.displayName}</span>
                         <h3>{t('Period')}</h3>
-                        <span>{this.state.selectedLockException.period.name}</span>
+                        <span>{this.state.selectedLockException.period.displayName}</span>
                     </Dialog>
                 }
                 <Dialog
@@ -350,6 +316,12 @@ class LockException extends Page {
                      />
                     }
                 </Dialog>
+                <FloatingActionButton
+                    style={{ position: 'fixed', marginTop: '1rem', bottom: '1.5rem', right: '1.5rem', zIndex: 10 }}
+                    onClick={showAddDialogHandler}
+                >
+                    <ContentAdd />
+                </FloatingActionButton>
             </div>
         );
     }

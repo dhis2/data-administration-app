@@ -46,3 +46,15 @@
     text-align: left;
     color: #000000;
 }
+
+.dataTableWrap {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.listDetailsWrap {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}

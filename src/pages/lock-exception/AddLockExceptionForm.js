@@ -133,7 +133,13 @@ class AddLockExceptionForm extends Component {
                 </Card>
                 <div>
                     <SelectField
-                        style={{ float: 'left', width: 360, marginRight: 20 }}
+                        style={
+                            {
+                                float: 'left',
+                                width: 360,
+                                marginRight: 20,
+                            }
+                        }
                         label={this.state.dataSet ? this.state.dataSet.name : t('Select dataset')}
                         items={dataSetItems}
                         onChange={dataSetChange}
