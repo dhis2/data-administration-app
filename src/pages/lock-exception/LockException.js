@@ -8,12 +8,25 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
+import Pagination from 'd2-ui/lib/pagination/Pagination.component';
+
 import 'd2-ui/lib/css/DataTable.css';
+import 'd2-ui/lib/css/Pagination.css';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
 
 import styles from './LockException.css';
+
+function calculatePageValue(pager) {
+    const pageSize = pager.pageSize;
+    const { total, pageCount, page } = pager;
+    const pageCalculationValue = total - (total - ((pageCount - (pageCount - page)) * pageSize));
+    const startItem = (pageCalculationValue - pageSize) + 1;
+    const endItem = pageCalculationValue;
+
+    return `${startItem} - ${endItem > total ? total : endItem}`;
+}
 
 class LockException extends Page {
     static propTypes = {
@@ -36,9 +49,18 @@ class LockException extends Page {
         this.state.selectedDataSetId = null;
         this.state.selectedPeriodId = null;
 
+        this.state.pager = this.state.pager || {
+            pageSize: 5,
+            page: 1,
+            total: 0,
+            pageCount: 1,
+        };
+
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this);
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this);
+        this.onNextPageClick = this.onNextPageClick.bind(this);
+        this.onPreviousPageClick = this.onPreviousPageClick.bind(this);
 
         // FIXME Hack in some translations
         const t = context.t;
@@ -54,6 +76,7 @@ class LockException extends Page {
             show: t('Show Details'),
             remove: t('Remove'),
             actions: t('Actions'),
+            of_page: t('of'),
         });
     }
 
@@ -67,13 +90,13 @@ class LockException extends Page {
 
     loadLockExceptions() {
         const api = this.context.d2.Api.getApi();
-        const url = 'lockExceptions?' +
-            'fields=name,' +
+        const url = `lockExceptions?page=${this.state.pager.page}&pageSize=${this.state.pager.pageSize}` +
+            '&fields=name,' +
             'period[id,displayName],' +
             'organisationUnit[id,displayName],' +
             'dataSet[id,displayName]';
 
-        // request to GET statistics
+        // request to GET lock exceptions
         if (!this.context.loading && !this.state.loaded) {
             this.context.updateAppState({
                 loading: true,
@@ -84,7 +107,6 @@ class LockException extends Page {
                 },
             });
 
-
             api.get(url)
                 .then((response) => {
                     this.context.updateAppState({
@@ -92,6 +114,7 @@ class LockException extends Page {
                         pageState: {
                             loaded: true,
                             lockExceptions: response.lockExceptions,
+                            pager: response.pager,
                         },
                     });
                 }).catch(() => {
@@ -119,7 +142,36 @@ class LockException extends Page {
         this.setState({ selectedPeriodId });
     }
 
+    onNextPageClick() {
+        const pager = Object.assign({}, this.state.pager);
+        pager.page += 1;
+
+        this.setState({
+            loaded: false,
+            pager,
+        });
+    }
+
+    onPreviousPageClick() {
+        const pager = Object.assign({}, this.state.pager);
+        pager.page -= 1;
+        this.setState({
+            loaded: false,
+            pager,
+        });
+    }
+
     render() {
+        const currentlyShown = calculatePageValue(this.state.pager);
+        const paginationProps = {
+            hasNextPage: () => this.state.pager.page < this.state.pager.pageCount,
+            hasPreviousPage: () => this.state.pager.page > 1,
+            onNextPageClick: this.onNextPageClick,
+            onPreviousPageClick: this.onPreviousPageClick,
+            total: this.state.pager.total,
+            currentlyShown,
+        };
+
         const t = this.context.t;
         const showDetailsHandler = (le) => {
             this.setState(
@@ -276,6 +328,11 @@ class LockException extends Page {
                         />
                     </div>
                 </div>
+                {this.state.lockExceptions && this.state.lockExceptions.length ? (
+                    <div style={{ marginTop: '-2rem', paddingBottom: '0.5rem' }}>
+                        <Pagination {...paginationProps} />
+                    </div>
+                ) : null}
                 {this.state.selectedLockException != null &&
                     <Dialog
                         className={styles.lockExceptionDialog}

@@ -34,12 +34,4 @@ const theme = {
 
 const muiTheme = getMuiTheme(theme);
 
-export default Object.assign({}, muiTheme, {
-    forms: {
-        minWidth: 350,
-        maxWidth: 750,
-    },
-    formInput: {
-        fontWeight: 100,
-    },
-});
+export default muiTheme;
