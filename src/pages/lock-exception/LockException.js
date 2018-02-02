@@ -8,7 +8,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
-import 'd2-ui/scss/DataTable.scss';
+import 'd2-ui/lib/css/DataTable.css';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
