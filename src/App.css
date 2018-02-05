@@ -18,6 +18,7 @@ html {
 
 .contentWrapper {
   margin-left: 295px;
+  max-width: 1080px;
 }
 
 .contentArea {

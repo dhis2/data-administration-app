@@ -29,6 +29,7 @@ class DataStatisticsTable extends PureComponent {
             <TableRow key={element.label}>
                 <TableRowColumn>{t(element.label)}</TableRowColumn>
                 <TableRowColumn>{element.count}</TableRowColumn>
+                <TableRowColumn />
             </TableRow>
         ));
         return (
