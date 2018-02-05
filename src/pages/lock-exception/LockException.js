@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 /* Material UI */
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Card, CardText } from 'material-ui/Card';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
@@ -304,12 +302,14 @@ class LockException extends Page {
 
         return (
             <div className={styles.lockExceptionsTable}>
-                <h1 style={this.state.lockExceptions && this.state.lockExceptions.length ? { float: 'left' } : {}}>
-                    {this.context.t(this.props.pageInfo.label)}
+                <h1>
+                    <span style={{ display: 'inline-block' }}>{this.context.t(this.props.pageInfo.label)}</span>
+                    <FlatButton
+                        style={{ display: 'inline-block', float: 'right' }}
+                        label={t('ADD')}
+                        onClick={showAddDialogHandler}
+                    />
                 </h1>
-                {this.state.lockExceptions && this.state.lockExceptions.length ?
-                    (<div><Pagination {...paginationProps} /></div>) : null
-                }
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
                         <div className={styles.listDetailsWrap}>
@@ -378,12 +378,6 @@ class LockException extends Page {
                      />
                     }
                 </Dialog>
-                <FloatingActionButton
-                    style={{ position: 'fixed', marginTop: '1rem', bottom: '1.5rem', right: '1.5rem', zIndex: 10 }}
-                    onClick={showAddDialogHandler}
-                >
-                    <ContentAdd />
-                </FloatingActionButton>
             </div>
         );
     }
