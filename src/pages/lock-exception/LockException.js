@@ -51,7 +51,7 @@ class LockException extends Page {
         this.state.selectedPeriodId = null;
 
         this.state.pager = this.state.pager || {
-            pageSize: 5,
+            pageSize: 50,
             page: 1,
             total: 0,
             pageCount: 1,
@@ -238,22 +238,15 @@ class LockException extends Page {
                         paging: false,
                         fields: 'id,displayName',
                     }),
-                    d2.models.organisationUnit.list({
-                        paging: false,
-                        level: 1,
-                        fields: 'id,displayName,path,children::isNotEmpty,memberCount',
-                    }),
                     d2.models.dataSet.list({
                         paging: false,
                         fields: 'id,displayName,periodType',
                     }),
-                ]).then(([levels, groups, roots, dataSets]) => {
-                    const rootWithMembers = roots.toArray()[0];
+                ]).then(([levels, groups, dataSets]) => {
                     this.setState({
                         showAddDialogOpen: true,
                         levels,
                         groups,
-                        rootWithMembers,
                         dataSets: dataSets.toArray(),
                     });
                 });
@@ -277,12 +270,12 @@ class LockException extends Page {
                     return orgUnitPathSplitted[orgUnitPathSplitted.length - 1];
                 });
 
-                const ou = `[${orgUnitIds.join(',')}]`;
-                const pe = this.state.selectedPeriodId;
-                const ds = this.state.selectedDataSetId;
-                const postUrl = `lockExceptions?ou=${ou}&pe=${pe}&ds=${ds}`;
+                const formData = new FormData();
+                formData.append('ou', `[${orgUnitIds.join(',')}]`);
+                formData.append('pe', this.state.selectedPeriodId);
+                formData.append('ds', this.state.selectedDataSetId);
 
-                api.post(postUrl).then(() => {
+                api.post('lockExceptions', formData).then(() => {
                     this.setState({
                         loaded: false,
                         showAddDialogOpen: false,
@@ -311,7 +304,12 @@ class LockException extends Page {
 
         return (
             <div className={styles.lockExceptionsTable}>
-                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
+                <h1 style={this.state.lockExceptions && this.state.lockExceptions.length ? { float: 'left' } : {}}>
+                    {this.context.t(this.props.pageInfo.label)}
+                </h1>
+                {this.state.lockExceptions && this.state.lockExceptions.length ?
+                    (<div><Pagination {...paginationProps} /></div>) : null
+                }
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
                         <div className={styles.listDetailsWrap}>
@@ -369,12 +367,10 @@ class LockException extends Page {
                 >
                     {this.state.levels &&
                      this.state.groups &&
-                     this.state.rootWithMembers &&
                      this.state.dataSets.length > 0 &&
                      <AddLockExceptionForm
                          levels={this.state.levels}
                          groups={this.state.groups}
-                         rootWithMembers={this.state.rootWithMembers}
                          dataSets={this.state.dataSets}
                          updateSelectedOrgUnits={this.updateSelectedOrgUnits}
                          updateSeletedDataSetId={this.updateSeletedDataSetId}

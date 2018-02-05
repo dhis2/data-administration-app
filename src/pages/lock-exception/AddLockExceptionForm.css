@@ -17,16 +17,14 @@
     margin-right: 1rem;
 }
 
-.dropdown {
-    float: left;
-    width: 360px;
-    margin-right: 20px;
-}
-
 .ouLabel {
     background: rgba(0,0,0,0.05);
     border-radius: 5px;
     border: 1px solid rgba(0,0,0,0.1);
     padding: 1px 6px 1px 3px;
     font-style: italic;
+}
+
+.organisationUnitTreeCard {
+    margin-top: 10px;
 }

@@ -25,7 +25,6 @@ class AddLockExceptionForm extends Component {
             PropTypes.array,
         ]).isRequired,
         dataSets: PropTypes.array.isRequired,
-        rootWithMembers: PropTypes.object.isRequired,
         updateSelectedOrgUnits: PropTypes.func.isRequired,
         updateSeletedDataSetId: PropTypes.func.isRequired,
         updateSelectedPeriodId: PropTypes.func.isRequired,
@@ -33,6 +32,7 @@ class AddLockExceptionForm extends Component {
 
     static contextTypes = {
         t: PropTypes.func,
+        d2: PropTypes.object,
     }
 
     constructor(props) {
@@ -40,7 +40,6 @@ class AddLockExceptionForm extends Component {
 
         this.state = {
             selected: [],
-            rootWithMembers: props.rootWithMembers,
             dataSet: null,
         };
 
@@ -77,10 +76,41 @@ class AddLockExceptionForm extends Component {
         );
 
         const dataSetChange = (item) => {
-            this.setState({
-                dataSet: item,
-            });
-            this.props.updateSeletedDataSetId(item.id);
+            const d2 = this.context.d2;
+            const dataSetId = item.id;
+
+            if (this.state.dataSet === null || dataSetId !== this.state.dataSet.id) {
+                this.props.updateSeletedDataSetId(dataSetId);
+
+                this.setState({
+                    rootWithMembers: null,
+                    selected: [],
+                    dataSet: item,
+                });
+
+                Promise.all([
+                    d2.models.organisationUnits.list({
+                        paging: false,
+                        level: 1,
+                        fields: 'id,displayName,path,children::isNotEmpty,memberCount',
+                        memberCollection: 'dataSets',
+                        memberObject: dataSetId,
+                    }),
+                    d2.models.dataSets.get(dataSetId, {
+                        paging: false,
+                        fields: 'organisationUnits[id,path]',
+                    }),
+                ]).then(([rootWithDataSetMembers, dataSetMembers]) => {
+                    const rootWithMembers = rootWithDataSetMembers.toArray()[0];
+                    const selected = dataSetMembers.organisationUnits.toArray().map(ou => ou.path);
+                    this.setState({
+                        rootWithMembers,
+                        selected,
+                    });
+                }).catch(() => {
+                    // TODO
+                });
+            }
         };
 
         const onPickPeriod = (value) => {
@@ -89,52 +119,11 @@ class AddLockExceptionForm extends Component {
 
         return (
             <div>
-                <Card>
-                    <CardText>
-                        <div className={styles.left}>
-                            <OrgUnitTree
-                                root={this.props.rootWithMembers}
-                                selected={this.state.selected}
-                                currentRoot={this.state.currentRoot}
-                                initiallyExpanded={[`/${this.props.rootWithMembers.id}`]}
-                                onSelectClick={this.handleOrgUnitClick}
-                                onChangeCurrentRoot={changeRoot}
-                            />
-                        </div>
-                        <div className={styles.right}>
-                            <div>
-                                {this.state.currentRoot ? (
-                                    <div>{ t('For organisation units within') } <span className={styles.ouLabel}>{
-                                        this.state.currentRoot.displayName
-                                    }</span>:</div>
-                                ) : <div>For all organisation units:</div>}
-                                <OrgUnitSelectByLevel
-                                    levels={this.props.levels}
-                                    selected={this.state.selected}
-                                    currentRoot={this.state.currentRoot}
-                                    onUpdateSelection={this.handleSelectionUpdate}
-                                />
-                                <OrgUnitSelectByGroup
-                                    groups={this.props.groups}
-                                    selected={this.state.selected}
-                                    currentRoot={this.state.currentRoot}
-                                    onUpdateSelection={this.handleSelectionUpdate}
-                                />
-                                <div style={{ marginTop: 16 }}>
-                                    <OrgUnitSelectAll
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={this.handleSelectionUpdate}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </CardText>
-                </Card>
                 <div>
                     <SelectField
                         style={
                             {
+                                display: 'inline-block',
                                 float: 'left',
                                 width: 360,
                                 marginRight: 20,
@@ -145,14 +134,64 @@ class AddLockExceptionForm extends Component {
                         onChange={dataSetChange}
                     />
                     {this.state.dataSet &&
-                        <PeriodPicker
-                            style={{ float: 'left' }}
-                            className={styles.dropdown}
-                            periodType={this.state.dataSet.periodType}
-                            onPickPeriod={onPickPeriod}
-                        />
+                    <PeriodPicker
+                        style={{ display: 'inline-block' }}
+                        className={styles.dropdown}
+                        periodType={this.state.dataSet.periodType}
+                        onPickPeriod={onPickPeriod}
+                    />
                     }
                 </div>
+                {this.state.dataSet ? (
+                    <Card className={styles.organisationUnitTreeCard}>
+                        <CardText>
+                            <div className={styles.left}>
+                                {this.state.rootWithMembers ? (
+                                    <OrgUnitTree
+                                        root={this.state.rootWithMembers}
+                                        selected={this.state.selected}
+                                        currentRoot={this.state.currentRoot}
+                                        initiallyExpanded={[`/${this.state.rootWithMembers.id}`]}
+                                        memberCollection="dataSets"
+                                        memberObject={this.state.dataSet.id}
+                                        onSelectClick={this.handleOrgUnitClick}
+                                        onChangeCurrentRoot={changeRoot}
+                                    />) :
+                                    (
+                                        <span>{t('Updating Tree...')}</span>
+                                    )}
+                            </div>
+                            <div className={styles.right}>
+                                <div>
+                                    {this.state.currentRoot ? (
+                                        <div>{t('For organisation units within')} <span className={styles.ouLabel}>{
+                                            this.state.currentRoot.displayName
+                                        }</span>:</div>
+                                    ) : <div>For all organisation units:</div>}
+                                    <OrgUnitSelectByLevel
+                                        levels={this.props.levels}
+                                        selected={this.state.selected}
+                                        currentRoot={this.state.currentRoot}
+                                        onUpdateSelection={this.handleSelectionUpdate}
+                                    />
+                                    <OrgUnitSelectByGroup
+                                        groups={this.props.groups}
+                                        selected={this.state.selected}
+                                        currentRoot={this.state.currentRoot}
+                                        onUpdateSelection={this.handleSelectionUpdate}
+                                    />
+                                    <div style={{ marginTop: 16 }}>
+                                        <OrgUnitSelectAll
+                                            selected={this.state.selected}
+                                            currentRoot={this.state.currentRoot}
+                                            onUpdateSelection={this.handleSelectionUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </CardText>
+                    </Card>) : null
+                }
             </div>
         );
     }
