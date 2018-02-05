@@ -271,19 +271,18 @@ class LockException extends Page {
 
         const addLockExceptionHandler = () => {
             if (this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId) {
+                const api = this.context.d2.Api.getApi();
                 const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
                     const orgUnitPathSplitted = orgUnitPath.split('/');
                     return orgUnitPathSplitted[orgUnitPathSplitted.length - 1];
                 });
-                const api = this.context.d2.Api.getApi();
-                const apiRequests = orgUnitIds.map((ou) => {
-                    const pe = this.state.selectedPeriodId;
-                    const ds = this.state.selectedDataSetId;
-                    const postUrl = `lockExceptions?ou=${ou}&pe=${pe}&ds=${ds}`;
-                    return api.post(postUrl);
-                });
 
-                Promise.all(apiRequests).then(() => {
+                const ou = `[${orgUnitIds.join(',')}]`;
+                const pe = this.state.selectedPeriodId;
+                const ds = this.state.selectedDataSetId;
+                const postUrl = `lockExceptions?ou=${ou}&pe=${pe}&ds=${ds}`;
+
+                api.post(postUrl).then(() => {
                     this.setState({
                         loaded: false,
                         showAddDialogOpen: false,
