@@ -14,6 +14,7 @@ import styles from './App.css';
 
 // App configs
 import { sections } from './pages/sections.conf';
+import FeedbackSnackbar from './components/feedback-snackbar/FeedbackSnackbar';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
@@ -24,6 +25,12 @@ class App extends PureComponent {
 
     static childContextTypes = {
         loading: PropTypes.bool,
+        showSnackbar: PropTypes.bool,
+        snackbarConf: PropTypes.shape({
+            type: PropTypes.string,
+            message: PropTypes.string,
+            duration: PropTypes.number,
+        }),
         currentSection: PropTypes.string,
         pageState: PropTypes.object,
         updateAppState: PropTypes.func,
@@ -36,6 +43,11 @@ class App extends PureComponent {
         this.state = {
             currentSection: '',
             loading: false,
+            showSnackbar: false,
+            snackbarConf: {
+                type: '',
+                message: '',
+            },
         };
 
         this.updateAppState = this.updateAppState.bind(this);
@@ -44,6 +56,8 @@ class App extends PureComponent {
     getChildContext() {
         return {
             loading: this.state.loading,
+            showSnackbar: this.state.showSnackbar,
+            snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
             pageState: this.state.pageState,
             updateAppState: this.updateAppState,
@@ -54,7 +68,7 @@ class App extends PureComponent {
     updateAppState(appState) {
         // clear page state because we are updating page
         if (appState.currentSection && !appState.pageState && this.state.currentSection !== appState.currentSection) {
-            this.setState({ ...appState, pageState: undefined, loading: false });
+            this.setState({ ...appState, pageState: undefined, loading: false, showSnackbar: false });
         } else {
             this.setState(appState);
         }
@@ -75,7 +89,6 @@ class App extends PureComponent {
                 <h3>{ this.props.t('Loading...') }</h3>
             </span>
         );
-
         return (
             <div className={styles.container}>
                 <HeaderBar />
@@ -92,6 +105,10 @@ class App extends PureComponent {
                         </div>
                     </Loader>
                 </div>
+                <FeedbackSnackbar
+                    show={this.state.showSnackbar}
+                    conf={this.state.snackbarConf}
+                />
             </div>
         );
     }

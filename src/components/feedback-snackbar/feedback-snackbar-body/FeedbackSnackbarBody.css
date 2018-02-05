@@ -1,0 +1,11 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px !important;
+}
+
+.icon {
+    color: #ffffff !important;
+    margin-left: 15px;
+}
