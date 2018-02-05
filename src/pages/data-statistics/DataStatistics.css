@@ -31,3 +31,13 @@
 .statisticsTable tr:nth-child(odd) {
   background-color: #ffffff;
 }
+
+.statisticsTable td:nth-child(2) {
+    text-align: right !important;
+    /* width: 100px; */
+}
+/*
+.statisticsTable td:nth-child(1) {
+    max-width: 200px;
+}
+*/

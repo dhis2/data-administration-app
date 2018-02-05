@@ -140,6 +140,8 @@ class Maintenance extends Page {
                         label={t(checkbox.label)}
                         checked={checkboxState}
                         onCheck={toggleCheckbox}
+                        labelStyle={{ color: '#000000' }}
+                        iconStyle={{ fill: '#000000' }}
                     />
                 </GridTile>
             );
@@ -156,6 +158,8 @@ class Maintenance extends Page {
                             label={t('Select all')}
                             checked={this.state.checkAll}
                             onCheck={this.toggleCheckAll}
+                            labelStyle={{ color: '#757575' }}
+                            iconStyle={{ fill: '#757575' }}
                         />
                         <GridList
                             className={styles.maintenanceGridContainer}
