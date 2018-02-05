@@ -23,34 +23,12 @@ class Page extends Component {
     }
 
     componentWillMount() {
-        // console.log('COMPONENT WILL MOUNT: ', this.props.sectionKey);
-        // console.log('CURRENT SECTION: ', this.context.currentSection);
-        this.context.updateAppState({
-            currentSection: this.props.sectionKey,
-        });
+        if (this.context.currentSection !== this.props.sectionKey) {
+            this.context.updateAppState({
+                currentSection: this.props.sectionKey,
+            });
+        }
     }
-    /*
-    componentDidMount() {
-        console.log('COMPONENT DID MOUNT: ', this.props.sectionKey);
-    }
-
-    componentWillReceiveProps() {
-        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.sectionKey);
-    }
-
-    componentWillUpdate() {
-        console.log('COMPONENT WILL UPDATE: ', this.props.sectionKey);
-    }
-
-    componentDidUpdate() {
-        console.log('COMPONENT DID UPDATE: ', this.props.sectionKey);
-    }
-
-    componentWillUnmount() {
-        console.log('COMPONENT WILL UNMOUNT: ', this.props.sectionKey);
-        console.log('CURRENT SECTION: ', this.context.currentSection);
-    }
-    */
 }
 
 export default Page;

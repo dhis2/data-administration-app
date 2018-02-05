@@ -6,6 +6,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Card, CardText } from 'material-ui/Card';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
@@ -18,7 +19,7 @@ import AddLockExceptionForm from './AddLockExceptionForm';
 
 import styles from './LockException.css';
 
-function calculatePageValue(pager) {
+const calculatePageValue = (pager) => {
     const pageSize = pager.pageSize;
     const { total, pageCount, page } = pager;
     const pageCalculationValue = total - (total - ((pageCount - (pageCount - page)) * pageSize));
@@ -26,7 +27,7 @@ function calculatePageValue(pager) {
     const endItem = pageCalculationValue;
 
     return `${startItem} - ${endItem > total ? total : endItem}`;
-}
+};
 
 class LockException extends Page {
     static propTypes = {
@@ -97,7 +98,7 @@ class LockException extends Page {
             'dataSet[id,displayName]';
 
         // request to GET lock exceptions
-        if (!this.context.loading && !this.state.loaded) {
+        if (!this.state.loading && !this.state.loaded) {
             this.context.updateAppState({
                 loading: true,
                 currentSection: this.props.sectionKey,
@@ -312,27 +313,36 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 <h1>{this.context.t(this.props.pageInfo.label)}</h1>
-                <div className={styles.listDetailsWrap}>
-                    <div className={styles.dataTableWrap}>
-                        <DataTable
-                            columns={['name']}
-                            rows={this.state.lockExceptions}
-                            contextMenuActions={{
-                                show: showDetailsHandler,
-                                remove: removeHandler,
-                            }}
-                            contextMenuIcons={{
-                                show: 'info',
-                                remove: 'delete',
-                            }}
-                        />
-                    </div>
-                </div>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
-                    <div style={{ marginTop: '-2rem', paddingBottom: '0.5rem' }}>
-                        <Pagination {...paginationProps} />
-                    </div>
-                ) : null}
+                    <div>
+                        <div className={styles.listDetailsWrap}>
+                            <div className={styles.dataTableWrap}>
+                                <DataTable
+                                    columns={['name']}
+                                    rows={this.state.lockExceptions}
+                                    contextMenuActions={{
+                                        show: showDetailsHandler,
+                                        remove: removeHandler,
+                                    }}
+                                    contextMenuIcons={{
+                                        show: 'info',
+                                        remove: 'delete',
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div style={{ marginTop: '-2rem', paddingBottom: '0.5rem' }}>
+                            <Pagination {...paginationProps} />
+                        </div>
+                    </div>) :
+                    (
+                        <Card>
+                            <CardText>
+                                { this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }
+                            </CardText>
+                        </Card>
+                    )
+                }
                 {this.state.selectedLockException != null &&
                     <Dialog
                         className={styles.lockExceptionDialog}
