@@ -41,7 +41,6 @@ class LockException extends Page {
         this.state.selectedLockException = null;
         this.state.levels = null;
         this.state.groups = null;
-        this.state.rootWithMembers = null;
         this.state.dataSets = [];
 
         this.state.selectedOrgUnits = [];
@@ -49,7 +48,7 @@ class LockException extends Page {
         this.state.selectedPeriodId = null;
 
         this.state.pager = this.state.pager || {
-            pageSize: 50,
+            pageSize: 20,
             page: 1,
             total: 0,
             pageCount: 1,
@@ -222,7 +221,6 @@ class LockException extends Page {
             const d2 = this.context.d2;
             if (this.state.levels &&
                 this.state.groups &&
-                this.state.rootWithMembers &&
                 this.state.dataSets.length > 0) {
                 this.setState({ showAddDialogOpen: true });
             } else {
