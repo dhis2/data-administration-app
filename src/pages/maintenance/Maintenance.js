@@ -174,6 +174,7 @@ class Maintenance extends Page {
                             backgroundColor="#004ba0"
                             label={t('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
+                            primary="true"
                         />
                     </CardText>
                 </Card>
