@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // Material UI
 import { GridList, GridTile } from 'material-ui/GridList';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import { Card, CardText } from 'material-ui/Card';
 
@@ -197,7 +197,7 @@ class Maintenance extends Page {
                         >
                             {gridElements}
                         </GridList>
-                        <FlatButton
+                        <RaisedButton
                             label={t('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
                             primary={Boolean(true)}

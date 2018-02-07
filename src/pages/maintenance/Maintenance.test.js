@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { GridList, GridTile } from 'material-ui/GridList';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 
 import Maintenance from "./Maintenance";
@@ -54,15 +54,15 @@ it('Maintenance renders needed Checkboxes', () => {
     expect(wrapper.find(Checkbox)).toHaveLength(maintenanceCheckboxes.length + 1);          /* plus Checkbox to select or unselect all */
 });
 
-it('Maintenance renders a FlatButton', () => {
+it('Maintenance renders a RaisedButton', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(FlatButton)).toHaveLength(1);
+    expect(wrapper.find(RaisedButton)).toHaveLength(1);
 });
 
 it('Maintenance calls performMaintenance method when button is clicked', () => {
     const spy = spyOn(Maintenance.prototype, 'performMaintenance')
     const wrapper = ownShallow();
-    wrapper.find(FlatButton).simulate('click');
+    wrapper.find(RaisedButton).simulate('click');
     expect(spy).toHaveBeenCalled();
 });
 
