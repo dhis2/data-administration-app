@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
@@ -19,10 +20,18 @@ const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
 
 class DataStatistics extends Page {
-    constructor(props, context) {
-        super(props, context);
+    static propTypes = {
+        pageInfo: PropTypes.object.isRequired,
+    }
 
-        this.state.tables = this.state.tables || [];
+    constructor() {
+        super();
+
+        // state defaults
+        this.state = {
+            tables: [],
+            loaded: false,
+        };
     }
 
     // auxiliar functions
@@ -167,7 +176,7 @@ class DataStatistics extends Page {
                 },
                 pageState: {
                     loaded: false,
-                    tables: this.state.tables,
+                    tables: [],
                 },
             });
 
@@ -181,7 +190,6 @@ class DataStatistics extends Page {
                         .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
                     DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
                 ];
-
                 this.context.updateAppState({
                     showSnackbar: true,
                     loading: false,
@@ -195,7 +203,6 @@ class DataStatistics extends Page {
                     },
                 });
             }).catch(() => {
-                // TODO show error
                 this.context.updateAppState({
                     showSnackbar: true,
                     loading: false,
@@ -215,7 +222,7 @@ class DataStatistics extends Page {
     render() {
         const noContent = (
             <Card>
-                <CardText>{ this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
+                <CardText>{ this.context.t(this.context.loading ? 'Loading...' : 'No data to show.') }</CardText>
             </Card>
         );
 
@@ -235,7 +242,7 @@ class DataStatistics extends Page {
         const content = tables && tables.length > 0 ? tables : noContent;
         return (
             <div>
-                <h1>{ this.context.t('Data Statistics') }</h1>
+                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
                 {content}
             </div>
         );
