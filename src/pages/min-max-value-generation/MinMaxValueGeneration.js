@@ -10,7 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 
 import Page from '../Page';
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import styles from './MinMaxValueGeneration.css';
 
@@ -40,11 +40,20 @@ class MinMaxValueGeneration extends Page {
         this.loadData();
     }
 
+    pageState() {
+        return {
+            selected: this.state.selected,
+            dataSets: this.state.dataSets,
+            rootWithMember: this.state.rootWithMembers,
+        };
+    }
+
     areActionsDisabled() {
         return this.context.loading || this.state.dataSets == null || this.state.rootWithMembers === null;
     }
 
     loadData() {
+        const t = this.context.t;
         const d2 = this.context.d2;
         if (this.state.dataSets == null || this.state.rootWithMember == null) {
             Promise.all([
@@ -58,15 +67,27 @@ class MinMaxValueGeneration extends Page {
                     fields: 'id,displayName',
                 }),
             ]).then(([organisationUnitsResponse, dataSetsResponse]) => {
-                const organisationUnits = organisationUnitsResponse.toArray();
-                const selected = organisationUnits.map(ou => ou.path);
-                this.setState({
-                    rootWithMembers: organisationUnits[0],
-                    dataSets: dataSetsResponse.toArray(),
-                    selected,
-                });
+                if (this.isPageMounted()) {
+                    const organisationUnits = organisationUnitsResponse.toArray();
+                    const selected = organisationUnits.map(ou => ou.path);
+                    this.setState({
+                        rootWithMembers: organisationUnits[0],
+                        dataSets: dataSetsResponse.toArray(),
+                        selected,
+                    });
+                }
             }).catch(() => {
-                // TODO
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: t('It was not possible to load data'),
+                        },
+                        pageState: this.pageState(),
+                    });
+                }
             });
         }
     }
@@ -82,14 +103,21 @@ class MinMaxValueGeneration extends Page {
     }
 
     generateMinMaxValueClick() {
+        const t = this.context.t;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
-            // TODO Show warning
+            this.context.updateAppState({
+                showSnackbar: true,
+                loading: false,
+                snackbarConf: {
+                    type: WARNING,
+                    message: t('Select Data set and Organisation Unit'),
+                },
+                pageState: this.pageState(),
+            });
             return;
         }
 
-        const t = this.context.t;
         const api = this.context.d2.Api.getApi();
-
         const selectedOrganisationUnitSplitted = this.state.selected[0].split('/');
         const selectedOrgnisationUnit = selectedOrganisationUnitSplitted[selectedOrganisationUnitSplitted.length - 1];
         const dataSetIds = [];
@@ -104,44 +132,55 @@ class MinMaxValueGeneration extends Page {
                 type: LOADING,
                 message: t('Doing Min Max generation'),
             },
-            pageState: { ...this.state },
+            pageState: this.pageState(),
         });
 
         api.post(MIX_MAX_VALUE_ENDPOINT, {
             organisationUnit: selectedOrgnisationUnit,
             dataSets: dataSetIds,
         }).then(() => {
-            this.context.updateAppState({
-                showSnackbar: true,
-                loading: false,
-                snackbarConf: {
-                    type: SUCCESS,
-                    message: t('Min Max generation done'),
-                },
-                pageState: { ...this.state },
-            });
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Min Max generation done'),
+                    },
+                    pageState: this.pageState(),
+                });
+            }
         }).catch(() => {
-            this.context.updateAppState({
-                showSnackbar: true,
-                loading: false,
-                snackbarConf: {
-                    type: ERROR,
-                    message: t('It was not possible to do your request'),
-                },
-                pageState: { ...this.state },
-            });
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: t('It was not possible to do your request'),
+                    },
+                    pageState: this.pageState(),
+                });
+            }
         });
     }
 
     removeMinMaxValueClick() {
+        const t = this.context.t;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
-            // TODO Show warning
+            this.context.updateAppState({
+                showSnackbar: true,
+                loading: false,
+                snackbarConf: {
+                    type: WARNING,
+                    message: t('Select Data set and Organisation Unit'),
+                },
+                pageState: this.pageState(),
+            });
             return;
         }
 
-        const t = this.context.t;
         const api = this.context.d2.Api.getApi();
-
         const selectedOrganisationUnitSplitted = this.state.selected[0].split('/');
         const selectedOrgnisationUnit = selectedOrganisationUnitSplitted[selectedOrganisationUnitSplitted.length - 1];
         const dataSetIds = [];
@@ -159,32 +198,36 @@ class MinMaxValueGeneration extends Page {
                 type: LOADING,
                 message: t('Removing Min Max generation'),
             },
-            pageState: { ...this.state },
+            pageState: this.pageState(),
         });
 
         api.post(`${MIX_MAX_VALUE_ENDPOINT}/remove`, {
             organisationUnit: selectedOrgnisationUnit,
             dataSets: dataSetIds,
         }).then(() => {
-            this.context.updateAppState({
-                showSnackbar: true,
-                loading: false,
-                snackbarConf: {
-                    type: SUCCESS,
-                    message: t('Min Max removal done'),
-                },
-                pageState: { ...this.state },
-            });
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Min Max removal done'),
+                    },
+                    pageState: this.pageState(),
+                });
+            }
         }).catch(() => {
-            this.context.updateAppState({
-                showSnackbar: true,
-                loading: false,
-                snackbarConf: {
-                    type: ERROR,
-                    message: t('It was not possible to do your request'),
-                },
-                pageState: { ...this.state },
-            });
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: t('It was not possible to do your request'),
+                    },
+                    pageState: this.pageState(),
+                });
+            }
         });
     }
 
