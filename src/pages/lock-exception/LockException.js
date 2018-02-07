@@ -35,26 +35,28 @@ class LockException extends Page {
         pageInfo: PropTypes.object.isRequired,
     }
 
+    static initialPager = {
+        pageSize: 20,
+        page: 1,
+        total: 0,
+        pageCount: 1,
+    }
+
     constructor(props, context) {
         super(props, context);
 
-        this.state.lockExceptions = this.state.lockExceptions || [];
-        this.state.showDetailsDialogOpen = false;
-        this.state.showAddDialogOpen = false;
-        this.state.selectedLockException = null;
-        this.state.levels = null;
-        this.state.groups = null;
-        this.state.dataSets = [];
-
-        this.state.selectedOrgUnits = [];
-        this.state.selectedDataSetId = null;
-        this.state.selectedPeriodId = null;
-
-        this.state.pager = this.state.pager || {
-            pageSize: 20,
-            page: 1,
-            total: 0,
-            pageCount: 1,
+        this.state = {
+            lockExceptions: [],
+            showDetailsDialogOpen: false,
+            showAddDialogOpen: false,
+            selectedLockException: null,
+            levels: null,
+            groups: null,
+            dataSets: [],
+            selectedOrgUnits: [],
+            selectedDataSetId: null,
+            selectedPeriodId: null,
+            pager: LockException.initialPager,
         };
 
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
@@ -86,24 +88,24 @@ class LockException extends Page {
     }
 
     componentDidMount() {
-        this.loadLockExceptions();
+        this.loadLockExceptionsForPager(this.state.pager);
     }
 
-    componentDidUpdate() {
-        this.loadLockExceptions();
+    componentWillUpdate() {
+
     }
 
-    loadLockExceptions() {
+    loadLockExceptionsForPager(pager, userIteration) {
         const t = this.context.t;
         const api = this.context.d2.Api.getApi();
-        const url = `lockExceptions?page=${this.state.pager.page}&pageSize=${this.state.pager.pageSize}` +
+        const url = `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
             '&fields=name,' +
             'period[id,displayName],' +
             'organisationUnit[id,displayName],' +
             'dataSet[id,displayName]';
 
         // request to GET lock exceptions
-        if (!this.state.loading && !this.state.loaded) {
+        if (userIteration || (!this.state.loading && !this.state.loaded)) {
             this.context.updateAppState({
                 showSnackbar: true,
                 loading: true,
@@ -114,13 +116,14 @@ class LockException extends Page {
                 pageState: {
                     loaded: false,
                     lockExceptions: this.state.lockExceptions,
+                    pager,
                 },
             });
 
             api.get(url)
                 .then((response) => {
                     this.context.updateAppState({
-                        showSnackbar: true,
+                        showSnackbar: !userIteration,    // do not show load end when user iteration: e.g. pagination
                         loading: false,
                         snackbarConf: {
                             type: SUCCESS,
@@ -147,6 +150,7 @@ class LockException extends Page {
                         pageState: {
                             loaded: true,
                             lockExceptions: [],
+                            pager,
                         },
                     });
                 });
@@ -168,20 +172,13 @@ class LockException extends Page {
     onNextPageClick() {
         const pager = Object.assign({}, this.state.pager);
         pager.page += 1;
-
-        this.setState({
-            loaded: false,
-            pager,
-        });
+        this.loadLockExceptionsForPager(pager, true);
     }
 
     onPreviousPageClick() {
         const pager = Object.assign({}, this.state.pager);
         pager.page -= 1;
-        this.setState({
-            loaded: false,
-            pager,
-        });
+        this.loadLockExceptionsForPager(pager, true);
     }
 
     render() {
@@ -361,7 +358,6 @@ class LockException extends Page {
                 <h1>
                     <span style={{ display: 'inline-block' }}>{this.context.t(this.props.pageInfo.label)}</span>
                     <RaisedButton
-                        className={styles.actionButtons}
                         style={{ display: 'inline-block', float: 'right' }}
                         label={t('ADD')}
                         onClick={showAddDialogHandler}

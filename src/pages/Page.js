@@ -10,24 +10,23 @@ class Page extends Component {
         d2: PropTypes.object,
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
-        pageState: PropTypes.object,
         updateAppState: PropTypes.func,
         t: PropTypes.func,
     }
 
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = context && context.pageState ? { ...context.pageState } : {};
-        this.state.loading = context && context.hasOwnProperty('loading') ? context.loading : false;
-    }
-
     componentWillMount() {
+        // update section on side bar
         if (this.context.currentSection !== this.props.sectionKey) {
             this.context.updateAppState({
                 currentSection: this.props.sectionKey,
             });
         }
+    }
+
+    // FIXME should it be done at specific component
+    componentWillReceiveProps(nextProps) {
+        // update state according new props
+        this.setState(nextProps);
     }
 }
 

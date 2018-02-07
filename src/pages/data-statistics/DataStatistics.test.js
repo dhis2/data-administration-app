@@ -5,7 +5,19 @@ import { shallow } from 'enzyme';
 import DataStatistics from './DataStatistics';
 import DataStatisticsTable from './DataStatisticsTable';
 
-import { DATA_STATISTICS_SECTION_KEY } from '../sections.conf';
+import {
+    sections,
+    DATA_STATISTICS_SECTION_KEY, MAINTENANCE_SECTION_KEY
+} from '../sections.conf';
+
+let dataStatisticsPageInfo = {};
+for(let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    if (section.key === DATA_STATISTICS_SECTION_KEY) {
+        dataStatisticsPageInfo = section.info;
+        break;
+    }
+}
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
@@ -35,7 +47,10 @@ const stateWithTablesForDataStatistics = [
 
 const ownShallow = () => {
     return shallow(
-        <DataStatistics sectionKey={DATA_STATISTICS_SECTION_KEY} />,
+        <DataStatistics
+            sectionKey={DATA_STATISTICS_SECTION_KEY}
+            pageInfo={dataStatisticsPageInfo}
+        />,
         {
             disableLifecycleMethods: true,
             context: {

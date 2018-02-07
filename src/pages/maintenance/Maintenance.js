@@ -20,33 +20,20 @@ class Maintenance extends Page {
         pageInfo: PropTypes.object.isRequired,
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-        loading: PropTypes.bool,
-        currentSection: PropTypes.string,
-        pageState: PropTypes.object,
-        t: PropTypes.func,
-        updateAppState: PropTypes.func,
-    };
+    constructor() {
+        super();
 
-    constructor(props, context) {
-        super(props);
-
-        this.state = context && context.pageState ? { ...context.pageState } : {};
+        const checkboxes = {};
+        for (let i = 0; i < maintenanceCheckboxes.length; i++) {
+            const checkbox = maintenanceCheckboxes[i];
+            checkboxes[checkbox.key] = { checked: false };
+        }
 
         // state defaults
-        if (!this.state.hasOwnProperty('checkboxes')) {
-            const checkboxes = {};
-            for (let i = 0; i < maintenanceCheckboxes.length; i++) {
-                const checkbox = maintenanceCheckboxes[i];
-                checkboxes[checkbox.key] = { checked: false };
-            }
-            this.state.checkboxes = checkboxes;
-        }
-
-        if (!this.state.hasOwnProperty('checkAll')) {
-            this.state.checkAll = false;
-        }
+        this.state = {
+            checkboxes,
+            checkAll: false,
+        };
 
         // actions
         this.performMaintenance = this.performMaintenance.bind(this);
