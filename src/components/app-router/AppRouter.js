@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { translate } from 'react-i18next';
-
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../../pages/home/Home';
@@ -23,7 +21,7 @@ NoMatch.propTypes = {
 const AppRouter = ({ updateAppState, appState }) => {
     const routes = sections.map((section) => {
         const routeRender = () => {
-            const Page = translate()(section.component);
+            const Page = section.component;
             return (
                 <Page
                     updateAppState={updateAppState}
@@ -44,9 +42,8 @@ const AppRouter = ({ updateAppState, appState }) => {
     });
 
     /* Home route */
-    const HomeTranslate = translate()(Home);
     const homeRouteRender = () => (
-        <HomeTranslate
+        <Home
             updateAppState={updateAppState}
             sectionKey="home"
         />
