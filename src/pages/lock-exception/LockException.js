@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 /* Material UI */
 import Dialog from 'material-ui/Dialog';
+import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import { Card, CardText } from 'material-ui/Card';
 
@@ -14,6 +15,8 @@ import 'd2-ui/lib/css/Pagination.css';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
+
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import styles from './LockException.css';
 
@@ -78,6 +81,10 @@ class LockException extends Page {
         });
     }
 
+    areActionsDisabled() {
+        return this.context.loading;
+    }
+
     componentDidMount() {
         this.loadLockExceptions();
     }
@@ -87,6 +94,7 @@ class LockException extends Page {
     }
 
     loadLockExceptions() {
+        const t = this.context.t;
         const api = this.context.d2.Api.getApi();
         const url = `lockExceptions?page=${this.state.pager.page}&pageSize=${this.state.pager.pageSize}` +
             '&fields=name,' +
@@ -97,8 +105,12 @@ class LockException extends Page {
         // request to GET lock exceptions
         if (!this.state.loading && !this.state.loaded) {
             this.context.updateAppState({
+                showSnackbar: true,
                 loading: true,
-                currentSection: this.props.sectionKey,
+                snackbarConf: {
+                    type: LOADING,
+                    message: t('Loading...'),
+                },
                 pageState: {
                     loaded: false,
                     lockExceptions: this.state.lockExceptions,
@@ -108,17 +120,30 @@ class LockException extends Page {
             api.get(url)
                 .then((response) => {
                     this.context.updateAppState({
+                        showSnackbar: true,
                         loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Lock Exceptions Loaded'),
+                        },
                         pageState: {
                             loaded: true,
                             lockExceptions: response.lockExceptions,
                             pager: response.pager,
                         },
                     });
-                }).catch(() => {
-                // TODO show error
+                }).catch((error) => {
+                    const messageError = error && error.message ?
+                        error.message :
+                        t('An unexpected error happened');
+
                     this.context.updateAppState({
+                        showSnackbar: true,
                         loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: messageError,
+                        },
                         pageState: {
                             loaded: true,
                             lockExceptions: [],
@@ -184,7 +209,15 @@ class LockException extends Page {
             const api = this.context.d2.Api.getApi();
             const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
             this.context.updateAppState({
+                showSnackbar: true,
                 loading: true,
+                snackbarConf: {
+                    type: LOADING,
+                    message: t('Removing Lock Exception'),
+                },
+                pageState: {
+                    ...this.state,
+                },
             });
 
             api.delete(deleteUrl).then(() => {
@@ -192,16 +225,36 @@ class LockException extends Page {
                     .filter(lockException => lockException.organisationUnit.id !== le.organisationUnit.id
                         && lockException.period.id !== le.period.id
                         && lockException.dataSet.id !== le.dataSet.id);
+                const pager = this.state.pager;
+                pager.total -= 1;
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Lock Exception removed'),
+                    },
                     pageState: {
                         lockExceptions,
+                        loaded: true,
+                        pager,
                     },
                 });
-            }).catch(() => {
-                // TODO show error
+            }).catch((error) => {
+                const messageError = error && error.message ?
+                    error.message :
+                    t('An unexpected error happend during maintenance');
+
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: messageError,
+                    },
+                    pageState: {
+                        ...this.state,
+                    },
                 });
             });
         };
@@ -212,8 +265,10 @@ class LockException extends Page {
 
         const showDetailsDialogActions = [
             <FlatButton
+                className={styles.actionButtons}
                 label={t('CLOSE')}
                 onClick={closeShowDetailsDialogHandler}
+                disabled={this.areActionsDisabled()}
             />,
         ];
 
@@ -289,10 +344,13 @@ class LockException extends Page {
 
         const addDialogActions = [
             <FlatButton
+                className={styles.actionButtons}
                 label={t('CANCEL')}
                 onClick={closeAddDialogHandler}
             />,
-            <FlatButton
+            <RaisedButton
+                className={styles.actionButtons}
+                primary={Boolean(true)}
                 label={t('ADD')}
                 onClick={addLockExceptionHandler}
             />,
@@ -302,10 +360,13 @@ class LockException extends Page {
             <div className={styles.lockExceptionsTable}>
                 <h1>
                     <span style={{ display: 'inline-block' }}>{this.context.t(this.props.pageInfo.label)}</span>
-                    <FlatButton
+                    <RaisedButton
+                        className={styles.actionButtons}
                         style={{ display: 'inline-block', float: 'right' }}
                         label={t('ADD')}
                         onClick={showAddDialogHandler}
+                        primary={Boolean(true)}
+                        disabled={this.areActionsDisabled()}
                     />
                 </h1>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
