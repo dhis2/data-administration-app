@@ -21,10 +21,10 @@ class MinMaxValueGeneration extends Page {
         pageInfo: PropTypes.object.isRequired,
     }
 
-    constructor(props, context) {
-        super(props, context);
+    constructor() {
+        super();
 
-        this.state = context && context.pageState ? { ...context.pageState } : {
+        this.state = {
             selected: [],
             dataSets: null,
             rootWithMember: null,
