@@ -12,6 +12,8 @@ import {
 
 import DataStatisticsTable from './DataStatisticsTable';
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+
 const tableSample = {
     label: 'Object type',
     elements: [

@@ -7,6 +7,8 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 import { DATA_STATISTICS_SECTION_KEY } from '../sections.conf';
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+
 const stateWithTablesForDataStatistics = [
     {
         label: 'Object type',

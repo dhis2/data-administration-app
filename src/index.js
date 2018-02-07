@@ -44,6 +44,10 @@ getManifest('manifest.webapp').then((manifest) => {
             muiTheme={appTheme}
             initConfig={{
                 baseUrl,
+                schemas: [
+                    'organisationUnit',
+                    'dataSet',
+                ],
             }}
         >
             <I18nextProvider i18n={i18n}>

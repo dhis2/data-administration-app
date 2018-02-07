@@ -9,6 +9,8 @@ import GridSection from './GridSection';
 
 import { sections } from "../../sections.conf";
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+
 const section = sections[0];
 const ownShallow = () => {
     return shallow(
