@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { translate } from 'react-i18next';
-
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../../pages/home/Home';
@@ -20,16 +18,15 @@ NoMatch.propTypes = {
     location: PropTypes.object.isRequired,
 };
 
-const AppRouter = ({ updateAppState, appState }) => {
+const AppRouter = ({ pageState }) => {
     const routes = sections.map((section) => {
         const routeRender = () => {
-            const Page = translate()(section.component);
+            const Page = section.component;
             return (
                 <Page
-                    updateAppState={updateAppState}
                     pageInfo={section.info}
                     sectionKey={section.key}
-                    {...appState}
+                    {...pageState}
                 />
             );
         };
@@ -44,12 +41,8 @@ const AppRouter = ({ updateAppState, appState }) => {
     });
 
     /* Home route */
-    const HomeTranslate = translate()(Home);
     const homeRouteRender = () => (
-        <HomeTranslate
-            updateAppState={updateAppState}
-            sectionKey="home"
-        />
+        <Home sectionKey="home" />
     );
 
     routes.push(<Route key="home" exact path="/" render={homeRouteRender} />);
@@ -67,8 +60,11 @@ const AppRouter = ({ updateAppState, appState }) => {
 };
 
 AppRouter.propTypes = {
-    updateAppState: PropTypes.func.isRequired,
-    appState: PropTypes.object.isRequired,
+    pageState: PropTypes.object,
+};
+
+AppRouter.defaultProps = {
+    pageState: {},
 };
 
 export default AppRouter;
