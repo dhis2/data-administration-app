@@ -7,6 +7,8 @@ import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+
 const OBJECT_COUNTS_KEY = 'objectCounts';
 const ACTIVE_USERS_KEY = 'activeUsers';
 const USER_INVITATIONS_KEY = 'userInvitations';
@@ -151,13 +153,18 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
+        const t = this.context.t;
         const api = this.context.d2.Api.getApi();
 
         // request to GET statistics
         if (!this.context.loading && !this.state.loaded) {
             this.context.updateAppState({
+                showSnackbar: true,
                 loading: true,
-                currentSection: this.props.sectionKey,
+                snackbarConf: {
+                    type: LOADING,
+                    message: t('Loading...'),
+                },
                 pageState: {
                     loaded: false,
                     tables: this.state.tables,
@@ -176,8 +183,12 @@ class DataStatistics extends Page {
                 ];
 
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
-                    currentSection: this.props.sectionKey,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Data Statistics were loaded.'),
+                    },
                     pageState: {
                         loaded: true,
                         tables,
@@ -186,8 +197,12 @@ class DataStatistics extends Page {
             }).catch(() => {
                 // TODO show error
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
-                    currentSection: this.props.sectionKey,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: t('It was not possible to load Data Statistics'),
+                    },
                     pageState: {
                         loaded: true,
                         tables: [],

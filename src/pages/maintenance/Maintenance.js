@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // Material UI
 import { GridList, GridTile } from 'material-ui/GridList';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import { Card, CardText } from 'material-ui/Card';
 
@@ -11,6 +11,7 @@ import Page from '../Page';
 
 // App configs
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY } from './maintenance.conf';
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import styles from './Maintenance.css';
 
@@ -52,6 +53,10 @@ class Maintenance extends Page {
         this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
 
+    areActionsDisabled() {
+        return this.context.loading;
+    }
+
     buildFormData() {
         let formData = null;
         const checkboxKeys = Object.keys(this.state.checkboxes);
@@ -84,9 +89,11 @@ class Maintenance extends Page {
     }
 
     performMaintenance() {
-        const formData = this.buildFormData();
+        const t = this.context.t;
         const api = this.context.d2.Api.getApi();
+
         const apiRequests = [];
+        const formData = this.buildFormData();
         if (formData) {
             apiRequests.push(api.post('maintenance', formData));
         }
@@ -98,7 +105,12 @@ class Maintenance extends Page {
 
         if (apiRequests.length > 0) {
             this.context.updateAppState({
+                showSnackbar: true,
                 loading: true,
+                snackbarConf: {
+                    type: LOADING,
+                    message: t('Performing Maintenance'),
+                },
                 pageState: {
                     checkboxes: this.state.checkboxes,
                     checkAll: this.state.checkAll,
@@ -107,15 +119,29 @@ class Maintenance extends Page {
 
             Promise.all(apiRequests).then(() => {
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Maintenance done'),
+                    },
                     pageState: {
                         checkboxes: this.state.checkboxes,
                         checkAll: this.state.checkAll,
                     },
                 });
-            }).catch(() => {
+            }).catch((error) => {
+                const messageError = error && error.message ?
+                    error.message :
+                    t('An unexpected error happend during maintenance');
+
                 this.context.updateAppState({
+                    showSnackbar: true,
                     loading: false,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: messageError,
+                    },
                     pageState: {
                         checkboxes: this.state.checkboxes,
                         checkAll: this.state.checkAll,
@@ -142,6 +168,7 @@ class Maintenance extends Page {
                         onCheck={toggleCheckbox}
                         labelStyle={{ color: '#000000' }}
                         iconStyle={{ fill: '#000000' }}
+                        disabled={this.areActionsDisabled()}
                     />
                 </GridTile>
             );
@@ -160,6 +187,7 @@ class Maintenance extends Page {
                             onCheck={this.toggleCheckAll}
                             labelStyle={{ color: '#757575' }}
                             iconStyle={{ fill: '#757575' }}
+                            disabled={this.areActionsDisabled()}
                         />
                         <GridList
                             className={styles.maintenanceGridContainer}
@@ -169,11 +197,11 @@ class Maintenance extends Page {
                         >
                             {gridElements}
                         </GridList>
-                        <FlatButton
-                            className={styles.maintenanceActionButton}
-                            backgroundColor="#004ba0"
+                        <RaisedButton
                             label={t('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
+                            primary={Boolean(true)}
+                            disabled={this.areActionsDisabled()}
                         />
                     </CardText>
                 </Card>
