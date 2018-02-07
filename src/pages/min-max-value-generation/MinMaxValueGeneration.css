@@ -35,3 +35,7 @@
 .options {
     padding: .25rem .5rem;
 }
+
+.actionButton {
+    margin-right: 10px;
+}

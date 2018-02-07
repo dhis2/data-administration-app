@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Paper from 'material-ui/Paper/Paper';
 import { Card, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 
@@ -200,6 +201,7 @@ class MinMaxValueGeneration extends Page {
                                     {this.state.dataSets ? (
                                         <select
                                             multiple
+                                            disabled={this.areActionsDisabled()}
                                             className={styles.select}
                                             ref={this.dataSetsSelectRef}
                                         >
@@ -220,6 +222,7 @@ class MinMaxValueGeneration extends Page {
                             <div className={styles.right}>
                                 {this.state.rootWithMembers ? (
                                     <OrgUnitTree
+                                        hideMemberCount={Boolean(true)}
                                         root={this.state.rootWithMembers}
                                         selected={this.state.selected}
                                         initiallyExpanded={[`/${this.state.rootWithMembers.id}`]}
@@ -230,13 +233,15 @@ class MinMaxValueGeneration extends Page {
                                     )}
                             </div>
                         </div>
-                        <FlatButton
+                        <RaisedButton
+                            className={styles.actionButton}
                             primary={Boolean(true)}
                             label={t('GENERATE')}
                             onClick={this.generateMinMaxValueClick}
                             disabled={this.areActionsDisabled()}
                         />
                         <FlatButton
+                            className={styles.actionButton}
                             secondary={Boolean(true)}
                             label={t('REMOVE')}
                             onClick={this.removeMinMaxValueClick}
