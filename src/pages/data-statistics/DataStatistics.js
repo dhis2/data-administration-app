@@ -181,40 +181,44 @@ class DataStatistics extends Page {
             });
 
             api.get('dataSummary').then((response) => {
-                const tables = [
-                    DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
-                    DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
-                    DataStatistics
-                        .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
-                    DataStatistics
-                        .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
-                    DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
-                ];
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: t('Data Statistics were loaded.'),
-                    },
-                    pageState: {
-                        loaded: true,
-                        tables,
-                    },
-                });
+                if (this.isPageMounted()) {
+                    const tables = [
+                        DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
+                        DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
+                        DataStatistics
+                            .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
+                        DataStatistics
+                            .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
+                        DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
+                    ];
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Data Statistics were loaded.'),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables,
+                        },
+                    });
+                }
             }).catch(() => {
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: ERROR,
-                        message: t('It was not possible to load Data Statistics'),
-                    },
-                    pageState: {
-                        loaded: true,
-                        tables: [],
-                    },
-                });
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: t('It was not possible to load Data Statistics'),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables: [],
+                        },
+                    });
+                }
             });
         }
     }

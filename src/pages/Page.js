@@ -15,6 +15,8 @@ class Page extends Component {
     }
 
     componentWillMount() {
+        this.pageMounted = true;
+
         // update section on side bar
         if (this.context.currentSection !== this.props.sectionKey) {
             this.context.updateAppState({
@@ -27,6 +29,14 @@ class Page extends Component {
     componentWillReceiveProps(nextProps) {
         // update state according new props
         this.setState(nextProps);
+    }
+
+    componentWillUnmount() {
+        this.pageMounted = false;
+    }
+
+    isPageMounted() {
+        return this.pageMounted;
     }
 }
 
