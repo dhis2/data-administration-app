@@ -3,10 +3,6 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-.container .loader{
-  height: 100vh;
-}
-
 .leftBar {
   width: 295px;
   position: fixed;
