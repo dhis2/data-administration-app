@@ -223,6 +223,22 @@ class DataStatistics extends Page {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        if (nextProps.hasOwnProperty('loaded')) {
+            nextState.loaded = nextProps.loaded;
+        }
+
+        if (nextProps.tables) {
+            nextState.tables = nextProps.tables;
+        }
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
+    }
+
     render() {
         const noContent = (
             <Card>
