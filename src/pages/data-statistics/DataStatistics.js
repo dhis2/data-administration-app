@@ -19,6 +19,11 @@ const EVENT_COUNT_KEY = 'eventCount';
 const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'tables',
+    'loaded',
+];
+
 class DataStatistics extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
@@ -226,13 +231,11 @@ class DataStatistics extends Page {
     componentWillReceiveProps(nextProps) {
         const nextState = {};
 
-        if (nextProps.hasOwnProperty('loaded')) {
-            nextState.loaded = nextProps.loaded;
-        }
-
-        if (nextProps.tables) {
-            nextState.tables = nextProps.tables;
-        }
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
 
         if (nextState !== {}) {
             this.setState(nextState);

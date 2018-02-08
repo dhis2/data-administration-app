@@ -15,6 +15,12 @@ import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/Snac
 
 import styles from './Maintenance.css';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'checkboxes',
+    'checkAll',
+];
+
+
 class Maintenance extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
@@ -43,13 +49,11 @@ class Maintenance extends Page {
     componentWillReceiveProps(nextProps) {
         const nextState = {};
 
-        if (nextProps.checkboxes) {
-            nextState.checkboxes = nextProps.checkboxes;
-        }
-
-        if (nextProps.hasOwnProperty('checkAll')) {
-            nextState.checkAll = nextProps.checkAll;
-        }
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
 
         if (nextState !== {}) {
             this.setState(nextState);
