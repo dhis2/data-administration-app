@@ -200,9 +200,6 @@ class MinMaxValueGeneration extends Page {
             dataSetIds.push(this.dataSetsSelect.selectedOptions[i].value);
         }
 
-        const headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-
         this.context.updateAppState({
             showSnackbar: true,
             loading: true,
@@ -213,10 +210,7 @@ class MinMaxValueGeneration extends Page {
             pageState: { ...this.state },
         });
 
-        api.post(`${MIX_MAX_VALUE_ENDPOINT}/remove`, {
-            organisationUnit: selectedOrgnisationUnit,
-            dataSets: dataSetIds,
-        }).then(() => {
+        api.delete(`${MIX_MAX_VALUE_ENDPOINT}/${selectedOrgnisationUnit}?ds=${dataSetIds}`).then(() => {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
