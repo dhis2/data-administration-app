@@ -40,6 +40,22 @@ class Maintenance extends Page {
         this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        if (nextProps.checkboxes) {
+            nextState.checkboxes = nextProps.checkboxes;
+        }
+
+        if (nextProps.hasOwnProperty('checkAll')) {
+            nextState.checkAll = nextProps.checkAll;
+        }
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
+    }
+
     areActionsDisabled() {
         return this.context.loading;
     }

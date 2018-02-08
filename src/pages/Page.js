@@ -25,9 +25,8 @@ class Page extends Component {
         }
     }
 
-    // FIXME should it be done at specific component
+    // This is the default behavior. However, it is recommended to override this method on each Page Component
     componentWillReceiveProps(nextProps) {
-        // update state according new props
         this.setState(nextProps);
     }
 
