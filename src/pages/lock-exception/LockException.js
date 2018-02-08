@@ -20,6 +20,20 @@ import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/Snac
 
 import styles from './LockException.css';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'lockExceptions',
+    'showDetailsDialogOpen',
+    'showAddDialogOpen',
+    'selectedLockException',
+    'levels',
+    'groups',
+    'dataSets',
+    'selectedOrgUnits',
+    'selectedDataSetId',
+    'selectedPeriodId',
+    'pager',
+];
+
 const calculatePageValue = (pager) => {
     const pageSize = pager.pageSize;
     const { total, pageCount, page } = pager;
@@ -91,20 +105,18 @@ class LockException extends Page {
         this.loadLockExceptionsForPager(this.state.pager);
     }
 
-    pageState() {
-        return {
-            lockExceptions: this.state.lockExceptions,
-            showDetailsDialogOpen: this.state.showDetailsDialogOpen,
-            showAddDialogOpen: this.state.showAddDialogOpen,
-            selectedLockException: this.state.selectedLockException,
-            levels: this.state.levels,
-            groups: this.state.groups,
-            dataSets: this.state.dataSets,
-            selectedOrgUnits: this.state.selectedOrgUnits,
-            selectedDataSetId: this.state.selectedDataSetId,
-            selectedPeriodId: this.state.selectedPeriodId,
-            pager: this.state.pager,
-        };
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
     loadLockExceptionsForPager(pager, userIteration) {
@@ -228,7 +240,7 @@ class LockException extends Page {
                     type: LOADING,
                     message: t('Removing Lock Exception'),
                 },
-                pageState: this.pageState(),
+                pageState: { ...this.state },
             });
 
             api.delete(deleteUrl).then(() => {
@@ -256,7 +268,7 @@ class LockException extends Page {
                             type: ERROR,
                             message: messageError,
                         },
-                        pageState: this.pageState(),
+                        pageState: { ...this.state },
                     });
                 }
             });
@@ -318,7 +330,7 @@ class LockException extends Page {
                                 type: ERROR,
                                 message: messageError,
                             },
-                            pageState: this.pageState(),
+                            pageState: { ...this.state },
                         });
                     }
                 });
@@ -370,7 +382,7 @@ class LockException extends Page {
                                 type: ERROR,
                                 message: messageError,
                             },
-                            pageState: this.pageState(),
+                            pageState: { ...this.state },
                         });
                     }
                 });
