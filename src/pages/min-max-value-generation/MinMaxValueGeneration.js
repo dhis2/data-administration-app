@@ -40,12 +40,24 @@ class MinMaxValueGeneration extends Page {
         this.loadData();
     }
 
-    pageState() {
-        return {
-            selected: this.state.selected,
-            dataSets: this.state.dataSets,
-            rootWithMember: this.state.rootWithMembers,
-        };
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        if (nextProps.selected) {
+            nextState.selected = nextProps.selected;
+        }
+
+        if (nextProps.dataSets) {
+            nextState.dataSets = nextProps.dataSets;
+        }
+
+        if (nextProps.rootWithMember) {
+            nextState.rootWithMember = nextProps.rootWithMember;
+        }
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
     areActionsDisabled() {
@@ -85,7 +97,7 @@ class MinMaxValueGeneration extends Page {
                             type: ERROR,
                             message: t('It was not possible to load data'),
                         },
-                        pageState: this.pageState(),
+                        pageState: { ...this.state },
                     });
                 }
             });
@@ -112,7 +124,7 @@ class MinMaxValueGeneration extends Page {
                     type: WARNING,
                     message: t('Select Data set and Organisation Unit'),
                 },
-                pageState: this.pageState(),
+                pageState: { ...this.state },
             });
             return;
         }
@@ -132,7 +144,7 @@ class MinMaxValueGeneration extends Page {
                 type: LOADING,
                 message: t('Doing Min Max generation'),
             },
-            pageState: this.pageState(),
+            pageState: { ...this.state },
         });
 
         api.post(MIX_MAX_VALUE_ENDPOINT, {
@@ -147,7 +159,7 @@ class MinMaxValueGeneration extends Page {
                         type: SUCCESS,
                         message: t('Min Max generation done'),
                     },
-                    pageState: this.pageState(),
+                    pageState: { ...this.state },
                 });
             }
         }).catch(() => {
@@ -159,7 +171,7 @@ class MinMaxValueGeneration extends Page {
                         type: ERROR,
                         message: t('It was not possible to do your request'),
                     },
-                    pageState: this.pageState(),
+                    pageState: { ...this.state },
                 });
             }
         });
@@ -175,7 +187,7 @@ class MinMaxValueGeneration extends Page {
                     type: WARNING,
                     message: t('Select Data set and Organisation Unit'),
                 },
-                pageState: this.pageState(),
+                pageState: { ...this.state },
             });
             return;
         }
@@ -198,7 +210,7 @@ class MinMaxValueGeneration extends Page {
                 type: LOADING,
                 message: t('Removing Min Max generation'),
             },
-            pageState: this.pageState(),
+            pageState: { ...this.state },
         });
 
         api.post(`${MIX_MAX_VALUE_ENDPOINT}/remove`, {
@@ -213,7 +225,7 @@ class MinMaxValueGeneration extends Page {
                         type: SUCCESS,
                         message: t('Min Max removal done'),
                     },
-                    pageState: this.pageState(),
+                    pageState: { ...this.state },
                 });
             }
         }).catch(() => {
@@ -225,7 +237,7 @@ class MinMaxValueGeneration extends Page {
                         type: ERROR,
                         message: t('It was not possible to do your request'),
                     },
-                    pageState: this.pageState(),
+                    pageState: { ...this.state },
                 });
             }
         });
