@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { Card, CardText, CardHeader } from 'material-ui/Card';
-import { FontIcon, Paper } from 'material-ui';
+import { FontIcon } from 'material-ui';
 
 import styles from './DataIntegrityCard.css';
 
@@ -54,7 +54,7 @@ class DataIntegrityCard extends PureComponent {
                     {
                         Object.keys(this.props.content).map(element => (
                             <span key={element}>
-                                <h4>element</h4>
+                                <h4>{element}</h4>
                                 <p>{this.props.content[element]}</p>
                             </span>
                         ))
@@ -90,21 +90,19 @@ class DataIntegrityCard extends PureComponent {
         );
 
         return (
-            <Paper className={styles.paper} zDepth={2}>
-                <Card>
-                    <CardHeader
-                        title={translator(this.props.title)}
-                        titleColor={titleColor}
-                        titleStyle={jsStyles.titleStyle}
-                        actAsExpander={expandable}
-                        showExpandableButton={showIcon}
-                        closeIcon={closeFontIcon}
-                        openIcon={openFontIcon}
-                        iconStyle={!expandable ? jsStyles.iconStyle : {}}
-                    />
-                    {cardText}
-                </Card>
-            </Paper>
+            <Card className={styles.card}>
+                <CardHeader
+                    title={translator(this.props.title)}
+                    titleColor={titleColor}
+                    titleStyle={jsStyles.titleStyle}
+                    actAsExpander={expandable}
+                    showExpandableButton={showIcon}
+                    closeIcon={closeFontIcon}
+                    openIcon={openFontIcon}
+                    iconStyle={!expandable ? jsStyles.iconStyle : {}}
+                />
+                {cardText}
+            </Card>
         );
     }
 }

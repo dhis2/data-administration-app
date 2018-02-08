@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Card, CardText } from 'material-ui';
 import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
@@ -106,7 +107,11 @@ class DataIntegrity extends Page {
     }
 
     render() {
-        // TODO: No content... message...
+        const noContent = (
+            <Card>
+                <CardText>{ this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
+            </Card>
+        );
         const errorElementskeys = Object.keys(this.state.cards);
         let cardsToShow = [];
         if (errorElementskeys.length) {
@@ -139,7 +144,7 @@ class DataIntegrity extends Page {
         return (
             <div className="page-wrapper">
                 <h1>{ this.context.t('Data Integrity') }</h1>
-                {cardsToShow}
+                {cardsToShow && cardsToShow.length > 0 ? cardsToShow : noContent}
             </div>
         );
     }
