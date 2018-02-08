@@ -4,6 +4,7 @@ import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
+import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/SnackbarTypes';
 
 class DataIntegrity extends Page {
     constructor(props, context) {
@@ -18,25 +19,40 @@ class DataIntegrity extends Page {
     }
 
     componentWillUnmount() {
-        if (this.context && this.context.pageState && this.context.pageState.timeoutId) {
-            clearTimeout(this.context.pageState.timeoutId);
+        if (this.context && this.context.pageState && this.context.pageState.intervalId) {
+            clearInterval(this.context.pageState.intervalId);
         }
     }
 
     setLoadingPageState(id) {
+        const translator = this.context.t;
         this.context.updateAppState({
             loading: true,
+            showSnackbar: true,
+            snackbarConf: {
+                type: LOADING,
+                message: translator('Performing data integrity checks.'),
+            },
             currentSection: this.props.sectionKey,
             pageState: {
                 loaded: false,
-                timeoutId: id,
+                intervalId: id,
             },
         });
     }
 
-    setLoadedPageState() {
+    setLoadedPageWithErrorState(error) {
+        const translator = this.context.t;
+        const messageError = error && error.message ?
+            error.message :
+            translator('An unexpected error happened during data integrity checks.');
         this.context.updateAppState({
             loading: false,
+            showSnackbar: true,
+            snackbarConf: {
+                type: ERROR,
+                message: messageError,
+            },
             currentSection: this.props.sectionKey,
             pageState: {
                 loaded: true,
@@ -49,45 +65,43 @@ class DataIntegrity extends Page {
         this.setLoadingPageState();
         api.post(conf.INIT_ENDPOINT).then(() => {
             this.setLoadingPageState(
-                setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
+                setInterval(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
             );
-        }).catch(() => {
-            // TODO: show error
-            this.setLoadedPageState();
+        }).catch((e) => {
+            this.setLoadedPageWithErrorState(e);
         });
     }
 
     requestTaskStatus() {
         const api = this.context.d2.Api.getApi();
         api.get(conf.PULL_ENDPOINT).then((response) => {
-            if (!response.length) {
-                this.setLoadingPageState(
-                    setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
-                );
-            } else {
+            if (response.length) {
                 this.loadData();
-                this.setLoadingPageState();
             }
-        }).catch(() => {
-            // TODO: show error
-            this.setLoadedPageState();
+        }).catch((e) => {
+            this.setLoadedPageWithErrorState(e);
         });
     }
 
     loadData() {
         const api = this.context.d2.Api.getApi();
+        const translator = this.context.t;
         api.get(conf.DATA_ENDPOINT).then((response) => {
             this.context.updateAppState({
                 loading: false,
+                showSnackbar: true,
+                snackbarConf: {
+                    type: SUCCESS,
+                    message: translator('Data integrity checks performed with success.'),
+                },
                 currentSection: this.props.sectionKey,
                 pageState: {
                     loaded: true,
                     cards: response,
                 },
             });
-        }).catch(() => {
-            // TODO: show error
-            this.setLoadedPageState();
+        }).catch((e) => {
+            this.setLoadedPageWithErrorState(e);
         });
     }
 
