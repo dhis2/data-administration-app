@@ -1,11 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import classNames from 'classnames';
 import { Card, CardText, CardHeader } from 'material-ui/Card';
 import { FontIcon, Paper } from 'material-ui';
 
 import styles from './DataIntegrityCard.css';
+
+const jsStyles = {
+    errorColor: '#ff5722',
+    noErrorColor: '#1c9d17',
+    titleStyle: {
+        fontSize: 14,
+        fontWeight: 'normal',
+    },
+    iconStyle: {
+        color: '#1c9d17',
+        cursor: 'auto',
+    },
+};
 
 class DataIntegrityCard extends PureComponent {
     static propTypes = {
@@ -25,11 +37,11 @@ class DataIntegrityCard extends PureComponent {
     };
 
     render() {
-        let expandable = true;
         const showIcon = true;
-        let titleColor = '#ff5722';
         const translator = this.context.t;
         const info = [];
+        let expandable = true;
+        let titleColor = jsStyles.errorColor;
         let cardTxt = null;
         let iconTypeClose = 'keyboard_arrow_down';
         let iconTypeOpen = 'keyboard_arrow_up';
@@ -63,18 +75,18 @@ class DataIntegrityCard extends PureComponent {
             );
         } else {
             expandable = false;
-            titleColor = '#1c9d17';
+            titleColor = jsStyles.noErrorColor;
             iconTypeClose = 'done';
             iconTypeOpen = 'done';
         }
 
         const iconClose = (
-            <FontIcon className={classNames('material-icons')}>
+            <FontIcon className={'material-icons'}>
                 {iconTypeClose}
             </FontIcon>
         );
         const iconOpen = (
-            <FontIcon className={classNames('material-icons')}>
+            <FontIcon className={'material-icons'}>
                 {iconTypeOpen}
             </FontIcon>
         );
@@ -83,14 +95,14 @@ class DataIntegrityCard extends PureComponent {
             <Paper className={styles.paper} zDepth={2}>
                 <Card>
                     <CardHeader
-                        titleColor={titleColor}
-                        titleStyle={{ fontSize: 14, fontWeight: 'normal' }}
                         title={translator(this.props.title)}
+                        titleColor={titleColor}
+                        titleStyle={jsStyles.titleStyle}
                         actAsExpander={expandable}
                         showExpandableButton={showIcon}
                         closeIcon={iconClose}
                         openIcon={iconOpen}
-                        iconStyle={!expandable ? { color: '#1c9d17', cursor: 'auto' } : {}}
+                        iconStyle={!expandable ? jsStyles.iconStyle : {}}
                     />
                     {cardTxt}
                 </Card>
