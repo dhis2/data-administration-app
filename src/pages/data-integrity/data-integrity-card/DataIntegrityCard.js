@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
 import { Card, CardText, CardHeader } from 'material-ui/Card';
-import { Paper } from 'material-ui';
+import { FontIcon, Paper } from 'material-ui';
 
 import styles from './DataIntegrityCard.css';
 
@@ -12,7 +13,11 @@ class DataIntegrityCard extends PureComponent {
         content: PropTypes.oneOfType([
             PropTypes.array,
             PropTypes.object,
-        ]).isRequired,
+        ]),
+    }
+
+    static defaultProps = {
+        content: [],
     }
 
     static contextTypes = {
@@ -20,9 +25,15 @@ class DataIntegrityCard extends PureComponent {
     };
 
     render() {
-        const expandable = true;
+        let expandable = true;
+        const showIcon = true;
+        let titleColor = '#ff5722';
         const translator = this.context.t;
-        let info = [];
+        const info = [];
+        let cardTxt = null;
+        let iconTypeClose = 'keyboard_arrow_down';
+        let iconTypeOpen = 'keyboard_arrow_up';
+
         if (!Array.isArray(this.props.content)) {
             const keys = Object.keys(this.props.content);
             for (let i = 0; i < keys.length; i++) {
@@ -33,25 +44,55 @@ class DataIntegrityCard extends PureComponent {
                     </span>,
                 );
             }
+            cardTxt = (
+                <CardText
+                    style={{ paddingTop: 0 }}
+                    expandable={expandable}
+                >
+                    {info}
+                </CardText>
+            );
+        } else if (this.props.content.length) {
+            cardTxt = (
+                <CardText
+                    style={{ paddingTop: 0 }}
+                    expandable={expandable}
+                >
+                    {this.props.content.map(string => <p key={string}>{string}</p>)}
+                </CardText>
+            );
         } else {
-            info = this.props.content;
+            expandable = false;
+            titleColor = '#1c9d17';
+            iconTypeClose = 'done';
+            iconTypeOpen = 'done';
         }
+
+        const iconClose = (
+            <FontIcon className={classNames('material-icons')}>
+                {iconTypeClose}
+            </FontIcon>
+        );
+        const iconOpen = (
+            <FontIcon className={classNames('material-icons')}>
+                {iconTypeOpen}
+            </FontIcon>
+        );
+
         return (
             <Paper className={styles.paper} zDepth={2}>
                 <Card>
                     <CardHeader
-                        titleColor={'#ff5722'}
+                        titleColor={titleColor}
                         titleStyle={{ fontSize: 14, fontWeight: 'normal' }}
                         title={translator(this.props.title)}
                         actAsExpander={expandable}
-                        showExpandableButton={expandable}
+                        showExpandableButton={showIcon}
+                        closeIcon={iconClose}
+                        openIcon={iconOpen}
+                        iconStyle={!expandable ? { color: '#1c9d17', cursor: 'auto' } : {}}
                     />
-                    <CardText
-                        style={{ paddingTop: 0 }}
-                        expandable={expandable}
-                    >
-                        {info}
-                    </CardText>
+                    {cardTxt}
                 </Card>
             </Paper>
         );

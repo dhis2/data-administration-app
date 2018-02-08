@@ -24,7 +24,14 @@ class DataIntegrity extends Page {
     }
 
     startRequestTaskStatusTimeout() {
-        return setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL);
+        this.context.updateAppState({
+            loading: true,
+            currentSection: this.props.sectionKey,
+            pageState: {
+                loaded: false,
+                timeoutId: setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
+            },
+        });
     }
 
     initDataIntegrityCheck() {
@@ -38,14 +45,7 @@ class DataIntegrity extends Page {
         });
 
         api.post(conf.INIT_ENDPOINT).then(() => {
-            this.context.updateAppState({
-                loading: true,
-                currentSection: this.props.sectionKey,
-                pageState: {
-                    loaded: true,
-                    timeoutId: this.startRequestTaskStatusTimeout(),
-                },
-            });
+            this.startRequestTaskStatusTimeout();
         }).catch(() => {
             // TODO show error
             this.context.updateAppState({
@@ -62,21 +62,14 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         api.get(conf.PULL_ENDPOINT).then((response) => {
             if (!response.length) {
+                this.startRequestTaskStatusTimeout();
+            } else {
+                this.loadData();
                 this.context.updateAppState({
                     loading: true,
                     currentSection: this.props.sectionKey,
                     pageState: {
                         loaded: false,
-                        timeoutId: this.startRequestTaskStatusTimeout(),
-                    },
-                });
-            } else {
-                this.loadData();
-                this.context.updateAppState({
-                    loading: false,
-                    currentSection: this.props.sectionKey,
-                    pageState: {
-                        loaded: true,
                     },
                 });
             }
@@ -102,19 +95,37 @@ class DataIntegrity extends Page {
     }
 
     render() {
+        // TODO: No content... message...
         const keys = Object.keys(this.state.cards);
         const cardsToShow = [];
-        for (let i = 0; i < keys.length; i++) {
-            cardsToShow.push(
-                <DataIntegrityCard
-                    key={keys[i]}
-                    title={
-                        conf.dataIntegrityControls.find(
-                            control => control.key === keys[i]).label
-                    }
-                    content={this.state.cards[keys[i]]}
-                />,
-            );
+        if (keys.length) {
+            for (let i = 0; i < keys.length; i++) {
+                cardsToShow.push(
+                    <DataIntegrityCard
+                        key={keys[i]}
+                        title={
+                            conf.dataIntegrityControls.find(
+                                control => control.key === keys[i]).label
+                        }
+                        content={this.state.cards[keys[i]]}
+                    />,
+                );
+            }
+        }
+        if (this.context.pageState && this.context.pageState.loaded) {
+            const noErrors = conf.dataIntegrityControls
+                .filter(
+                    element => keys.indexOf(element.key) < 0,
+                ).map(
+                    resultElement => (
+                        <DataIntegrityCard
+                            key={resultElement.key}
+                            title={resultElement.label}
+                            content={[]}
+                        />
+                    ),
+                );
+            cardsToShow.push(noErrors);
         }
         return (
             <div className="page-wrapper">
