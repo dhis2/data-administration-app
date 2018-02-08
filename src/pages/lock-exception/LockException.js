@@ -91,8 +91,20 @@ class LockException extends Page {
         this.loadLockExceptionsForPager(this.state.pager);
     }
 
-    componentWillUpdate() {
-
+    pageState() {
+        return {
+            lockExceptions: this.state.lockExceptions,
+            showDetailsDialogOpen: this.state.showDetailsDialogOpen,
+            showAddDialogOpen: this.state.showAddDialogOpen,
+            selectedLockException: this.state.selectedLockException,
+            levels: this.state.levels,
+            groups: this.state.groups,
+            dataSets: this.state.dataSets,
+            selectedOrgUnits: this.state.selectedOrgUnits,
+            selectedDataSetId: this.state.selectedDataSetId,
+            selectedPeriodId: this.state.selectedPeriodId,
+            pager: this.state.pager,
+        };
     }
 
     loadLockExceptionsForPager(pager, userIteration) {
@@ -122,37 +134,41 @@ class LockException extends Page {
 
             api.get(url)
                 .then((response) => {
-                    this.context.updateAppState({
-                        showSnackbar: !userIteration,    // do not show load end when user iteration: e.g. pagination
-                        loading: false,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: t('Lock Exceptions Loaded'),
-                        },
-                        pageState: {
-                            loaded: true,
-                            lockExceptions: response.lockExceptions,
-                            pager: response.pager,
-                        },
-                    });
+                    if (this.isPageMounted()) {
+                        this.context.updateAppState({
+                            showSnackbar: !userIteration,    // do not show load end when user iteration: e.g. pagination
+                            loading: false,
+                            snackbarConf: {
+                                type: SUCCESS,
+                                message: t('Lock Exceptions Loaded'),
+                            },
+                            pageState: {
+                                loaded: true,
+                                lockExceptions: response.lockExceptions,
+                                pager: response.pager,
+                            },
+                        });
+                    }
                 }).catch((error) => {
-                    const messageError = error && error.message ?
-                        error.message :
-                        t('An unexpected error happened');
+                    if (this.isPageMounted()) {
+                        const messageError = error && error.message ?
+                            error.message :
+                            t('An unexpected error happened');
 
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        loading: false,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: messageError,
-                        },
-                        pageState: {
-                            loaded: true,
-                            lockExceptions: [],
-                            pager,
-                        },
-                    });
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            loading: false,
+                            snackbarConf: {
+                                type: ERROR,
+                                message: messageError,
+                            },
+                            pageState: {
+                                loaded: true,
+                                lockExceptions: [],
+                                pager,
+                            },
+                        });
+                    }
                 });
         }
     }
@@ -212,47 +228,37 @@ class LockException extends Page {
                     type: LOADING,
                     message: t('Removing Lock Exception'),
                 },
-                pageState: {
-                    ...this.state,
-                },
+                pageState: this.pageState(),
             });
 
             api.delete(deleteUrl).then(() => {
-                const lockExceptions = this.state.lockExceptions
-                    .filter(lockException => lockException.organisationUnit.id !== le.organisationUnit.id
-                        && lockException.period.id !== le.period.id
-                        && lockException.dataSet.id !== le.dataSet.id);
-                const pager = this.state.pager;
-                pager.total -= 1;
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: t('Lock Exception removed'),
-                    },
-                    pageState: {
-                        lockExceptions,
-                        loaded: true,
-                        pager,
-                    },
-                });
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Lock Exception removed'),
+                        },
+                    });
+                    this.loadLockExceptionsForPager(LockException.initialPager, true);
+                }
             }).catch((error) => {
-                const messageError = error && error.message ?
-                    error.message :
-                    t('An unexpected error happend during maintenance');
+                if (this.isPageMounted()) {
+                    const messageError = error && error.message ?
+                        error.message :
+                        t('An unexpected error happend during maintenance');
 
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: ERROR,
-                        message: messageError,
-                    },
-                    pageState: {
-                        ...this.state,
-                    },
-                });
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: messageError,
+                        },
+                        pageState: this.pageState(),
+                    });
+                }
             });
         };
 
@@ -291,12 +297,30 @@ class LockException extends Page {
                         fields: 'id,displayName,periodType',
                     }),
                 ]).then(([levels, groups, dataSets]) => {
-                    this.setState({
-                        showAddDialogOpen: true,
-                        levels,
-                        groups,
-                        dataSets: dataSets.toArray(),
-                    });
+                    if (this.isPageMounted()) {
+                        this.setState({
+                            showAddDialogOpen: true,
+                            levels,
+                            groups,
+                            dataSets: dataSets.toArray(),
+                        });
+                    }
+                }).catch((error) => {
+                    if (this.isPageMounted()) {
+                        const messageError = error && error.message ?
+                            error.message :
+                            t('An unexpected error happened while loading data');
+
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            loading: false,
+                            snackbarConf: {
+                                type: ERROR,
+                                message: messageError,
+                            },
+                            pageState: this.pageState(),
+                        });
+                    }
                 });
             }
         };
@@ -324,15 +348,31 @@ class LockException extends Page {
                 formData.append('ds', this.state.selectedDataSetId);
 
                 api.post('lockExceptions', formData).then(() => {
-                    this.setState({
-                        loaded: false,
-                        showAddDialogOpen: false,
-                        selectedOrgUnits: [],
-                        selectedDataSetId: null,
-                        selectedPeriodId: null,
-                    });
-                }).catch(() => {
+                    if (this.isPageMounted()) {
+                        this.setState({
+                            loaded: false,
+                            showAddDialogOpen: false,
+                            selectedOrgUnits: [],
+                            selectedDataSetId: null,
+                            selectedPeriodId: null,
+                        });
+                    }
+                }).catch((error) => {
+                    if (this.isPageMounted()) {
+                        const messageError = error && error.message ?
+                            error.message :
+                            t('An unexpected error happend during maintenance');
 
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            loading: false,
+                            snackbarConf: {
+                                type: ERROR,
+                                message: messageError,
+                            },
+                            pageState: this.pageState(),
+                        });
+                    }
                 });
             } else {
                 // TODO error
