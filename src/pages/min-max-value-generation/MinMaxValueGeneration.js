@@ -16,6 +16,12 @@ import styles from './MinMaxValueGeneration.css';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'selected',
+    'dataSets',
+    'rootWithMember',
+];
+
 class MinMaxValueGeneration extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
@@ -43,17 +49,11 @@ class MinMaxValueGeneration extends Page {
     componentWillReceiveProps(nextProps) {
         const nextState = {};
 
-        if (nextProps.selected) {
-            nextState.selected = nextProps.selected;
-        }
-
-        if (nextProps.dataSets) {
-            nextState.dataSets = nextProps.dataSets;
-        }
-
-        if (nextProps.rootWithMember) {
-            nextState.rootWithMember = nextProps.rootWithMember;
-        }
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
 
         if (nextState !== {}) {
             this.setState(nextState);
