@@ -58,7 +58,7 @@ class DataIntegrityCard extends PureComponent {
                                 <p>{this.props.content[element]}</p>
                             </span>
                         ))
-                    };
+                    }
                 </CardText>
             );
         } else if (this.props.content.length) {

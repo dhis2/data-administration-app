@@ -18,43 +18,42 @@ class DataIntegrity extends Page {
     }
 
     componentWillUnmount() {
-        if (this.context && this.context.pageState) {
+        if (this.context && this.context.pageState && this.context.pageState.timeoutId) {
             clearTimeout(this.context.pageState.timeoutId);
         }
     }
 
-    startRequestTaskStatusTimeout() {
+    setLoadingPageState(id) {
         this.context.updateAppState({
             loading: true,
             currentSection: this.props.sectionKey,
             pageState: {
                 loaded: false,
-                timeoutId: setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
+                timeoutId: id,
+            },
+        });
+    }
+
+    setLoadedPageState() {
+        this.context.updateAppState({
+            loading: false,
+            currentSection: this.props.sectionKey,
+            pageState: {
+                loaded: true,
             },
         });
     }
 
     initDataIntegrityCheck() {
         const api = this.context.d2.Api.getApi();
-        this.context.updateAppState({
-            loading: true,
-            currentSection: this.props.sectionKey,
-            pageState: {
-                loaded: false,
-            },
-        });
-
+        this.setLoadingPageState();
         api.post(conf.INIT_ENDPOINT).then(() => {
-            this.startRequestTaskStatusTimeout();
+            this.setLoadingPageState(
+                setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
+            );
         }).catch(() => {
-            // TODO show error
-            this.context.updateAppState({
-                loading: false,
-                currentSection: this.props.sectionKey,
-                pageState: {
-                    loaded: true,
-                },
-            });
+            // TODO: show error
+            this.setLoadedPageState();
         });
     }
 
@@ -62,19 +61,16 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         api.get(conf.PULL_ENDPOINT).then((response) => {
             if (!response.length) {
-                this.startRequestTaskStatusTimeout();
+                this.setLoadingPageState(
+                    setTimeout(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
+                );
             } else {
                 this.loadData();
-                this.context.updateAppState({
-                    loading: true,
-                    currentSection: this.props.sectionKey,
-                    pageState: {
-                        loaded: false,
-                    },
-                });
+                this.setLoadingPageState();
             }
         }).catch(() => {
-            // console.log('ERROR', e);
+            // TODO: show error
+            this.setLoadedPageState();
         });
     }
 
@@ -90,37 +86,36 @@ class DataIntegrity extends Page {
                 },
             });
         }).catch(() => {
-            // console.log('ERROR', e);
+            // TODO: show error
+            this.setLoadedPageState();
         });
     }
 
     render() {
         // TODO: No content... message...
-        const keys = Object.keys(this.state.cards);
-        const cardsToShow = [];
-        if (keys.length) {
-            for (let i = 0; i < keys.length; i++) {
-                cardsToShow.push(
-                    <DataIntegrityCard
-                        key={keys[i]}
-                        title={
-                            conf.dataIntegrityControls.find(
-                                control => control.key === keys[i]).label
-                        }
-                        content={this.state.cards[keys[i]]}
-                    />,
-                );
-            }
+        const errorElementskeys = Object.keys(this.state.cards);
+        let cardsToShow = [];
+        if (errorElementskeys.length) {
+            cardsToShow = errorElementskeys.map(element => (
+                <DataIntegrityCard
+                    key={element}
+                    title={
+                        conf.dataIntegrityControls.find(
+                            control => control.key === element).label
+                    }
+                    content={this.state.cards[element]}
+                />
+            ));
         }
         if (this.context.pageState && this.context.pageState.loaded) {
             const noErrors = conf.dataIntegrityControls
                 .filter(
-                    element => keys.indexOf(element.key) < 0,
+                    element => errorElementskeys.indexOf(element.key) < 0,
                 ).map(
-                    resultElement => (
+                    resultNoErrorElement => (
                         <DataIntegrityCard
-                            key={resultElement.key}
-                            title={resultElement.label}
+                            key={resultNoErrorElement.key}
+                            title={resultNoErrorElement.label}
                             content={[]}
                         />
                     ),
