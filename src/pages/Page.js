@@ -10,47 +10,33 @@ class Page extends Component {
         d2: PropTypes.object,
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
-        pageState: PropTypes.object,
         updateAppState: PropTypes.func,
         t: PropTypes.func,
     }
 
-    constructor(props, context) {
-        super(props, context);
-
-        this.state = context && context.pageState ? { ...context.pageState } : {};
-        this.state.loading = context && context.hasOwnProperty('loading') ? context.loading : false;
-    }
-
     componentWillMount() {
-        // console.log('COMPONENT WILL MOUNT: ', this.props.sectionKey);
-        // console.log('CURRENT SECTION: ', this.context.currentSection);
-        this.context.updateAppState({
-            currentSection: this.props.sectionKey,
-        });
-    }
-    /*
-    componentDidMount() {
-        console.log('COMPONENT DID MOUNT: ', this.props.sectionKey);
+        this.pageMounted = true;
+
+        // update section on side bar
+        if (this.context.currentSection !== this.props.sectionKey) {
+            this.context.updateAppState({
+                currentSection: this.props.sectionKey,
+            });
+        }
     }
 
-    componentWillReceiveProps() {
-        console.log('COMPONENT WILL RECEIVE PROPS: ', this.props.sectionKey);
-    }
-
-    componentWillUpdate() {
-        console.log('COMPONENT WILL UPDATE: ', this.props.sectionKey);
-    }
-
-    componentDidUpdate() {
-        console.log('COMPONENT DID UPDATE: ', this.props.sectionKey);
+    // This is the default behavior. However, it is recommended to override this method on each Page Component
+    componentWillReceiveProps(nextProps) {
+        this.setState(nextProps);
     }
 
     componentWillUnmount() {
-        console.log('COMPONENT WILL UNMOUNT: ', this.props.sectionKey);
-        console.log('CURRENT SECTION: ', this.context.currentSection);
+        this.pageMounted = false;
     }
-    */
+
+    isPageMounted() {
+        return this.pageMounted;
+    }
 }
 
 export default Page;

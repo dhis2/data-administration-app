@@ -30,7 +30,6 @@ class App extends PureComponent {
             duration: PropTypes.number,
         }),
         currentSection: PropTypes.string,
-        pageState: PropTypes.object,
         updateAppState: PropTypes.func,
         t: PropTypes.func,
     }
@@ -57,7 +56,6 @@ class App extends PureComponent {
             showSnackbar: this.state.showSnackbar,
             snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
-            pageState: this.state.pageState,
             updateAppState: this.updateAppState,
             t: this.props.t,
         };
@@ -87,8 +85,7 @@ class App extends PureComponent {
                 <div className={styles.contentWrapper}>
                     <div className={styles.contentArea}>
                         <AppRouter
-                            appState={this.state}
-                            updateAppState={this.updateAppState}
+                            pageState={this.state.pageState}
                         />
                     </div>
                 </div>

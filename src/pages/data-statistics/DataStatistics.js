@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
@@ -18,11 +19,24 @@ const EVENT_COUNT_KEY = 'eventCount';
 const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
 
-class DataStatistics extends Page {
-    constructor(props, context) {
-        super(props, context);
+const STATE_PROPERTIES_WHITE_LIST = [
+    'tables',
+    'loaded',
+];
 
-        this.state.tables = this.state.tables || [];
+class DataStatistics extends Page {
+    static propTypes = {
+        pageInfo: PropTypes.object.isRequired,
+    }
+
+    constructor() {
+        super();
+
+        // state defaults
+        this.state = {
+            tables: [],
+            loaded: false,
+        };
     }
 
     // auxiliar functions
@@ -167,55 +181,71 @@ class DataStatistics extends Page {
                 },
                 pageState: {
                     loaded: false,
-                    tables: this.state.tables,
+                    tables: [],
                 },
             });
 
             api.get('dataSummary').then((response) => {
-                const tables = [
-                    DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
-                    DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
-                    DataStatistics
-                        .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
-                    DataStatistics
-                        .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
-                    DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
-                ];
-
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: t('Data Statistics were loaded.'),
-                    },
-                    pageState: {
-                        loaded: true,
-                        tables,
-                    },
-                });
+                if (this.isPageMounted()) {
+                    const tables = [
+                        DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
+                        DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
+                        DataStatistics
+                            .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
+                        DataStatistics
+                            .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
+                        DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
+                    ];
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Data Statistics were loaded.'),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables,
+                        },
+                    });
+                }
             }).catch(() => {
-                // TODO show error
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: ERROR,
-                        message: t('It was not possible to load Data Statistics'),
-                    },
-                    pageState: {
-                        loaded: true,
-                        tables: [],
-                    },
-                });
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: t('It was not possible to load Data Statistics'),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables: [],
+                        },
+                    });
+                }
             });
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
         }
     }
 
     render() {
         const noContent = (
             <Card>
-                <CardText>{ this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
+                <CardText>{ this.context.t(this.context.loading ? 'Loading...' : 'No data to show.') }</CardText>
             </Card>
         );
 
@@ -235,7 +265,7 @@ class DataStatistics extends Page {
         const content = tables && tables.length > 0 ? tables : noContent;
         return (
             <div>
-                <h1>{ this.context.t('Data Statistics') }</h1>
+                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
                 {content}
             </div>
         );

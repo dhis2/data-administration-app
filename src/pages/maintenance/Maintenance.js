@@ -15,42 +15,49 @@ import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/Snac
 
 import styles from './Maintenance.css';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'checkboxes',
+    'checkAll',
+];
+
+
 class Maintenance extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-        loading: PropTypes.bool,
-        currentSection: PropTypes.string,
-        pageState: PropTypes.object,
-        t: PropTypes.func,
-        updateAppState: PropTypes.func,
-    };
+    constructor() {
+        super();
 
-    constructor(props, context) {
-        super(props);
-
-        this.state = context && context.pageState ? { ...context.pageState } : {};
+        const checkboxes = {};
+        for (let i = 0; i < maintenanceCheckboxes.length; i++) {
+            const checkbox = maintenanceCheckboxes[i];
+            checkboxes[checkbox.key] = { checked: false };
+        }
 
         // state defaults
-        if (!this.state.hasOwnProperty('checkboxes')) {
-            const checkboxes = {};
-            for (let i = 0; i < maintenanceCheckboxes.length; i++) {
-                const checkbox = maintenanceCheckboxes[i];
-                checkboxes[checkbox.key] = { checked: false };
-            }
-            this.state.checkboxes = checkboxes;
-        }
-
-        if (!this.state.hasOwnProperty('checkAll')) {
-            this.state.checkAll = false;
-        }
+        this.state = {
+            checkboxes,
+            checkAll: false,
+        };
 
         // actions
         this.performMaintenance = this.performMaintenance.bind(this);
         this.toggleCheckAll = this.toggleCheckAll.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
     areActionsDisabled() {
@@ -118,35 +125,39 @@ class Maintenance extends Page {
             });
 
             Promise.all(apiRequests).then(() => {
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: t('Maintenance done'),
-                    },
-                    pageState: {
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
-                    },
-                });
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Maintenance done'),
+                        },
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
+                    });
+                }
             }).catch((error) => {
-                const messageError = error && error.message ?
-                    error.message :
-                    t('An unexpected error happend during maintenance');
+                if (this.isPageMounted()) {
+                    const messageError = error && error.message ?
+                        error.message :
+                        t('An unexpected error happend during maintenance');
 
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    loading: false,
-                    snackbarConf: {
-                        type: ERROR,
-                        message: messageError,
-                    },
-                    pageState: {
-                        checkboxes: this.state.checkboxes,
-                        checkAll: this.state.checkAll,
-                    },
-                });
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: messageError,
+                        },
+                        pageState: {
+                            checkboxes: this.state.checkboxes,
+                            checkAll: this.state.checkAll,
+                        },
+                    });
+                }
             });
         }
     }
