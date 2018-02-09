@@ -1,20 +1,20 @@
+.selectsContainer {
+    display: flex;
+}
+
+.organisationUnitTreeContainer {
+    display: flex;
+}
+
 .left {
-    display: inline-block;
+    flex: 1 0;
     height: 280px;
-    width: 350px;
     overflow: auto;
-    padding: 4px;
-    margin: 4px 0;
-    vertical-align: top;
 }
 
 .right {
-    width: 475px;
-    display: inline-block;
-    z-index: 1;
-    background: white;
+    flex: 2 0;
     margin-left: 1rem;
-    margin-right: 1rem;
 }
 
 .ouLabel {
