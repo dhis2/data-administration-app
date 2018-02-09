@@ -244,8 +244,9 @@ class MinMaxValueGeneration extends Page {
                 <Card>
                     <CardText>
                         <div className={styles.container}>
-                            <div className={styles.left}>
-                                {this.state.dataSets ? (
+                            {this.state.dataSets ? (
+                                <div className={styles.left}>
+                                    <div className={styles.label}>{t('Data Set')}</div>
                                     <select
                                         multiple
                                         disabled={this.areActionsDisabled()}
@@ -259,25 +260,33 @@ class MinMaxValueGeneration extends Page {
                                                 className={styles.options}
                                             >{item.displayName}</option>
                                         ))}
-                                    </select>) :
-                                    (
+                                    </select>
+                                </div>) :
+                                (
+                                    <div className={styles.left}>
                                         <span>{t('Loading data sets')}</span>
-                                    )
-                                }
-                            </div>
-                            <div className={styles.right}>
-                                {this.state.rootWithMembers ? (
-                                    <OrgUnitTree
-                                        hideMemberCount={Boolean(true)}
-                                        root={this.state.rootWithMembers}
-                                        selected={this.state.selected}
-                                        initiallyExpanded={[`/${this.state.rootWithMembers.id}`]}
-                                        onSelectClick={this.handleOrgUnitClick}
-                                    />) :
-                                    (
+                                    </div>
+                                )
+                            }
+                            {this.state.rootWithMembers ? (
+                                <div className={styles.right}>
+                                    <div className={styles.label}>{t('Organisation Unit Selection')}</div>
+                                    <div className={styles.tree}>
+                                        <OrgUnitTree
+                                            className={styles.tree}
+                                            hideMemberCount={Boolean(true)}
+                                            root={this.state.rootWithMembers}
+                                            selected={this.state.selected}
+                                            initiallyExpanded={[`/${this.state.rootWithMembers.id}`]}
+                                            onSelectClick={this.handleOrgUnitClick}
+                                        />
+                                    </div>
+                                </div>) :
+                                (
+                                    <div className={styles.right}>
                                         <span>{t('Updating Organisation Units Tree...')}</span>
-                                    )}
-                            </div>
+                                    </div>
+                                )}
                         </div>
                         <RaisedButton
                             className={styles.actionButton}
