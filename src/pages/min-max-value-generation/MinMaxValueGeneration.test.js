@@ -6,9 +6,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
-import Model from 'd2/lib/model/Model';
-import ModelDefinition from 'd2/lib/model/ModelDefinition';
-
 import MinMaxValueGeneration from "./MinMaxValueGeneration";
 
 import {
@@ -30,12 +27,14 @@ const fakeDatasets = [
     {id: '2', displayName: 'dataSet2'},
 ];
 
-const fakeOrganisationUnitModel = new Model(new ModelDefinition({ singular: 'organisationUnit', plural: 'organisationUnits' }, {}, {}, {}, {}));
-fakeOrganisationUnitModel.id = 'organisationUnit1'
-fakeOrganisationUnitModel.displayName = 'organisationUnit1';
-fakeOrganisationUnitModel.children = { hasUnloadedData: false, toArray: () => [] }; // Pretend to support lazy-loading children
-
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
+jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
+jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
+jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
 
 const ownShallow = () => {
     return shallow(
