@@ -6,12 +6,19 @@
 
 .left {
     flex: 1 0;
+    border: solid 1px #bcbcbc;
 }
 
 .right {
-    flex: 1 0;
-    min-height: 400px;
+    flex: 2 0;
     overflow: auto;
+    border: solid 1px #bcbcbc;
+    margin: 0 10px 0 10px;
+    /*
+    min-height: 280px;
+    max-height: 480px;
+    */
+    height: 325px;
 }
 
 .paper {
