@@ -8,6 +8,8 @@ import SidebarMenu from './SidebarMenu';
 
 import { sections } from '../../pages/sections.conf';
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+
 const currentSection = sections[0].key;
 
 const ownShallow = () => {

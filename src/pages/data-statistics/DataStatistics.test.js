@@ -19,6 +19,8 @@ for(let i = 0; i < sections.length; i++) {
     }
 }
 
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+
 const stateWithTablesForDataStatistics = [
     {
         label: 'Object type',

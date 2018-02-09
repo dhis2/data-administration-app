@@ -9,7 +9,9 @@ import {sections} from "../../pages/sections.conf";
 
 const notifySidebar = jest.fn();
 const toggleLoading = jest.fn();
-const pageState = {}
+const pageState = {};
+
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 
 const ownShallow = () => {
     return shallow(

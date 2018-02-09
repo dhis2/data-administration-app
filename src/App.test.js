@@ -13,6 +13,7 @@ jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
 jest.mock('d2-ui/lib/app-header/headerBar.store', () => ({}));
 jest.mock('d2-ui/lib/component-helpers/withStateFrom', () => () => ('HeaderBar'));
 jest.mock('d2-ui/lib/circular-progress/CircularProgress', () => ('CircularProgress'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 
 const t = jest.fn();
 
