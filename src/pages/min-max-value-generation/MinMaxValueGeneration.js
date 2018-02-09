@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Material UI
-import Paper from 'material-ui/Paper/Paper';
 import { Card, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -246,27 +245,25 @@ class MinMaxValueGeneration extends Page {
                     <CardText>
                         <div className={styles.container}>
                             <div className={styles.left}>
-                                <Paper className={styles.paper}>
-                                    {this.state.dataSets ? (
-                                        <select
-                                            multiple
-                                            disabled={this.areActionsDisabled()}
-                                            className={styles.select}
-                                            ref={this.dataSetsSelectRef}
-                                        >
-                                            {this.state.dataSets.map(item => (
-                                                <option
-                                                    key={item.id}
-                                                    value={item.id}
-                                                    className={styles.options}
-                                                >{item.displayName}</option>
-                                            ))}
-                                        </select>) :
-                                        (
-                                            <span>{t('Loading data sets')}</span>
-                                        )
-                                    }
-                                </Paper>
+                                {this.state.dataSets ? (
+                                    <select
+                                        multiple
+                                        disabled={this.areActionsDisabled()}
+                                        className={styles.select}
+                                        ref={this.dataSetsSelectRef}
+                                    >
+                                        {this.state.dataSets.map(item => (
+                                            <option
+                                                key={item.id}
+                                                value={item.id}
+                                                className={styles.options}
+                                            >{item.displayName}</option>
+                                        ))}
+                                    </select>) :
+                                    (
+                                        <span>{t('Loading data sets')}</span>
+                                    )
+                                }
                             </div>
                             <div className={styles.right}>
                                 {this.state.rootWithMembers ? (
