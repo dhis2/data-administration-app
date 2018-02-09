@@ -18,6 +18,8 @@ import AddLockExceptionForm from './AddLockExceptionForm';
 
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
 
+import { calculatePageValue } from '../../helpers/pagination';
+
 import styles from './LockException.css';
 
 const STATE_PROPERTIES_WHITE_LIST = [
@@ -33,16 +35,6 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'selectedPeriodId',
     'pager',
 ];
-
-const calculatePageValue = (pager) => {
-    const pageSize = pager.pageSize;
-    const { total, pageCount, page } = pager;
-    const pageCalculationValue = total - (total - ((pageCount - (pageCount - page)) * pageSize));
-    const startItem = (pageCalculationValue - pageSize) + 1;
-    const endItem = pageCalculationValue;
-
-    return `${startItem} - ${endItem > total ? total : endItem}`;
-};
 
 class LockException extends Page {
     static propTypes = {
