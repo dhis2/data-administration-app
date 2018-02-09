@@ -7,21 +7,48 @@ import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/SnackbarTypes';
 
+const STATE_PROPERTIES_WHITE_LIST = [
+    'cards',
+    'intervalId',
+    'loaded',
+];
+
 class DataIntegrity extends Page {
-    constructor(props, context) {
-        super(props, context);
-        this.state.cards = this.state.cards || {};
+    constructor() {
+        super();
+
+        this.state = {
+            cards: {},
+            intervalId: null,
+            loaded: false,
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const nextState = {};
+
+        Object.keys(nextProps).forEach((property) => {
+            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+                nextState[property] = nextProps[property];
+            }
+        });
+
+        if (nextState !== {}) {
+            this.setState(nextState);
+        }
     }
 
     componentDidMount() {
-        if (!this.context.loading && !this.context.pageState) {
+        if (!this.context.loading) {
             this.initDataIntegrityCheck();
         }
     }
 
     componentWillUnmount() {
-        if (this.context && this.context.pageState && this.context.pageState.intervalId) {
-            clearInterval(this.context.pageState.intervalId);
+        super.componentWillUnmount();
+
+        if (this.state.intervalId) {
+            clearInterval(this.state.intervalId);
         }
     }
 
@@ -126,7 +153,7 @@ class DataIntegrity extends Page {
                 />
             ));
         }
-        if (this.context.pageState && this.context.pageState.loaded) {
+        if (this.state.loaded) {
             const noErrors = conf.dataIntegrityControls
                 .filter(
                     element => errorElementskeys.indexOf(element.key) < 0,
