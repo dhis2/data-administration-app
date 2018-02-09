@@ -21,6 +21,7 @@ import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snac
 import { calculatePageValue } from '../../helpers/pagination';
 
 import styles from './LockException.css';
+import LockExceptionDetails from './LockExceptionDetails';
 
 const STATE_PROPERTIES_WHITE_LIST = [
     'lockExceptions',
@@ -463,12 +464,11 @@ class LockException extends Page {
                         open={this.state && this.state.showDetailsDialogOpen}
                         onRequestClose={this.closeLockExceptionDetailsDialog}
                     >
-                        <h3>{t('Organisation Unit')}</h3>
-                        <span>{this.state.selectedLockException.organisationUnit.displayName}</span>
-                        <h3>{t('Data Set')}</h3>
-                        <span>{this.state.selectedLockException.dataSet.displayName}</span>
-                        <h3>{t('Period')}</h3>
-                        <span>{this.state.selectedLockException.period.displayName}</span>
+                        <LockExceptionDetails
+                            organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
+                            dataSetName={this.state.selectedLockException.dataSet.displayName}
+                            periodName={this.state.selectedLockException.period.displayName}
+                        />
                     </Dialog>
                 }
                 <Dialog
