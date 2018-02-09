@@ -46,7 +46,10 @@ class DataIntegrity extends Page {
 
     componentWillUnmount() {
         super.componentWillUnmount();
+        this.cancelPullingRequests();
+    }
 
+    cancelPullingRequests() {
         if (this.state.intervalId) {
             clearInterval(this.state.intervalId);
         }
@@ -74,6 +77,7 @@ class DataIntegrity extends Page {
         const messageError = error && error.message ?
             error.message :
             translator('An unexpected error happened during data integrity checks.');
+        this.cancelPullingRequests();
         this.context.updateAppState({
             loading: false,
             showSnackbar: true,
@@ -104,6 +108,7 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         api.get(conf.PULL_ENDPOINT).then((response) => {
             if (response.length) {
+                this.cancelPullingRequests();
                 this.loadData();
             }
         }).catch((e) => {
