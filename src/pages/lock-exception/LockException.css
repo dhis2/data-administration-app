@@ -1,0 +1,64 @@
+.lockExceptionsTable {
+    margin-bottom: 16px;
+}
+
+.lockExceptionsTable th {
+    font-size: 14px !important;
+    letter-spacing: 0.7px !important;
+    color: #757575 !important;
+}
+
+.lockExceptionsTable tr {
+    font-size: 14px !important;
+    letter-spacing: 0.7px !important;
+    color: #000000 !important;
+}
+
+.lockExceptionsTableHeader tr th {
+    font-size: 24px !important;
+    letter-spacing: 1.2px !important;
+    color: #000000 !important;
+}
+
+.lockExceptionsTableHeader tr {
+    height: 78px !important;
+}
+
+.lockExceptionsTable tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.lockExceptionsTable tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.lockExceptionDialog h3 {
+    font-family: Roboto;
+    font-size: 14px;
+    text-align: left;
+    color: #757575;
+}
+
+.lockExceptionDialog span {
+    display: block;
+    font-family: Roboto;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+.dataTableWrap {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.listDetailsWrap {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.actionButtons {
+    margin-right: 10px !important;
+}

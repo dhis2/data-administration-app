@@ -45,6 +45,8 @@ getManifest('manifest.webapp').then((manifest) => {
             initConfig={{
                 baseUrl,
                 schemas: [
+                    'organisationUnitLevel',
+                    'organisationUnitGroup',
                     'organisationUnit',
                     'dataSet',
                 ],
