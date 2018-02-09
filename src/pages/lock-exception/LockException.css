@@ -2,15 +2,21 @@
     margin-bottom: 16px;
 }
 
-.lockExceptionsTable th {
+.lockExceptionsTable h1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lockExceptionsTable tr th {
     font-size: 14px !important;
     letter-spacing: 0.7px !important;
+}
+
+.lockExceptionsTable tr {
     color: #757575 !important;
 }
 
 .lockExceptionsTable tr {
-    font-size: 14px !important;
-    letter-spacing: 0.7px !important;
     color: #000000 !important;
 }
 
@@ -47,18 +53,11 @@
     color: #000000;
 }
 
-.dataTableWrap {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-}
-
-.listDetailsWrap {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-}
-
 .actionButtons {
     margin-right: 10px !important;
+}
+
+.pagination {
+    margin-top: -2rem;
+    padding-bottom: 0.5rem;
 }

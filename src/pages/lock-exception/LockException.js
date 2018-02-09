@@ -16,7 +16,7 @@ import 'd2-ui/lib/css/Pagination.css';
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
 
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import { calculatePageValue } from '../../helpers/pagination';
 
@@ -68,6 +68,16 @@ class LockException extends Page {
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this);
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this);
+
+        this.showLockExceptionDetails = this.showLockExceptionDetails.bind(this);
+        this.closeLockExceptionDetailsDialog = this.closeLockExceptionDetailsDialog.bind(this);
+        this.removeLockException = this.removeLockException.bind(this);
+
+        this.showLockExceptionFormDialog = this.showLockExceptionFormDialog.bind(this);
+        this.closeLockExceptionFormDialog = this.closeLockExceptionFormDialog.bind(this);
+
+        this.addLockException = this.addLockException.bind(this);
+
         this.onNextPageClick = this.onNextPageClick.bind(this);
         this.onPreviousPageClick = this.onPreviousPageClick.bind(this);
 
@@ -201,51 +211,147 @@ class LockException extends Page {
         this.loadLockExceptionsForPager(pager, true);
     }
 
-    render() {
-        const currentlyShown = calculatePageValue(this.state.pager);
-        const paginationProps = {
-            hasNextPage: () => this.state.pager.page < this.state.pager.pageCount,
-            hasPreviousPage: () => this.state.pager.page > 1,
-            onNextPageClick: this.onNextPageClick,
-            onPreviousPageClick: this.onPreviousPageClick,
-            total: this.state.pager.total,
-            currentlyShown,
-        };
+    showLockExceptionDetails(le) {
+        this.setState(
+            {
+                showDetailsDialogOpen: true,
+                selectedLockException: le,
+            },
+        );
+    }
 
+    removeLockException(le) {
         const t = this.context.t;
-        const showDetailsHandler = (le) => {
-            this.setState(
-                {
-                    showDetailsDialogOpen: true,
-                    selectedLockException: le,
-                },
-            );
-        };
+        const api = this.context.d2.Api.getApi();
+        const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
+        this.context.updateAppState({
+            showSnackbar: true,
+            loading: true,
+            snackbarConf: {
+                type: LOADING,
+                message: t('Removing Lock Exception'),
+            },
+            pageState: { ...this.state },
+        });
 
-        const removeHandler = (le) => {
-            const api = this.context.d2.Api.getApi();
-            const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
-            this.context.updateAppState({
-                showSnackbar: true,
-                loading: true,
-                snackbarConf: {
-                    type: LOADING,
-                    message: t('Removing Lock Exception'),
-                },
-                pageState: { ...this.state },
-            });
+        api.delete(deleteUrl).then(() => {
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: t('Lock Exception removed'),
+                    },
+                });
+                this.loadLockExceptionsForPager(LockException.initialPager, true);
+            }
+        }).catch((error) => {
+            if (this.isPageMounted()) {
+                const messageError = error && error.message ?
+                    error.message :
+                    t('An unexpected error happend during maintenance');
 
-            api.delete(deleteUrl).then(() => {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    loading: false,
+                    snackbarConf: {
+                        type: ERROR,
+                        message: messageError,
+                    },
+                    pageState: { ...this.state },
+                });
+            }
+        });
+    }
+
+    closeLockExceptionDetailsDialog() {
+        this.setState({ showDetailsDialogOpen: false });
+    }
+
+    showLockExceptionFormDialog() {
+        const t = this.context.t;
+        const d2 = this.context.d2;
+        if (this.state.levels &&
+            this.state.groups &&
+            this.state.dataSets.length > 0) {
+            this.setState({ showAddDialogOpen: true });
+        } else {
+            Promise.all([
+                d2.models.organisationUnitLevel.list({
+                    paging: false,
+                    fields: 'id,level,displayName',
+                    order: 'level:asc',
+                }),
+                d2.models.organisationUnitGroup.list({
+                    paging: false,
+                    fields: 'id,displayName',
+                }),
+                d2.models.dataSet.list({
+                    paging: false,
+                    fields: 'id,displayName,periodType',
+                }),
+            ]).then(([levels, groups, dataSets]) => {
                 if (this.isPageMounted()) {
+                    this.setState({
+                        showAddDialogOpen: true,
+                        levels,
+                        groups,
+                        dataSets: dataSets.toArray(),
+                    });
+                }
+            }).catch((error) => {
+                if (this.isPageMounted()) {
+                    const messageError = error && error.message ?
+                        error.message :
+                        t('An unexpected error happened while loading data');
+
                     this.context.updateAppState({
                         showSnackbar: true,
                         loading: false,
                         snackbarConf: {
-                            type: SUCCESS,
-                            message: t('Lock Exception removed'),
+                            type: ERROR,
+                            message: messageError,
                         },
+                        pageState: { ...this.state },
                     });
-                    this.loadLockExceptionsForPager(LockException.initialPager, true);
+                }
+            });
+        }
+    }
+
+    closeLockExceptionFormDialog() {
+        this.setState({
+            showAddDialogOpen: false,
+            selectedOrgUnits: [],
+            selectedDataSetId: null,
+            selectedPeriodId: null,
+        });
+    }
+
+    addLockException() {
+        const t = this.context.t;
+        if (this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId) {
+            const api = this.context.d2.Api.getApi();
+            const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
+                const orgUnitPathSplitted = orgUnitPath.split('/');
+                return orgUnitPathSplitted[orgUnitPathSplitted.length - 1];
+            });
+
+            const formData = new FormData();
+            formData.append('ou', `[${orgUnitIds.join(',')}]`);
+            formData.append('pe', this.state.selectedPeriodId);
+            formData.append('ds', this.state.selectedDataSetId);
+
+            api.post('lockExceptions', formData).then(() => {
+                if (this.isPageMounted()) {
+                    this.setState({
+                        loaded: false,
+                        showAddDialogOpen: false,
+                        selectedOrgUnits: [],
+                        selectedDataSetId: null,
+                        selectedPeriodId: null,
+                    });
                 }
             }).catch((error) => {
                 if (this.isPageMounted()) {
@@ -264,170 +370,79 @@ class LockException extends Page {
                     });
                 }
             });
-        };
+        } else {
+            this.context.updateAppState({
+                showSnackbar: true,
+                loading: false,
+                snackbarConf: {
+                    type: WARNING,
+                    message: t('Select Data set, Period and Organisation Unit'),
+                },
+                pageState: { ...this.state },
+            });
+        }
+    }
 
-        const closeShowDetailsDialogHandler = () => {
-            this.setState({ showDetailsDialogOpen: false });
+    render() {
+        const t = this.context.t;
+        const currentlyShown = calculatePageValue(this.state.pager);
+        const paginationProps = {
+            hasNextPage: () => this.state.pager.page < this.state.pager.pageCount,
+            hasPreviousPage: () => this.state.pager.page > 1,
+            onNextPageClick: this.onNextPageClick,
+            onPreviousPageClick: this.onPreviousPageClick,
+            total: this.state.pager.total,
+            currentlyShown,
         };
 
         const showDetailsDialogActions = [
             <FlatButton
                 className={styles.actionButtons}
                 label={t('CLOSE')}
-                onClick={closeShowDetailsDialogHandler}
-                disabled={this.areActionsDisabled()}
+                onClick={this.closeLockExceptionDetailsDialog}
             />,
         ];
 
-        const showAddDialogHandler = () => {
-            const d2 = this.context.d2;
-            if (this.state.levels &&
-                this.state.groups &&
-                this.state.dataSets.length > 0) {
-                this.setState({ showAddDialogOpen: true });
-            } else {
-                Promise.all([
-                    d2.models.organisationUnitLevel.list({
-                        paging: false,
-                        fields: 'id,level,displayName',
-                        order: 'level:asc',
-                    }),
-                    d2.models.organisationUnitGroup.list({
-                        paging: false,
-                        fields: 'id,displayName',
-                    }),
-                    d2.models.dataSet.list({
-                        paging: false,
-                        fields: 'id,displayName,periodType',
-                    }),
-                ]).then(([levels, groups, dataSets]) => {
-                    if (this.isPageMounted()) {
-                        this.setState({
-                            showAddDialogOpen: true,
-                            levels,
-                            groups,
-                            dataSets: dataSets.toArray(),
-                        });
-                    }
-                }).catch((error) => {
-                    if (this.isPageMounted()) {
-                        const messageError = error && error.message ?
-                            error.message :
-                            t('An unexpected error happened while loading data');
-
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            loading: false,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: { ...this.state },
-                        });
-                    }
-                });
-            }
-        };
-
-        const closeAddDialogHandler = () => {
-            this.setState({
-                showAddDialogOpen: false,
-                selectedOrgUnits: [],
-                selectedDataSetId: null,
-                selectedPeriodId: null,
-            });
-        };
-
-        const addLockExceptionHandler = () => {
-            if (this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId) {
-                const api = this.context.d2.Api.getApi();
-                const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
-                    const orgUnitPathSplitted = orgUnitPath.split('/');
-                    return orgUnitPathSplitted[orgUnitPathSplitted.length - 1];
-                });
-
-                const formData = new FormData();
-                formData.append('ou', `[${orgUnitIds.join(',')}]`);
-                formData.append('pe', this.state.selectedPeriodId);
-                formData.append('ds', this.state.selectedDataSetId);
-
-                api.post('lockExceptions', formData).then(() => {
-                    if (this.isPageMounted()) {
-                        this.setState({
-                            loaded: false,
-                            showAddDialogOpen: false,
-                            selectedOrgUnits: [],
-                            selectedDataSetId: null,
-                            selectedPeriodId: null,
-                        });
-                    }
-                }).catch((error) => {
-                    if (this.isPageMounted()) {
-                        const messageError = error && error.message ?
-                            error.message :
-                            t('An unexpected error happend during maintenance');
-
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            loading: false,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: { ...this.state },
-                        });
-                    }
-                });
-            } else {
-                // TODO error
-            }
-        };
-
-        const addDialogActions = [
+        const addLockException = [
             <FlatButton
                 className={styles.actionButtons}
                 label={t('CANCEL')}
-                onClick={closeAddDialogHandler}
+                onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
                 className={styles.actionButtons}
                 primary={Boolean(true)}
                 label={t('ADD')}
-                onClick={addLockExceptionHandler}
+                onClick={this.addLockException}
             />,
         ];
 
         return (
             <div className={styles.lockExceptionsTable}>
                 <h1>
-                    <span style={{ display: 'inline-block' }}>{this.context.t(this.props.pageInfo.label)}</span>
+                    <span>{this.context.t(this.props.pageInfo.label)}</span>
                     <RaisedButton
-                        style={{ display: 'inline-block', float: 'right' }}
                         label={t('ADD')}
-                        onClick={showAddDialogHandler}
+                        onClick={this.showLockExceptionFormDialog}
                         primary={Boolean(true)}
                         disabled={this.areActionsDisabled()}
                     />
                 </h1>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
-                        <div className={styles.listDetailsWrap}>
-                            <div className={styles.dataTableWrap}>
-                                <DataTable
-                                    columns={['name']}
-                                    rows={this.state.lockExceptions}
-                                    contextMenuActions={{
-                                        show: showDetailsHandler,
-                                        remove: removeHandler,
-                                    }}
-                                    contextMenuIcons={{
-                                        show: 'info',
-                                        remove: 'delete',
-                                    }}
-                                />
-                            </div>
-                        </div>
-                        <div style={{ marginTop: '-2rem', paddingBottom: '0.5rem' }}>
+                        <DataTable
+                            columns={['name']}
+                            rows={this.state.lockExceptions}
+                            contextMenuActions={{
+                                show: this.showLockExceptionDetails,
+                                remove: this.removeLockException,
+                            }}
+                            contextMenuIcons={{
+                                show: 'info',
+                                remove: 'delete',
+                            }}
+                        />
+                        <div className={styles.pagination}>
                             <Pagination {...paginationProps} />
                         </div>
                     </div>) :
@@ -446,7 +461,7 @@ class LockException extends Page {
                         actions={showDetailsDialogActions}
                         modal={false}
                         open={this.state && this.state.showDetailsDialogOpen}
-                        onRequestClose={closeShowDetailsDialogHandler}
+                        onRequestClose={this.closeLockExceptionDetailsDialog}
                     >
                         <h3>{t('Organisation Unit')}</h3>
                         <span>{this.state.selectedLockException.organisationUnit.displayName}</span>
@@ -458,11 +473,11 @@ class LockException extends Page {
                 }
                 <Dialog
                     title={t('Add new lock exception')}
-                    actions={addDialogActions}
+                    actions={addLockException}
                     modal={false}
                     open={this.state && this.state.showAddDialogOpen}
-                    contentStyle={{ maxWidth: '1100px', overflowY: 'auto' }}
-                    onRequestClose={closeAddDialogHandler}
+                    contentStyle={{ maxWidth: '1100px' }}
+                    onRequestClose={this.closeLockExceptionFormDialog}
                 >
                     {this.state.levels &&
                      this.state.groups &&
