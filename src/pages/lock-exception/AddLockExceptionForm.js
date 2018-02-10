@@ -12,6 +12,8 @@ import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.compone
 import SelectField from 'd2-ui/lib/select-field/SelectField';
 import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
 
+import { ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+
 import styles from './AddLockExceptionForm.css';
 
 const d2UiSelectStyleOverride = {
@@ -85,12 +87,28 @@ class AddLockExceptionForm extends Component {
             ]).then(([rootWithDataSetMembers, dataSetMembers]) => {
                 const rootWithMembers = rootWithDataSetMembers.toArray()[0];
                 const selected = dataSetMembers.organisationUnits.toArray().map(ou => ou.path);
+                this.props.updateSelectedOrgUnits(selected);
                 this.setState({
                     rootWithMembers,
                     selected,
                 });
-            }).catch(() => {
-                // TODO
+            }).catch((error) => {
+                const t = this.context.t;
+                if (this.isPageMounted()) {
+                    const messageError = error && error.message ?
+                        error.message :
+                        t('An unexpected error happened during operation');
+
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: messageError,
+                        },
+                        pageState: { ...this.state },
+                    });
+                }
             });
         }
     }

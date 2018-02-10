@@ -151,12 +151,8 @@ class LockException extends Page {
                 .then((response) => {
                     if (this.isPageMounted()) {
                         this.context.updateAppState({
-                            showSnackbar: !userIteration,    // do not show load end when user iteration: e.g. pagination
+                            showSnackbar: false,
                             loading: false,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: t('Lock Exceptions Loaded'),
-                            },
                             pageState: {
                                 loaded: true,
                                 lockExceptions: response.lockExceptions,
@@ -245,7 +241,7 @@ class LockException extends Page {
                         message: t('Lock Exception removed'),
                     },
                 });
-                this.loadLockExceptionsForPager(LockException.initialPager, true);
+                this.loadLockExceptionsForPager(LockException.initialPager, false);
             }
         }).catch((error) => {
             if (this.isPageMounted()) {
@@ -344,21 +340,41 @@ class LockException extends Page {
             formData.append('pe', this.state.selectedPeriodId);
             formData.append('ds', this.state.selectedDataSetId);
 
+            this.context.updateAppState({
+                showSnackbar: true,
+                loading: true,
+                snackbarConf: {
+                    type: LOADING,
+                    message: t('Adding Lock Exception'),
+                },
+                pageState: {
+                    showAddDialogOpen: false,
+                    selectedOrgUnits: [],
+                    selectedDataSetId: null,
+                    selectedPeriodId: null,
+                },
+            });
+
             api.post('lockExceptions', formData).then(() => {
                 if (this.isPageMounted()) {
-                    this.setState({
-                        loaded: false,
-                        showAddDialogOpen: false,
-                        selectedOrgUnits: [],
-                        selectedDataSetId: null,
-                        selectedPeriodId: null,
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        loading: false,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: t('Lock Exception Added'),
+                        },
+                        pageState: {
+                            loaded: false,
+                        },
                     });
+                    this.loadLockExceptionsForPager(LockException.initialPager, false);
                 }
             }).catch((error) => {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happend during maintenance');
+                        t('An unexpected error happened during operation');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -443,9 +459,11 @@ class LockException extends Page {
                                 remove: 'delete',
                             }}
                         />
-                        <div className={styles.pagination}>
-                            <Pagination {...paginationProps} />
-                        </div>
+                        {!this.areActionsDisabled() &&
+                            <div className={styles.pagination}>
+                                <Pagination {...paginationProps} />
+                            </div>
+                        }
                     </div>) :
                     (
                         <Card>
