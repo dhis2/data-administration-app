@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
-import MinMaxValueGeneration from "./MinMaxValueGeneration";
+import MinMaxValueGeneration from './MinMaxValueGeneration';
 
 import {
     sections,
