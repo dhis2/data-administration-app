@@ -461,7 +461,7 @@ class LockException extends Page {
                         title={this.state.selectedLockException.name}
                         actions={showDetailsDialogActions}
                         modal={false}
-                        open={this.state && this.state.showDetailsDialogOpen}
+                        open={this.state.showDetailsDialogOpen}
                         onRequestClose={this.closeLockExceptionDetailsDialog}
                     >
                         <LockExceptionDetails
@@ -471,27 +471,28 @@ class LockException extends Page {
                         />
                     </Dialog>
                 }
-                <Dialog
-                    title={t('Add new lock exception')}
-                    actions={addLockException}
-                    modal={false}
-                    open={this.state && this.state.showAddDialogOpen}
-                    contentStyle={{ maxWidth: '1100px' }}
-                    onRequestClose={this.closeLockExceptionFormDialog}
-                >
-                    {this.state.levels &&
-                     this.state.groups &&
-                     this.state.dataSets.length > 0 &&
-                     <AddLockExceptionForm
-                         levels={this.state.levels}
-                         groups={this.state.groups}
-                         dataSets={this.state.dataSets}
-                         updateSelectedOrgUnits={this.updateSelectedOrgUnits}
-                         updateSeletedDataSetId={this.updateSeletedDataSetId}
-                         updateSelectedPeriodId={this.updateSelectedPeriodId}
-                     />
-                    }
-                </Dialog>
+                {this.state.levels &&
+                this.state.groups &&
+                this.state.dataSets.length > 0 &&
+                    <Dialog
+                        title={t('Add new lock exception')}
+                        actions={addLockException}
+                        modal={false}
+                        open={this.state.showAddDialogOpen}
+                        contentStyle={{ maxWidth: '1100px' }}
+                        onRequestClose={this.closeLockExceptionFormDialog}
+                    >
+
+                        <AddLockExceptionForm
+                            levels={this.state.levels}
+                            groups={this.state.groups}
+                            dataSets={this.state.dataSets}
+                            updateSelectedOrgUnits={this.updateSelectedOrgUnits}
+                            updateSeletedDataSetId={this.updateSeletedDataSetId}
+                            updateSelectedPeriodId={this.updateSelectedPeriodId}
+                        />
+                    </Dialog>
+                }
             </div>
         );
     }

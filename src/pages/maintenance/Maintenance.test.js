@@ -6,23 +6,14 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 
-import Maintenance from "./Maintenance";
+import Maintenance from './Maintenance';
 
-import { maintenanceCheckboxes } from "./maintenance.conf";
+import { maintenanceCheckboxes } from './maintenance.conf';
 
 import {
     sections,
     MAINTENANCE_SECTION_KEY,
 } from '../sections.conf';
-
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
-jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
-jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
-jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
-jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
 
 let maintenancePageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -34,6 +25,13 @@ for(let i = 0; i < sections.length; i++) {
 }
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
+jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
+jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
+jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
 
 const ownShallow = () => {
     return shallow(
@@ -71,7 +69,7 @@ it('Maintenance renders a RaisedButton', () => {
 });
 
 it('Maintenance calls performMaintenance method when button is clicked', () => {
-    const spy = spyOn(Maintenance.prototype, 'performMaintenance')
+    const spy = spyOn(Maintenance.prototype, 'performMaintenance');
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');
     expect(spy).toHaveBeenCalled();
