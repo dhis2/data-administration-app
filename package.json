@@ -101,6 +101,9 @@
       "url": "https://dhis2.github.io",
       "name": "DHIS2"
     },
+    "dhis2": {
+      "apiVersion": "29"
+    },
     "activities": {
       "dhis": {
         "href": ".."
