@@ -6,7 +6,7 @@ export const DATA_ENDPOINT = 'system/taskSummaries/data_integrity';
 export const dataIntegrityControls = [
     {
         key: 'dataElementsWithoutDataSet',
-        label: 'Data elements without set',
+        label: 'Data elements without data set',
     },
     {
         key: 'dataElementsWithoutGroups',
@@ -14,7 +14,7 @@ export const dataIntegrityControls = [
     },
     {
         key: 'dataElementsViolatingExclusiveGroupSets',
-        label: 'Data elements violated exclusive group sets',
+        label: 'Data elements violating exclusive group sets',
     },
     {
         key: 'dataElementsInDataSetNotInForm',
@@ -26,11 +26,11 @@ export const dataIntegrityControls = [
     },
     {
         key: 'dataElementsAssignedToDataSetsWithDifferentPeriodTypes',
-        label: 'Data Elements Assigned to Tokens with Different Period Types',
+        label: 'Data elements assigned to data sets with different period types',
     },
     {
         key: 'dataSetsNotAssignedToOrganisationUnits',
-        label: 'Tabs not assigned to organizational units',
+        label: 'Data sets not assigned to organisation units',
     },
     {
         key: 'indicatorsWithIdenticalFormulas',
@@ -50,7 +50,7 @@ export const dataIntegrityControls = [
     },
     {
         key: 'indicatorsViolatingExclusiveGroupSets',
-        label: 'Indicators violated exclusive group sets',
+        label: 'Indicators violating exclusive group sets',
     },
     {
         key: 'duplicatePeriods',
@@ -58,23 +58,23 @@ export const dataIntegrityControls = [
     },
     {
         key: 'organisationUnitsWithCyclicReferences',
-        label: 'Organizational units with cyclic references',
+        label: 'Organisation units with cyclic references',
     },
     {
         key: 'orphanedOrganisationUnits',
-        label: 'Organizational Units Orphans',
+        label: 'Orphaned organisation units',
     },
     {
         key: 'organisationUnitsWithoutGroups',
-        label: 'Organizational units without groups',
+        label: 'Organisation units without groups',
     },
     {
         key: 'organisationUnitsViolatingExclusiveGroupSets',
-        label: 'Organizational units that violate exclusive group sets',
+        label: 'Organisation units violating exclusive group sets',
     },
     {
         key: 'organisationUnitGroupsWithoutGroupSets',
-        label: 'Groups of units Organization without sets group',
+        label: 'Organisation unit groups without group sets',
     },
     {
         key: 'validationRulesWithoutGroups',
@@ -82,11 +82,11 @@ export const dataIntegrityControls = [
     },
     {
         key: 'invalidValidationRuleLeftSideExpressions',
-        label: 'Invalid expression validation rule on the left',
+        label: 'Invalid validation rule left side expressions',
     },
     {
         key: 'invalidValidationRuleRightSideExpressions',
-        label: 'Invalid expression validation rule on the right',
+        label: 'Invalid validation rule right side expressions',
     },
     {
         key: 'invalidProgramIndicatorExpressions',
