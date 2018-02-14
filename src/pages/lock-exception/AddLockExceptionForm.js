@@ -145,14 +145,22 @@ class AddLockExceptionForm extends Component {
             { id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }),
         );
 
+        let dataSetSelectLabel = t('Select a Data Set');
+        let dataSetSelectValue = null;
+        if (this.state.dataSet) {
+            dataSetSelectLabel = t('Data Set');
+            dataSetSelectValue = this.state.dataSet.id;
+        }
+
         return (
             <div>
                 <div className={styles.selectsContainer}>
                     <SelectField
                         style={d2UiSelectStyleOverride}
-                        label={this.state.dataSet ? this.state.dataSet.name : t('Select dataset')}
+                        label={dataSetSelectLabel}
                         items={dataSetItems}
                         onChange={this.onDataSetChange}
+                        value={dataSetSelectValue}
                     />
                     {this.state.dataSet &&
                     <PeriodPicker
