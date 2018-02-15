@@ -45,14 +45,14 @@ class PageHelper extends PureComponent {
     render() {
         const actions = [
             <FlatButton
-                label="Close"
+                label={this.context.t('Close')}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
             />,
         ];
 
         const pageAreas = this.props.pageAreas.map(area => (
-            <span className={styles.areas}>
+            <span key={area.key} className={styles.areas}>
                 <h4>{area.label}</h4>
                 <p>{area.text}</p>
             </span>
