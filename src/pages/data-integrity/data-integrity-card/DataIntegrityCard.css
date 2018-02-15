@@ -2,12 +2,12 @@
     margin-bottom: 10px;
 }
 
-h4 {
+.card h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-p {
+.card p {
     margin-top: 0;
     margin-bottom: 5px;
 }
