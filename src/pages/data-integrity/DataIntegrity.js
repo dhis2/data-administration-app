@@ -152,18 +152,16 @@ class DataIntegrity extends Page {
         let cardsToShow = [];
         if (this.state.cards) {
             const errorElementskeys = Object.keys(this.state.cards);
-            if (errorElementskeys.length) {
-                cardsToShow = errorElementskeys.map(element => (
-                    <DataIntegrityCard
-                        key={element}
-                        title={
-                            conf.dataIntegrityControls.find(
-                                control => control.key === element).label
-                        }
-                        content={this.state.cards[element]}
-                    />
-                ));
-            }
+            cardsToShow = errorElementskeys.map(element => (
+                <DataIntegrityCard
+                    key={element}
+                    title={
+                        conf.dataIntegrityControls.find(
+                            control => control.key === element).label
+                    }
+                    content={this.state.cards[element]}
+                />
+            ));
             if (this.state.loaded) {
                 const noErrors = conf.dataIntegrityControls
                     .filter(
