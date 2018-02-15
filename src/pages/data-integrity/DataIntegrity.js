@@ -6,6 +6,9 @@ import * as conf from './data.integrity.conf';
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/SnackbarTypes';
+import PageHelper from '../../components/page-helper/PageHelper';
+
+import styles from './DataIntegrity.css';
 
 const STATE_PROPERTIES_WHITE_LIST = [
     'cards',
@@ -21,6 +24,7 @@ class DataIntegrity extends Page {
             cards: {},
             intervalId: null,
             loaded: false,
+            loading: true,
         };
     }
 
@@ -175,7 +179,14 @@ class DataIntegrity extends Page {
         }
         return (
             <div className="page-wrapper">
-                <h1>{ this.context.t('Data Integrity') }</h1>
+                <h1 className={styles.header}>
+                    { this.context.t(conf.PAGE_TITLE) }
+                    <PageHelper
+                        pageTitle={conf.PAGE_TITLE}
+                        pageSummary={conf.PAGE_SUMMARY}
+                        pageAreas={conf.dataIntegrityControls}
+                    />
+                </h1>
                 {cardsToShow && cardsToShow.length > 0 ? cardsToShow : noContent}
             </div>
         );
