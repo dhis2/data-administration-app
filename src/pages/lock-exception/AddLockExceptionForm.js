@@ -48,6 +48,7 @@ class AddLockExceptionForm extends Component {
         this.state = {
             selected: [],
             dataSet: null,
+            orgUnitPaths: null,
         };
 
         this.onDataSetChange = this.onDataSetChange.bind(this);
@@ -86,11 +87,10 @@ class AddLockExceptionForm extends Component {
                 }),
             ]).then(([rootWithDataSetMembers, dataSetMembers]) => {
                 const rootWithMembers = rootWithDataSetMembers.toArray()[0];
-                const selected = dataSetMembers.organisationUnits.toArray().map(ou => ou.path);
-                this.props.updateSelectedOrgUnits(selected);
                 this.setState({
                     rootWithMembers,
-                    selected,
+                    selected: [],
+                    orgUnitPaths: dataSetMembers.organisationUnits.toArray().map(ou => ou.path),
                 });
             }).catch((error) => {
                 const t = this.context.t;
@@ -183,6 +183,7 @@ class AddLockExceptionForm extends Component {
                                         memberObject={this.state.dataSet.id}
                                         onSelectClick={this.handleOrgUnitClick}
                                         onChangeCurrentRoot={this.changeRoot}
+                                        orgUnitsPathsToInclude={this.state.orgUnitPaths}
                                     />) :
                                     (
                                         <span>{t('Updating Tree...')}</span>
