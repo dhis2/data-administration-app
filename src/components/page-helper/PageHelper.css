@@ -1,0 +1,23 @@
+.helper {
+    display: flex;
+    align-items: center;
+}
+
+.helper span {
+    padding-left: 10px;
+    color: #276696 !important;
+}
+
+.areas h4 {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.areas p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.areas p:first-child {
+    margin-top: 10px;
+}
