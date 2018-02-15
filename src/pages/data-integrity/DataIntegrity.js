@@ -14,6 +14,7 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'cards',
     'intervalId',
     'loaded',
+    'loading',
 ];
 
 class DataIntegrity extends Page {
@@ -21,7 +22,7 @@ class DataIntegrity extends Page {
         super();
 
         this.state = {
-            cards: {},
+            cards: null,
             intervalId: null,
             loaded: false,
             loading: true,
@@ -145,37 +146,39 @@ class DataIntegrity extends Page {
     render() {
         const noContent = (
             <Card>
-                <CardText>{ this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
+                <CardText>{ this.context.t(this.context.loading ? 'Loading...' : 'No data to show.') }</CardText>
             </Card>
         );
-        const errorElementskeys = Object.keys(this.state.cards);
         let cardsToShow = [];
-        if (errorElementskeys.length) {
-            cardsToShow = errorElementskeys.map(element => (
-                <DataIntegrityCard
-                    key={element}
-                    title={
-                        conf.dataIntegrityControls.find(
-                            control => control.key === element).label
-                    }
-                    content={this.state.cards[element]}
-                />
-            ));
-        }
-        if (this.state.loaded) {
-            const noErrors = conf.dataIntegrityControls
-                .filter(
-                    element => errorElementskeys.indexOf(element.key) < 0,
-                ).map(
-                    resultNoErrorElement => (
-                        <DataIntegrityCard
-                            key={resultNoErrorElement.key}
-                            title={resultNoErrorElement.label}
-                            content={[]}
-                        />
-                    ),
-                );
-            cardsToShow.push(noErrors);
+        if (this.state.cards) {
+            const errorElementskeys = Object.keys(this.state.cards);
+            if (errorElementskeys.length) {
+                cardsToShow = errorElementskeys.map(element => (
+                    <DataIntegrityCard
+                        key={element}
+                        title={
+                            conf.dataIntegrityControls.find(
+                                control => control.key === element).label
+                        }
+                        content={this.state.cards[element]}
+                    />
+                ));
+            }
+            if (this.state.loaded) {
+                const noErrors = conf.dataIntegrityControls
+                    .filter(
+                        element => errorElementskeys.indexOf(element.key) < 0,
+                    ).map(
+                        resultNoErrorElement => (
+                            <DataIntegrityCard
+                                key={resultNoErrorElement.key}
+                                title={resultNoErrorElement.label}
+                                content={[]}
+                            />
+                        ),
+                    );
+                cardsToShow.push(noErrors);
+            }
         }
         return (
             <div className="page-wrapper">
