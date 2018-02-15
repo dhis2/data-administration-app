@@ -4,8 +4,9 @@
 }
 
 .helper span {
-    padding-left: 10px;
+    margin-left: 10px;
     color: #276696 !important;
+    cursor: pointer;
 }
 
 .areas h4 {
