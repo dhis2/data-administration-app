@@ -43,9 +43,10 @@ class PageHelper extends PureComponent {
     }
 
     render() {
+        const translator = this.context.t;
         const actions = [
             <FlatButton
-                label={this.context.t('Close')}
+                label={translator('Close')}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
             />,
@@ -53,8 +54,8 @@ class PageHelper extends PureComponent {
 
         const pageAreas = this.props.pageAreas.map(area => (
             <span key={area.key} className={styles.areas}>
-                <h4>{area.label}</h4>
-                <p>{area.text}</p>
+                <h4>{translator(area.label)}</h4>
+                <p>{translator(area.text)}</p>
             </span>
         ));
 
@@ -62,7 +63,7 @@ class PageHelper extends PureComponent {
             <span className={styles.helper}>
                 <FontIcon className="material-icons" onClick={this.handleOpen}>help</FontIcon>
                 <Dialog
-                    title={this.props.pageTitle}
+                    title={translator(this.props.pageTitle)}
                     actions={actions}
                     modal={Boolean(false)}
                     open={this.state.show}
@@ -71,7 +72,7 @@ class PageHelper extends PureComponent {
                     contentStyle={jsStyles.dialog}
                     onRequestClose={this.handleClose}
                 >
-                    <p>{this.props.pageSummary}</p>
+                    <p>{translator(this.props.pageSummary)}</p>
                     {pageAreas}
                 </Dialog>
             </span>
