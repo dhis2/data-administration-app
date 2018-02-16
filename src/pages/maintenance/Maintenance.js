@@ -10,10 +10,11 @@ import { Card, CardText } from 'material-ui/Card';
 import Page from '../Page';
 
 // App configs
-import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY } from './maintenance.conf';
+import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_SUMMARY, PAGE_TITLE } from './maintenance.conf';
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import styles from './Maintenance.css';
+import PageHelper from '../../components/page-helper/PageHelper';
 
 const STATE_PROPERTIES_WHITE_LIST = [
     'checkboxes',
@@ -187,7 +188,14 @@ class Maintenance extends Page {
 
         return (
             <div className="page-wrapper">
-                <h1>{translator(this.props.pageInfo.label)}</h1>
+                <h1 className={styles.header}>
+                    {translator(PAGE_TITLE)}
+                    <PageHelper
+                        pageTitle={PAGE_TITLE}
+                        pageSummary={PAGE_SUMMARY}
+                        pageAreas={maintenanceCheckboxes}
+                    />
+                </h1>
                 <Card>
                     <CardText>
                         <Checkbox
