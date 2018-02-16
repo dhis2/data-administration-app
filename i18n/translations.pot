@@ -5,10 +5,34 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-16T16:29:07.323Z\n"
-"PO-Revision-Date: 2018-02-16T16:29:07.323Z\n"
+"POT-Creation-Date: 2018-02-16T16:30:09.244Z\n"
+"PO-Revision-Date: 2018-02-16T16:30:09.244Z\n"
 
-msgid "Close"
+msgid "Loading..."
+msgstr ""
+
+msgid "Data Statistics were loaded."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Performing Maintenance"
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happend during maintenance"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
@@ -146,9 +170,6 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
-msgid "Loading..."
-msgstr ""
-
 msgid "An unexpected error happened"
 msgstr ""
 
@@ -156,9 +177,6 @@ msgid "Removing Lock Exception"
 msgstr ""
 
 msgid "Lock Exception removed"
-msgstr ""
-
-msgid "An unexpected error happend during maintenance"
 msgstr ""
 
 msgid "An unexpected error happened while loading data"
@@ -189,27 +207,6 @@ msgid "Organisation Unit"
 msgstr ""
 
 msgid "Period"
-msgstr ""
-
-msgid "Performing Maintenance"
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
-msgstr ""
-
-msgid "Data Statistics were loaded."
-msgstr ""
-
-msgid "It was not possible to load Data Statistics"
-msgstr ""
-
-msgid "No data to show."
 msgstr ""
 
 msgid "It was not possible to load data"
@@ -255,4 +252,7 @@ msgid "An unexpected error happened during data integrity checks."
 msgstr ""
 
 msgid "Data integrity checks performed with success."
+msgstr ""
+
+msgid "Close"
 msgstr ""
