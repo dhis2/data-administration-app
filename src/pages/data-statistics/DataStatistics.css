@@ -1,3 +1,8 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
 .statisticsTable {
   margin-bottom: 16px;
 }

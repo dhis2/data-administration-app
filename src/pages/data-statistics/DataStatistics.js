@@ -9,6 +9,10 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+import { PAGE_SUMMARY, PAGE_TITLE } from './data.statics.conf';
+import PageHelper from '../../components/page-helper/PageHelper';
+
+import styles from './DataStatistics.css';
 
 const OBJECT_COUNTS_KEY = 'objectCounts';
 const ACTIVE_USERS_KEY = 'activeUsers';
@@ -271,7 +275,10 @@ class DataStatistics extends Page {
         const content = tables && tables.length > 0 ? tables : noContent;
         return (
             <div>
-                <h1>{translator(this.props.pageInfo.label)}</h1>
+                <h1 className={styles.header}>
+                    {translator(PAGE_TITLE)}
+                    <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                </h1>
                 {content}
             </div>
         );
