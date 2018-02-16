@@ -167,7 +167,7 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
 
         // request to GET statistics
@@ -177,7 +177,7 @@ class DataStatistics extends Page {
                 loading: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: t('Loading...'),
+                    message: translator('Loading...'),
                 },
                 pageState: {
                     loaded: false,
@@ -201,7 +201,7 @@ class DataStatistics extends Page {
                         loading: false,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: t('Data Statistics were loaded.'),
+                            message: translator('Data Statistics were loaded.'),
                         },
                         pageState: {
                             loaded: true,
@@ -216,7 +216,7 @@ class DataStatistics extends Page {
                         loading: false,
                         snackbarConf: {
                             type: ERROR,
-                            message: t('It was not possible to load Data Statistics'),
+                            message: translator('It was not possible to load Data Statistics'),
                         },
                         pageState: {
                             loaded: true,
@@ -243,9 +243,10 @@ class DataStatistics extends Page {
     }
 
     render() {
+        const translator = this.context.translator;
         const noContent = (
             <Card>
-                <CardText>{ this.context.t(this.context.loading ? 'Loading...' : 'No data to show.') }</CardText>
+                <CardText>{ translator(this.context.loading ? 'Loading...' : 'No data to show.') }</CardText>
             </Card>
         );
 
@@ -265,7 +266,7 @@ class DataStatistics extends Page {
         const content = tables && tables.length > 0 ? tables : noContent;
         return (
             <div>
-                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
+                <h1>{translator(this.props.pageInfo.label)}</h1>
                 {content}
             </div>
         );

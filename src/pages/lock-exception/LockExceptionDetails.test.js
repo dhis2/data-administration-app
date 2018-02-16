@@ -24,7 +24,7 @@ const ownShallow = () => {
         <LockExceptionDetails {...fakeLockException} />,
         {
             context: {
-                t: (key) => key,
+                translator: (key) => key,
             },
             disableLifecycleMethods: true
         }

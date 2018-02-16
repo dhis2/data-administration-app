@@ -36,12 +36,12 @@ class DataIntegrityCard extends PureComponent {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     };
 
     render() {
         const showIcon = true;
-        const translator = this.context.t;
+        const translator = this.context.translator;
         let expandable = true;
         let titleColor = jsStyles.errorColor;
         let closeIcon = 'keyboard_arrow_down';

@@ -14,11 +14,11 @@ class FeedbackSnackbarBody extends PureComponent {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     };
 
     render() {
-        const translator = this.context.t;
+        const translator = this.context.translator;
         let icon;
         switch (this.props.type) {
         case SUCCESS:

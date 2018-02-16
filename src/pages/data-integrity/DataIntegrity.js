@@ -56,7 +56,7 @@ class DataIntegrity extends Page {
     }
 
     setLoadingPageState(id) {
-        const translator = this.context.t;
+        const translator = this.context.translator;
         this.context.updateAppState({
             loading: true,
             showSnackbar: true,
@@ -73,7 +73,7 @@ class DataIntegrity extends Page {
     }
 
     setLoadedPageWithErrorState(error) {
-        const translator = this.context.t;
+        const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
             translator('An unexpected error happened during data integrity checks.');
@@ -118,7 +118,7 @@ class DataIntegrity extends Page {
 
     loadData() {
         const api = this.context.d2.Api.getApi();
-        const translator = this.context.t;
+        const translator = this.context.translator;
         api.get(conf.DATA_ENDPOINT).then((response) => {
             this.context.updateAppState({
                 loading: false,
@@ -139,9 +139,10 @@ class DataIntegrity extends Page {
     }
 
     render() {
+        const translator = this.context.translator;
         const noContent = (
             <Card>
-                <CardText>{ this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
+                <CardText>{ translator(this.state.loading ? 'Loading...' : 'No data to show.') }</CardText>
             </Card>
         );
         const errorElementskeys = Object.keys(this.state.cards);
@@ -175,7 +176,7 @@ class DataIntegrity extends Page {
         }
         return (
             <div className="page-wrapper">
-                <h1>{ this.context.t('Data Integrity') }</h1>
+                <h1>{ translator('Data Integrity') }</h1>
                 {cardsToShow && cardsToShow.length > 0 ? cardsToShow : noContent}
             </div>
         );

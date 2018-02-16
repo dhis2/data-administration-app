@@ -9,18 +9,18 @@ class LockExceptionDetails extends PureComponent {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         return (
             <div>
-                <h3>{t('Organisation Unit')}</h3>
+                <h3>{translator('Organisation Unit')}</h3>
                 <span>{this.props.organisationUnitName}</span>
-                <h3>{t('Data Set')}</h3>
+                <h3>{translator('Data Set')}</h3>
                 <span>{this.props.dataSetName}</span>
-                <h3>{t('Period')}</h3>
+                <h3>{translator('Period')}</h3>
                 <span>{this.props.periodName}</span>
             </div>
         );

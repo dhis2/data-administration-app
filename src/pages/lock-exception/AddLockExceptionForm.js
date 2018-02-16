@@ -38,7 +38,7 @@ class AddLockExceptionForm extends Component {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
         d2: PropTypes.object,
     }
 
@@ -93,11 +93,11 @@ class AddLockExceptionForm extends Component {
                     orgUnitPaths: dataSetMembers.organisationUnits.toArray().map(ou => ou.path),
                 });
             }).catch((error) => {
-                const t = this.context.t;
+                const translator = this.context.translator;
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happened during operation');
+                        translator('An unexpected error happened during operation');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -140,15 +140,15 @@ class AddLockExceptionForm extends Component {
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const dataSetItems = this.props.dataSets.map(dataSet => (
             { id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }),
         );
 
-        let dataSetSelectLabel = t('Select a Data Set');
+        let dataSetSelectLabel = translator('Select a Data Set');
         let dataSetSelectValue = null;
         if (this.state.dataSet) {
-            dataSetSelectLabel = t('Data Set');
+            dataSetSelectLabel = translator('Data Set');
             dataSetSelectValue = this.state.dataSet.id;
         }
 
@@ -186,13 +186,13 @@ class AddLockExceptionForm extends Component {
                                         orgUnitsPathsToInclude={this.state.orgUnitPaths}
                                     />) :
                                     (
-                                        <span>{t('Updating Tree...')}</span>
+                                        <span>{translator('Updating Tree...')}</span>
                                     )}
                             </div>
                             <div className={styles.right}>
                                 <div>
-                                    {this.state.currentRoot ? (
-                                        <div>{t('For organisation units within')} <span className={styles.ouLabel}>{
+                                    {this.state.currentRoot ? (<div>
+                                        {translator('For organisation units within')} <span className={styles.ouLabel}>{
                                             this.state.currentRoot.displayName
                                         }</span>:</div>
                                     ) : <div>For all organisation units:</div>}

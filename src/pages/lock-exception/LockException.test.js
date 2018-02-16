@@ -90,7 +90,7 @@ const ownShallow = () => {
         {
             context: {
                 updateAppState: jest.fn(),
-                t: (key) => key,
+                translator: (key) => key,
                 d2: {
                     i18n: {
                         translations: {},
