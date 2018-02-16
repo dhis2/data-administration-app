@@ -22,6 +22,8 @@ import { calculatePageValue } from '../../helpers/pagination';
 
 import styles from './LockException.css';
 import LockExceptionDetails from './LockExceptionDetails';
+import { PAGE_SUMMARY, PAGE_TITLE } from './lock.exception.conf';
+import PageHelper from '../../components/page-helper/PageHelper';
 
 const STATE_PROPERTIES_WHITE_LIST = [
     'lockExceptions',
@@ -475,7 +477,10 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 <div className={styles.headerContainer}>
-                    <h1><span>{translator(this.props.pageInfo.label)}</span></h1>
+                    <h1 className={styles.header}>
+                        {translator(PAGE_TITLE)}
+                        <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                    </h1>
                     <RaisedButton
                         label={translator('ADD')}
                         onClick={this.showLockExceptionFormDialog}
