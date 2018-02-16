@@ -17,7 +17,11 @@ class PageHelper extends PureComponent {
         pageAreas: PropTypes.arrayOf(PropTypes.shape({
             label: PropTypes.string,
             text: PropTypes.string,
-        })).isRequired,
+        })),
+    }
+
+    static defaultProps = {
+        pageAreas: [],
     }
 
     static contextTypes = {
