@@ -25,11 +25,11 @@ class GridSection extends PureComponent {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         return (
             <Link className="link" to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={styles.gridElement}>
@@ -41,8 +41,8 @@ class GridSection extends PureComponent {
                             {this.props.section.info.icon}
                         </FontIcon>
                     </div>
-                    <span className={styles.gridDescription}>{t(this.props.section.info.description)}</span>
-                    <span className={styles.gridActionText}>{t(this.props.section.info.actionText)}</span>
+                    <span className={styles.gridDescription}>{translator(this.props.section.info.description)}</span>
+                    <span className={styles.gridActionText}>{translator(this.props.section.info.actionText)}</span>
                 </GridTile>
             </Link>
         );

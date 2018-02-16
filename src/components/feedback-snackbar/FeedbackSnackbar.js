@@ -25,7 +25,7 @@ class FeedbackSnackbar extends PureComponent {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     };
 
     constructor(props) {

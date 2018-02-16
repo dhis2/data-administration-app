@@ -2,9 +2,10 @@
     margin-bottom: 16px;
 }
 
-.lockExceptionsTable h1 {
+.lockExceptionsTable .headerContainer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .lockExceptionsTable tr th {
@@ -49,7 +50,6 @@
     display: block;
     font-family: Roboto;
     font-size: 14px;
-    text-align: left;
     color: #000000;
 }
 

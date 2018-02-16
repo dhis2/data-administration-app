@@ -35,7 +35,7 @@ const ownShallow = () => {
         {
             disableLifecycleMethods: true,
             context: {
-                t: (key) => key,
+                translator: (key) => key,
             }
         }
     );

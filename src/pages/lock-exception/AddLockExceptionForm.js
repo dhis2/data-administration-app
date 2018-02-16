@@ -38,7 +38,7 @@ class AddLockExceptionForm extends Component {
     }
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
         d2: PropTypes.object,
     }
 
@@ -48,6 +48,7 @@ class AddLockExceptionForm extends Component {
         this.state = {
             selected: [],
             dataSet: null,
+            orgUnitPaths: null,
         };
 
         this.onDataSetChange = this.onDataSetChange.bind(this);
@@ -86,18 +87,17 @@ class AddLockExceptionForm extends Component {
                 }),
             ]).then(([rootWithDataSetMembers, dataSetMembers]) => {
                 const rootWithMembers = rootWithDataSetMembers.toArray()[0];
-                const selected = dataSetMembers.organisationUnits.toArray().map(ou => ou.path);
-                this.props.updateSelectedOrgUnits(selected);
                 this.setState({
                     rootWithMembers,
-                    selected,
+                    selected: [],
+                    orgUnitPaths: dataSetMembers.organisationUnits.toArray().map(ou => ou.path),
                 });
             }).catch((error) => {
-                const t = this.context.t;
+                const translator = this.context.translator;
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happened during operation');
+                        translator('An unexpected error happened during operation');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -140,19 +140,27 @@ class AddLockExceptionForm extends Component {
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const dataSetItems = this.props.dataSets.map(dataSet => (
             { id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }),
         );
+
+        let dataSetSelectLabel = translator('Select a Data Set');
+        let dataSetSelectValue = null;
+        if (this.state.dataSet) {
+            dataSetSelectLabel = translator('Data Set');
+            dataSetSelectValue = this.state.dataSet.id;
+        }
 
         return (
             <div>
                 <div className={styles.selectsContainer}>
                     <SelectField
                         style={d2UiSelectStyleOverride}
-                        label={this.state.dataSet ? this.state.dataSet.name : t('Select dataset')}
+                        label={dataSetSelectLabel}
                         items={dataSetItems}
                         onChange={this.onDataSetChange}
+                        value={dataSetSelectValue}
                     />
                     {this.state.dataSet &&
                     <PeriodPicker
@@ -175,15 +183,16 @@ class AddLockExceptionForm extends Component {
                                         memberObject={this.state.dataSet.id}
                                         onSelectClick={this.handleOrgUnitClick}
                                         onChangeCurrentRoot={this.changeRoot}
+                                        orgUnitsPathsToInclude={this.state.orgUnitPaths}
                                     />) :
                                     (
-                                        <span>{t('Updating Tree...')}</span>
+                                        <span>{translator('Updating Tree...')}</span>
                                     )}
                             </div>
                             <div className={styles.right}>
                                 <div>
-                                    {this.state.currentRoot ? (
-                                        <div>{t('For organisation units within')} <span className={styles.ouLabel}>{
+                                    {this.state.currentRoot ? (<div>
+                                        {translator('For organisation units within')} <span className={styles.ouLabel}>{
                                             this.state.currentRoot.displayName
                                         }</span>:</div>
                                     ) : <div>For all organisation units:</div>}

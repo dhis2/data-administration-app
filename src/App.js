@@ -31,7 +31,7 @@ class App extends PureComponent {
         }),
         currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
-        t: PropTypes.func,
+        translator: PropTypes.func,
     }
 
     constructor(props) {
@@ -57,7 +57,7 @@ class App extends PureComponent {
             snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
             updateAppState: this.updateAppState,
-            t: this.props.t,
+            translator: this.props.t,
         };
     }
 
@@ -71,10 +71,11 @@ class App extends PureComponent {
     }
 
     render() {
+        const translator = this.props.t;
         const translatedSections = sections.map(section => Object.assign(
             section,
             {
-                label: this.props.t(section.info.label),
+                label: translator(section.info.label),
             },
         ));
 

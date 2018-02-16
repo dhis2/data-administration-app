@@ -37,6 +37,12 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'pager',
 ];
 
+const jsStyles = {
+    dialog: {
+        maxWidth: '80%',
+    },
+};
+
 class LockException extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
@@ -83,20 +89,53 @@ class LockException extends Page {
         this.onPreviousPageClick = this.onPreviousPageClick.bind(this);
 
         // FIXME Hack in some translations
-        const t = context.t;
+        const translator = context.translator;
         const d2 = context.d2;
         Object.assign(d2.i18n.translations, {
-            organisation_unit_group: t('Organisation Unit Group'),
-            organisation_unit_level: t('Organisation Unit Level'),
-            select: t('Select'),
-            deselect: t('Deselect'),
-            select_all: t('Select All Org Units'),
-            deselect_all: t('Deselect All Org Units'),
-            name: t('Name'),
-            show: t('Show Details'),
-            remove: t('Remove'),
-            actions: t('Actions'),
-            of_page: t('of'),
+            organisation_unit_group: translator('Organisation Unit Group'),
+            organisation_unit_level: translator('Organisation Unit Level'),
+            select: translator('Select'),
+            deselect: translator('Deselect'),
+            select_all: translator('Select All Org Units'),
+            deselect_all: translator('Deselect All Org Units'),
+            name: translator('Name'),
+            show: translator('Show Details'),
+            remove: translator('Remove'),
+            actions: translator('Actions'),
+            of_page: translator('of'),
+            week: translator('week'),
+            month: translator('month'),
+            year: translator('year'),
+            biMonth: translator('biMonth'),
+            day: translator('day'),
+            jan: translator('jan'),
+            feb: translator('feb'),
+            mar: translator('mar'),
+            apr: translator('apr'),
+            may: translator('may'),
+            jun: translator('jun'),
+            jul: translator('jul'),
+            aug: translator('aug'),
+            sep: translator('sep'),
+            oct: translator('oct'),
+            nov: translator('nov'),
+            dec: translator('dec'),
+            'jan-feb': translator('jan-feb'),
+            'mar-apr': translator('mar-apr'),
+            'may-jun': translator('jan-feb'),
+            'jul-aug': translator('jan-feb'),
+            'sep-oct': translator('jan-feb'),
+            'nov-dec': translator('jan-feb'),
+            quarter: translator('quarter'),
+            Q1: translator('Q1'),
+            Q2: translator('Q2'),
+            Q3: translator('Q3'),
+            Q4: translator('Q4'),
+            sixMonth: translator('sixMonth'),
+            'jan-jun': translator('jan-jun'),
+            'jul-dec': translator('jul-dec'),
+            'apr-sep': translator('apr-sep'),
+            'oct-mar': translator('oct-mar'),
         });
     }
 
@@ -123,7 +162,7 @@ class LockException extends Page {
     }
 
     loadLockExceptionsForPager(pager, userIteration) {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const url = `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
             '&fields=name,' +
@@ -138,7 +177,7 @@ class LockException extends Page {
                 loading: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: t('Loading...'),
+                    message: translator('Loading...'),
                 },
                 pageState: {
                     loaded: false,
@@ -164,7 +203,7 @@ class LockException extends Page {
                     if (this.isPageMounted()) {
                         const messageError = error && error.message ?
                             error.message :
-                            t('An unexpected error happened');
+                            translator('An unexpected error happened');
 
                         this.context.updateAppState({
                             showSnackbar: true,
@@ -218,7 +257,7 @@ class LockException extends Page {
     }
 
     removeLockException(le) {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
         this.context.updateAppState({
@@ -226,7 +265,7 @@ class LockException extends Page {
             loading: true,
             snackbarConf: {
                 type: LOADING,
-                message: t('Removing Lock Exception'),
+                message: translator('Removing Lock Exception'),
             },
             pageState: { ...this.state },
         });
@@ -238,7 +277,7 @@ class LockException extends Page {
                     loading: false,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: t('Lock Exception removed'),
+                        message: translator('Lock Exception removed'),
                     },
                 });
                 this.loadLockExceptionsForPager(LockException.initialPager, false);
@@ -247,7 +286,7 @@ class LockException extends Page {
             if (this.isPageMounted()) {
                 const messageError = error && error.message ?
                     error.message :
-                    t('An unexpected error happend during maintenance');
+                    translator('An unexpected error happend during maintenance');
 
                 this.context.updateAppState({
                     showSnackbar: true,
@@ -267,7 +306,7 @@ class LockException extends Page {
     }
 
     showLockExceptionFormDialog() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const d2 = this.context.d2;
         if (this.state.levels &&
             this.state.groups &&
@@ -301,7 +340,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happened while loading data');
+                        translator('An unexpected error happened while loading data');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -327,7 +366,7 @@ class LockException extends Page {
     }
 
     addLockException() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         if (this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId) {
             const api = this.context.d2.Api.getApi();
             const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
@@ -345,7 +384,7 @@ class LockException extends Page {
                 loading: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: t('Adding Lock Exception'),
+                    message: translator('Adding Lock Exception'),
                 },
                 pageState: {
                     showAddDialogOpen: false,
@@ -362,7 +401,7 @@ class LockException extends Page {
                         loading: false,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: t('Lock Exception Added'),
+                            message: translator('Lock Exception Added'),
                         },
                         pageState: {
                             loaded: false,
@@ -374,7 +413,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happened during operation');
+                        translator('An unexpected error happened during operation');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -393,7 +432,7 @@ class LockException extends Page {
                 loading: false,
                 snackbarConf: {
                     type: WARNING,
-                    message: t('Select Data set, Period and Organisation Unit'),
+                    message: translator('Select Data set, Period and Organisation Unit'),
                 },
                 pageState: { ...this.state },
             });
@@ -401,7 +440,7 @@ class LockException extends Page {
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const currentlyShown = calculatePageValue(this.state.pager);
         const paginationProps = {
             hasNextPage: () => this.state.pager.page < this.state.pager.pageCount,
@@ -414,8 +453,7 @@ class LockException extends Page {
 
         const showDetailsDialogActions = [
             <FlatButton
-                className={styles.actionButtons}
-                label={t('CLOSE')}
+                label={translator('CLOSE')}
                 onClick={this.closeLockExceptionDetailsDialog}
             />,
         ];
@@ -423,28 +461,28 @@ class LockException extends Page {
         const addLockException = [
             <FlatButton
                 className={styles.actionButtons}
-                label={t('CANCEL')}
+                label={translator('CANCEL')}
                 onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
                 className={styles.actionButtons}
                 primary={Boolean(true)}
-                label={t('ADD')}
+                label={translator('ADD')}
                 onClick={this.addLockException}
             />,
         ];
 
         return (
             <div className={styles.lockExceptionsTable}>
-                <h1>
-                    <span>{this.context.t(this.props.pageInfo.label)}</span>
+                <div className={styles.headerContainer}>
+                    <h1><span>{translator(this.props.pageInfo.label)}</span></h1>
                     <RaisedButton
-                        label={t('ADD')}
+                        label={translator('ADD')}
                         onClick={this.showLockExceptionFormDialog}
                         primary={Boolean(true)}
                         disabled={this.areActionsDisabled()}
                     />
-                </h1>
+                </div>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
                         <DataTable
@@ -468,48 +506,48 @@ class LockException extends Page {
                     (
                         <Card>
                             <CardText>
-                                { this.context.t(this.state.loading ? 'Loading...' : 'No data to show.') }
+                                { translator(this.state.loading ? 'Loading...' : 'No data to show.') }
                             </CardText>
                         </Card>
                     )
                 }
                 {this.state.selectedLockException != null &&
-                    <Dialog
-                        className={styles.lockExceptionDialog}
-                        title={this.state.selectedLockException.name}
-                        actions={showDetailsDialogActions}
-                        modal={false}
-                        open={this.state.showDetailsDialogOpen}
-                        onRequestClose={this.closeLockExceptionDetailsDialog}
-                    >
-                        <LockExceptionDetails
-                            organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
-                            dataSetName={this.state.selectedLockException.dataSet.displayName}
-                            periodName={this.state.selectedLockException.period.displayName}
-                        />
-                    </Dialog>
+                <Dialog
+                    className={styles.lockExceptionDialog}
+                    title={this.state.selectedLockException.name}
+                    actions={showDetailsDialogActions}
+                    modal={false}
+                    open={this.state.showDetailsDialogOpen}
+                    onRequestClose={this.closeLockExceptionDetailsDialog}
+                >
+                    <LockExceptionDetails
+                        organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
+                        dataSetName={this.state.selectedLockException.dataSet.displayName}
+                        periodName={this.state.selectedLockException.period.displayName}
+                    />
+                </Dialog>
                 }
                 {this.state.levels &&
                 this.state.groups &&
                 this.state.dataSets.length > 0 &&
-                    <Dialog
-                        title={t('Add new lock exception')}
-                        actions={addLockException}
-                        modal={false}
-                        open={this.state.showAddDialogOpen}
-                        contentStyle={{ maxWidth: '1100px' }}
-                        onRequestClose={this.closeLockExceptionFormDialog}
-                    >
+                <Dialog
+                    title={translator('Add new lock exception')}
+                    actions={addLockException}
+                    modal={false}
+                    open={this.state.showAddDialogOpen}
+                    contentStyle={jsStyles.dialog}
+                    onRequestClose={this.closeLockExceptionFormDialog}
+                >
 
-                        <AddLockExceptionForm
-                            levels={this.state.levels}
-                            groups={this.state.groups}
-                            dataSets={this.state.dataSets}
-                            updateSelectedOrgUnits={this.updateSelectedOrgUnits}
-                            updateSeletedDataSetId={this.updateSeletedDataSetId}
-                            updateSelectedPeriodId={this.updateSelectedPeriodId}
-                        />
-                    </Dialog>
+                    <AddLockExceptionForm
+                        levels={this.state.levels}
+                        groups={this.state.groups}
+                        dataSets={this.state.dataSets}
+                        updateSelectedOrgUnits={this.updateSelectedOrgUnits}
+                        updateSeletedDataSetId={this.updateSeletedDataSetId}
+                        updateSelectedPeriodId={this.updateSelectedPeriodId}
+                    />
+                </Dialog>
                 }
             </div>
         );

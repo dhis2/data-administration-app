@@ -4,19 +4,10 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../../pages/home/Home';
+import NoMatch from './NoMatch';
 
 // App configs
 import { sections } from '../../pages/sections.conf';
-
-const NoMatch = ({ location }) => (
-    <div>
-        <h3>No match for <code>{location.pathname}</code></h3>
-    </div>
-);
-
-NoMatch.propTypes = {
-    location: PropTypes.object.isRequired,
-};
 
 const AppRouter = ({ pageState }) => {
     const routes = sections.map((section) => {

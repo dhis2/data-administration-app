@@ -45,7 +45,7 @@ const ownShallow = () => {
         {
             context: {
                 updateAppState: jest.fn(),
-                t: (key) => key,
+                translator: (key) => key,
             },
             disableLifecycleMethods: true
         }

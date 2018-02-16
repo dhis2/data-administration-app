@@ -96,7 +96,7 @@ class Maintenance extends Page {
     }
 
     performMaintenance() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
 
         const apiRequests = [];
@@ -116,7 +116,7 @@ class Maintenance extends Page {
                 loading: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: t('Performing Maintenance'),
+                    message: translator('Performing Maintenance'),
                 },
                 pageState: {
                     checkboxes: this.state.checkboxes,
@@ -131,7 +131,7 @@ class Maintenance extends Page {
                         loading: false,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: t('Maintenance done'),
+                            message: translator('Maintenance done'),
                         },
                         pageState: {
                             checkboxes: this.state.checkboxes,
@@ -143,7 +143,7 @@ class Maintenance extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        t('An unexpected error happend during maintenance');
+                        translator('An unexpected error happend during maintenance');
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -163,7 +163,7 @@ class Maintenance extends Page {
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const checkboxes = this.state.checkboxes;
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
@@ -174,7 +174,7 @@ class Maintenance extends Page {
             return (
                 <GridTile key={checkbox.key}>
                     <Checkbox
-                        label={t(checkbox.label)}
+                        label={translator(checkbox.label)}
                         checked={checkboxState}
                         onCheck={toggleCheckbox}
                         labelStyle={{ color: '#000000' }}
@@ -187,13 +187,13 @@ class Maintenance extends Page {
 
         return (
             <div className="page-wrapper">
-                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
+                <h1>{translator(this.props.pageInfo.label)}</h1>
                 <Card>
                     <CardText>
                         <Checkbox
                             id="maintenance-check-all"
                             className={styles.maintenanceCheckAll}
-                            label={t('Select all')}
+                            label={translator('Select all')}
                             checked={this.state.checkAll}
                             onCheck={this.toggleCheckAll}
                             labelStyle={{ color: '#757575' }}
@@ -209,7 +209,7 @@ class Maintenance extends Page {
                             {gridElements}
                         </GridList>
                         <RaisedButton
-                            label={t('PERFORM MAINTENANCE')}
+                            label={translator('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
                             primary={Boolean(true)}
                             disabled={this.areActionsDisabled()}

@@ -64,7 +64,7 @@ class MinMaxValueGeneration extends Page {
     }
 
     loadData() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         const d2 = this.context.d2;
         if (this.state.dataSets == null || this.state.rootWithMember == null) {
             Promise.all([
@@ -94,7 +94,7 @@ class MinMaxValueGeneration extends Page {
                         loading: false,
                         snackbarConf: {
                             type: ERROR,
-                            message: t('It was not possible to load data'),
+                            message: translator('It was not possible to load data'),
                         },
                         pageState: { ...this.state },
                     });
@@ -114,14 +114,14 @@ class MinMaxValueGeneration extends Page {
     }
 
     generateMinMaxValueClick() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
                 loading: false,
                 snackbarConf: {
                     type: WARNING,
-                    message: t('Select Data set and Organisation Unit'),
+                    message: translator('Select Data set and Organisation Unit'),
                 },
                 pageState: { ...this.state },
             });
@@ -141,7 +141,7 @@ class MinMaxValueGeneration extends Page {
             loading: true,
             snackbarConf: {
                 type: LOADING,
-                message: t('Doing Min Max generation'),
+                message: translator('Doing Min Max generation'),
             },
             pageState: { ...this.state },
         });
@@ -156,7 +156,7 @@ class MinMaxValueGeneration extends Page {
                     loading: false,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: t('Min Max generation done'),
+                        message: translator('Min Max generation done'),
                     },
                     pageState: { ...this.state },
                 });
@@ -168,7 +168,7 @@ class MinMaxValueGeneration extends Page {
                     loading: false,
                     snackbarConf: {
                         type: ERROR,
-                        message: t('It was not possible to do your request'),
+                        message: translator('It was not possible to do your request'),
                     },
                     pageState: { ...this.state },
                 });
@@ -177,14 +177,14 @@ class MinMaxValueGeneration extends Page {
     }
 
     removeMinMaxValueClick() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
                 loading: false,
                 snackbarConf: {
                     type: WARNING,
-                    message: t('Select Data set and Organisation Unit'),
+                    message: translator('Select Data set and Organisation Unit'),
                 },
                 pageState: { ...this.state },
             });
@@ -204,7 +204,7 @@ class MinMaxValueGeneration extends Page {
             loading: true,
             snackbarConf: {
                 type: LOADING,
-                message: t('Removing Min Max generation'),
+                message: translator('Removing Min Max generation'),
             },
             pageState: { ...this.state },
         });
@@ -216,7 +216,7 @@ class MinMaxValueGeneration extends Page {
                     loading: false,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: t('Min Max removal done'),
+                        message: translator('Min Max removal done'),
                     },
                     pageState: { ...this.state },
                 });
@@ -228,7 +228,7 @@ class MinMaxValueGeneration extends Page {
                     loading: false,
                     snackbarConf: {
                         type: ERROR,
-                        message: t('It was not possible to do your request'),
+                        message: translator('It was not possible to do your request'),
                     },
                     pageState: { ...this.state },
                 });
@@ -237,16 +237,16 @@ class MinMaxValueGeneration extends Page {
     }
 
     render() {
-        const t = this.context.t;
+        const translator = this.context.translator;
         return (
             <div className="page-wrapper">
-                <h1>{this.context.t(this.props.pageInfo.label)}</h1>
+                <h1>{translator(this.props.pageInfo.label)}</h1>
                 <Card>
                     <CardText>
                         <div className={styles.container}>
                             {this.state.dataSets ? (
                                 <div className={styles.left}>
-                                    <div className={styles.label}>{t('Data Set')}</div>
+                                    <div className={styles.label}>{translator('Data Set')}</div>
                                     <select
                                         multiple
                                         disabled={this.areActionsDisabled()}
@@ -264,13 +264,13 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.left}>
-                                        <span>{t('Loading data sets')}</span>
+                                        <span>{translator('Loading data sets')}</span>
                                     </div>
                                 )
                             }
                             {this.state.rootWithMembers ? (
                                 <div className={styles.right}>
-                                    <div className={styles.label}>{t('Organisation Unit Selection')}</div>
+                                    <div className={styles.label}>{translator('Organisation Unit Selection')}</div>
                                     <div className={styles.tree}>
                                         <OrgUnitTree
                                             className={styles.tree}
@@ -284,21 +284,21 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.right}>
-                                        <span>{t('Updating Organisation Units Tree...')}</span>
+                                        <span>{translator('Updating Organisation Units Tree...')}</span>
                                     </div>
                                 )}
                         </div>
                         <RaisedButton
                             className={styles.actionButton}
                             primary={Boolean(true)}
-                            label={t('GENERATE')}
+                            label={translator('GENERATE')}
                             onClick={this.generateMinMaxValueClick}
                             disabled={this.areActionsDisabled()}
                         />
                         <FlatButton
                             className={styles.actionButton}
                             secondary={Boolean(true)}
-                            label={t('REMOVE')}
+                            label={translator('REMOVE')}
                             onClick={this.removeMinMaxValueClick}
                             disabled={this.areActionsDisabled()}
                         />

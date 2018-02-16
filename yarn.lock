@@ -2015,9 +2015,9 @@ d2-manifest@^1.0.0:
     minimist "^1.1.0"
     readline-sync "^1.4.1"
 
-d2-ui@^28.0.8:
-  version "28.1.1"
-  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-28.1.1.tgz#ec40e5609cb2a8bd33ff9368f84950448f8b222b"
+d2-ui@29.0.5:
+  version "29.0.5"
+  resolved "https://registry.yarnpkg.com/d2-ui/-/d2-ui-29.0.5.tgz#47bbb2a7461e257c680c4016ec25a568a9e07121"
 
 d2-utilizr@^0.2.15:
   version "0.2.15"
@@ -6333,7 +6333,7 @@ recompose@^0.26.0:
     hoist-non-react-statics "^2.3.1"
     symbol-observable "^1.0.4"
 
-recursive-readdir@2.2.1:
+recursive-readdir@2.2.1, recursive-readdir@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.1.tgz#90ef231d0778c5ce093c9a48d74e5c5422d13a99"
   dependencies:
