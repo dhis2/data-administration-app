@@ -12,6 +12,7 @@
     "jest-enzyme": "^4.0.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.2.0",
+    "recursive-readdir": "^2.2.1",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-cucumber-framework": "^1.0.2",
     "wdio-selenium-standalone-service": "0.0.9",
@@ -74,9 +75,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "prestart": "yarn run manifest",
+    "prestart": "yarn run manifest && yarn run convert-po",
     "start": "node scripts/start.js",
-    "prebuild": "yarn run manifest",
+    "prebuild": "yarn run manifest && yarn run convert-po",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
@@ -84,12 +85,16 @@
     "lint": "eslint src/",
     "deploy": "yarn run build && mvn clean deploy",
     "coverage": "yarn test -- --coverage",
-    "manifest": "d2-manifest package.json ./public/manifest.webapp"
+    "manifest": "d2-manifest package.json ./public/manifest.webapp",
+    "extract-pot": "node scripts/pot-extractor.js",
+    "refresh-translations-template": "yarn run extract-pot -- -o translations.pot && git add ./i18n/translations.pot",
+    "convert-po": "node scripts/po-converter.js"
   },
   "pre-commit": [
     "lint",
     "validate",
-    "test"
+    "test",
+    "refresh-translations-template"
   ],
   "manifest.webapp": {
     "name": "Data Administration",
