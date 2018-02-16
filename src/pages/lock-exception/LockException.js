@@ -453,7 +453,6 @@ class LockException extends Page {
 
         const showDetailsDialogActions = [
             <FlatButton
-                className={styles.actionButtons}
                 label={translator('CLOSE')}
                 onClick={this.closeLockExceptionDetailsDialog}
             />,
