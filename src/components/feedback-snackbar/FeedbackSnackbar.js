@@ -7,6 +7,14 @@ import styles from './FeedbackSnackbar.css';
 import { LOADING, SUCCESS, ERROR } from './SnackbarTypes';
 import FeedbackSnackbarBody from './feedback-snackbar-body/FeedbackSnackbarBody';
 
+const jsStyles = {
+    snackbarBodyStyle: {
+        lineHeight: 'normal',
+        padding: '10px',
+        height: 'auto',
+    },
+};
+
 class FeedbackSnackbar extends PureComponent {
     static propTypes = {
         show: PropTypes.bool.isRequired,
@@ -72,7 +80,6 @@ class FeedbackSnackbar extends PureComponent {
         if (!this.state.show || this.state.delayLoading) {
             return null;
         }
-        const snackBarBodyStyle = { lineHeight: 'normal', padding: '10px', height: 'auto' };
         const snackBarContent = <FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />;
         return (
             <Snackbar
@@ -80,7 +87,7 @@ class FeedbackSnackbar extends PureComponent {
                 autoHideDuration={this.state.duration}
                 message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
-                bodyStyle={snackBarBodyStyle}
+                bodyStyle={jsStyles.snackbarBodyStyle}
                 className={this.state.style}
             />
         );
