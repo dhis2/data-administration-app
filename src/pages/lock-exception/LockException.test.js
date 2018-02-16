@@ -135,7 +135,7 @@ it('Lock Exception Component renders Pagination', () => {
 
 it('Lock Exception Component renders ADD button at h1', () => {
     const wrapper = ownShallow();
-    const addButton = wrapper.find('h1').find(RaisedButton);
+    const addButton = wrapper.find(RaisedButton);
     expect(addButton).toHaveLength(1);
     expect(addButton.props().label).toBe('ADD');
 });
@@ -143,7 +143,7 @@ it('Lock Exception Component renders ADD button at h1', () => {
 it('Lock Exception Component calls showLockExceptionFormDialog when ADD button is clicked', () => {
     const spy = spyOn(LockException.prototype, 'showLockExceptionFormDialog');
     const wrapper = ownShallow();
-    wrapper.find('h1').find(RaisedButton).simulate('click');
+    wrapper.find(RaisedButton).simulate('click');
     expect(spy).toHaveBeenCalled();
 });
 
@@ -168,7 +168,7 @@ it('Lock Exception Component updates showAddDialogOpen at state to true when ADD
         groups: [],
         dataSets: ['dataSet'],
     });
-    wrapper.find('h1').find(RaisedButton).simulate('click');
+    wrapper.find(RaisedButton).simulate('click');
     expect(wrapper.state('showAddDialogOpen')).toBe(true);
 });
 
@@ -179,7 +179,7 @@ it('Lock Exception Component open Add new lock exception dialog', () => {
         groups: [],
         dataSets: ['dataSet'],
     });
-    wrapper.find('h1').find(RaisedButton).simulate('click');
+    wrapper.find(RaisedButton).simulate('click');
     const dialog = wrapper.find(Dialog);
     expect(dialog.props().open).toBe(true);
 });

@@ -37,6 +37,12 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'pager',
 ];
 
+const jsStyles = {
+    dialog: {
+        maxWidth: '80%',
+    },
+};
+
 class LockException extends Page {
     static propTypes = {
         pageInfo: PropTypes.object.isRequired,
@@ -469,15 +475,15 @@ class LockException extends Page {
 
         return (
             <div className={styles.lockExceptionsTable}>
-                <h1>
-                    <span>{translator(this.props.pageInfo.label)}</span>
+                <div className={styles.headerContainer}>
+                    <h1><span>{translator(this.props.pageInfo.label)}</span></h1>
                     <RaisedButton
                         label={translator('ADD')}
                         onClick={this.showLockExceptionFormDialog}
                         primary={Boolean(true)}
                         disabled={this.areActionsDisabled()}
                     />
-                </h1>
+                </div>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
                         <DataTable
@@ -507,42 +513,42 @@ class LockException extends Page {
                     )
                 }
                 {this.state.selectedLockException != null &&
-                    <Dialog
-                        className={styles.lockExceptionDialog}
-                        title={this.state.selectedLockException.name}
-                        actions={showDetailsDialogActions}
-                        modal={false}
-                        open={this.state.showDetailsDialogOpen}
-                        onRequestClose={this.closeLockExceptionDetailsDialog}
-                    >
-                        <LockExceptionDetails
-                            organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
-                            dataSetName={this.state.selectedLockException.dataSet.displayName}
-                            periodName={this.state.selectedLockException.period.displayName}
-                        />
-                    </Dialog>
+                <Dialog
+                    className={styles.lockExceptionDialog}
+                    title={this.state.selectedLockException.name}
+                    actions={showDetailsDialogActions}
+                    modal={false}
+                    open={this.state.showDetailsDialogOpen}
+                    onRequestClose={this.closeLockExceptionDetailsDialog}
+                >
+                    <LockExceptionDetails
+                        organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
+                        dataSetName={this.state.selectedLockException.dataSet.displayName}
+                        periodName={this.state.selectedLockException.period.displayName}
+                    />
+                </Dialog>
                 }
                 {this.state.levels &&
                 this.state.groups &&
                 this.state.dataSets.length > 0 &&
-                    <Dialog
-                        title={translator('Add new lock exception')}
-                        actions={addLockException}
-                        modal={false}
-                        open={this.state.showAddDialogOpen}
-                        contentStyle={{ maxWidth: '1100px' }}
-                        onRequestClose={this.closeLockExceptionFormDialog}
-                    >
+                <Dialog
+                    title={translator('Add new lock exception')}
+                    actions={addLockException}
+                    modal={false}
+                    open={this.state.showAddDialogOpen}
+                    contentStyle={jsStyles.dialog}
+                    onRequestClose={this.closeLockExceptionFormDialog}
+                >
 
-                        <AddLockExceptionForm
-                            levels={this.state.levels}
-                            groups={this.state.groups}
-                            dataSets={this.state.dataSets}
-                            updateSelectedOrgUnits={this.updateSelectedOrgUnits}
-                            updateSeletedDataSetId={this.updateSeletedDataSetId}
-                            updateSelectedPeriodId={this.updateSelectedPeriodId}
-                        />
-                    </Dialog>
+                    <AddLockExceptionForm
+                        levels={this.state.levels}
+                        groups={this.state.groups}
+                        dataSets={this.state.dataSets}
+                        updateSelectedOrgUnits={this.updateSelectedOrgUnits}
+                        updateSeletedDataSetId={this.updateSeletedDataSetId}
+                        updateSelectedPeriodId={this.updateSelectedPeriodId}
+                    />
+                </Dialog>
                 }
             </div>
         );
