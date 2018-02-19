@@ -19,6 +19,7 @@ import PageHelper from '../../components/page-helper/PageHelper';
 const STATE_PROPERTIES_WHITE_LIST = [
     'checkboxes',
     'checkAll',
+    'loading',
 ];
 
 
@@ -40,6 +41,7 @@ class Maintenance extends Page {
         this.state = {
             checkboxes,
             checkAll: false,
+            loading: false,
         };
 
         // actions
@@ -62,7 +64,7 @@ class Maintenance extends Page {
     }
 
     areActionsDisabled() {
-        return this.context.loading;
+        return this.state.loading;
     }
 
     buildFormData() {
@@ -114,7 +116,6 @@ class Maintenance extends Page {
         if (apiRequests.length > 0) {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: true,
                 snackbarConf: {
                     type: LOADING,
                     message: translator('Performing Maintenance'),
@@ -122,6 +123,7 @@ class Maintenance extends Page {
                 pageState: {
                     checkboxes: this.state.checkboxes,
                     checkAll: this.state.checkAll,
+                    loading: true,
                 },
             });
 
@@ -129,7 +131,6 @@ class Maintenance extends Page {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: SUCCESS,
                             message: translator('Maintenance done'),
@@ -137,6 +138,7 @@ class Maintenance extends Page {
                         pageState: {
                             checkboxes: this.state.checkboxes,
                             checkAll: this.state.checkAll,
+                            loading: false,
                         },
                     });
                 }
@@ -148,7 +150,6 @@ class Maintenance extends Page {
 
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: ERROR,
                             message: messageError,
@@ -156,6 +157,7 @@ class Maintenance extends Page {
                         pageState: {
                             checkboxes: this.state.checkboxes,
                             checkAll: this.state.checkAll,
+                            loading: false,
                         },
                     });
                 }

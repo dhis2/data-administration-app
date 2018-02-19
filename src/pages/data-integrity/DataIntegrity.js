@@ -25,7 +25,7 @@ class DataIntegrity extends Page {
             cards: null,
             intervalId: null,
             loaded: false,
-            loading: true,
+            loading: false,
         };
     }
 
@@ -44,7 +44,7 @@ class DataIntegrity extends Page {
     }
 
     componentDidMount() {
-        if (!this.context.loading) {
+        if (!this.state.loading) {
             this.initDataIntegrityCheck();
         }
     }
@@ -63,7 +63,6 @@ class DataIntegrity extends Page {
     setLoadingPageState(id) {
         const translator = this.context.translator;
         this.context.updateAppState({
-            loading: true,
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
@@ -73,6 +72,7 @@ class DataIntegrity extends Page {
             pageState: {
                 loaded: false,
                 intervalId: id,
+                loading: true,
             },
         });
     }
@@ -84,7 +84,6 @@ class DataIntegrity extends Page {
             translator('An unexpected error happened during data integrity checks.');
         this.cancelPullingRequests();
         this.context.updateAppState({
-            loading: false,
             showSnackbar: true,
             snackbarConf: {
                 type: ERROR,
@@ -93,6 +92,7 @@ class DataIntegrity extends Page {
             currentSection: this.props.sectionKey,
             pageState: {
                 loaded: true,
+                loading: false,
             },
         });
     }
@@ -126,7 +126,6 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         api.get(conf.DATA_ENDPOINT).then((response) => {
             this.context.updateAppState({
-                loading: false,
                 showSnackbar: true,
                 snackbarConf: {
                     type: SUCCESS,
@@ -136,6 +135,7 @@ class DataIntegrity extends Page {
                 pageState: {
                     loaded: true,
                     cards: response,
+                    loading: false,
                 },
             });
         }).catch((e) => {
@@ -146,7 +146,7 @@ class DataIntegrity extends Page {
     render() {
         const translator = this.context.translator;
         let noContentMessage = translator('No data to show.');
-        if (this.context.loading) {
+        if (this.state.loading) {
             noContentMessage = translator('Loading...');
         }
 

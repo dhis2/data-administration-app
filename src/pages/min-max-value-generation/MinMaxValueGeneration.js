@@ -21,6 +21,7 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'selected',
     'dataSets',
     'rootWithMember',
+    'loading',
 ];
 
 class MinMaxValueGeneration extends Page {
@@ -35,6 +36,7 @@ class MinMaxValueGeneration extends Page {
             selected: [],
             dataSets: null,
             rootWithMember: null,
+            loading: false,
         };
 
         this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
@@ -62,7 +64,7 @@ class MinMaxValueGeneration extends Page {
     }
 
     areActionsDisabled() {
-        return this.context.loading || this.state.dataSets == null || this.state.rootWithMembers === null;
+        return this.state.loading || this.state.dataSets == null || this.state.rootWithMembers === null;
     }
 
     loadData() {
@@ -93,12 +95,14 @@ class MinMaxValueGeneration extends Page {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: ERROR,
                             message: translator('It was not possible to load data'),
                         },
-                        pageState: { ...this.state },
+                        pageState: {
+                            ...this.state,
+                            loading: false,
+                        },
                     });
                 }
             });
@@ -120,12 +124,14 @@ class MinMaxValueGeneration extends Page {
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: false,
                 snackbarConf: {
                     type: WARNING,
                     message: translator('Select Data set and Organisation Unit'),
                 },
-                pageState: { ...this.state },
+                pageState: {
+                    ...this.state,
+                    loading: false,
+                },
             });
             return;
         }
@@ -140,12 +146,14 @@ class MinMaxValueGeneration extends Page {
 
         this.context.updateAppState({
             showSnackbar: true,
-            loading: true,
             snackbarConf: {
                 type: LOADING,
                 message: translator('Doing Min Max generation'),
             },
-            pageState: { ...this.state },
+            pageState: {
+                ...this.state,
+                loading: true,
+            },
         });
 
         api.post(MIX_MAX_VALUE_ENDPOINT, {
@@ -155,24 +163,28 @@ class MinMaxValueGeneration extends Page {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: SUCCESS,
                         message: translator('Min Max generation done'),
                     },
-                    pageState: { ...this.state },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
+                    },
                 });
             }
         }).catch(() => {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: ERROR,
                         message: translator('It was not possible to do your request'),
                     },
-                    pageState: { ...this.state },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
+                    },
                 });
             }
         });
@@ -183,12 +195,14 @@ class MinMaxValueGeneration extends Page {
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: false,
                 snackbarConf: {
                     type: WARNING,
                     message: translator('Select Data set and Organisation Unit'),
                 },
-                pageState: { ...this.state },
+                pageState: {
+                    ...this.state,
+                    loading: false,
+                },
             });
             return;
         }
@@ -203,36 +217,42 @@ class MinMaxValueGeneration extends Page {
 
         this.context.updateAppState({
             showSnackbar: true,
-            loading: true,
             snackbarConf: {
                 type: LOADING,
                 message: translator('Removing Min Max generation'),
             },
-            pageState: { ...this.state },
+            pageState: {
+                ...this.state,
+                loading: true,
+            },
         });
 
         api.delete(`${MIX_MAX_VALUE_ENDPOINT}/${selectedOrgnisationUnit}?ds=${dataSetIds}`).then(() => {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: SUCCESS,
                         message: translator('Min Max removal done'),
                     },
-                    pageState: { ...this.state },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
+                    },
                 });
             }
         }).catch(() => {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: ERROR,
                         message: translator('It was not possible to do your request'),
                     },
-                    pageState: { ...this.state },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
+                    },
                 });
             }
         });

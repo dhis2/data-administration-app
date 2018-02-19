@@ -37,6 +37,7 @@ const STATE_PROPERTIES_WHITE_LIST = [
     'selectedDataSetId',
     'selectedPeriodId',
     'pager',
+    'loading',
 ];
 
 const jsStyles = {
@@ -72,6 +73,7 @@ class LockException extends Page {
             selectedDataSetId: null,
             selectedPeriodId: null,
             pager: LockException.initialPager,
+            loading: false,
         };
 
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
@@ -142,7 +144,7 @@ class LockException extends Page {
     }
 
     areActionsDisabled() {
-        return this.context.loading;
+        return this.state.loading;
     }
 
     componentDidMount() {
@@ -176,7 +178,6 @@ class LockException extends Page {
         if (userIteration || (!this.state.loading && !this.state.loaded)) {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: true,
                 snackbarConf: {
                     type: LOADING,
                     message: translator('Loading...'),
@@ -185,6 +186,7 @@ class LockException extends Page {
                     loaded: false,
                     lockExceptions: this.state.lockExceptions,
                     pager,
+                    loading: true,
                 },
             });
 
@@ -193,11 +195,11 @@ class LockException extends Page {
                     if (this.isPageMounted()) {
                         this.context.updateAppState({
                             showSnackbar: false,
-                            loading: false,
                             pageState: {
                                 loaded: true,
                                 lockExceptions: response.lockExceptions,
                                 pager: response.pager,
+                                loading: false,
                             },
                         });
                     }
@@ -209,7 +211,6 @@ class LockException extends Page {
 
                         this.context.updateAppState({
                             showSnackbar: true,
-                            loading: false,
                             snackbarConf: {
                                 type: ERROR,
                                 message: messageError,
@@ -218,6 +219,7 @@ class LockException extends Page {
                                 loaded: true,
                                 lockExceptions: [],
                                 pager,
+                                loading: false,
                             },
                         });
                     }
@@ -264,22 +266,27 @@ class LockException extends Page {
         const deleteUrl = `lockExceptions?ou=${le.organisationUnit.id}&pe=${le.period.id}&ds=${le.dataSet.id}`;
         this.context.updateAppState({
             showSnackbar: true,
-            loading: true,
             snackbarConf: {
                 type: LOADING,
                 message: translator('Removing Lock Exception'),
             },
-            pageState: { ...this.state },
+            pageState: {
+                ...this.state,
+                loading: true,
+            },
         });
 
         api.delete(deleteUrl).then(() => {
             if (this.isPageMounted()) {
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: SUCCESS,
                         message: translator('Lock Exception removed'),
+                    },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
                     },
                 });
                 this.loadLockExceptionsForPager(LockException.initialPager, false);
@@ -292,12 +299,14 @@ class LockException extends Page {
 
                 this.context.updateAppState({
                     showSnackbar: true,
-                    loading: false,
                     snackbarConf: {
                         type: ERROR,
                         message: messageError,
                     },
-                    pageState: { ...this.state },
+                    pageState: {
+                        ...this.state,
+                        loading: false,
+                    },
                 });
             }
         });
@@ -346,12 +355,14 @@ class LockException extends Page {
 
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: ERROR,
                             message: messageError,
                         },
-                        pageState: { ...this.state },
+                        pageState: {
+                            ...this.state,
+                            loading: false,
+                        },
                     });
                 }
             });
@@ -383,7 +394,6 @@ class LockException extends Page {
 
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: true,
                 snackbarConf: {
                     type: LOADING,
                     message: translator('Adding Lock Exception'),
@@ -393,6 +403,7 @@ class LockException extends Page {
                     selectedOrgUnits: [],
                     selectedDataSetId: null,
                     selectedPeriodId: null,
+                    loading: true,
                 },
             });
 
@@ -400,13 +411,13 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: SUCCESS,
                             message: translator('Lock Exception Added'),
                         },
                         pageState: {
                             loaded: false,
+                            loading: false,
                         },
                     });
                     this.loadLockExceptionsForPager(LockException.initialPager, false);
@@ -419,24 +430,28 @@ class LockException extends Page {
 
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: ERROR,
                             message: messageError,
                         },
-                        pageState: { ...this.state },
+                        pageState: {
+                            ...this.state,
+                            loading: false,
+                        },
                     });
                 }
             });
         } else {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: false,
                 snackbarConf: {
                     type: WARNING,
                     message: translator('Select Data set, Period and Organisation Unit'),
                 },
-                pageState: { ...this.state },
+                pageState: {
+                    ...this.state,
+                    loading: false,
+                },
             });
         }
     }

@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-16T16:30:09.244Z\n"
-"PO-Revision-Date: 2018-02-16T16:30:09.244Z\n"
+"POT-Creation-Date: 2018-02-19T09:20:47.748Z\n"
+"PO-Revision-Date: 2018-02-19T09:20:47.748Z\n"
+
+msgid "Close"
+msgstr ""
 
 msgid "Loading..."
 msgstr ""
@@ -252,7 +255,4 @@ msgid "An unexpected error happened during data integrity checks."
 msgstr ""
 
 msgid "Data integrity checks performed with success."
-msgstr ""
-
-msgid "Close"
 msgstr ""

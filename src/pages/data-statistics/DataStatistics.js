@@ -26,6 +26,7 @@ const EXPIRED_INVITATION_KEY = 'expired';
 const STATE_PROPERTIES_WHITE_LIST = [
     'tables',
     'loaded',
+    'loading',
 ];
 
 class DataStatistics extends Page {
@@ -40,6 +41,7 @@ class DataStatistics extends Page {
         this.state = {
             tables: [],
             loaded: false,
+            loading: false,
         };
     }
 
@@ -175,10 +177,9 @@ class DataStatistics extends Page {
         const api = this.context.d2.Api.getApi();
 
         // request to GET statistics
-        if (!this.context.loading && !this.state.loaded) {
+        if (!this.state.loading && !this.state.loaded) {
             this.context.updateAppState({
                 showSnackbar: true,
-                loading: true,
                 snackbarConf: {
                     type: LOADING,
                     message: translator('Loading...'),
@@ -186,6 +187,7 @@ class DataStatistics extends Page {
                 pageState: {
                     loaded: false,
                     tables: [],
+                    loading: true,
                 },
             });
 
@@ -202,7 +204,6 @@ class DataStatistics extends Page {
                     ];
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: SUCCESS,
                             message: translator('Data Statistics were loaded.'),
@@ -210,6 +211,7 @@ class DataStatistics extends Page {
                         pageState: {
                             loaded: true,
                             tables,
+                            loading: false,
                         },
                     });
                 }
@@ -217,7 +219,6 @@ class DataStatistics extends Page {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
                         showSnackbar: true,
-                        loading: false,
                         snackbarConf: {
                             type: ERROR,
                             message: translator('It was not possible to load Data Statistics'),
@@ -225,6 +226,7 @@ class DataStatistics extends Page {
                         pageState: {
                             loaded: true,
                             tables: [],
+                            loading: false,
                         },
                     });
                 }
@@ -249,7 +251,7 @@ class DataStatistics extends Page {
     render() {
         const translator = this.context.translator;
         let noContentMessage = translator('No data to show.');
-        if (this.context.loading) {
+        if (this.state.loading) {
             noContentMessage = translator('Loading...');
         }
 
