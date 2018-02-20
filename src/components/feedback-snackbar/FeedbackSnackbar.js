@@ -32,7 +32,6 @@ class FeedbackSnackbar extends PureComponent {
         super(props);
         this.state = {
             show: false,
-            duration: 4000,
             delayLoading: false,
             style: styles.warning,
         };
@@ -55,13 +54,11 @@ class FeedbackSnackbar extends PureComponent {
         }
         this.setState({
             show: props.show,
-            duration: 4000,
         });
         if (props.conf.type === LOADING) {
             setTimeout(() => { this.setState({ delayLoading: false }); }, 500);
             this.setState({
                 delayLoading: true,
-                duration: -1,
             });
         }
         this.forceUpdate();
@@ -84,7 +81,6 @@ class FeedbackSnackbar extends PureComponent {
         return (
             <Snackbar
                 open={this.state.show}
-                autoHideDuration={this.state.duration}
                 message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
                 bodyStyle={jsStyles.snackbarBodyStyle}

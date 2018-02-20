@@ -26,10 +26,64 @@ msgstr ""
 msgid "An unexpected error happened during operation"
 msgstr ""
 
-msgid "Select a Data Set"
+msgid "Performing Maintenance"
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happend during maintenance"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation"
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "It was not possible to do your request"
+msgstr ""
+
+msgid "Removing Min Max generation"
+msgstr ""
+
+msgid "Min Max removal done"
 msgstr ""
 
 msgid "Data Set"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Tree..."
