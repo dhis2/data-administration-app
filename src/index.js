@@ -29,6 +29,7 @@ const configLocale = (userSettings) => {
     if (uiLocale && uiLocale !== 'en') {
         i18n.changeLanguage(uiLocale);
     }
+    sessionStorage.setItem('uiLocale', uiLocale || 'en');
 };
 
 // init d2
