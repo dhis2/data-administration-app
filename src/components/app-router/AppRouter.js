@@ -15,7 +15,6 @@ const AppRouter = ({ pageState }) => {
             const Page = section.component;
             return (
                 <Page
-                    pageInfo={section.info}
                     sectionKey={section.key}
                     {...pageState}
                 />

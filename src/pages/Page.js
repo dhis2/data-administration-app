@@ -25,11 +25,6 @@ class Page extends Component {
         }
     }
 
-    // This is the default behavior. However, it is recommended to override this method on each Page Component
-    componentWillReceiveProps(nextProps) {
-        this.setState(nextProps);
-    }
-
     componentWillUnmount() {
         this.pageMounted = false;
     }
