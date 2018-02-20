@@ -1,4 +1,4 @@
-export const PAGE_TITLE = 'Lock Exceptions';
+export const PAGE_TITLE = 'Lock Exception Management';
 
 export const PAGE_SUMMARY = 'Lock exceptions provide fine-grained control over exemption from a locked data set.' +
     ' After the expiry of the data set, data entry will be denied by default, unless an exception has been granted' +

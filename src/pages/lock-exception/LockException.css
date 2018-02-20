@@ -58,8 +58,8 @@
     color: #000000;
 }
 
-.actionButtons {
-    margin-right: 10px !important;
+.actionButton {
+    margin-left: 10px !important;
 }
 
 .pagination {
