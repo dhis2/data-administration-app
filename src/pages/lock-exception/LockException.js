@@ -511,6 +511,7 @@ class LockException extends Page {
                                 show: 'info',
                                 remove: 'delete',
                             }}
+                            primaryAction={this.showLockExceptionDetails}
                         />
                         {!this.areActionsDisabled() &&
                             <div className={styles.pagination}>
