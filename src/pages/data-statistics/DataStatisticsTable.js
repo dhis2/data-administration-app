@@ -11,6 +11,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
+import FormattedNumber from '../../components/app-intl/FormattedNumber';
 import styles from './DataStatistics.css';
 
 class DataStatisticsTable extends PureComponent {
@@ -28,7 +29,9 @@ class DataStatisticsTable extends PureComponent {
         const rows = this.props.elements.map(element => (
             <TableRow key={element.label}>
                 <TableRowColumn>{translator(element.label)}</TableRowColumn>
-                <TableRowColumn>{element.count}</TableRowColumn>
+                <TableRowColumn>
+                    <FormattedNumber value={element.count} />
+                </TableRowColumn>
                 <TableRowColumn />
             </TableRow>
         ));
