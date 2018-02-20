@@ -133,17 +133,24 @@ it('Lock Exception Component renders Pagination', () => {
     expect(wrapper.find(Pagination)).toHaveLength(1);
 });
 
-it('Lock Exception Component renders ADD button at h1', () => {
+it('Lock Exception Component renders ADD button and BATCH DELETION at h1', () => {
+    const buttonLabels = ['ADD', 'BATCH DELETION'];
     const wrapper = ownShallow();
-    const addButton = wrapper.find(RaisedButton);
-    expect(addButton).toHaveLength(1);
-    expect(addButton.props().label).toBe('ADD');
+    const buttons = wrapper.find(RaisedButton);
+    expect(buttons).toHaveLength(2);
+    expect(buttonLabels.includes(buttons.at(0).props().label)).toBe(true);
+    expect(buttonLabels.includes(buttons.at(1).props().label)).toBe(true);
 });
 
 it('Lock Exception Component calls showLockExceptionFormDialog when ADD button is clicked', () => {
     const spy = spyOn(LockException.prototype, 'showLockExceptionFormDialog');
     const wrapper = ownShallow();
-    wrapper.find(RaisedButton).simulate('click');
+    const buttons = wrapper.find(RaisedButton);
+    buttons.forEach(button => {
+        if (button.props().label === 'ADD') {
+            button.simulate('click');
+        }
+    });
     expect(spy).toHaveBeenCalled();
 });
 
@@ -161,6 +168,18 @@ it('Lock Exception Component renders Add new lock exception dialog in close stat
     expect(dialog.props().open).toBe(false);
 });
 
+it('Lock Exception Component calls goToBatchDeletionPage when BATCH DELETION button is clicked', () => {
+    const spy = spyOn(LockException.prototype, 'goToBatchDeletionPage');
+    const wrapper = ownShallow();
+    const buttons = wrapper.find(RaisedButton);
+    buttons.forEach(button => {
+        if (button.props().label === 'BATCH DELETION') {
+            button.simulate('click');
+        }
+    });
+    expect(spy).toHaveBeenCalled();
+});
+
 it('Lock Exception Component updates showAddDialogOpen at state to true when ADD button is clicked', () => {
     const wrapper = ownShallow();
     wrapper.setState({
@@ -168,7 +187,13 @@ it('Lock Exception Component updates showAddDialogOpen at state to true when ADD
         groups: [],
         dataSets: ['dataSet'],
     });
-    wrapper.find(RaisedButton).simulate('click');
+    const buttons = wrapper.find(RaisedButton);
+    buttons.forEach(button => {
+        if (button.props().label === 'ADD') {
+            button.simulate('click');
+        }
+    });
+    wrapper.update();
     expect(wrapper.state('showAddDialogOpen')).toBe(true);
 });
 
@@ -179,7 +204,12 @@ it('Lock Exception Component open Add new lock exception dialog', () => {
         groups: [],
         dataSets: ['dataSet'],
     });
-    wrapper.find(RaisedButton).simulate('click');
+    const buttons = wrapper.find(RaisedButton);
+    buttons.forEach(button => {
+        if (button.props().label === 'ADD') {
+            button.simulate('click');
+        }
+    });
     const dialog = wrapper.find(Dialog);
     expect(dialog.props().open).toBe(true);
 });
