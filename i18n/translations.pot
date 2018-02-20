@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-20T11:19:26.541Z\n"
-"PO-Revision-Date: 2018-02-20T11:19:26.541Z\n"
+"POT-Creation-Date: 2018-02-20T13:31:59.319Z\n"
+"PO-Revision-Date: 2018-02-20T13:31:59.319Z\n"
 
 msgid "Close"
 msgstr ""
@@ -38,13 +38,49 @@ msgstr ""
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation"
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "It was not possible to do your request"
+msgstr ""
+
+msgid "Removing Min Max generation"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
 msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Select a Data Set"
-msgstr ""
-
-msgid "Data Set"
 msgstr ""
 
 msgid "Updating Tree..."
@@ -210,42 +246,6 @@ msgid "Organisation Unit"
 msgstr ""
 
 msgid "Period"
-msgstr ""
-
-msgid "It was not possible to load data"
-msgstr ""
-
-msgid "Select Data set and Organisation Unit"
-msgstr ""
-
-msgid "Doing Min Max generation"
-msgstr ""
-
-msgid "Min Max generation done"
-msgstr ""
-
-msgid "It was not possible to do your request"
-msgstr ""
-
-msgid "Removing Min Max generation"
-msgstr ""
-
-msgid "Min Max removal done"
-msgstr ""
-
-msgid "Loading data sets"
-msgstr ""
-
-msgid "Organisation Unit Selection"
-msgstr ""
-
-msgid "Updating Organisation Units Tree..."
-msgstr ""
-
-msgid "GENERATE"
-msgstr ""
-
-msgid "REMOVE"
 msgstr ""
 
 msgid "Performing data integrity checks."
