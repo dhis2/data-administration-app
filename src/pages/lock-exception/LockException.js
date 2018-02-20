@@ -626,6 +626,7 @@ class LockException extends Page {
                                 show: 'info',
                                 remove: 'delete',
                             }}
+                            primaryAction={this.showLockExceptionDetails}
                         />
                         {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
                             <div className={styles.pagination}>
