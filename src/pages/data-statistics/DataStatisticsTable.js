@@ -11,7 +11,7 @@ import {
     TableRowColumn,
 } from 'material-ui/Table';
 
-import FormattedNumber from '../../components/app-intl/FormattedNumber';
+import FormattedNumber from '../../components/formatters/FormattedNumber';
 import styles from './DataStatistics.css';
 
 class DataStatisticsTable extends PureComponent {
