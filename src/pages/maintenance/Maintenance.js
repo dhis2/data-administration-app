@@ -57,6 +57,19 @@ class Maintenance extends Page {
         }
     }
 
+    selectedCheckboxesCount() {
+        let selectedCheckboxes = 0;
+        const checkboxKeys = Object.keys(this.state.checkboxes);
+        for (let i = 0; i < checkboxKeys.length; i++) {
+            const key = checkboxKeys[i];
+            const checked = this.state.checkboxes[key].checked;
+            if (checked) {
+                selectedCheckboxes += 1;
+            }
+        }
+        return selectedCheckboxes;
+    }
+
     areActionsDisabled() {
         return this.state.loading;
     }
@@ -216,7 +229,7 @@ class Maintenance extends Page {
                             label={translator('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}
                             primary={Boolean(true)}
-                            disabled={this.areActionsDisabled()}
+                            disabled={this.areActionsDisabled() || this.selectedCheckboxesCount() === 0}
                         />
                     </CardText>
                 </Card>
