@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Material UI
 import { GridList, GridTile } from 'material-ui/GridList';
@@ -16,17 +15,12 @@ import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/Snac
 import styles from './Maintenance.css';
 import PageHelper from '../../components/page-helper/PageHelper';
 
-const STATE_PROPERTIES_WHITE_LIST = [
-    'checkboxes',
-    'checkAll',
-    'loading',
-];
-
-
 class Maintenance extends Page {
-    static propTypes = {
-        pageInfo: PropTypes.object.isRequired,
-    }
+    static STATE_PROPERTIES = [
+        'checkboxes',
+        'checkAll',
+        'loading',
+    ]
 
     constructor() {
         super();
@@ -53,7 +47,7 @@ class Maintenance extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && Maintenance.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 /* Material UI */
 import Dialog from 'material-ui/Dialog';
@@ -25,21 +24,6 @@ import LockExceptionDetails from './LockExceptionDetails';
 import { PAGE_SUMMARY, PAGE_TITLE } from './lock.exception.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
-const STATE_PROPERTIES_WHITE_LIST = [
-    'lockExceptions',
-    'showDetailsDialogOpen',
-    'showAddDialogOpen',
-    'selectedLockException',
-    'levels',
-    'groups',
-    'dataSets',
-    'selectedOrgUnits',
-    'selectedDataSetId',
-    'selectedPeriodId',
-    'pager',
-    'loading',
-];
-
 const jsStyles = {
     dialog: {
         maxWidth: '80%',
@@ -47,9 +31,20 @@ const jsStyles = {
 };
 
 class LockException extends Page {
-    static propTypes = {
-        pageInfo: PropTypes.object.isRequired,
-    }
+    static STATE_PROPERTIES = [
+        'lockExceptions',
+        'showDetailsDialogOpen',
+        'showAddDialogOpen',
+        'selectedLockException',
+        'levels',
+        'groups',
+        'dataSets',
+        'selectedOrgUnits',
+        'selectedDataSetId',
+        'selectedPeriodId',
+        'pager',
+        'loading',
+    ]
 
     static initialPager = {
         pageSize: 20,
@@ -155,7 +150,7 @@ class LockException extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && LockException.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });

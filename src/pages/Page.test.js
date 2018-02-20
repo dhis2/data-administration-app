@@ -3,8 +3,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Page from './Page';
+import DataStatistics from './data-statistics/DataStatistics';
 import Home from './home/Home';
-import App from '../App';
+
+import {DATA_STATISTICS_SECTION_KEY} from './sections.conf';
 
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
 jest.mock('d2-ui/lib/app-header/headerBar.store', () => ({}));
@@ -23,17 +25,22 @@ jest.mock('./Page'); // Page is now a mock constructor
 
 const notPageComponentShallow = () => {
     return shallow(
-        <App t={jest.fn()} />
+        <Home t={jest.fn()} />
     );
 };
 
 const pageComponentShallow = () => {
     return shallow(
-        <Home sectionKey="home" />,
+        <DataStatistics sectionKey={DATA_STATISTICS_SECTION_KEY} />,
         {
             context: {
                 updateAppState: jest.fn(),
                 translator: jest.fn(),
+                d2: {
+                    Api: {
+                        getApi: jest.fn(),
+                    },
+                },
             }
         }
     );

@@ -10,14 +10,14 @@ import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataIntegrity.css';
 
-const STATE_PROPERTIES_WHITE_LIST = [
-    'cards',
-    'intervalId',
-    'loaded',
-    'loading',
-];
-
 class DataIntegrity extends Page {
+    static STATE_PROPERTIES = [
+        'cards',
+        'intervalId',
+        'loaded',
+        'loading',
+    ]
+
     constructor() {
         super();
 
@@ -33,7 +33,7 @@ class DataIntegrity extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && DataIntegrity.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });

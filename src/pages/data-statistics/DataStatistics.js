@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
@@ -23,16 +22,12 @@ const EVENT_COUNT_KEY = 'eventCount';
 const PENDING_INVITATION_ALL_KEY = 'all';
 const EXPIRED_INVITATION_KEY = 'expired';
 
-const STATE_PROPERTIES_WHITE_LIST = [
-    'tables',
-    'loaded',
-    'loading',
-];
-
 class DataStatistics extends Page {
-    static propTypes = {
-        pageInfo: PropTypes.object.isRequired,
-    }
+    static STATE_PROPERTIES = [
+        'tables',
+        'loaded',
+        'loading',
+    ]
 
     constructor() {
         super();
@@ -191,46 +186,48 @@ class DataStatistics extends Page {
                 },
             });
 
-            api.get('dataSummary').then((response) => {
-                if (this.isPageMounted()) {
-                    const tables = [
-                        DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
-                        DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
-                        DataStatistics
-                            .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
-                        DataStatistics
-                            .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
-                        DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
-                    ];
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: translator('Data Statistics were loaded.'),
-                        },
-                        pageState: {
-                            loaded: true,
-                            tables,
-                            loading: false,
-                        },
-                    });
-                }
-            }).catch(() => {
-                if (this.isPageMounted()) {
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: translator('It was not possible to load Data Statistics'),
-                        },
-                        pageState: {
-                            loaded: true,
-                            tables: [],
-                            loading: false,
-                        },
-                    });
-                }
-            });
+            if (api) {
+                api.get('dataSummary').then((response) => {
+                    if (this.isPageMounted()) {
+                        const tables = [
+                            DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
+                            DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
+                            DataStatistics
+                                .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
+                            DataStatistics
+                                .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
+                            DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
+                        ];
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            snackbarConf: {
+                                type: SUCCESS,
+                                message: translator('Data Statistics were loaded.'),
+                            },
+                            pageState: {
+                                loaded: true,
+                                tables,
+                                loading: false,
+                            },
+                        });
+                    }
+                }).catch(() => {
+                    if (this.isPageMounted()) {
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            snackbarConf: {
+                                type: ERROR,
+                                message: translator('It was not possible to load Data Statistics'),
+                            },
+                            pageState: {
+                                loaded: true,
+                                tables: [],
+                                loading: false,
+                            },
+                        });
+                    }
+                });
+            }
         }
     }
 
@@ -238,7 +235,7 @@ class DataStatistics extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && DataStatistics.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });

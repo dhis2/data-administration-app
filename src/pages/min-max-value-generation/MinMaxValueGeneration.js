@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
@@ -17,17 +16,13 @@ import PageHelper from '../../components/page-helper/PageHelper';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
 
-const STATE_PROPERTIES_WHITE_LIST = [
-    'selected',
-    'dataSets',
-    'rootWithMember',
-    'loading',
-];
-
 class MinMaxValueGeneration extends Page {
-    static propTypes = {
-        pageInfo: PropTypes.object.isRequired,
-    }
+    static STATE_PROPERTIES = [
+        'selected',
+        'dataSets',
+        'rootWithMember',
+        'loading',
+    ]
 
     constructor() {
         super();
@@ -53,7 +48,7 @@ class MinMaxValueGeneration extends Page {
         const nextState = {};
 
         Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && STATE_PROPERTIES_WHITE_LIST.includes(property)) {
+            if (nextProps.hasOwnProperty(property) && MinMaxValueGeneration.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property];
             }
         });
