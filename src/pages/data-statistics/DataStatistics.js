@@ -8,7 +8,7 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
-import { PAGE_SUMMARY, PAGE_TITLE } from './data.statics.conf';
+import { PAGE_SUMMARY, PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataStatistics.css';
@@ -52,7 +52,7 @@ class DataStatistics extends Page {
             for (let i = 0; i < objectCountsKeys.length; i++) {
                 const key = objectCountsKeys[i];
                 objectCountsTable.elements.push({
-                    label: key,
+                    label: OBJECT_TYPE_LABELS[key],
                     count: objectCountsResponse[key],
                 });
             }
