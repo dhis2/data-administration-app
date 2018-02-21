@@ -159,6 +159,7 @@ module.exports = {
           {
             test: /\.css$/,
               include: paths.appSrc,
+              exclude: paths.customCss,
               use: [
               require.resolve('style-loader'),
               {
@@ -195,7 +196,7 @@ module.exports = {
             {
 
                 test: /\.css$/,
-                include: paths.appD2UINodeModules,
+                include: [paths.appD2UINodeModules, paths.customCss],
                 loader: 'style-loader!css-loader',
             },
           // "file" loader makes sure those assets get served by WebpackDevServer.
