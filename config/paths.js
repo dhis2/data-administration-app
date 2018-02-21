@@ -47,10 +47,11 @@ module.exports = {
   appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
+  customCss: resolveApp('src/custom-css'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
-    appD2UINodeModules: resolveApp('node_modules/d2-ui'),
+  appD2UINodeModules: resolveApp('node_modules/d2-ui'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };

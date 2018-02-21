@@ -1,0 +1,8 @@
+.data-table__context-menu__item div, .data-table__rows__row__column {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.data-table__headers__header {
+    font-family: 'Roboto', sans-serif;
+}

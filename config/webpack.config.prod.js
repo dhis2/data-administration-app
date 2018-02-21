@@ -167,6 +167,8 @@ module.exports = {
           // in the main CSS file.
           {
             test: /\.css$/,
+            include: paths.appSrc,
+            exclude: paths.customCss,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -211,8 +213,16 @@ module.exports = {
                 extractTextPluginOptions
               )
             ),
+
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
+            // Process css
+            {
+
+                test: /\.css$/,
+                include: [paths.appD2UINodeModules, paths.customCss],
+                loader: 'style-loader!css-loader',
+            },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules

@@ -24,6 +24,8 @@ import LockExceptionDetails from './LockExceptionDetails';
 import { PAGE_SUMMARY, PAGE_TITLE } from './lock.exception.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
+import '../../custom-css/D2UIDataTableOverrides.css';
+
 const jsStyles = {
     dialog: {
         maxWidth: '80%',
