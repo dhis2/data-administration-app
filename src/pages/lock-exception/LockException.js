@@ -15,7 +15,7 @@ import 'd2-ui/lib/css/Pagination.css';
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
 
-import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
 
 import { calculatePageValue } from '../../helpers/pagination';
 
@@ -147,6 +147,10 @@ class LockException extends Page {
 
     areActionsDisabled() {
         return this.state.loading;
+    }
+
+    addLockExceptionEnabled() {
+        return this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId;
     }
 
     componentDidMount() {
@@ -472,7 +476,7 @@ class LockException extends Page {
 
     addLockException() {
         const translator = this.context.translator;
-        if (this.state.selectedOrgUnits.length > 0 && this.state.selectedDataSetId && this.state.selectedPeriodId) {
+        if (this.addLockExceptionEnabled()) {
             const api = this.context.d2.Api.getApi();
             const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
                 const orgUnitPathSplitted = orgUnitPath.split('/');
@@ -533,18 +537,6 @@ class LockException extends Page {
                     });
                 }
             });
-        } else {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: WARNING,
-                    message: translator('Select Data set, Period and Organisation Unit'),
-                },
-                pageState: {
-                    ...this.state,
-                    loading: false,
-                },
-            });
         }
     }
 
@@ -578,6 +570,7 @@ class LockException extends Page {
                 primary={Boolean(true)}
                 label={translator('ADD')}
                 onClick={this.addLockException}
+                disabled={!this.addLockExceptionEnabled()}
             />,
         ];
 

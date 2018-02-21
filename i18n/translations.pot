@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-21T08:57:47.291Z\n"
-"PO-Revision-Date: 2018-02-21T08:57:47.291Z\n"
+"POT-Creation-Date: 2018-02-21T09:36:15.508Z\n"
+"PO-Revision-Date: 2018-02-21T09:36:15.508Z\n"
 
 msgid "Close"
 msgstr ""
@@ -177,9 +177,6 @@ msgid "Adding Lock Exception"
 msgstr ""
 
 msgid "Lock Exception Added"
-msgstr ""
-
-msgid "Select Data set, Period and Organisation Unit"
 msgstr ""
 
 msgid "CLOSE"
