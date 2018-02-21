@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-20T12:18:05.543Z\n"
-"PO-Revision-Date: 2018-02-20T12:18:05.543Z\n"
+"POT-Creation-Date: 2018-02-21T09:36:15.508Z\n"
+"PO-Revision-Date: 2018-02-21T09:36:15.508Z\n"
 
 msgid "Close"
 msgstr ""
@@ -26,64 +26,10 @@ msgstr ""
 msgid "An unexpected error happened during operation"
 msgstr ""
 
-msgid "Performing Maintenance"
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "An unexpected error happend during maintenance"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
-msgstr ""
-
-msgid "It was not possible to load data"
-msgstr ""
-
-msgid "Select Data set and Organisation Unit"
-msgstr ""
-
-msgid "Doing Min Max generation"
-msgstr ""
-
-msgid "Min Max generation done"
-msgstr ""
-
-msgid "It was not possible to do your request"
-msgstr ""
-
-msgid "Removing Min Max generation"
-msgstr ""
-
-msgid "Min Max removal done"
+msgid "Select a Data Set"
 msgstr ""
 
 msgid "Data Set"
-msgstr ""
-
-msgid "Loading data sets"
-msgstr ""
-
-msgid "Organisation Unit Selection"
-msgstr ""
-
-msgid "Updating Organisation Units Tree..."
-msgstr ""
-
-msgid "GENERATE"
-msgstr ""
-
-msgid "REMOVE"
-msgstr ""
-
-msgid "An unexpected error happened during operation"
-msgstr ""
-
-msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Tree..."
@@ -231,9 +177,6 @@ msgid "Adding Lock Exception"
 msgstr ""
 
 msgid "Lock Exception Added"
-msgstr ""
-
-msgid "Select Data set, Period and Organisation Unit"
 msgstr ""
 
 msgid "CLOSE"
