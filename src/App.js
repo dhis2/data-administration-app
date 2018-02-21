@@ -22,7 +22,6 @@ class App extends PureComponent {
     }
 
     static childContextTypes = {
-        loading: PropTypes.bool,
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
             type: PropTypes.string,
@@ -39,7 +38,6 @@ class App extends PureComponent {
 
         this.state = {
             currentSection: '',
-            loading: false,
             showSnackbar: false,
             snackbarConf: {
                 type: '',
@@ -52,7 +50,6 @@ class App extends PureComponent {
 
     getChildContext() {
         return {
-            loading: this.state.loading,
             showSnackbar: this.state.showSnackbar,
             snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
