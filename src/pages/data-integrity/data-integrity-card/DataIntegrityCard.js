@@ -55,7 +55,7 @@ class DataIntegrityCard extends PureComponent {
                         Object.keys(this.props.content).map(element => (
                             <span key={element}>
                                 <h4>{element}</h4>
-                                <p>{this.props.content[element]}</p>
+                                <p>{this.props.content[element].join(', ')}</p>
                             </span>
                         ))
                     }
