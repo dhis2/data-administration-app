@@ -8,7 +8,7 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
-import { PAGE_SUMMARY, PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statics.conf';
+import { PAGE_SUMMARY, PAGE_TITLE, OBJECT_TYPE_LABELS } from './dataStatistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataStatistics.css';
