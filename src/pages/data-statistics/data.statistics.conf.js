@@ -22,6 +22,6 @@ export const OBJECT_TYPE_LABELS = {
     indicatorGroup: 'Indicator groups',
     chart: 'Charts',
     dataElementGroup: 'Data element groups',
-    dashboard: 'Dashbords',
+    dashboard: 'Dashboards',
 };
 
