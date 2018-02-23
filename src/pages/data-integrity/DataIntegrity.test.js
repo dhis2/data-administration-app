@@ -5,11 +5,11 @@ import { DATA_INTEGRITY_SECTION_KEY, sections } from '../sections.conf';
 import DataIntegrity from './DataIntegrity';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 
-let maintenancePageInfo = {};
+let dataIntegrityPageInfo = {};
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === DATA_INTEGRITY_SECTION_KEY) {
-        maintenancePageInfo = section.info;
+        dataIntegrityPageInfo = section.info;
         break;
     }
 }
@@ -39,7 +39,7 @@ const ownShallow = () => {
     return shallow(
         <DataIntegrity
             sectionKey={DATA_INTEGRITY_SECTION_KEY}
-            pageInfo={maintenancePageInfo}
+            pageInfo={dataIntegrityPageInfo}
         />,
         {
             context: {
@@ -53,6 +53,12 @@ const ownShallow = () => {
 
 it('DataIntegrity renders without crashing.', () => {
     ownShallow();
+});
+
+it('DataIntegrity should show correct title.', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find('h1')).toHaveLength(1);
+    expect(wrapper.find('h1').text()).toBe('Data Integrity<PageHelper />');
 });
 
 it('DataIntegrity renders no DataIntegrityCards when no data available.', () => {
