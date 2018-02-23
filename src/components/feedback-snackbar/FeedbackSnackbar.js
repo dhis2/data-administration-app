@@ -26,6 +26,7 @@ class FeedbackSnackbar extends PureComponent {
 
     static contextTypes = {
         translator: PropTypes.func,
+        updateAppState: PropTypes.func,
     };
 
     constructor(props) {
@@ -66,10 +67,9 @@ class FeedbackSnackbar extends PureComponent {
 
     handleRequestClose = () => {
         if (this.props.conf.type !== LOADING) {
-            this.setState(
-                {
-                    show: false,
-                });
+            this.context.updateAppState({
+                showSnackbar: false,
+            });
         }
     }
 
