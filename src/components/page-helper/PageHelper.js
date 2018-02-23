@@ -47,7 +47,7 @@ class PageHelper extends PureComponent {
     }
 
     render() {
-        const translator = this.context.t;
+        const translator = this.context.translator;
         const actions = [
             <FlatButton
                 label={translator('Close')}
