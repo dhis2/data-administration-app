@@ -613,6 +613,11 @@ class LockException extends Page {
                 </div>
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
+                        {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
+                            <div className={styles.pagination}>
+                                <Pagination {...paginationProps} />
+                            </div>
+                        }
                         <DataTable
                             columns={['name']}
                             rows={this.state.lockExceptions}
