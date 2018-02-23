@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-23T12:10:04.083Z\n"
-"PO-Revision-Date: 2018-02-23T12:10:04.083Z\n"
+"POT-Creation-Date: 2018-02-23T13:27:07.086Z\n"
+"PO-Revision-Date: 2018-02-23T13:27:07.086Z\n"
 
 msgid "Close"
 msgstr ""
@@ -159,6 +159,12 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "An unexpected error happened"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "CONFIRM"
 msgstr ""
 
 msgid "Removing Lock Exception"
