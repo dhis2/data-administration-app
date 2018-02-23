@@ -22,6 +22,7 @@ class MinMaxValueGeneration extends Page {
         'dataSets',
         'rootWithMember',
         'loading',
+        'dataSetsSelectedCount',
     ]
 
     constructor() {
@@ -32,10 +33,12 @@ class MinMaxValueGeneration extends Page {
             dataSets: null,
             rootWithMember: null,
             loading: false,
+            dataSetsSelectedCount: 1,
         };
 
         this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this);
         this.dataSetsSelectRef = this.dataSetsSelectRef.bind(this);
+        this.dataSetsSelectClick = this.dataSetsSelectClick.bind(this);
         this.generateMinMaxValueClick = this.generateMinMaxValueClick.bind(this);
         this.removeMinMaxValueClick = this.removeMinMaxValueClick.bind(this);
     }
@@ -58,8 +61,12 @@ class MinMaxValueGeneration extends Page {
         }
     }
 
-    areActionsDisabled() {
+    isUserInteractionDisabled() {
         return this.state.loading || this.state.dataSets == null || this.state.rootWithMembers === null;
+    }
+
+    isDataSetSelected() {
+        return this.state.dataSetsSelectedCount === 0;
     }
 
     loadData() {
@@ -106,6 +113,12 @@ class MinMaxValueGeneration extends Page {
 
     dataSetsSelectRef(ref) {
         this.dataSetsSelect = ref;
+    }
+
+    dataSetsSelectClick() {
+        this.setState({
+            dataSetsSelectedCount: this.dataSetsSelect.selectedOptions.length,
+        });
     }
 
     handleOrgUnitClick(event, orgUnit) {
@@ -269,7 +282,8 @@ class MinMaxValueGeneration extends Page {
                                     <div className={styles.label}>{translator('Data Set')}</div>
                                     <select
                                         multiple
-                                        disabled={this.areActionsDisabled()}
+                                        onClick={this.dataSetsSelectClick}
+                                        disabled={this.isUserInteractionDisabled()}
                                         className={styles.select}
                                         ref={this.dataSetsSelectRef}
                                     >
@@ -313,14 +327,14 @@ class MinMaxValueGeneration extends Page {
                             primary={Boolean(true)}
                             label={translator('GENERATE')}
                             onClick={this.generateMinMaxValueClick}
-                            disabled={this.areActionsDisabled()}
+                            disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />
                         <FlatButton
                             className={styles.actionButton}
                             secondary={Boolean(true)}
                             label={translator('REMOVE')}
                             onClick={this.removeMinMaxValueClick}
-                            disabled={this.areActionsDisabled()}
+                            disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />
                     </CardText>
                 </Card>
