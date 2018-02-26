@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-23T15:02:08.260Z\n"
-"PO-Revision-Date: 2018-02-23T15:02:08.260Z\n"
+"POT-Creation-Date: 2018-02-26T11:56:18.639Z\n"
+"PO-Revision-Date: 2018-02-26T11:56:18.639Z\n"
 
 msgid "Close"
 msgstr ""
@@ -80,7 +80,7 @@ msgstr ""
 msgid "year"
 msgstr ""
 
-msgid "biMonth"
+msgid "bi monthly"
 msgstr ""
 
 msgid "day"
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Q4"
 msgstr ""
 
-msgid "sixMonth"
+msgid "six monthly"
 msgstr ""
 
 msgid "jan-jun"
