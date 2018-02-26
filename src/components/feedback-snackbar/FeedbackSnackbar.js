@@ -4,16 +4,8 @@ import { Snackbar } from 'material-ui';
 
 import styles from './FeedbackSnackbar.css';
 
-import { LOADING, SUCCESS, ERROR } from './SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, WARNING, ACTION_MESSAGE } from './SnackbarTypes';
 import FeedbackSnackbarBody from './feedback-snackbar-body/FeedbackSnackbarBody';
-
-const jsStyles = {
-    snackbarBodyStyle: {
-        lineHeight: 'normal',
-        padding: '10px',
-        height: 'auto',
-    },
-};
 
 class FeedbackSnackbar extends PureComponent {
     static propTypes = {
@@ -21,11 +13,14 @@ class FeedbackSnackbar extends PureComponent {
         conf: PropTypes.shape({
             type: PropTypes.string.isRequired,
             message: PropTypes.string.isRequired,
+            action: PropTypes.string,
+            onActionClick: PropTypes.func,
         }).isRequired,
     }
 
     static contextTypes = {
         translator: PropTypes.func,
+        updateAppState: PropTypes.func,
     };
 
     constructor(props) {
@@ -37,6 +32,7 @@ class FeedbackSnackbar extends PureComponent {
         };
     }
 
+    // eslint-disable-next-line
     componentWillReceiveProps(props) {
         switch (props.conf.type) {
         case SUCCESS:
@@ -48,8 +44,11 @@ class FeedbackSnackbar extends PureComponent {
         case ERROR:
             this.setState({ style: styles.error });
             break;
-        default:
+        case WARNING:
             this.setState({ style: styles.warning });
+            break;
+        default:
+            this.setState({ style: null });
             break;
         }
         this.setState({
@@ -66,10 +65,9 @@ class FeedbackSnackbar extends PureComponent {
 
     handleRequestClose = () => {
         if (this.props.conf.type !== LOADING) {
-            this.setState(
-                {
-                    show: false,
-                });
+            this.context.updateAppState({
+                showSnackbar: false,
+            });
         }
     }
 
@@ -77,13 +75,18 @@ class FeedbackSnackbar extends PureComponent {
         if (!this.state.show || this.state.delayLoading) {
             return null;
         }
-        const snackBarContent = <FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />;
+
+        const snackBarContent = this.props.conf.type === ACTION_MESSAGE
+            ? this.props.conf.message
+            : (<FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />);
+
         return (
             <Snackbar
+                action={this.props.conf.action}
+                onActionClick={this.props.conf.onActionClick}
                 open={this.state.show}
                 message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
-                bodyStyle={jsStyles.snackbarBodyStyle}
                 className={this.state.style}
             />
         );

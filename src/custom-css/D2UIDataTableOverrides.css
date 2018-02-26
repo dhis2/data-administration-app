@@ -1,8 +1,27 @@
-.data-table__context-menu__item div, .data-table__rows__row__column {
+.data-table__context-menu__item div, .data-table__rows__row__column, .data-table-pager--page-info {
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
 }
 
 .data-table__headers__header {
     font-family: 'Roboto', sans-serif;
+}
+
+.data-table-pager--page-info {
+    padding: 0 !important;
+}
+
+.data-table-pager--buttons {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.data-table-pager--buttons .material-icons {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.data-table {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
 }

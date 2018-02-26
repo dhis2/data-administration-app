@@ -127,10 +127,10 @@ it('Lock Exception Component renders DataTable', () => {
     expect(wrapper.find(DataTable)).toHaveLength(1);
 });
 
-it('Lock Exception Component renders Pagination', () => {
+it('Lock Exception Component renders Pagination on top and bottom of DataTable', () => {
     const wrapper = ownShallow();
     wrapper.setState({lockExceptions: fakeLockExceptionsForDataTable});
-    expect(wrapper.find(Pagination)).toHaveLength(1);
+    expect(wrapper.find(Pagination)).toHaveLength(2);
 });
 
 it('Lock Exception Component renders ADD button and BATCH DELETION at h1', () => {
