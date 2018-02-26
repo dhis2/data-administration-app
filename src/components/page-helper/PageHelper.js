@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
@@ -10,7 +10,7 @@ const jsStyles = {
     },
 };
 
-class PageHelper extends PureComponent {
+class PageHelper extends Component {
     static propTypes = {
         pageTitle: PropTypes.string.isRequired,
         pageSummary: PropTypes.string.isRequired,
@@ -18,14 +18,14 @@ class PageHelper extends PureComponent {
             label: PropTypes.string,
             text: PropTypes.string,
         })),
-    }
+    };
 
     static defaultProps = {
         pageAreas: [],
-    }
+    };
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     };
 
     constructor(props) {

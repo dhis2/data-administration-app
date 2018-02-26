@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-26T12:26:48.339Z\n"
-"PO-Revision-Date: 2018-02-26T12:26:48.339Z\n"
+"POT-Creation-Date: 2018-02-26T14:30:32.166Z\n"
+"PO-Revision-Date: 2018-02-26T14:30:32.166Z\n"
 
 msgid "Close"
 msgstr ""
@@ -209,18 +209,6 @@ msgstr ""
 msgid "Period"
 msgstr ""
 
-msgid "Performing Maintenance"
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
-msgstr ""
-
 msgid "It was not possible to load data"
 msgstr ""
 
@@ -255,6 +243,18 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
+msgstr ""
+
+msgid "Performing Maintenance"
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "Performing data integrity checks."
