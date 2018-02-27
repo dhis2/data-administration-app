@@ -5,8 +5,23 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-27T12:05:25.264Z\n"
-"PO-Revision-Date: 2018-02-27T12:05:25.264Z\n"
+"POT-Creation-Date: 2018-02-27T12:07:29.976Z\n"
+"PO-Revision-Date: 2018-02-27T12:07:29.976Z\n"
+
+msgid "Close"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Data Statistics were loaded."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
 
 msgid "An unexpected error happened during operation"
 msgstr ""
@@ -143,9 +158,6 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
-msgid "Loading..."
-msgstr ""
-
 msgid "An unexpected error happened"
 msgstr ""
 
@@ -195,15 +207,6 @@ msgid "Organisation Unit"
 msgstr ""
 
 msgid "Period"
-msgstr ""
-
-msgid "Data Statistics were loaded."
-msgstr ""
-
-msgid "It was not possible to load Data Statistics"
-msgstr ""
-
-msgid "No data to show."
 msgstr ""
 
 msgid "Performing Maintenance"
@@ -261,7 +264,4 @@ msgid "An unexpected error happened during data integrity checks."
 msgstr ""
 
 msgid "Data integrity checks performed with success."
-msgstr ""
-
-msgid "Close"
 msgstr ""

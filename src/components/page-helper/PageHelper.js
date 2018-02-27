@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
@@ -10,7 +10,7 @@ const jsStyles = {
     },
 };
 
-class PageHelper extends Component {
+class PageHelper extends PureComponent {
     static propTypes = {
         pageTitle: PropTypes.string.isRequired,
         pageSummary: PropTypes.string.isRequired,
