@@ -18,14 +18,14 @@ class PageHelper extends PureComponent {
             label: PropTypes.string,
             text: PropTypes.string,
         })),
-    }
+    };
 
     static defaultProps = {
         pageAreas: [],
-    }
+    };
 
     static contextTypes = {
-        t: PropTypes.func,
+        translator: PropTypes.func,
     };
 
     constructor(props) {
@@ -47,7 +47,7 @@ class PageHelper extends PureComponent {
     }
 
     render() {
-        const translator = this.context.t;
+        const translator = this.context.translator;
         const actions = [
             <FlatButton
                 label={translator('Close')}
