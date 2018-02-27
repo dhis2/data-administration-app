@@ -32,17 +32,23 @@ class GridSection extends PureComponent {
         const translator = this.context.translator;
         return (
             <Link className="link" to={this.props.section.path}>
-                <GridTile key={this.props.section.key} className={styles.gridElement}>
+                <GridTile key={this.props.section.key} className={classNames('section', styles.gridElement)}>
                     <div className={styles.gridTitleBar}>
-                        <span className={styles.gridTitleDescription}>{this.props.section.info.label}</span>
+                        <span className={classNames('section-title', styles.gridTitleDescription)}>
+                            {this.props.section.info.label}
+                        </span>
                         <FontIcon
-                            className={classNames('material-icons', styles.gridIcon)}
+                            className={classNames('material-icons', 'icon', styles.gridIcon)}
                         >
                             {this.props.section.info.icon}
                         </FontIcon>
                     </div>
-                    <span className={styles.gridDescription}>{translator(this.props.section.info.description)}</span>
-                    <span className={styles.gridActionText}>{translator(this.props.section.info.actionText)}</span>
+                    <span className={classNames('section-description', styles.gridDescription)}>
+                        {translator(this.props.section.info.description)}
+                    </span>
+                    <span className={classNames('section-action-text', styles.gridActionText)}>
+                        {translator(this.props.section.info.actionText)}
+                    </span>
                 </GridTile>
             </Link>
         );
