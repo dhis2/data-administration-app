@@ -9,11 +9,11 @@ import styles from './SidebarMenu.css';
 class SidebarMenu extends PureComponent {
     render() {
         const menu = (
-            <List className={styles.list}>
+            <List className={classNames('menu', styles.list)}>
                 {
                     this.props.sections.map((section) => {
                         const listItemStyle = section.key === this.props.currentSection
-                            ? styles.activeItem
+                            ? classNames('active', styles.activeItem)
                             : styles.item;
                         const icon = typeof section.info.icon === 'string' || section.info.icon instanceof String
                             ? <FontIcon className="material-icons">{section.info.icon}</FontIcon>

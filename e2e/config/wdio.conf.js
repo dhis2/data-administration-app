@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './e2e/features/**/*.feature'
+        './e2e/features/home.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -128,7 +128,7 @@ exports.config = {
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
-        require: ['./e2e/step-definitions/homepage.steps.js'],        // <string[]> (file/dir) require files before executing features
+        require: ['./e2e/step-definitions/index.steps.js'],        // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         compiler: [],       // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         dryRun: false,      // <boolean> invoke formatters without executing steps
