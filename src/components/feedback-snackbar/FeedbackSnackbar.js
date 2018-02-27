@@ -16,51 +16,45 @@ class FeedbackSnackbar extends PureComponent {
             action: PropTypes.string,
             onActionClick: PropTypes.func,
         }).isRequired,
-    }
+    };
 
     static contextTypes = {
         translator: PropTypes.func,
         updateAppState: PropTypes.func,
     };
 
+    static getStyle(type) {
+        switch (type) {
+        case SUCCESS:
+            return styles.success;
+        case LOADING:
+            return styles.loading;
+        case ERROR:
+            return styles.error;
+        case WARNING:
+            return styles.warning;
+        default:
+            return null;
+        }
+    }
+
     constructor(props) {
         super(props);
         this.state = {
             show: false,
-            delayLoading: false,
             style: styles.warning,
+            snackBarContent: '',
         };
     }
 
-    // eslint-disable-next-line
     componentWillReceiveProps(props) {
-        switch (props.conf.type) {
-        case SUCCESS:
-            this.setState({ style: styles.success });
-            break;
-        case LOADING:
-            this.setState({ style: styles.loading });
-            break;
-        case ERROR:
-            this.setState({ style: styles.error });
-            break;
-        case WARNING:
-            this.setState({ style: styles.warning });
-            break;
-        default:
-            this.setState({ style: null });
-            break;
-        }
         this.setState({
+            style: FeedbackSnackbar.getStyle(props.conf.type),
             show: props.show,
+            snackBarContent: props.conf.type === ACTION_MESSAGE
+                ? props.conf.message
+                : (<FeedbackSnackbarBody type={props.conf.type} message={props.conf.message} />),
         });
-        if (props.conf.type === LOADING) {
-            setTimeout(() => { this.setState({ delayLoading: false }); }, 500);
-            this.setState({
-                delayLoading: true,
-            });
-        }
-        this.forceUpdate();
     }
 
     handleRequestClose = () => {
@@ -69,23 +63,15 @@ class FeedbackSnackbar extends PureComponent {
                 showSnackbar: false,
             });
         }
-    }
+    };
 
     render() {
-        if (!this.state.show || this.state.delayLoading) {
-            return null;
-        }
-
-        const snackBarContent = this.props.conf.type === ACTION_MESSAGE
-            ? this.props.conf.message
-            : (<FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />);
-
         return (
             <Snackbar
                 action={this.props.conf.action}
                 onActionClick={this.props.conf.onActionClick}
                 open={this.state.show}
-                message={snackBarContent}
+                message={this.state.snackBarContent}
                 onRequestClose={this.handleRequestClose}
                 className={this.state.style}
             />
