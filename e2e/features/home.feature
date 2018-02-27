@@ -4,7 +4,7 @@ I want to be able to See all the items and open the correspondent item
 
 Background:
   Given that I am logged in to the Sierra Leone DHIS2
-  And I am on homepage
+  And I am on home
 	   
 Scenario Outline: Check the presence of the item
 Then I can see the "<item>" in the page

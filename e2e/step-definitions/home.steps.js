@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { defineSupportCode } = require('cucumber');
 
-const homePage = require('../pages/home.page');
+const home = require('../pages/home.page');
 const dhis2Page = require('../pages/dhis2.page.js');
 
 defineSupportCode(({ Given, When, Then }) => {
@@ -14,29 +14,29 @@ defineSupportCode(({ Given, When, Then }) => {
       dhis2Page.isFromLocation('Sierra Leone');
   });
 
-  Given(/^I am on homepage$/, () => {
-    homePage.open();
+  Given(/^I am on home$/, () => {
+    home.open();
   });
 
   Then(/^I can see the "(.+)" in the page$/, (section) => {
     this.section = section;
-    homePage.isSectionOptionVisible(section);
+    home.isSectionOptionVisible(section);
   });
 
   Then(/^I can see a description$/, () => {
-    expect(homePage.isSectionDescriptionVisible(this.section)).to.equal(true);
+    expect(home.isSectionDescriptionVisible(this.section)).to.equal(true);
   });
 
   Then(/^the "(.+)" to the selected section$/, (textLink) => {
-    expect(homePage.getTextLinkFromSection(this.section)).to.equal(textLink);
+    expect(home.getTextLinkFromSection(this.section)).to.equal(textLink);
   });
 
   Given(/^I click in the "(.+)" in the page$/, (section) => {
-    homePage.getCardForSection(section).click();
+    home.getCardForSection(section).click();
   });
 
   Then(/^the side menu "(.+)" is selected$/, (section) => {
-    expect(homePage.isSectionActiveAtMenu(section)).to.equal(true);
+    expect(home.isSectionActiveAtMenu(section)).to.equal(true);
   });
 
   Then(/^the new section is opened with "(.+)"$/, (header) => {

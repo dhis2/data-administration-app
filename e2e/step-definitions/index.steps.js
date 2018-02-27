@@ -1,5 +1,5 @@
 var steps = [
-  require('./homepage.steps'),
+  require('./home.steps'),
 ];
 
 module.exports = function() {
