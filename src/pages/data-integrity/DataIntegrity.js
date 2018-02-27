@@ -145,10 +145,7 @@ class DataIntegrity extends Page {
 
     render() {
         const translator = this.context.translator;
-        let noContentMessage = translator('No data to show.');
-        if (this.state.loading) {
-            noContentMessage = translator('Loading...');
-        }
+        const noContentMessage = translator('No data to show.');
 
         const noContent = (
             <Card>
