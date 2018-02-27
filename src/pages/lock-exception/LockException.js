@@ -20,7 +20,6 @@ import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedba
 import { calculatePageValue } from '../../helpers/pagination';
 
 import styles from './LockException.css';
-import LockExceptionDetails from './LockExceptionDetails';
 import { PAGE_SUMMARY, PAGE_TITLE } from './lock.exception.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
@@ -35,7 +34,6 @@ const jsStyles = {
 class LockException extends Page {
     static STATE_PROPERTIES = [
         'lockExceptions',
-        'showDetailsDialogOpen',
         'showAddDialogOpen',
         'selectedLockException',
         'levels',
@@ -61,7 +59,6 @@ class LockException extends Page {
 
         this.state = {
             lockExceptions: [],
-            showDetailsDialogOpen: false,
             showAddDialogOpen: false,
             selectedLockException: null,
             levels: null,
@@ -72,6 +69,7 @@ class LockException extends Page {
             selectedPeriodId: null,
             pager: LockException.initialPager,
             loading: false,
+            loaded: false,
             atBatchDeletionPage: false,
         };
 
@@ -79,8 +77,6 @@ class LockException extends Page {
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this);
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this);
 
-        this.showLockExceptionDetails = this.showLockExceptionDetails.bind(this);
-        this.closeLockExceptionDetailsDialog = this.closeLockExceptionDetailsDialog.bind(this);
         this.removeLockException = this.removeLockException.bind(this);
 
         this.showLockExceptionFormDialog = this.showLockExceptionFormDialog.bind(this);
@@ -98,6 +94,9 @@ class LockException extends Page {
         const translator = context.translator;
         const d2 = context.d2;
         Object.assign(d2.i18n.translations, {
+            period: translator('Period'),
+            dataSet: translator('Data Set'),
+            organisationUnit: translator('Organisation Unit'),
             organisation_unit_group: translator('Organisation Unit Group'),
             organisation_unit_level: translator('Organisation Unit Level'),
             select: translator('Select'),
@@ -145,6 +144,28 @@ class LockException extends Page {
         });
     }
 
+    prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
+        return lockExceptionResponse.map((le) => {
+            const row = {};
+            if (!this.state.atBatchDeletionPage) {
+                row.organisationUnit = le.organisationUnit.displayName;
+                row.organisationUnitId = le.organisationUnit.id;
+            }
+            row.period = le.period.displayName;
+            row.periodId = le.period.id;
+            row.dataSet = le.dataSet.displayName;
+            row.dataSetId = le.dataSet.id;
+            return row;
+        });
+    }
+
+    dataTableColumns() {
+        if (this.state.atBatchDeletionPage) {
+            return ['dataSet', 'period'];
+        }
+        return ['organisationUnit', 'dataSet', 'period'];
+    }
+
     areActionsDisabled() {
         return this.state.loading;
     }
@@ -171,19 +192,7 @@ class LockException extends Page {
         }
     }
 
-    contextMenuActions() {
-        const contextMenuActions = {};
-
-        if (!this.state.atBatchDeletionPage) {
-            contextMenuActions.show = this.showLockExceptionDetails;
-        }
-
-        contextMenuActions.remove = this.removeLockException;
-
-        return contextMenuActions;
-    }
-
-    loadLockExceptionsForPager(pager, userIteration) {
+    loadLockExceptionsForPager(pager, userAction) {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const url = `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
@@ -193,7 +202,7 @@ class LockException extends Page {
             'dataSet[id,displayName]';
 
         // request to GET lock exceptions
-        if (userIteration || (!this.state.loading && !this.state.loaded)) {
+        if (userAction || (!this.state.loading && !this.state.loaded)) {
             this.context.updateAppState({
                 showSnackbar: true,
                 snackbarConf: {
@@ -203,8 +212,6 @@ class LockException extends Page {
                 pageState: {
                     atBatchDeletionPage: false,
                     loaded: false,
-                    lockExceptions: this.state.lockExceptions,
-                    pager,
                     loading: true,
                 },
             });
@@ -216,7 +223,9 @@ class LockException extends Page {
                             showSnackbar: false,
                             pageState: {
                                 loaded: true,
-                                lockExceptions: response.lockExceptions,
+                                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
+                                    response.lockExceptions,
+                                ),
                                 pager: response.pager,
                                 loading: false,
                             },
@@ -236,8 +245,6 @@ class LockException extends Page {
                             },
                             pageState: {
                                 loaded: true,
-                                lockExceptions: [],
-                                pager,
                                 loading: false,
                             },
                         });
@@ -249,7 +256,7 @@ class LockException extends Page {
     loadLockExceptionCombinations() {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
-        const url = 'lockExceptions/combinations';
+        const url = 'lockExceptions/combinations?fields=name, period[id,displayName], dataSet[id,displayName]';
 
         // request to GET lock exception combinations
         this.context.updateAppState({
@@ -272,7 +279,9 @@ class LockException extends Page {
                         showSnackbar: false,
                         pageState: {
                             loaded: true,
-                            lockExceptions: response.lockExceptions,
+                            lockExceptions: this.prepareLockExceptionsResponseToDataTable(
+                                response.lockExceptions,
+                            ),
                             loading: false,
                         },
                     });
@@ -291,7 +300,6 @@ class LockException extends Page {
                         },
                         pageState: {
                             loaded: true,
-                            lockExceptions: [],
                             loading: false,
                         },
                     });
@@ -331,15 +339,6 @@ class LockException extends Page {
         this.loadLockExceptionCombinations();
     }
 
-    showLockExceptionDetails(le) {
-        this.setState(
-            {
-                showDetailsDialogOpen: true,
-                selectedLockException: le,
-            },
-        );
-    }
-
     removeLockException(le) {
         const translator = this.context.translator;
         this.context.updateAppState({
@@ -350,10 +349,10 @@ class LockException extends Page {
                 action: translator('CONFIRM'),
                 onActionClick: () => {
                     const api = this.context.d2.Api.getApi();
-                    let deleteUrl = `lockExceptions?pe=${le.period.id}&ds=${le.dataSet.id}`;
+                    let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`;
 
-                    if (le.organisationUnit) {
-                        deleteUrl += `&ou=${le.organisationUnit.id}`;
+                    if (le.organisationUnitId) {
+                        deleteUrl += `&ou=${le.organisationUnitId}`;
                     }
 
                     this.context.updateAppState({
@@ -377,8 +376,8 @@ class LockException extends Page {
 
                             if (this.state.atBatchDeletionPage) {
                                 newPageState.lockExceptions = this.state.lockExceptions.filter(
-                                    existingLockException => existingLockException.period.id !== le.period.id
-                                        && existingLockException.dataSet.id !== le.dataSet.id);
+                                    existingLockException => existingLockException.periodId !== le.periodId
+                                        || existingLockException.dataSetId !== le.dataSetId);
                             }
 
                             this.context.updateAppState({
@@ -416,10 +415,6 @@ class LockException extends Page {
                 },
             },
         });
-    }
-
-    closeLockExceptionDetailsDialog() {
-        this.setState({ showDetailsDialogOpen: false });
     }
 
     showLockExceptionFormDialog() {
@@ -562,13 +557,6 @@ class LockException extends Page {
             currentlyShown,
         };
 
-        const showDetailsDialogActions = [
-            <FlatButton
-                label={translator('CLOSE')}
-                onClick={this.closeLockExceptionDetailsDialog}
-            />,
-        ];
-
         const addLockException = [
             <FlatButton
                 className={styles.actionButton}
@@ -629,14 +617,10 @@ class LockException extends Page {
                             </div>
                         }
                         <DataTable
-                            columns={['name']}
+                            columns={this.dataTableColumns()}
                             rows={this.state.lockExceptions}
-                            contextMenuActions={this.contextMenuActions()}
-                            contextMenuIcons={{
-                                show: 'info',
-                                remove: 'delete',
-                            }}
-                            primaryAction={this.state.atBatchDeletionPage ? null : this.showLockExceptionDetails}
+                            contextMenuActions={{ remove: this.removeLockException }}
+                            contextMenuIcons={{ remove: 'delete' }}
                         />
                         {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
                             <div className={styles.pagination}>
@@ -651,22 +635,6 @@ class LockException extends Page {
                             </CardText>
                         </Card>
                     )
-                }
-                {this.state.selectedLockException != null &&
-                <Dialog
-                    className={styles.lockExceptionDialog}
-                    title={this.state.selectedLockException.name}
-                    actions={showDetailsDialogActions}
-                    modal={false}
-                    open={this.state.showDetailsDialogOpen}
-                    onRequestClose={this.closeLockExceptionDetailsDialog}
-                >
-                    <LockExceptionDetails
-                        organisationUnitName={this.state.selectedLockException.organisationUnit.displayName}
-                        dataSetName={this.state.selectedLockException.dataSet.displayName}
-                        periodName={this.state.selectedLockException.period.displayName}
-                    />
-                </Dialog>
                 }
                 {this.state.levels &&
                 this.state.groups &&

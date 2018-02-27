@@ -10,7 +10,6 @@ import Pagination from 'd2-ui/lib/pagination/Pagination.component';
 
 import LockException from './LockException';
 import AddLockExceptionForm from './AddLockExceptionForm';
-import LockExceptionDetails from './LockExceptionDetails';
 
 import {
     sections,
@@ -214,14 +213,3 @@ it('Lock Exception Component open Add new lock exception dialog', () => {
     expect(dialog.props().open).toBe(true);
 });
 
-it('Lock Exception Component renders Lock Exception Details Dialog in close state', () => {
-    const wrapper = ownShallow();
-    wrapper.setState({
-        selectedLockException: fakeSelectedLockException,
-    });
-    const dialog = wrapper.find(Dialog);
-    expect(dialog).toHaveLength(1);
-    expect(dialog.find(LockExceptionDetails)).toHaveLength(1);
-    expect(dialog.props().title).toBe(fakeSelectedLockException.name);
-    expect(dialog.props().open).toBe(false);
-});
