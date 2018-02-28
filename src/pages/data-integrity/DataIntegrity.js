@@ -145,11 +145,9 @@ class DataIntegrity extends Page {
 
     render() {
         const translator = this.context.translator;
-        const noContentMessage = translator('No data to show.');
-
         const noContent = (
             <Card>
-                <CardText>{noContentMessage}</CardText>
+                <CardText>{translator('No data to show.')}</CardText>
             </Card>
         );
         let cardsToShow = [];
