@@ -19,7 +19,7 @@ Examples:
 |Min-Max Value Generation|Generate Min-Max Value|
 
 Scenario Outline: Open the correspondent page
-And I click in the "<item>" in the page
+When I click in the "<item>" in the page
 Then the side menu "<item>" is selected
 And the new section is opened with "<header>"
 Examples:

@@ -1,5 +1,9 @@
-var steps = [
+const steps = [
+  require('./shared.steps'),
   require('./home.steps'),
+  require('./help.steps'),
+  require('./sideMenu.steps'),
+  require('./dataStatistics.steps')
 ];
 
 module.exports = function() {
