@@ -2,6 +2,9 @@ import React from 'react';
 
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
+
+import classNames from 'classnames';
+
 import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
@@ -255,7 +258,7 @@ class DataStatistics extends Page {
         const tables = this.state.tables.map((table) => {
             if (table && table.label && table.elements.length > 0) {
                 return (
-                    <Card className={styles.card} key={table.label}>
+                    <Card className={classNames(styles.card, 'data-statistics-table')} key={table.label}>
                         <DataStatisticsTable
                             label={table.label}
                             elements={table.elements}
