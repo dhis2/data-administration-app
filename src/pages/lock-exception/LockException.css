@@ -61,3 +61,20 @@
 .actionButton {
     margin-left: 10px !important;
 }
+
+.marginForAddButton {
+    margin-bottom: 60px;
+}
+
+.backArrowIcon {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.headerDivider {
+    margin: 0 10px 0 10px;
+}
+
+.subHeader {
+    font-weight: 500;
+}

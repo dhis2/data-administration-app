@@ -7,3 +7,7 @@ export const PAGE_SUMMARY = 'Lock exceptions provide fine-grained control over e
     ' expiry period of the data set has passed. In the example above, a data lock exception would be created for "ab' +
     ' Abundant Life Organization" and "ab Seventh Day Hospital" for the "Care and Support" dataset for "February' +
     ' 2012".';
+
+export const BATCH_DELETION_HEADER_TEXT = 'Lock Exception';
+
+export const BATCH_DELETION_SUB_HEADER = 'Batch Deletion';
