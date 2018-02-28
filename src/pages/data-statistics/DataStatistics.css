@@ -3,38 +3,25 @@
     align-items: center;
 }
 
-.statisticsTable {
-  margin-bottom: 16px;
+.card {
+    margin-bottom: 24px;
 }
 
 .statisticsTable th {
-	font-size: 14px !important;
-	letter-spacing: 0.7px !important;
-	color: #757575 !important;
+    color: #757575 !important;
+    border-bottom: 2px solid #e0e0e0 !important;
+    font-size: 16px !important;
+    height: 48px !important;
 }
+
 
 .statisticsTable tr {
-	font-size: 14px !important;
-	letter-spacing: 0.7px !important;
-	color: #000000 !important;
-}
-
-.statisticsTableHeader tr th {
-    font-size: 24px !important;
-    letter-spacing: 1.2px !important;
     color: #000000 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
 }
 
-.statisticsTableHeader tr {
-    height: 78px !important;
-}
-
-.statisticsTable tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.statisticsTable tr:nth-child(odd) {
-  background-color: #ffffff;
+.statisticsTable tr td {
+    font-size: 14px !important;
 }
 
 .statisticsTable td:nth-child(2) {
