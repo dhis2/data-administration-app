@@ -32,30 +32,26 @@ class DataStatisticsTable extends PureComponent {
                 <TableRowColumn>
                     <FormattedNumber value={element.count} />
                 </TableRowColumn>
-                <TableRowColumn />
             </TableRow>
         ));
         return (
-            <div className={styles.statisticsTable}>
-                <Table selectable={false}>
-                    <TableHeader
-                        className={styles.statisticsTableHeader}
-                        displaySelectAll={false}
-                        adjustForCheckbox={false}
-                        enableSelectAll={false}
-                    >
-                        <TableRow>
-                            <TableHeaderColumn>{translator(this.props.label)}</TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody
-                        displayRowCheckbox={false}
-                        stripedRows={false}
-                    >
-                        {rows}
-                    </TableBody>
-                </Table>
-            </div>
+            <Table selectable={false} className={styles.statisticsTable}>
+                <TableHeader
+                    displaySelectAll={false}
+                    adjustForCheckbox={false}
+                    enableSelectAll={false}
+                >
+                    <TableRow>
+                        <TableHeaderColumn>{translator(this.props.label)}</TableHeaderColumn>
+                    </TableRow>
+                </TableHeader>
+                <TableBody
+                    displayRowCheckbox={false}
+                    stripedRows={false}
+                >
+                    {rows}
+                </TableBody>
+            </Table>
         );
     }
 }
