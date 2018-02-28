@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog, FlatButton, FontIcon } from 'material-ui';
 
+import classNames from 'classnames';
+
 import styles from './PageHelper.css';
 
 const jsStyles = {
@@ -50,6 +52,7 @@ class PageHelper extends PureComponent {
         const translator = this.context.translator;
         const actions = [
             <FlatButton
+                className={'helper-close-button'}
                 label={translator('Close')}
                 primary={Boolean(true)}
                 onClick={this.handleClose}
@@ -65,8 +68,14 @@ class PageHelper extends PureComponent {
 
         return (
             <span className={styles.helper}>
-                <FontIcon className="material-icons" onClick={this.handleOpen}>help</FontIcon>
+                <FontIcon
+                    className={classNames('material-icons', 'helper-icon')}
+                    onClick={this.handleOpen}
+                >
+                    help
+                </FontIcon>
                 <Dialog
+                    className={'helper-popup'}
                     title={translator(this.props.pageTitle)}
                     actions={actions}
                     modal={Boolean(false)}
@@ -76,7 +85,7 @@ class PageHelper extends PureComponent {
                     contentStyle={jsStyles.dialog}
                     onRequestClose={this.handleClose}
                 >
-                    <p>{translator(this.props.pageSummary)}</p>
+                    <p className={'helper-description'}>{translator(this.props.pageSummary)}</p>
                     {pageAreas}
                 </Dialog>
             </span>
