@@ -51,9 +51,6 @@ class FeedbackSnackbar extends PureComponent {
         this.setState({
             style: FeedbackSnackbar.getStyle(props.conf.type),
             show: props.show,
-            snackBarContent: props.conf.type === ACTION_MESSAGE
-                ? props.conf.message
-                : (<FeedbackSnackbarBody type={props.conf.type} message={props.conf.message} />),
         });
     }
 
@@ -66,12 +63,20 @@ class FeedbackSnackbar extends PureComponent {
     };
 
     render() {
+        if (!this.state.show) {
+            return null;
+        }
+
+        const snackBarContent = this.props.conf.type === ACTION_MESSAGE
+            ? this.props.conf.message
+            : (<FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />);
+
         return (
             <Snackbar
                 action={this.props.conf.action}
                 onActionClick={this.props.conf.onActionClick}
                 open={this.state.show}
-                message={this.state.snackBarContent}
+                message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
                 className={this.state.style}
             />
