@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
@@ -132,24 +133,23 @@ it('Lock Exception Component renders Pagination on top and bottom of DataTable',
     expect(wrapper.find(Pagination)).toHaveLength(2);
 });
 
-it('Lock Exception Component renders ADD button and BATCH DELETION at h1', () => {
-    const buttonLabels = ['ADD', 'BATCH DELETION'];
+it('Lock Exception Component renders BATCH DELETION Button at h1', () => {
     const wrapper = ownShallow();
     const buttons = wrapper.find(RaisedButton);
-    expect(buttons).toHaveLength(2);
-    expect(buttonLabels.includes(buttons.at(0).props().label)).toBe(true);
-    expect(buttonLabels.includes(buttons.at(1).props().label)).toBe(true);
+    expect(buttons).toHaveLength(1);
+    expect(buttons.at(0).props().label === 'BATCH DELETION').toBe(true);
 });
+
+it('Lock Exception Component renders Floating add button', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(FloatingActionButton)).toHaveLength(1);
+});
+
 
 it('Lock Exception Component calls showLockExceptionFormDialog when ADD button is clicked', () => {
     const spy = spyOn(LockException.prototype, 'showLockExceptionFormDialog');
     const wrapper = ownShallow();
-    const buttons = wrapper.find(RaisedButton);
-    buttons.forEach(button => {
-        if (button.props().label === 'ADD') {
-            button.simulate('click');
-        }
-    });
+    wrapper.find(FloatingActionButton).simulate('click');
     expect(spy).toHaveBeenCalled();
 });
 
@@ -186,12 +186,7 @@ it('Lock Exception Component updates showAddDialogOpen at state to true when ADD
         groups: [],
         dataSets: ['dataSet'],
     });
-    const buttons = wrapper.find(RaisedButton);
-    buttons.forEach(button => {
-        if (button.props().label === 'ADD') {
-            button.simulate('click');
-        }
-    });
+    wrapper.find(FloatingActionButton).simulate('click');
     wrapper.update();
     expect(wrapper.state('showAddDialogOpen')).toBe(true);
 });
@@ -203,12 +198,7 @@ it('Lock Exception Component open Add new lock exception dialog', () => {
         groups: [],
         dataSets: ['dataSet'],
     });
-    const buttons = wrapper.find(RaisedButton);
-    buttons.forEach(button => {
-        if (button.props().label === 'ADD') {
-            button.simulate('click');
-        }
-    });
+    wrapper.find(FloatingActionButton).simulate('click');
     const dialog = wrapper.find(Dialog);
     expect(dialog.props().open).toBe(true);
 });

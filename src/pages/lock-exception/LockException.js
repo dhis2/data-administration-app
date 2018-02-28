@@ -4,13 +4,18 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
 import { Card, CardText } from 'material-ui/Card';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
 
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
+
+import classNames from 'classnames';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
@@ -20,7 +25,12 @@ import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedba
 import { calculatePageValue } from '../../helpers/pagination';
 
 import styles from './LockException.css';
-import { PAGE_SUMMARY, PAGE_TITLE } from './lock.exception.conf';
+import {
+    PAGE_SUMMARY,
+    PAGE_TITLE,
+    BATCH_DELETION_HEADER_TEXT,
+    BATCH_DELETION_SUB_HEADER,
+} from './lock.exception.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import '../../custom-css/D2UIDataTableOverrides.css';
@@ -28,6 +38,13 @@ import '../../custom-css/D2UIDataTableOverrides.css';
 const jsStyles = {
     dialog: {
         maxWidth: '80%',
+    },
+    addButton: {
+        position: 'fixed',
+        marginTop: '1rem',
+        bottom: '1.5rem',
+        right: '1.5rem',
+        zIndex: 10,
     },
 };
 
@@ -164,6 +181,45 @@ class LockException extends Page {
             return ['dataSet', 'period'];
         }
         return ['organisationUnit', 'dataSet', 'period'];
+    }
+
+    header() {
+        const translator = this.context.translator;
+        if (this.state.atBatchDeletionPage) {
+            return (
+                <div className={styles.headerContainer}>
+                    <h1 className={styles.header}>
+                        <FontIcon
+                            className={classNames('material-icons', styles.backArrowIcon)}
+                            onClick={this.backToLockExceptions}
+                        >
+                            arrow_back
+                        </FontIcon>
+                        <span>{translator(BATCH_DELETION_HEADER_TEXT)}</span>
+                        <span className={styles.headerDivider}> | </span>
+                        <span className={styles.subHeader}>{translator(BATCH_DELETION_SUB_HEADER)}</span>
+                    </h1>
+                </div>
+            );
+        }
+
+        return (
+            <div className={styles.headerContainer}>
+                <h1 className={styles.header}>
+                    {translator(PAGE_TITLE)}
+                    <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                </h1>
+                <div>
+                    <RaisedButton
+                        className={styles.actionButton}
+                        label={translator('BATCH DELETION')}
+                        onClick={this.goToBatchDeletionPage}
+                        primary={Boolean(true)}
+                        disabled={this.areActionsDisabled()}
+                    />
+                </div>
+            </div>
+        );
     }
 
     areActionsDisabled() {
@@ -574,41 +630,7 @@ class LockException extends Page {
 
         return (
             <div className={styles.lockExceptionsTable}>
-                <div className={styles.headerContainer}>
-                    <h1 className={styles.header}>
-                        {translator(PAGE_TITLE)}
-                        <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
-                    </h1>
-                    <div>
-                        {!this.state.atBatchDeletionPage &&
-                            <RaisedButton
-                                className={styles.actionButton}
-                                label={translator('BATCH DELETION')}
-                                onClick={this.goToBatchDeletionPage}
-                                primary={Boolean(true)}
-                                disabled={this.areActionsDisabled()}
-                            />
-                        }
-                        {!this.state.atBatchDeletionPage &&
-                            <RaisedButton
-                                className={styles.actionButton}
-                                label={translator('ADD')}
-                                onClick={this.showLockExceptionFormDialog}
-                                primary={Boolean(true)}
-                                disabled={this.areActionsDisabled()}
-                            />
-                        }
-                        {this.state.atBatchDeletionPage &&
-                            <RaisedButton
-                                className={styles.actionButton}
-                                label={translator('BACK')}
-                                onClick={this.backToLockExceptions}
-                                primary={Boolean(true)}
-                                disabled={this.areActionsDisabled()}
-                            />
-                        }
-                    </div>
-                </div>
+                {this.header()}
                 {this.state.lockExceptions && this.state.lockExceptions.length ? (
                     <div>
                         {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
@@ -623,7 +645,7 @@ class LockException extends Page {
                             contextMenuIcons={{ remove: 'delete' }}
                         />
                         {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
-                            <div className={styles.pagination}>
+                            <div className={classNames(styles.pagination, styles.marginForAddButton)}>
                                 <Pagination {...paginationProps} />
                             </div>
                         }
@@ -657,6 +679,14 @@ class LockException extends Page {
                         updateSelectedPeriodId={this.updateSelectedPeriodId}
                     />
                 </Dialog>
+                }
+                {!this.state.atBatchDeletionPage && !this.areActionsDisabled() &&
+                    <FloatingActionButton
+                        style={jsStyles.addButton}
+                        onClick={this.showLockExceptionFormDialog}
+                    >
+                        <ContentAdd />
+                    </FloatingActionButton>
                 }
             </div>
         );
