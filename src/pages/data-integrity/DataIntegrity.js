@@ -60,7 +60,7 @@ class DataIntegrity extends Page {
         }
     }
 
-    setLoadingPageState(id) {
+    setLoadingPageState() {
         const translator = this.context.translator;
         this.context.updateAppState({
             showSnackbar: true,
@@ -71,8 +71,15 @@ class DataIntegrity extends Page {
             currentSection: this.props.sectionKey,
             pageState: {
                 loaded: false,
-                intervalId: id,
                 loading: true,
+            },
+        });
+    }
+
+    setIntervalId(id) {
+        this.context.updateAppState({
+            pageState: {
+                intervalId: id,
             },
         });
     }
@@ -101,7 +108,7 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         this.setLoadingPageState();
         api.post(conf.INIT_ENDPOINT).then(() => {
-            this.setLoadingPageState(
+            this.setIntervalId(
                 setInterval(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
             );
         }).catch((e) => {
