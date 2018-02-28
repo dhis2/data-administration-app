@@ -653,7 +653,7 @@ class LockException extends Page {
                     (
                         <Card>
                             <CardText>
-                                { translator(this.state.loading ? 'Loading...' : 'No data to show.') }
+                                { translator('No data to show.') }
                             </CardText>
                         </Card>
                     )
