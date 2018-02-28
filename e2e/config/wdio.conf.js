@@ -11,7 +11,8 @@ exports.config = {
     //
     specs: [
         './e2e/features/home.feature',
-        './e2e/features/help.feature'
+        './e2e/features/help.feature',
+        './e2e/features/sideMenu.feature',
     ],
     // Patterns to exclude.
     exclude: [

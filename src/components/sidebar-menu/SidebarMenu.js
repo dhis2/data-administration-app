@@ -23,7 +23,7 @@ class SidebarMenu extends PureComponent {
                             <Link key={section.key} className={styles.itemLink} to={section.path}>
                                 <ListItem
                                     key={section.key}
-                                    className={listItemStyle}
+                                    className={classNames(listItemStyle, 'menu-item')}
                                     leftIcon={icon}
                                 >
                                     {section.label}

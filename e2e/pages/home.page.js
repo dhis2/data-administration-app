@@ -29,7 +29,7 @@ class Home extends Page {
   }
 
   getCardForSection(section) {
-    browser.waitForVisible(`.section`, 5000);
+    browser.waitForVisible('.section', 5000);
     const sections = browser.elements('.section').value;
     for(let currentSection of sections) {
       if (currentSection.element('.section-title').getText() === section) {
@@ -39,9 +39,20 @@ class Home extends Page {
     return null;
   }
 
+  getMenuItemForSection(section) {
+    browser.waitForVisible('.menu', 5000);
+    const sections = browser.elements('.menu .menu-item').value;
+    for(let currentSection of sections) {
+      if (currentSection.element('div > div').getText().includes(section)) {
+        return currentSection;
+      }
+    }
+    return null;
+  }
+
   isSectionActiveAtMenu(section) {
-    browser.waitForVisible(`.menu`, 5000);
-    const activeItem = browser.element('.menu .active div div');
+    browser.waitForVisible('.menu', 5000);
+    const activeItem = browser.element('.menu .active > div > div');
     return activeItem.getText().includes(section);
   }
 }

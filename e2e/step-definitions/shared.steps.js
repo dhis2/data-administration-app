@@ -17,4 +17,12 @@ defineSupportCode(({ Given, When, Then }) => {
     Given(/^I am on home$/, () => {
         home.open();
     });
+
+    Then(/^the side menu "(.+)" is selected$/, (section) => {
+        expect(home.isSectionActiveAtMenu(section)).to.equal(true);
+    });
+
+    Then(/^the new section is opened with "(.+)"$/, (header) => {
+        expect(browser.element('h1').getText().includes(header)).to.equal(true);
+    });
 });
