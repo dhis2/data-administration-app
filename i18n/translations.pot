@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-02-27T17:09:58.060Z\n"
-"PO-Revision-Date: 2018-02-27T17:09:58.060Z\n"
+"POT-Creation-Date: 2018-02-28T11:49:57.113Z\n"
+"PO-Revision-Date: 2018-02-28T11:49:57.113Z\n"
 
 msgid "Close"
 msgstr ""
@@ -36,6 +36,12 @@ msgid "Updating Tree..."
 msgstr ""
 
 msgid "For organisation units within"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Organisation Unit"
 msgstr ""
 
 msgid "Organisation Unit Group"
@@ -158,6 +164,9 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
+msgid "BATCH DELETION"
+msgstr ""
+
 msgid "An unexpected error happened"
 msgstr ""
 
@@ -185,40 +194,13 @@ msgstr ""
 msgid "Lock Exception Added"
 msgstr ""
 
-msgid "CLOSE"
-msgstr ""
-
 msgid "CANCEL"
 msgstr ""
 
 msgid "ADD"
 msgstr ""
 
-msgid "BATCH DELETION"
-msgstr ""
-
-msgid "BACK"
-msgstr ""
-
 msgid "Add new lock exception"
-msgstr ""
-
-msgid "Organisation Unit"
-msgstr ""
-
-msgid "Period"
-msgstr ""
-
-msgid "Performing Maintenance"
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "It was not possible to load data"
@@ -255,6 +237,18 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
+msgstr ""
+
+msgid "Performing Maintenance"
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "Select all"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "Performing data integrity checks."
