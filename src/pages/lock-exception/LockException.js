@@ -41,10 +41,8 @@ const jsStyles = {
     },
     addButton: {
         position: 'fixed',
-        marginTop: '1rem',
         bottom: '1.5rem',
         right: '1.5rem',
-        zIndex: 10,
     },
 };
 
