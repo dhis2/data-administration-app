@@ -56,5 +56,8 @@ yarn test
 ### E2e testing
 To execute end to end tests run the following command:
 ```sh
+export DHIS2_BASE_URL=http://your_dhis2_instance.com/
 yarn test-e2e
 ```
+
+You must have the dev server running on port 3000, as explained previously.
