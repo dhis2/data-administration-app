@@ -3,7 +3,8 @@ const steps = [
     require('./home.steps'),
     require('./help.steps'),
     require('./sideMenu.steps'),
-    require('./dataStatistics.steps')
+    require('./dataStatistics.steps'),
+    require('./dataIntegrity.steps')
 ];
 
 module.exports = function () {
