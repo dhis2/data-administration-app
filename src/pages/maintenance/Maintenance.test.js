@@ -53,9 +53,9 @@ it('Maintenance renders without crashing', () => {
     ownShallow();
 });
 
-it('Maintenance renders a GridList', () => {
+it('Maintenance renders a "Grid List Container"', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(GridList)).toHaveLength(1);
+    expect(wrapper.find('div.row')).toHaveLength(1);
 });
 
 it('Maintenance renders needed Checkboxes', () => {
@@ -104,7 +104,7 @@ it('Maintenance state changes when Checkbox to select or unselect all is checked
 it('Maintenance state changes Checkbox state when a Checkbox is checked', () => {
     const wrapper = ownShallow();
     const state = wrapper.state();
-    const grid = wrapper.find(GridList).first();
+    const grid = wrapper.find('div.row').first();
     const maintenanceCheckbox = grid.find(GridTile).first();
     maintenanceCheckbox.find(Checkbox).first().simulate('check');
 

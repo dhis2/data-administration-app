@@ -1,10 +1,11 @@
 import React from 'react';
 
 // Material UI
-import { GridList, GridTile } from 'material-ui/GridList';
+import { GridTile } from 'material-ui/GridList';
+import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
-import { Card, CardText } from 'material-ui/Card';
+import classNames from 'classnames';
 
 import Page from '../Page';
 
@@ -182,7 +183,10 @@ class Maintenance extends Page {
                 this.setState({ checkboxes });
             });
             return (
-                <GridTile key={checkbox.key}>
+                <GridTile
+                    key={checkbox.key}
+                    className={classNames('col-xs-12 col-md-6 col-lg-4', styles.maintenanceControl)}
+                >
                     <Checkbox
                         label={translator(checkbox.label)}
                         checked={checkboxState}
@@ -205,7 +209,7 @@ class Maintenance extends Page {
                         pageAreas={maintenanceCheckboxes}
                     />
                 </h1>
-                <Card>
+                <Card className={styles.card}>
                     <CardText>
                         <Checkbox
                             id="maintenance-check-all"
@@ -217,14 +221,9 @@ class Maintenance extends Page {
                             iconStyle={{ fill: '#757575' }}
                             disabled={this.areActionsDisabled()}
                         />
-                        <GridList
-                            className={styles.maintenanceGridContainer}
-                            cellHeight="auto"
-                            cols={3}
-                            padding={16}
-                        >
+                        <div className={classNames(styles.maintenanceGridContainer, 'row')}>
                             {gridElements}
-                        </GridList>
+                        </div>
                         <RaisedButton
                             label={translator('PERFORM MAINTENANCE')}
                             onClick={this.performMaintenance}

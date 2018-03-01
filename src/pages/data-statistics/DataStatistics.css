@@ -5,6 +5,7 @@
 
 .card {
     margin-bottom: 24px;
+    min-width: 400px;
 }
 
 .statisticsTable th {
