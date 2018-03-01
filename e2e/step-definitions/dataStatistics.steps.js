@@ -1,9 +1,9 @@
-const { expect } = require('chai');
-const { defineSupportCode } = require('cucumber');
+const {expect} = require('chai');
+const {defineSupportCode} = require('cucumber');
 
 const dataStatistics = require('../pages/dataStatistics.page');
 
-defineSupportCode(({ Given, When, Then }) => {
+defineSupportCode(({Given, When, Then}) => {
     Given(/^I am on data statistics page$/, () => {
         dataStatistics.open();
     });

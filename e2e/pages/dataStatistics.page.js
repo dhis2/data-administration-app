@@ -19,7 +19,7 @@ class DataStatistics extends Page {
     getTableWithTitle(title) {
         browser.waitForVisible('.data-statistics-table', 60000);
         const tables = browser.elements('.data-statistics-table').value;
-        for(let currentTable of tables) {
+        for (let currentTable of tables) {
             if (currentTable.element('.data-statistics-table-header > tr > th').getText() === title) {
                 return currentTable;
             }
@@ -29,7 +29,7 @@ class DataStatistics extends Page {
 
     getRowsCountForTableWithTitle(title) {
         const table = this.getTableWithTitle(title);
-        if ( table ) {
+        if (table) {
             return table.elements('.data-statistics-table-row').value.length;
         }
         return 0;

@@ -1,7 +1,7 @@
-const { expect } = require('chai');
-const { defineSupportCode } = require('cucumber');
+const {expect} = require('chai');
+const {defineSupportCode} = require('cucumber');
 
-defineSupportCode(({ Given, When, Then }) => {
+defineSupportCode(({Given, When, Then}) => {
     When(/^I click help icon$/, () => {
         browser.waitForVisible('.helper-icon', 1000);
         browser.element('.helper-icon').click();
