@@ -4,7 +4,8 @@ const steps = [
     require('./help.steps'),
     require('./sideMenu.steps'),
     require('./dataStatistics.steps'),
-    require('./dataIntegrity.steps')
+    require('./dataIntegrity.steps'),
+    require('./minMaxValueGeneration.steps'),
 ];
 
 module.exports = function () {

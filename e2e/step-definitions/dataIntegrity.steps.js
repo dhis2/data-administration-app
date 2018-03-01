@@ -4,7 +4,7 @@ const {defineSupportCode} = require('cucumber');
 const dataIntegrity = require('../pages/dataIntegrity.page');
 
 defineSupportCode(({Given, When, Then}) => {
-    Given(/^I am on data integrity page$/, () => {
+    Given(/^I open data integrity page$/, () => {
         dataIntegrity.open();
     });
 

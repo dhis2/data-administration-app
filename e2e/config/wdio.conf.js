@@ -15,6 +15,7 @@ exports.config = {
         './e2e/features/sideMenu.feature',
         './e2e/features/datastatistics.feature',
         './e2e/features/dataIntegrity.feature',
+        './e2e/features/minMaxValueGeneration.feature',
     ],
     // Patterns to exclude.
     exclude: [

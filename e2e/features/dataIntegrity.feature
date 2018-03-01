@@ -4,7 +4,7 @@ Feature: Data Integrity
 
   Background:
     Given that I am logged in to the Sierra Leone DHIS2
-    And I am on data integrity page
+    When I open data integrity page
 
   Scenario: I want to see if the loading is displayed
     Then Loading should be displayed
