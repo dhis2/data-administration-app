@@ -6,6 +6,7 @@ const steps = [
     require('./dataStatistics.steps'),
     require('./dataIntegrity.steps'),
     require('./minMaxValueGeneration.steps'),
+    require('./maintenance.steps'),
 ];
 
 module.exports = function () {
