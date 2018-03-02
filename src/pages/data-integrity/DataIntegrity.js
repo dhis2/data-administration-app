@@ -16,7 +16,7 @@ class DataIntegrity extends Page {
         'intervalId',
         'loaded',
         'loading',
-    ]
+    ];
 
     constructor() {
         super();

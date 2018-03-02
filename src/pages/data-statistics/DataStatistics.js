@@ -29,7 +29,7 @@ class DataStatistics extends Page {
         'tables',
         'loaded',
         'loading',
-    ]
+    ];
 
     constructor() {
         super();
@@ -63,7 +63,7 @@ class DataStatistics extends Page {
         }
 
         return {};
-    }
+    };
 
     static timeLabelFromIntProperty = (intProperty) => {
         let label = 'Last hour';
@@ -74,7 +74,7 @@ class DataStatistics extends Page {
         }
 
         return label;
-    }
+    };
 
     static activeUsersTableObjectToShowFromServerResponse = (activeUsersResponse) => {
         if (activeUsersResponse) {
@@ -96,7 +96,7 @@ class DataStatistics extends Page {
         }
 
         return {};
-    }
+    };
 
     static userInvitationsTableObjectToShowFromServerResponse = (userInvitationsResponse) => {
         if (userInvitationsResponse) {
@@ -123,7 +123,7 @@ class DataStatistics extends Page {
         }
 
         return {};
-    }
+    };
 
     static dataValueCountsTableObjectToShowFromServerResponse = (dataValueCountsResponse) => {
         if (dataValueCountsResponse) {
@@ -145,7 +145,7 @@ class DataStatistics extends Page {
         }
 
         return {};
-    }
+    };
 
     static eventCountsTableObjectToShowFromServerResponse = (eventCountsResponse) => {
         if (eventCountsResponse) {
@@ -167,7 +167,7 @@ class DataStatistics extends Page {
         }
 
         return {};
-    }
+    };
 
     componentDidMount() {
         const translator = this.context.translator;
@@ -204,7 +204,7 @@ class DataStatistics extends Page {
                             showSnackbar: true,
                             snackbarConf: {
                                 type: SUCCESS,
-                                message: translator('Data Statistics were loaded.'),
+                                message: translator('Data Statistics loaded with success.'),
                             },
                             pageState: {
                                 loaded: true,
