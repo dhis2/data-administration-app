@@ -5,6 +5,7 @@ import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
 import { Card, CardText } from 'material-ui/Card';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -187,12 +188,13 @@ class LockException extends Page {
             return (
                 <div className={styles.headerContainer}>
                     <h1 className={styles.header}>
-                        <FontIcon
-                            className={classNames('material-icons', styles.backArrowIcon)}
-                            onClick={this.backToLockExceptions}
-                        >
-                            arrow_back
-                        </FontIcon>
+                        <IconButton onClick={this.backToLockExceptions}>
+                            <FontIcon
+                                className={classNames('material-icons', styles.backArrowIcon)}
+                            >
+                                arrow_back
+                            </FontIcon>
+                        </IconButton>
                         <span>{translator(BATCH_DELETION_HEADER_TEXT)}</span>
                         <span className={styles.headerDivider}> | </span>
                         <span className={styles.subHeader}>{translator(BATCH_DELETION_SUB_HEADER)}</span>
@@ -253,7 +255,8 @@ class LockException extends Page {
             '&fields=name,' +
             'period[id,displayName],' +
             'organisationUnit[id,displayName],' +
-            'dataSet[id,displayName]';
+            'dataSet[id,displayName]' +
+            '&order=name:asc';
 
         // request to GET lock exceptions
         if (userAction || (!this.state.loading && !this.state.loaded)) {
