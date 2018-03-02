@@ -60,14 +60,14 @@ class LockException extends Page {
         'pager',
         'loading',
         'atBatchDeletionPage',
-    ]
+    ];
 
     static initialPager = {
         pageSize: 20,
         page: 1,
         total: 0,
         pageCount: 1,
-    }
+    };
 
     constructor(props, context) {
         super(props, context);
@@ -257,7 +257,12 @@ class LockException extends Page {
 
         // request to GET lock exceptions
         if (userAction || (!this.state.loading && !this.state.loaded)) {
-            this.context.updateAppState({
+            // Keep the previous message visible (i.e. deleting lock exception)
+            this.context.updateAppState(this.state.deleteInProgress ? {
+                atBatchDeletionPage: false,
+                loaded: false,
+                loading: true,
+            } : {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
@@ -273,8 +278,26 @@ class LockException extends Page {
             api.get(url)
                 .then((response) => {
                     if (this.isPageMounted()) {
+                        let loadedState;
+
+                        // If deleting a lock exception, show a success message instead of hiding the loading
+                        if (this.state.deleteInProgress) {
+                            loadedState = {
+                                showSnackbar: true,
+                                snackbarConf: {
+                                    type: SUCCESS,
+                                    message: translator('Lock Exception removed.'),
+                                },
+                            };
+                            this.state.deleteInProgress = false;
+                        } else {
+                            loadedState = {
+                                showSnackbar: false,
+                            };
+                        }
+
                         this.context.updateAppState({
-                            showSnackbar: false,
+                            ...loadedState,
                             pageState: {
                                 loaded: true,
                                 lockExceptions: this.prepareLockExceptionsResponseToDataTable(
@@ -307,6 +330,7 @@ class LockException extends Page {
         }
     }
 
+    // Get information for Batch Deletion Page
     loadLockExceptionCombinations() {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
@@ -432,18 +456,20 @@ class LockException extends Page {
                                 newPageState.lockExceptions = this.state.lockExceptions.filter(
                                     existingLockException => existingLockException.periodId !== le.periodId
                                         || existingLockException.dataSetId !== le.dataSetId);
-                            }
 
-                            this.context.updateAppState({
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: SUCCESS,
-                                    message: translator('Lock Exception removed'),
-                                },
-                                pageState: newPageState,
-                            });
-
-                            if (!this.state.atBatchDeletionPage) {
+                                this.context.updateAppState({
+                                    showSnackbar: true,
+                                    snackbarConf: {
+                                        type: SUCCESS,
+                                        message: translator('Lock Exception removed.'),
+                                    },
+                                    pageState: newPageState,
+                                });
+                            } else {
+                                this.state.deleteInProgress = true;
+                                this.context.updateAppState({
+                                    pageState: newPageState,
+                                });
                                 this.loadLockExceptionsForPager(LockException.initialPager, false);
                             }
                         }
@@ -451,7 +477,7 @@ class LockException extends Page {
                         if (this.isPageMounted()) {
                             const messageError = error && error.message ?
                                 error.message :
-                                translator('An unexpected error happend during maintenance');
+                                translator('An unexpected error happend during maintenance.');
 
                             this.context.updateAppState({
                                 showSnackbar: true,
