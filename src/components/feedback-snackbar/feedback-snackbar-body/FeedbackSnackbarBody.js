@@ -9,9 +9,14 @@ import { ERROR, LOADING, SUCCESS } from '../SnackbarTypes';
 
 class FeedbackSnackbarBody extends PureComponent {
     static propTypes = {
-        type: PropTypes.string.isRequired,
-        message: PropTypes.string.isRequired,
-    }
+        type: PropTypes.string,
+        message: PropTypes.string,
+    };
+
+    static defaultProps = {
+        type: '',
+        message: '',
+    };
 
     static contextTypes = {
         translator: PropTypes.func,

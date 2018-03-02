@@ -11,12 +11,21 @@ class FeedbackSnackbar extends PureComponent {
     static propTypes = {
         show: PropTypes.bool.isRequired,
         conf: PropTypes.shape({
-            type: PropTypes.string.isRequired,
-            message: PropTypes.string.isRequired,
+            type: PropTypes.string,
+            message: PropTypes.string,
             action: PropTypes.string,
             onActionClick: PropTypes.func,
-        }).isRequired,
+        }),
     };
+
+    static defaultProps = {
+        conf: {
+            type: '',
+            message: '',
+            action: '',
+            onActionClick: null,
+        },
+    }
 
     static contextTypes = {
         translator: PropTypes.func,
@@ -63,10 +72,6 @@ class FeedbackSnackbar extends PureComponent {
     };
 
     render() {
-        if (!this.state.show) {
-            return null;
-        }
-
         const snackBarContent = this.props.conf.type === ACTION_MESSAGE
             ? this.props.conf.message
             : (<FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />);
