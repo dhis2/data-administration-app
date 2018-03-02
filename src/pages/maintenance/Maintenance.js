@@ -209,7 +209,7 @@ class Maintenance extends Page {
                         pageAreas={maintenanceCheckboxes}
                     />
                 </h1>
-                <Card className={styles.card}>
+                <Card>
                     <CardText>
                         <Checkbox
                             id="maintenance-check-all"

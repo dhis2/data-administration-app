@@ -3,10 +3,6 @@
     align-items: center;
 }
 
-.card {
-    min-width: 400px;
-}
-
 .maintenanceGridContainer {
     margin-top: 8px !important;
     margin-bottom: 42px !important;
