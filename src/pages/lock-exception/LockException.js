@@ -260,8 +260,8 @@ class LockException extends Page {
 
         // request to GET lock exceptions
         if (userAction || (!this.state.loading && !this.state.loaded)) {
-            // Keep the previous message visible (i.e. deleting lock exception)
-            this.context.updateAppState(this.state.deleteInProgress ? {
+            // Keep the previous message visible (p.e. deleting lock exception || add lock exception)
+            this.context.updateAppState((this.state.deleteInProgress || this.state.addInProgress) ? {
                 atBatchDeletionPage: false,
                 loaded: false,
                 loading: true,
@@ -269,7 +269,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Loading...'),
+                    message: translator('Loading Lock Exceptions...'),
                 },
                 pageState: {
                     atBatchDeletionPage: false,
@@ -289,10 +289,20 @@ class LockException extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: translator('Lock Exception removed.'),
+                                    message: translator('Lock Exception removed'),
                                 },
                             };
                             this.state.deleteInProgress = false;
+                        // If adding a lock exception, show a success message instead of hiding the loading
+                        } else if (this.state.addInProgress) {
+                            loadedState = {
+                                showSnackbar: true,
+                                snackbarConf: {
+                                    type: SUCCESS,
+                                    message: translator('Lock Exception Added'),
+                                },
+                            };
+                            this.state.addInProgress = false;
                         } else {
                             loadedState = {
                                 showSnackbar: false,
@@ -344,7 +354,7 @@ class LockException extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Loading...'),
+                message: translator('Loading Lock Exceptions...'),
             },
             pageState: {
                 atBatchDeletionPage: true,
@@ -440,7 +450,7 @@ class LockException extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: LOADING,
-                            message: translator('Removing Lock Exception'),
+                            message: translator('Removing Lock Exception...'),
                         },
                         pageState: {
                             ...this.state,
@@ -464,7 +474,7 @@ class LockException extends Page {
                                     showSnackbar: true,
                                     snackbarConf: {
                                         type: SUCCESS,
-                                        message: translator('Lock Exception removed.'),
+                                        message: translator('Lock Exception removed'),
                                     },
                                     pageState: newPageState,
                                 });
@@ -480,7 +490,7 @@ class LockException extends Page {
                         if (this.isPageMounted()) {
                             const messageError = error && error.message ?
                                 error.message :
-                                translator('An unexpected error happend during maintenance.');
+                                translator('An unexpected error happend during maintenance');
 
                             this.context.updateAppState({
                                 showSnackbar: true,
@@ -580,7 +590,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Adding Lock Exception'),
+                    message: translator('Adding Lock Exception...'),
                 },
                 pageState: {
                     showAddDialogOpen: false,
@@ -594,16 +604,12 @@ class LockException extends Page {
             api.post('lockExceptions', formData).then(() => {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: translator('Lock Exception Added'),
-                        },
                         pageState: {
                             loaded: false,
                             loading: false,
                         },
                     });
+                    this.state.addInProgress = true;
                     this.loadLockExceptionsForPager(LockException.initialPager, false);
                 }
             }).catch((error) => {
