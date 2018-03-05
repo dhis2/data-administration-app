@@ -13,7 +13,6 @@ import styles from './DataIntegrity.css';
 class DataIntegrity extends Page {
     static STATE_PROPERTIES = [
         'cards',
-        'intervalId',
         'loaded',
         'loading',
     ];
@@ -55,9 +54,7 @@ class DataIntegrity extends Page {
     }
 
     cancelPullingRequests() {
-        if (this.state.intervalId) {
-            clearInterval(this.state.intervalId);
-        }
+        clearInterval(this.state.intervalId);
     }
 
     setLoadingPageState() {
@@ -66,7 +63,7 @@ class DataIntegrity extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Performing data integrity checks.'),
+                message: translator('Performing data integrity checks...'),
             },
             currentSection: this.props.sectionKey,
             pageState: {
@@ -76,19 +73,11 @@ class DataIntegrity extends Page {
         });
     }
 
-    setIntervalId(id) {
-        this.context.updateAppState({
-            pageState: {
-                intervalId: id,
-            },
-        });
-    }
-
     setLoadedPageWithErrorState(error) {
         const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator('An unexpected error happened during data integrity checks.');
+            translator('An unexpected error happened during data integrity checks');
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -108,23 +97,31 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         this.setLoadingPageState();
         api.post(conf.INIT_ENDPOINT).then(() => {
-            this.setIntervalId(
-                setInterval(() => { this.requestTaskStatus(); }, conf.PULL_INTERVAL),
-            );
+            if (this.isPageMounted()) {
+                this.state.intervalId = setInterval(() => {
+                    this.requestTaskStatus();
+                }, conf.PULL_INTERVAL);
+            }
         }).catch((e) => {
-            this.setLoadedPageWithErrorState(e);
+            if (this.isPageMounted()) {
+                this.setLoadedPageWithErrorState(e);
+            }
         });
     }
 
     requestTaskStatus() {
         const api = this.context.d2.Api.getApi();
         api.get(conf.PULL_ENDPOINT).then((response) => {
-            if (response.length) {
-                this.cancelPullingRequests();
-                this.loadData();
+            if (this.isPageMounted()) {
+                if (response.length) {
+                    this.cancelPullingRequests();
+                    this.loadData();
+                }
             }
         }).catch((e) => {
-            this.setLoadedPageWithErrorState(e);
+            if (this.isPageMounted()) {
+                this.setLoadedPageWithErrorState(e);
+            }
         });
     }
 
@@ -132,21 +129,25 @@ class DataIntegrity extends Page {
         const api = this.context.d2.Api.getApi();
         const translator = this.context.translator;
         api.get(conf.DATA_ENDPOINT).then((response) => {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: SUCCESS,
-                    message: translator('Data integrity checks performed with success.'),
-                },
-                currentSection: this.props.sectionKey,
-                pageState: {
-                    loaded: true,
-                    cards: response,
-                    loading: false,
-                },
-            });
+            if (this.isPageMounted()) {
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    snackbarConf: {
+                        type: SUCCESS,
+                        message: translator('Data integrity checks performed with success'),
+                    },
+                    currentSection: this.props.sectionKey,
+                    pageState: {
+                        loaded: true,
+                        cards: response,
+                        loading: false,
+                    },
+                });
+            }
         }).catch((e) => {
-            this.setLoadedPageWithErrorState(e);
+            if (this.isPageMounted()) {
+                this.setLoadedPageWithErrorState(e);
+            }
         });
     }
 

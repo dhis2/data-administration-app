@@ -5,16 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-02T19:51:26.058Z\n"
-"PO-Revision-Date: 2018-03-02T19:51:26.058Z\n"
+"POT-Creation-Date: 2018-03-05T13:53:19.192Z\n"
+"PO-Revision-Date: 2018-03-05T13:53:19.192Z\n"
 
 msgid "Close"
 msgstr ""
 
-msgid "Loading..."
+msgid "Loading Data Statics..."
 msgstr ""
 
-msgid "Data Statistics loaded with success."
+msgid "Data Statistics loaded with success"
 msgstr ""
 
 msgid "It was not possible to load Data Statistics"
@@ -167,7 +167,13 @@ msgstr ""
 msgid "BATCH DELETION"
 msgstr ""
 
-msgid "Lock Exception removed."
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
 msgstr ""
 
 msgid "An unexpected error happened"
@@ -179,19 +185,16 @@ msgstr ""
 msgid "CONFIRM"
 msgstr ""
 
-msgid "Removing Lock Exception"
+msgid "Removing Lock Exception..."
 msgstr ""
 
-msgid "An unexpected error happend during maintenance."
+msgid "An unexpected error happend during maintenance"
 msgstr ""
 
 msgid "An unexpected error happened while loading data"
 msgstr ""
 
-msgid "Adding Lock Exception"
-msgstr ""
-
-msgid "Lock Exception Added"
+msgid "Adding Lock Exception..."
 msgstr ""
 
 msgid "CANCEL"
@@ -203,13 +206,10 @@ msgstr ""
 msgid "Add new lock exception"
 msgstr ""
 
-msgid "Performing Maintenance"
+msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
-
-msgid "An unexpected error happend during maintenance"
 msgstr ""
 
 msgid "Select all"
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Select Data set and Organisation Unit"
 msgstr ""
 
-msgid "Doing Min Max generation"
+msgid "Doing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
@@ -233,7 +233,7 @@ msgstr ""
 msgid "It was not possible to do your request"
 msgstr ""
 
-msgid "Removing Min Max generation"
+msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max removal done"
@@ -254,11 +254,11 @@ msgstr ""
 msgid "REMOVE"
 msgstr ""
 
-msgid "Performing data integrity checks."
+msgid "Performing data integrity checks..."
 msgstr ""
 
-msgid "An unexpected error happened during data integrity checks."
+msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
-msgid "Data integrity checks performed with success."
+msgid "Data integrity checks performed with success"
 msgstr ""
