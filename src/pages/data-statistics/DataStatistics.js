@@ -179,7 +179,7 @@ class DataStatistics extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Loading...'),
+                    message: translator('Loading Data Statics...'),
                 },
                 pageState: {
                     loaded: false,
@@ -204,7 +204,7 @@ class DataStatistics extends Page {
                             showSnackbar: true,
                             snackbarConf: {
                                 type: SUCCESS,
-                                message: translator('Data Statistics loaded with success.'),
+                                message: translator('Data Statistics loaded with success'),
                             },
                             pageState: {
                                 loaded: true,

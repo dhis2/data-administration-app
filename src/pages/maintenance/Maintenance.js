@@ -126,7 +126,7 @@ class Maintenance extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Performing Maintenance'),
+                    message: translator('Performing Maintenance...'),
                 },
                 pageState: {
                     checkboxes: this.state.checkboxes,

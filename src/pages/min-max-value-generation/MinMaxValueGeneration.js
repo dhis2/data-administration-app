@@ -156,7 +156,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Doing Min Max generation'),
+                message: translator('Doing Min Max generation...'),
             },
             pageState: {
                 ...this.state,
@@ -227,7 +227,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Removing Min Max generation'),
+                message: translator('Removing Min Max generation...'),
             },
             pageState: {
                 ...this.state,
