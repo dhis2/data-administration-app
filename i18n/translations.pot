@@ -5,10 +5,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-05T13:58:49.643Z\n"
-"PO-Revision-Date: 2018-03-05T13:58:49.643Z\n"
+"POT-Creation-Date: 2018-03-07T11:45:10.577Z\n"
+"PO-Revision-Date: 2018-03-07T11:45:10.577Z\n"
 
 msgid "Close"
+msgstr ""
+
+msgid "Loading Data Statics..."
+msgstr ""
+
+msgid "Data Statistics loaded with success"
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
 msgstr ""
 
 msgid "An unexpected error happened during operation"
@@ -191,19 +203,7 @@ msgstr ""
 msgid "ADD"
 msgstr ""
 
-msgid "No data to show."
-msgstr ""
-
 msgid "Add new lock exception"
-msgstr ""
-
-msgid "Loading Data Statics..."
-msgstr ""
-
-msgid "Data Statistics loaded with success"
-msgstr ""
-
-msgid "It was not possible to load Data Statistics"
 msgstr ""
 
 msgid "Performing Maintenance..."
