@@ -146,7 +146,7 @@ class MinMaxValueGeneration extends Page {
 
         const api = this.context.d2.Api.getApi();
         const selectedOrganisationUnitSplitted = this.state.selected[0].split('/');
-        const selectedOrgnisationUnit = selectedOrganisationUnitSplitted[selectedOrganisationUnitSplitted.length - 1];
+        const selectedOrganisationUnit = selectedOrganisationUnitSplitted[selectedOrganisationUnitSplitted.length - 1];
         const dataSetIds = [];
         for (let i = 0; i < this.dataSetsSelect.selectedOptions.length; i++) {
             dataSetIds.push(this.dataSetsSelect.selectedOptions[i].value);
@@ -165,7 +165,7 @@ class MinMaxValueGeneration extends Page {
         });
 
         api.post(MIX_MAX_VALUE_ENDPOINT, {
-            organisationUnit: selectedOrgnisationUnit,
+            organisationUnit: selectedOrganisationUnit,
             dataSets: dataSetIds,
         }).then(() => {
             if (this.isPageMounted()) {
