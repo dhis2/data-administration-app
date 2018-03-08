@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { Snackbar } from 'material-ui';
 
 import FeedbackSnackbar from './FeedbackSnackbar';
-import { ACTION_MESSAGE, ERROR, LOADING, SUCCESS, WARNING } from './SnackbarTypes';
+import { ACTION_MESSAGE, ERROR, LOADING, SUCCESS, WARNING } from './FeedbackSnackbarTypes';
 
 import styles from './FeedbackSnackbar.css';
 import FeedbackSnackbarBody from './feedback-snackbar-body/FeedbackSnackbarBody';

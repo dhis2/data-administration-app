@@ -9,7 +9,7 @@ import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import { PAGE_SUMMARY, PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 

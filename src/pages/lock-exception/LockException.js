@@ -21,7 +21,7 @@ import classNames from 'classnames';
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
 
-import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import { calculatePageValue } from '../../helpers/pagination';
 

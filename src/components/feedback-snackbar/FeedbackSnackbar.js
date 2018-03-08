@@ -4,7 +4,7 @@ import { Snackbar } from 'material-ui';
 
 import styles from './FeedbackSnackbar.css';
 
-import { LOADING, SUCCESS, ERROR, WARNING, ACTION_MESSAGE } from './SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, WARNING, ACTION_MESSAGE } from './FeedbackSnackbarTypes';
 import FeedbackSnackbarBody from './feedback-snackbar-body/FeedbackSnackbarBody';
 
 class FeedbackSnackbar extends PureComponent {

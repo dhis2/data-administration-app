@@ -8,7 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 
 import Page from '../Page';
-import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './MinMaxValueGeneration.css';
 import { PAGE_SUMMARY, PAGE_TITLE } from './min.max.conf';

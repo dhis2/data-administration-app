@@ -11,7 +11,7 @@ import Page from '../Page';
 
 // App configs
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_SUMMARY, PAGE_TITLE } from './maintenance.conf';
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/SnackbarTypes';
+import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './Maintenance.css';
 import PageHelper from '../../components/page-helper/PageHelper';

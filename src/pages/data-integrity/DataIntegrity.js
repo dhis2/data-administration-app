@@ -5,7 +5,7 @@ import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
-import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/SnackbarTypes';
+import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataIntegrity.css';

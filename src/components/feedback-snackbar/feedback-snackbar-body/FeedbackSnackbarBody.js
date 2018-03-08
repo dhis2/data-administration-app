@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import styles from './FeedbackSnackbarBody.css';
 
-import { ERROR, LOADING, SUCCESS } from '../SnackbarTypes';
+import { ERROR, LOADING, SUCCESS } from '../FeedbackSnackbarTypes';
 
 class FeedbackSnackbarBody extends PureComponent {
     static propTypes = {
