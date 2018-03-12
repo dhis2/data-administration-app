@@ -1,10 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import {render, shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import FeedbackSnackbarBody from './FeedbackSnackbarBody';
 import { ERROR, LOADING, SUCCESS, WARNING } from '../FeedbackSnackbarTypes';
-import {CircularProgress, FontIcon, MuiThemeProvider} from 'material-ui';
-import {mount} from 'enzyme/build/index';
+import { CircularProgress, FontIcon } from 'material-ui';
 
 const loadingProps = {
     type: LOADING,
