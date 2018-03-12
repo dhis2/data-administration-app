@@ -12,10 +12,6 @@ defineSupportCode(({Given, When, Then}) => {
 
     });
 
-    Then(/^The Select All checkbox is "not checked"$/, () => {
-
-    });
-
     Then(/^Perform button is disabled$/, () => {
 
     });
@@ -24,31 +20,7 @@ defineSupportCode(({Given, When, Then}) => {
 
     });
 
-    Then(/^First line only contains Select All checkbox$/, () => {
-
-    });
-
-    When(/^I click "Select all" checkbox$/, () => {
-
-    });
-
-    Then(/^All checkboxes are selected$/, () => {
-
-    });
-
-    Then(/^Perform button is enabled$/, () => {
-
-    });
-
-    Then(/^The Select All checkbox is checked$/, () => {
-
-    });
-
     When(/^I select four items checkbox$/, () => {
-
-    });
-
-    When(/^I unselect the checkboxes$/, () => {
 
     });
 
@@ -56,7 +28,11 @@ defineSupportCode(({Given, When, Then}) => {
 
     });
 
-    When(/^I unselect last item checkbox$/, () => {
+    Then(/^Perform button is enabled$/, () => {
+
+    });
+
+    When(/^I unselect the checkboxes$/, () => {
 
     });
 

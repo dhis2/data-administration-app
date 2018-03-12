@@ -20,7 +20,6 @@ import PageHelper from '../../components/page-helper/PageHelper';
 class Maintenance extends Page {
     static STATE_PROPERTIES = [
         'checkboxes',
-        'checkAll',
         'loading',
     ]
 
@@ -36,13 +35,11 @@ class Maintenance extends Page {
         // state defaults
         this.state = {
             checkboxes,
-            checkAll: false,
             loading: false,
         };
 
         // actions
         this.performMaintenance = this.performMaintenance.bind(this);
-        this.toggleCheckAll = this.toggleCheckAll.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -91,22 +88,6 @@ class Maintenance extends Page {
         return formData;
     }
 
-    toggleCheckAll() {
-        const checked = !this.state.checkAll;
-
-        const checkboxes = {};
-        const checkboxKeys = Object.keys(this.state.checkboxes);
-        for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i];
-            checkboxes[key] = { checked };
-        }
-
-        this.setState({
-            checkAll: checked,
-            checkboxes,
-        });
-    }
-
     performMaintenance() {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
@@ -131,7 +112,6 @@ class Maintenance extends Page {
                 },
                 pageState: {
                     checkboxes: this.state.checkboxes,
-                    checkAll: this.state.checkAll,
                     loading: true,
                 },
             });
@@ -146,7 +126,6 @@ class Maintenance extends Page {
                         },
                         pageState: {
                             checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
                             loading: false,
                         },
                     });
@@ -165,7 +144,6 @@ class Maintenance extends Page {
                         },
                         pageState: {
                             checkboxes: this.state.checkboxes,
-                            checkAll: this.state.checkAll,
                             loading: false,
                         },
                     });
@@ -210,16 +188,6 @@ class Maintenance extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <Checkbox
-                            id="maintenance-check-all"
-                            className={styles.maintenanceCheckAll}
-                            label={translator('Select all')}
-                            checked={this.state.checkAll}
-                            onCheck={this.toggleCheckAll}
-                            labelStyle={{ color: '#757575' }}
-                            iconStyle={{ fill: '#757575' }}
-                            disabled={this.areActionsDisabled()}
-                        />
                         <div className={classNames(styles.maintenanceGridContainer, 'row')}>
                             {gridElements}
                         </div>
