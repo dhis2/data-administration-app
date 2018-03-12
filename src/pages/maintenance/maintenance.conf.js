@@ -2,8 +2,6 @@ export const RESOURCE_TABLES_OPTION_KEY = 'home';
 
 export const PAGE_TITLE = 'Maintenance';
 
-export const PAGE_SUMMARY = 'The data maintenance module has five options, each described below.';
-
 export const maintenanceCheckboxes = [
     {
         key: 'analyticsTableClear',

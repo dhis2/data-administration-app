@@ -21,6 +21,7 @@ export const sections = [
             icon: 'link',
             description: 'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
             actionText: 'Check Data Integrity',
+            docs: 'dataAdmin_dataIntegrity',
         },
     },
     {
@@ -33,6 +34,7 @@ export const sections = [
             description: 'Perform maintenance tasks and generate resource database tables for the organisation unit' +
             ' hierarchy and group set structure.',
             actionText: 'Perform Maintenance',
+            docs: 'data_admin_maintenance',
         },
     },
     {
@@ -45,6 +47,7 @@ export const sections = [
             description: 'Browse the number of objects in the database, like data elements, indicators,' +
             ' data sets and data values.',
             actionText: 'Overview Data Statistics',
+            docs: 'dataAdmin_dataStatistics',
         },
     },
     {
@@ -56,6 +59,7 @@ export const sections = [
             icon: 'lock',
             description: 'Add or remove exceptions to the the standard rules for locking of data entry forms.',
             actionText: 'Lock Exception Management',
+            docs: 'dataAdmin_lockException',
         },
     },
     {
@@ -68,6 +72,18 @@ export const sections = [
             description: 'Generate min-max values which can be used for data validation during data entry and ' +
             'validation processes.',
             actionText: 'Generate Min-Max Value',
+            docs: 'dataAdmin_minMaxValueGeneration',
         },
     },
 ];
+
+export const getDocsKeyForSection = (sectionKey) => {
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        if (section.key === sectionKey) {
+            return section.info.docs;
+        }
+    }
+
+    return '';
+};

@@ -5,11 +5,6 @@ export const DATA_ENDPOINT = 'system/taskSummaries/data_integrity';
 
 export const PAGE_TITLE = 'Data Integrity';
 
-export const PAGE_SUMMARY = 'DHIS2 can perform a wide range of data integrity checks on the data contained in the ' +
-    'database. Identifying and correcting data integrity issues is extremely important for ensuring that the data ' +
-    'used for analysis purposes is valid. Each of the data integrity checks that are performed by the system will be ' +
-    'described, along with general procedures that can be performed to resolve these issues.';
-
 export const dataIntegrityControls = [
     {
         key: 'dataElementsWithoutDataSet',

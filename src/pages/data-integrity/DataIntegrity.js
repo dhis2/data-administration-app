@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card, CardText } from 'material-ui';
+import { getDocsKeyForSection } from '../sections.conf';
 import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
@@ -192,9 +193,7 @@ class DataIntegrity extends Page {
                 <h1 className={styles.header}>
                     { translator(conf.PAGE_TITLE) }
                     <PageHelper
-                        pageTitle={conf.PAGE_TITLE}
-                        pageSummary={conf.PAGE_SUMMARY}
-                        pageAreas={conf.dataIntegrityControls}
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
                 {cardsToShow && cardsToShow.length > 0 ? cardsToShow : noContent}

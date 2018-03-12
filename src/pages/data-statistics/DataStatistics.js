@@ -10,8 +10,9 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
-import { PAGE_SUMMARY, PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
+import { PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
+import { getDocsKeyForSection } from '../sections.conf';
 
 import styles from './DataStatistics.css';
 
@@ -274,7 +275,9 @@ class DataStatistics extends Page {
             <div>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
-                    <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 {content}
             </div>
