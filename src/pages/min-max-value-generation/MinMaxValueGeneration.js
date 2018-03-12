@@ -11,8 +11,10 @@ import Page from '../Page';
 import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './MinMaxValueGeneration.css';
-import { PAGE_SUMMARY, PAGE_TITLE } from './min.max.conf';
+
+import { PAGE_TITLE } from './min-max-value-generation.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
+import { getDocsKeyForSection } from '../sections.conf';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
 
@@ -272,7 +274,9 @@ class MinMaxValueGeneration extends Page {
             <div className="page-wrapper">
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
-                    <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 <Card>
                     <CardText>

@@ -10,7 +10,8 @@ import classNames from 'classnames';
 import Page from '../Page';
 
 // App configs
-import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_SUMMARY, PAGE_TITLE } from './maintenance.conf';
+import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_TITLE } from './maintenance.conf';
+import { getDocsKeyForSection } from '../sections.conf';
 import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './Maintenance.css';
@@ -182,9 +183,7 @@ class Maintenance extends Page {
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper
-                        pageTitle={PAGE_TITLE}
-                        pageSummary={PAGE_SUMMARY}
-                        pageAreas={maintenanceCheckboxes}
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
                 <Card>

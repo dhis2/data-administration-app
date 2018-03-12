@@ -7,7 +7,7 @@ import DataStatisticsTable from './DataStatisticsTable';
 
 import {
     sections,
-    DATA_STATISTICS_SECTION_KEY, MAINTENANCE_SECTION_KEY
+    DATA_STATISTICS_SECTION_KEY
 } from '../sections.conf';
 
 let dataStatisticsPageInfo = {};

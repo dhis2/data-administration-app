@@ -2,14 +2,37 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import PageHelper from './PageHelper';
-import { Dialog, FontIcon } from 'material-ui';
+import { IconButton } from 'material-ui';
+
+import {
+    DATA_STATISTICS_SECTION_KEY,
+    getDocsKeyForSection
+} from '../../pages/sections.conf';
+
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
+jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
+jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
+jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
+jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
 
 const ownShallow = () => {
     return shallow(
-        <PageHelper pageTitle={'Title'} pageSummary={'Summary'}/>,
+        <PageHelper
+            sectionDocsKey={getDocsKeyForSection(DATA_STATISTICS_SECTION_KEY)}
+        />,
         {
             context: {
                 translator: key => key,
+                d2: {
+                    system: {
+                        version: {
+                            snapshot: true,
+                        }
+                    }
+                }
             },
         },
     );
@@ -19,26 +42,7 @@ it('Page Helper renders without crashing.', () => {
     ownShallow();
 });
 
-it('Page Helper should have correct icon.', () => {
+it('Page Helper should have an icon button.', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(FontIcon)).toHaveLength(1);
-});
-
-it('Page Helper should call open function when icon clicked.', () => {
-    const spy = spyOn(PageHelper.prototype, 'handleOpen');
-    const wrapper = ownShallow();
-    wrapper.find(FontIcon).simulate('click');
-    expect(spy).toHaveBeenCalled();
-});
-
-it('Page Helper show state should change to true when icon clicked.', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.state().show).toBeFalsy();
-    wrapper.find(FontIcon).simulate('click');
-    expect(wrapper.state().show).toBeTruthy();
-});
-
-it('Page Helper should have a Dialog component.', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.find(Dialog)).toHaveLength(1);
+    expect(wrapper.find(IconButton)).toHaveLength(1);
 });

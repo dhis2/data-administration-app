@@ -25,15 +25,15 @@ import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedba
 
 import { calculatePageValue } from '../../helpers/pagination';
 
-import styles from './LockException.css';
 import {
-    PAGE_SUMMARY,
     PAGE_TITLE,
     BATCH_DELETION_HEADER_TEXT,
     BATCH_DELETION_SUB_HEADER,
 } from './lock.exception.conf';
+import { getDocsKeyForSection } from '../sections.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
+import styles from './LockException.css';
 import '../../custom-css/D2UIDataTableOverrides.css';
 
 const jsStyles = {
@@ -207,7 +207,9 @@ class LockException extends Page {
             <div className={styles.headerContainer}>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
-                    <PageHelper pageTitle={PAGE_TITLE} pageSummary={PAGE_SUMMARY} />
+                    <PageHelper
+                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                    />
                 </h1>
                 <div>
                     <RaisedButton
