@@ -59,31 +59,13 @@ class App extends PureComponent {
     }
 
     updateAppState(appState) {
-        const newAppState = Object.assign({}, appState);
-
-        if (typeof this.state.snackbarTimeoutId !== 'undefined') {
-            clearTimeout(this.state.snackbarTimeoutId);
-        }
-
-        // Hack to hide previous snackbar before changing its style
-        if (this.state.showSnackbar && newAppState.showSnackbar) {
-            const newShowSnackbar = appState.showSnackbar;
-            const newSnackbarConf = appState.snackbarConf;
-            newAppState.showSnackbar = false;
-            newAppState.snackbarConf = this.state.snackbarConf;
-
-            this.state.snackbarTimeoutId = setTimeout(() => {
-                this.setState({ ...newAppState, showSnackbar: newShowSnackbar, snackbarConf: newSnackbarConf });
-            }, 500);
-        }
-
-        if (newAppState.currentSection
-            && !newAppState.pageState
-            && this.state.currentSection !== newAppState.currentSection) {
+        if (appState.currentSection
+            && !appState.pageState
+            && this.state.currentSection !== appState.currentSection) {
             // clear page state because we are updating page
-            this.setState({ ...newAppState, pageState: undefined, showSnackbar: false });
+            this.setState({ ...appState, pageState: undefined, showSnackbar: false });
         } else {
-            this.setState(newAppState);
+            this.setState(appState);
         }
     }
 
@@ -97,7 +79,7 @@ class App extends PureComponent {
         ));
 
         return (
-            <div className={styles.container}>
+            <div>
                 <HeaderBar />
                 <SidebarMenu sections={translatedSections} currentSection={this.state.currentSection} />
                 <div className={styles.contentWrapper}>

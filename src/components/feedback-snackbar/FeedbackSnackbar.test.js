@@ -63,7 +63,6 @@ const ownShallow = (props) => {
 
 it('FeedbackSnackbar renders LOADING correctly.', () => {
     const wrapper = ownShallow(loadingProps);
-    wrapper.setProps(loadingProps.show, loadingProps.conf);
     expect(wrapper.find(Snackbar)).toHaveLength(1);
     expect(wrapper.find(Snackbar).prop('message'))
         .toMatchObject(<FeedbackSnackbarBody message={loadingProps.conf.message} type={loadingProps.conf.type} />);
@@ -73,7 +72,6 @@ it('FeedbackSnackbar renders LOADING correctly.', () => {
 
 it('FeedbackSnackbar renders SUCCESS correctly.', () => {
     const wrapper = ownShallow(successProps);
-    wrapper.setProps(successProps.show, successProps.conf);
     expect(wrapper.find(Snackbar)).toHaveLength(1);
     expect(wrapper.find(Snackbar).prop('message'))
         .toMatchObject(<FeedbackSnackbarBody message={successProps.conf.message} type={successProps.conf.type} />);
@@ -83,7 +81,6 @@ it('FeedbackSnackbar renders SUCCESS correctly.', () => {
 
 it('FeedbackSnackbar renders ERROR correctly.', () => {
     const wrapper = ownShallow(errorProps);
-    wrapper.setProps(errorProps.show, errorProps.conf);
     expect(wrapper.find(Snackbar)).toHaveLength(1);
     expect(wrapper.find(Snackbar).prop('message'))
         .toMatchObject(<FeedbackSnackbarBody message={errorProps.conf.message} type={errorProps.conf.type} />);
@@ -93,7 +90,6 @@ it('FeedbackSnackbar renders ERROR correctly.', () => {
 
 it('FeedbackSnackbar renders WARNING correctly.', () => {
     const wrapper = ownShallow(warningProps);
-    wrapper.setProps(warningProps.show, warningProps.conf);
     expect(wrapper.find(Snackbar)).toHaveLength(1);
     expect(wrapper.find(Snackbar).prop('message'))
         .toMatchObject(<FeedbackSnackbarBody message={warningProps.conf.message} type={warningProps.conf.type} />);
@@ -103,7 +99,6 @@ it('FeedbackSnackbar renders WARNING correctly.', () => {
 
 it('FeedbackSnackbar renders ACTION correctly.', () => {
     const wrapper = ownShallow(actionProps);
-    wrapper.setProps(actionProps.show, actionProps.conf);
     expect(wrapper.find(Snackbar)).toHaveLength(1);
     expect(wrapper.find(Snackbar).prop('message')).toBe(actionProps.conf.message);
     expect(wrapper.state().show).toBeTruthy();

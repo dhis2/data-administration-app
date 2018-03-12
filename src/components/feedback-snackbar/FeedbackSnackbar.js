@@ -50,16 +50,35 @@ class FeedbackSnackbar extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            show: false,
-            style: styles.warning,
-            snackBarContent: '',
+            show: props.show,
+            conf: props.conf,
         };
     }
 
-    componentWillReceiveProps(props) {
+    componentWillReceiveProps(nextProps) {
+        const newProps = Object.assign({}, nextProps);
+
+        if (typeof this.state.snackbarTimerId !== 'undefined') {
+            clearTimeout(this.state.snackbarTimerId);
+        }
+
+        // Hack to hide previous snackbar before changing its style
+        if (this.props.show && newProps.show) {
+            const newShow = nextProps.show;
+            const newConf = nextProps.conf;
+            newProps.show = false;
+            newProps.conf = this.props.conf;
+            this.state.snackbarTimerId = setTimeout(() => {
+                this.setState({
+                    show: newShow,
+                    conf: newConf,
+                });
+            }, 500);
+        }
+
         this.setState({
-            style: FeedbackSnackbar.getStyle(props.conf.type),
-            show: props.show,
+            show: newProps.show,
+            conf: newProps.conf,
         });
     }
 
@@ -72,18 +91,18 @@ class FeedbackSnackbar extends PureComponent {
     };
 
     render() {
-        const snackBarContent = this.props.conf.type === ACTION_MESSAGE
-            ? this.props.conf.message
-            : (<FeedbackSnackbarBody type={this.props.conf.type} message={this.props.conf.message} />);
+        const snackBarContent = this.state.conf.type === ACTION_MESSAGE
+            ? this.state.conf.message
+            : (<FeedbackSnackbarBody type={this.state.conf.type} message={this.state.conf.message} />);
 
         return (
             <Snackbar
-                action={this.props.conf.action}
-                onActionClick={this.props.conf.onActionClick}
+                action={this.state.conf.action}
+                onActionClick={this.state.conf.onActionClick}
                 open={this.state.show}
                 message={snackBarContent}
                 onRequestClose={this.handleRequestClose}
-                className={this.state.style}
+                className={FeedbackSnackbar.getStyle(this.state.conf.type)}
             />
         );
     }
