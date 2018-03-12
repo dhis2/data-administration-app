@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-12T11:11:20.295Z\n"
-"PO-Revision-Date: 2018-03-12T11:11:20.295Z\n"
+"POT-Creation-Date: 2018-03-12T14:04:44.011Z\n"
+"PO-Revision-Date: 2018-03-12T14:04:44.011Z\n"
 
 msgid "Loading Data Statics..."
 msgstr ""
@@ -203,18 +203,6 @@ msgstr ""
 msgid "Add new lock exception"
 msgstr ""
 
-msgid "Performing Maintenance..."
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "Select all"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
-msgstr ""
-
 msgid "It was not possible to load data"
 msgstr ""
 
@@ -249,6 +237,15 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
+msgstr ""
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "Performing data integrity checks..."
