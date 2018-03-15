@@ -31,7 +31,7 @@ class GridSection extends PureComponent {
     render() {
         const translator = this.context.translator;
         return (
-            <Link className="link" to={this.props.section.path}>
+            <Link to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={classNames('section', styles.gridElement)}>
                     <div className={styles.gridTitleBar}>
                         <span className={classNames('section-title', styles.gridTitleDescription)}>

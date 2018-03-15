@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
+import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
+import './custom-css/D2UIDataTableOverrides.css';
 
-import SidebarMenu from './components/sidebar-menu/SidebarMenu';
 import AppRouter from './components/app-router/AppRouter';
 
 import styles from './App.css';
@@ -75,13 +77,17 @@ class App extends PureComponent {
             section,
             {
                 label: translator(section.info.label),
+                containerElement: <Link to={section.path} />,
             },
         ));
 
         return (
             <div>
                 <HeaderBar />
-                <SidebarMenu sections={translatedSections} currentSection={this.state.currentSection} />
+                <Sidebar
+                    sections={translatedSections}
+                    currentSection={this.state.currentSection}
+                />
                 <div className={styles.contentWrapper}>
                     <div className={styles.contentArea}>
                         <AppRouter

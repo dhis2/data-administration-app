@@ -4,11 +4,12 @@ import { shallow } from 'enzyme';
 
 import App from './App';
 
-import SidebarMenu from './components/sidebar-menu/SidebarMenu';
 import AppRouter from './components/app-router/AppRouter';
+import SideBar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBar from 'd2-ui/lib/app-header/HeaderBar';
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 
+jest.mock('d2-ui/lib/sidebar/Sidebar.component', () => ('Sidebar'));
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
 jest.mock('d2-ui/lib/app-header/headerBar.store', () => ({}));
 jest.mock('d2-ui/lib/component-helpers/withStateFrom', () => () => ('HeaderBar'));
@@ -42,9 +43,9 @@ it('App renders a HeaderBar Component', () => {
     expect(wrapper.find(HeaderBar)).toHaveLength(1);
 });
 
-it('App renders a SidebarMenu', () => {
+it('App renders a SideBar', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(SidebarMenu)).toHaveLength(1);
+    expect(wrapper.find(SideBar)).toHaveLength(1);
 });
 
 it('App renders a AppRouter', () => {
