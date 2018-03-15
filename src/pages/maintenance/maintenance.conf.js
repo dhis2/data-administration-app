@@ -71,6 +71,6 @@ export const maintenanceCheckboxes = [
     },
     {
         key: RESOURCE_TABLES_OPTION_KEY,
-        label: 'Resource Tables',
+        label: 'Generate resource tables',
     },
 ];
