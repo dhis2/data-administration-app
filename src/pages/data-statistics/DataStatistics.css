@@ -5,6 +5,9 @@
 
 .card {
     margin-bottom: 24px;
+}
+
+.maxWith {
     max-width: 500px;
 }
 

@@ -272,7 +272,7 @@ class DataStatistics extends Page {
 
         const content = tables && tables.length > 0 ? tables : noContent;
         return (
-            <div>
+            <div className={styles.maxWith}>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper

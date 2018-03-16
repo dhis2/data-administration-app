@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+.maxWith {
+    max-width: 1400px;
+}
+
 .container {
     display: flex;
     margin-top: 16px;

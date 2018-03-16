@@ -189,7 +189,7 @@ class DataIntegrity extends Page {
             }
         }
         return (
-            <div className="page-wrapper">
+            <div className={styles.maxWith}>
                 <h1 className={styles.header}>
                     { translator(conf.PAGE_TITLE) }
                     <PageHelper

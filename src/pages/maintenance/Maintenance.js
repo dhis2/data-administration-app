@@ -179,7 +179,7 @@ class Maintenance extends Page {
         });
 
         return (
-            <div className="page-wrapper">
+            <div className={styles.maxWith}>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper
