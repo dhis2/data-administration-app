@@ -27,7 +27,7 @@ class DataStatisticsTable extends PureComponent {
     render() {
         const translator = this.context.translator;
         const rows = this.props.elements.map(element => (
-            <TableRow key={element.label} className={'data-statistics-table-row'}>
+            <TableRow key={element.label}>
                 <TableRowColumn>{translator(element.label)}</TableRowColumn>
                 <TableRowColumn>
                     <FormattedNumber value={element.count} />
@@ -37,7 +37,6 @@ class DataStatisticsTable extends PureComponent {
         return (
             <Table selectable={false} className={styles.statisticsTable}>
                 <TableHeader
-                    className={'data-statistics-table-header'}
                     displaySelectAll={false}
                     adjustForCheckbox={false}
                     enableSelectAll={false}
