@@ -492,7 +492,7 @@ class LockException extends Page {
                         if (this.isPageMounted()) {
                             const messageError = error && error.message ?
                                 error.message :
-                                translator('An unexpected error happend during maintenance');
+                                translator('An unexpected error happened');
 
                             this.context.updateAppState({
                                 showSnackbar: true,
@@ -688,7 +688,11 @@ class LockException extends Page {
                     (
                         <Card>
                             <CardText>
-                                { translator('No data to show.') }
+                                {
+                                    this.state.loading ?
+                                        translator('Loading Lock Exceptions...') :
+                                        translator('No data to show.')
+                                }
                             </CardText>
                         </Card>
                     )
