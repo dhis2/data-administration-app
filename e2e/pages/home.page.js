@@ -40,10 +40,10 @@ class Home extends Page {
     }
 
     getMenuItemForSection(section) {
-        browser.waitForVisible('.menu', 5000);
-        const sections = browser.elements('.menu .menu-item').value;
+        browser.waitForVisible('.left-bar', 5000);
+        const sections = browser.elements('.left-bar a').value;
         for (let currentSection of sections) {
-            if (currentSection.element('div > div').getText().includes(section)) {
+            if (currentSection.element('div > div > div').getText().includes(section)) {
                 return currentSection;
             }
         }
@@ -51,9 +51,8 @@ class Home extends Page {
     }
 
     isSectionActiveAtMenu(section) {
-        browser.waitForVisible('.menu', 5000);
-        const activeItem = browser.element('.menu .active > div > div');
-        return activeItem.getText().includes(section);
+        const sectionElement = this.getMenuItemForSection(section);
+        return !!sectionElement.getCssProperty('background-color');
     }
 }
 
