@@ -180,7 +180,7 @@ class DataStatistics extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Loading Data Statics...'),
+                    message: translator('Loading Data Statistics...'),
                 },
                 pageState: {
                     loaded: false,
@@ -252,7 +252,13 @@ class DataStatistics extends Page {
         const translator = this.context.translator;
         const noContent = (
             <Card>
-                <CardText>{translator('No data to show.')}</CardText>
+                <CardText>
+                    {
+                        this.state.loading ?
+                            translator('Loading Data Statistics...') :
+                            translator('No data to show.')
+                    }
+                </CardText>
             </Card>
         );
 
