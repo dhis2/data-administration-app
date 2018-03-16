@@ -6,7 +6,7 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
-import './custom-css/D2UIDataTableOverrides.css';
+import './custom-css/D2UISidebarOverrides.css';
 
 import AppRouter from './components/app-router/AppRouter';
 
@@ -72,6 +72,7 @@ class App extends PureComponent {
     }
 
     render() {
+        const nonOnChangeSection = () => null;
         const translator = this.props.t;
         const translatedSections = sections.map(section => Object.assign(
             section,
@@ -87,6 +88,7 @@ class App extends PureComponent {
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
+                    onChangeSection={nonOnChangeSection}
                 />
                 <div className={styles.contentWrapper}>
                     <div className={styles.contentArea}>
