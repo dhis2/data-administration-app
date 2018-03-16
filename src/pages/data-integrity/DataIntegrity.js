@@ -64,7 +64,7 @@ class DataIntegrity extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Performing data integrity checks...'),
+                message: translator('Performing Data Integrity checks...'),
             },
             currentSection: this.props.sectionKey,
             pageState: {
@@ -78,7 +78,7 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator('An unexpected error happened during data integrity checks');
+            translator('An unexpected error happened during Data Integrity checks');
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -135,7 +135,7 @@ class DataIntegrity extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: translator('Data integrity checks performed with success'),
+                        message: translator('Data Integrity checks performed with success'),
                     },
                     currentSection: this.props.sectionKey,
                     pageState: {
@@ -156,7 +156,13 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const noContent = (
             <Card>
-                <CardText>{translator('No data to show.')}</CardText>
+                <CardText>
+                    {
+                        this.state.loading ?
+                            translator('Performing Data Integrity checks...') :
+                            translator('No data to show.')
+                    }
+                </CardText>
             </Card>
         );
         let cardsToShow = [];
