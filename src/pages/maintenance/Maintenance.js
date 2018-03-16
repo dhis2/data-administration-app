@@ -134,7 +134,7 @@ class Maintenance extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happend during maintenance');
+                        translator('An unexpected error happened during maintenance');
 
                     this.context.updateAppState({
                         showSnackbar: true,
