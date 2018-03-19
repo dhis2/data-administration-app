@@ -24,6 +24,7 @@ class PageHelper extends PureComponent {
         const { lng, sectionDocsKey } = this.props;
         return (
             <IconButton
+                className="helper-icon"
                 iconStyle={{ color: '#276696' }}
                 href={`${DOCS_LINK}/${getDocsVersion(d2.system.version)}/${lng}/user/html/${sectionDocsKey}.html`}
                 target="_blank"

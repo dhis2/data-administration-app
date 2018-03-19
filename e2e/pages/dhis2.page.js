@@ -23,7 +23,8 @@ class DHIS2Page extends Page {
     }
 
     isFromLocation(location) {
-        browser.waitForVisible(`a.title-link*=${location}`, 5000);
+        browser.waitForVisible('a.title-link', 5000);
+        return browser.getText('a.title-link').includes(location);
     }
 }
 
