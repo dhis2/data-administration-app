@@ -1,7 +1,6 @@
 export const INIT_ENDPOINT = 'dataIntegrity';
-export const PULL_ENDPOINT = 'system/tasks/DATA_INTEGRITY';
 export const PULL_INTERVAL = 5000;
-export const DATA_ENDPOINT = 'system/taskSummaries/data_integrity';
+export const DATA_ENDPOINT = 'system/taskSummaries/DATA_INTEGRITY';
 
 export const PAGE_TITLE = 'Data Integrity';
 

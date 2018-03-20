@@ -97,10 +97,11 @@ class DataIntegrity extends Page {
     initDataIntegrityCheck() {
         const api = this.context.d2.Api.getApi();
         this.setLoadingPageState();
-        api.post(conf.INIT_ENDPOINT).then(() => {
-            if (this.isPageMounted()) {
+        api.post(conf.INIT_ENDPOINT).then((response) => {
+            if (this.isPageMounted() && response) {
+                this.state.jobId = response.id;
                 this.state.intervalId = setInterval(() => {
-                    this.requestTaskStatus();
+                    this.requestTaskSummary();
                 }, conf.PULL_INTERVAL);
             }
         }).catch((e) => {
@@ -110,40 +111,28 @@ class DataIntegrity extends Page {
         });
     }
 
-    requestTaskStatus() {
-        const api = this.context.d2.Api.getApi();
-        api.get(conf.PULL_ENDPOINT).then((response) => {
-            if (this.isPageMounted()) {
-                if (response.length) {
-                    this.cancelPullingRequests();
-                    this.loadData();
-                }
-            }
-        }).catch((e) => {
-            if (this.isPageMounted()) {
-                this.setLoadedPageWithErrorState(e);
-            }
-        });
-    }
-
-    loadData() {
+    requestTaskSummary() {
         const api = this.context.d2.Api.getApi();
         const translator = this.context.translator;
-        api.get(conf.DATA_ENDPOINT).then((response) => {
+        const url = `${conf.DATA_ENDPOINT}/${this.state.jobId}`;
+        api.get(url).then((response) => {
             if (this.isPageMounted()) {
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: SUCCESS,
-                        message: translator('Data Integrity checks performed with success'),
-                    },
-                    currentSection: this.props.sectionKey,
-                    pageState: {
-                        loaded: true,
-                        cards: response,
-                        loading: false,
-                    },
-                });
+                if (response) {
+                    this.cancelPullingRequests();
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            type: SUCCESS,
+                            message: translator('Data Integrity checks performed with success'),
+                        },
+                        currentSection: this.props.sectionKey,
+                        pageState: {
+                            loaded: true,
+                            cards: response,
+                            loading: false,
+                        },
+                    });
+                }
             }
         }).catch((e) => {
             if (this.isPageMounted()) {
