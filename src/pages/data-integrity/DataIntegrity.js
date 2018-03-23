@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, CardText } from 'material-ui';
+import { RaisedButton } from 'material-ui';
 import { getDocsKeyForSection } from '../sections.conf';
 import * as conf from './data.integrity.conf';
 
@@ -27,6 +27,8 @@ class DataIntegrity extends Page {
             loaded: false,
             loading: false,
         };
+
+        this.initDataIntegrityCheck = this.initDataIntegrityCheck.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -40,12 +42,6 @@ class DataIntegrity extends Page {
 
         if (nextState !== {}) {
             this.setState(nextState);
-        }
-    }
-
-    componentDidMount() {
-        if (!this.state.loading) {
-            this.initDataIntegrityCheck();
         }
     }
 
@@ -64,7 +60,7 @@ class DataIntegrity extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Performing Data Integrity checks...'),
+                message: translator('Performing data integrity checks...'),
             },
             currentSection: this.props.sectionKey,
             pageState: {
@@ -78,7 +74,7 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator('An unexpected error happened during Data Integrity checks');
+            translator('An unexpected error happened during data integrity checks');
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -123,7 +119,7 @@ class DataIntegrity extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator('Data Integrity checks performed with success'),
+                            message: translator('Data integrity checks performed with success'),
                         },
                         currentSection: this.props.sectionKey,
                         pageState: {
@@ -143,16 +139,13 @@ class DataIntegrity extends Page {
 
     render() {
         const translator = this.context.translator;
-        const noContent = (
-            <Card>
-                <CardText>
-                    {
-                        this.state.loading ?
-                            translator('Performing Data Integrity checks...') :
-                            translator('No data to show.')
-                    }
-                </CardText>
-            </Card>
+        const runButton = (
+            <RaisedButton
+                label={translator('RUN INTEGRITY CHECKS')}
+                onClick={this.initDataIntegrityCheck}
+                primary={Boolean(true)}
+                disabled={this.state.loading}
+            />
         );
         let cardsToShow = [];
         if (this.state.cards) {
@@ -191,7 +184,7 @@ class DataIntegrity extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                {cardsToShow && cardsToShow.length > 0 ? cardsToShow : noContent}
+                {cardsToShow && cardsToShow.length > 0 ? cardsToShow : runButton}
             </div>
         );
     }
