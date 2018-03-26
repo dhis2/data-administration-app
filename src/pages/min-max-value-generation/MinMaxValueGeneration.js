@@ -271,7 +271,7 @@ class MinMaxValueGeneration extends Page {
     render() {
         const translator = this.context.translator;
         return (
-            <div className={styles.maxWith}>
+            <div>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper
