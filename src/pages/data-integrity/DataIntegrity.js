@@ -6,7 +6,7 @@ import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
-import { ERROR, LOADING, SUCCESS } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
+import { ERROR, LOADING } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataIntegrity.css';
@@ -109,18 +109,13 @@ class DataIntegrity extends Page {
 
     requestTaskSummary() {
         const api = this.context.d2.Api.getApi();
-        const translator = this.context.translator;
         const url = `${conf.DATA_ENDPOINT}/${this.state.jobId}`;
         api.get(url).then((response) => {
             if (this.isPageMounted()) {
                 if (response) {
                     this.cancelPullingRequests();
                     this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: SUCCESS,
-                            message: translator('Data integrity checks performed with success'),
-                        },
+                        showSnackbar: false,
                         currentSection: this.props.sectionKey,
                         pageState: {
                             loaded: true,
