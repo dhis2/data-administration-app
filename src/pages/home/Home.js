@@ -18,7 +18,7 @@ const Home = () => {
     ));
 
     return (
-        <div id="grid-list-id" className="row">
+        <div id="grid-list-id" className={classNames('row', styles.maxWith)}>
             {gridElements}
         </div>
     );
