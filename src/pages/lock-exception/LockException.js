@@ -685,14 +685,8 @@ class LockException extends Page {
                         }
                     </div>) :
                     (
-                        <Card>
-                            <CardText>
-                                {
-                                    this.state.loading ?
-                                        translator('Loading Lock Exceptions...') :
-                                        translator('No data to show.')
-                                }
-                            </CardText>
+                        <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+                            <CardText>{translator('No data to show.')}</CardText>
                         </Card>
                     )
                 }

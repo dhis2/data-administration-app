@@ -248,14 +248,8 @@ class DataStatistics extends Page {
     render() {
         const translator = this.context.translator;
         const noContent = (
-            <Card>
-                <CardText>
-                    {
-                        this.state.loading ?
-                            translator('Loading Data Statistics...') :
-                            translator('No data to show.')
-                    }
-                </CardText>
+            <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+                <CardText>{translator('No data to show.')}</CardText>
             </Card>
         );
 
