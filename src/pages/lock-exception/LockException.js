@@ -15,13 +15,12 @@ import Pagination from 'd2-ui/lib/pagination/Pagination.component';
 
 import 'd2-ui/lib/css/DataTable.css';
 import 'd2-ui/lib/css/Pagination.css';
+import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
 import classNames from 'classnames';
 
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
-
-import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import { calculatePageValue } from '../../helpers/pagination';
 

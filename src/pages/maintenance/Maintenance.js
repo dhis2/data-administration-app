@@ -5,6 +5,9 @@ import { GridTile } from 'material-ui/GridList';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
+
+import { LOADING, SUCCESS, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
@@ -12,7 +15,6 @@ import Page from '../Page';
 // App configs
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_TITLE } from './maintenance.conf';
 import { getDocsKeyForSection } from '../sections.conf';
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './Maintenance.css';
 import PageHelper from '../../components/page-helper/PageHelper';

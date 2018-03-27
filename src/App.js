@@ -6,6 +6,7 @@ import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
+import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
 import './custom-css/D2UISidebarOverrides.css';
 
 import AppRouter from './components/app-router/AppRouter';
@@ -14,7 +15,6 @@ import styles from './App.css';
 
 // App configs
 import { sections } from './pages/sections.conf';
-import FeedbackSnackbar from './components/feedback-snackbar/FeedbackSnackbar';
 
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 

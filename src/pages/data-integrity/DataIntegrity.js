@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { RaisedButton } from 'material-ui';
+
+import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import { getDocsKeyForSection } from '../sections.conf';
 import * as conf from './data.integrity.conf';
 
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
-import { ERROR, LOADING } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 import styles from './DataIntegrity.css';

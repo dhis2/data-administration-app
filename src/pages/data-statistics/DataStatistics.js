@@ -3,13 +3,14 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
+import { LOADING, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
-import { LOADING, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import { PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
