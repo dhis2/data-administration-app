@@ -7,6 +7,9 @@ import HeaderBarComponent from 'd2-ui/lib/app-header/HeaderBar';
 import headerBarStore$ from 'd2-ui/lib/app-header/headerBar.store';
 import withStateFrom from 'd2-ui/lib/component-helpers/withStateFrom';
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component';
+import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
+
 import './custom-css/D2UISidebarOverrides.css';
 
 import AppRouter from './components/app-router/AppRouter';
@@ -71,6 +74,11 @@ class App extends PureComponent {
         }
     }
 
+    showLoadingProgress() {
+        // FIXME: remove loading snackbar info and replace with loading state
+        return this.state.snackbarConf.type === LOADING && this.state.showSnackbar;
+    }
+
     render() {
         const nonOnChangeSection = () => null;
         const translator = this.props.t;
@@ -81,6 +89,18 @@ class App extends PureComponent {
                 containerElement: <Link to={section.path} />,
             },
         ));
+
+        const feedbackElement = this.showLoadingProgress() ?
+            (
+                <div className={styles.centered}>
+                    <CircularProgress />
+                </div>
+            ) : (
+                <FeedbackSnackbar
+                    show={this.state.showSnackbar}
+                    conf={this.state.snackbarConf}
+                />
+            );
 
         return (
             <div>
@@ -97,10 +117,7 @@ class App extends PureComponent {
                         />
                     </div>
                 </div>
-                <FeedbackSnackbar
-                    show={this.state.showSnackbar}
-                    conf={this.state.snackbarConf}
-                />
+                {feedbackElement}
             </div>
         );
     }
