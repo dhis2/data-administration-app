@@ -5,8 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-23T11:24:25.667Z\n"
-"PO-Revision-Date: 2018-03-23T11:24:25.667Z\n"
+"POT-Creation-Date: 2018-03-27T13:16:12.921Z\n"
+"PO-Revision-Date: 2018-03-27T13:16:12.921Z\n"
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
 
 msgid "Performing Maintenance..."
 msgstr ""
@@ -20,61 +29,13 @@ msgstr ""
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
-msgid "Loading Data Statistics..."
-msgstr ""
-
-msgid "Data Statistics loaded with success"
-msgstr ""
-
-msgid "It was not possible to load Data Statistics"
-msgstr ""
-
-msgid "No data to show."
-msgstr ""
-
-msgid "It was not possible to load data"
-msgstr ""
-
-msgid "Select Data set and Organisation Unit"
-msgstr ""
-
-msgid "Doing Min Max generation..."
-msgstr ""
-
-msgid "Min Max generation done"
-msgstr ""
-
-msgid "It was not possible to do your request"
-msgstr ""
-
-msgid "Removing Min Max generation..."
-msgstr ""
-
-msgid "Min Max removal done"
-msgstr ""
-
-msgid "Data Set"
-msgstr ""
-
-msgid "Loading data sets"
-msgstr ""
-
-msgid "Organisation Unit Selection"
-msgstr ""
-
-msgid "Updating Organisation Units Tree..."
-msgstr ""
-
-msgid "GENERATE"
-msgstr ""
-
-msgid "REMOVE"
-msgstr ""
-
 msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Select a Data Set"
+msgstr ""
+
+msgid "Data Set"
 msgstr ""
 
 msgid "Updating Tree..."
@@ -248,13 +209,46 @@ msgstr ""
 msgid "Add new lock exception"
 msgstr ""
 
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "It was not possible to do your request"
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
 msgid "Performing data integrity checks..."
 msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
-msgstr ""
-
-msgid "Data integrity checks performed with success"
 msgstr ""
 
 msgid "RUN INTEGRITY CHECKS"

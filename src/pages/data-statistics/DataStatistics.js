@@ -3,13 +3,14 @@ import React from 'react';
 // Material UI
 import { Card, CardText } from 'material-ui/Card';
 
+import { LOADING, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import classNames from 'classnames';
 
 import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
-import { LOADING, SUCCESS, ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 import { PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
@@ -202,11 +203,7 @@ class DataStatistics extends Page {
                             DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
                         ];
                         this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: translator('Data Statistics loaded with success'),
-                            },
+                            showSnackbar: false,
                             pageState: {
                                 loaded: true,
                                 tables,
@@ -251,14 +248,8 @@ class DataStatistics extends Page {
     render() {
         const translator = this.context.translator;
         const noContent = (
-            <Card>
-                <CardText>
-                    {
-                        this.state.loading ?
-                            translator('Loading Data Statistics...') :
-                            translator('No data to show.')
-                    }
-                </CardText>
+            <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+                <CardText>{translator('No data to show.')}</CardText>
             </Card>
         );
 

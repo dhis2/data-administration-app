@@ -3,6 +3,23 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.contentArea {
+    padding: 4rem 20px 20px 20px;
+}
+
+.contentWrapper {
+    margin-left: 295px;
+    max-width: 1400px;
+}
+
 .leftBar {
   width: 295px;
   position: fixed;
@@ -12,19 +29,13 @@ html {
   padding-top: 3rem;
 }
 
-.contentWrapper {
-  margin-left: 295px;
+.maxWith {
+    max-width: 1400px;
 }
 
-.contentArea {
-  padding: 4rem 20px 20px 20px;
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-h1 {
-  font-family: Roboto;
-  font-size: 24px;
-  font-weight: 300;
-  letter-spacing: 1.2px;
-  color: rgba(0, 0, 0, 0.87);
-}
-

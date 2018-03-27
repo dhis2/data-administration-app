@@ -22,6 +22,8 @@ jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
 jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
 jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
 jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbar.component', () => ('FeedbackSnackbar'));
 
 const t = jest.fn();
 

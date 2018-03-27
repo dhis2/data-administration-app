@@ -5,10 +5,11 @@ import { Card, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import { LOADING, SUCCESS, ERROR, WARNING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 
 import Page from '../Page';
-import { LOADING, SUCCESS, ERROR, WARNING } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './MinMaxValueGeneration.css';
 
@@ -271,7 +272,7 @@ class MinMaxValueGeneration extends Page {
     render() {
         const translator = this.context.translator;
         return (
-            <div className={styles.maxWith}>
+            <div>
                 <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper

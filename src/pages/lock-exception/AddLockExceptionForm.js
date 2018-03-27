@@ -12,7 +12,7 @@ import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.compone
 import SelectField from 'd2-ui/lib/select-field/SelectField';
 import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
 
-import { ERROR } from '../../components/feedback-snackbar/FeedbackSnackbarTypes';
+import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
 import styles from './AddLockExceptionForm.css';
 
