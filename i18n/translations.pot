@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T10:23:35.634Z\n"
-"PO-Revision-Date: 2018-04-04T10:23:35.634Z\n"
+"POT-Creation-Date: 2018-04-04T11:18:03.413Z\n"
+"PO-Revision-Date: 2018-04-04T11:18:03.413Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -272,7 +272,16 @@ msgstr ""
 msgid "Dashboards"
 msgstr ""
 
+msgid "Lock Exception Management"
+msgstr ""
+
 msgid "Lock Exception"
+msgstr ""
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
 msgstr ""
 
 msgid ""
@@ -280,7 +289,181 @@ msgid ""
 "entry forms."
 msgstr ""
 
-msgid "Lock Exception Management"
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "CONFIRM"
+msgstr ""
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Tree..."
+msgstr ""
+
+msgid "For organisation units within"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "of"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"

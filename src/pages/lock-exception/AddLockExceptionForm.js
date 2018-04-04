@@ -14,6 +14,9 @@ import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
 
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
+// i18n
+import { i18nKeys } from '../../i18n';
+
 import styles from './AddLockExceptionForm.css';
 
 const d2UiSelectStyleOverride = {
@@ -97,7 +100,7 @@ class AddLockExceptionForm extends Component {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happened during operation');
+                        translator(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -145,10 +148,10 @@ class AddLockExceptionForm extends Component {
             { id: dataSet.id, name: dataSet.displayName, periodType: dataSet.periodType }),
         );
 
-        let dataSetSelectLabel = translator('Select a Data Set');
+        let dataSetSelectLabel = translator(i18nKeys.lockException.selectADataSet);
         let dataSetSelectValue = null;
         if (this.state.dataSet) {
-            dataSetSelectLabel = translator('Data Set');
+            dataSetSelectLabel = translator(i18nKeys.lockException.dataSet);
             dataSetSelectValue = this.state.dataSet.id;
         }
 
@@ -186,15 +189,17 @@ class AddLockExceptionForm extends Component {
                                         orgUnitsPathsToInclude={this.state.orgUnitPaths}
                                     />) :
                                     (
-                                        <span>{translator('Updating Tree...')}</span>
+                                        <span>{translator(i18nKeys.lockException.updatingTree)}</span>
                                     )}
                             </div>
                             <div className={styles.right}>
                                 <div>
                                     {this.state.currentRoot ? (<div>
-                                        {translator('For organisation units within')} <span className={styles.ouLabel}>{
-                                            this.state.currentRoot.displayName
-                                        }</span>:</div>
+                                        {translator(i18nKeys.lockException.organisationUnitsWithin)} <span
+                                            className={styles.ouLabel}
+                                        >{
+                                                this.state.currentRoot.displayName
+                                            }</span>:</div>
                                     ) : <div>For all organisation units:</div>}
                                     <OrgUnitSelectByLevel
                                         levels={this.props.levels}
