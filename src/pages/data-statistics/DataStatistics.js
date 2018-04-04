@@ -11,9 +11,11 @@ import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
 
 /* constants */
-import { PAGE_TITLE, OBJECT_TYPE_LABELS } from './data.statistics.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
+
+// i18n
+import { i18nKeys } from '../../i18n';
 
 import styles from './DataStatistics.css';
 
@@ -45,18 +47,18 @@ class DataStatistics extends Page {
     }
 
     // auxiliar functions
-    static objectCountsTableObjectToShowFromServerResponse = (objectCountsResponse) => {
+    static objectCountsTableObjectToShowFromServerResponse = (objectCountsResponse, translator) => {
         if (objectCountsResponse) {
             const objectCountsKeys = Object.keys(objectCountsResponse);
             const objectCountsTable = {
-                label: 'Object type',
+                label: translator(i18nKeys.dataStatistics.objectType),
                 elements: [],
             };
 
             for (let i = 0; i < objectCountsKeys.length; i++) {
                 const key = objectCountsKeys[i];
                 objectCountsTable.elements.push({
-                    label: OBJECT_TYPE_LABELS[key],
+                    label: translator(i18nKeys.dataStatistics.objects[key]),
                     count: objectCountsResponse[key],
                 });
             }
@@ -67,29 +69,31 @@ class DataStatistics extends Page {
         return {};
     };
 
-    static timeLabelFromIntProperty = (intProperty) => {
-        let label = 'Last hour';
+    static translatedTimeLabelFromIntProperty = (intProperty, translator) => {
+        let label = translator(i18nKeys.dataStatistics.lastHour);
         if (intProperty === 1) {
-            label = 'Today';
+            label = translator(i18nKeys.dataStatistics.today);
         } else if (intProperty > 0) {
-            label = `Last ${intProperty} days`;
+            const lastLabel = translator(i18nKeys.dataStatistics.last);
+            const daysLabel = translator(i18nKeys.dataStatistics.days);
+            label = `${lastLabel} ${intProperty} ${daysLabel}`;
         }
 
         return label;
     };
 
-    static activeUsersTableObjectToShowFromServerResponse = (activeUsersResponse) => {
+    static activeUsersTableObjectToShowFromServerResponse = (activeUsersResponse, translator) => {
         if (activeUsersResponse) {
             const activeUsersKeys = Object.keys(activeUsersResponse);
             const activeUsersTable = {
-                label: 'Users logged in',
+                label: translator(i18nKeys.dataStatistics.usersLoggedIn),
                 elements: [],
             };
 
             for (let i = 0; i < activeUsersKeys.length; i++) {
                 const key = activeUsersKeys[i];
                 activeUsersTable.elements.push({
-                    label: DataStatistics.timeLabelFromIntProperty(parseInt(key, 10)),
+                    label: DataStatistics.translatedTimeLabelFromIntProperty(parseInt(key, 10), translator),
                     count: activeUsersResponse[key],
                 });
             }
@@ -100,23 +104,23 @@ class DataStatistics extends Page {
         return {};
     };
 
-    static userInvitationsTableObjectToShowFromServerResponse = (userInvitationsResponse) => {
+    static userInvitationsTableObjectToShowFromServerResponse = (userInvitationsResponse, translator) => {
         if (userInvitationsResponse) {
             const userInvitationsTable = {
-                label: 'User account invitations',
+                label: translator(i18nKeys.dataStatistics.userAccountInvitations),
                 elements: [],
             };
 
             if (userInvitationsResponse.hasOwnProperty(PENDING_INVITATION_ALL_KEY)) {
                 userInvitationsTable.elements.push({
-                    label: 'Pending invitations',
+                    label: translator(i18nKeys.dataStatistics.pedingInvitations),
                     count: userInvitationsResponse[PENDING_INVITATION_ALL_KEY],
                 });
             }
 
             if (userInvitationsResponse.hasOwnProperty(EXPIRED_INVITATION_KEY)) {
                 userInvitationsTable.elements.push({
-                    label: 'Expired invitations',
+                    label: translator(i18nKeys.dataStatistics.expiredInvitations),
                     count: userInvitationsResponse[EXPIRED_INVITATION_KEY],
                 });
             }
@@ -127,18 +131,18 @@ class DataStatistics extends Page {
         return {};
     };
 
-    static dataValueCountsTableObjectToShowFromServerResponse = (dataValueCountsResponse) => {
+    static dataValueCountsTableObjectToShowFromServerResponse = (dataValueCountsResponse, translator) => {
         if (dataValueCountsResponse) {
             const dataValueCountsKeys = Object.keys(dataValueCountsResponse);
             const dataValueCountsTable = {
-                label: 'Data values',
+                label: translator(i18nKeys.dataStatistics.dataValues),
                 elements: [],
             };
 
             for (let i = 0; i < dataValueCountsKeys.length; i++) {
                 const key = dataValueCountsKeys[i];
                 dataValueCountsTable.elements.push({
-                    label: DataStatistics.timeLabelFromIntProperty(parseInt(key, 10)),
+                    label: DataStatistics.translatedTimeLabelFromIntProperty(parseInt(key, 10), translator),
                     count: dataValueCountsResponse[key],
                 });
             }
@@ -149,18 +153,18 @@ class DataStatistics extends Page {
         return {};
     };
 
-    static eventCountsTableObjectToShowFromServerResponse = (eventCountsResponse) => {
+    static eventCountsTableObjectToShowFromServerResponse = (eventCountsResponse, translator) => {
         if (eventCountsResponse) {
             const eventCountsKeys = Object.keys(eventCountsResponse);
             const eventCountsTable = {
-                label: 'Events',
+                label: translator(i18nKeys.dataStatistics.events),
                 elements: [],
             };
 
             for (let i = 0; i < eventCountsKeys.length; i++) {
                 const key = eventCountsKeys[i];
                 eventCountsTable.elements.push({
-                    label: DataStatistics.timeLabelFromIntProperty(parseInt(key, 10)),
+                    label: DataStatistics.translatedTimeLabelFromIntProperty(parseInt(key, 10), translator),
                     count: eventCountsResponse[key],
                 });
             }
@@ -181,7 +185,7 @@ class DataStatistics extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Loading Data Statistics...'),
+                    message: translator(i18nKeys.dataStatistics.loadingMessage),
                 },
                 pageState: {
                     loaded: false,
@@ -194,13 +198,16 @@ class DataStatistics extends Page {
                 api.get('dataSummary').then((response) => {
                     if (this.isPageMounted()) {
                         const tables = [
-                            DataStatistics.objectCountsTableObjectToShowFromServerResponse(response[OBJECT_COUNTS_KEY]),
-                            DataStatistics.activeUsersTableObjectToShowFromServerResponse(response[ACTIVE_USERS_KEY]),
-                            DataStatistics
-                                .userInvitationsTableObjectToShowFromServerResponse(response[USER_INVITATIONS_KEY]),
-                            DataStatistics
-                                .dataValueCountsTableObjectToShowFromServerResponse(response[DATA_VALUE_COUNT_KEY]),
-                            DataStatistics.eventCountsTableObjectToShowFromServerResponse(response[EVENT_COUNT_KEY]),
+                            DataStatistics.objectCountsTableObjectToShowFromServerResponse(
+                                response[OBJECT_COUNTS_KEY], translator),
+                            DataStatistics.activeUsersTableObjectToShowFromServerResponse(
+                                response[ACTIVE_USERS_KEY], translator),
+                            DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
+                                response[USER_INVITATIONS_KEY], translator),
+                            DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
+                                response[DATA_VALUE_COUNT_KEY], translator),
+                            DataStatistics.eventCountsTableObjectToShowFromServerResponse(
+                                response[EVENT_COUNT_KEY], translator),
                         ];
                         this.context.updateAppState({
                             showSnackbar: false,
@@ -217,7 +224,7 @@ class DataStatistics extends Page {
                             showSnackbar: true,
                             snackbarConf: {
                                 type: ERROR,
-                                message: translator('It was not possible to load Data Statistics'),
+                                message: translator(i18nKeys.dataStatistics.errorMessage),
                             },
                             pageState: {
                                 loaded: true,
@@ -249,7 +256,7 @@ class DataStatistics extends Page {
         const translator = this.context.translator;
         const noContent = (
             <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
-                <CardText>{translator('No data to show.')}</CardText>
+                <CardText>{translator(i18nKeys.dataStatistics.noDataMessage)}</CardText>
             </Card>
         );
 
@@ -271,7 +278,7 @@ class DataStatistics extends Page {
         return (
             <div className={styles.maxWith}>
                 <h1 className={styles.header}>
-                    {translator(PAGE_TITLE)}
+                    {translator(i18nKeys.dataStatistics.title)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />

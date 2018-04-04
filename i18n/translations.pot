@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T09:36:00.826Z\n"
-"PO-Revision-Date: 2018-04-04T09:36:00.826Z\n"
+"POT-Creation-Date: 2018-04-04T10:23:35.634Z\n"
+"PO-Revision-Date: 2018-04-04T10:23:35.634Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -177,6 +177,99 @@ msgid ""
 msgstr ""
 
 msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Last hour"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Last"
+msgstr ""
+
+msgid "days"
+msgstr ""
+
+msgid "Users logged in"
+msgstr ""
+
+msgid "User account invitations"
+msgstr ""
+
+msgid "Pending invitations"
+msgstr ""
+
+msgid "Expired invitations"
+msgstr ""
+
+msgid "Data values"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
+msgid "Indicators"
+msgstr ""
+
+msgid "Periods"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Validation rules"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Data elements"
+msgstr ""
+
+msgid "Organisation unit groups"
+msgstr ""
+
+msgid "Pivot tables"
+msgstr ""
+
+msgid "Indicator types"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "User groups"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Maps"
+msgstr ""
+
+msgid "Indicator groups"
+msgstr ""
+
+msgid "Charts"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Dashboards"
 msgstr ""
 
 msgid "Lock Exception"
