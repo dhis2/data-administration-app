@@ -16,8 +16,12 @@ import Page from '../Page';
 import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_TITLE } from './maintenance.conf';
 import { getDocsKeyForSection } from '../sections.conf';
 
-import styles from './Maintenance.css';
 import PageHelper from '../../components/page-helper/PageHelper';
+
+// i18n
+import { i18nKeys } from '../../i18n';
+
+import styles from './Maintenance.css';
 
 class Maintenance extends Page {
     static STATE_PROPERTIES = [
@@ -110,7 +114,7 @@ class Maintenance extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Performing Maintenance...'),
+                    message: translator(i18nKeys.maintenance.performing),
                 },
                 pageState: {
                     checkboxes: this.state.checkboxes,
@@ -124,7 +128,7 @@ class Maintenance extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator('Maintenance done'),
+                            message: translator(i18nKeys.maintenance.actionPerformed),
                         },
                         pageState: {
                             checkboxes: this.state.checkboxes,
@@ -136,7 +140,7 @@ class Maintenance extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happened during maintenance');
+                        translator(i18nKeys.maintenance.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -194,9 +198,9 @@ class Maintenance extends Page {
                             {gridElements}
                         </div>
                         <RaisedButton
-                            label={translator('PERFORM MAINTENANCE')}
+                            label={translator(i18nKeys.maintenance.actionButton)}
                             onClick={this.performMaintenance}
-                            primary={Boolean(true)}
+                            primary
                             disabled={this.areActionsDisabled() || this.selectedCheckboxesCount() === 0}
                         />
                     </CardText>

@@ -1,76 +1,73 @@
-export const RESOURCE_TABLES_OPTION_KEY = 'home';
+// i18n
+import { i18nKeys } from '../../i18n';
 
-export const PAGE_TITLE = 'Maintenance';
+export const RESOURCE_TABLES_OPTION_KEY = 'resourceTables';
+
+export const PAGE_TITLE = i18nKeys.maintenance.title;
 
 export const maintenanceCheckboxes = [
     {
         key: 'analyticsTableClear',
-        label: 'Clear analytics tables',
+        label: i18nKeys.maintenance.analyticsTableClear,
     },
     {
         key: 'analyticsTableAnalyze',
-        label: 'Analyze analytics tables',
+        label: i18nKeys.maintenance.analyticsTableAnalyze,
     },
     {
         key: 'zeroDataValueRemoval',
-        label: 'Remove zero data values',
-        text: 'This function removes zero data values from the database. Values registered for data elements with' +
-        ' aggregation operator average is not removed, as such values will be significant when aggregating the data,' +
-        ' contrary to values registered for data elements with aggregation operator sum. Reducing the number of data' +
-        ' values will improve system performance.',
+        label: i18nKeys.maintenance.zeroDataValueRemoval,
     },
     {
         key: 'softDeletedDataValueRemoval',
-        label: 'Permanently remove soft deleted data values',
+        label: i18nKeys.maintenance.softDeletedDataValueRemoval,
     },
     {
         key: 'softDeletedEventRemoval',
-        label: 'Permanently remove soft deleted events',
+        label: i18nKeys.maintenance.softDeletedEventRemoval,
     },
     {
         key: 'softDeletedEnrollmentRemoval',
-        label: 'Permanently remove soft deleted enrollments',
+        label: i18nKeys.maintenance.softDeletedEnrollmentRemoval,
     },
     {
         key: 'softDeletedTrackedEntityInstanceRemoval',
-        label: 'Permanently remove soft deleted tracked entity instances',
+        label: i18nKeys.maintenance.softDeletedTrackedEntityInstanceRemoval,
     },
     {
         key: 'periodPruning',
-        label: 'Prune periods',
-        text: 'This function removes all periods which have no registered data values. Reducing the number of' +
-        ' periods will improve system performance.',
+        label: i18nKeys.maintenance.periodPruning,
     },
     {
         key: 'expiredInvitationsClear',
-        label: 'Remove expired invitations',
+        label: i18nKeys.maintenance.expiredInvitationsClear,
     },
     {
         key: 'sqlViewsDrop',
-        label: 'Drop SQL views',
+        label: i18nKeys.maintenance.sqlViewsDrop,
     },
     {
         key: 'sqlViewsCreate',
-        label: 'Create SQL views',
+        label: i18nKeys.maintenance.sqlViewsCreate,
     },
     {
         key: 'categoryOptionComboUpdate',
-        label: 'Update category option combinations',
+        label: i18nKeys.maintenance.categoryOptionComboUpdate,
     },
     {
         key: 'ouPathsUpdate',
-        label: 'Update organisation unit paths',
+        label: i18nKeys.maintenance.ouPathsUpdate,
     },
     {
         key: 'cacheClear',
-        label: 'Clear application cache',
+        label: i18nKeys.maintenance.cacheClear,
     },
     {
         key: 'appReload',
-        label: 'Reload apps',
+        label: i18nKeys.maintenance.appReload,
     },
     {
         key: RESOURCE_TABLES_OPTION_KEY,
-        label: 'Generate resource tables',
+        label: i18nKeys.maintenance.resourceTables,
     },
 ];
