@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T11:18:03.413Z\n"
-"PO-Revision-Date: 2018-04-04T11:18:03.413Z\n"
+"POT-Creation-Date: 2018-04-04T12:38:01.254Z\n"
+"PO-Revision-Date: 2018-04-04T12:38:01.254Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -319,7 +319,7 @@ msgstr ""
 msgid "Select a Data Set"
 msgstr ""
 
-msgid "Updating Tree..."
+msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
@@ -475,6 +475,36 @@ msgid ""
 msgstr ""
 
 msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
