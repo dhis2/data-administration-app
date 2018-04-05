@@ -5,6 +5,9 @@ import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
 
+// i18n
+import { i18nKeys } from '../i18n';
+
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
 export const MAINTENANCE_SECTION_KEY = 'maintenance';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
@@ -17,10 +20,10 @@ export const sections = [
         path: '/data-integrity',
         component: DataIntegrity,
         info: {
-            label: 'Data Integrity',
+            label: i18nKeys.dataIntegrity.label,
             icon: 'link',
-            description: 'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
-            actionText: 'Check Data Integrity',
+            description: i18nKeys.dataIntegrity.description,
+            actionText: i18nKeys.dataIntegrity.actionText,
             docs: 'dataAdmin_dataIntegrity',
         },
     },
@@ -29,11 +32,10 @@ export const sections = [
         path: '/maintenance',
         component: Maintenance,
         info: {
-            label: 'Maintenance',
+            label: i18nKeys.maintenance.label,
             icon: 'settings',
-            description: 'Perform maintenance tasks and generate resource database tables for the organisation unit' +
-            ' hierarchy and group set structure.',
-            actionText: 'Perform Maintenance',
+            description: i18nKeys.maintenance.description,
+            actionText: i18nKeys.maintenance.actionText,
             docs: 'data_admin_maintenance',
         },
     },
@@ -42,11 +44,10 @@ export const sections = [
         path: '/data-statistics',
         component: DataStatistics,
         info: {
-            label: 'Data Statistics',
+            label: i18nKeys.dataStatistics.label,
             icon: 'timeline',
-            description: 'Browse the number of objects in the database, like data elements, indicators,' +
-            ' data sets and data values.',
-            actionText: 'Overview Data Statistics',
+            description: i18nKeys.dataStatistics.description,
+            actionText: i18nKeys.dataStatistics.actionText,
             docs: 'dataAdmin_dataStatistics',
         },
     },
@@ -55,10 +56,10 @@ export const sections = [
         path: '/lock-exception',
         component: LockException,
         info: {
-            label: 'Lock Exception',
+            label: i18nKeys.lockException.label,
             icon: 'lock',
-            description: 'Add or remove exceptions to the the standard rules for locking of data entry forms.',
-            actionText: 'Lock Exception Management',
+            description: i18nKeys.lockException.description,
+            actionText: i18nKeys.lockException.actionText,
             docs: 'dataAdmin_lockException',
         },
     },
@@ -67,11 +68,10 @@ export const sections = [
         path: '/min-max-value-generation',
         component: MinMaxValueGeneration,
         info: {
-            label: 'Min-Max Value Generation',
+            label: i18nKeys.minMaxValueGeneration.label,
             icon: 'compare_arrows',
-            description: 'Generate min-max values which can be used for data validation during data entry and ' +
-            'validation processes.',
-            actionText: 'Generate Min-Max Value',
+            description: i18nKeys.minMaxValueGeneration.description,
+            actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',
         },
     },

@@ -3803,6 +3803,12 @@ ignore@^3.3.3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
+import-export@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/import-export/-/import-export-1.0.1.tgz#2b705fc9d022a32cf86a43e41224b8e25ab6335e"
+  dependencies:
+    node-hook "^0.4.0"
+
 import-local@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-0.1.1.tgz#b1179572aacdc11c6a91009fb430dbcab5f668a8"
@@ -5160,6 +5166,10 @@ node-gettext@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-gettext/-/node-gettext-2.0.0.tgz#f1dc1237cdc546f51593da340304b8beba5b8525"
   dependencies:
     lodash.get "^4.4.2"
+
+node-hook@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/node-hook/-/node-hook-0.4.1.tgz#1016a106e93ebd959fd337cbe35fa6397fa9d61c"
 
 node-int64@^0.4.0:
   version "0.4.0"

@@ -1,44 +1,36 @@
-const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('fs');
+require('import-export');
+
+const { existsSync, mkdirSync, writeFileSync } = require('fs');
 const { i18nextToPot } = require('i18next-conv');
-const recursive = require("recursive-readdir");
 
 const argv = require('minimist')(process.argv.slice(2));
-const filename = argv['o'] || 'en.pot';
 
-const JS_FUNCTION_REGEX = new RegExp("translator\\('(.*)'\\)", 'g');
+const filename = argv.o || 'en.pot';
 
-const getFileExtension = (filename) => {
-    return filename.split('.').pop();
-};
+const i18nKeys = require('../src/i18n.js');
 
 // save file to disk
-const save = (target) => {
-    return result => {
-        writeFileSync(target, result);
-    };
+const save = target => (result) => {
+    writeFileSync(target, result);
 };
 
-let translations = {};
-const addKeysFromFileContent = (fileContent, functionRegex) => {
-    let matches;
-    while (( matches = functionRegex.exec(fileContent))) {
-        if (matches[1]) {
-            translations[matches[1]] = '';
+const translations = {};
+const addKeysFromConfigObject = (obj) => {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] == "object") {
+                addKeysFromConfigObject(obj[key]);
+            } else {
+                translations[obj[key]] = '';
+            }
         }
     }
 };
 
-recursive('src', function (err, files) {
-    for (let file of files) {
-        const fileExtension = getFileExtension(file);
-        if (fileExtension === 'js') {
-            addKeysFromFileContent(readFileSync(file, 'utf-8'), JS_FUNCTION_REGEX);
-        }
-    }
+addKeysFromConfigObject(i18nKeys);
 
-    if (!existsSync('i18n/')){
-        mkdirSync('i18n/');
-    }
+if (!existsSync('i18n/')){
+    mkdirSync('i18n/');
+}
 
-    i18nextToPot('en', JSON.stringify(translations)).then(save('i18n/' + filename));
-});
+i18nextToPot('en', JSON.stringify(translations)).then(save(`i18n/${filename}`));
