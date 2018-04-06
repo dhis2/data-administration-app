@@ -7,6 +7,9 @@ import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarType
 import { getDocsKeyForSection } from '../sections.conf';
 import * as conf from './data.integrity.conf';
 
+// i18n
+import { i18nKeys } from '../../i18n';
+
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 import PageHelper from '../../components/page-helper/PageHelper';
@@ -62,7 +65,7 @@ class DataIntegrity extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Performing data integrity checks...'),
+                message: translator(i18nKeys.dataIntegrity.performing),
             },
             currentSection: this.props.sectionKey,
             pageState: {
@@ -76,7 +79,7 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator('An unexpected error happened during data integrity checks');
+            translator(i18nKeys.dataIntegrity.unexpectedError);
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -138,7 +141,7 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const runButton = (
             <RaisedButton
-                label={translator('RUN INTEGRITY CHECKS')}
+                label={translator(i18nKeys.dataIntegrity.actionButton)}
                 onClick={this.initDataIntegrityCheck}
                 primary={Boolean(true)}
                 disabled={this.state.loading}

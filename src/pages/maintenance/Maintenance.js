@@ -5,10 +5,12 @@ import { GridTile } from 'material-ui/GridList';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
+import classNames from 'classnames';
 
 import { LOADING, SUCCESS, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
-import classNames from 'classnames';
+// i18n
+import { i18nKeys } from '../../i18n';
 
 import Page from '../Page';
 
@@ -69,7 +71,7 @@ class Maintenance extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Performing Maintenance...'),
+                message: translator(i18nKeys.maintenance.performing),
             },
             pageState: {
                 loading: true,
@@ -81,7 +83,7 @@ class Maintenance extends Page {
         const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator('An unexpected error happened during maintenance');
+            translator(i18nKeys.maintenance.unexpectedError);
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -137,7 +139,7 @@ class Maintenance extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator('Maintenance done'),
+                            message: translator(i18nKeys.maintenance.actionPerformed),
                         },
                         pageState: {
                             loading: false,
@@ -192,9 +194,9 @@ class Maintenance extends Page {
                             {gridElements}
                         </div>
                         <RaisedButton
-                            label={translator('PERFORM MAINTENANCE')}
+                            label={translator(i18nKeys.maintenance.actionButton)}
                             onClick={this.performMaintenance}
-                            primary={Boolean(true)}
+                            primary
                             disabled={this.areActionsDisabled() || this.selectedCheckboxesCount() === 0}
                         />
                     </CardText>

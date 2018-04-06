@@ -20,15 +20,10 @@ class DataStatisticsTable extends PureComponent {
         elements: PropTypes.array.isRequired,
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-    }
-
     render() {
-        const translator = this.context.translator;
         const rows = this.props.elements.map(element => (
             <TableRow key={element.label} className={'data-statistics-table-row'}>
-                <TableRowColumn>{translator(element.label)}</TableRowColumn>
+                <TableRowColumn>{element.label}</TableRowColumn>
                 <TableRowColumn>
                     <FormattedNumber value={element.count} />
                 </TableRowColumn>
@@ -43,7 +38,7 @@ class DataStatisticsTable extends PureComponent {
                     enableSelectAll={false}
                 >
                     <TableRow>
-                        <TableHeaderColumn>{translator(this.props.label)}</TableHeaderColumn>
+                        <TableHeaderColumn>{this.props.label}</TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
                 <TableBody

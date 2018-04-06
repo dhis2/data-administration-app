@@ -13,9 +13,11 @@ import Page from '../Page';
 
 import styles from './MinMaxValueGeneration.css';
 
-import { PAGE_TITLE } from './min-max-value-generation.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
+
+// i18n
+import { i18nKeys } from '../../i18n';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
 
@@ -102,7 +104,7 @@ class MinMaxValueGeneration extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: ERROR,
-                            message: translator('It was not possible to load data'),
+                            message: translator(i18nKeys.minMaxValueGeneration.notPossibleToLoadMessage),
                         },
                         pageState: {
                             ...this.state,
@@ -137,7 +139,7 @@ class MinMaxValueGeneration extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: WARNING,
-                    message: translator('Select Data set and Organisation Unit'),
+                    message: translator(i18nKeys.minMaxValueGeneration.warningMessage),
                 },
                 pageState: {
                     ...this.state,
@@ -159,7 +161,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Doing Min Max generation...'),
+                message: translator(i18nKeys.minMaxValueGeneration.performingMessage),
             },
             pageState: {
                 ...this.state,
@@ -176,7 +178,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: translator('Min Max generation done'),
+                        message: translator(i18nKeys.minMaxValueGeneration.minMaxGenerationDone),
                     },
                     pageState: {
                         ...this.state,
@@ -190,7 +192,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: ERROR,
-                        message: translator('It was not possible to do your request'),
+                        message: translator(i18nKeys.messages.unexpectedError),
                     },
                     pageState: {
                         ...this.state,
@@ -208,7 +210,7 @@ class MinMaxValueGeneration extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: WARNING,
-                    message: translator('Select Data set and Organisation Unit'),
+                    message: translator(i18nKeys.minMaxValueGeneration.warningMessage),
                 },
                 pageState: {
                     ...this.state,
@@ -230,7 +232,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Removing Min Max generation...'),
+                message: translator(i18nKeys.minMaxValueGeneration.removingMessage),
             },
             pageState: {
                 ...this.state,
@@ -244,7 +246,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: translator('Min Max removal done'),
+                        message: translator(i18nKeys.minMaxValueGeneration.minMaxRemovalDone),
                     },
                     pageState: {
                         ...this.state,
@@ -258,7 +260,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: ERROR,
-                        message: translator('It was not possible to do your request'),
+                        message: translator(i18nKeys.messages.unexpectedError),
                     },
                     pageState: {
                         ...this.state,
@@ -274,7 +276,7 @@ class MinMaxValueGeneration extends Page {
         return (
             <div>
                 <h1 className={styles.header}>
-                    {translator(PAGE_TITLE)}
+                    {translator(i18nKeys.minMaxValueGeneration.title)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -284,7 +286,9 @@ class MinMaxValueGeneration extends Page {
                         <div className={styles.container}>
                             {this.state.dataSets ? (
                                 <div className={styles.left}>
-                                    <div className={styles.label}>{translator('Data Set')}</div>
+                                    <div className={styles.label}>
+                                        {translator(i18nKeys.minMaxValueGeneration.dataSet)}
+                                    </div>
                                     <select
                                         multiple
                                         onClick={this.dataSetsSelectClick}
@@ -303,17 +307,19 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.left}>
-                                        <span>{translator('Loading data sets')}</span>
+                                        <span>{translator(i18nKeys.minMaxValueGeneration.loadingDataSetsMessage)}</span>
                                     </div>
                                 )
                             }
                             {this.state.rootWithMembers ? (
                                 <div className={styles.right}>
-                                    <div className={styles.label}>{translator('Organisation Unit Selection')}</div>
+                                    <div className={styles.label}>
+                                        {translator(i18nKeys.minMaxValueGeneration.organisationUnitSelect)}
+                                    </div>
                                     <div className={styles.tree}>
                                         <OrgUnitTree
                                             className={styles.tree}
-                                            hideMemberCount={Boolean(true)}
+                                            hideMemberCount
                                             root={this.state.rootWithMembers}
                                             selected={this.state.selected}
                                             initiallyExpanded={[`/${this.state.rootWithMembers.id}`]}
@@ -323,21 +329,21 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.right}>
-                                        <span>{translator('Updating Organisation Units Tree...')}</span>
+                                        <span>{translator(i18nKeys.minMaxValueGeneration.updatingTree)}</span>
                                     </div>
                                 )}
                         </div>
                         <RaisedButton
                             className={styles.actionButton}
-                            primary={Boolean(true)}
-                            label={translator('GENERATE')}
+                            primary
+                            label={translator(i18nKeys.minMaxValueGeneration.actionButton)}
                             onClick={this.generateMinMaxValueClick}
                             disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />
                         <FlatButton
                             className={styles.actionButton}
-                            secondary={Boolean(true)}
-                            label={translator('REMOVE')}
+                            secondary
+                            label={translator(i18nKeys.minMaxValueGeneration.removeButton)}
                             onClick={this.removeMinMaxValueClick}
                             disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />

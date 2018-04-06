@@ -24,13 +24,11 @@ import AddLockExceptionForm from './AddLockExceptionForm';
 
 import { calculatePageValue } from '../../helpers/pagination';
 
-import {
-    PAGE_TITLE,
-    BATCH_DELETION_HEADER_TEXT,
-    BATCH_DELETION_SUB_HEADER,
-} from './lock.exception.conf';
 import { getDocsKeyForSection } from '../sections.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
+
+// i18n
+import { i18nKeys } from '../../i18n';
 
 import styles from './LockException.css';
 import '../../custom-css/D2UIDataTableOverrides.css';
@@ -109,53 +107,53 @@ class LockException extends Page {
         const translator = context.translator;
         const d2 = context.d2;
         Object.assign(d2.i18n.translations, {
-            period: translator('Period'),
-            dataSet: translator('Data Set'),
-            organisationUnit: translator('Organisation Unit'),
-            organisation_unit_group: translator('Organisation Unit Group'),
-            organisation_unit_level: translator('Organisation Unit Level'),
-            select: translator('Select'),
-            deselect: translator('Deselect'),
-            select_all: translator('Select All Org Units'),
-            deselect_all: translator('Deselect All Org Units'),
-            name: translator('Name'),
-            show: translator('Show Details'),
-            remove: translator('Remove'),
-            actions: translator('Actions'),
-            of_page: translator('of'),
-            week: translator('week'),
-            month: translator('month'),
-            year: translator('year'),
-            biMonth: translator('bi monthly'),
-            day: translator('day'),
-            jan: translator('jan'),
-            feb: translator('feb'),
-            mar: translator('mar'),
-            apr: translator('apr'),
-            may: translator('may'),
-            jun: translator('jun'),
-            jul: translator('jul'),
-            aug: translator('aug'),
-            sep: translator('sep'),
-            oct: translator('oct'),
-            nov: translator('nov'),
-            dec: translator('dec'),
-            'jan-feb': translator('jan-feb'),
-            'mar-apr': translator('mar-apr'),
-            'may-jun': translator('jan-feb'),
-            'jul-aug': translator('jan-feb'),
-            'sep-oct': translator('jan-feb'),
-            'nov-dec': translator('jan-feb'),
-            quarter: translator('quarter'),
-            Q1: translator('Q1'),
-            Q2: translator('Q2'),
-            Q3: translator('Q3'),
-            Q4: translator('Q4'),
-            sixMonth: translator('six monthly'),
-            'jan-jun': translator('jan-jun'),
-            'jul-dec': translator('jul-dec'),
-            'apr-sep': translator('apr-sep'),
-            'oct-mar': translator('oct-mar'),
+            period: translator(i18nKeys.lockException.period),
+            dataSet: translator(i18nKeys.lockException.dataSet),
+            organisationUnit: translator(i18nKeys.lockException.organisationUnit),
+            organisation_unit_group: translator(i18nKeys.lockException.organisationUnitGroup),
+            organisation_unit_level: translator(i18nKeys.lockException.organisationUnitLevel),
+            select: translator(i18nKeys.lockException.select),
+            deselect: translator(i18nKeys.lockException.deselect),
+            select_all: translator(i18nKeys.lockException.selectAll),
+            deselect_all: translator(i18nKeys.lockException.deselectAll),
+            name: translator(i18nKeys.lockException.name),
+            show: translator(i18nKeys.lockException.show),
+            remove: translator(i18nKeys.lockException.remove),
+            actions: translator(i18nKeys.lockException.actions),
+            of_page: translator(i18nKeys.lockException.ofPage),
+            week: translator(i18nKeys.lockException.week),
+            month: translator(i18nKeys.lockException.month),
+            year: translator(i18nKeys.lockException.year),
+            biMonth: translator(i18nKeys.lockException.biMonth),
+            day: translator(i18nKeys.lockException.day),
+            jan: translator(i18nKeys.lockException.jan),
+            feb: translator(i18nKeys.lockException.feb),
+            mar: translator(i18nKeys.lockException.mar),
+            apr: translator(i18nKeys.lockException.apr),
+            may: translator(i18nKeys.lockException.may),
+            jun: translator(i18nKeys.lockException.jun),
+            jul: translator(i18nKeys.lockException.jul),
+            aug: translator(i18nKeys.lockException.aug),
+            sep: translator(i18nKeys.lockException.sep),
+            oct: translator(i18nKeys.lockException.oct),
+            nov: translator(i18nKeys.lockException.nov),
+            dec: translator(i18nKeys.lockException.dec),
+            'jan-feb': translator(i18nKeys.lockException.janFeb),
+            'mar-apr': translator(i18nKeys.lockException.marApr),
+            'may-jun': translator(i18nKeys.lockException.mayJun),
+            'jul-aug': translator(i18nKeys.lockException.julAug),
+            'sep-oct': translator(i18nKeys.lockException.sepOct),
+            'nov-dec': translator(i18nKeys.lockException.novDec),
+            quarter: translator(i18nKeys.lockException.quarter),
+            Q1: translator(i18nKeys.lockException.Q1),
+            Q2: translator(i18nKeys.lockException.Q2),
+            Q3: translator(i18nKeys.lockException.Q3),
+            Q4: translator(i18nKeys.lockException.Q4),
+            sixMonth: translator(i18nKeys.lockException.sixMonth),
+            'jan-jun': translator(i18nKeys.lockException.janJun),
+            'jul-dec': translator(i18nKeys.lockException.julDec),
+            'apr-sep': translator(i18nKeys.lockException.aprSep),
+            'oct-mar': translator(i18nKeys.lockException.octMar),
         });
     }
 
@@ -194,9 +192,13 @@ class LockException extends Page {
                                 arrow_back
                             </FontIcon>
                         </IconButton>
-                        <span>{translator(BATCH_DELETION_HEADER_TEXT)}</span>
+                        <span>{translator(i18nKeys.lockException.batchDeletionHeader)}</span>
                         <span className={styles.headerDivider}> | </span>
-                        <span className={styles.subHeader}>{translator(BATCH_DELETION_SUB_HEADER)}</span>
+                        <span
+                            className={styles.subHeader}
+                        >
+                            {translator(i18nKeys.lockException.batchDeletionSubHeader)}
+                        </span>
                     </h1>
                 </div>
             );
@@ -205,7 +207,7 @@ class LockException extends Page {
         return (
             <div className={styles.headerContainer}>
                 <h1 className={styles.header}>
-                    {translator(PAGE_TITLE)}
+                    {translator(i18nKeys.lockException.title)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -213,9 +215,9 @@ class LockException extends Page {
                 <div>
                     <RaisedButton
                         className={styles.actionButton}
-                        label={translator('BATCH DELETION')}
+                        label={translator(i18nKeys.lockException.actionButton)}
                         onClick={this.goToBatchDeletionPage}
-                        primary={Boolean(true)}
+                        primary
                         disabled={this.areActionsDisabled()}
                     />
                 </div>
@@ -270,7 +272,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Loading Lock Exceptions...'),
+                    message: translator(i18nKeys.lockException.loading),
                 },
                 pageState: {
                     atBatchDeletionPage: false,
@@ -290,7 +292,7 @@ class LockException extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: translator('Lock Exception removed'),
+                                    message: translator(i18nKeys.lockException.removedMessage),
                                 },
                             };
                             this.state.deleteInProgress = false;
@@ -300,7 +302,7 @@ class LockException extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: translator('Lock Exception Added'),
+                                    message: translator(i18nKeys.lockException.addedMessage),
                                 },
                             };
                             this.state.addInProgress = false;
@@ -326,7 +328,7 @@ class LockException extends Page {
                     if (this.isPageMounted()) {
                         const messageError = error && error.message ?
                             error.message :
-                            translator('An unexpected error happened');
+                            translator(i18nKeys.messages.unexpectedError);
 
                         this.context.updateAppState({
                             showSnackbar: true,
@@ -355,7 +357,7 @@ class LockException extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator('Loading Lock Exceptions...'),
+                message: translator(i18nKeys.lockException.loadingMessage),
             },
             pageState: {
                 atBatchDeletionPage: true,
@@ -382,7 +384,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happened');
+                        translator(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -437,8 +439,8 @@ class LockException extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: ACTION_MESSAGE,
-                message: translator('Are you sure?'),
-                action: translator('CONFIRM'),
+                message: translator(i18nKeys.lockException.confirmDeleteMessage),
+                action: translator(i18nKeys.lockException.confirmButton),
                 onActionClick: () => {
                     const api = this.context.d2.Api.getApi();
                     let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`;
@@ -451,7 +453,7 @@ class LockException extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: LOADING,
-                            message: translator('Removing Lock Exception...'),
+                            message: translator(i18nKeys.lockException.loadingMessage),
                         },
                         pageState: {
                             ...this.state,
@@ -475,7 +477,7 @@ class LockException extends Page {
                                     showSnackbar: true,
                                     snackbarConf: {
                                         type: SUCCESS,
-                                        message: translator('Lock Exception removed'),
+                                        message: translator(i18nKeys.lockException.removedMessage),
                                     },
                                     pageState: newPageState,
                                 });
@@ -491,7 +493,7 @@ class LockException extends Page {
                         if (this.isPageMounted()) {
                             const messageError = error && error.message ?
                                 error.message :
-                                translator('An unexpected error happened');
+                                translator(i18nKeys.messages.unexpectedError);
 
                             this.context.updateAppState({
                                 showSnackbar: true,
@@ -546,7 +548,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happened while loading data');
+                        translator(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -591,7 +593,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator('Adding Lock Exception...'),
+                    message: translator(i18nKeys.lockException.addingMessage),
                 },
                 pageState: {
                     showAddDialogOpen: false,
@@ -617,7 +619,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator('An unexpected error happened during operation');
+                        translator(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -650,13 +652,13 @@ class LockException extends Page {
         const addLockException = [
             <FlatButton
                 className={styles.actionButton}
-                label={translator('CANCEL')}
+                label={translator(i18nKeys.lockException.cancelButton)}
                 onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
                 className={styles.actionButton}
                 primary={Boolean(true)}
-                label={translator('ADD')}
+                label={translator(i18nKeys.lockException.addButton)}
                 onClick={this.addLockException}
                 disabled={!this.addLockExceptionEnabled()}
             />,
@@ -686,7 +688,7 @@ class LockException extends Page {
                     </div>) :
                     (
                         <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
-                            <CardText>{translator('No data to show.')}</CardText>
+                            <CardText>{translator(i18nKeys.lockException.noDataMessage)}</CardText>
                         </Card>
                     )
                 }
@@ -694,7 +696,7 @@ class LockException extends Page {
                 this.state.groups &&
                 this.state.dataSets.length > 0 &&
                 <Dialog
-                    title={translator('Add new lock exception')}
+                    title={translator(i18nKeys.lockException.addLockExceptionFormTitle)}
                     actions={addLockException}
                     modal={false}
                     open={this.state.showAddDialogOpen}
