@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-03-27T13:16:12.921Z\n"
-"PO-Revision-Date: 2018-03-27T13:16:12.921Z\n"
+"POT-Creation-Date: 2018-04-06T06:56:29.769Z\n"
+"PO-Revision-Date: 2018-04-06T06:56:29.769Z\n"
 
 msgid "Loading Data Statistics..."
 msgstr ""
@@ -15,18 +15,6 @@ msgid "It was not possible to load Data Statistics"
 msgstr ""
 
 msgid "No data to show."
-msgstr ""
-
-msgid "Performing Maintenance..."
-msgstr ""
-
-msgid "Maintenance done"
-msgstr ""
-
-msgid "An unexpected error happened during maintenance"
-msgstr ""
-
-msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
@@ -209,6 +197,18 @@ msgstr ""
 msgid "Add new lock exception"
 msgstr ""
 
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
 msgid "It was not possible to load data"
 msgstr ""
 
@@ -243,6 +243,54 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
+msgstr ""
+
+msgid "Generating Resource Tables..."
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr ""
+
+msgid "Organisation unit category option combo"
+msgstr ""
+
+msgid "Category option group set structure"
+msgstr ""
+
+msgid "Data element group set structure"
+msgstr ""
+
+msgid "Indicator group set structure"
+msgstr ""
+
+msgid "Organisation unit group set structure"
+msgstr ""
+
+msgid "Category structure"
+msgstr ""
+
+msgid "Data element category option combo name"
+msgstr ""
+
+msgid "Data element structure"
+msgstr ""
+
+msgid "Period structure"
+msgstr ""
+
+msgid "Date period structure"
+msgstr ""
+
+msgid "Data element category option combinations"
+msgstr ""
+
+msgid "GENERATE TABLES"
 msgstr ""
 
 msgid "Performing data integrity checks..."

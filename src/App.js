@@ -85,6 +85,7 @@ class App extends PureComponent {
         const translatedSections = sections.map(section => Object.assign(
             section,
             {
+                icon: section.info.icon,
                 label: translator(section.info.label),
                 containerElement: <Link to={section.path} />,
             },

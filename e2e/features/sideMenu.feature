@@ -14,6 +14,7 @@ Feature: Side Menu
       | item                     | header                    |
       | Data Integrity           | Data Integrity            |
       | Maintenance              | Maintenance               |
+      | Resource Tables          | Resource Tables           |
       | Data Statistics          | Data Statistics           |
       | Lock Exception           | Lock Exception Management |
       | Min-Max Value Generation | Min-Max Value Generation  |

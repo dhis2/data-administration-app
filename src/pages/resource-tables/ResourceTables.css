@@ -1,0 +1,11 @@
+.description {
+    margin-bottom: 32px;
+}
+
+.description > div {
+    margin-bottom: 10px;
+}
+
+.tableName {
+    color: #757575;
+}

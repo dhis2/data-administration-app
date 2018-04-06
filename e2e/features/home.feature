@@ -14,6 +14,7 @@ Feature: Home
       | item                     | text_link                 |
       | Data Integrity           | Check Data Integrity      |
       | Maintenance              | Perform Maintenance       |
+      | Resource Tables          | Generate Resource Tables  |
       | Data Statistics          | Overview Data Statistics  |
       | Lock Exception           | Lock Exception Management |
       | Min-Max Value Generation | Generate Min-Max Value    |
@@ -26,6 +27,7 @@ Feature: Home
       | item                     | header                    |
       | Data Integrity           | Data Integrity            |
       | Maintenance              | Maintenance               |
+      | Resource Tables          | Resource Tables           |
       | Data Statistics          | Data Statistics           |
       | Lock Exception           | Lock Exception Management |
       | Min-Max Value Generation | Min-Max Value Generation  |

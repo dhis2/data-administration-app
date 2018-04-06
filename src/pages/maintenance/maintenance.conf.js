@@ -1,5 +1,4 @@
-export const RESOURCE_TABLES_OPTION_KEY = 'home';
-
+export const MAINTENANCE_ENDPOINT = 'maintenance';
 export const PAGE_TITLE = 'Maintenance';
 
 export const maintenanceCheckboxes = [
@@ -68,9 +67,5 @@ export const maintenanceCheckboxes = [
     {
         key: 'appReload',
         label: 'Reload apps',
-    },
-    {
-        key: RESOURCE_TABLES_OPTION_KEY,
-        label: 'Generate resource tables',
     },
 ];

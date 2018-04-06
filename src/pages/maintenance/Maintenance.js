@@ -13,7 +13,11 @@ import classNames from 'classnames';
 import Page from '../Page';
 
 // App configs
-import { maintenanceCheckboxes, RESOURCE_TABLES_OPTION_KEY, PAGE_TITLE } from './maintenance.conf';
+import {
+    maintenanceCheckboxes,
+    PAGE_TITLE,
+    MAINTENANCE_ENDPOINT,
+} from './maintenance.conf';
 import { getDocsKeyForSection } from '../sections.conf';
 
 import styles from './Maintenance.css';
@@ -36,6 +40,7 @@ class Maintenance extends Page {
 
         // state defaults
         this.state = {
+            intervalId: null,
             checkboxes,
             loading: false,
         };
@@ -56,6 +61,37 @@ class Maintenance extends Page {
         if (nextState !== {}) {
             this.setState(nextState);
         }
+    }
+
+    setLoadingPageState() {
+        const translator = this.context.translator;
+        this.context.updateAppState({
+            showSnackbar: true,
+            snackbarConf: {
+                type: LOADING,
+                message: translator('Performing Maintenance...'),
+            },
+            pageState: {
+                loading: true,
+            },
+        });
+    }
+
+    setLoadedPageWithErrorState(error) {
+        const translator = this.context.translator;
+        const messageError = error && error.message ?
+            error.message :
+            translator('An unexpected error happened during maintenance');
+        this.context.updateAppState({
+            showSnackbar: true,
+            snackbarConf: {
+                type: ERROR,
+                message: messageError,
+            },
+            pageState: {
+                loading: false,
+            },
+        });
     }
 
     selectedCheckboxesCount() {
@@ -81,10 +117,8 @@ class Maintenance extends Page {
         for (let i = 0; i < checkboxKeys.length; i++) {
             const key = checkboxKeys[i];
             const checked = this.state.checkboxes[key].checked;
-            if (key !== RESOURCE_TABLES_OPTION_KEY && checked) {
-                formData = formData || new FormData();
-                formData.append(key, checked);
-            }
+            formData = formData || new FormData();
+            formData.append(key, checked);
         }
 
         return formData;
@@ -93,32 +127,11 @@ class Maintenance extends Page {
     performMaintenance() {
         const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
-
-        const apiRequests = [];
         const formData = this.buildFormData();
+
         if (formData) {
-            apiRequests.push(api.post('maintenance', formData));
-        }
-
-        // resource table option is checked. It is treated differently
-        if (this.state.checkboxes[RESOURCE_TABLES_OPTION_KEY].checked) {
-            apiRequests.push(api.post('resourceTables'));
-        }
-
-        if (apiRequests.length > 0) {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                    message: translator('Performing Maintenance...'),
-                },
-                pageState: {
-                    checkboxes: this.state.checkboxes,
-                    loading: true,
-                },
-            });
-
-            Promise.all(apiRequests).then(() => {
+            this.setLoadingPageState();
+            api.post(MAINTENANCE_ENDPOINT, formData).then(() => {
                 if (this.isPageMounted()) {
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -127,28 +140,13 @@ class Maintenance extends Page {
                             message: translator('Maintenance done'),
                         },
                         pageState: {
-                            checkboxes: this.state.checkboxes,
                             loading: false,
                         },
                     });
                 }
             }).catch((error) => {
                 if (this.isPageMounted()) {
-                    const messageError = error && error.message ?
-                        error.message :
-                        translator('An unexpected error happened during maintenance');
-
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: messageError,
-                        },
-                        pageState: {
-                            checkboxes: this.state.checkboxes,
-                            loading: false,
-                        },
-                    });
+                    this.setLoadedPageWithErrorState(error);
                 }
             });
         }
@@ -156,7 +154,7 @@ class Maintenance extends Page {
 
     render() {
         const translator = this.context.translator;
-        const checkboxes = this.state.checkboxes;
+        const checkboxes = Object.assign({}, this.state.checkboxes);
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
             const toggleCheckbox = (() => {
