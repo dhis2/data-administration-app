@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Card, CardText } from 'material-ui/Card';
 import { RaisedButton } from 'material-ui';
 
 import { ERROR, LOADING, SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
@@ -148,96 +149,102 @@ class ResourceTable extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <div className={styles.description}>
-                    <div>
-                        {translator(i18nKeys.resourceTables.organisationUnitStructure)} <span
-                            className={styles.tableName}
-                        >
+                <Card>
+                    <CardText>
+                        <div className={styles.description}>
+                            <div>
+                                {translator(i18nKeys.resourceTables.organisationUnitStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_orgunitstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.organistionUnitCategoryOptionCombo)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.organistionUnitCategoryOptionCombo)} <span
+                                    className={styles.tableName}
+                                >
                             (_orgunitstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.categoryOptionGroupSetStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.categoryOptionGroupSetStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_categoryoptiongroupsetstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.dataElementGroupSetStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.dataElementGroupSetStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_dataelementgroupsetstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.indicatorGroupSetStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.indicatorGroupSetStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_indicatorgroupsetstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.organisationUnitGroupSetStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.organisationUnitGroupSetStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_organisationunitgroupsetstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.categoryStructure)} <span className={styles.tableName}>
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.categoryStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_categorystructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.dataElementCategoryOptionComboName)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.dataElementCategoryOptionComboName)} <span
+                                    className={styles.tableName}
+                                >
                             (_categoryoptioncomboname)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.dataElementStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.dataElementStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_dataelementstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.periodStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.periodStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_periodstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.dataPeriodStructure)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.dataPeriodStructure)} <span
+                                    className={styles.tableName}
+                                >
                             (_dateperiodstructure)
-                        </span>
-                    </div>
-                    <div>
-                        {translator(i18nKeys.resourceTables.dataElementCategoryOptionCombinations)} <span
-                            className={styles.tableName}
-                        >
+                                </span>
+                            </div>
+                            <div>
+                                {translator(i18nKeys.resourceTables.dataElementCategoryOptionCombinations)} <span
+                                    className={styles.tableName}
+                                >
                             (_dataelementcategoryoptioncombo)
-                        </span>
-                    </div>
-                </div>
-                <RaisedButton
-                    primary
-                    label={translator(i18nKeys.resourceTables.actionButton)}
-                    onClick={this.initResourceTablesGeneration}
-                    disabled={this.state.loading}
-                />
+                                </span>
+                            </div>
+                        </div>
+                        <RaisedButton
+                            primary
+                            label={translator(i18nKeys.resourceTables.actionButton)}
+                            onClick={this.initResourceTablesGeneration}
+                            disabled={this.state.loading}
+                        />
+                    </CardText>
+                </Card>
             </div>
         );
     }
