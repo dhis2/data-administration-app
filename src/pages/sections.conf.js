@@ -1,6 +1,7 @@
 // Components
 import DataIntegrity from './data-integrity/DataIntegrity';
 import Maintenance from './maintenance/Maintenance';
+import ResourceTables from './resource-tables/ResourceTables';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
@@ -10,6 +11,7 @@ import { i18nKeys } from '../i18n';
 
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
 export const MAINTENANCE_SECTION_KEY = 'maintenance';
+export const RESOURCE_TABLES_SECTION_KEY = 'resourceTables';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
 export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
 export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
@@ -37,6 +39,18 @@ export const sections = [
             description: i18nKeys.maintenance.description,
             actionText: i18nKeys.maintenance.actionText,
             docs: 'data_admin_maintenance',
+        },
+    },
+    {
+        key: RESOURCE_TABLES_SECTION_KEY,
+        path: '/resourceTables',
+        component: ResourceTables,
+        info: {
+            label: i18nKeys.resourceTables.label,
+            icon: 'view_list',
+            description: i18nKeys.resourceTables.description,
+            actionText: i18nKeys.resourceTables.actionText,
+            docs: 'dataAdmin_resourceTables',
         },
     },
     {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-04T12:38:01.254Z\n"
-"PO-Revision-Date: 2018-04-04T12:38:01.254Z\n"
+"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
+"PO-Revision-Date: 2018-04-06T07:26:26.304Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -165,7 +165,63 @@ msgstr ""
 msgid "Reload apps"
 msgstr ""
 
-msgid "Generate resource tables"
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+msgid "Generating Resource Tables..."
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr ""
+
+msgid "Organisation unit category option combo"
+msgstr ""
+
+msgid "Category option group set structure"
+msgstr ""
+
+msgid "Data element group set structure"
+msgstr ""
+
+msgid "Indicator group set structure"
+msgstr ""
+
+msgid "Organisation unit group set structure"
+msgstr ""
+
+msgid "Category structure"
+msgstr ""
+
+msgid "Data element category option combo name"
+msgstr ""
+
+msgid "Data element structure"
+msgstr ""
+
+msgid "Period structure"
+msgstr ""
+
+msgid "Date period structure"
+msgstr ""
+
+msgid "Data element category option combinations"
 msgstr ""
 
 msgid "Data Statistics"
@@ -505,7 +561,4 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
-msgstr ""
-
-msgid "An unexpected error happened during operation"
 msgstr ""

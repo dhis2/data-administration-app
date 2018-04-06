@@ -14,6 +14,7 @@ Feature: Help
       | section                  |
       | Data Integrity           |
       | Maintenance              |
+      | Resource Tables          |
       | Data Statistics          |
       | Lock Exception           |
       | Min-Max Value Generation |

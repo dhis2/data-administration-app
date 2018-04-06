@@ -1,8 +1,7 @@
 // i18n
 import { i18nKeys } from '../../i18n';
 
-export const RESOURCE_TABLES_OPTION_KEY = 'resourceTables';
-
+export const MAINTENANCE_ENDPOINT = 'maintenance';
 export const PAGE_TITLE = i18nKeys.maintenance.title;
 
 export const maintenanceCheckboxes = [
@@ -65,9 +64,5 @@ export const maintenanceCheckboxes = [
     {
         key: 'appReload',
         label: i18nKeys.maintenance.appReload,
-    },
-    {
-        key: RESOURCE_TABLES_OPTION_KEY,
-        label: i18nKeys.maintenance.resourceTables,
     },
 ];
