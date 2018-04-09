@@ -55,7 +55,13 @@ class DataIntegrityCard extends PureComponent {
                         Object.keys(this.props.content).map(element => (
                             <span key={element}>
                                 <h4>{element}</h4>
-                                <p>{this.props.content[element].join(', ')}</p>
+                                <p>
+                                    {
+                                        Array.isArray(this.props.content[element]) ?
+                                            this.props.content[element].join(', ') :
+                                            this.props.content[element]
+                                    }
+                                </p>
                             </span>
                         ))
                     }
@@ -65,9 +71,15 @@ class DataIntegrityCard extends PureComponent {
             cardText = (
                 <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
                     {
-                        this.props.content.map(string =>
-                            <p key={string}>{string}</p>,
-                        )
+                        this.props.content.map(element => (
+                            <p key={element}>
+                                {
+                                    Array.isArray(element) ?
+                                        element.join(', ') :
+                                        element
+                                }
+                            </p>
+                        ))
                     }
                 </CardText>
             );
