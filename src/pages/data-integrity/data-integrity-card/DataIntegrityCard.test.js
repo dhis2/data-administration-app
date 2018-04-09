@@ -21,6 +21,19 @@ const errorArrayCardSample = {
     content: ['Check 1', 'Check 2', 'Check 3'],
 };
 
+const errorArray_ArrayCardSample = {
+    title: 'Integrity Check Array/Array - With Errors',
+    content: [['Check 1', 'Check 2', 'Check 3']],
+};
+
+const errorObjectString = {
+    title: 'Integrity Check Object/String - With Errors',
+    content: {
+        'IDSR Measles': 'IDSR Weekly (Start Wednesday)',
+        'IDSR Malaria': 'IDSR Weekly (Start Wednesday)',
+    },
+};
+
 const errorObjectCardSample = {
     title: 'Integrity Check Object - With Errors',
     content: {
@@ -76,6 +89,11 @@ it('DataIntegrityCard - error card renders correct error content when typeof Arr
     expect(wrapper.find(Card).find(CardText).find('p').at(1).text()).toBe('Check 2');
 });
 
+it('DataIntegrityCard - error card renders correct error content when typeof Array inside Array', () => {
+    const wrapper = ownShallowError(errorArray_ArrayCardSample);
+    expect(wrapper.find(Card).find(CardText).find('p').first().text()).toBe('Check 1, Check 2, Check 3');
+});
+
 it('DataIntegrityCard - error card has correct title style when typeof {}.', () => {
     const wrapper = ownShallowError(errorObjectCardSample);
     expect(wrapper.find(Card).find({ titleColor: '#ff5722' })).toHaveLength(1);
@@ -91,6 +109,13 @@ it('DataIntegrityCard - error card renders correct error content when typeof {}.
     expect(wrapper.find(Card).find(CardText).find('span').first().find('h4').text()).toBe('IDSR Measles');
     expect(wrapper.find(Card).find(CardText).find('span').first().find('p').text()).toBe('IDSR Weekly (Start' +
         ' Wednesday), IDSR Weekly');
+});
+
+it('DataIntegrityCard - error card renders correct error content when typeof {} - just strings.', () => {
+    const wrapper = ownShallowError(errorObjectString);
+    expect(wrapper.find(Card).find(CardText).find('span').first().find('h4').text()).toBe('IDSR Measles');
+    expect(wrapper.find(Card).find(CardText).find('span').first().find('p').text()).toBe('IDSR Weekly (Start' +
+        ' Wednesday)');
 });
 
 it('DataIntegrityCard - error card renders correct open button.', () => {
