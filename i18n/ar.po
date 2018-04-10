@@ -1,0 +1,581 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06T10:22:26.328Z\n"
+"PO-Revision-Date: 2018-04-10 19:07+0000\n"
+"Last-Translator: Translator 2 <tr2@emata.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Pootle 2.8\n"
+"X-POOTLE-MTIME: 1523387250.210542\n"
+
+msgid "Data Integrity"
+msgstr "تكامل البيانات"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta "
+"data setup."
+msgstr ""
+"تشغيل اختبارات تكامل البيانات والكشف عن الحالات الشاذة والمشاكل في إعداد "
+"البيانات الوصفية."
+
+msgid "Check Data Integrity"
+msgstr "فحص تكامل البيانات"
+
+msgid "Performing data integrity checks..."
+msgstr "جار تنفيذ اختبارات تكامل البيانات..."
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr "حدث خطأ غير متوقع أثناء اختبارات تكامل البيانات"
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr "تشغيل اختبارات تكامل البيانات"
+
+msgid "Data elements without data set"
+msgstr "عناصر البيانات بدون حزمة بيانات"
+
+msgid "Data elements without groups"
+msgstr "عناصر البيانات بدون مجموعات"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "عناصر البيانات المنتهكة لحزم المجموعات الحصرية"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr "تم إسناد عناصر البيانات إلى حزم بيانات بأنواع فترات زمنية مختلفة"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "حزم البيانات غير المسندة إلى وحدات تنظيمية"
+
+msgid "Indicators with identical formulas"
+msgstr "المؤشرات بصيغ متطابقة"
+
+msgid "Indicators without groups"
+msgstr "المؤشرات بدون مجموعات"
+
+msgid "Invalid indicator numerators"
+msgstr "بسوط المؤشر غير صالحة"
+
+msgid "Invalid indicator denominators"
+msgstr "مقامات المؤشر غير صالحة"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "المؤشرات المنتهكة لحزم المجموعات الحصرية"
+
+msgid "Organisation units with cyclic references"
+msgstr "الوحدات التنظيمية مع المراجع الدورية"
+
+msgid "Orphaned organisation units"
+msgstr "الوحدات التنظيمية اليتيمة"
+
+msgid "Organisation units without groups"
+msgstr "الوحدات التنظيمية بدون مجموعات"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr "الوحدات التنظيمية المنتهكة لحزم المجموعات الحصرية"
+
+msgid "Organisation unit groups without group sets"
+msgstr "مجموعات الوحدات التنظيمية بدون حزم المجموعات"
+
+msgid "Validation rules without groups"
+msgstr "قواعد التحقق بدون مجموعات"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "تعابير الطرف الأيسر لقاعدة التحقق غير صالحة"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "تعابير الطرف الأيمن لقاعدة التحقق غير صالحة"
+
+msgid "Invalid program indicator expressions"
+msgstr "تعابير مؤشر البرنامج غير صالحة"
+
+msgid "Invalid program indicator filters"
+msgstr "عوامل تصفية مؤشر البرنامج غير صالحة"
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr "يوجد عناصر بيانات في النموذج، لكن ليس في النموذج أو الأقسام"
+
+msgid "Invalid category combinations"
+msgstr "أمزجة الفئات غير صالحة"
+
+msgid "Duplicate periods"
+msgstr "تكرار الفترات الزمنية"
+
+msgid "Maintenance"
+msgstr "الضبط"
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+"تنفيذ مهام الضبط وتوليد جداول قاعدة بيانات المصادر للتسلسل الهرمي للوحدة "
+"التنظيمية وهيكلية حزمة المجموعات."
+
+msgid "Perform Maintenance"
+msgstr "تنفيذ الضبط"
+
+msgid "PERFORM MAINTENANCE"
+msgstr "تنفيذ الضبط"
+
+msgid "Performing Maintenance..."
+msgstr "جار تنفيذ الضبط"
+
+msgid "Maintenance done"
+msgstr "تم الضبط"
+
+msgid "An unexpected error happened during maintenance"
+msgstr "حدث خطأ غير متوقع أثناء الضبط"
+
+msgid "Clear analytics tables"
+msgstr "مسح جداول التحليلات"
+
+msgid "Analyze analytics tables"
+msgstr "تحليل جداول التحليلات"
+
+msgid "Remove zero data values"
+msgstr "إزالة قيم البيانات الصفرية"
+
+msgid "Permanently remove soft deleted data values"
+msgstr "إزالة قيم البيانات المحذوفة بشكل دائم"
+
+msgid "Permanently remove soft deleted events"
+msgstr "إزالة الأحداث المحذوفة بشكل دائم"
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr "إزالة التسجيلات المحذوفة بشكل نهائي"
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr "إزالة نماذج الكيانات المتتبعة المحذوفة بشكل نهائي"
+
+msgid "Prune periods"
+msgstr "تقليم الفترات الزمنية"
+
+msgid "Remove expired invitations"
+msgstr "إزالة الدعوات المنتهية الصلاحية"
+
+msgid "Drop SQL views"
+msgstr "إزالة منظورات SQL"
+
+msgid "Create SQL views"
+msgstr "إنشاء منظورات SQL"
+
+msgid "Update category option combinations"
+msgstr "تحديث أمزجة خيارات الفئة"
+
+msgid "Update organisation unit paths"
+msgstr "تحديث مسارات الوحدة التنظيمية"
+
+msgid "Clear application cache"
+msgstr "تنظيف ذاكرة التخزين المؤقت للتطبيق"
+
+msgid "Reload apps"
+msgstr "إعادة تحميل التطبيقات"
+
+msgid "Resource Tables"
+msgstr "جداول المصادر"
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"توليد جداول قاعدة بيانات المصادر للتسلسل الهرمي للوحدة التنظيمية وهيكلية "
+"حزمة المجموعات وغيرها."
+
+msgid "Generate Resource Tables"
+msgstr "توليد جداول المصادر"
+
+msgid "GENERATE TABLES"
+msgstr "توليد الجداول"
+
+msgid "Generating Resource Tables..."
+msgstr "جار توليد جداول المصادر..."
+
+msgid "Resource Tables generated"
+msgstr "تم توليد جداول المصادر"
+
+msgid "An unexpected error happened during operation"
+msgstr "حدث خطأ غير متوقع أثناء العملية"
+
+msgid "Organisation unit structure"
+msgstr "هيكلية الوحدة التنظيمية"
+
+msgid "Organisation unit category option combo"
+msgstr "مزيج خيارات فئة الوحدات التنظيمية"
+
+msgid "Category option group set structure"
+msgstr "هيكلية حزمة مجموعات خيارات الفئة"
+
+msgid "Data element group set structure"
+msgstr "هيكلية حزمة مجموعات عناصر البيانات"
+
+msgid "Indicator group set structure"
+msgstr "هيكلية حزمة مجموعات المؤشرات"
+
+msgid "Organisation unit group set structure"
+msgstr "هيكلية حزمة مجموعات الوحدات التنظيمية"
+
+msgid "Category structure"
+msgstr "هيكلية الفئة"
+
+msgid "Data element category option combo name"
+msgstr "اسم مزيج خيارات فئة عناصر البيانات"
+
+msgid "Data element structure"
+msgstr "هيكلية عناصر البيانات"
+
+msgid "Period structure"
+msgstr "هيكلية الفترة الزمنية"
+
+msgid "Date period structure"
+msgstr "هيكلية الفترة الزمنية للتاريخ"
+
+msgid "Data element category option combinations"
+msgstr "أمزجة خيارات فئة عناصر البيانات"
+
+msgid "Data Statistics"
+msgstr "إحصائيات البيانات"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"استعراض عدد العناصر في قاعدة البيانات، مثل عناصر البيانات، المؤشرات، حزم "
+"البيانات وقيم البيانات."
+
+msgid "Overview Data Statistics"
+msgstr "نظرة عامة على إحصائيات البيانات"
+
+msgid "Loading Data Statistics..."
+msgstr "جار تحميل إحصائيات البيانات..."
+
+msgid "It was not possible to load Data Statistics"
+msgstr "لم يتم التمكن من تحميل إحصائيات البيانات"
+
+msgid "No data to show."
+msgstr "لا توجد بيانات لعرضها."
+
+msgid "Object type"
+msgstr "نوع العنصر"
+
+msgid "Last hour"
+msgstr "الساعة الماضية"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "Last"
+msgstr "الأخير"
+
+msgid "days"
+msgstr "الأيام"
+
+msgid "Users logged in"
+msgstr "المستخدمون الذين قاموا بتسجيل الدخول"
+
+msgid "User account invitations"
+msgstr "دعوات حساب المستخدم"
+
+msgid "Pending invitations"
+msgstr "الدعوات المعلقة"
+
+msgid "Expired invitations"
+msgstr "الدعوات منتهية الصلاحية"
+
+msgid "Data values"
+msgstr "قيم البيانات"
+
+msgid "Events"
+msgstr "الأحداث"
+
+msgid "Indicators"
+msgstr "المؤشرات"
+
+msgid "Periods"
+msgstr "الفترات الزمنية"
+
+msgid "Organisation units"
+msgstr "الوحدات التنظيمية"
+
+msgid "Validation rules"
+msgstr "قواعد التحقق"
+
+msgid "Programs"
+msgstr "البرامج"
+
+msgid "Data elements"
+msgstr "عناصر البيانات"
+
+msgid "Organisation unit groups"
+msgstr "مجموعات الوحدات التنظيمية"
+
+msgid "Pivot tables"
+msgstr "الجداول المحورية"
+
+msgid "Indicator types"
+msgstr "أنواع المؤشرات"
+
+msgid "Data sets"
+msgstr "حزم البيانات"
+
+msgid "User groups"
+msgstr "مجموعات المستخدمين"
+
+msgid "Users"
+msgstr "المستخدمون"
+
+msgid "Maps"
+msgstr "الخرائط"
+
+msgid "Indicator groups"
+msgstr "مجموعات المؤشرات"
+
+msgid "Charts"
+msgstr "المخططات البيانية"
+
+msgid "Data element groups"
+msgstr "مجموعات عناصر البيانات"
+
+msgid "Dashboards"
+msgstr "لوحات المعلومات"
+
+msgid "Lock Exception Management"
+msgstr "إدارة استثناءات القفل"
+
+msgid "Lock Exception"
+msgstr "استثناء القفل"
+
+msgid "Batch Deletion"
+msgstr "حذف الدفعة"
+
+msgid "Add new lock exception"
+msgstr "إضافة استثناء قفل جديد"
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data "
+"entry forms."
+msgstr "إضافة أو إزالة استثناءات القواعد القياسية لقفل نماذج إدخال البيانات."
+
+msgid "BATCH DELETION"
+msgstr "حذف الدفعة"
+
+msgid "CANCEL"
+msgstr "إلغاء"
+
+msgid "ADD"
+msgstr "إضافة"
+
+msgid "Loading Lock Exceptions..."
+msgstr "جار تحميل استثناءات القفل..."
+
+msgid "Adding Lock Exception..."
+msgstr "جار إضافة استثناء القفل..."
+
+msgid "Lock Exception removed"
+msgstr "تمت إزالة استثناء القفل"
+
+msgid "Lock Exception Added"
+msgstr "تمت إضافة استثناء القفل"
+
+msgid "Are you sure?"
+msgstr "هل أنت متأكد؟"
+
+msgid "CONFIRM"
+msgstr "تأكيد"
+
+msgid "Select a Data Set"
+msgstr "تحديد حزمة بيانات"
+
+msgid "Updating Organisation Units Tree..."
+msgstr "جار تحديث شجرة الوحدات التنظيمية..."
+
+msgid "For organisation units within"
+msgstr "للوحدات التنظيمية في"
+
+msgid "Period"
+msgstr "الفترة الزمنية"
+
+msgid "Data Set"
+msgstr "حزمة البيانات"
+
+msgid "Organisation Unit"
+msgstr "الوحدة التنظيمية"
+
+msgid "Organisation Unit Group"
+msgstr "مجموعة الوحدات التنظيمية"
+
+msgid "Organisation Unit Level"
+msgstr "مستوى الوحدة التنظيمية"
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "Deselect"
+msgstr "إلغاء التحديد"
+
+msgid "Select All Org Units"
+msgstr "تحديد جميع الوحدات التنظيمية"
+
+msgid "Deselect All Org Units"
+msgstr "إلغاء تحديد جميع الوحدات التنظيمية"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Show Details"
+msgstr "إظهار التفاصيل"
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Actions"
+msgstr "الإجراءات"
+
+msgid "of"
+msgstr " "
+
+msgid "week"
+msgstr "الأسبوع"
+
+msgid "month"
+msgstr "الشهر"
+
+msgid "year"
+msgstr "السنة"
+
+msgid "bi monthly"
+msgstr "أشهر مزدوجة"
+
+msgid "day"
+msgstr "اليوم"
+
+msgid "jan"
+msgstr "كانون2"
+
+msgid "feb"
+msgstr "شباط"
+
+msgid "mar"
+msgstr "آذار"
+
+msgid "apr"
+msgstr "نيسان"
+
+msgid "may"
+msgstr "أيار"
+
+msgid "jun"
+msgstr "حزيران"
+
+msgid "jul"
+msgstr "تموز"
+
+msgid "aug"
+msgstr "آب"
+
+msgid "sep"
+msgstr "أيلول"
+
+msgid "oct"
+msgstr "تشرين1"
+
+msgid "nov"
+msgstr "تشرين2"
+
+msgid "dec"
+msgstr "كانون1"
+
+msgid "jan-feb"
+msgstr "كانون2-شباط"
+
+msgid "mar-apr"
+msgstr "آذار-نيسان"
+
+msgid "may-jun"
+msgstr "أيار-حزيران"
+
+msgid "jul-aug"
+msgstr "تموز-آب"
+
+msgid "sep-oct"
+msgstr "أيلول-تشرين1"
+
+msgid "nov-dec"
+msgstr "تشرين2-كانون1"
+
+msgid "quarter"
+msgstr "ربع السنة"
+
+msgid "Q1"
+msgstr "الربع1"
+
+msgid "Q2"
+msgstr "الربع2"
+
+msgid "Q3"
+msgstr "الربع3"
+
+msgid "Q4"
+msgstr "الربع4"
+
+msgid "six monthly"
+msgstr "نصف سنة (فترة من ستة أشهر)"
+
+msgid "jan-jun"
+msgstr "كانون2-حزيران"
+
+msgid "jul-dec"
+msgstr "تموز-كانون1"
+
+msgid "apr-sep"
+msgstr "نيسان-أيلول"
+
+msgid "oct-mar"
+msgstr "تشرين1-آذار"
+
+msgid "Min-Max Value Generation"
+msgstr "توليد قيم الحد الأدنى-الحد الأعلى"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"توليد قيم الحد الأدنى-الحد الأعلى والتي يمكن استخدامها للتحقق من صحة "
+"البيانات أثناء إدخال البيانات وعمليات التحقق."
+
+msgid "Generate Min-Max Value"
+msgstr "توليد قيم الحد الأدنى-الحد الأعلى"
+
+msgid "It was not possible to load data"
+msgstr "لم يتم التمكن من تحميل البيانات"
+
+msgid "Select Data set and Organisation Unit"
+msgstr "تحديد حزمة البيانات والوحدة التنظيمية"
+
+msgid "Doing Min Max generation..."
+msgstr "جار توليد قيم الحد الأدنى-الحد الأعلى..."
+
+msgid "Removing Min Max generation..."
+msgstr "جار إزالة توليد قيم الحد الأدنى-الحد الأعلى..."
+
+msgid "Min Max generation done"
+msgstr "تم توليد قيم الحد الأدنى-الحد الأعلى"
+
+msgid "Min Max removal done"
+msgstr "تمت إزالة قيم الحد الأدنى-الحد الأعلى"
+
+msgid "Loading data sets"
+msgstr "جار تحميل حزم البيانات"
+
+msgid "Organisation Unit Selection"
+msgstr "تحديد الوحدة التنظيمية"
+
+msgid "GENERATE"
+msgstr "توليد"
+
+msgid "REMOVE"
+msgstr "إزالة"
