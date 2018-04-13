@@ -1,11 +1,17 @@
-const { readdirSync, readFileSync, writeFileSync, existsSync } = require('fs');
+const { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } = require('fs');
+const path = require('path');
 const converter = require('i18next-conv');
-const poFolder = 'i18n';
-const finalI18nFolfer = 'public/i18n';
+const poFolder = './i18n';
+const finalI18nFolfer = './public/i18n';
 const options = {
     skipUntranslated: true,
     keyseparator: '°#°#°#°#°'
 };
+
+if (!existsSync(finalI18nFolfer)){
+    mkdirSync(finalI18nFolfer);
+}
+
 
 if (existsSync(poFolder)){
     const files = readdirSync(poFolder);
@@ -29,5 +35,3 @@ if (existsSync(poFolder)){
         }
     };
 }
-
-
