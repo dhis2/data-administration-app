@@ -33,7 +33,7 @@ class GridSection extends PureComponent {
         return (
             <Link to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={classNames('section', styles.gridElement)}>
-                    <div className={styles.gridTitleBar}>
+                    <div className={classNames('row', styles.gridTitleBar)}>
                         <span className={classNames('section-title', styles.gridTitleDescription)}>
                             {this.props.section.info.label}
                         </span>
@@ -43,10 +43,10 @@ class GridSection extends PureComponent {
                             {this.props.section.info.icon}
                         </FontIcon>
                     </div>
-                    <span className={classNames('section-description', styles.gridDescription)}>
+                    <span className={classNames('section-description', 'row', styles.gridDescription)}>
                         {translator(this.props.section.info.description)}
                     </span>
-                    <span className={classNames('section-action-text', styles.gridActionText)}>
+                    <span className={classNames('section-action-text', 'row', styles.gridActionText)}>
                         {translator(this.props.section.info.actionText)}
                     </span>
                 </GridTile>
