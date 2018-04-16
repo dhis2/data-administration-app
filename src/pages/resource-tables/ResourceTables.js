@@ -9,7 +9,8 @@ import Page from '../Page';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
 import {
-    PULL_INTERVAL, RESOURCE_TABLES_ENDPOINT,
+    PULL_INTERVAL,
+    RESOURCE_TABLES_ENDPOINT,
     RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT,
 } from '../resource-tables/resource-tables.conf';
 
@@ -124,7 +125,6 @@ class ResourceTable extends Page {
                                 message: translator(i18nKeys.resourceTables.actionPerformed),
                             },
                             pageState: {
-                                checkboxes: this.state.checkboxes,
                                 loading: false,
                             },
                         });
