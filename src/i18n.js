@@ -256,6 +256,14 @@ export const i18nKeys = {
         actionButton: 'GENERATE',
         removeButton: 'REMOVE',
     },
+    analytics: {
+        title: 'Analytics tables management',
+        label: 'Analytics',
+        description: 'The data mart is a set of tables in the DHIS database which is used by all reporting and ' +
+        'analysis tools to retrieve data from. ',
+        actionText: 'Analytics tables update',
+        actionButton: 'START EXPORT',
+    },
     messages: {
         unexpectedError: 'An unexpected error happened during operation',
     },
