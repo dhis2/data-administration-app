@@ -182,7 +182,8 @@ class Analytics extends Page {
             if (this.isPageMounted() && response) {
                 let completed = false;
                 const currentNotifications = [...this.state.notifications];
-                const notificationResponses = response[this.state.jobId] || response;
+                // FIXME waiting for REST API fixes: response sending multiple root elements. Use this.state.jobId
+                const notificationResponses = response[Object.keys(response)[0]] || response || [];
 
                 notificationResponses.forEach((notification) => {
                     currentNotifications.push(notification);
@@ -247,6 +248,7 @@ class Analytics extends Page {
         );
     };
 
+    /* FIXME Pull Notification Table Component out */
     renderNotificationIcon = (notification) => {
         const notificationIconInfo = notificationStylesInfo[notification.level];
         if (notificationIconInfo && notificationIconInfo.icon) {
