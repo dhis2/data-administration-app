@@ -8,12 +8,7 @@ import {
     Checkbox,
     SelectField,
     MenuItem,
-    Table,
-    TableBody,
-    TableRow,
-    TableRowColumn,
     RaisedButton,
-    FontIcon,
 } from 'material-ui';
 
 import classNames from 'classnames';
@@ -21,6 +16,7 @@ import classNames from 'classnames';
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
 import Page from '../Page';
+import NotificationsTable from './NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
 import {
@@ -31,9 +27,6 @@ import {
     LAST_YEARS_INPUT_KEY,
     analyticsCheckboxes,
     lastYearElements,
-    analyticsStyles,
-    notificationStylesInfo,
-    formatDateFromServer,
 } from '../analytics/analytics.conf';
 
 // i18n
@@ -249,42 +242,6 @@ class Analytics extends Page {
         );
     };
 
-    /* FIXME Pull Notification Table Component out */
-    renderNotificationIcon = (notification) => {
-        const notificationIconInfo = notificationStylesInfo[notification.level];
-        if (notificationIconInfo && notificationIconInfo.icon) {
-            return (<FontIcon
-                className="material-icons"
-                style={analyticsStyles.iconStyle}
-                color={notificationIconInfo.color}
-            >
-                {notificationIconInfo.icon}</FontIcon>
-            );
-        }
-
-        return null;
-    }
-
-    /* FIXME Pull Notification Table Component out */
-    renderNotification = (notification, index) => (
-        <TableRow
-            key={notification.uid}
-            displayBorder={false}
-            style={Object.assign(
-                {},
-                notificationStylesInfo[notification.level].row,
-                (index + 1) % 2 === 0 ? analyticsStyles.evenRowStyle : {})
-            }
-        >
-            <TableRowColumn style={analyticsStyles.timeColumnStyle}>
-                {formatDateFromServer(notification.time)}
-            </TableRowColumn>
-            <TableRowColumn style={analyticsStyles.messageColumnStyle}>
-                {notification.message} {this.renderNotificationIcon(notification)}
-            </TableRowColumn>
-        </TableRow>
-    )
-
     render() {
         const translator = this.context.translator;
         const gridElements = analyticsCheckboxes.map(this.renderCheckbox);
@@ -330,15 +287,7 @@ class Analytics extends Page {
                 {this.state.notifications.length > 0 &&
                     <Card className={styles.cardContainer}>
                         <CardText>
-                            <Table
-                                selectable={false}
-                            >
-                                <TableBody
-                                    displayRowCheckbox={false}
-                                >
-                                    {this.state.notifications.map(this.renderNotification)}
-                                </TableBody>
-                            </Table>
+                            <NotificationsTable notifications={this.state.notifications} />
                         </CardText>
                     </Card>
                 }
