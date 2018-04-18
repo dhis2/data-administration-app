@@ -33,6 +33,7 @@ import {
     lastYearElements,
     analyticsStyles,
     notificationStylesInfo,
+    formatDateFromServer,
 } from '../analytics/analytics.conf';
 
 // i18n
@@ -275,7 +276,9 @@ class Analytics extends Page {
                 (index + 1) % 2 === 0 ? analyticsStyles.evenRowStyle : {})
             }
         >
-            <TableRowColumn style={analyticsStyles.timeColumnStyle}>{notification.time}</TableRowColumn>
+            <TableRowColumn style={analyticsStyles.timeColumnStyle}>
+                {formatDateFromServer(notification.time)}
+            </TableRowColumn>
             <TableRowColumn style={analyticsStyles.messageColumnStyle}>
                 {notification.message} {this.renderNotificationIcon(notification)}
             </TableRowColumn>

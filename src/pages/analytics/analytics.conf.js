@@ -101,6 +101,15 @@ notificationStyles[INFO_LEVEL] = {
     row: analyticsStyles.rowStyle,
 };
 
+/* FIXME think of using an third party library for that, converting for a standard time format defined by design team */
+export const formatDateFromServer = (dateFromServer) => {
+    if (dateFromServer) {
+        return `${dateFromServer.slice(0, 10)} ${dateFromServer.slice(11, 19)}`;
+    }
+
+    return '';
+};
+
 export const notificationStylesInfo = notificationStyles;
 
 export const lastYearElements = lastYearValues;
