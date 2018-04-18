@@ -3,12 +3,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Analytics from './Analytics';
+import NotificationsTable from './NotificationsTable';
 
 import {
     sections,
     ANALYTICS_SECTION_KEY,
 } from '../sections.conf';
 import RaisedButton from 'material-ui/RaisedButton/index';
+
+import {
+    SUCCESS_LEVEL,
+} from '../analytics/analytics.conf';
 
 let analyticsPageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -18,6 +23,15 @@ for(let i = 0; i < sections.length; i++) {
         break;
     }
 }
+
+const stateWithNotifications = [
+    {
+        uid: 'notification1',
+        level: SUCCESS_LEVEL,
+        message: 'notification 1',
+        time: '18-04-2017 15:06:06',
+    }
+];
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
@@ -47,6 +61,17 @@ const ownShallow = () => {
 
 it('Analytics renders without crashing', () => {
     ownShallow();
+});
+
+it('Analytics does not render NotificationsTable', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(NotificationsTable)).toHaveLength(0);
+});
+
+it('Analytics does not render NotificationsTable when it has notifications ', () => {
+    const wrapper = ownShallow();
+    wrapper.setState({notifications: stateWithNotifications});
+    expect(wrapper.find(NotificationsTable)).toHaveLength(1);
 });
 
 it('Analytics renders a RaisedButton', () => {
