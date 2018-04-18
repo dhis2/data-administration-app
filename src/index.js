@@ -63,8 +63,4 @@ getManifest('manifest.webapp').then((manifest) => {
     );
 }).then(getUserSettings).then(configLocale);
 
-if (module.hot) {
-    module.hot.accept();
-}
-
 registerServiceWorker();

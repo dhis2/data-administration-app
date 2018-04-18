@@ -1,12 +1,21 @@
 import React from 'react';
 
 /* Material UI */
-import { GridTile } from 'material-ui/GridList';
-import { Card, CardText } from 'material-ui/Card';
-import { RaisedButton } from 'material-ui';
-import Checkbox from 'material-ui/Checkbox';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import {
+    Card,
+    CardText,
+    GridTile,
+    Checkbox,
+    SelectField,
+    MenuItem,
+    Table,
+    TableBody,
+    TableRow,
+    TableRowColumn,
+    RaisedButton,
+    FontIcon,
+} from 'material-ui';
+
 import classNames from 'classnames';
 
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
@@ -18,10 +27,12 @@ import {
     PULL_INTERVAL,
     ANALYTICS_TABLES_ENDPOINT,
     ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT,
-    analyticsCheckboxes,
-    lastYearElements,
     DEFAULT_LAST_YEARS,
     LAST_YEARS_INPUT_KEY,
+    analyticsCheckboxes,
+    lastYearElements,
+    analyticsStyles,
+    notificationStylesInfo,
 } from '../analytics/analytics.conf';
 
 // i18n
@@ -34,6 +45,7 @@ class Analytics extends Page {
         'checkboxes',
         'loading',
         'lastYears',
+        'notifications',
     ];
 
     constructor() {
@@ -46,10 +58,12 @@ class Analytics extends Page {
         }
 
         this.state = {
-            intervalId: null,
             checkboxes,
             loading: false,
             lastYears: DEFAULT_LAST_YEARS,
+            notifications: [],
+            jobId: null,
+            intervalId: null,
         };
 
         this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(this);
@@ -140,9 +154,16 @@ class Analytics extends Page {
         this.setLoadingPageState();
         api.post(ANALYTICS_TABLES_ENDPOINT, formData).then((response) => {
             if (this.isPageMounted() && response) {
-                this.state.intervalId = setInterval(() => {
+                const jobId = response[0].id;
+                const intervalId = setInterval(() => {
                     this.requestTaskSummary();
                 }, PULL_INTERVAL);
+
+                this.setState({
+                    jobId,
+                    intervalId,
+                    notifications: [],
+                });
             }
         }).catch((e) => {
             if (this.isPageMounted()) {
@@ -152,29 +173,39 @@ class Analytics extends Page {
     }
 
     requestTaskSummary() {
-        // const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
-        const url = `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`;
+        const lastId = this.state.notifications && this.state.notifications.length > 0
+            ? this.state.notifications[0].uid : null;
+        const url = lastId ?
+            `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}` : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`;
         api.get(url).then((response) => {
             if (this.isPageMounted() && response) {
-                for (let i = 0; i < response.length; i++) {
-                    const notification = response[i];
+                let completed = false;
+                const currentNotifications = [...this.state.notifications];
+                const notificationResponses = response[this.state.jobId] || response;
+
+                notificationResponses.forEach((notification) => {
+                    currentNotifications.push(notification);
                     if (notification.completed) {
-                        this.cancelPullingRequests();
-                        /*
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: translator(i18nKeys.analytics.actionPerformed),
-                            },
-                            pageState: {
-                                loading: false,
-                            },
-                        });
-                        break;
-                        */
+                        completed = true;
                     }
+                });
+
+                if (completed) {
+                    this.cancelPullingRequests();
+                    this.context.updateAppState({
+                        showSnackbar: false,
+                        pageState: {
+                            notifications: currentNotifications,
+                            loading: false,
+                        },
+                    });
+                } else {
+                    this.context.updateAppState({
+                        pageState: {
+                            notifications: currentNotifications,
+                        },
+                    });
                 }
             }
         }).catch((e) => {
@@ -190,31 +221,68 @@ class Analytics extends Page {
         });
     }
 
+    toggleCheckbox = (initialCheckboxes, key) => () => {
+        const checkboxes = Object.assign({}, initialCheckboxes);
+        const checkboxState = checkboxes[key].checked;
+        checkboxes[key].checked = !checkboxState;
+        this.setState({ checkboxes });
+    }
+
+    renderCheckbox = (checkbox) => {
+        const translator = this.context.translator;
+        return (
+            <GridTile
+                key={checkbox.key}
+                className={classNames('col-xs-12 col-md-6', styles.formControl)}
+            >
+                <Checkbox
+                    label={translator(checkbox.label)}
+                    checked={this.state.checkboxes[checkbox.key].checked}
+                    onCheck={this.toggleCheckbox(this.state.checkboxes, checkbox.key)}
+                    labelStyle={{ color: '#000000' }}
+                    iconStyle={{ fill: '#000000' }}
+                    disabled={this.areActionsDisabled()}
+                />
+            </GridTile>
+        );
+    };
+
+    renderNotificationIcon = (notification) => {
+        const notificationIconInfo = notificationStylesInfo[notification.level];
+        if (notificationIconInfo && notificationIconInfo.icon) {
+            return (<FontIcon
+                className="material-icons"
+                style={analyticsStyles.iconStyle}
+                color={notificationIconInfo.color}
+            >
+                {notificationIconInfo.icon}</FontIcon>
+            );
+        }
+
+        return null;
+    }
+
+    /* FIXME Pull Notification Table Component out */
+    renderNotification = (notification, index) => (
+        <TableRow
+            key={notification.uid}
+            displayBorder={false}
+            style={Object.assign(
+                {},
+                notificationStylesInfo[notification.level].row,
+                (index + 1) % 2 === 0 ? analyticsStyles.evenRowStyle : {})
+            }
+        >
+            <TableRowColumn style={analyticsStyles.timeColumnStyle}>{notification.time}</TableRowColumn>
+            <TableRowColumn style={analyticsStyles.messageColumnStyle}>
+                {notification.message} {this.renderNotificationIcon(notification)}
+            </TableRowColumn>
+        </TableRow>
+    )
+
     render() {
         const translator = this.context.translator;
-        const checkboxes = Object.assign({}, this.state.checkboxes);
-        const gridElements = analyticsCheckboxes.map((checkbox) => {
-            const checkboxState = checkboxes[checkbox.key].checked;
-            const toggleCheckbox = (() => {
-                checkboxes[checkbox.key].checked = !checkboxState;
-                this.setState({ checkboxes });
-            });
-            return (
-                <GridTile
-                    key={checkbox.key}
-                    className={classNames('col-xs-12 col-md-6', styles.formControl)}
-                >
-                    <Checkbox
-                        label={translator(checkbox.label)}
-                        checked={checkboxState}
-                        onCheck={toggleCheckbox}
-                        labelStyle={{ color: '#000000' }}
-                        iconStyle={{ fill: '#000000' }}
-                        disabled={this.areActionsDisabled()}
-                    />
-                </GridTile>
-            );
-        });
+        const gridElements = analyticsCheckboxes.map(this.renderCheckbox);
         return (
             <div>
                 <h1>
@@ -223,7 +291,7 @@ class Analytics extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <Card>
+                <Card className={styles.cardContainer}>
                     <CardText>
                         <h4 className={styles.uppercase}>{i18nKeys.analytics.analyticsTablesUpdateHeader}</h4>
                         <div className={classNames(styles.gridContainer, 'row')}>
@@ -254,6 +322,21 @@ class Analytics extends Page {
                         />
                     </CardText>
                 </Card>
+                {this.state.notifications.length > 0 &&
+                    <Card className={styles.cardContainer}>
+                        <CardText>
+                            <Table
+                                selectable={false}
+                            >
+                                <TableBody
+                                    displayRowCheckbox={false}
+                                >
+                                    {this.state.notifications.map(this.renderNotification)}
+                                </TableBody>
+                            </Table>
+                        </CardText>
+                    </Card>
+                }
             </div>
         );
     }

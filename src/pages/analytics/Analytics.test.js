@@ -8,6 +8,7 @@ import {
     sections,
     ANALYTICS_SECTION_KEY,
 } from '../sections.conf';
+import RaisedButton from 'material-ui/RaisedButton/index';
 
 let analyticsPageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -46,4 +47,16 @@ const ownShallow = () => {
 
 it('Analytics renders without crashing', () => {
     ownShallow();
+});
+
+it('Analytics renders a RaisedButton', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(RaisedButton)).toHaveLength(1);
+});
+
+it('Analytics calls initAnalyticsTablesGeneration method when button is clicked', () => {
+    const spy = spyOn(Analytics.prototype, 'initAnalyticsTablesGeneration');
+    const wrapper = ownShallow();
+    wrapper.find(RaisedButton).simulate('click');
+    expect(spy).toHaveBeenCalled();
 });
