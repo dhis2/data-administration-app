@@ -5,7 +5,6 @@ import ResourceTables from './resource-tables/ResourceTables';
 import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
-import Analytics from './analytics/Analytics';
 
 // i18n
 import { i18nKeys } from '../i18n';
@@ -16,7 +15,6 @@ export const RESOURCE_TABLES_SECTION_KEY = 'resourceTables';
 export const DATA_STATISTICS_SECTION_KEY = 'statistics';
 export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
 export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
-export const ANALYTICS_SECTION_KEY = 'analytics';
 
 export const sections = [
     {
@@ -89,18 +87,6 @@ export const sections = [
             description: i18nKeys.minMaxValueGeneration.description,
             actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',
-        },
-    },
-    {
-        key: ANALYTICS_SECTION_KEY,
-        path: '/analytics',
-        component: Analytics,
-        info: {
-            label: i18nKeys.analytics.label,
-            icon: 'multiline_chart',
-            description: i18nKeys.analytics.description,
-            actionText: i18nKeys.analytics.actionText,
-            docs: 'generate_analytics_tables',
         },
     },
 ];

@@ -11,11 +11,10 @@ Feature: Side Menu
     Then the side menu "<item>" is selected
     And the new section is opened with "<header>"
     Examples:
-      | item                     | header                        |
-      | Data Integrity           | Data Integrity                |
-      | Maintenance              | Maintenance                   |
-      | Resource Tables          | Resource Tables               |
-      | Data Statistics          | Data Statistics               |
-      | Lock Exception           | Lock Exception Management     |
-      | Min-Max Value Generation | Min-Max Value Generation      |
-      | Analytics                | Analytics tables management   |
+      | item                     | header                    |
+      | Data Integrity           | Data Integrity            |
+      | Maintenance              | Maintenance               |
+      | Resource Tables          | Resource Tables           |
+      | Data Statistics          | Data Statistics           |
+      | Lock Exception           | Lock Exception Management |
+      | Min-Max Value Generation | Min-Max Value Generation  |

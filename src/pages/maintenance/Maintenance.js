@@ -22,7 +22,7 @@ import {
 } from './maintenance.conf';
 import { getDocsKeyForSection } from '../sections.conf';
 
-import styles from '../Page.css';
+import styles from './Maintenance.css';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 class Maintenance extends Page {
@@ -166,7 +166,7 @@ class Maintenance extends Page {
             return (
                 <GridTile
                     key={checkbox.key}
-                    className={classNames('col-xs-12 col-md-6 col-lg-4', styles.formControl)}
+                    className={classNames('col-xs-12 col-md-6 col-lg-4', styles.maintenanceControl)}
                 >
                     <Checkbox
                         label={translator(checkbox.label)}
@@ -182,7 +182,7 @@ class Maintenance extends Page {
 
         return (
             <div>
-                <h1>
+                <h1 className={styles.header}>
                     {translator(PAGE_TITLE)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
@@ -190,7 +190,7 @@ class Maintenance extends Page {
                 </h1>
                 <Card>
                     <CardText>
-                        <div className={classNames(styles.gridContainer, 'row')}>
+                        <div className={classNames(styles.maintenanceGridContainer, 'row')}>
                             {gridElements}
                         </div>
                         <RaisedButton

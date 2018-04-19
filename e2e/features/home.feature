@@ -18,18 +18,16 @@ Feature: Home
       | Data Statistics          | Overview Data Statistics  |
       | Lock Exception           | Lock Exception Management |
       | Min-Max Value Generation | Generate Min-Max Value    |
-      | Analytics                | Analytics tables update   |
 
   Scenario Outline: Open the correspondent page
     When I click in the "<item>" in the page
     Then the side menu "<item>" is selected
     And the new section is opened with "<header>"
     Examples:
-      | item                     | header                        |
-      | Data Integrity           | Data Integrity                |
-      | Maintenance              | Maintenance                   |
-      | Resource Tables          | Resource Tables               |
-      | Data Statistics          | Data Statistics               |
-      | Lock Exception           | Lock Exception Management     |
-      | Min-Max Value Generation | Min-Max Value Generation      |
-      | Analytics                | Analytics tables management   |
+      | item                     | header                    |
+      | Data Integrity           | Data Integrity            |
+      | Maintenance              | Maintenance               |
+      | Resource Tables          | Resource Tables           |
+      | Data Statistics          | Data Statistics           |
+      | Lock Exception           | Lock Exception Management |
+      | Min-Max Value Generation | Min-Max Value Generation  |

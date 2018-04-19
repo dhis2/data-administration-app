@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-04-19T09:53:32.921Z\n"
-"PO-Revision-Date: 2018-04-19T09:53:32.921Z\n"
+"POT-Creation-Date: 2018-04-13T12:45:14.342Z\n"
+"PO-Revision-Date: 2018-04-13T12:45:14.342Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -561,39 +561,4 @@ msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
-msgstr ""
-
-msgid "Analytics tables management"
-msgstr ""
-
-msgid "Analytics"
-msgstr ""
-
-msgid ""
-"The data mart is a set of tables in the DHIS database which is used by all "
-"reporting and analysis tools to retrieve data from. "
-msgstr ""
-
-msgid "Analytics tables update"
-msgstr ""
-
-msgid "START EXPORT"
-msgstr ""
-
-msgid "Skip generation of aggregate data and completeness data\t"
-msgstr ""
-
-msgid "Skip generation of event data"
-msgstr ""
-
-msgid "Skip generation of enrollment data"
-msgstr ""
-
-msgid "Analytics Tables Update"
-msgstr ""
-
-msgid "Number of last years of data to include"
-msgstr ""
-
-msgid "[ All ]"
 msgstr ""
