@@ -53,12 +53,12 @@ export const analyticsCheckboxes = [
 ];
 
 /* Notification Table Styles */
-const SUCCESS_COLOR = '#8ac542';
-const INFO_COLOR = '#000000';
-const ERROR_COLOR = '#ff0000';
+export const SUCCESS_COLOR = '#8ac542';
+export const INFO_COLOR = '#000000';
+export const ERROR_COLOR = '#ff0000';
 
-const ERROR_NOTIFICATION_ICON = 'error';
-const SUCCESS_NOTIFICATION_ICON = 'check';
+export const ERROR_NOTIFICATION_ICON = 'error';
+export const SUCCESS_NOTIFICATION_ICON = 'check';
 
 const FONT_SIZE = 14;
 
@@ -87,6 +87,9 @@ export const analyticsStyles = {
         color: ERROR_COLOR,
         fontWeight: 'bold',
     },
+    infoStyle: {
+        color: INFO_COLOR,
+    },
 };
 
 const notificationStyles = {};
@@ -104,7 +107,7 @@ notificationStyles[ERROR_LEVEL] = {
 
 notificationStyles[INFO_LEVEL] = {
     color: INFO_COLOR,
-    row: analyticsStyles.rowStyle,
+    row: Object.assign({}, analyticsStyles.rowStyle, analyticsStyles.infoStyle),
 };
 
 export const notificationStylesInfo = notificationStyles;
