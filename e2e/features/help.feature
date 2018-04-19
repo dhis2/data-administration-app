@@ -18,4 +18,3 @@ Feature: Help
       | Data Statistics          |
       | Lock Exception           |
       | Min-Max Value Generation |
-      | Analytics                |

@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.maintenanceGridContainer {
+    margin-top: 8px !important;
+    margin-bottom: 42px !important;
+}
+
+.maintenanceCheckAll {
+    display: block;
+}
+
+.maintenanceControl {
+    padding: 8px;
+}
