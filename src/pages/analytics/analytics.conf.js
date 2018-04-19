@@ -1,5 +1,6 @@
 import { i18nKeys } from '../../i18n';
 
+/* Constants */
 export const ANALYTICS_TABLES_ENDPOINT = 'resourceTables/analytics';
 export const PULL_INTERVAL = 5000;
 export const ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT = 'system/tasks/ANALYTICS_TABLE';
@@ -20,6 +21,7 @@ const lastYearValues = [{
     displayName: i18nKeys.analytics.allLastYears,
 }];
 
+/* Last years dropdown options */
 for (let i = FIRST_YEAR; i <= LAST_YEAR; i++) {
     lastYearValues.push({
         key: i,
@@ -28,6 +30,9 @@ for (let i = FIRST_YEAR; i <= LAST_YEAR; i++) {
     });
 }
 
+export const lastYearElements = lastYearValues;
+
+/* Form checkboxes */
 export const analyticsCheckboxes = [
     {
         key: 'skipAggregate',
@@ -47,6 +52,7 @@ export const analyticsCheckboxes = [
     },
 ];
 
+/* Notification Table Styles */
 const SUCCESS_COLOR = '#8ac542';
 const INFO_COLOR = '#000000';
 const ERROR_COLOR = '#ff0000';
@@ -101,6 +107,10 @@ notificationStyles[INFO_LEVEL] = {
     row: analyticsStyles.rowStyle,
 };
 
+export const notificationStylesInfo = notificationStyles;
+
+/* helper methods */
+
 /* FIXME think of using an third party library for that, converting for a standard time format defined by design team */
 export const formatDateFromServer = (dateFromServer) => {
     if (dateFromServer) {
@@ -109,7 +119,3 @@ export const formatDateFromServer = (dateFromServer) => {
 
     return '';
 };
-
-export const notificationStylesInfo = notificationStyles;
-
-export const lastYearElements = lastYearValues;

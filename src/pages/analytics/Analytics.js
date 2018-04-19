@@ -10,14 +10,17 @@ import {
     MenuItem,
     RaisedButton,
 } from 'material-ui';
-
 import classNames from 'classnames';
 
+/* d2-ui */
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
+/* Components */
 import Page from '../Page';
 import NotificationsTable from './NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
+
+/* Helpers */
 import { getDocsKeyForSection } from '../sections.conf';
 import {
     PULL_INTERVAL,
@@ -32,6 +35,7 @@ import {
 // i18n
 import { i18nKeys } from '../../i18n';
 
+/* styles */
 import styles from '../Page.css';
 
 class Analytics extends Page {
