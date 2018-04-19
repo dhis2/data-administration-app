@@ -2,6 +2,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import {
+    Checkbox,
+    RaisedButton,
+    GridTile,
+    SelectField,
+} from 'material-ui';
+
 import Analytics from './Analytics';
 import NotificationsTable from './NotificationsTable';
 
@@ -9,10 +16,11 @@ import {
     sections,
     ANALYTICS_SECTION_KEY,
 } from '../sections.conf';
-import RaisedButton from 'material-ui/RaisedButton/index';
 
 import {
     SUCCESS_LEVEL,
+    analyticsCheckboxes,
+    DEFAULT_LAST_YEARS,
 } from '../analytics/analytics.conf';
 
 let analyticsPageInfo = {};
@@ -84,4 +92,42 @@ it('Analytics calls initAnalyticsTablesGeneration method when button is clicked'
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');
     expect(spy).toHaveBeenCalled();
+});
+
+it('Analytics renders needed Checkboxes', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(Checkbox)).toHaveLength(analyticsCheckboxes.length);
+});
+
+it('Analytics state changes Checkbox state when a Checkbox is checked', () => {
+    const wrapper = ownShallow();
+    const state = wrapper.state();
+    const grid = wrapper.find('div.row').first();
+    const analyticCheckbox = grid.find(GridTile).first();
+    analyticCheckbox.find(Checkbox).first().simulate('check');
+
+    // assert checkbox states
+    const checkedCheckboxKey = analyticCheckbox.key();
+    for (let i = 0; i < analyticsCheckboxes.length; i++) {
+        const checkboxKey = analyticsCheckboxes[i].key;
+        const checkboxState = state.checkboxes[checkboxKey].checked;
+        expect(checkboxState).toBe(checkboxKey === checkedCheckboxKey);
+    }
+});
+
+it('Analytics renders a SelectField for lastYears', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(SelectField)).toHaveLength(1);
+});
+
+it('Should call onChangeLastYears function when Last years SelectField changes.', () => {
+    const spy = spyOn(Analytics.prototype, 'onChangeLastYears').and.callThrough();
+    const wrapper = ownShallow();
+    const testLastYears  = 2;
+    wrapper.setState({
+        lastYears: DEFAULT_LAST_YEARS,
+    });
+    wrapper.find(SelectField).at(0).simulate('change', null, null, testLastYears);
+    expect(spy).toHaveBeenCalledWith(null, null, testLastYears);
+    expect(wrapper.state('lastYears')).toBe(testLastYears);
 });
