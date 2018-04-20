@@ -177,36 +177,30 @@ class Analytics extends Page {
         const url = lastId ?
             `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}` : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`;
         api.get(url).then((response) => {
-            if (this.isPageMounted() && response) {
-                let completed = false;
-                const currentNotifications = [...this.state.notifications];
-                // FIXME waiting for REST API fixes: response sending multiple root elements. Use this.state.jobId
-                const notificationResponses = response[Object.keys(response)[0]] || response || [];
-
-                notificationResponses.forEach((notification) => {
-                    currentNotifications.push(notification);
-                    if (notification.completed) {
-                        completed = true;
-                    }
-                });
-
-                if (completed) {
-                    this.cancelPullingRequests();
-                    this.context.updateAppState({
-                        showSnackbar: false,
-                        pageState: {
-                            notifications: currentNotifications,
-                            loading: false,
-                        },
-                    });
-                } else {
-                    this.context.updateAppState({
-                        pageState: {
-                            notifications: currentNotifications,
-                        },
-                    });
-                }
+            /* not mounted finishes */
+            if (!this.isPageMounted()) {
+                return;
             }
+
+            let completed = false;
+            // FIXME waiting for REST API fixes: response sending multiple root elements. Use this.state.jobId
+            const notificationResponses = response[Object.keys(response)[0]] || response || [];
+            const notifications = [...notificationResponses, ...this.state.notifications];
+            notificationResponses.every((notification) => {
+                if (notification.completed) {
+                    completed = true;
+                    this.cancelPullingRequests();
+                }
+                return !notification.completed;
+            });
+
+            this.context.updateAppState({
+                showSnackbar: !completed,
+                pageState: {
+                    notifications,
+                    loading: !completed,
+                },
+            });
         }).catch((e) => {
             if (this.isPageMounted()) {
                 this.setLoadedPageWithErrorState(e);
