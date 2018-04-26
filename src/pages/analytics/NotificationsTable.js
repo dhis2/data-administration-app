@@ -19,11 +19,11 @@ import {
 const NotificationsTable = ({ notifications }) => {
     const renderNotificationIcon = (notification) => {
         const notificationIconInfo = notificationStylesInfo[notification.level];
-        if (notificationIconInfo && notificationIconInfo.icon) {
+        if (notificationIconInfo && notificationIconInfo.icon && notification.completed) {
             return (<FontIcon
                 className="material-icons"
                 style={analyticsStyles.iconStyle}
-                color={notificationIconInfo.color}
+                color={notificationIconInfo.iconColor}
             >
                 {notificationIconInfo.icon}</FontIcon>
             );
@@ -34,7 +34,7 @@ const NotificationsTable = ({ notifications }) => {
 
     const renderNotificationRow = (notification, index) => (
         <TableRow
-            key={notification.uid}
+            key={index}
             displayBorder={false}
             style={Object.assign(
                 {},
@@ -74,6 +74,7 @@ NotificationsTable.propTypes = {
         level: PropTypes.string,
         time: PropTypes.string,
         message: PropTypes.string,
+        completed: PropTypes.bool,
     })).isRequired,
 };
 

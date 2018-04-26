@@ -81,18 +81,22 @@ export const analyticsStyles = {
     },
     successStyle: {
         color: SUCCESS_COLOR,
+        iconColor: SUCCESS_COLOR,
         fontWeight: 'bold',
     },
     errorStyle: {
         color: ERROR_COLOR,
+        iconColor: ERROR_COLOR,
         fontWeight: 'bold',
     },
     infoStyle: {
         color: INFO_COLOR,
+        iconColor: SUCCESS_COLOR,
     },
 };
 
 const notificationStyles = {};
+
 notificationStyles[SUCCESS_LEVEL] = {
     color: SUCCESS_COLOR,
     icon: SUCCESS_NOTIFICATION_ICON,
@@ -107,6 +111,8 @@ notificationStyles[ERROR_LEVEL] = {
 
 notificationStyles[INFO_LEVEL] = {
     color: INFO_COLOR,
+    icon: SUCCESS_NOTIFICATION_ICON,
+    iconColor: SUCCESS_COLOR,
     row: Object.assign({}, analyticsStyles.rowStyle, analyticsStyles.infoStyle),
 };
 

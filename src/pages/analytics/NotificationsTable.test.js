@@ -29,12 +29,14 @@ const fakeNotifications = [
         level: SUCCESS_LEVEL,
         message: 'notification success',
         time: '18-04-2017 15:06:06',
+        completed: true,
     },
     {
         uid: 'notificationError',
         level: ERROR_LEVEL,
         message: 'notification error',
         time: '18-04-2017 15:16:06',
+        completed: true,
     },
     {
         uid: 'notification info',
@@ -66,7 +68,7 @@ it('NotificationsTable renders the correct number of FontIcons', () => {
     const wrapper = ownShallow();
     let iconsCount = 0;
     fakeNotifications.forEach((notification) => {
-        if (notification.level === SUCCESS_LEVEL || notification.level === ERROR_LEVEL) {
+        if ( (notification.level === SUCCESS_LEVEL || notification.level === ERROR_LEVEL) && notification.completed) {
             iconsCount++;
         }
     });
