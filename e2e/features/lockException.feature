@@ -8,19 +8,20 @@ Feature: Lock Exception
 
   Scenario: I want to see all Exceptions in the page
     Then A list of Lock Exceptions is displayed
-    And Pagination is displayed
-    And Number of rows are displayed
+    And Pagination and number of rows are displayed
     And User can see a Button to add Exception
-
-  Scenario: I want to see the options for Exception
-    And I Select one item in the list
-    Then I can see Remove button
+	And I can see Remove buttons
 
   Scenario: I want to remove the details for Exception
-    And I Select one item in the list
     And I click remove
+	And I confirm the removal
     Then The exception is removed
 
+  Scenario: I want to not remove the details for Exception
+    And I click remove
+	And I do not confirm the removal
+    Then The exception is not removed
+	
   Scenario: I want to see the screen to add lock exceptions
     When I Click in Add button
     Then Add lock exception option is displayed
@@ -37,5 +38,17 @@ Feature: Lock Exception
     And I select period
     And Click Add
     Then The exception is added to the list of exceptions
-
-
+	
+  Scenario: I want to see Batch Deletion section
+    And I click Batch Deletion button
+    Then Title Batch Deletion is displayed
+	And A list of Lock Exceptions is displayed
+	And I can see Remove buttons
+	And I can return to previous page
+	
+  Scenario: I want to execute Batch Deletion
+    And I click Batch Deletion button
+    And I click remove
+	And I confirm the removal
+    Then The exception is removed	
+	And I can return to previous page
