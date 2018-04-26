@@ -152,7 +152,7 @@ class Analytics extends Page {
         this.setLoadingPageState();
         api.post(ANALYTICS_TABLES_ENDPOINT, formData).then((response) => {
             if (this.isPageMounted() && response) {
-                const jobId = response[0].id;
+                const jobId = response.response.id;
                 const intervalId = setInterval(() => {
                     this.requestTaskSummary();
                 }, PULL_INTERVAL);
@@ -184,7 +184,8 @@ class Analytics extends Page {
 
             let completed = false;
             // FIXME waiting for REST API fixes: response sending multiple root elements. Use this.state.jobId
-            const notificationResponses = response[Object.keys(response)[0]] || response || [];
+            // const notificationResponses = response[Object.keys(response)[0]] || response || [];
+            const notificationResponses = response[this.state.jobId] || response || [];
             const notifications = [...notificationResponses, ...this.state.notifications];
             notificationResponses.every((notification) => {
                 if (notification.completed) {
