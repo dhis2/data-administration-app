@@ -1,0 +1,16 @@
+.uppercase {
+    text-transform: uppercase;
+}
+
+.gridContainer {
+    margin-top: 8px !important;
+    margin-bottom: 42px !important;
+}
+
+.formControl {
+    padding: 8px;
+}
+
+.cardContainer {
+    margin-bottom: 30px;
+}
