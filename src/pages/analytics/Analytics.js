@@ -183,8 +183,6 @@ class Analytics extends Page {
             }
 
             let completed = false;
-            // FIXME waiting for REST API fixes: response sending multiple root elements. Use this.state.jobId
-            // const notificationResponses = response[Object.keys(response)[0]] || response || [];
             const notificationResponses = response[this.state.jobId] || response || [];
             const notifications = [...notificationResponses, ...this.state.notifications];
             notificationResponses.every((notification) => {
