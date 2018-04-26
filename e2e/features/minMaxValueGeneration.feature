@@ -15,11 +15,11 @@ Feature: Min Max value Generation
   Scenario: I want to Generate Min-max Value
     And User selects Data Set
     And User expands Organization Unit Selection
-    Then User can select several checkboxes
+    Then User only can select one checkbox
     And User can click in Generate
 
   Scenario: I want to Remove Min-max Value
     When User selects Data Set
     And User expands Organization Unit Selection
-    Then User can select several checkboxes
+    Then User only can select one checkbox
     And User can click in Remove
