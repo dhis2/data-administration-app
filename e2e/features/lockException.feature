@@ -41,14 +41,14 @@ Feature: Lock Exception
     Then The exception is added to the list of exceptions
 
   Scenario: I want to see batch deletion section
-    When I click batch deletion button
+    And I click batch deletion button
     Then Title batch deletion is displayed
 	And A list of lock exceptions batch is displayed
 	And For each displayed lock exception batch there is a remove icon
 	And I can return to previous page
 
   Scenario: I want to execute batch deletion
-    When I click batch deletion button
+    And I click batch deletion button
     And I click remove lock exception batch icon
 	And I confirm lock exception batch removal
     Then The exception batch is removed
