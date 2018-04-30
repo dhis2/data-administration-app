@@ -13,12 +13,12 @@ Feature: Lock Exception
 	And For each lock exception there is a remove icon
 
   Scenario: I want to remove the lock exception
-    And I click remove lock exception icon
+    And I click one of the remove lock exception icons
 	And I confirm lock exception removal
     Then The exception is removed
 
   Scenario: I do not want to remove lock exception
-    And I click remove lock exception icon
+    And I click one of the remove lock exception icons
 	And I do not confirm lock exception removal
     Then The exception is not removed
 
