@@ -4,12 +4,29 @@ const {defineSupportCode} = require('cucumber');
 const lockExceptions = require('../pages/lockExceptions.page');
 
 defineSupportCode(({Given, When, Then}) => {
+    let beforeRemove;
     // *********************************************************
     // Background:
     // *********************************************************
     // Shared: that I am logged in to the Sierra Leone DHIS2
     When(/^I open lock exceptions page$/, () => {
         lockExceptions.open();
+    });
+
+    // *********************************************************
+    // Commons:
+    // *********************************************************
+    When(/^I click one of the remove lock exception icons$/, () => {
+        beforeRemove = lockExceptions.getTotalExceptions();
+        lockExceptions.clickRemoveLockException();
+    });
+
+    When(/^I click in add lock exception button in list screen$/, () => {
+
+    });
+
+    When(/^I click batch deletion button$/, () => {
+
     });
 
     // *********************************************************
@@ -24,23 +41,23 @@ defineSupportCode(({Given, When, Then}) => {
     });
 
     Then(/^I can see a button to add lock a exception$/, () => {
-
+        lockExceptions.isAddExceptionButtonVisible();
     });
 
     When(/^For each lock exception there is a remove icon$/, () => {
-
+        expect(lockExceptions.getTableRows()).to.equal(lockExceptions.getTableRemoveIcons());
     });
 
     // *********************************************************
     // Scenario: I want to remove the lock exception
     // *********************************************************
-    // Commons: I click remove lock exception icon
+    // Commons: I click one of the remove lock exception icons
     Then(/^I confirm lock exception removal$/, () => {
-
+        lockExceptions.confirmRemoveLockException();
     });
 
     Then(/^The exception is removed$/, () => {
-
+        expect(lockExceptions.getTotalExceptions()).to.equal(beforeRemove - 1);
     });
 
     // *********************************************************
@@ -48,11 +65,11 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Commons: I click remove lock exception icon
     Then(/^I do not confirm lock exception removal$/, () => {
-
+        lockExceptions.notConfirmRemoveLockException();
     });
 
     Then(/^The exception is not removed$/, () => {
-
+        expect(lockExceptions.getTotalExceptions()).to.equal(beforeRemove);
     });
 
     // *********************************************************
@@ -60,7 +77,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Commons: I click in add lock exception button in list screen
     Then(/^Add lock exception dialog is displayed$/, () => {
-
+        browser.waitForVisible('.data-table', 5000);
     });
 
     Then(/^A select a data set dropdown is displayed$/, () => {
@@ -144,20 +161,6 @@ defineSupportCode(({Given, When, Then}) => {
     });
 
     Then(/^The exception batch is removed$/, () => {
-
-    });
-    // *********************************************************
-    // Commons:
-    // *********************************************************
-    When(/^I click remove lock exception icon$/, () => {
-        lockExceptions.isPaginationVisible();
-    });
-
-    When(/^I click in add lock exception button in list screen$/, () => {
-
-    });
-
-    When(/^I click batch deletion button$/, () => {
 
     });
 });
