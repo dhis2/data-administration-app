@@ -716,6 +716,7 @@ class LockException extends Page {
                 }
                 {!this.state.atBatchDeletionPage && !this.areActionsDisabled() &&
                     <FloatingActionButton
+                        id={'addExceptionButtonId'}
                         style={jsStyles.addButton}
                         onClick={this.showLockExceptionFormDialog}
                     >
