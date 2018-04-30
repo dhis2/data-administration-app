@@ -16,16 +16,16 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Commons:
     // *********************************************************
-    When(/^I click one of the remove lock exception icons$/, () => {
+    Then(/^I click one of the remove lock exception icons$/, () => {
         beforeRemove = lockExceptions.getTotalExceptions();
-        lockExceptions.clickRemoveLockException();
+        lockExceptions.removeLockExceptionIcon().click();
     });
 
-    When(/^I click in add lock exception button in list screen$/, () => {
+    Then(/^I click in add lock exception button in list screen$/, () => {
 
     });
 
-    When(/^I click batch deletion button$/, () => {
+    Then(/^I click batch deletion button$/, () => {
 
     });
 
@@ -33,18 +33,18 @@ defineSupportCode(({Given, When, Then}) => {
     // Scenario: I want to see all Lock Exceptions in the page
     // *********************************************************
     Then(/^A list of exceptions is displayed$/, () => {
-        lockExceptions.isLockExceptionsListVisible();
+        browser.waitForVisible('.data-table', 5000);
     });
 
     Then(/^Pagination and number of rows are displayed$/, () => {
-        lockExceptions.isPaginationVisible();
+        browser.waitForVisible('.data-table-pager', 5000);
     });
 
     Then(/^I can see a button to add lock a exception$/, () => {
-        lockExceptions.isAddExceptionButtonVisible();
+        browser.waitForVisible('#addExceptionButtonId', 5000);
     });
 
-    When(/^For each lock exception there is a remove icon$/, () => {
+    Then(/^For each lock exception there is a remove icon$/, () => {
         expect(lockExceptions.getTableRows()).to.equal(lockExceptions.getTableRemoveIcons());
     });
 
@@ -53,7 +53,7 @@ defineSupportCode(({Given, When, Then}) => {
     // *********************************************************
     // Commons: I click one of the remove lock exception icons
     Then(/^I confirm lock exception removal$/, () => {
-        lockExceptions.confirmRemoveLockException();
+        lockExceptions.confirmRemoveLockExceptionButton().click();
     });
 
     Then(/^The exception is removed$/, () => {

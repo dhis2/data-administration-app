@@ -12,18 +12,6 @@ class LockExceptions extends Page {
         super.open('#/lock-exception');
     }
 
-    isLockExceptionsListVisible() {
-        browser.waitForVisible('.data-table', 5000);
-    }
-
-    isPaginationVisible() {
-        browser.waitForVisible('.data-table-pager', 5000);
-    }
-
-    isAddExceptionButtonVisible() {
-        browser.waitForVisible('#addExceptionButtonId', 5000);
-    }
-
     getTableRows() {
         browser.waitForVisible('.data-table', 5000);
         const table = browser.element('.data-table');
@@ -43,23 +31,22 @@ class LockExceptions extends Page {
         return parseInt(totalExceptions, 10);
     }
 
-    clickRemoveLockException() {
+    removeLockExceptionIcon() {
         browser.waitForVisible('.data-table', 5000);
         const table = browser.element('.data-table');
         const removeIcon = table.elements('.material-icons=delete').value[0];
-        removeIcon.click();
+        return removeIcon;
     }
 
-    confirmRemoveLockException() {
+    confirmRemoveLockExceptionButton() {
         browser.waitForVisible('#feedbackSnackbarId', 5000);
         const snackbar = browser.element('#feedbackSnackbarId');
-        const confirm = snackbar.elements('<button>').value[0];
-        confirm.click();
+        const confirmBtn = snackbar.elements('<button>').value[0];
+        return confirmBtn;
     }
 
     notConfirmRemoveLockException() {
         browser.waitForVisible('#feedbackSnackbarId', 5000);
-
         browser.click('<body>');
     }
 }
