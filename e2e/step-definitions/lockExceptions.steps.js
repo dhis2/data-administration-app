@@ -1,10 +1,10 @@
-const {expect} = require('chai');
-const {defineSupportCode} = require('cucumber');
+const { expect } = require('chai');
+const { defineSupportCode } = require('cucumber');
 
 const lockExceptions = require('../pages/lockExceptions.page');
 
-defineSupportCode(({Given, When, Then}) => {
-    let beforeRemove;
+defineSupportCode(({ Given, When, Then }) => {
+    let exceptionBefore;
     // *********************************************************
     // Background:
     // *********************************************************
@@ -17,12 +17,13 @@ defineSupportCode(({Given, When, Then}) => {
     // Commons:
     // *********************************************************
     Then(/^I click one of the remove lock exception icons$/, () => {
-        beforeRemove = lockExceptions.getTotalExceptions();
+        exceptionBefore = lockExceptions.getTotalExceptions();
         lockExceptions.removeLockExceptionIcon().click();
     });
 
     Then(/^I click in add lock exception button in list screen$/, () => {
-
+        exceptionBefore = lockExceptions.getTotalExceptions();
+        lockExceptions.addLockExceptionButton().click();
     });
 
     Then(/^I click batch deletion button$/, () => {
@@ -57,7 +58,7 @@ defineSupportCode(({Given, When, Then}) => {
     });
 
     Then(/^The exception is removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(beforeRemove - 1);
+        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionBefore - 1);
     });
 
     // *********************************************************
@@ -69,35 +70,39 @@ defineSupportCode(({Given, When, Then}) => {
     });
 
     Then(/^The exception is not removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(beforeRemove);
+        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionBefore);
     });
 
     // *********************************************************
     // Scenario: I want to see the screen to add lock exception
     // *********************************************************
     // Commons: I click in add lock exception button in list screen
-    Then(/^Add lock exception dialog is displayed$/, () => {
-        browser.waitForVisible('.data-table', 5000);
+    Then(/^Add lock exception form is displayed$/, () => {
+        browser.waitForVisible('#addLockExceptionFormId', 5000);
     });
 
-    Then(/^A select a data set dropdown is displayed$/, () => {
-
+    Then(/^A select a data set for new lock exception is displayed$/, () => {
+        browser.waitForVisible('.d2-ui-selectfield', 5000);
     });
 
-    Then(/^Organization tree is displayed$/, () => {
-
+    Then(/^I select a data set for new lock exception$/, () => {
+        expect(lockExceptions.selectADataSet()).to.equal(lockExceptions.getSelectedDataSet());
     });
 
-    Then(/^Level and group is displayed$/, () => {
-
+    Then(/^Organization unit tree is displayed$/, () => {
+        browser.waitForVisible('.tree-view', 5000);
     });
 
-    Then(/^Data set is displayed$/, () => {
-
+    Then(/^Period select is displayed$/, () => {
+        browser.waitForVisible('#idPeriodPicker', 2000);
     });
 
-    Then(/^Period selection is displayed$/, () => {
+    Then(/^Organization unit level select is displayed$/, () => {
+        browser.waitForVisible('div[id*="Selectitem-OrganisationUnitLevel"]', 2000);
+    });
 
+    Then(/^Organization unit group select is displayed$/, () => {
+        browser.waitForVisible('div[id*="Selectitem-OrganisationUnitGroup"]', 2000);
     });
 
     // *********************************************************
@@ -120,7 +125,7 @@ defineSupportCode(({Given, When, Then}) => {
 
     });
 
-    Then(/^Click add button in add new lock exception dialog$/, () => {
+    Then(/^Click add button in add new lock exception form/, () => {
 
     });
 

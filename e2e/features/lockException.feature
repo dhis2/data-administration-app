@@ -24,12 +24,13 @@ Feature: Lock Exception
 
   Scenario: I want to see the screen to add lock exception
     And I click in add lock exception button in list screen
-    Then Add lock exception dialog is displayed
-    And A select a data set dropdown is displayed
-    And Organization tree is displayed
-    And Level and group is displayed
-    And Data set is displayed
-    And Period selection is displayed
+    Then Add lock exception form is displayed
+    And A select a data set for new lock exception is displayed
+    And I select a data set for new lock exception
+    Then Organization unit tree is displayed
+    And Period select is displayed
+    And Organization unit level select is displayed
+    And Organization unit group select is displayed
 
   Scenario: I want to add lock exceptions
     And I click in add lock exception button in list screen
@@ -37,7 +38,7 @@ Feature: Lock Exception
     And I select level and group
     And I select a data set
     And I select period
-    And Click add button in add new lock exception dialog
+    And Click add button in add new lock exception form
     Then The exception is added to the list of exceptions
 
   Scenario: I want to see batch deletion section
