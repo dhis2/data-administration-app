@@ -4,11 +4,12 @@ const { defineSupportCode } = require('cucumber');
 const lockExceptions = require('../pages/lockExceptions.page');
 
 defineSupportCode(({ Given, When, Then }) => {
-    let exceptionBefore;
+    let exceptionsCountBeforeAction;
     // *********************************************************
     // Background:
     // *********************************************************
-    // Shared: that I am logged in to the Sierra Leone DHIS2
+    // Shared:
+    // that I am logged in to the Sierra Leone DHIS2
     When(/^I open lock exceptions page$/, () => {
         lockExceptions.open();
     });
@@ -16,18 +17,33 @@ defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Commons:
     // *********************************************************
-    Then(/^I click one of the remove lock exception icons$/, () => {
-        exceptionBefore = lockExceptions.getTotalExceptions();
-        lockExceptions.removeLockExceptionIcon().click();
-    });
 
-    Then(/^I click in add lock exception button in list screen$/, () => {
-        exceptionBefore = lockExceptions.getTotalExceptions();
-        lockExceptions.addLockExceptionButton().click();
+    // Remove
+    Then(/^I click one of the remove lock exception icons$/, () => {
+        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.removeLockExceptionIcon().click();
     });
 
     Then(/^I click batch deletion button$/, () => {
 
+    });
+
+    // Add lock exception
+    Then(/^I click in add lock exception button in list screen$/, () => {
+        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.addLockExceptionButton().click();
+    });
+
+    Then(/^Add lock exception form is displayed$/, () => {
+        browser.waitForVisible('#addLockExceptionFormId', 5000);
+    });
+
+    Then(/^A select a data set for new lock exception is displayed$/, () => {
+        browser.waitForVisible('.d2-ui-selectfield', 5000);
+    });
+
+    Then(/^I select a data set for new lock exception$/, () => {
+        expect(lockExceptions.selectADataSet()).to.equal(lockExceptions.getSelectedDataSet());
     });
 
     // *********************************************************
@@ -52,43 +68,38 @@ defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Scenario: I want to remove the lock exception
     // *********************************************************
-    // Commons: I click one of the remove lock exception icons
+    // Commons:
+    // I click one of the remove lock exception icons
     Then(/^I confirm lock exception removal$/, () => {
         lockExceptions.confirmRemoveLockExceptionButton().click();
+        browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
     Then(/^The exception is removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionBefore - 1);
+        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction - 1);
     });
 
     // *********************************************************
     // Scenario: I do not want to remove lock exception
     // *********************************************************
-    // Commons: I click remove lock exception icon
+    // Commons:
+    // I click remove lock exception icon
     Then(/^I do not confirm lock exception removal$/, () => {
         lockExceptions.notConfirmRemoveLockException();
     });
 
     Then(/^The exception is not removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionBefore);
+        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction);
     });
 
     // *********************************************************
     // Scenario: I want to see the screen to add lock exception
     // *********************************************************
-    // Commons: I click in add lock exception button in list screen
-    Then(/^Add lock exception form is displayed$/, () => {
-        browser.waitForVisible('#addLockExceptionFormId', 5000);
-    });
-
-    Then(/^A select a data set for new lock exception is displayed$/, () => {
-        browser.waitForVisible('.d2-ui-selectfield', 5000);
-    });
-
-    Then(/^I select a data set for new lock exception$/, () => {
-        expect(lockExceptions.selectADataSet()).to.equal(lockExceptions.getSelectedDataSet());
-    });
-
+    // Commons:
+    // I click in add lock exception button in list screen
+    // Add lock exception form is displayed
+    // A select a data set for new lock exception is displayed
+    // I select a data set for new lock exception
     Then(/^Organization unit tree is displayed$/, () => {
         browser.waitForVisible('.tree-view', 5000);
     });
@@ -108,29 +119,31 @@ defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Scenario: I want to add lock exceptions
     // *********************************************************
-    // Commons: I click in add lock exception button in list screen
-    Then(/^I select organization set$/, () => {
-
+    // Commons:
+    // I click in add lock exception button in list screen
+    // Add lock exception form is displayed
+    // A select a data set for new lock exception is displayed
+    // I select a data set for new lock exception
+    Then(/^I select an organization unit from the organization unit tree$/, () => {
+        lockExceptions.getOneOrgUnitTreeFromTree().click();
     });
 
-    Then(/^I select level and group$/, () => {
-
+    Then(/^I select period for new lock exception$/, () => {
+        lockExceptions.selectAnYear();
+        browser.pause(2000);
+        lockExceptions.selectAMonth();
+        browser.pause(2000);
     });
 
-    Then(/^I select a data set$/, () => {
-
+    Then(/^Click add button in add new lock exception form$/, () => {
+        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.getFormAddLockExceptionBtn().click();
+        browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
-    Then(/^I select period$/, () => {
-
-    });
-
-    Then(/^Click add button in add new lock exception form/, () => {
-
-    });
-
-    Then(/^The exception is added to the list of exceptions$/, () => {
-
+    Then(/^The lock exception is added to the list of lock exceptions$/, () => {
+        browser.pause(2000);
+        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction + 1);
     });
 
     // *********************************************************

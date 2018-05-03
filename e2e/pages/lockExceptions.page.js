@@ -60,14 +60,40 @@ class LockExceptions extends Page {
         const selectFieldBtn = browser.element('.d2-ui-selectfield').elements('<button>').value[0];
         selectFieldBtn.click();
         browser.waitForVisible('div[role=menu]', 5000);
-        const dropDownMenuOptionOne = browser.element('div[role=menu]').elements('span[role=menuitem]').value[0];
-        const dropDownMenuOptionOneText = browser.element('div[role=menu]').elements('span[role=menuitem]').value[0].getText();
+        const dropDownMenuOptionOne = browser.element('div[role=menu]').elements('span[role=menuitem]').value[1];
+        const dropDownMenuOptionOneText = browser.element('div[role=menu]').elements('span[role=menuitem]')
+            .value[1].getText();
         dropDownMenuOptionOne.click();
         return dropDownMenuOptionOneText;
     }
 
     getSelectedDataSet() {
         return browser.element('.d2-ui-selectfield').elements('div').value[0].getText();
+    }
+
+    getOneOrgUnitTreeFromTree() {
+        return browser.element('.tree-view').elements('div[role=button]').value[1].element('<input>');
+    }
+
+    selectAnYear() {
+        const selectYear = browser.element('div[id*=year]');
+        selectYear.click();
+        browser.waitForVisible('div[role=menu]', 5000);
+        const firstYearOption = browser.elements('span[role=menuitem]').value[1];
+        firstYearOption.click();
+    }
+
+    selectAMonth() {
+        const selectMonth = browser.element('div[id*=month]');
+        selectMonth.click();
+        browser.waitForVisible('div[role=menu]', 5000);
+        const firstMonthOption = browser.elements('span[role=menuitem]').value[1];
+        firstMonthOption.click();
+    }
+
+    getFormAddLockExceptionBtn() {
+        const addNewLockExceptionBtn = browser.elements('div[class^=LockException__actionButton]').value[1];
+        return addNewLockExceptionBtn;
     }
 }
 
