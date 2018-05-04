@@ -31,14 +31,14 @@ class LockExceptions extends Page {
         return parseInt(totalExceptions, 10);
     }
 
-    removeLockExceptionIcon() {
+    removeIcon() {
         browser.waitForVisible('.data-table', 5000);
         const table = browser.element('.data-table');
         const removeIcon = table.elements('.material-icons=delete').value[0];
         return removeIcon;
     }
 
-    confirmRemoveLockExceptionButton() {
+    confirmRemoveSnackbar() {
         browser.waitForVisible('#feedbackSnackbarId', 5000);
         const snackbar = browser.element('#feedbackSnackbarId');
         const confirmBtn = snackbar.elements('<button>').value[0];
@@ -94,6 +94,18 @@ class LockExceptions extends Page {
     getFormAddLockExceptionBtn() {
         const addNewLockExceptionBtn = browser.elements('div[class^=LockException__actionButton]').value[1];
         return addNewLockExceptionBtn;
+    }
+
+    getBatchDeletionBtn() {
+        browser.waitForVisible('div[class^=LockException__actionButton]', 5000);
+        const batchDeletionBtn = browser.elements('div[class^=LockException__actionButton]').value[0];
+        return batchDeletionBtn;
+    }
+
+    getSubTitle() {
+        browser.waitForVisible('span[class^=LockException__subHeader]', 5000);
+        const subTitle = browser.elements('span[class^=LockException__subHeader]').value[0];
+        return subTitle.getText();
     }
 }
 

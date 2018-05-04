@@ -46,7 +46,7 @@ Feature: Lock Exception
   Scenario: I want to see batch deletion section
     And I click batch deletion button
     Then Title batch deletion is displayed
-	And A list of lock exceptions batch is displayed
+	And A list of lock exceptions batches is displayed
 	And For each displayed lock exception batch there is a remove icon
 	And I can return to previous page
 

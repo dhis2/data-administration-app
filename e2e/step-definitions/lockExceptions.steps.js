@@ -4,7 +4,7 @@ const { defineSupportCode } = require('cucumber');
 const lockExceptions = require('../pages/lockExceptions.page');
 
 defineSupportCode(({ Given, When, Then }) => {
-    let exceptionsCountBeforeAction;
+    let countBeforeAction;
     // *********************************************************
     // Background:
     // *********************************************************
@@ -20,17 +20,18 @@ defineSupportCode(({ Given, When, Then }) => {
 
     // Remove
     Then(/^I click one of the remove lock exception icons$/, () => {
-        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
-        lockExceptions.removeLockExceptionIcon().click();
+        countBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.removeIcon().click();
     });
 
+    // Remove Batch (Area)
     Then(/^I click batch deletion button$/, () => {
-
+        lockExceptions.getBatchDeletionBtn().click();
     });
 
     // Add lock exception
     Then(/^I click in add lock exception button in list screen$/, () => {
-        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
+        countBeforeAction = lockExceptions.getTotalExceptions();
         lockExceptions.addLockExceptionButton().click();
     });
 
@@ -71,12 +72,12 @@ defineSupportCode(({ Given, When, Then }) => {
     // Commons:
     // I click one of the remove lock exception icons
     Then(/^I confirm lock exception removal$/, () => {
-        lockExceptions.confirmRemoveLockExceptionButton().click();
+        lockExceptions.confirmRemoveSnackbar().click();
         browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
     Then(/^The exception is removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction - 1);
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction - 1);
     });
 
     // *********************************************************
@@ -89,7 +90,7 @@ defineSupportCode(({ Given, When, Then }) => {
     });
 
     Then(/^The exception is not removed$/, () => {
-        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction);
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction);
     });
 
     // *********************************************************
@@ -136,14 +137,14 @@ defineSupportCode(({ Given, When, Then }) => {
     });
 
     Then(/^Click add button in add new lock exception form$/, () => {
-        exceptionsCountBeforeAction = lockExceptions.getTotalExceptions();
+        countBeforeAction = lockExceptions.getTotalExceptions();
         lockExceptions.getFormAddLockExceptionBtn().click();
         browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
     Then(/^The lock exception is added to the list of lock exceptions$/, () => {
         browser.pause(2000);
-        expect(lockExceptions.getTotalExceptions()).to.equal(exceptionsCountBeforeAction + 1);
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction + 1);
     });
 
     // *********************************************************
@@ -151,19 +152,19 @@ defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Commons: I click batch deletion button
     Then(/^Title batch deletion is displayed$/, () => {
-
+        expect(lockExceptions.getSubTitle()).to.equal('Batch Deletion');
     });
 
-    Then(/^A list of lock exceptions batch is displayed$/, () => {
-
+    Then(/^A list of lock exceptions batches is displayed$/, () => {
+        browser.waitForVisible('.data-table', 5000);
     });
 
     Then(/^For each displayed lock exception batch there is a remove icon$/, () => {
-
+        expect(lockExceptions.getTableRows()).to.equal(lockExceptions.getTableRemoveIcons());
     });
 
     Then(/^I can return to previous page$/, () => {
-
+        browser.waitForVisible('.material-icons=arrow_back', 5000);
     });
 
     // *********************************************************
@@ -171,14 +172,16 @@ defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Commons: I click batch deletion button
     Then(/^I click remove lock exception batch icon$/, () => {
-
+        countBeforeAction = lockExceptions.getTableRows();
+        lockExceptions.removeIcon().click();
     });
 
     Then(/^I confirm lock exception batch removal$/, () => {
-
+        lockExceptions.confirmRemoveSnackbar().click();
     });
 
     Then(/^The exception batch is removed$/, () => {
-
+        browser.pause(2000);
+        expect(lockExceptions.getTableRows()).to.equal(countBeforeAction - 1);
     });
 });
