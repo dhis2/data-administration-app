@@ -8,21 +8,22 @@ Feature: Maintenance
 
   Scenario: I want to see all items in the page
     Then List of checkboxes and label is displayed
-    And Perform button is disabled
+    And Perform maintenance button is disabled
     And No checkbox is checked
 
   Scenario: I want to select few checkboxes one by one
-    And I select four items checkbox
-    Then Only selected checkboxes are selected
-    And Perform button is enabled
+    And I select some checkbox items
+    Then Selected checkboxes are selected
+	And Not selected checkboxes are not selected
+    And Perform maintenance button is enabled
 
   Scenario: I want to select no checkboxes
-    And I select four items checkbox
+    And I select some checkbox items
     And I unselect the checkboxes
     Then No checkboxes are selected
-    And Perform button is disabled
+    And Perform maintenance button is disabled
 
   Scenario: I want to perform maintenance
-    And I select four items checkbox
-    And I Click Perform button
+    And I select some checkbox items
+    And I click perform maintenance button
     Then The Maintenance is executed

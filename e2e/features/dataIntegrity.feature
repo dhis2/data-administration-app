@@ -5,25 +5,22 @@ Feature: Data Integrity
   Background:
     Given that I am logged in to the Sierra Leone DHIS2
     When I open data integrity page
+	And I Click Run Integrity checks
 
   Scenario: I want to see if the loading is displayed
-	And I Click Run Integrity checks
     Then Loading should be displayed
 
   Scenario: I Want to see if items are displayed
-	And I Click Run Integrity checks
     Then The error items text are red and contain expand button
     And The valid items text are green and contains a green check icon
     And The errors are displayed first
 
   Scenario: I want to expand error items
-	And I Click Run Integrity checks
     And I click to expand in "error" item
     Then I can see the error description
     And The icon changes to collapse
 
   Scenario: I want to collapse error items
-	And I Click Run Integrity checks
     And I click to expand in "error" item
     And I click collapse item
     Then The item is collapsed
@@ -31,6 +28,5 @@ Feature: Data Integrity
     And The icon changes to expand
 
   Scenario: I do not want the correct items to be expanded
-	And I Click Run Integrity checks
     And I click to expand in "OK" item
     Then Nothing happens
