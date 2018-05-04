@@ -100,7 +100,7 @@ class DataIntegrity extends Page {
         this.setLoadingPageState();
         api.post(conf.INIT_ENDPOINT).then((response) => {
             if (this.isPageMounted() && response) {
-                this.state.jobId = response.id;
+                this.state.jobId = response.response.id;
                 this.state.intervalId = setInterval(() => {
                     this.requestTaskSummary();
                 }, conf.PULL_INTERVAL);
