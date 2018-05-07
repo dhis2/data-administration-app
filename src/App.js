@@ -93,7 +93,7 @@ class App extends PureComponent {
 
         const feedbackElement = this.showLoadingProgress() ?
             (
-                <div className={styles.centered}>
+                <div id={'circularLoadingId'} className={styles.centered}>
                     <CircularProgress />
                 </div>
             ) : (
