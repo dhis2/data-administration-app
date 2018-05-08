@@ -13,7 +13,7 @@ exports.config = {
         './e2e/features/home.feature',
         './e2e/features/help.feature',
         './e2e/features/sideMenu.feature',
-        './e2e/features/datastatistics.feature',
+        './e2e/features/dataStatistics.feature',
         './e2e/features/dataIntegrity.feature',
         './e2e/features/minMaxValueGeneration.feature',
         './e2e/features/maintenance.feature',
