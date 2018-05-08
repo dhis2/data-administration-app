@@ -188,12 +188,13 @@ class Maintenance extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <Card>
+                <Card id={'maintenanceContentContainerId'}>
                     <CardText>
                         <div className={classNames(styles.gridContainer, 'row')}>
                             {gridElements}
                         </div>
                         <RaisedButton
+                            id={'performMaintenanceBtnId'}
                             label={translator(i18nKeys.maintenance.actionButton)}
                             onClick={this.performMaintenance}
                             primary
