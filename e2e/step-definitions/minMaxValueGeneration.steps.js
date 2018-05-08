@@ -37,19 +37,19 @@ defineSupportCode(( {Given, When, Then} ) => {
     // Scenario: I want to see all items in the page
     // *********************************************************
     Then(/^A column with a list of data sets is displayed$/, () => {
-        browser.element('select[class^=MinMaxValueGeneration__select]').isVisible();
+        expect(browser.element('select[class^=MinMaxValueGeneration__select]').isVisible()).to.equal(true);
     });
 
     Then(/^A column with organization unit tree is displayed$/, () => {
-        browser.element('.tree-view').isVisible();
+        expect(browser.element('.tree-view').isVisible()).to.equal(true);
     });
 
     Then(/^Generate action is displayed$/, () => {
-        browser.element('button[id=generateMinMaxBtnId').isVisible();
+        expect(browser.element('button[id=generateMinMaxBtnId').isVisible()).to.equal(true);
     });
 
     Then(/^Remove action is displayed$/, () => {
-        browser.element('button[id=removeMinMaxBtnId').isVisible();
+        expect(browser.element('button[id=removeMinMaxBtnId').isVisible()).to.equal(true);
     });
 
     // *********************************************************
