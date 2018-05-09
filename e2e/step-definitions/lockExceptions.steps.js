@@ -102,7 +102,7 @@ defineSupportCode(({ Given, When, Then }) => {
     // A select a data set for new lock exception is displayed
     // I select a data set for new lock exception
     Then(/^Organization unit tree is displayed$/, () => {
-        browser.waitForVisible('.tree-view', 5000);
+        browser.waitForVisible('.tree-view', 8000);
     });
 
     Then(/^Period select is displayed$/, () => {
