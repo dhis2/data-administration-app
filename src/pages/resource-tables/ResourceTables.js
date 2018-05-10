@@ -243,6 +243,7 @@ class ResourceTable extends Page {
                             </div>
                         </div>
                         <RaisedButton
+                            id={'generateTablesBtnId'}
                             primary
                             label={translator(i18nKeys.resourceTables.actionButton)}
                             onClick={this.initResourceTablesGeneration}
