@@ -18,6 +18,7 @@ exports.config = {
         './e2e/features/minMaxValueGeneration.feature',
         './e2e/features/maintenance.feature',
         './e2e/features/lockException.feature',
+        './e2e/features/resourceTables.feature',
     ],
     // Patterns to exclude.
     exclude: [
