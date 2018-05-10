@@ -96,7 +96,7 @@ class ResourceTable extends Page {
         this.setLoadingPageState();
         api.post(RESOURCE_TABLES_ENDPOINT).then((response) => {
             if (this.isPageMounted() && response) {
-                const jobId = response.id;
+                const jobId = response.response.id;
                 const intervalId = setInterval(() => {
                     this.requestTaskSummary();
                 }, PULL_INTERVAL);
