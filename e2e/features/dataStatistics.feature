@@ -16,4 +16,3 @@ Feature: Data Statistics
             | User account invitations | 2     |
             | Data values              | 4     |
             | Events                   | 4     |
-
