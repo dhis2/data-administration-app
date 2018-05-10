@@ -7,7 +7,8 @@ const steps = [
     require('./dataIntegrity.steps'),
     require('./minMaxValueGeneration.steps'),
     require('./maintenance.steps'),
-    require('./lockExceptions.steps')
+    require('./lockExceptions.steps'),
+    require('./resourceTables.steps'),
 ];
 
 module.exports = function () {
