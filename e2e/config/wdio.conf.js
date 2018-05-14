@@ -19,6 +19,7 @@ exports.config = {
         './e2e/features/maintenance.feature',
         './e2e/features/lockException.feature',
         './e2e/features/resourceTables.feature',
+        './e2e/features/analyticsTablesManagement.feature',
     ],
     // Patterns to exclude.
     exclude: [
