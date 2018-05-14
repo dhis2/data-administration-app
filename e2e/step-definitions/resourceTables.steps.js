@@ -31,10 +31,6 @@ defineSupportCode(({ Given, When, Then }) => {
         browser.element('button[id=generateTablesBtnId]').click();
     });
 
-    Then(/^Loading is displayed$/, () => {
-        browser.waitForVisible('#circularLoadingId', 2000);
-    });
-
     Then(/^Generate tables action is disabled$/, () => {
         expect(browser.element('button[id=generateTablesBtnId]').isEnabled()).to.equal(false);
     });

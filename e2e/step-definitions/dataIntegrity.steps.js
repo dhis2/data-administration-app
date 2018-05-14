@@ -1,9 +1,9 @@
-const {expect} = require('chai');
-const {defineSupportCode} = require('cucumber');
+const { expect } = require('chai');
+const { defineSupportCode } = require('cucumber');
 
 const dataIntegrity = require('../pages/dataIntegrity.page');
 
-defineSupportCode(({Given, When, Then}) => {
+defineSupportCode(({ Given, When, Then }) => {
     // *********************************************************
     // Background:
     // *********************************************************
@@ -17,13 +17,6 @@ defineSupportCode(({Given, When, Then}) => {
         dataIntegrity.getRunIntegrityCheckBtn().click();
     });
 
-
-    // *********************************************************
-    // Scenario: I want to see if the loading is displayed
-    // *********************************************************
-    Then(/^Loading should be displayed$/, () => {
-        browser.waitForVisible('#circularLoadingId', 2000);
-    });
 
     // *********************************************************
     // Scenario: I want to see if items are displayed

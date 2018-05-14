@@ -27,5 +27,5 @@ Feature: Resource Tables
 
     Scenario: I want to generate the resource tables
         And I click generate tables action
-        Then Loading is displayed
+        Then Loading should be displayed
         And Generate tables action is disabled

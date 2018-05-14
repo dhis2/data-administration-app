@@ -25,4 +25,8 @@ defineSupportCode(({ Given, When, Then }) => {
     Then(/^the new section is opened with "(.+)"$/, (header) => {
         expect(browser.element('h1').getText().includes(header)).to.equal(true);
     });
+
+    Then(/^Loading should be displayed$/, () => {
+        browser.waitForVisible('#circularLoadingId', 2000);
+    });
 });
