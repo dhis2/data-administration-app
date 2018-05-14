@@ -9,6 +9,7 @@ const steps = [
     require('./maintenance.steps'),
     require('./lockExceptions.steps'),
     require('./resourceTables.steps'),
+    require('./analyticsTablesManagement.steps'),
 ];
 
 module.exports = function () {
