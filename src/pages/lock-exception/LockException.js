@@ -667,30 +667,32 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 {this.header()}
-                {this.state.lockExceptions && this.state.lockExceptions.length ? (
-                    <div>
-                        {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
-                            <div className={styles.pagination}>
-                                <Pagination {...paginationProps} />
+                {
+                    this.state.lockExceptions && this.state.lockExceptions.length ?
+                        (
+                            <div>
+                                {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
+                                    <div className={styles.pagination}>
+                                        <Pagination {...paginationProps} />
+                                    </div>
+                                }
+                                <DataTable
+                                    columns={this.dataTableColumns()}
+                                    rows={this.state.lockExceptions}
+                                    contextMenuActions={{ remove: this.removeLockException }}
+                                    contextMenuIcons={{ remove: 'delete' }}
+                                />
+                                {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
+                                    <div className={classNames(styles.pagination, styles.marginForAddButton)}>
+                                        <Pagination {...paginationProps} />
+                                    </div>
+                                }
                             </div>
-                        }
-                        <DataTable
-                            columns={this.dataTableColumns()}
-                            rows={this.state.lockExceptions}
-                            contextMenuActions={{ remove: this.removeLockException }}
-                            contextMenuIcons={{ remove: 'delete' }}
-                        />
-                        {!this.areActionsDisabled() && !this.state.atBatchDeletionPage &&
-                            <div className={classNames(styles.pagination, styles.marginForAddButton)}>
-                                <Pagination {...paginationProps} />
-                            </div>
-                        }
-                    </div>) :
-                    (
-                        <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
-                            <CardText>{translator(i18nKeys.lockException.noDataMessage)}</CardText>
-                        </Card>
-                    )
+                        ) : (
+                            <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+                                <CardText>{translator(i18nKeys.lockException.noDataMessage)}</CardText>
+                            </Card>
+                        )
                 }
                 {this.state.levels &&
                 this.state.groups &&
@@ -716,6 +718,7 @@ class LockException extends Page {
                 }
                 {!this.state.atBatchDeletionPage && !this.areActionsDisabled() &&
                     <FloatingActionButton
+                        id={'addExceptionButtonId'}
                         style={jsStyles.addButton}
                         onClick={this.showLockExceptionFormDialog}
                     >

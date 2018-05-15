@@ -1,90 +1,187 @@
-const {expect} = require('chai');
-const {defineSupportCode} = require('cucumber');
+const { expect } = require('chai');
+const { defineSupportCode } = require('cucumber');
 
 const lockExceptions = require('../pages/lockExceptions.page');
 
-defineSupportCode(({Given, When, Then}) => {
+defineSupportCode(({ Given, When, Then }) => {
+    let countBeforeAction;
+    // *********************************************************
+    // Background:
+    // *********************************************************
+    // Shared:
+    // that I am logged in to the Sierra Leone DHIS2
     When(/^I open lock exceptions page$/, () => {
         lockExceptions.open();
     });
 
-    Then(/^A list of Lock Exceptions is displayed$/, () => {
+    // *********************************************************
+    // Commons:
+    // *********************************************************
 
+    // Remove
+    Then(/^I click one of the remove lock exception icons$/, () => {
+        countBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.removeIcon().click();
     });
 
-    Then(/^Pagination is displayed$/, () => {
-
+    // Remove Batch (Area)
+    Then(/^I click batch deletion button$/, () => {
+        lockExceptions.getBatchDeletionBtn().click();
     });
 
-    Then(/^Number of rows are displayed$/, () => {
-
+    // Add lock exception
+    Then(/^I click in add lock exception button in list screen$/, () => {
+        countBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.addLockExceptionButton().click();
     });
 
-    Then(/^User can see a Button to add Exception$/, () => {
-
+    Then(/^Add lock exception form is displayed$/, () => {
+        browser.waitForVisible('#addLockExceptionFormId', 5000);
     });
 
-    When(/^I Select one item in the list$/, () => {
-
+    Then(/^A select a data set for new lock exception is displayed$/, () => {
+        browser.waitForVisible('.d2-ui-selectfield', 5000);
     });
 
-    When(/^I can see Remove button$/, () => {
-
+    Then(/^I select a data set for new lock exception$/, () => {
+        expect(lockExceptions.selectADataSet()).to.equal(lockExceptions.getSelectedDataSet());
     });
 
-    When(/^I click remove$/, () => {
+    // *********************************************************
+    // Scenario: I want to see all Lock Exceptions in the page
+    // *********************************************************
+    Then(/^A list of exceptions is displayed$/, () => {
+        browser.waitForVisible('.data-table', 5000);
+    });
 
+    Then(/^Pagination and number of rows are displayed$/, () => {
+        browser.waitForVisible('.data-table-pager', 5000);
+    });
+
+    Then(/^I can see a button to add lock a exception$/, () => {
+        browser.waitForVisible('#addExceptionButtonId', 5000);
+    });
+
+    Then(/^For each lock exception there is a remove icon$/, () => {
+        expect(lockExceptions.getTableRows()).to.equal(lockExceptions.getTableRemoveIcons());
+    });
+
+    // *********************************************************
+    // Scenario: I want to remove the lock exception
+    // *********************************************************
+    // Commons:
+    // I click one of the remove lock exception icons
+    Then(/^I confirm lock exception removal$/, () => {
+        lockExceptions.confirmRemoveSnackbar().click();
+        browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
     Then(/^The exception is removed$/, () => {
-
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction - 1);
     });
 
-    When(/^I Click in Add button$/, () => {
-
+    // *********************************************************
+    // Scenario: I do not want to remove lock exception
+    // *********************************************************
+    // Commons:
+    // I click remove lock exception icon
+    Then(/^I do not confirm lock exception removal$/, () => {
+        lockExceptions.notConfirmRemoveLockException();
     });
 
-    Then(/^Add lock exception option is displayed$/, () => {
-
+    Then(/^The exception is not removed$/, () => {
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction);
     });
 
-    Then(/^Organization list is displayed$/, () => {
-
+    // *********************************************************
+    // Scenario: I want to see the screen to add lock exception
+    // *********************************************************
+    // Commons:
+    // I click in add lock exception button in list screen
+    // Add lock exception form is displayed
+    // A select a data set for new lock exception is displayed
+    // I select a data set for new lock exception
+    Then(/^Organization unit tree is displayed$/, () => {
+        browser.waitForVisible('.tree-view', 8000);
     });
 
-    Then(/^Level and group is displayed$/, () => {
-
+    Then(/^Period select is displayed$/, () => {
+        browser.waitForVisible('#idPeriodPicker', 2000);
     });
 
-    Then(/^Data set is displayed$/, () => {
-
+    Then(/^Organization unit level select is displayed$/, () => {
+        browser.waitForVisible('div[id*="Selectitem-OrganisationUnitLevel"]', 2000);
     });
 
-    Then(/^Period selection is displayed$/, () => {
-
+    Then(/^Organization unit group select is displayed$/, () => {
+        browser.waitForVisible('div[id*="Selectitem-OrganisationUnitGroup"]', 2000);
     });
 
-    When(/^I Select Organization$/, () => {
-
+    // *********************************************************
+    // Scenario: I want to add lock exceptions
+    // *********************************************************
+    // Commons:
+    // I click in add lock exception button in list screen
+    // Add lock exception form is displayed
+    // A select a data set for new lock exception is displayed
+    // I select a data set for new lock exception
+    Then(/^I select an organization unit from the organization unit tree$/, () => {
+        lockExceptions.getOneOrgUnitTreeFromTree().click();
     });
 
-    When(/^I select level and Group$/, () => {
-
+    Then(/^I select period for new lock exception$/, () => {
+        lockExceptions.selectAnYear();
+        browser.pause(2000);
+        lockExceptions.selectAMonth();
+        browser.pause(2000);
     });
 
-    When(/^I select Data Set$/, () => {
-
+    Then(/^Click add button in add new lock exception form$/, () => {
+        countBeforeAction = lockExceptions.getTotalExceptions();
+        lockExceptions.getFormAddLockExceptionBtn().click();
+        browser.waitForVisible('span[id=feedbackSnackbarId]');
     });
 
-    When(/^I select period$/, () => {
-
+    Then(/^The lock exception is added to the list of lock exceptions$/, () => {
+        browser.pause(2000);
+        expect(lockExceptions.getTotalExceptions()).to.equal(countBeforeAction + 1);
     });
 
-    When(/^Click Add$/, () => {
-
+    // *********************************************************
+    // Scenario: I want to see Batch Deletion section
+    // *********************************************************
+    // Commons: I click batch deletion button
+    Then(/^Title batch deletion is displayed$/, () => {
+        expect(lockExceptions.getSubTitle()).to.equal('Batch Deletion');
     });
 
-    Then(/^The exception is added to the list of exceptions$/, () => {
+    Then(/^A list of lock exceptions batches is displayed$/, () => {
+        browser.waitForVisible('.data-table', 5000);
+    });
 
+    Then(/^For each displayed lock exception batch there is a remove icon$/, () => {
+        expect(lockExceptions.getTableRows()).to.equal(lockExceptions.getTableRemoveIcons());
+    });
+
+    Then(/^I can return to previous page$/, () => {
+        browser.waitForVisible('.material-icons=arrow_back', 5000);
+    });
+
+    // *********************************************************
+    // Scenario: I want to execute batch deletion
+    // *********************************************************
+    // Commons: I click batch deletion button
+    Then(/^I click remove lock exception batch icon$/, () => {
+        countBeforeAction = lockExceptions.getTableRows();
+        lockExceptions.removeIcon().click();
+    });
+
+    Then(/^I confirm lock exception batch removal$/, () => {
+        lockExceptions.confirmRemoveSnackbar().click();
+    });
+
+    Then(/^The exception batch is removed$/, () => {
+        browser.pause(2000);
+        expect(lockExceptions.getTableRows()).to.equal(countBeforeAction - 1);
     });
 });

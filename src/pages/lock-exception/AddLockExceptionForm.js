@@ -156,7 +156,7 @@ class AddLockExceptionForm extends Component {
         }
 
         return (
-            <div>
+            <div id={'addLockExceptionFormId'}>
                 <div className={styles.selectsContainer}>
                     <SelectField
                         style={d2UiSelectStyleOverride}
@@ -166,10 +166,12 @@ class AddLockExceptionForm extends Component {
                         value={dataSetSelectValue}
                     />
                     {this.state.dataSet &&
-                    <PeriodPicker
-                        periodType={this.state.dataSet.periodType}
-                        onPickPeriod={this.onPeriodChange}
-                    />
+                        <span id={'idPeriodPicker'}>
+                            <PeriodPicker
+                                periodType={this.state.dataSet.periodType}
+                                onPickPeriod={this.onPeriodChange}
+                            />
+                        </span>
                     }
                 </div>
                 {this.state.dataSet ? (

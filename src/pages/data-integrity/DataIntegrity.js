@@ -141,6 +141,7 @@ class DataIntegrity extends Page {
         const translator = this.context.translator;
         const runButton = (
             <RaisedButton
+                id={'runDataIntegrityChecksBtnId'}
                 label={translator(i18nKeys.dataIntegrity.actionButton)}
                 onClick={this.initDataIntegrityCheck}
                 primary={Boolean(true)}
@@ -152,6 +153,7 @@ class DataIntegrity extends Page {
             const errorElementskeys = Object.keys(this.state.cards);
             cardsToShow = errorElementskeys.map(element => (
                 <DataIntegrityCard
+                    cardId={`errorElement-${element}`}
                     key={element}
                     title={
                         conf.dataIntegrityControls.find(
@@ -167,6 +169,7 @@ class DataIntegrity extends Page {
                     ).map(
                         resultNoErrorElement => (
                             <DataIntegrityCard
+                                cardId={`noErrorElement-${resultNoErrorElement.key}`}
                                 key={resultNoErrorElement.key}
                                 title={resultNoErrorElement.label}
                                 content={[]}

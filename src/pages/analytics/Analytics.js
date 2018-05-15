@@ -256,6 +256,7 @@ class Analytics extends Page {
                         <div className={classNames(styles.gridContainer, 'row')}>
                             {gridElements}
                             <SelectField
+                                disabled={this.areActionsDisabled()}
                                 className="col-xs-12 col-md-6"
                                 floatingLabelText={
                                     translator(i18nKeys.analytics.lastYearsLabel)
@@ -274,10 +275,11 @@ class Analytics extends Page {
                             </SelectField>
                         </div>
                         <RaisedButton
+                            id={'startExportBtnId'}
                             primary
                             label={translator(i18nKeys.analytics.actionButton)}
                             onClick={this.initAnalyticsTablesGeneration}
-                            disabled={this.state.loading}
+                            disabled={this.areActionsDisabled()}
                         />
                     </CardText>
                 </Card>

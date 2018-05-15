@@ -24,6 +24,7 @@ const jsStyles = {
 
 class DataIntegrityCard extends PureComponent {
     static propTypes = {
+        cardId: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         content: PropTypes.oneOfType([
             PropTypes.array,
@@ -51,36 +52,40 @@ class DataIntegrityCard extends PureComponent {
         if (!Array.isArray(this.props.content)) {
             cardText = (
                 <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
-                    {
-                        Object.keys(this.props.content).map(element => (
-                            <span key={element}>
-                                <h4>{element}</h4>
-                                <p>
-                                    {
-                                        Array.isArray(this.props.content[element]) ?
-                                            this.props.content[element].join(', ') :
-                                            this.props.content[element]
-                                    }
-                                </p>
-                            </span>
-                        ))
-                    }
+                    <div id={'elementDescription'}>
+                        {
+                            Object.keys(this.props.content).map(element => (
+                                <span key={element}>
+                                    <h4>{element}</h4>
+                                    <p>
+                                        {
+                                            Array.isArray(this.props.content[element]) ?
+                                                this.props.content[element].join(', ') :
+                                                this.props.content[element]
+                                        }
+                                    </p>
+                                </span>
+                            ))
+                        }
+                    </div>
                 </CardText>
             );
         } else if (this.props.content.length) {
             cardText = (
                 <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
-                    {
-                        this.props.content.map(element => (
-                            <p key={element}>
-                                {
-                                    Array.isArray(element) ?
-                                        element.join(', ') :
-                                        element
-                                }
-                            </p>
-                        ))
-                    }
+                    <div id={'elementDescription'}>
+                        {
+                            this.props.content.map(element => (
+                                <p key={element}>
+                                    {
+                                        Array.isArray(element) ?
+                                            element.join(', ') :
+                                            element
+                                    }
+                                </p>
+                            ))
+                        }
+                    </div>
                 </CardText>
             );
         } else {
@@ -102,7 +107,7 @@ class DataIntegrityCard extends PureComponent {
         );
 
         return (
-            <Card className={styles.card}>
+            <Card id={this.props.cardId} className={styles.card}>
                 <CardHeader
                     title={translator(this.props.title)}
                     titleColor={titleColor}

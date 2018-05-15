@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-05-10T10:33:56.452Z\n"
-"PO-Revision-Date: 2018-05-10T10:33:56.452Z\n"
+"POT-Creation-Date: 2018-05-14T14:00:55.135Z\n"
+"PO-Revision-Date: 2018-05-14T14:00:55.135Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -580,7 +580,10 @@ msgstr ""
 msgid "START EXPORT"
 msgstr ""
 
-msgid "Skip generation of aggregate data and completeness data\t"
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
 msgstr ""
 
 msgid "Skip generation of event data"

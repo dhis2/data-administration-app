@@ -93,14 +93,16 @@ class App extends PureComponent {
 
         const feedbackElement = this.showLoadingProgress() ?
             (
-                <div className={styles.centered}>
+                <div id={'circularLoadingId'} className={styles.centered}>
                     <CircularProgress />
                 </div>
             ) : (
-                <FeedbackSnackbar
-                    show={this.state.showSnackbar}
-                    conf={this.state.snackbarConf}
-                />
+                <span id={'feedbackSnackbarId'}>
+                    <FeedbackSnackbar
+                        show={this.state.showSnackbar}
+                        conf={this.state.snackbarConf}
+                    />
+                </span>
             );
 
         return (

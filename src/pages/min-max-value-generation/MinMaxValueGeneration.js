@@ -334,6 +334,7 @@ class MinMaxValueGeneration extends Page {
                                 )}
                         </div>
                         <RaisedButton
+                            id={'generateMinMaxBtnId'}
                             className={styles.actionButton}
                             primary
                             label={translator(i18nKeys.minMaxValueGeneration.actionButton)}
@@ -341,6 +342,7 @@ class MinMaxValueGeneration extends Page {
                             disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />
                         <FlatButton
+                            id={'removeMinMaxBtnId'}
                             className={styles.actionButton}
                             secondary
                             label={translator(i18nKeys.minMaxValueGeneration.removeButton)}
