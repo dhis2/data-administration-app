@@ -35,9 +35,6 @@ const ownShallow = () => {
         <DataStatisticsTable label={tableSample.label} elements={tableSample.elements} />,
         {
             disableLifecycleMethods: true,
-            context: {
-                translator: (key) => key,
-            }
         }
     );
 };

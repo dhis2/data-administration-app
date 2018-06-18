@@ -10,9 +10,8 @@ import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 // logging
 import log from 'loglevel';
 
-// Internatinalization: i18next
-import { I18nextProvider, translate } from 'react-i18next';
-import i18n from './i18next';
+/* i18n */
+import { configI18n } from './configI18n';
 
 import './index.css';
 import App from './App';
@@ -20,16 +19,15 @@ import appTheme from './theme';
 
 import registerServiceWorker from './registerServiceWorker';
 
-const AppComponent = withRouter(translate()(App));
+const AppComponent = withRouter(App);
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
-const configLocale = (userSettings) => {
+const configurations = (userSettings) => {
     const uiLocale = userSettings.keyUiLocale;
-    if (uiLocale && uiLocale !== 'en') {
-        i18n.changeLanguage(uiLocale);
-    }
     sessionStorage.setItem('uiLocale', uiLocale || 'en');
+
+    configI18n(userSettings);
 };
 
 // init d2
@@ -53,14 +51,12 @@ getManifest('manifest.webapp').then((manifest) => {
                 ],
             }}
         >
-            <I18nextProvider i18n={i18n}>
-                <HashRouter>
-                    <AppComponent />
-                </HashRouter>
-            </I18nextProvider>
+            <HashRouter>
+                <AppComponent />
+            </HashRouter>
         </D2UIApp>,
         document.getElementById('app'),
     );
-}).then(getUserSettings).then(configLocale);
+}).then(getUserSettings).then(configurations);
 
 registerServiceWorker();

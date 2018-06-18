@@ -26,7 +26,6 @@ const ownShallow = () => {
         />,
         {
             context: {
-                translator: key => key,
                 d2: {
                     system: {
                         version: {

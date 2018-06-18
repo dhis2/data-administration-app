@@ -54,9 +54,6 @@ const ownShallowError = (data) => {
         <DataIntegrityCard title={data.title} content={data.content}/>,
         {
             disableLifecycleMethods: true,
-            context: {
-                translator: key => key,
-            },
         },
     );
 };
@@ -66,9 +63,6 @@ const ownShallowNoError = () => {
         <DataIntegrityCard title={noErrorCardSample.title} />,
         {
             disableLifecycleMethods: true,
-            context: {
-                translator: key => key,
-            },
         },
     );
 };

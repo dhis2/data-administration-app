@@ -50,9 +50,6 @@ const ownShallow = () => {
             updateSelectedPeriodId={updateSelectedPeriodId}
         />,
         {
-            context: {
-                translator: (key) => key,
-            },
             disableLifecycleMethods: true
         }
     );
