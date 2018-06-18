@@ -258,7 +258,7 @@ export const i18nKeys = {
     },
     analytics: {
         title: 'Analytics tables management',
-        label: 'Analytics',
+        label: 'Analytics Tables',
         description: 'The data mart is a set of tables in the DHIS database which is used by all reporting and ' +
         'analysis tools to retrieve data from. ',
         actionText: 'Analytics tables update',
