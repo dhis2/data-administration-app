@@ -11,7 +11,6 @@ class Page extends Component {
         loading: PropTypes.bool,
         currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
-        translator: PropTypes.func,
     }
 
     componentWillMount() {

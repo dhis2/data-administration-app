@@ -17,6 +17,7 @@ import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
 
 // i18n
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
@@ -75,7 +76,6 @@ class MinMaxValueGeneration extends Page {
     }
 
     loadData() {
-        const translator = this.context.translator;
         const d2 = this.context.d2;
         if (this.state.dataSets == null || this.state.rootWithMember == null) {
             Promise.all([
@@ -104,7 +104,7 @@ class MinMaxValueGeneration extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: ERROR,
-                            message: translator(i18nKeys.minMaxValueGeneration.notPossibleToLoadMessage),
+                            message: i18n.t(i18nKeys.minMaxValueGeneration.notPossibleToLoadMessage),
                         },
                         pageState: {
                             ...this.state,
@@ -133,13 +133,12 @@ class MinMaxValueGeneration extends Page {
     }
 
     generateMinMaxValueClick() {
-        const translator = this.context.translator;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
                 snackbarConf: {
                     type: WARNING,
-                    message: translator(i18nKeys.minMaxValueGeneration.warningMessage),
+                    message: i18n.t(i18nKeys.minMaxValueGeneration.warningMessage),
                 },
                 pageState: {
                     ...this.state,
@@ -161,7 +160,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.minMaxValueGeneration.performingMessage),
+                message: i18n.t(i18nKeys.minMaxValueGeneration.performingMessage),
             },
             pageState: {
                 ...this.state,
@@ -178,7 +177,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: translator(i18nKeys.minMaxValueGeneration.minMaxGenerationDone),
+                        message: i18n.t(i18nKeys.minMaxValueGeneration.minMaxGenerationDone),
                     },
                     pageState: {
                         ...this.state,
@@ -192,7 +191,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: ERROR,
-                        message: translator(i18nKeys.messages.unexpectedError),
+                        message: i18n.t(i18nKeys.messages.unexpectedError),
                     },
                     pageState: {
                         ...this.state,
@@ -204,13 +203,12 @@ class MinMaxValueGeneration extends Page {
     }
 
     removeMinMaxValueClick() {
-        const translator = this.context.translator;
         if (this.dataSetsSelect.selectedOptions.length === 0 || this.state.selected.length === 0) {
             this.context.updateAppState({
                 showSnackbar: true,
                 snackbarConf: {
                     type: WARNING,
-                    message: translator(i18nKeys.minMaxValueGeneration.warningMessage),
+                    message: i18n.t(i18nKeys.minMaxValueGeneration.warningMessage),
                 },
                 pageState: {
                     ...this.state,
@@ -232,7 +230,7 @@ class MinMaxValueGeneration extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.minMaxValueGeneration.removingMessage),
+                message: i18n.t(i18nKeys.minMaxValueGeneration.removingMessage),
             },
             pageState: {
                 ...this.state,
@@ -246,7 +244,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: SUCCESS,
-                        message: translator(i18nKeys.minMaxValueGeneration.minMaxRemovalDone),
+                        message: i18n.t(i18nKeys.minMaxValueGeneration.minMaxRemovalDone),
                     },
                     pageState: {
                         ...this.state,
@@ -260,7 +258,7 @@ class MinMaxValueGeneration extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: ERROR,
-                        message: translator(i18nKeys.messages.unexpectedError),
+                        message: i18n.t(i18nKeys.messages.unexpectedError),
                     },
                     pageState: {
                         ...this.state,
@@ -272,11 +270,10 @@ class MinMaxValueGeneration extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
         return (
             <div>
                 <h1 className={styles.header}>
-                    {translator(i18nKeys.minMaxValueGeneration.title)}
+                    {i18n.t(i18nKeys.minMaxValueGeneration.title)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -287,7 +284,7 @@ class MinMaxValueGeneration extends Page {
                             {this.state.dataSets ? (
                                 <div className={styles.left}>
                                     <div className={styles.label}>
-                                        {translator(i18nKeys.minMaxValueGeneration.dataSet)}
+                                        {i18n.t(i18nKeys.minMaxValueGeneration.dataSet)}
                                     </div>
                                     <select
                                         multiple
@@ -307,14 +304,14 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.left}>
-                                        <span>{translator(i18nKeys.minMaxValueGeneration.loadingDataSetsMessage)}</span>
+                                        <span>{i18n.t(i18nKeys.minMaxValueGeneration.loadingDataSetsMessage)}</span>
                                     </div>
                                 )
                             }
                             {this.state.rootWithMembers ? (
                                 <div className={styles.right}>
                                     <div className={styles.label}>
-                                        {translator(i18nKeys.minMaxValueGeneration.organisationUnitSelect)}
+                                        {i18n.t(i18nKeys.minMaxValueGeneration.organisationUnitSelect)}
                                     </div>
                                     <div className={styles.tree}>
                                         <OrgUnitTree
@@ -329,7 +326,7 @@ class MinMaxValueGeneration extends Page {
                                 </div>) :
                                 (
                                     <div className={styles.right}>
-                                        <span>{translator(i18nKeys.minMaxValueGeneration.updatingTree)}</span>
+                                        <span>{i18n.t(i18nKeys.minMaxValueGeneration.updatingTree)}</span>
                                     </div>
                                 )}
                         </div>
@@ -337,7 +334,7 @@ class MinMaxValueGeneration extends Page {
                             id={'generateMinMaxBtnId'}
                             className={styles.actionButton}
                             primary
-                            label={translator(i18nKeys.minMaxValueGeneration.actionButton)}
+                            label={i18n.t(i18nKeys.minMaxValueGeneration.actionButton)}
                             onClick={this.generateMinMaxValueClick}
                             disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />
@@ -345,7 +342,7 @@ class MinMaxValueGeneration extends Page {
                             id={'removeMinMaxBtnId'}
                             className={styles.actionButton}
                             secondary
-                            label={translator(i18nKeys.minMaxValueGeneration.removeButton)}
+                            label={i18n.t(i18nKeys.minMaxValueGeneration.removeButton)}
                             onClick={this.removeMinMaxValueClick}
                             disabled={this.isUserInteractionDisabled() || this.isDataSetSelected()}
                         />

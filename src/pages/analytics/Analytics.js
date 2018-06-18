@@ -33,6 +33,7 @@ import {
 } from '../analytics/analytics.conf';
 
 // i18n
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 /* styles */
@@ -92,12 +93,11 @@ class Analytics extends Page {
     }
 
     setLoadingPageState() {
-        const translator = this.context.translator;
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.resourceTables.loadingMessage),
+                message: i18n.t(i18nKeys.resourceTables.loadingMessage),
             },
             pageState: {
                 loading: true,
@@ -106,10 +106,9 @@ class Analytics extends Page {
     }
 
     setLoadedPageWithErrorState(error) {
-        const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator(i18nKeys.analytics.unexpectedError);
+            i18n.t(i18nKeys.analytics.unexpectedError);
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -220,32 +219,28 @@ class Analytics extends Page {
         this.setState({ checkboxes });
     }
 
-    renderCheckbox = (checkbox) => {
-        const translator = this.context.translator;
-        return (
-            <GridTile
-                key={checkbox.key}
-                className={classNames('col-xs-12 col-md-6', styles.formControl)}
-            >
-                <Checkbox
-                    label={translator(checkbox.label)}
-                    checked={this.state.checkboxes[checkbox.key].checked}
-                    onCheck={this.toggleCheckbox(this.state.checkboxes, checkbox.key)}
-                    labelStyle={{ color: '#000000' }}
-                    iconStyle={{ fill: '#000000' }}
-                    disabled={this.areActionsDisabled()}
-                />
-            </GridTile>
-        );
-    };
+    renderCheckbox = checkbox => (
+        <GridTile
+            key={checkbox.key}
+            className={classNames('col-xs-12 col-md-6', styles.formControl)}
+        >
+            <Checkbox
+                label={i18n.t(checkbox.label)}
+                checked={this.state.checkboxes[checkbox.key].checked}
+                onCheck={this.toggleCheckbox(this.state.checkboxes, checkbox.key)}
+                labelStyle={{ color: '#000000' }}
+                iconStyle={{ fill: '#000000' }}
+                disabled={this.areActionsDisabled()}
+            />
+        </GridTile>
+    );
 
     render() {
-        const translator = this.context.translator;
         const gridElements = analyticsCheckboxes.map(this.renderCheckbox);
         return (
             <div>
                 <h1>
-                    { translator(i18nKeys.analytics.title) }
+                    { i18n.t(i18nKeys.analytics.title) }
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -259,7 +254,7 @@ class Analytics extends Page {
                                 disabled={this.areActionsDisabled()}
                                 className="col-xs-12 col-md-6"
                                 floatingLabelText={
-                                    translator(i18nKeys.analytics.lastYearsLabel)
+                                    i18n.t(i18nKeys.analytics.lastYearsLabel)
                                 }
                                 onChange={this.onChangeLastYears}
                                 value={this.state.lastYears}
@@ -269,7 +264,7 @@ class Analytics extends Page {
                                     <MenuItem
                                         key={item.key}
                                         value={item.value}
-                                        primaryText={translator(item.displayName)}
+                                        primaryText={i18n.t(item.displayName)}
                                     />
                                 ))}
                             </SelectField>
@@ -277,7 +272,7 @@ class Analytics extends Page {
                         <RaisedButton
                             id={'startExportBtnId'}
                             primary
-                            label={translator(i18nKeys.analytics.actionButton)}
+                            label={i18n.t(i18nKeys.analytics.actionButton)}
                             onClick={this.initAnalyticsTablesGeneration}
                             disabled={this.areActionsDisabled()}
                         />

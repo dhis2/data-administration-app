@@ -27,9 +27,6 @@ const ownShallow = () => {
             section={section}
         />,
         {
-            context: {
-                translator: (key) => key,
-            },
             disableLifecycleMethods: true
         }
     );

@@ -8,6 +8,9 @@ import FontIcon from 'material-ui/FontIcon';
 
 import classNames from 'classnames';
 
+/* i18n */
+import i18n from '../../../locales';
+
 import styles from './GridSection.css';
 
 class GridSection extends PureComponent {
@@ -24,12 +27,7 @@ class GridSection extends PureComponent {
         }).isRequired,
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-    }
-
     render() {
-        const translator = this.context.translator;
         return (
             <Link to={this.props.section.path}>
                 <GridTile key={this.props.section.key} className={classNames('section', styles.gridElement)}>
@@ -44,10 +42,10 @@ class GridSection extends PureComponent {
                         </FontIcon>
                     </div>
                     <span className={classNames('section-description', 'row', styles.gridDescription)}>
-                        {translator(this.props.section.info.description)}
+                        {i18n.t(this.props.section.info.description)}
                     </span>
                     <span className={classNames('section-action-text', 'row', styles.gridActionText)}>
-                        {translator(this.props.section.info.actionText)}
+                        {i18n.t(this.props.section.info.actionText)}
                     </span>
                 </GridTile>
             </Link>

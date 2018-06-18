@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { LOADING, SUCCESS, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
 // i18n
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 import Page from '../Page';
@@ -66,12 +67,11 @@ class Maintenance extends Page {
     }
 
     setLoadingPageState() {
-        const translator = this.context.translator;
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.maintenance.performing),
+                message: i18n.t(i18nKeys.maintenance.performing),
             },
             pageState: {
                 loading: true,
@@ -80,10 +80,9 @@ class Maintenance extends Page {
     }
 
     setLoadedPageWithErrorState(error) {
-        const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator(i18nKeys.maintenance.unexpectedError);
+            i18n.t(i18nKeys.maintenance.unexpectedError);
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -127,7 +126,6 @@ class Maintenance extends Page {
     }
 
     performMaintenance() {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const formData = this.buildFormData();
 
@@ -139,7 +137,7 @@ class Maintenance extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: SUCCESS,
-                            message: translator(i18nKeys.maintenance.actionPerformed),
+                            message: i18n.t(i18nKeys.maintenance.actionPerformed),
                         },
                         pageState: {
                             loading: false,
@@ -155,7 +153,6 @@ class Maintenance extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
         const checkboxes = Object.assign({}, this.state.checkboxes);
         const gridElements = maintenanceCheckboxes.map((checkbox) => {
             const checkboxState = checkboxes[checkbox.key].checked;
@@ -169,7 +166,7 @@ class Maintenance extends Page {
                     className={classNames('col-xs-12 col-md-6 col-lg-4', styles.formControl)}
                 >
                     <Checkbox
-                        label={translator(checkbox.label)}
+                        label={i18n.t(checkbox.label)}
                         checked={checkboxState}
                         onCheck={toggleCheckbox}
                         labelStyle={{ color: '#000000' }}
@@ -183,7 +180,7 @@ class Maintenance extends Page {
         return (
             <div>
                 <h1>
-                    {translator(PAGE_TITLE)}
+                    {i18n.t(PAGE_TITLE)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -195,7 +192,7 @@ class Maintenance extends Page {
                         </div>
                         <RaisedButton
                             id={'performMaintenanceBtnId'}
-                            label={translator(i18nKeys.maintenance.actionButton)}
+                            label={i18n.t(i18nKeys.maintenance.actionButton)}
                             onClick={this.performMaintenance}
                             primary
                             disabled={this.areActionsDisabled() || this.selectedCheckboxesCount() === 0}

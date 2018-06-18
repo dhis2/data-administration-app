@@ -28,6 +28,7 @@ import { getDocsKeyForSection } from '../sections.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 // i18n
+import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
 import styles from './LockException.css';
@@ -104,56 +105,55 @@ class LockException extends Page {
         this.onPreviousPageClick = this.onPreviousPageClick.bind(this);
 
         // FIXME Hack in some translations
-        const translator = context.translator;
         const d2 = context.d2;
         Object.assign(d2.i18n.translations, {
-            period: translator(i18nKeys.lockException.period),
-            dataSet: translator(i18nKeys.lockException.dataSet),
-            organisationUnit: translator(i18nKeys.lockException.organisationUnit),
-            organisation_unit_group: translator(i18nKeys.lockException.organisationUnitGroup),
-            organisation_unit_level: translator(i18nKeys.lockException.organisationUnitLevel),
-            select: translator(i18nKeys.lockException.select),
-            deselect: translator(i18nKeys.lockException.deselect),
-            select_all: translator(i18nKeys.lockException.selectAll),
-            deselect_all: translator(i18nKeys.lockException.deselectAll),
-            name: translator(i18nKeys.lockException.name),
-            show: translator(i18nKeys.lockException.show),
-            remove: translator(i18nKeys.lockException.remove),
-            actions: translator(i18nKeys.lockException.actions),
-            of_page: translator(i18nKeys.lockException.ofPage),
-            week: translator(i18nKeys.lockException.week),
-            month: translator(i18nKeys.lockException.month),
-            year: translator(i18nKeys.lockException.year),
-            biMonth: translator(i18nKeys.lockException.biMonth),
-            day: translator(i18nKeys.lockException.day),
-            jan: translator(i18nKeys.lockException.jan),
-            feb: translator(i18nKeys.lockException.feb),
-            mar: translator(i18nKeys.lockException.mar),
-            apr: translator(i18nKeys.lockException.apr),
-            may: translator(i18nKeys.lockException.may),
-            jun: translator(i18nKeys.lockException.jun),
-            jul: translator(i18nKeys.lockException.jul),
-            aug: translator(i18nKeys.lockException.aug),
-            sep: translator(i18nKeys.lockException.sep),
-            oct: translator(i18nKeys.lockException.oct),
-            nov: translator(i18nKeys.lockException.nov),
-            dec: translator(i18nKeys.lockException.dec),
-            'jan-feb': translator(i18nKeys.lockException.janFeb),
-            'mar-apr': translator(i18nKeys.lockException.marApr),
-            'may-jun': translator(i18nKeys.lockException.mayJun),
-            'jul-aug': translator(i18nKeys.lockException.julAug),
-            'sep-oct': translator(i18nKeys.lockException.sepOct),
-            'nov-dec': translator(i18nKeys.lockException.novDec),
-            quarter: translator(i18nKeys.lockException.quarter),
-            Q1: translator(i18nKeys.lockException.Q1),
-            Q2: translator(i18nKeys.lockException.Q2),
-            Q3: translator(i18nKeys.lockException.Q3),
-            Q4: translator(i18nKeys.lockException.Q4),
-            sixMonth: translator(i18nKeys.lockException.sixMonth),
-            'jan-jun': translator(i18nKeys.lockException.janJun),
-            'jul-dec': translator(i18nKeys.lockException.julDec),
-            'apr-sep': translator(i18nKeys.lockException.aprSep),
-            'oct-mar': translator(i18nKeys.lockException.octMar),
+            period: i18n.t(i18nKeys.lockException.period),
+            dataSet: i18n.t(i18nKeys.lockException.dataSet),
+            organisationUnit: i18n.t(i18nKeys.lockException.organisationUnit),
+            organisation_unit_group: i18n.t(i18nKeys.lockException.organisationUnitGroup),
+            organisation_unit_level: i18n.t(i18nKeys.lockException.organisationUnitLevel),
+            select: i18n.t(i18nKeys.lockException.select),
+            deselect: i18n.t(i18nKeys.lockException.deselect),
+            select_all: i18n.t(i18nKeys.lockException.selectAll),
+            deselect_all: i18n.t(i18nKeys.lockException.deselectAll),
+            name: i18n.t(i18nKeys.lockException.name),
+            show: i18n.t(i18nKeys.lockException.show),
+            remove: i18n.t(i18nKeys.lockException.remove),
+            actions: i18n.t(i18nKeys.lockException.actions),
+            of_page: i18n.t(i18nKeys.lockException.ofPage),
+            week: i18n.t(i18nKeys.lockException.week),
+            month: i18n.t(i18nKeys.lockException.month),
+            year: i18n.t(i18nKeys.lockException.year),
+            biMonth: i18n.t(i18nKeys.lockException.biMonth),
+            day: i18n.t(i18nKeys.lockException.day),
+            jan: i18n.t(i18nKeys.lockException.jan),
+            feb: i18n.t(i18nKeys.lockException.feb),
+            mar: i18n.t(i18nKeys.lockException.mar),
+            apr: i18n.t(i18nKeys.lockException.apr),
+            may: i18n.t(i18nKeys.lockException.may),
+            jun: i18n.t(i18nKeys.lockException.jun),
+            jul: i18n.t(i18nKeys.lockException.jul),
+            aug: i18n.t(i18nKeys.lockException.aug),
+            sep: i18n.t(i18nKeys.lockException.sep),
+            oct: i18n.t(i18nKeys.lockException.oct),
+            nov: i18n.t(i18nKeys.lockException.nov),
+            dec: i18n.t(i18nKeys.lockException.dec),
+            'jan-feb': i18n.t(i18nKeys.lockException.janFeb),
+            'mar-apr': i18n.t(i18nKeys.lockException.marApr),
+            'may-jun': i18n.t(i18nKeys.lockException.mayJun),
+            'jul-aug': i18n.t(i18nKeys.lockException.julAug),
+            'sep-oct': i18n.t(i18nKeys.lockException.sepOct),
+            'nov-dec': i18n.t(i18nKeys.lockException.novDec),
+            quarter: i18n.t(i18nKeys.lockException.quarter),
+            Q1: i18n.t(i18nKeys.lockException.Q1),
+            Q2: i18n.t(i18nKeys.lockException.Q2),
+            Q3: i18n.t(i18nKeys.lockException.Q3),
+            Q4: i18n.t(i18nKeys.lockException.Q4),
+            sixMonth: i18n.t(i18nKeys.lockException.sixMonth),
+            'jan-jun': i18n.t(i18nKeys.lockException.janJun),
+            'jul-dec': i18n.t(i18nKeys.lockException.julDec),
+            'apr-sep': i18n.t(i18nKeys.lockException.aprSep),
+            'oct-mar': i18n.t(i18nKeys.lockException.octMar),
         });
     }
 
@@ -180,7 +180,6 @@ class LockException extends Page {
     }
 
     header() {
-        const translator = this.context.translator;
         if (this.state.atBatchDeletionPage) {
             return (
                 <div className={styles.headerContainer}>
@@ -192,12 +191,12 @@ class LockException extends Page {
                                 arrow_back
                             </FontIcon>
                         </IconButton>
-                        <span>{translator(i18nKeys.lockException.batchDeletionHeader)}</span>
+                        <span>{i18n.t(i18nKeys.lockException.batchDeletionHeader)}</span>
                         <span className={styles.headerDivider}> | </span>
                         <span
                             className={styles.subHeader}
                         >
-                            {translator(i18nKeys.lockException.batchDeletionSubHeader)}
+                            {i18n.t(i18nKeys.lockException.batchDeletionSubHeader)}
                         </span>
                     </h1>
                 </div>
@@ -207,7 +206,7 @@ class LockException extends Page {
         return (
             <div className={styles.headerContainer}>
                 <h1 className={styles.header}>
-                    {translator(i18nKeys.lockException.title)}
+                    {i18n.t(i18nKeys.lockException.title)}
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
@@ -215,7 +214,7 @@ class LockException extends Page {
                 <div>
                     <RaisedButton
                         className={styles.actionButton}
-                        label={translator(i18nKeys.lockException.actionButton)}
+                        label={i18n.t(i18nKeys.lockException.actionButton)}
                         onClick={this.goToBatchDeletionPage}
                         primary
                         disabled={this.areActionsDisabled()}
@@ -252,7 +251,6 @@ class LockException extends Page {
     }
 
     loadLockExceptionsForPager(pager, userAction) {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const url = `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
             '&fields=name,' +
@@ -272,7 +270,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator(i18nKeys.lockException.loading),
+                    message: i18n.t(i18nKeys.lockException.loading),
                 },
                 pageState: {
                     atBatchDeletionPage: false,
@@ -292,7 +290,7 @@ class LockException extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: translator(i18nKeys.lockException.removedMessage),
+                                    message: i18n.t(i18nKeys.lockException.removedMessage),
                                 },
                             };
                             this.state.deleteInProgress = false;
@@ -302,7 +300,7 @@ class LockException extends Page {
                                 showSnackbar: true,
                                 snackbarConf: {
                                     type: SUCCESS,
-                                    message: translator(i18nKeys.lockException.addedMessage),
+                                    message: i18n.t(i18nKeys.lockException.addedMessage),
                                 },
                             };
                             this.state.addInProgress = false;
@@ -328,7 +326,7 @@ class LockException extends Page {
                     if (this.isPageMounted()) {
                         const messageError = error && error.message ?
                             error.message :
-                            translator(i18nKeys.messages.unexpectedError);
+                            i18n.t(i18nKeys.messages.unexpectedError);
 
                         this.context.updateAppState({
                             showSnackbar: true,
@@ -348,7 +346,6 @@ class LockException extends Page {
 
     // Get information for Batch Deletion Page
     loadLockExceptionCombinations() {
-        const translator = this.context.translator;
         const api = this.context.d2.Api.getApi();
         const url = 'lockExceptions/combinations?fields=name, period[id,displayName], dataSet[id,displayName]';
 
@@ -357,7 +354,7 @@ class LockException extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.lockException.loadingMessage),
+                message: i18n.t(i18nKeys.lockException.loadingMessage),
             },
             pageState: {
                 atBatchDeletionPage: true,
@@ -384,7 +381,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator(i18nKeys.messages.unexpectedError);
+                        i18n.t(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -434,13 +431,12 @@ class LockException extends Page {
     }
 
     removeLockException(le) {
-        const translator = this.context.translator;
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
                 type: ACTION_MESSAGE,
-                message: translator(i18nKeys.lockException.confirmDeleteMessage),
-                action: translator(i18nKeys.lockException.confirmButton),
+                message: i18n.t(i18nKeys.lockException.confirmDeleteMessage),
+                action: i18n.t(i18nKeys.lockException.confirmButton),
                 onActionClick: () => {
                     const api = this.context.d2.Api.getApi();
                     let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`;
@@ -453,7 +449,7 @@ class LockException extends Page {
                         showSnackbar: true,
                         snackbarConf: {
                             type: LOADING,
-                            message: translator(i18nKeys.lockException.loadingMessage),
+                            message: i18n.t(i18nKeys.lockException.loadingMessage),
                         },
                         pageState: {
                             ...this.state,
@@ -477,7 +473,7 @@ class LockException extends Page {
                                     showSnackbar: true,
                                     snackbarConf: {
                                         type: SUCCESS,
-                                        message: translator(i18nKeys.lockException.removedMessage),
+                                        message: i18n.t(i18nKeys.lockException.removedMessage),
                                     },
                                     pageState: newPageState,
                                 });
@@ -493,7 +489,7 @@ class LockException extends Page {
                         if (this.isPageMounted()) {
                             const messageError = error && error.message ?
                                 error.message :
-                                translator(i18nKeys.messages.unexpectedError);
+                                i18n.t(i18nKeys.messages.unexpectedError);
 
                             this.context.updateAppState({
                                 showSnackbar: true,
@@ -514,7 +510,6 @@ class LockException extends Page {
     }
 
     showLockExceptionFormDialog() {
-        const translator = this.context.translator;
         const d2 = this.context.d2;
         if (this.state.levels &&
             this.state.groups &&
@@ -548,7 +543,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator(i18nKeys.messages.unexpectedError);
+                        i18n.t(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -576,7 +571,6 @@ class LockException extends Page {
     }
 
     addLockException() {
-        const translator = this.context.translator;
         if (this.addLockExceptionEnabled()) {
             const api = this.context.d2.Api.getApi();
             const orgUnitIds = this.state.selectedOrgUnits.map((orgUnitPath) => {
@@ -593,7 +587,7 @@ class LockException extends Page {
                 showSnackbar: true,
                 snackbarConf: {
                     type: LOADING,
-                    message: translator(i18nKeys.lockException.addingMessage),
+                    message: i18n.t(i18nKeys.lockException.addingMessage),
                 },
                 pageState: {
                     showAddDialogOpen: false,
@@ -619,7 +613,7 @@ class LockException extends Page {
                 if (this.isPageMounted()) {
                     const messageError = error && error.message ?
                         error.message :
-                        translator(i18nKeys.messages.unexpectedError);
+                        i18n.t(i18nKeys.messages.unexpectedError);
 
                     this.context.updateAppState({
                         showSnackbar: true,
@@ -638,7 +632,6 @@ class LockException extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
         const currentlyShown = calculatePageValue(this.state.pager);
         const paginationProps = {
             hasNextPage: () => this.state.pager.page < this.state.pager.pageCount,
@@ -652,13 +645,13 @@ class LockException extends Page {
         const addLockException = [
             <FlatButton
                 className={styles.actionButton}
-                label={translator(i18nKeys.lockException.cancelButton)}
+                label={i18n.t(i18nKeys.lockException.cancelButton)}
                 onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
                 className={styles.actionButton}
                 primary={Boolean(true)}
-                label={translator(i18nKeys.lockException.addButton)}
+                label={i18n.t(i18nKeys.lockException.addButton)}
                 onClick={this.addLockException}
                 disabled={!this.addLockExceptionEnabled()}
             />,
@@ -690,7 +683,7 @@ class LockException extends Page {
                             </div>
                         ) : (
                             <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
-                                <CardText>{translator(i18nKeys.lockException.noDataMessage)}</CardText>
+                                <CardText>{i18n.t(i18nKeys.lockException.noDataMessage)}</CardText>
                             </Card>
                         )
                 }
@@ -698,7 +691,7 @@ class LockException extends Page {
                 this.state.groups &&
                 this.state.dataSets.length > 0 &&
                 <Dialog
-                    title={translator(i18nKeys.lockException.addLockExceptionFormTitle)}
+                    title={i18n.t(i18nKeys.lockException.addLockExceptionFormTitle)}
                     actions={addLockException}
                     modal={false}
                     open={this.state.showAddDialogOpen}

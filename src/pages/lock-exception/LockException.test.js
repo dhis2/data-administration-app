@@ -69,19 +69,6 @@ const fakeLockExceptionsForDataTable = [
     },
 ];
 
-const fakeSelectedLockException = {
-    name: 'Lock Exception',
-    organisationUnit: {
-        displayName: 'OrganisationUnit',
-    },
-    dataSet: {
-        displayName: 'Dataset',
-    },
-    period: {
-        displayName: '201802',
-    },
-};
-
 const ownShallow = () => {
     return shallow(
         <LockException
@@ -91,7 +78,6 @@ const ownShallow = () => {
         {
             context: {
                 updateAppState: jest.fn(),
-                translator: (key) => key,
                 d2: {
                     i18n: {
                         translations: {},

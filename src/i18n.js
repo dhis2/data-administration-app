@@ -236,6 +236,7 @@ export const i18nKeys = {
         julDec: 'jul-dec',
         aprSep: 'apr-sep',
         octMar: 'oct-mar',
+        selectOrganisationUnits: 'For all organisation units:',
     },
     minMaxValueGeneration: {
         title: 'Min-Max Value Generation',

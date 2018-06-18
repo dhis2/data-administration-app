@@ -10,6 +10,9 @@ import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.compo
 import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 
+/* i18n */
+import i18n from './locales';
+
 import './custom-css/D2UISidebarOverrides.css';
 
 import AppRouter from './components/app-router/AppRouter';
@@ -22,10 +25,6 @@ import { sections } from './pages/sections.conf';
 const HeaderBar = withStateFrom(headerBarStore$, HeaderBarComponent);
 
 class App extends PureComponent {
-    static propTypes = {
-        t: PropTypes.func.isRequired,
-    };
-
     static childContextTypes = {
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
@@ -35,7 +34,6 @@ class App extends PureComponent {
         }),
         currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
-        translator: PropTypes.func,
     };
 
     constructor(props) {
@@ -59,7 +57,6 @@ class App extends PureComponent {
             snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
             updateAppState: this.updateAppState,
-            translator: this.props.t,
         };
     }
 
@@ -81,12 +78,11 @@ class App extends PureComponent {
 
     render() {
         const nonOnChangeSection = () => null;
-        const translator = this.props.t;
         const translatedSections = sections.map(section => Object.assign(
             section,
             {
                 icon: section.info.icon,
-                label: translator(section.info.label),
+                label: i18n.t(section.info.label),
                 containerElement: <Link to={section.path} />,
             },
         ));

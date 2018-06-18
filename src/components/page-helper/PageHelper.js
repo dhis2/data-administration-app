@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from 'material-ui';
 
+// i18n
+import i18n from '../../locales';
+
 import { getDocsVersion, DOCS_LINK, DOCS_TOOLTIP_LABEL } from '../../helpers/docs';
 
 class PageHelper extends PureComponent {
@@ -15,12 +18,11 @@ class PageHelper extends PureComponent {
     };
 
     static contextTypes = {
-        translator: PropTypes.func,
         d2: PropTypes.object,
     };
 
     render() {
-        const { d2, translator } = this.context;
+        const { d2 } = this.context;
         const { lng, sectionDocsKey } = this.props;
         return (
             <IconButton
@@ -29,7 +31,7 @@ class PageHelper extends PureComponent {
                 href={`${DOCS_LINK}/${getDocsVersion(d2.system.version)}/${lng}/user/html/${sectionDocsKey}.html`}
                 target="_blank"
                 rel="noopener noreferrer"
-                tooltip={translator(DOCS_TOOLTIP_LABEL)}
+                tooltip={i18n.t(DOCS_TOOLTIP_LABEL)}
                 tooltipPosition="bottom-center"
                 iconClassName="material-icons"
             >

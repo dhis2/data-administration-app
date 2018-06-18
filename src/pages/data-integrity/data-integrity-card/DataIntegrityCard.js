@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { Card, CardText, CardHeader } from 'material-ui/Card';
 import { FontIcon } from 'material-ui';
 
+// i18n
+import i18n from '../../../locales';
+
 import styles from './DataIntegrityCard.css';
 
 const jsStyles = {
@@ -36,13 +39,8 @@ class DataIntegrityCard extends PureComponent {
         content: [],
     }
 
-    static contextTypes = {
-        translator: PropTypes.func,
-    };
-
     render() {
         const showIcon = true;
-        const translator = this.context.translator;
         let expandable = true;
         let titleColor = jsStyles.errorColor;
         let closeIcon = 'keyboard_arrow_down';
@@ -109,7 +107,7 @@ class DataIntegrityCard extends PureComponent {
         return (
             <Card id={this.props.cardId} className={styles.card}>
                 <CardHeader
-                    title={translator(this.props.title)}
+                    title={i18n.t(this.props.title)}
                     titleColor={titleColor}
                     titleStyle={jsStyles.titleStyle}
                     actAsExpander={expandable}

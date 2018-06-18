@@ -9,6 +9,7 @@ import * as conf from './data.integrity.conf';
 
 // i18n
 import { i18nKeys } from '../../i18n';
+import i18n from '../../locales';
 
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
@@ -60,12 +61,11 @@ class DataIntegrity extends Page {
     }
 
     setLoadingPageState() {
-        const translator = this.context.translator;
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: translator(i18nKeys.dataIntegrity.performing),
+                message: i18n.t(i18nKeys.dataIntegrity.performing),
             },
             currentSection: this.props.sectionKey,
             pageState: {
@@ -76,10 +76,9 @@ class DataIntegrity extends Page {
     }
 
     setLoadedPageWithErrorState(error) {
-        const translator = this.context.translator;
         const messageError = error && error.message ?
             error.message :
-            translator(i18nKeys.dataIntegrity.unexpectedError);
+            i18n.t(i18nKeys.dataIntegrity.unexpectedError);
         this.cancelPullingRequests();
         this.context.updateAppState({
             showSnackbar: true,
@@ -138,13 +137,12 @@ class DataIntegrity extends Page {
     }
 
     render() {
-        const translator = this.context.translator;
         const runButton = (
             <RaisedButton
                 id={'runDataIntegrityChecksBtnId'}
-                label={translator(i18nKeys.dataIntegrity.actionButton)}
+                label={i18n.t(i18nKeys.dataIntegrity.actionButton)}
                 onClick={this.initDataIntegrityCheck}
-                primary={Boolean(true)}
+                primary
                 disabled={this.state.loading}
             />
         );
@@ -182,7 +180,7 @@ class DataIntegrity extends Page {
         return (
             <div>
                 <h1 className={styles.header}>
-                    { translator(conf.PAGE_TITLE) }
+                    { i18n.t(conf.PAGE_TITLE) }
                     <PageHelper
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
