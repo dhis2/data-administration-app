@@ -2,8 +2,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import DataStatistics from './DataStatistics';
-import DataStatisticsTable from './DataStatisticsTable';
+import DataStatistics, { TableCard } from './DataStatistics';
+
+import {
+    OBJECT_COUNTS_KEY,
+    ACTIVE_USERS_KEY,
+    USER_INVITATIONS_KEY,
+    DATA_VALUE_COUNT_KEY,
+    EVENT_COUNT_KEY,
+} from './DataStatistics';
 
 import {
     sections,
@@ -29,22 +36,19 @@ jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
 jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
 jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
 
-const stateWithTablesForDataStatistics = [
-    {
-        label: 'Object type',
-        elements: [
-            { label: 'object1', count: 1 },
-            { label: 'object2', count: 2 }
-        ],
-    },
-    {
-        label: 'Users logged in',
-        elements: [
-            { label: 'Today', count: 2 },
-            { label: 'Last hour', count: 1 }
-        ],
-    },
-];
+const tableProps = {
+    label: 'Object type',
+    elements: [
+        { label: 'object1', count: 1 },
+        { label: 'object2', count: 2 }
+    ],
+};
+const stateWithTablesForDataStatistics = {};
+stateWithTablesForDataStatistics[OBJECT_COUNTS_KEY] = tableProps;
+stateWithTablesForDataStatistics[ACTIVE_USERS_KEY] = tableProps;
+stateWithTablesForDataStatistics[USER_INVITATIONS_KEY] = tableProps;
+stateWithTablesForDataStatistics[DATA_VALUE_COUNT_KEY] = tableProps;
+stateWithTablesForDataStatistics[EVENT_COUNT_KEY] = tableProps;
 
 const ownShallow = () => {
     return shallow(
@@ -66,14 +70,14 @@ it('DataStatistics renders without crashing', () => {
     ownShallow();
 });
 
-it('DataStatistics renders no DataStatisticsTable', () => {
+it('DataStatistics renders no TableCard', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
+    expect(wrapper.find(TableCard)).toHaveLength(0);
 });
 
-it('DataStatistics renders DataStatisticsTable define on state', () => {
+it('DataStatistics renders TableCard define on state', () => {
     const wrapper = ownShallow();
-    expect(wrapper.find(DataStatisticsTable)).toHaveLength(0);
+    expect(wrapper.find(TableCard)).toHaveLength(0);
     wrapper.setState({tables: stateWithTablesForDataStatistics});
-    expect(wrapper.find(DataStatisticsTable)).toHaveLength(stateWithTablesForDataStatistics.length);
+    expect(wrapper.find(TableCard)).toHaveLength(Object.keys(stateWithTablesForDataStatistics).length);
 });
