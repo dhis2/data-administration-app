@@ -1,7 +1,7 @@
 .gridElement {
     border-radius: 5px;
     background-color: #ffffff;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     padding-left: 38px;
     padding-right: 38px;
     margin-bottom: 8px;

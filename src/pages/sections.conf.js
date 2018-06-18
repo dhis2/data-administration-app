@@ -56,6 +56,18 @@ export const sections = [
         },
     },
     {
+        key: ANALYTICS_SECTION_KEY,
+        path: '/analytics',
+        component: Analytics,
+        info: {
+            label: i18nKeys.analytics.label,
+            icon: 'multiline_chart',
+            description: i18nKeys.analytics.description,
+            actionText: i18nKeys.analytics.actionText,
+            docs: 'generate_analytics_tables',
+        },
+    },
+    {
         key: DATA_STATISTICS_SECTION_KEY,
         path: '/data-statistics',
         component: DataStatistics,
@@ -89,18 +101,6 @@ export const sections = [
             description: i18nKeys.minMaxValueGeneration.description,
             actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',
-        },
-    },
-    {
-        key: ANALYTICS_SECTION_KEY,
-        path: '/analytics',
-        component: Analytics,
-        info: {
-            label: i18nKeys.analytics.label,
-            icon: 'multiline_chart',
-            description: i18nKeys.analytics.description,
-            actionText: i18nKeys.analytics.actionText,
-            docs: 'generate_analytics_tables',
         },
     },
 ];
