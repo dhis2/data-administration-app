@@ -182,9 +182,8 @@ class Analytics extends Page {
             }
 
             let completed = false;
-            const notificationResponses = response[this.state.jobId] || response || [];
-            const notifications = [...notificationResponses, ...this.state.notifications];
-            notificationResponses.every((notification) => {
+            const notifications = response[this.state.jobId] || [];
+            notifications.every((notification) => {
                 if (notification.completed) {
                     completed = true;
                     this.cancelPullingRequests();
