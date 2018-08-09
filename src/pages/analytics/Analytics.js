@@ -123,7 +123,6 @@ class Analytics extends Page {
                 message: messageError,
             },
             pageState: {
-                loaded: true,
                 loading: false,
             },
         });
@@ -214,7 +213,6 @@ class Analytics extends Page {
                     showSnackbar: true,
                     snackbarConf: {
                         type: LOADING,
-                        message: i18n.t(i18nKeys.analytics.loadingMessage),
                     },
                     pageState: {
                         notifications,
