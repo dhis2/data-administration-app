@@ -45,6 +45,8 @@ class Analytics extends Page {
         'loading',
         'lastYears',
         'notifications',
+        'jobId',
+        'intervalId',
     ];
 
     constructor() {
@@ -69,6 +71,10 @@ class Analytics extends Page {
         this.onChangeLastYears = this.onChangeLastYears.bind(this);
     }
 
+    componentDidMount() {
+        this.requestTaskSummary();
+    }
+
     componentWillReceiveProps(nextProps) {
         const nextState = {};
 
@@ -85,10 +91,11 @@ class Analytics extends Page {
 
     componentWillUnmount() {
         super.componentWillUnmount();
-        this.cancelPullingRequests();
+
+        this.cancelPoollingRequests();
     }
 
-    cancelPullingRequests() {
+    cancelPoollingRequests() {
         clearInterval(this.state.intervalId);
     }
 
@@ -97,7 +104,6 @@ class Analytics extends Page {
             showSnackbar: true,
             snackbarConf: {
                 type: LOADING,
-                message: i18n.t(i18nKeys.resourceTables.loadingMessage),
             },
             pageState: {
                 loading: true,
@@ -109,7 +115,7 @@ class Analytics extends Page {
         const messageError = error && error.message ?
             error.message :
             i18n.t(i18nKeys.analytics.unexpectedError);
-        this.cancelPullingRequests();
+        this.cancelPoollingRequests();
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -117,7 +123,6 @@ class Analytics extends Page {
                 message: messageError,
             },
             pageState: {
-                loaded: true,
                 loading: false,
             },
         });
@@ -144,6 +149,14 @@ class Analytics extends Page {
         return formData;
     }
 
+    isAnalyzingTables = () => this.state.jobId && this.state.intervalId;
+
+    startsPooling = () => setInterval(() => {
+        this.requestTaskSummary();
+    }, PULL_INTERVAL);
+
+    isJobInProgress = jobNotifications => jobNotifications.every(notification => !notification.completed);
+
     initAnalyticsTablesGeneration() {
         const api = this.context.d2.Api.getApi();
         const formData = this.buildFormData();
@@ -152,9 +165,7 @@ class Analytics extends Page {
         api.post(ANALYTICS_TABLES_ENDPOINT, formData).then((response) => {
             if (this.isPageMounted() && response) {
                 const jobId = response.response.id;
-                const intervalId = setInterval(() => {
-                    this.requestTaskSummary();
-                }, PULL_INTERVAL);
+                const intervalId = this.startsPooling();
 
                 this.setState({
                     jobId,
@@ -169,35 +180,72 @@ class Analytics extends Page {
         });
     }
 
+    updateStateForInProgressJobAccordingTaskSummaryResponse = (taskSummaryResponse) => {
+        const notifications = taskSummaryResponse[this.state.jobId] || [];
+        const completed = !this.isJobInProgress(notifications);
+
+        if (completed) {
+            this.cancelPoollingRequests();
+        }
+
+        this.context.updateAppState({
+            showSnackbar: !completed,
+            pageState: {
+                notifications,
+                loading: !completed,
+            },
+        });
+    };
+
+    verifyInProgressJobsForTaskSummaryResponseAndUpdateState = (taskSummaryResponse) => {
+        const jobIds = taskSummaryResponse ? Object.keys(taskSummaryResponse) : [];
+
+        // looking for the most recent in progress job
+        for (let i = jobIds.length - 1; i >= 0; i--) {
+            const jobId = jobIds[i];
+            const notifications = taskSummaryResponse[jobId] || [];
+
+            // found in progress job: show current notifications and starts pooling
+            if (this.isJobInProgress(notifications)) {
+                const intervalId = this.startsPooling();
+
+                this.context.updateAppState({
+                    showSnackbar: true,
+                    snackbarConf: {
+                        type: LOADING,
+                    },
+                    pageState: {
+                        notifications,
+                        loading: true,
+                        jobId,
+                        intervalId,
+                    },
+                });
+
+                break;
+            }
+        }
+    };
+
     requestTaskSummary() {
         const api = this.context.d2.Api.getApi();
         const lastId = this.state.notifications && this.state.notifications.length > 0
             ? this.state.notifications[0].uid : null;
         const url = lastId ?
             `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}` : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`;
-        api.get(url).then((response) => {
+        api.get(url).then((taskSummaryResponse) => {
             /* not mounted finishes */
             if (!this.isPageMounted()) {
                 return;
             }
 
-            let completed = false;
-            const notifications = response[this.state.jobId] || [];
-            notifications.every((notification) => {
-                if (notification.completed) {
-                    completed = true;
-                    this.cancelPullingRequests();
-                }
-                return !notification.completed;
-            });
-
-            this.context.updateAppState({
-                showSnackbar: !completed,
-                pageState: {
-                    notifications,
-                    loading: !completed,
-                },
-            });
+            // showing current job
+            if (this.isAnalyzingTables()) {
+                this.updateStateForInProgressJobAccordingTaskSummaryResponse(taskSummaryResponse);
+            // so far no jobs is being processed, lets check if server is has any in progress job
+            } else {
+                this.verifyInProgressJobsForTaskSummaryResponseAndUpdateState(taskSummaryResponse);
+            }
         }).catch((e) => {
             if (this.isPageMounted()) {
                 this.setLoadedPageWithErrorState(e);
