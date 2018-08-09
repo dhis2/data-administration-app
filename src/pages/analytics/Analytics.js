@@ -107,6 +107,7 @@ class Analytics extends Page {
             },
             pageState: {
                 loading: true,
+                notifications: [],
             },
         });
     }
@@ -170,7 +171,6 @@ class Analytics extends Page {
                 this.setState({
                     jobId,
                     intervalId,
-                    notifications: [],
                 });
             }
         }).catch((e) => {

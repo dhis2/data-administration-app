@@ -85,6 +85,7 @@ class ResourceTable extends Page {
             },
             pageState: {
                 loading: true,
+                notifications: [],
             },
         });
     }
