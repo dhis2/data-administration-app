@@ -17,7 +17,7 @@ import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarType
 
 /* Components */
 import Page from '../Page';
-import NotificationsTable from './NotificationsTable';
+import NotificationsTable from '../../components/notifications-table/NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
 
 /* Helpers */

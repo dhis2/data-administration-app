@@ -1,12 +1,18 @@
 import React from 'react';
 
+/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import { RaisedButton } from 'material-ui';
 
-import { ERROR, LOADING, SUCCESS } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
+/* d2-ui */
+import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
 
+/* Components */
 import Page from '../Page';
+import NotificationsTable from '../../components/notifications-table/NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
+
+/* Helpers */
 import { getDocsKeyForSection } from '../sections.conf';
 import {
     PULL_INTERVAL,
@@ -18,6 +24,8 @@ import {
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
 
+/* styles */
+import pageStyles from '../Page.css';
 import styles from './ResourceTables.css';
 
 class ResourceTable extends Page {
@@ -135,23 +143,15 @@ class ResourceTable extends Page {
 
         if (completed) {
             this.cancelPoollingRequests();
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: SUCCESS,
-                    message: i18n.t(i18nKeys.resourceTables.actionPerformed),
-                },
-                pageState: {
-                    loading: false,
-                    notifications,
-                },
-            });
-        } else {
-            this.setState({
-                notifications,
-            });
         }
+
+        this.context.updateAppState({
+            showSnackbar: !completed,
+            pageState: {
+                notifications,
+                loading: !completed,
+            },
+        });
     };
 
     verifyInProgressJobsForTaskSummaryResponseAndUpdateState = (taskSummaryResponse) => {
@@ -220,7 +220,7 @@ class ResourceTable extends Page {
                         sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
                     />
                 </h1>
-                <Card>
+                <Card className={pageStyles.cardContainer}>
                     <CardText>
                         <div className={styles.description}>
                             <div>
@@ -317,6 +317,13 @@ class ResourceTable extends Page {
                         />
                     </CardText>
                 </Card>
+                {this.state.notifications.length > 0 &&
+                    <Card className={pageStyles.cardContainer}>
+                        <CardText>
+                            <NotificationsTable notifications={this.state.notifications} />
+                        </CardText>
+                    </Card>
+                }
             </div>
         );
     }

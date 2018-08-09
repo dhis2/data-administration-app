@@ -20,7 +20,7 @@ import {
     ERROR_COLOR,
     ERROR_NOTIFICATION_ICON,
     SUCCESS_NOTIFICATION_ICON,
-} from '../analytics/analytics.conf'
+} from './notifications-table.conf';
 
 const NUMBER_OF_COLUMNS = 2;
 const fakeNotifications = [

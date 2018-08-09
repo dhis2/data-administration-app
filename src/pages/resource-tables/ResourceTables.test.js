@@ -5,7 +5,16 @@ import { shallow } from 'enzyme';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import ResourceTables from './ResourceTables';
-import {RESOURCE_TABLES_SECTION_KEY, sections} from '../sections.conf';
+import NotificationsTable from '../../components/notifications-table/NotificationsTable';
+
+import {
+    sections,
+    RESOURCE_TABLES_SECTION_KEY,
+} from '../sections.conf';
+
+import {
+    SUCCESS_LEVEL
+} from '../../components/notifications-table/notifications-table.conf';
 
 let resourceTablesPageInfo = {};
 for(let i = 0; i < sections.length; i++) {
@@ -15,6 +24,15 @@ for(let i = 0; i < sections.length; i++) {
         break;
     }
 }
+
+const stateWithNotifications = [
+    {
+        uid: 'notification1',
+        level: SUCCESS_LEVEL,
+        message: 'notification 1',
+        time: '18-04-2017 15:06:06',
+    }
+];
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
@@ -43,6 +61,17 @@ const ownShallow = () => {
 
 it('ResourceTables renders without crashing.', () => {
     ownShallow();
+});
+
+it('ResourceTables does not render NotificationsTable', () => {
+    const wrapper = ownShallow();
+    expect(wrapper.find(NotificationsTable)).toHaveLength(0);
+});
+
+it('ResourceTables does not render NotificationsTable when it has notifications ', () => {
+    const wrapper = ownShallow();
+    wrapper.setState({notifications: stateWithNotifications});
+    expect(wrapper.find(NotificationsTable)).toHaveLength(1);
 });
 
 it('ResourceTables renders a RaisedButton', () => {

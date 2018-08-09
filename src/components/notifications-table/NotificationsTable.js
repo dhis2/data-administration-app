@@ -11,10 +11,10 @@ import {
 } from 'material-ui';
 
 import {
-    analyticsStyles,
+    notificationsTableStyles,
     notificationStylesInfo,
     formatDateFromServer,
-} from '../analytics/analytics.conf';
+} from './notifications-table.conf';
 
 const NotificationsTable = ({ notifications }) => {
     const renderNotificationIcon = (notification) => {
@@ -22,7 +22,7 @@ const NotificationsTable = ({ notifications }) => {
         if (notificationIconInfo && notificationIconInfo.icon && notification.completed) {
             return (<FontIcon
                 className="material-icons"
-                style={analyticsStyles.iconStyle}
+                style={notificationsTableStyles.iconStyle}
                 color={notificationIconInfo.iconColor}
             >
                 {notificationIconInfo.icon}</FontIcon>
@@ -39,13 +39,13 @@ const NotificationsTable = ({ notifications }) => {
             style={Object.assign(
                 {},
                 notificationStylesInfo[notification.level].row,
-                (index + 1) % 2 === 0 ? analyticsStyles.evenRowStyle : {})
+                (index + 1) % 2 === 0 ? notificationsTableStyles.evenRowStyle : {})
             }
         >
-            <TableRowColumn style={analyticsStyles.timeColumnStyle}>
+            <TableRowColumn style={notificationsTableStyles.timeColumnStyle}>
                 {formatDateFromServer(notification.time)}
             </TableRowColumn>
-            <TableRowColumn style={analyticsStyles.messageColumnStyle}>
+            <TableRowColumn style={notificationsTableStyles.messageColumnStyle}>
                 {notification.message} {renderNotificationIcon(notification)}
             </TableRowColumn>
         </TableRow>
