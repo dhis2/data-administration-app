@@ -110,7 +110,6 @@ export const i18nKeys = {
         'set structure among others.',
         actionText: 'Generate Resource Tables',
         actionButton: 'GENERATE TABLES',
-        loadingMessage: 'Generating Resource Tables...',
         actionPerformed: 'Resource Tables generated',
         unexpectedError: 'An unexpected error happened during operation',
         organisationUnitStructure: 'Organisation unit structure',
