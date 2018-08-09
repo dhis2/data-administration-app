@@ -10,7 +10,7 @@ import {
 } from 'material-ui';
 
 import Analytics from './Analytics';
-import NotificationsTable from './NotificationsTable';
+import NotificationsTable from '../../components/notifications-table/NotificationsTable';
 
 import {
     sections,
@@ -18,10 +18,13 @@ import {
 } from '../sections.conf';
 
 import {
-    SUCCESS_LEVEL,
     analyticsCheckboxes,
     DEFAULT_LAST_YEARS,
 } from '../analytics/analytics.conf';
+
+import {
+    SUCCESS_LEVEL
+} from '../../components/notifications-table/notifications-table.conf';
 
 let analyticsPageInfo = {};
 for(let i = 0; i < sections.length; i++) {
