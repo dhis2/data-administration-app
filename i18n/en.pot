@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-08-09T10:53:41.585Z\n"
-"PO-Revision-Date: 2018-08-09T10:53:41.585Z\n"
+"POT-Creation-Date: 2018-08-09T12:16:04.010Z\n"
+"PO-Revision-Date: 2018-08-09T12:16:04.010Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -177,9 +177,6 @@ msgid "Generate Resource Tables"
 msgstr ""
 
 msgid "GENERATE TABLES"
-msgstr ""
-
-msgid "Generating Resource Tables..."
 msgstr ""
 
 msgid "Resource Tables generated"
