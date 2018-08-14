@@ -108,8 +108,8 @@ class LockException extends Page {
         const d2 = context.d2;
         Object.assign(d2.i18n.translations, {
             period: i18n.t(i18nKeys.lockException.period),
-            dataSet: i18n.t(i18nKeys.lockException.dataSet),
-            organisationUnit: i18n.t(i18nKeys.lockException.organisationUnit),
+            data_set: i18n.t(i18nKeys.lockException.dataSet),
+            organisation_unit: i18n.t(i18nKeys.lockException.organisationUnit),
             organisation_unit_group: i18n.t(i18nKeys.lockException.organisationUnitGroup),
             organisation_unit_level: i18n.t(i18nKeys.lockException.organisationUnitLevel),
             select: i18n.t(i18nKeys.lockException.select),
