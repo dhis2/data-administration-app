@@ -1,6 +1,6 @@
 {
-  "name": "dhis2-maintenance-data-admin-app",
-  "version": "1.0.0-beta.1",
+  "name": "data-administration-app",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@dhis2/d2-i18n-generate": "^1.0.19",
