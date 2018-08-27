@@ -85,13 +85,12 @@
     "lint": "yarn localize && eslint src/",
     "coverage": "yarn test -- --coverage",
     "extract-pot": "node scripts/pot-extractor.js",
-    "refresh-translations-template": "yarn extract-pot -- -o en.pot && git add ./i18n/en.pot",
+    "refresh-translations-template": "yarn extract-pot -o en.pot && git add ./i18n/en.pot",
     "deploy": "deploy-build"
   },
   "pre-commit": [
     "lint",
     "validate",
-    "test",
     "refresh-translations-template"
   ],
   "manifest.webapp": {
