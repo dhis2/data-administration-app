@@ -1,6 +1,6 @@
 {
   "name": "data-administration-app",
-  "version": "1.0.0",
+  "version": "30.0.0",
   "private": true,
   "devDependencies": {
     "@dhis2/d2-i18n-generate": "^1.0.19",
