@@ -275,6 +275,10 @@ export const i18nKeys = {
     messages: {
         unexpectedError: 'An unexpected error happened during operation',
     },
+    d2UiComponents: {
+        app_search_placeholder: 'Search apps',
+        manage_my_apps: 'Manage my apps',
+    },
 };
 
 export default i18nKeys;
