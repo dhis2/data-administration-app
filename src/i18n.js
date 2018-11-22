@@ -276,8 +276,17 @@ export const i18nKeys = {
         unexpectedError: 'An unexpected error happened during operation',
     },
     d2UiComponents: {
+        settings: 'Settings',
         app_search_placeholder: 'Search apps',
+        profile: 'Profile',
+        account: 'Account',
+        help: 'Help',
+        log_out: 'Log out',
+        about_dhis2: 'About DHIS 2',
         manage_my_apps: 'Manage my apps',
+        no_results_found: 'No results found',
+        interpretations: 'Interpretations',
+        messages: 'Messages',
     },
 };
 

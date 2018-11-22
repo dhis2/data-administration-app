@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2018-11-19T17:19:30.534Z\n"
-"PO-Revision-Date: 2018-11-19T17:19:30.534Z\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2018-11-22T15:46:29.775Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -601,8 +601,35 @@ msgstr ""
 msgid "[ All ]"
 msgstr ""
 
+msgid "Settings"
+msgstr ""
+
 msgid "Search apps"
 msgstr ""
 
+msgid "Profile"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "About DHIS 2"
+msgstr ""
+
 msgid "Manage my apps"
+msgstr ""
+
+msgid "No results found"
+msgstr ""
+
+msgid "Interpretations"
+msgstr ""
+
+msgid "Messages"
 msgstr ""
