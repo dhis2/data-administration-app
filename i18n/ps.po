@@ -1,0 +1,1660 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
+"PO-Revision-Date: 2017-07-29 15:47+0000\n"
+"Last-Translator: gulwali <gulwalikhan@gmail.com>\n"
+"Language-Team: \n"
+"Language: ps\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.8\n"
+"X-Pootle-Path: /ps/dhis2-translations/dhis-web-maintenance-dataadmin/en-ps."
+"po\n"
+"X-Pootle-Revision: 1502\n"
+"X-POOTLE-MTIME: 1501343232.000000\n"
+
+msgid "Data Integrity"
+msgstr "د مالوماتو (ډاټا) یو ځای کول"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data "
+"setup."
+msgstr ""
+"د مالوماتو (ډاټا) یو ځای کولو ارزونې فعال او د میټا ډاټا په سېټ آپ (setup) "
+"کې ګډوډي او ستونزې لرې کړئ"
+
+#, fuzzy
+msgid "Check Data Integrity"
+msgstr "د مالوماتو (ډاټا) یو ځای کول"
+
+#, fuzzy
+msgid "Performing data integrity checks..."
+msgstr "د څارنې ترسره کول"
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+#, fuzzy
+msgid "Data elements without data set"
+msgstr "د مالوماتو (ډاټا) له ټولګې پرته د مالوماتو (ډاټا) برخې"
+
+msgid "Data elements without groups"
+msgstr "له ګروپونو پرته د مالوماتو (ډاټا) برخې"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "د ځانګړیو ګروپي ټولګو څخه د مالوماتو (ډاټا) د برخې سرغړونه"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr ""
+"د ډاټا برخې د مالوماتو (ډاټا) د ټولګو لپاره د بېلابېلو دورو په ترڅ کې تعین "
+"شوې دي"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "د سازمان واحدنو لپاره د مالوماتو (ډاټا) ټولګې نه دي تعین شوې"
+
+msgid "Indicators with identical formulas"
+msgstr "د ورته فورمولونو سره شاخصونه"
+
+msgid "Indicators without groups"
+msgstr "له ګروپونو پرته شاخصونه"
+
+msgid "Invalid indicator numerators"
+msgstr "د شاخص بې اعتباره شمېرونکي"
+
+msgid "Invalid indicator denominators"
+msgstr "د شاخص بې اعتباره وېشونکي"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "د ځانګړیو ګروپي ټولګو څخه د شاخصونو سرغړونه"
+
+msgid "Organisation units with cyclic references"
+msgstr "د پرله پسې مأخذونو سره د سازمان واحدونه"
+
+msgid "Orphaned organisation units"
+msgstr "د سازمان پاتې شوي واحدونه"
+
+msgid "Organisation units without groups"
+msgstr "له ګروپونو پرته د سازمان واحدونه"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr "د ځانګړیو ګروپي ټولګو څخه د سازمان د واحدونو سرغړونه"
+
+msgid "Organisation unit groups without group sets"
+msgstr "د ګروپي ټولګو پرته د سازمان د واحد ګروپونه"
+
+msgid "Validation rules without groups"
+msgstr "له ګروپ پرته د تصدیق  قواعد"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "ناسم تصدیق د قاعدې د ګیڼ لوري په اصطلاحاتو کې"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "د تصدیق ناسمه قاعده د ښي لوري په اصطلاحاتو کې"
+
+#, fuzzy
+msgid "Invalid program indicator expressions"
+msgstr "د شاخص بې اعتباره شمېرونکي"
+
+#, fuzzy
+msgid "Invalid program indicator filters"
+msgstr "د شاخص بې اعتباره وېشونکي"
+
+#, fuzzy
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+"د مالوماتو (ډاټا) برخې د مالوماتو (ډاټا) په ټولګه کې، خو په فورمه او نورو "
+"برخو کې نشته"
+
+msgid "Invalid category combinations"
+msgstr "د بې اعتباره کټګورۍ د ترکیباتو سره نورې برخې"
+
+msgid "Duplicate periods"
+msgstr "د دورو دوه ګونه نسخې"
+
+msgid "Maintenance"
+msgstr "څارنه"
+
+#, fuzzy
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+"د نورو ترمنځ د سازمان د واحد د مراتبو د سلسلې او ګروپي ټولګې د جوړښت په موخه "
+"د سرچینې د ډاټابیس جدولونه جوړ کړئ. "
+
+#, fuzzy
+msgid "Perform Maintenance"
+msgstr "څارنه ترسره کړئ"
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+#, fuzzy
+msgid "Performing Maintenance..."
+msgstr "د څارنې ترسره کول"
+
+#, fuzzy
+msgid "Maintenance done"
+msgstr "څارنه"
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "تحلیلي جدولونه پاک کړئ "
+
+msgid "Analyze analytics tables"
+msgstr "تحلیلي جدولونه تجزیه کړئ "
+
+msgid "Remove zero data values"
+msgstr "د صفري ارقامو مالوماتو (ډاټا) زېرمه کړئ"
+
+msgid "Permanently remove soft deleted data values"
+msgstr "د نرم توکو حذف شوې ډاټا ارزښتونه په دایمي ډول لرې کړئ"
+
+msgid "Permanently remove soft deleted events"
+msgstr "په سافټ کافي کې حذف شوې پېښې په دایمي ډول لرې کړئ"
+
+#, fuzzy
+msgid "Permanently remove soft deleted enrollments"
+msgstr "په سافټ کافي کې حذف شوې پېښې په دایمي ډول لرې کړئ"
+
+#, fuzzy
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr "په سافټ کافي کې حذف شوې پېښې په دایمي ډول لرې کړئ"
+
+msgid "Prune periods"
+msgstr "دورې ترتیب کړئ"
+
+msgid "Remove expired invitations"
+msgstr "پر وخت تېرې بلنې لرې کړئ"
+
+msgid "Drop SQL views"
+msgstr "د SQL شکلونه یا منظرې کش کړئ"
+
+msgid "Create SQL views"
+msgstr "د SQL ډاټابیس شکلونه یا منظرې جوړې کړئ"
+
+msgid "Update category option combinations"
+msgstr "د کټګورۍ د انتخاب د ترکیباتو تجدید"
+
+msgid "Update organisation unit paths"
+msgstr "د سازمان د واحد لارې تجدید کړئ"
+
+msgid "Clear application cache"
+msgstr "د ذېرمې پاکول"
+
+msgid "Reload apps"
+msgstr "پروګرامونه یا اپلیکېشنونه بیا ځلي لوډ کړئ"
+
+#, fuzzy
+msgid "Resource Tables"
+msgstr "د سرچینې جدولونه"
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"د نورو ترمنځ د سازمان د واحد د مراتبو د سلسلې او ګروپي ټولګې د جوړښت په موخه "
+"د سرچینې د ډاټابیس جدولونه جوړ کړئ. "
+
+#, fuzzy
+msgid "Generate Resource Tables"
+msgstr "د سرچینې د جدولونو جوړول"
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+#, fuzzy
+msgid "Generating Resource Tables..."
+msgstr "د سرچینې د جدولونو جوړول"
+
+#, fuzzy
+msgid "Resource Tables generated"
+msgstr "د سرچینې جوړ شوي جدولونه"
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "د سازماني واحد جوړښت"
+
+msgid "Organisation unit category option combo"
+msgstr "د سازمان د واحد ګزینه ترکیب کتګوری"
+
+msgid "Category option group set structure"
+msgstr "د کټګورۍ د انتخابي ګروپ د ټولګې جوړښت "
+
+msgid "Data element group set structure"
+msgstr "د مالوماتو (ډاټا) د ګروپ د برخې د ټولګې جوړښټ"
+
+msgid "Indicator group set structure"
+msgstr "د شاخص د ګروپ د ټولګې جوړښت"
+
+msgid "Organisation unit group set structure"
+msgstr "د سازماني واحد د ګروپ د ټولګې جوړښت"
+
+msgid "Category structure"
+msgstr "د کټګورۍ جوړښت"
+
+msgid "Data element category option combo name"
+msgstr "د مالوماتو (ډاټا) د کټګورۍ د برخې د انتخاب د برخې (combo) نوم"
+
+msgid "Data element structure"
+msgstr "د مالوماتو (ډاټا) د برخې جوړښټ"
+
+msgid "Period structure"
+msgstr "د دورې جوړښت"
+
+msgid "Date period structure"
+msgstr "د نېټې د مودې جوړښت"
+
+msgid "Data element category option combinations"
+msgstr "د مالوماتو (ډاټا) د کټګورۍ د برخې د انتخاب ترکیبات"
+
+msgid "Data Statistics"
+msgstr "د مالوماتو (ډاټا) احصایه"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"د مالوماتو (ډاټا) د برخو، شاخصونو، مالوماتو (ډاټا) د ټولګو او ډاټا د ارقامو "
+"په څېر په ډاټابیس کې د اقلامو شمېر ښکاره کړئ. "
+
+#, fuzzy
+msgid "Overview Data Statistics"
+msgstr "د مالوماتو (ډاټا) احصایه"
+
+#, fuzzy
+msgid "Loading Data Statistics..."
+msgstr "د مالوماتو (ډاټا) احصایه"
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+#, fuzzy
+msgid "No data to show."
+msgstr "هېڅ مالومات (ډاټا) نشته"
+
+msgid "Object type"
+msgstr "د قلم یا برخې نمونه"
+
+msgid "Last hour"
+msgstr "وروستۍ ساعت"
+
+msgid "Today"
+msgstr "نن"
+
+#, fuzzy
+msgid "Last"
+msgstr "وروستۍ ساعت"
+
+msgid "days"
+msgstr ""
+
+msgid "Users logged in"
+msgstr "سیسټم ته داخل شوي کاروونکي"
+
+msgid "User account invitations"
+msgstr "د کاروونکي د حساب بلنې"
+
+msgid "Pending invitations"
+msgstr "نا لوستل شوې یا پاتې بلنې"
+
+msgid "Expired invitations"
+msgstr "پر وخت تېرې بلنې"
+
+msgid "Data values"
+msgstr "د مالوماتو (ډاټا) ارقام"
+
+msgid "Events"
+msgstr ""
+
+#, fuzzy
+msgid "Indicators"
+msgstr "شاخص"
+
+msgid "Periods"
+msgstr "دورې"
+
+#, fuzzy
+msgid "Organisation units"
+msgstr "د سازمان واحد"
+
+#, fuzzy
+msgid "Validation rules"
+msgstr "له ګروپ پرته د تصدیق  قواعد"
+
+#, fuzzy
+msgid "Programs"
+msgstr "پروګرام"
+
+#, fuzzy
+msgid "Data elements"
+msgstr "د مالوماتو (ډاټا) برخه [ مالومات/ډاټا ـ برخه ] "
+
+msgid "Organisation unit groups"
+msgstr "د سازمان د واحد ګروپونه"
+
+msgid "Pivot tables"
+msgstr ""
+
+msgid "Indicator types"
+msgstr "د ډولونو رکول"
+
+#, fuzzy
+msgid "Data sets"
+msgstr "د مالوماتو (ډاټا) تنظیمول"
+
+#, fuzzy
+msgid "User groups"
+msgstr "کاروونکی ګروپ"
+
+msgid "Users"
+msgstr "کاروونکي"
+
+msgid "Maps"
+msgstr ""
+
+#, fuzzy
+msgid "Indicator groups"
+msgstr "د شاخص ګروپ"
+
+msgid "Charts"
+msgstr ""
+
+#, fuzzy
+msgid "Data element groups"
+msgstr "د مالوماتو (ډاټا) د برخې ګروپ"
+
+msgid "Dashboards"
+msgstr ""
+
+msgid "Lock Exception Management"
+msgstr "د لاک یا بندولو د استثناء مدیریت"
+
+msgid "Lock Exception"
+msgstr "د بندولو یا لاک کولو استثناء"
+
+#, fuzzy
+msgid "Batch Deletion"
+msgstr "د دستې حذفول"
+
+#, fuzzy
+msgid "Add new lock exception"
+msgstr "د بندولو نوې استثناء جوړه کړئ"
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry "
+"forms."
+msgstr ""
+"د مالماتو (ډاټا) د فورمو د ثبت د لاک کولو لپاره د قواعدو معیار ته استثناآت "
+"ور علاوه یا لرې کړئ."
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+#, fuzzy
+msgid "Loading Lock Exceptions..."
+msgstr "د بندولو یا لاک کولو استثناء"
+
+#, fuzzy
+msgid "Adding Lock Exception..."
+msgstr "د بندولو یا لاک کولو استثناء"
+
+#, fuzzy
+msgid "Lock Exception removed"
+msgstr "د بندولو یا لاک کولو استثناء"
+
+#, fuzzy
+msgid "Lock Exception Added"
+msgstr "د بندولو یا لاک کولو استثناء"
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "CONFIRM"
+msgstr ""
+
+#, fuzzy
+msgid "Select a Data Set"
+msgstr "لطفاُ د مالوماتو (ډاټا) ټولګه غوره کړئ [ خو ډاټاسېټ مه انتخابوئ ]"
+
+#, fuzzy
+msgid "Updating Organisation Units Tree..."
+msgstr "د سازمان واحد مدغم کړئ"
+
+#, fuzzy
+msgid "For organisation units within"
+msgstr "د سازمان پاتې شوي واحدونه"
+
+msgid "Period"
+msgstr "دوره یا موده"
+
+msgid "Data Set"
+msgstr "د مالوماتو ترتیبول/ټولګه"
+
+msgid "Organisation Unit"
+msgstr "د سازمان واحد"
+
+msgid "Organisation Unit Group"
+msgstr "د سازمان د واحد  ګروپ "
+
+#, fuzzy
+msgid "Organisation Unit Level"
+msgstr "د سازمان واحد مدغم کړئ"
+
+#, fuzzy
+msgid "Select"
+msgstr "انتخاب یې کړئ/ټول"
+
+#, fuzzy
+msgid "Deselect"
+msgstr "انتخاب شوي نه دي"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+#, fuzzy
+msgid "Show Details"
+msgstr "د محل په اړه جزیات"
+
+msgid "Remove"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "انتخابونه"
+
+msgid "of"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+#, fuzzy
+msgid "year"
+msgstr "تېر کال"
+
+msgid "bi monthly"
+msgstr ""
+
+#, fuzzy
+msgid "day"
+msgstr "نن"
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "د حداقل - حداعظم رقم رامنځ ته کول"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"حداقل او حداعظم ارقام جوړ کړئ چې د مالوماتو (ډاټا) د تصدیق او ډاټا درجولو او "
+"تصدیق د پروسې پرمهال کارول کېدای شي. "
+
+#, fuzzy
+msgid "Generate Min-Max Value"
+msgstr "حداقل ـ حداعظم ارقام جوړیږي"
+
+msgid "It was not possible to load data"
+msgstr ""
+
+#, fuzzy
+msgid "Select Data set and Organisation Unit"
+msgstr "د لوی سازمان واحد غوره کړئ"
+
+#, fuzzy
+msgid "Doing Min Max generation..."
+msgstr "د حداقل - حداعظم رقم رامنځ ته کول"
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+#, fuzzy
+msgid "Min Max generation done"
+msgstr "د حداقل - حداعظم رقم رامنځ ته کول"
+
+msgid "Min Max removal done"
+msgstr ""
+
+#, fuzzy
+msgid "Loading data sets"
+msgstr "د مالوماتو د لاس رسي وړ ټولګې"
+
+#, fuzzy
+msgid "Organisation Unit Selection"
+msgstr "د سازمان واحد مدغم کړئ"
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+#~ msgid "Remove All Locks"
+#~ msgstr "ټول لاکونه لرې کړئ "
+
+#~ msgid "Optional"
+#~ msgstr "اختیاري دی"
+
+#~ msgid "Data Administration"
+#~ msgstr "د مالوماتو (ډاټا) اداره"
+
+#~ msgid "Period Type"
+#~ msgstr "د مودې نمونه/ډول"
+
+#~ msgid "Please select at least one option"
+#~ msgstr "لطفاً لږترلږه یو انتخاب غوره کړئ. "
+
+#~ msgid "Maintenance performed"
+#~ msgstr "ترسره شوې څارنه"
+
+#~ msgid "Clear data set completeness"
+#~ msgstr "د مالوماتو (ډاټا) د ټولګې بشپړول پاک کړئ "
+
+#~ msgid "Organisation unit group set structure normalized"
+#~ msgstr "د سازماني واحد د ګروپ د ټولګې د جوړښت مجموعه نورماله شوې"
+
+#~ msgid "Generate tables"
+#~ msgstr "جدولونه جوړ کړئ"
+
+#~ msgid "Cache Statistics"
+#~ msgstr "احصایې ساتل"
+
+#~ msgid "Second Level Cache Statistics"
+#~ msgstr "د دویمې سطحې احصایې ساتل"
+
+#~ msgid "Region name"
+#~ msgstr "د سیمې نوم"
+
+#~ msgid "Mem count"
+#~ msgstr "د حافظې شمېرل"
+
+#~ msgid "Disk count"
+#~ msgstr "د ډیسک شمېرل"
+
+#~ msgid "Mem size"
+#~ msgstr "د حافظې اندازه"
+
+#~ msgid "Total Second Level Cache"
+#~ msgstr "د دویمې سطحې د ساتلو مجموعه"
+
+#~ msgid "Total Query Cache"
+#~ msgstr "د پوښتنې د مجموعې ساتل"
+
+#~ msgid "Query Cache Statistics"
+#~ msgstr "د پوښتنې د ساتلو احصایه"
+
+#~ msgid "Query name"
+#~ msgstr "د پوښتنې نوم"
+
+#~ msgid "Put count"
+#~ msgstr "ویې شمېرئ "
+
+#~ msgid "Hit count"
+#~ msgstr "شمېر په نښه کړئ "
+
+#~ msgid "Miss count"
+#~ msgstr "د شمېرل پرېږدئ"
+
+#~ msgid "Exec count"
+#~ msgstr "شمېرل ترسره کړئ"
+
+#~ msgid "Exec avg time"
+#~ msgstr "د شمېر ترسره کولو منځنۍ وخت"
+
+#~ msgid "Exec max time"
+#~ msgstr "د شمېر ترسره کولو نهايي وخت"
+
+#~ msgid "Exec min time"
+#~ msgstr "د شمېر ترسره کولو حداقل وخت"
+
+#~ msgid "Exec row count"
+#~ msgstr "د کرښې شمېرل ترسره کول"
+
+#~ msgid "Clear cache"
+#~ msgstr "د ذېرمې پاکول"
+
+#~ msgid "Data dictionaries"
+#~ msgstr "د مالوماتو قاموسونه"
+
+#~ msgid "Number of objects"
+#~ msgstr "د برخو شمېر"
+
+#~ msgid "Data Browser"
+#~ msgstr "د مالوماتو (ډاټا) براوسر"
+
+#~ msgid "From date"
+#~ msgstr "له نېټې"
+
+#~ msgid "To date"
+#~ msgstr "تر نېټې"
+
+#~ msgid "Browse by"
+#~ msgstr "په وسیله کتل کیږي"
+
+#~ msgid "Select mode"
+#~ msgstr "د غوروي طریقه"
+
+#~ msgid "Browse"
+#~ msgstr "ویې ګورئ "
+
+#~ msgid "Select Period Type"
+#~ msgstr "لطفاُ موده غوره کړئ. "
+
+#~ msgid "Organisation units violating compulsory group sets"
+#~ msgstr "د اجباري ګروپي ټولګو څخه د سازمان د واحدونو سرغړونه"
+
+#~ msgid ""
+#~ "Category option combos not in data element category combo in data entry "
+#~ "form"
+#~ msgstr ""
+#~ "د کټګورۍ د انتخاب برخې (combos) د مالوماتو (ډاټا) د کټګورۍ د برخې د درج د "
+#~ "فورمې په مالوماتو (ډاټا) کې نشته"
+
+#~ msgid "Data integrity checks performed"
+#~ msgstr "د مالوماتو (ډاټا) د یو ځای کولو ارزونې ترسره شوې دي"
+
+#~ msgid "Value"
+#~ msgstr "ارزښت یا رقم"
+
+#~ msgid "Found"
+#~ msgstr "پیدا شو"
+
+#~ msgid "values"
+#~ msgstr "ارقام"
+
+#~ msgid "Data element Group"
+#~ msgstr "د مالوماتو (ډاټا) د برخې ګروپ"
+
+#~ msgid "Aggregated data values"
+#~ msgstr "د یو ځای شوې ډاټا یا مالوماتو ارزښتونه"
+
+#~ msgid "Aggregated indicator values"
+#~ msgstr "د یو ځای شوي شاخص ارزښتونه"
+
+#~ msgid "Organisation Unit Pruning"
+#~ msgstr "د سازمان د واحد ترتیبول"
+
+#~ msgid ""
+#~ "Browse the database and get an overview of where data exists. View and "
+#~ "export counts of data elements as well as raw data."
+#~ msgstr ""
+#~ "ډاټابیس ښکاره او وګورئ چې مالومات (ډاټا) په کوم ځای کې موجود دي. د "
+#~ "مالوماتو (ډاټا)، صدور او همدارنګه د لومړنيو مالوماتو (ډاټا) د برخو شمېر "
+#~ "وګورئ. "
+
+#~ msgid ""
+#~ "Archive data which is not currently relevant to your system in order to "
+#~ "improve performance. Data can also be unarchived."
+#~ msgstr ""
+#~ "د اجراآتو د ښوالي په موخه هغه مالومات (ډاټا) آرشیف کړئ چې اوسمهال ستاسو "
+#~ "له سیسټم سره ارتباط نه لري. همدارنګه مالومات (ډاټا) له آرشیف څخه ایستل "
+#~ "کېدای هم شي. "
+
+#~ msgid ""
+#~ "Archive person data which is not currently relevant to your system. Data "
+#~ "can also be unarchived."
+#~ msgstr ""
+#~ "د هغه شخص مالومات (ډاټا) آرشیف کړئ چې اوسمهال ستاسو له سیسټم سره ارتباط "
+#~ "نه لري. همدارنګه مالومات (ډاټا) له آرشیف څخه ایستل کېدای هم شي. "
+
+#~ msgid ""
+#~ "Perform maintenance tasks such as pruning of data values and periods and "
+#~ "clearing of database resource tables."
+#~ msgstr ""
+#~ "د مالوماتو (ډاټا) د ارقامو او دورو په څېر د څارنې او مراقبت د کارونو "
+#~ "اجراآت ترتیب او تنظیم کړئ او هم د ډاټابیس د سرچینې جدولونه پاک کړئ. "
+
+#~ msgid ""
+#~ "Create and manage locales for database content. A locale is a combination "
+#~ "of language and country."
+#~ msgstr "د ډاټابیس د محتویاتو لپاره ځایونه جوړ او تنظیم کړئ. "
+
+#~ msgid ""
+#~ "Merge two organisation units and their data values. Data is merged "
+#~ "depending on existence and date of last modification."
+#~ msgstr ""
+#~ "د سازمان دوه واحدونه او د مالوماتو (ډاټا) ارقام یې یو ځای کړئ. مالومات "
+#~ "(ډاټا) د اوسني او وروستۍ نېټې بدلون ته په پام سره مدغم او یو ځای کیږي. "
+
+#~ msgid ""
+#~ "Monitor and clear the system database cache status. Provides information "
+#~ "on object and query caches."
+#~ msgstr ""
+#~ "د سیسټم د ډاټابېس د ساتنځي څرنګوالی پاک او وڅارئ. د اقلامو او پوښتنې د "
+#~ "ساتنځآیونو په اړله مالومات وړاندې کړئ. "
+
+#~ msgid ""
+#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
+#~ "and deploying local databases."
+#~ msgstr ""
+#~ "د سازمان د واحد له تشکیل څخه فرعي تشکیلات لرې کړئ. خو د محلي ډاټابیس د "
+#~ "جوړولو او پراخولو پر مهال ګټور ثابتیږي. "
+
+#~ msgid ""
+#~ "Define which data elements for which zero values should be stored or "
+#~ "ignored. Useful for reducing database size."
+#~ msgstr ""
+#~ "د ډاټا هغه برخې مشخصې کړئ چې د کومو صفري ارقامو لپاره باید زېرمه یا له "
+#~ "پامه وغورځول شي. د ډاټابیس د اندازې د کمولو لپاره ګټور دي. "
+
+#~ msgid ""
+#~ "Eliminate data registered for duplicate data elements. Useful when data "
+#~ "has been entered for identical data elements."
+#~ msgstr ""
+#~ "د دوو نسخه يي مالوماتو (ډاټا) د برخو په منظور راجسټر شوي مالومات (ډاټا) "
+#~ "لرې کړئ. د ورته مالوماتو (ډاټا) د برخو لپاره د ډاټا د ثبت پرمهال ګټور دي. "
+
+#~ msgid ""
+#~ "Create SQL database views. These views will typically use the resource "
+#~ "tables to provide convenient views for third-party tools."
+#~ msgstr "د SQL ډاټابیس شکلونه یا منظرې جوړې کړئ. "
+
+#~ msgid ""
+#~ "Create constants which can be included in expressions of indicator and "
+#~ "validation rules."
+#~ msgstr ""
+#~ "داسې ثابت ارقام جوړ کړئ چې د شاخص په اصطلاحاتو او تصدیق په قواعدو کې "
+#~ "شاملېدای شي. "
+
+#~ msgid ""
+#~ "Create and update dynamic attributes. Attributes can be used for data "
+#~ "elements, indicators, organisation units and users."
+#~ msgstr ""
+#~ "ډینامیک ځانګړتیاوې جوړې او تجدید کړئ. دغه ځانګړتیاوې د مالوماتو (ډاټا) د "
+#~ "برخو، شاخصونو، سامانو د واحدونو او کاروونکو لپاره کارول کېدای شي. "
+
+#~ msgid ""
+#~ "Create option sets which can be included in data elements and produce "
+#~ "drop-down lists in data entry forms."
+#~ msgstr ""
+#~ "د انتخاب داسې ټولګې جوړې کړئ چې د ډاټا یا مالوماتو په برخو کې کارول کېدای "
+#~ "شي او د ډاټا یا مالوماتو د ثبت په فورمو کې ښکته خوا ته لېسټونه جوړولی شي."
+
+#~ msgid ""
+#~ "Manage scheduled tasks such as data mart exports, where you can set "
+#~ "period types, aggregation level and frequency."
+#~ msgstr ""
+#~ "د ډاټا مارټ د صدور په څېر پلان شوې فعالیتونه مدیریت کړئ، چې په هغې کې "
+#~ "تاسو د دورې نمونې، د یو ځای کولو سطحه او د وخت تکرار ځای پر ځای کولای شئ. "
+
+#~ msgid "Expression is empty"
+#~ msgstr "اصطلاحات (څرګندونې) تش دي"
+
+#~ msgid "Data element identifier must be a number"
+#~ msgstr "د مالوماتو (ډاټا) د برخې پېژندونکی باید یو عدد وي"
+
+#~ msgid "Category option combo identifier must be a number"
+#~ msgstr "د کټګورۍ د انتخاب د برخې (combo) باید یو عدد وي"
+
+#~ msgid "Expression is not well formed"
+#~ msgstr "اصطلاحات په سمه توګه نه دي تشکیل شوې. "
+
+#~ msgid "Zero Value Storage"
+#~ msgstr "د صفري رقم زېرمه"
+
+#~ msgid "Ignore zero data values"
+#~ msgstr "د صفري ارقامو مالوماتو (ډاټا) له پامه وغورځوئ"
+
+#~ msgid "Store zero data values"
+#~ msgstr "د صفري ارقامو مالوماتو (ډاټا) زېرمه کړئ"
+
+#~ msgid "Select the organisation unit to eliminate"
+#~ msgstr "د حذف کولو په منظور د سازمان واحد غوره کړئ"
+
+#~ msgid "Select the organisation unit to keep"
+#~ msgstr "د دوام په منظور د سازمان واحد غوره کړئ"
+
+#~ msgid "Merge"
+#~ msgstr "مدغم یې کړئ"
+
+#~ msgid "Reset"
+#~ msgstr "بیا یې ترتیب کړئ"
+
+#~ msgid "Confirm"
+#~ msgstr "تصدیق یې کړئ"
+
+#~ msgid "Merging"
+#~ msgstr "مدغم کیږي"
+
+#~ msgid "Merging done"
+#~ msgstr "ادغام پای ته ورسېدو"
+
+#~ msgid "Eliminating"
+#~ msgstr "حذف کیږي"
+
+#~ msgid "Elimination done"
+#~ msgstr "ادغام پای ته ورسېدو"
+
+#~ msgid "Select the data element to eliminate"
+#~ msgstr "د حذف کولو په منظور د مالوماتو (ډاټا) برخه غوره کړئ"
+
+#~ msgid "Select the data element to keep"
+#~ msgstr "د دوام په منظور د مالوماتو (ډاټا) برخه غوره کړئ"
+
+#~ msgid "Eliminate"
+#~ msgstr "حذف یې کړئ"
+
+#~ msgid "Move All"
+#~ msgstr "ټولې ولېږدوئ"
+
+#~ msgid "Move Selected"
+#~ msgstr "غوره شوې برخې ولېږدوئ"
+
+#~ msgid "Duplicate Data Elimination"
+#~ msgstr "د غبرګو مالوماتو (ډاټا) حذفول"
+
+#~ msgid "Please select two different organisation units"
+#~ msgstr "لطفاً د سازمان دوه بېلابېل واحدونه غوره کړئ"
+
+#~ msgid "Please select two different data elements"
+#~ msgstr "لطفاً د مالوماتو (ډاټا) دوه بېلابېلې برخې غوره کړئ"
+
+#~ msgid "Filter"
+#~ msgstr "فیلټر یې کړئ"
+
+#~ msgid "Data Archive"
+#~ msgstr "د مالوماتو (ډاټا) آرشیف"
+
+#~ msgid "There are"
+#~ msgstr "په دې ځای کې شته"
+
+#~ msgid "overlapping data values in the archive."
+#~ msgstr "په آرشیف کې له حده د ډېرو مالوماتو (ډاټا) موجودیت. "
+
+#~ msgid "There are no overlapping data in the archive."
+#~ msgstr "په آرشیف کې له حده ډېر مالومات (ډاټا) شتون نه لري. "
+
+#~ msgid "Eliminate the oldest duplicates"
+#~ msgstr "تر ټولو پخوانۍ دوه ګونې نسخې حذف کړئ"
+
+#~ msgid "Eliminate duplicates from archive source"
+#~ msgstr "د آرشیف له سرچینې څخه دوه ګونې نسخې حذف کړئ. "
+
+#~ msgid "Eliminate duplicates from regular source"
+#~ msgstr "د منظمې سرچینې څخه دوه ګونې نسخې حذف کړئ. "
+
+#~ msgid "Start date"
+#~ msgstr "د پیل نېټه"
+
+#~ msgid "End date"
+#~ msgstr "د پای نېټه"
+
+#~ msgid "Archive"
+#~ msgstr "آرشیف کول"
+
+#~ msgid "Unarchive"
+#~ msgstr "له آرشیف څخه ایستل"
+
+#~ msgid "Archiving"
+#~ msgstr "آرشیف کیږي"
+
+#~ msgid "Unarchiving"
+#~ msgstr "له ارشیف څخه ایستل کیږي"
+
+#~ msgid "done. Number of archived values is now"
+#~ msgstr "اجرا شو. د آرشیف شویو ارقامو شمېر، اوس دی"
+
+#~ msgid "Prune"
+#~ msgstr "ترتیبول"
+
+#~ msgid "Pruning"
+#~ msgstr "ترتیبیږي"
+
+#~ msgid "Pruning done"
+#~ msgstr "ترتیب بشپړ شو"
+
+#~ msgid "Data browser"
+#~ msgstr "د مالوماتو (ډاټا) ښکاره کول"
+
+#~ msgid "Please choose a period type"
+#~ msgstr "لطفاُ د مودې نمونه/ډول غوره کړئ"
+
+#~ msgid "Please enter a valid End date"
+#~ msgstr "لطفاً د پای صحیح نېټه داخله کړئ "
+
+#~ msgid "Please select a browser mode"
+#~ msgstr "لطفاً د براوسر نمونه یا ډول غوره کړئ"
+
+#~ msgid "Please select an organization unit"
+#~ msgstr "لطفاً د سازمان یو واحد غوره کړئ"
+
+#~ msgid "Organisation unit group"
+#~ msgstr "د سازمان د واحد  ګروپ "
+
+#~ msgctxt "drilldown_data_element"
+#~ msgid "Data element"
+#~ msgstr "د مالوماتو (ډاټا) برخه [ لاندې یې کش کړئ ـ ډاټا ـ برخه ] "
+
+#~ msgid "Number of recorded values"
+#~ msgstr "د ثبت شویو ارقامو شمېر"
+
+#~ msgid "Browse data at this level only"
+#~ msgstr "یوازې په دې سطحه کې مالومات (ډاټ) ښکاره کړئ"
+
+#~ msgid "Summary drill down"
+#~ msgstr "لنډیز یې ښکته لوري ته کش کړئ"
+
+#~ msgid "View raw data at this level"
+#~ msgstr "په دې سطحه کې لومړني مالومات (ډاټا) وګورئ"
+
+#~ msgid "Click on this organisation unit"
+#~ msgstr "د دې سازمان پر واحد یې کېکاږئ"
+
+#~ msgid "earliest"
+#~ msgstr "لومړني"
+
+#~ msgid "latest"
+#~ msgstr "وروستي"
+
+#~ msgid "Loading"
+#~ msgstr "د پورته کېدو یا لوډینګ په حال کې"
+
+#~ msgid "Level must be a number"
+#~ msgstr "سطحه باید عدد وي"
+
+#~ msgctxt "not_choose_organisation"
+#~ msgid "Please select an organisation unit"
+#~ msgstr "لطفاً د سازمان واحد غوره کړئ [ خو سازمان ـ مه ـ غوره کوئ ] "
+
+#~ msgid "Generate"
+#~ msgstr "جوړ یې کړئ"
+
+#~ msgid "SQL View Management"
+#~ msgstr "د SQL د لیدنې مدیریت"
+
+#~ msgid "SQL View"
+#~ msgstr "د SQL لیدل"
+
+#~ msgid "SQL type"
+#~ msgstr "د SQL ډول"
+
+#~ msgid "SQL view"
+#~ msgstr "د SQL لیدل"
+
+#~ msgid "Materialized SQL view"
+#~ msgstr "د SQL لیدو ته عملي بڼه ورکړل شوې"
+
+#~ msgid "SQL query"
+#~ msgstr "د SQL پوښتنه"
+
+#~ msgid "created in database"
+#~ msgstr "په ډاټابیس کې ایجاد شوې"
+
+#~ msgid "materialized in database"
+#~ msgstr "په ډاټابیس کې عملي بڼه ورکړل شوې "
+
+#~ msgid "allows for variables"
+#~ msgstr "بدلېدونکو ډولونو ته اجازه ورکوي"
+
+#~ msgid "SQL Statement"
+#~ msgstr "د SQL بیانیه"
+
+#~ msgid "Execute query"
+#~ msgstr "د بشپړېدو پوښتنه"
+
+#~ msgid "Hide warning"
+#~ msgstr "اخطاریه یا خبرتیا پټه کړئ"
+
+#~ msgid "Add new SQL view"
+#~ msgstr "د نوي SQL شکل ور اضافه کړئ"
+
+#~ msgid "Update SQL view"
+#~ msgstr "د نوي SQL شکل ور تجدید کړئ"
+
+#~ msgid "Name is not allowed to be null"
+#~ msgstr "د نوم باطلولو ته اجازه نه ورکول کیږي"
+
+#~ msgid "Name is in use"
+#~ msgstr "نوم فعال دی"
+
+#~ msgid "Code is in use"
+#~ msgstr "کوډ فعال دی "
+
+#~ msgid "The language and country set is already in use"
+#~ msgstr "نوم او د هېواد له وړاندې فعال دی"
+
+#~ msgid "SQL statement cannot be null"
+#~ msgstr "د SQL بیانیه بیانیه د اعتبار وړ نه ده"
+
+#~ msgid "This SQL statement is invalid"
+#~ msgstr "د SQL بیانیه نشي نشي باطلېدای"
+
+#~ msgid "Note: Only SELECT query is allowed (without INTO keyword)"
+#~ msgstr ""
+#~ "نوټ: یوازې د غوره کېدو وړ پوښتنې ته اجازه ورکول کیږي (له لیکدړې/کیبورډ "
+#~ "پرته) "
+
+#~ msgid "This resource viewer is invalid or does not exist"
+#~ msgstr "د دغه سرچینې ښکاره کوونکي د اعتبار وړ نه دی یا هېڅ شتون نه لري"
+
+#~ msgid "SQL view table with name"
+#~ msgstr "د SQL ظاهري جدول له نوم سره"
+
+#~ msgid "is created"
+#~ msgstr "جوړیږي"
+
+#~ msgid "Please execute query to create View table before viewing"
+#~ msgstr ""
+#~ "لطفاً له ښکاره کېدو څخه وړاندې د لیدو وړ جدول د جوړېدو په موخه پوښتنه "
+#~ "بشپړه کړئ"
+
+#~ msgid "View data for"
+#~ msgstr "د دې لپاره مالومات (ډاټا) ښکاره کړئ"
+
+#~ msgid "Failed to create view table for"
+#~ msgstr "د دې لپاره د لیدو وړ جدول جوړېدل ناکام شو"
+
+#~ msgid "Show"
+#~ msgstr "څرګند یې کړئ "
+
+#~ msgid "Sort"
+#~ msgstr "طبقه بندي یې کړئ "
+
+#~ msgid "Lock"
+#~ msgstr "لاک یا بند یې کړئ"
+
+#~ msgid "Locked"
+#~ msgstr "لاک یا بند شوی"
+
+#~ msgid "Unlock"
+#~ msgstr "خلاص یې کړئ"
+
+#~ msgid "Append"
+#~ msgstr "ضمیمه یې کړئ"
+
+#~ msgid "Removed values successfully"
+#~ msgstr "ارقام په بریالیتوب سره لرې شول"
+
+#~ msgid "Recorded values"
+#~ msgstr "د ثبت شوي ارقام"
+
+#~ msgid "Earliest date will be used if no date is selected"
+#~ msgstr "د نېټې د نه غوروي په صورت کې به مخکینۍ نېټه وکارول شي"
+
+#~ msgid "Latest date will be used if no date is selected"
+#~ msgstr "د نېټې د نه غوروي په صورت کې به وروستۍ نېټه وکارول شي"
+
+#~ msgid "Generated values successfully"
+#~ msgstr "ارقام په بریالیتوب سره جوړ شول"
+
+#~ msgid "Start"
+#~ msgstr "پیل"
+
+#~ msgid "Data Set list"
+#~ msgstr "د مالوماتو (ډاټا) د ټولګې لېسټ"
+
+#~ msgid "Data Element Group list"
+#~ msgstr "د مالوماتو (ډاټا) د برخې د ګروپ لېسټ"
+
+#~ msgid "Organisation Unit Group list"
+#~ msgstr "د سازماني واحد د ګروپ لېسټ"
+
+#~ msgid "Person Data Archive"
+#~ msgstr "د  شخص د مالوماتو (ډاټا) آرشیف"
+
+#~ msgid ""
+#~ "Archive person data which is not currently relevant to your system in "
+#~ "order to improve performance. Data can also be unarchived."
+#~ msgstr ""
+#~ "د اجراآتو د ښوالي په موخه هغه مالومات (ډاټا) آرشیف کړئ چې اوسمهال ستاسو "
+#~ "له سیسټم سره ارتباط نه لري. همدارنګه مالومات (ډاټا) له آرشیف څخه ایستل "
+#~ "کېدای هم شي. "
+
+#~ msgid ""
+#~ "You must choose the organisation unit has parent to prune. Please try "
+#~ "again!"
+#~ msgstr ""
+#~ "تاسو باید د سازمان هغه واحد چې له لوی څخه تر کوچني پورې برخې لري انتخاب "
+#~ "کړئ. لطفاً بیا هڅه وکړئ!"
+
+#~ msgid "Restricted user tables cannot be referenced in query"
+#~ msgstr "په پوښتنه کې د کاروونکي محدود شوي جدولونه مأخذ نشي ګڼل کېدای "
+
+#~ msgid "Sections with invalid category combinations"
+#~ msgstr "د بې اعتباره کټګورۍ د ترکیباتو سره نورې برخې"
+
+#~ msgid "Do you want to delete this SQL view object ?"
+#~ msgstr "آیا غواړئ د اېس. کیو. اېل (SQL) د شکل دغه برخه حذف کړئ؟ "
+
+#~ msgid "Clear data mart"
+#~ msgstr "ډاټا مارټ پاک کړئ "
+
+#~ msgid "Rebuild data mart index"
+#~ msgstr "د ډاټا مارټ شاخص بیا جوړ کړئ"
+
+#~ msgid "Display zeros"
+#~ msgstr "صفري عددونه ښکاره کړئ"
+
+#~ msgid "Raw data"
+#~ msgstr "لومړني مالومات (ډاټا)"
+
+#~ msgid "Download as Excel"
+#~ msgstr "د اېکسېل په بڼه یې ښکته کړئ"
+
+#~ msgid "Download as CSV"
+#~ msgstr "د CSV په شکل یې ښکته کړئ"
+
+#~ msgid "Download as PDF"
+#~ msgstr "د PDF په بڼه یې ښکته کړئ"
+
+#~ msgid "Download as HTML"
+#~ msgstr "د HTML په توګه یې ښکته کړئ"
+
+#~ msgid "Download as XML"
+#~ msgstr "د XML په توګه یې ښکته کړئ"
+
+#~ msgid "Download as JSON"
+#~ msgstr "د JSON په توګه یې ښکته کړئ"
+
+#~ msgid "Constant"
+#~ msgstr "دوامدار او ثابت"
+
+#~ msgid "Constant Management"
+#~ msgstr "دوامدار مدیریت"
+
+#~ msgid "Add Constant"
+#~ msgstr "دوامدار او ثابت عددونه اضافه کړئ"
+
+#~ msgid "Edit Constant"
+#~ msgstr "دوامدار عددونه تصحیح کړئ"
+
+#~ msgid "Value must be an number"
+#~ msgstr "رقم باید عدد وي"
+
+#~ msgid "Do you want to delete this constant?"
+#~ msgstr "آیا غواړئ دغه ثابت عدد حذف کړئ؟ "
+
+#~ msgid "Yesterday"
+#~ msgstr "پرونۍ ورځ"
+
+#~ msgid "Last 2 days"
+#~ msgstr "په تېرو 2 ورځو کې"
+
+#~ msgid "Last 7 days"
+#~ msgstr "په تېرو 7 ورځو کې"
+
+#~ msgid "Last 30 days"
+#~ msgstr "په تېرو 30 ورځو کې"
+
+#~ msgid "Dynamic Attributes"
+#~ msgstr "ډینامیکې ځانګړتیاوې"
+
+#~ msgid "Attribute"
+#~ msgstr "ځانګړتیا"
+
+#~ msgid "Attribute Management"
+#~ msgstr "مدیریت ته منسوبول"
+
+#~ msgid "Value Type"
+#~ msgstr "د رقم نمونه او ډول"
+
+#~ msgid "Mandatory"
+#~ msgstr "اجباري"
+
+#~ msgid "Unique"
+#~ msgstr "بې ساري یا یوازینۍ"
+
+#~ msgid "Organisation Unit Group Set"
+#~ msgstr "د سازماني واحد د ګروپ ټولګه"
+
+#~ msgid "User"
+#~ msgstr "کاروونکی"
+
+#~ msgid "Program Stage"
+#~ msgstr "د پروګرام پړاو"
+
+#~ msgid "Tracked Entity"
+#~ msgstr "تعقیب شوی نهاد"
+
+#~ msgid "Tracked Entity Attribute"
+#~ msgstr "د تعقیب شوي نهاد ځانګړتیا"
+
+#~ msgid "Integer"
+#~ msgstr "صحیح عدد"
+
+#~ msgid "Positive Integer"
+#~ msgstr "مثبت صحیح عدد "
+
+#~ msgid "Negative Integer"
+#~ msgstr "منفي صحیح عدد"
+
+#~ msgid "Add Attribute"
+#~ msgstr "ځانګړتیا اضافه کړئ"
+
+#~ msgid "Edit Attribute"
+#~ msgstr "ځانګړتیا تصحیح کړئ"
+
+#~ msgid "Assigned to"
+#~ msgstr "تعین یې کړئ"
+
+#~ msgid "Attribute sort order"
+#~ msgstr "د تسلسل د ترتیب ځانګړتیا"
+
+#~ msgid "Data element does not exist"
+#~ msgstr "د مالوماتو (ډاټا) برخه نشته"
+
+#~ msgid "Category option combo does not exist"
+#~ msgstr "د کټګورۍ د انتخاب برخه نشته"
+
+#~ msgid "Scheduling is"
+#~ msgstr "مهالوېش په دې ډول دی"
+
+#~ msgid "Scheduling"
+#~ msgstr "د مهالوېش د ټاکلو په حال کې"
+
+#~ msgid "Scheduling management"
+#~ msgstr "د مهالوېش د ټاکلو مدیریت"
+
+#~ msgid "Stop"
+#~ msgstr "ویې دروئ"
+
+#~ msgid "Refresh"
+#~ msgstr "تازه یې کړئ"
+
+#~ msgid "Aggregation period types"
+#~ msgstr "د یو ځای کېدو د مودې نمونې"
+
+#~ msgid "active"
+#~ msgstr "فعال"
+
+#~ msgid "Resource tables"
+#~ msgstr "د سرچینې جدولونه"
+
+#~ msgid "Data mart"
+#~ msgstr "ډاټا مارټ"
+
+#~ msgid "Analytics tables"
+#~ msgstr "تحلیلي جدولونه"
+
+#~ msgid "Analytics tables task strategy"
+#~ msgstr "د تحلیلي جدولونو د فعالیت ستراتیژي"
+
+#~ msgid "Data statistics task strategy"
+#~ msgstr "د ډاټا مارټ د فعالیت ستراتیژي"
+
+#~ msgid "Last 2 years daily"
+#~ msgstr "په تېرو 2 کلونو کې هره ورځ"
+
+#~ msgid "Last 3 years daily"
+#~ msgstr "په تېرو 3 کلونو کې هره ورځ"
+
+#~ msgid "All daily"
+#~ msgstr "ټول هره ورځ"
+
+#~ msgid "Right Now"
+#~ msgstr "همدا اوس"
+
+#~ msgid "Execute Now"
+#~ msgstr "اوس یې بشپړ کړئ"
+
+#~ msgid "All every 15 minutes"
+#~ msgstr "ټول د هرو 15دقیقو په ترڅ کې"
+
+#~ msgid "Resource tables task strategy"
+#~ msgstr "د تحلیلي جدولونو د فعالیت ستراتیژي"
+
+#~ msgid "Data mart task strategy"
+#~ msgstr "د ډاټا مارټ د فعالیت ستراتیژي"
+
+#~ msgid "Never"
+#~ msgstr "هېڅکله نه"
+
+#~ msgid "Last 12 months daily"
+#~ msgstr "په تېرو 12میاشتو کې هره ورځ"
+
+#~ msgid "Last 6 months daily + 6 to 12 months weekly"
+#~ msgstr "په تېرو شپږو میاشتو کې هره ورځ + له 6 نه تر 12 میاشتو پورې هره اونۍ"
+
+#~ msgid "Daily"
+#~ msgstr "هره ورځ"
+
+#~ msgid "Organisation unit group set aggregation level"
+#~ msgstr "د سازماني واحد د ګروپ د ټولګې د یو ځای کېدو سطحه"
+
+#~ msgid "Aggregated org unit data values"
+#~ msgstr "د سازمان د واحد د یو ځای شوې ډاټا یا مالوماتو ارزښتونه."
+
+#~ msgid "Aggregated org unit indicator values"
+#~ msgstr "د سازمان د واحد د یو ځای شوي شاخص ارزښتونه."
+
+#~ msgid "Execute now"
+#~ msgstr "اوس یې بشپړ کړئ"
+
+#~ msgid ""
+#~ "Are you sure you want to execute all tasks now? Task processing might "
+#~ "fully utilize your system resources and slow down other operations."
+#~ msgstr ""
+#~ "آیا په رښتیا هم غواړئ چې ټول فعالیتونه اوس بشپړ کړئ؟ د پروسېس په حال کې "
+#~ "ښايي ستاسو د سیسټم سرچینې په بشپړه توګه وکاروي او د سیسټم نور فعالیتونه "
+#~ "ورو کړي. "
+
+#~ msgid "No aggregation"
+#~ msgstr "د یو ځای کېدو لپاره هېڅ مالومات نشته"
+
+#~ msgid "Option set"
+#~ msgstr "د غوروي ترتیب"
+
+#~ msgid "Option set management"
+#~ msgstr "د غوروي د ترتیب مدیریت"
+
+#~ msgid "Add option set"
+#~ msgstr "د انتخاب د ترتیب ورعلاوه کول"
+
+#~ msgid "Option"
+#~ msgstr "انتخابونه"
+
+#~ msgid "Edit option set"
+#~ msgstr "د انتخاب د ترتیب تصحیح"
+
+#~ msgid "The number of members"
+#~ msgstr "د غړیو شمېر"
+
+#~ msgid "Object not deleted because it is associated by objects of type"
+#~ msgstr "هېڅ موضوع نه ده حذف شوې ځکه چې د موضوعاتو له ډول سره تړاو لري"
+
+#~ msgid "Do you want to delete this lock exception?"
+#~ msgstr "آیا غواړئ د لاک کولو دغه استثناء حذف کړئ؟ "
+
+#~ msgid "Do you want to delete lock exceptions with this configuration?"
+#~ msgstr "آیا غواړئ د لاک کولو دغه استثناأ د دغه شکل بندۍ سره حذف کړئ؟ "
+
+#~ msgid "Edit lock exception"
+#~ msgstr "د بندولو یا لاک کولو استثناء تصحیح کړئ"
+
+#~ msgid "Lock exception batch removal"
+#~ msgstr "د بندولو یا لاک کولو استثناء د لرې کولو دسته"
+
+#~ msgid "Back to lock exception"
+#~ msgstr "د بندولو یا لاک کولو استثناء ته بېرته راوګرځئ"
+
+#~ msgid "Deleting lock exceptions"
+#~ msgstr "د بندولو یا لاک کولو استثیاأت حذف کیږي"
+
+#~ msgid "Error at"
+#~ msgstr "تېروتنه"
+
+#~ msgid "not started"
+#~ msgstr "نه دی پیل شوی "
+
+#~ msgid "Aggregated data set completeness"
+#~ msgstr "د یو ځای شویو مالوماتو (ډاټا) د ټولګې بشپړول"
+
+#~ msgid "Show SQL view"
+#~ msgstr "د SQL بڼه یا شکل ښکاره کړئ "
+
+#~ msgid "Financial Yearly"
+#~ msgstr "سالانه مالي تمویل"
+
+#~ msgid "Update option"
+#~ msgstr "د تجدید انتخاب"
+
+#~ msgid "Removing min-max values"
+#~ msgstr "حداقل ـ حداعظم ارقام لرې کیږي"
+
+#~ msgid "Done"
+#~ msgstr "ترسره شو"
+
+#~ msgid "Locale"
+#~ msgstr "ځای / محل "
+
+#~ msgid "Locale Management"
+#~ msgstr "د ځای یا محل مدیریت"
+
+#~ msgid "Create New Locale"
+#~ msgstr "نوی ځای جوړ کړئ "
+
+#~ msgid "Edit Locale"
+#~ msgstr "ځای یا محل تصحیح کړئ"
+
+#~ msgid "Are you sure you want to delete this locale?"
+#~ msgstr "آیا په رښتیا هم د دغه محل یا ځای حذفول غواړئ؟ "
+
+#~ msgid "Language"
+#~ msgstr "ژبه"
+
+#~ msgid "Country"
+#~ msgstr "د هېواد"
+
+#~ msgid "Please select a language"
+#~ msgstr "لطفاً یو ژبه غوره کړئ "
+
+#~ msgid "Please select a country"
+#~ msgstr "لطفاً یو هېواد غوره کړئ"
+
+#~ msgid "Data monitoring"
+#~ msgstr "د څارنې نېټه"
+
+#~ msgid "Data monitoring strategy"
+#~ msgstr "د څارنې د نېټې ستراتیژي"
+
+#~ msgid "Last year daily"
+#~ msgstr "په تېر کال کې هره ورځ"
+
+#~ msgid "Show fewer options"
+#~ msgstr "یو څو انتخابونه ښکاره کړئ"
+
+#~ msgid "Show more options"
+#~ msgstr "نور انتخابونه ښکاره کړئ"
+
+#~ msgid "Disabled"
+#~ msgstr "غېرې فعال دی"
+
+#~ msgid "Data synchronization"
+#~ msgstr "د مالوماتو (ډاټا) هم مهاله کول"
+
+#~ msgid "Metadata Synchronization"
+#~ msgstr "د مالوماتو (ډاټا) هم مهاله کول"
+
+#~ msgid "Data synchronization strategy"
+#~ msgstr "د مالوماتو (ډاټا) د هم مهاله کولو ستراتیژي"
+
+#~ msgid "Metadata synchronization strategy"
+#~ msgstr "د مالوماتو (ډاټا) د هم مهاله کولو ستراتیژي"
+
+#~ msgid ""
+#~ "To enable automated synchronisation, please select when it should occur."
+#~ msgstr ""
+#~ "په یوه وخت کې د اتومات کولو په منظور، مهرباني وکړئ د پېښېدو پر مهال یې "
+#~ "غوره کړئ. "
+
+#~ msgid "SMS Scheduler Strategy"
+#~ msgstr "د SMS د مهالوېش ستراتیژي"
+
+#~ msgid "SMS Scheduler"
+#~ msgstr "SMS مهالوېش"
+
+#~ msgid "Enabled"
+#~ msgstr "فعال دی"
+
+#~ msgid "Last success"
+#~ msgstr "وروستۍ بریالیتوب"
+
+#~ msgid "Option management"
+#~ msgstr "د غوروي مدیریت"
+
+#~ msgid "Add option"
+#~ msgstr "انتخاب ورعلاوه کړئ"
+
+#~ msgid "Edit option"
+#~ msgstr "انتخاب تصحیح کړئ"
+
+#~ msgid "Sort options"
+#~ msgstr "د طبقه بندۍ انتخابونه"
+
+#~ msgid "Available options"
+#~ msgstr "د لاس رسي وړ انتخابونه"
+
+#~ msgctxt "please_select_a_dataset"
+#~ msgid "Please select a data set"
+#~ msgstr ""
+#~ "لطفاُ د مالوماتو (ډاټا) یوه ټولګه غوره کړئ [ لطفاً ـ یو ډاټاسېټ غوره کړئ ]"
+
+#~ msgctxt "please_select_an_organisation_unit"
+#~ msgid "Please select an organisation unit"
+#~ msgstr ""
+#~ "لطفاُ د سازمان یو واحد غوره کړئ [ لطفاً ـ د سازمان ـ یو واحد ـ غوره کړئ ]"
+
+#~ msgid "Next year"
+#~ msgstr "راتلونکی کال"
+
+#~ msgid "Update the data elements and option combos in expression"
+#~ msgstr ""
+#~ "په اصطلاحاتو کې د انتخاب کوچنۍ برخې او مالوماتو (ډاټا) برخې تجدید کړئ"
+
+#~ msgid "Org unit group does not exist"
+#~ msgstr "د سازمان د واحد  ګروپ نشته"
+
+#~ msgid "View name"
+#~ msgstr "نوم وګورئ "
+
+#~ msgid "Category Option"
+#~ msgstr "د کټګورۍ انتخاب"
+
+#~ msgid "Category Option Group"
+#~ msgstr "د کټګورۍ د انتخاب ګروپ"
+
+#~ msgid "Document"
+#~ msgstr "لاسوند یا سند"
+
+#~ msgid "Legend Set"
+#~ msgstr "د لیجنډ ټولګه"
+
+#~ msgid "Program Indicator"
+#~ msgstr "پروګرام شاخص"
+
+#~ msgid "Metadata synchronization is in progress"
+#~ msgstr "د مالوماتو (ډاټا) د هم مهاله کولو په جریان"
+
+#~ msgid "Metadata synchronization started"
+#~ msgstr "د مالوماتو (ډاټا) د هم مهاله کولو شروع شول"
+
+#~ msgid "Run now"
+#~ msgstr "اوس یې پیل کړئ"
+
+#~ msgid "Program Notifications scheduler"
+#~ msgstr "د پروګرام د خبرتیاوو مهالوېش"
+
+#~ msgid "Program Notifications scheduling strategy"
+#~ msgstr "د پروګرام د خبرتیاوو د مهالوېش ټاکلو ستراتیژي"
+
+#~ msgid "Sync now"
+#~ msgstr "اوسمهال هم مهاله کول"
+
+#~ msgid "Every Minute"
+#~ msgstr "هر دقیقه"
+
+#~ msgid "Every Hour"
+#~ msgstr "هر ساعت یا ګړۍ"
+
+#~ msgid "Clear zero values"
+#~ msgstr "صفر ارقام پاک کړئ "
