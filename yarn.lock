@@ -18,10 +18,10 @@
     i18next-conv "^6.0.0"
     i18next-scanner "^2.4.4"
 
-"@dhis2/d2-i18n-generate@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-generate/-/d2-i18n-generate-1.1.0.tgz#d31ef228d0ffc234e5f38a48db817fa3f1769153"
-  integrity sha512-1zqmBskqvg+gPCdqHPDcr7Sy1s9mWpZ5uE3SmrOBJqoThUlLwcxk8yE9n6vJzlXA2WAwGNXIrZJ/oLLbuCuvzg==
+"@dhis2/d2-i18n-generate@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dhis2/d2-i18n-generate/-/d2-i18n-generate-1.1.1.tgz#e800fa39e85a71c23040b6378de1c9439f69fef7"
+  integrity sha512-akKFdEot0d38Yq51WlnflKYuQYMAYvHxDnQuOy3GVUDpmavnQec3wxQNdXbwy6FH9UUHO3kAJhlYL+slxEI+LQ==
   dependencies:
     argparse "^1.0.10"
     handlebars "^4.0.11"

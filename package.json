@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "@dhis2/d2-i18n-extract": "^1.0.7",
-    "@dhis2/d2-i18n-generate": "^1.1.0",
+    "@dhis2/d2-i18n-generate": "1.1.1",
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
@@ -76,6 +76,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
     "localize": "yarn extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
     "manifest": "d2-manifest package.json ./public/manifest.webapp",
     "prestart": "yarn manifest && yarn localize",
@@ -85,8 +86,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
     "lint": "yarn localize && eslint src/",
-    "coverage": "yarn test -- --coverage",
-    "extract-pot": "d2-i18n-extract -p src/ -o i18n/"
+    "coverage": "yarn test -- --coverage"
   },
   "manifest.webapp": {
     "name": "Data Administration",
