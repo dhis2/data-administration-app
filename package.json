@@ -3,14 +3,14 @@
   "version": "31.0.0",
   "private": true,
   "devDependencies": {
-    "@dhis2/d2-i18n-generate": "^1.0.19",
+    "@dhis2/d2-i18n-extract": "^1.0.7",
+    "@dhis2/d2-i18n-generate": "^1.1.0",
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-dhis2": "^3.0.7",
     "jest-enzyme": "^4.0.2",
-    "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.2.0",
     "wdio-allure-reporter": "^0.1.2",
     "wdio-cucumber-framework": "^1.0.2",
@@ -19,7 +19,7 @@
     "webdriverio": "^4.12.0"
   },
   "dependencies": {
-    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-i18n": "^1.0.4",
     "@dhis2/d2-ui-header-bar": "^1.1.7",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -76,23 +76,18 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "localize": "yarn extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
     "manifest": "d2-manifest package.json ./public/manifest.webapp",
-    "start": "yarn manifest && yarn localize && node scripts/start.js",
-    "build": "yarn manifest && yarn localize && node scripts/build.js",
-    "localize": "d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
+    "prestart": "yarn manifest && yarn localize",
+    "start": "node scripts/start.js",
+    "prebuild": "yarn manifest && yarn localize",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "validate": "yarn list",
     "lint": "yarn localize && eslint src/",
     "coverage": "yarn test -- --coverage",
-    "extract-pot": "node scripts/pot-extractor.js",
-    "refresh-translations-template": "yarn extract-pot -o en.pot && git add ./i18n/en.pot"
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/"
   },
-  "pre-commit": [
-    "lint",
-    "validate",
-    "refresh-translations-template"
-  ],
   "manifest.webapp": {
     "name": "Data Administration",
     "description": "Data Administration",
