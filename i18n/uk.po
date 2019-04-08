@@ -1,0 +1,1634 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 2.2.5\n"
+"X-Pootle-Path: /uk/dhis2-core/dhis-2/dhis-web/dhis-web-maintenance/dhis-web-"
+"maintenance-dataadmin/src/main/resources/org/hisp/dhis/dataadmin/uk.po\n"
+"X-Pootle-Revision: 51843\n"
+
+msgid "Data Integrity"
+msgstr "Цілісність даних"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data "
+"setup."
+msgstr ""
+"Запустити перевірки цілісності даних і розкрити аномалії та проблеми у "
+"налаштуванні метаданих."
+
+#, fuzzy
+msgid "Check Data Integrity"
+msgstr "Цілісність даних"
+
+#, fuzzy
+msgid "Performing data integrity checks..."
+msgstr "Виконуємо технічне обслуговування"
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+#, fuzzy
+msgid "Data elements without data set"
+msgstr "Елементи даних без набору даних"
+
+msgid "Data elements without groups"
+msgstr "Елементи даних без груп"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "Елементи даних, що порушують ексклюзивні (виняткові) набори даних"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr "Елементи даних, призначені для наборів даних з різними типами періодів"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "Набори даних не приписано до організаційних підрозділів"
+
+msgid "Indicators with identical formulas"
+msgstr "Показники з ідентичними формулами"
+
+msgid "Indicators without groups"
+msgstr "Показники без груп"
+
+msgid "Invalid indicator numerators"
+msgstr "Некоректні чисельники показника"
+
+msgid "Invalid indicator denominators"
+msgstr "Некоректні знаменники показника"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "Показники, які порушують ексклюзивні (виняткові) набори груп"
+
+msgid "Organisation units with cyclic references"
+msgstr "Організаційні підрозділи з циклічними посиланнями"
+
+msgid "Orphaned organisation units"
+msgstr "Організаційні підрозділи без супроводу"
+
+msgid "Organisation units without groups"
+msgstr "Організаційні підрозділи без груп"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+"Організаційні підрозділи, які порушують ексклюзивні/виняткові набори груп"
+
+msgid "Organisation unit groups without group sets"
+msgstr "Групи організаційних підрозділів без наборів груп"
+
+msgid "Validation rules without groups"
+msgstr "Правила перевірки без груп"
+
+msgid "Invalid validation rule left side expressions"
+msgstr ""
+
+msgid "Invalid validation rule right side expressions"
+msgstr ""
+
+#, fuzzy
+msgid "Invalid program indicator expressions"
+msgstr "Некоректні чисельники показника"
+
+#, fuzzy
+msgid "Invalid program indicator filters"
+msgstr "Некоректні знаменники показника"
+
+#, fuzzy
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr "Елементи даних у наборі даних, але не у формі чи секціях"
+
+msgid "Invalid category combinations"
+msgstr "Некоректні комбінації категорій"
+
+msgid "Duplicate periods"
+msgstr "Дублювати періоди"
+
+msgid "Maintenance"
+msgstr "Підтримка"
+
+#, fuzzy
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+"Генерувати ресурсні таблиці баз даних для ієрархії організаційних "
+"підрозділів та структури наборів груп, поміж іншими."
+
+#, fuzzy
+msgid "Perform Maintenance"
+msgstr "Виконати технічне обслуговування"
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+#, fuzzy
+msgid "Performing Maintenance..."
+msgstr "Виконуємо технічне обслуговування"
+
+#, fuzzy
+msgid "Maintenance done"
+msgstr "Підтримка"
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "Очистити аналітичні таблиці"
+
+msgid "Analyze analytics tables"
+msgstr "Аналізувати аналітичні таблиці"
+
+msgid "Remove zero data values"
+msgstr "Прибрати нульові значення даних"
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+"Назавжди видалити значення даних, які було видалено з можливістю відновлення"
+
+msgid "Permanently remove soft deleted events"
+msgstr "Назавжди видалити події, які було видалено з можливістю відновлення"
+
+#, fuzzy
+msgid "Permanently remove soft deleted enrollments"
+msgstr "Назавжди видалити події, які було видалено з можливістю відновлення"
+
+#, fuzzy
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr "Назавжди видалити події, які було видалено з можливістю відновлення"
+
+msgid "Prune periods"
+msgstr "Відсікти періоди"
+
+msgid "Remove expired invitations"
+msgstr "Прибрати прострочені запрошення"
+
+msgid "Drop SQL views"
+msgstr "Скинути розрізи даних SQL"
+
+msgid "Create SQL views"
+msgstr "Створити розрізи даних SQL"
+
+msgid "Update category option combinations"
+msgstr "Оновити комбінації опцій категорій"
+
+msgid "Update organisation unit paths"
+msgstr "Оновити шляхи організаційних підрозділів"
+
+msgid "Clear application cache"
+msgstr "Очистити кеш додатка"
+
+msgid "Reload apps"
+msgstr "Перезавантажити додатки"
+
+#, fuzzy
+msgid "Resource Tables"
+msgstr "Ресурсна таблиця"
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"Генерувати ресурсні таблиці баз даних для ієрархії організаційних "
+"підрозділів та структури наборів груп, поміж іншими."
+
+#, fuzzy
+msgid "Generate Resource Tables"
+msgstr "Генеруємо ресурсні таблиці"
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+#, fuzzy
+msgid "Generating Resource Tables..."
+msgstr "Генеруємо ресурсні таблиці"
+
+#, fuzzy
+msgid "Resource Tables generated"
+msgstr "Ресурсні таблиці згенеровано"
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "Структура організаційних підрозділів"
+
+msgid "Organisation unit category option combo"
+msgstr "Комбінація опцій категорій організаційних підрозділів"
+
+msgid "Category option group set structure"
+msgstr "Структура набору груп опцій категорій"
+
+msgid "Data element group set structure"
+msgstr "Структура набору групи елементів даних"
+
+msgid "Indicator group set structure"
+msgstr "Структура набору груп показників"
+
+msgid "Organisation unit group set structure"
+msgstr "Структура набору груп організаційних підрозділів"
+
+msgid "Category structure"
+msgstr "Структура категорій"
+
+msgid "Data element category option combo name"
+msgstr "Назва комбінації опцій категорії елементу даних"
+
+msgid "Data element structure"
+msgstr "Стурктура елементів даних"
+
+msgid "Period structure"
+msgstr "Структура періоду"
+
+msgid "Date period structure"
+msgstr "Структура проміжку між датами"
+
+msgid "Data element category option combinations"
+msgstr "Комбінації опцій категорії елементів даних"
+
+msgid "Data Statistics"
+msgstr "Статистика даних"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"Продивитись кількість об'єктів у базі даних, як-от елементи даних, "
+"показники, набори даних та значення даних."
+
+#, fuzzy
+msgid "Overview Data Statistics"
+msgstr "Статистика даних"
+
+#, fuzzy
+msgid "Loading Data Statistics..."
+msgstr "Статистика даних"
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+#, fuzzy
+msgid "No data to show."
+msgstr "Дані не знайдено"
+
+msgid "Object type"
+msgstr "Тип об'єкта"
+
+msgid "Last hour"
+msgstr "Минула година"
+
+msgid "Today"
+msgstr "Сьогодні"
+
+#, fuzzy
+msgid "Last"
+msgstr "Минула година"
+
+msgid "days"
+msgstr ""
+
+msgid "Users logged in"
+msgstr "Користувачі, які перебувають у системі"
+
+msgid "User account invitations"
+msgstr "Запрошення щодо облікового запису користувача"
+
+msgid "Pending invitations"
+msgstr "Запрошення, які очікують на відповідь"
+
+msgid "Expired invitations"
+msgstr "Прострочені запрошення"
+
+msgid "Data values"
+msgstr "Значення даних"
+
+msgid "Events"
+msgstr ""
+
+#, fuzzy
+msgid "Indicators"
+msgstr "Показник"
+
+msgid "Periods"
+msgstr "Періоди"
+
+#, fuzzy
+msgid "Organisation units"
+msgstr "Організаційний підрозділ"
+
+#, fuzzy
+msgid "Validation rules"
+msgstr "Правила перевірки без груп"
+
+#, fuzzy
+msgid "Programs"
+msgstr "Програма"
+
+#, fuzzy
+msgid "Data elements"
+msgstr "Елемент даних"
+
+msgid "Organisation unit groups"
+msgstr "Групи організаційних підрозділів"
+
+msgid "Pivot tables"
+msgstr ""
+
+msgid "Indicator types"
+msgstr "Типи показників"
+
+#, fuzzy
+msgid "Data sets"
+msgstr "Набір даних"
+
+#, fuzzy
+msgid "User groups"
+msgstr "Група користувачів"
+
+msgid "Users"
+msgstr "Користувачі"
+
+msgid "Maps"
+msgstr ""
+
+#, fuzzy
+msgid "Indicator groups"
+msgstr "Група показників"
+
+msgid "Charts"
+msgstr ""
+
+#, fuzzy
+msgid "Data element groups"
+msgstr "Група елементів даних"
+
+msgid "Dashboards"
+msgstr ""
+
+msgid "Lock Exception Management"
+msgstr "Керування винятками блокування"
+
+msgid "Lock Exception"
+msgstr "Виняток блокування"
+
+#, fuzzy
+msgid "Batch Deletion"
+msgstr "Групове видалення"
+
+#, fuzzy
+msgid "Add new lock exception"
+msgstr "Створити новий виняток блокування"
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry "
+"forms."
+msgstr ""
+"Додати чи прибрати винятки зі стандартних правил блокування форм введення "
+"даних."
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+#, fuzzy
+msgid "Loading Lock Exceptions..."
+msgstr "Виняток блокування"
+
+#, fuzzy
+msgid "Adding Lock Exception..."
+msgstr "Виняток блокування"
+
+#, fuzzy
+msgid "Lock Exception removed"
+msgstr "Виняток блокування"
+
+#, fuzzy
+msgid "Lock Exception Added"
+msgstr "Виняток блокування"
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "CONFIRM"
+msgstr ""
+
+#, fuzzy
+msgid "Select a Data Set"
+msgstr "Будь ласка, оберіть набір даних"
+
+#, fuzzy
+msgid "Updating Organisation Units Tree..."
+msgstr "Злиття організаційних підрозділів"
+
+#, fuzzy
+msgid "For organisation units within"
+msgstr "Організаційні підрозділи без супроводу"
+
+msgid "Period"
+msgstr "Період"
+
+msgid "Data Set"
+msgstr "Набір даних"
+
+msgid "Organisation Unit"
+msgstr "Організаційний підрозділ"
+
+msgid "Organisation Unit Group"
+msgstr "Група організаційних підрозділів"
+
+#, fuzzy
+msgid "Organisation Unit Level"
+msgstr "Злиття організаційних підрозділів"
+
+#, fuzzy
+msgid "Select"
+msgstr "Обрати/ВСЕ"
+
+#, fuzzy
+msgid "Deselect"
+msgstr "Не обрано"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+#, fuzzy
+msgid "Show Details"
+msgstr "Деталі локації"
+
+msgid "Remove"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Опції"
+
+msgid "of"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+#, fuzzy
+msgid "year"
+msgstr "Попередній рік"
+
+msgid "bi monthly"
+msgstr ""
+
+#, fuzzy
+msgid "day"
+msgstr "Сьогодні"
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "Генерування мін.-макс. значень"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"Генерувати мінімальні-максимальні значення, які можна використати для "
+"перевірки даних під час процесів введення та перевірки даних."
+
+#, fuzzy
+msgid "Generate Min-Max Value"
+msgstr "Генеруємо мін.-макс. значення"
+
+msgid "It was not possible to load data"
+msgstr ""
+
+#, fuzzy
+msgid "Select Data set and Organisation Unit"
+msgstr "Обрати батьківський організаційний підрозділ"
+
+#, fuzzy
+msgid "Doing Min Max generation..."
+msgstr "Генерування мін.-макс. значень"
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+#, fuzzy
+msgid "Min Max generation done"
+msgstr "Генерування мін.-макс. значень"
+
+msgid "Min Max removal done"
+msgstr ""
+
+#, fuzzy
+msgid "Loading data sets"
+msgstr "Наявні набори даних"
+
+#, fuzzy
+msgid "Organisation Unit Selection"
+msgstr "Злиття організаційних підрозділів"
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+#~ msgid "Remove All Locks"
+#~ msgstr "Прибрати всі блокування"
+
+#~ msgid "Optional"
+#~ msgstr "Необов'язково"
+
+#~ msgid "Data Administration"
+#~ msgstr "Адміністрування даних"
+
+#~ msgid "Period Type"
+#~ msgstr "Тип періоду"
+
+#~ msgid "Please select at least one option"
+#~ msgstr "Будь ласка, оберіть щонайменше одну опцію"
+
+#~ msgid "Maintenance performed"
+#~ msgstr "Технічне обслуговування виконано"
+
+#~ msgid "Clear data set completeness"
+#~ msgstr "Очистити завершеність набору даних"
+
+#~ msgid "Organisation unit group set structure normalized"
+#~ msgstr "Структуру набору груп організаційних підрозділів нормалізовано"
+
+#~ msgid "Generate tables"
+#~ msgstr "Генерувати таблиці"
+
+#~ msgid "Cache Statistics"
+#~ msgstr "Статистика кеша"
+
+#~ msgid "Second Level Cache Statistics"
+#~ msgstr "Статистика кеша другого рівня"
+
+#~ msgid "Region name"
+#~ msgstr "Назва регіону"
+
+#~ msgid "Mem count"
+#~ msgstr "Підрахунок пам'яті"
+
+#~ msgid "Disk count"
+#~ msgstr "Підрахунок дисків"
+
+#~ msgid "Mem size"
+#~ msgstr "Розмір пам'яті"
+
+#~ msgid "Total Second Level Cache"
+#~ msgstr "Всього кеш другого рівня"
+
+#~ msgid "Total Query Cache"
+#~ msgstr "Всього кеш запитів"
+
+#~ msgid "Query Cache Statistics"
+#~ msgstr "Зробити запит статистики кешу"
+
+#~ msgid "Query name"
+#~ msgstr "Назва запиту"
+
+#~ msgid "Miss count"
+#~ msgstr "Підрахунок промахів"
+
+#~ msgid "Exec avg time"
+#~ msgstr "Середній час виконання"
+
+#~ msgid "Exec max time"
+#~ msgstr "Максимальний час виконання"
+
+#~ msgid "Exec min time"
+#~ msgstr "Мінімальний час виконання"
+
+#~ msgid "Clear cache"
+#~ msgstr "Очистити кеш"
+
+#~ msgid "Data dictionaries"
+#~ msgstr "Словники даних"
+
+#~ msgid "Number of objects"
+#~ msgstr "Кількість об'єктів"
+
+#~ msgid "Data Browser"
+#~ msgstr "Браузер даних"
+
+#~ msgid "From date"
+#~ msgstr "Від дати"
+
+#~ msgid "To date"
+#~ msgstr "До дати"
+
+#~ msgid "Browse by"
+#~ msgstr "Продивитися за"
+
+#~ msgid "Select mode"
+#~ msgstr "Обрати режим"
+
+#~ msgid "Browse"
+#~ msgstr "Продивитися"
+
+#~ msgid "Select Period Type"
+#~ msgstr "Обрати тип періоду"
+
+#~ msgid "Organisation units violating compulsory group sets"
+#~ msgstr "Організаційні підрозділи, які порушують обов'язкові набори груп"
+
+#~ msgid ""
+#~ "Category option combos not in data element category combo in data entry "
+#~ "form"
+#~ msgstr ""
+#~ "Комбінації опцій категорії не присутні у комбінації категорій елементів "
+#~ "даних у формі введення даних"
+
+#~ msgid "Data integrity checks performed"
+#~ msgstr "Проведено перевірку цілісності даних"
+
+#~ msgid "Value"
+#~ msgstr "Значення"
+
+#~ msgid "Found"
+#~ msgstr "Знайдено"
+
+#~ msgid "values"
+#~ msgstr "значення"
+
+#~ msgid "Data element Group"
+#~ msgstr "Група елементів даних"
+
+#~ msgid "Aggregated data values"
+#~ msgstr "Агреговані значення даних"
+
+#~ msgid "Aggregated indicator values"
+#~ msgstr "Агреговані значення показників"
+
+#~ msgid "Organisation Unit Pruning"
+#~ msgstr "Обрізання організаційних підрозділів"
+
+#~ msgid ""
+#~ "Browse the database and get an overview of where data exists. View and "
+#~ "export counts of data elements as well as raw data."
+#~ msgstr ""
+#~ "Продивитися базу даних і отримати огляд того, де існують дані. "
+#~ "Продивитися і експорутвати кількість елементів даних, а також необроблені "
+#~ "дані."
+
+#~ msgid ""
+#~ "Archive data which is not currently relevant to your system in order to "
+#~ "improve performance. Data can also be unarchived."
+#~ msgstr ""
+#~ "Архівувати дані, які натепер не стосуються вашої системи, аби покращити "
+#~ "її роботу. Дані також можна розархівувати."
+
+#~ msgid ""
+#~ "Archive person data which is not currently relevant to your system. Data "
+#~ "can also be unarchived."
+#~ msgstr ""
+#~ "Архівувати особисті дані, які натепер не стосуються вашої системи. Дані "
+#~ "також можна розархівувати."
+
+#~ msgid ""
+#~ "Perform maintenance tasks such as pruning of data values and periods and "
+#~ "clearing of database resource tables."
+#~ msgstr ""
+#~ "Виконати роботи з обслуговування, як-от обрізання значень та періодів "
+#~ "даних й очищення ресурсних таблиць."
+
+#~ msgid ""
+#~ "Create and manage locales for database content. A locale is a combination "
+#~ "of language and country."
+#~ msgstr ""
+#~ "Створити та керувати локаціями для вмісту бази даних. Локація - це "
+#~ "комбінація мови і країни."
+
+#~ msgid ""
+#~ "Merge two organisation units and their data values. Data is merged "
+#~ "depending on existence and date of last modification."
+#~ msgstr ""
+#~ "Об'єднати два організаційні підрозділи та їх значення даних. Дані буде "
+#~ "об'єднано у залежності від існування та дати останньої модифікації."
+
+#~ msgid ""
+#~ "Monitor and clear the system database cache status. Provides information "
+#~ "on object and query caches."
+#~ msgstr ""
+#~ "Моніторити й очищати кеш-статус бази даних системи. Надає інформацію про "
+#~ "об'єкт та кеші запитів."
+
+#~ msgid ""
+#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
+#~ "and deploying local databases."
+#~ msgstr ""
+#~ "Прибрати розгалуження нижчого рівня з дерева організаційних підрозділів. "
+#~ "Корисно за створення та застосування місцевих баз даних."
+
+#~ msgid ""
+#~ "Define which data elements for which zero values should be stored or "
+#~ "ignored. Useful for reducing database size."
+#~ msgstr ""
+#~ "Визначити, які елементи даних для яких нульових значень треба зберігати "
+#~ "чи ігнорувати. Це корисно для зменшення розміру бази даних."
+
+#~ msgid ""
+#~ "Eliminate data registered for duplicate data elements. Useful when data "
+#~ "has been entered for identical data elements."
+#~ msgstr ""
+#~ "Ліквідувати дані, зареєстровані для дубльованих елементів даних. Це "
+#~ "корисно, коли дані було введено для ідентичних елементів даних."
+
+#~ msgid ""
+#~ "Create SQL database views. These views will typically use the resource "
+#~ "tables to provide convenient views for third-party tools."
+#~ msgstr ""
+#~ "Створити розрізи бази даних SQL. Ці розрізи даних зазвичай "
+#~ "використовуватимуть ресурсні таблиці, аби надавати зручні відображення "
+#~ "даних для інструментів третіх сторін."
+
+#~ msgid ""
+#~ "Create constants which can be included in expressions of indicator and "
+#~ "validation rules."
+#~ msgstr ""
+#~ "Створити константи, які можна включати у вираження індикатора і правил "
+#~ "перевірки."
+
+#~ msgid ""
+#~ "Create and update dynamic attributes. Attributes can be used for data "
+#~ "elements, indicators, organisation units and users."
+#~ msgstr ""
+#~ "Створити і оновити динамічні атрибути. Атрибути можна використовувати для "
+#~ "елементів даних, індикаторів, організаційних підрозділів та користувачів."
+
+#~ msgid ""
+#~ "Create option sets which can be included in data elements and produce "
+#~ "drop-down lists in data entry forms."
+#~ msgstr ""
+#~ "Створити набори опцій, які можна включити до елементів даних і створювати "
+#~ "списки, що розкриваються, у формах введення даних."
+
+#~ msgid ""
+#~ "Manage scheduled tasks such as data mart exports, where you can set "
+#~ "period types, aggregation level and frequency."
+#~ msgstr ""
+#~ "Керувати запланованими завданнями, як-от експорт вітрини даних, де ви "
+#~ "можете встановлювати типи періодів, рівень та частоту агрегації."
+
+#~ msgid "Expression is empty"
+#~ msgstr "Вираження є порожнім"
+
+#~ msgid "Data element identifier must be a number"
+#~ msgstr "Ідентифікатор елементу даних повинен бути числом"
+
+#~ msgid "Category option combo identifier must be a number"
+#~ msgstr "Ідентифікатор комбінації опцій категорій має бути числом"
+
+#~ msgid "Expression is not well formed"
+#~ msgstr "Вираження не є добре сформованим"
+
+#~ msgid "Zero Value Storage"
+#~ msgstr "Сховище нульових значень"
+
+#~ msgid "Ignore zero data values"
+#~ msgstr "Ігнорувати нульові значення даних"
+
+#~ msgid "Store zero data values"
+#~ msgstr "Зберегти нульові значення даних"
+
+#~ msgid "Select the organisation unit to eliminate"
+#~ msgstr "Оберіть організаційний підрозділ для ліквідації"
+
+#~ msgid "Select the organisation unit to keep"
+#~ msgstr "Обрати організаційний підрозділ для збереження"
+
+#~ msgid "Merge"
+#~ msgstr "Злити разом"
+
+#~ msgid "Reset"
+#~ msgstr "Скинути до початкового стану"
+
+#~ msgid "Confirm"
+#~ msgstr "Підтвердити"
+
+#~ msgid "Merging"
+#~ msgstr "Злиття"
+
+#~ msgid "Merging done"
+#~ msgstr "Злиття виконано"
+
+#~ msgid "Eliminating"
+#~ msgstr "Ліквідуємо"
+
+#~ msgid "Elimination done"
+#~ msgstr "Ліквідацію виконано"
+
+#~ msgid "Select the data element to eliminate"
+#~ msgstr "Оберіть елемент даних для ліквідації"
+
+#~ msgid "Select the data element to keep"
+#~ msgstr "Оберіть елемент даних для збереження"
+
+#~ msgid "Eliminate"
+#~ msgstr "Ліквідувати"
+
+#~ msgid "Move All"
+#~ msgstr "Перенести все"
+
+#~ msgid "Move Selected"
+#~ msgstr "Перенести обране"
+
+#~ msgid "Duplicate Data Elimination"
+#~ msgstr "Ліквідація дубльованих даних"
+
+#~ msgid "Please select two different organisation units"
+#~ msgstr "Будь ласка, оберіть два різних організаційних підрозділи"
+
+#~ msgid "Please select two different data elements"
+#~ msgstr "Будь ласка, оберіть два різних елементи даних"
+
+#~ msgid "Filter"
+#~ msgstr "Фільтр"
+
+#~ msgid "Data Archive"
+#~ msgstr "Архів даних"
+
+#~ msgid "There are"
+#~ msgstr "Існують"
+
+#~ msgid "overlapping data values in the archive."
+#~ msgstr "значення даних в архіві, що перекриваються."
+
+#~ msgid "There are no overlapping data in the archive."
+#~ msgstr "В архіві немає даних, що перекриваються."
+
+#~ msgid "Eliminate the oldest duplicates"
+#~ msgstr "Ліквідувати для найстарших дублікатів"
+
+#~ msgid "Eliminate duplicates from archive source"
+#~ msgstr "Ліквідувати дублікати з архівного джерела"
+
+#~ msgid "Eliminate duplicates from regular source"
+#~ msgstr "Ліквідувати дублікати зі звичайного джерела"
+
+#~ msgid "Start date"
+#~ msgstr "Початкова дата"
+
+#~ msgid "End date"
+#~ msgstr "Кінцева дата"
+
+#~ msgid "Archive"
+#~ msgstr "Архівувати"
+
+#~ msgid "Unarchive"
+#~ msgstr "Розархівувати"
+
+#~ msgid "Archiving"
+#~ msgstr "Архівування"
+
+#~ msgid "Unarchiving"
+#~ msgstr "Розархівування"
+
+#~ msgid "done. Number of archived values is now"
+#~ msgstr "зроблено. Кількість заархівованих значень натепер"
+
+#~ msgid "Prune"
+#~ msgstr "Відсікти"
+
+#~ msgid "Pruning"
+#~ msgstr "Відсікання"
+
+#~ msgid "Pruning done"
+#~ msgstr "Обрізання виконано"
+
+#~ msgid "Data browser"
+#~ msgstr "Браузер даних"
+
+#~ msgid "Please choose a period type"
+#~ msgstr "Будь ласка, оберіть тип періоду"
+
+#~ msgid "Please enter a valid End date"
+#~ msgstr "Будь ласка, введіть коректну кінцеву дату"
+
+#~ msgid "Please select a browser mode"
+#~ msgstr "Будь ласка, оберіть режим браузера"
+
+#~ msgid "Please select an organization unit"
+#~ msgstr "Будь ласка, оберіть організаційний підрозділ"
+
+#~ msgid "Organisation unit group"
+#~ msgstr "Група організаційних підрозділів"
+
+#~ msgctxt "drilldown_data_element"
+#~ msgid "Data element"
+#~ msgstr "Елемент даних"
+
+#~ msgid "Number of recorded values"
+#~ msgstr "Кількість записаних значень"
+
+#~ msgid "Browse data at this level only"
+#~ msgstr "Продивитися дані лише на цьому рівні"
+
+#~ msgid "View raw data at this level"
+#~ msgstr "Переглянути необроблені дані на цьому рівні"
+
+#~ msgid "Click on this organisation unit"
+#~ msgstr "Натиснути на цей організаційний підрозділ"
+
+#~ msgid "earliest"
+#~ msgstr "найранніші"
+
+#~ msgid "latest"
+#~ msgstr "найостанніші"
+
+#~ msgid "Loading"
+#~ msgstr "Завантаження"
+
+#~ msgid "Level must be a number"
+#~ msgstr "Рівень має бути числом"
+
+#~ msgctxt "not_choose_organisation"
+#~ msgid "Please select an organisation unit"
+#~ msgstr "Будь ласка, оберіть організаційний підрозділ"
+
+#~ msgid "Generate"
+#~ msgstr "Генерувати"
+
+#~ msgid "SQL View Management"
+#~ msgstr "Керування розрізами даних SQL"
+
+#~ msgid "SQL View"
+#~ msgstr "Розріз даних SQL"
+
+#~ msgid "SQL type"
+#~ msgstr "Тип SQL"
+
+#~ msgid "SQL view"
+#~ msgstr "Розріз даних SQL"
+
+#~ msgid "Materialized SQL view"
+#~ msgstr "Матеріалізований розріз даних SQL"
+
+#~ msgid "SQL query"
+#~ msgstr "Запит SQL"
+
+#~ msgid "created in database"
+#~ msgstr "створене у базі даних"
+
+#~ msgid "materialized in database"
+#~ msgstr "матеріалізовано у базі даних"
+
+#~ msgid "allows for variables"
+#~ msgstr "дозволяє змінні"
+
+#~ msgid "SQL Statement"
+#~ msgstr "Вираз SQL"
+
+#~ msgid "Execute query"
+#~ msgstr "Виконати запит"
+
+#~ msgid "Hide warning"
+#~ msgstr "Сховати попередження"
+
+#~ msgid "Add new SQL view"
+#~ msgstr "Додати новий розріз даних SQL"
+
+#~ msgid "Update SQL view"
+#~ msgstr "Оновити розріз даних SQL"
+
+#~ msgid "Name is not allowed to be null"
+#~ msgstr "Ім'я не має бути порожнім"
+
+#~ msgid "Name is in use"
+#~ msgstr "Ім'я використовують"
+
+#~ msgid "Code is in use"
+#~ msgstr "Код використовують"
+
+#~ msgid "The language and country set is already in use"
+#~ msgstr "Набір мови і країни вже використовують"
+
+#~ msgid "SQL statement cannot be null"
+#~ msgstr "Вираз SQL не може бути нульовим"
+
+#~ msgid "This SQL statement is invalid"
+#~ msgstr "Цей вираз SQL є некоректним"
+
+#~ msgid "Note: Only SELECT query is allowed (without INTO keyword)"
+#~ msgstr "Примітка: Дозволено лише запит SELECT (без ключового слова INTO)"
+
+#~ msgid "This resource viewer is invalid or does not exist"
+#~ msgstr "Цей переглядач ресурсів є недійсним або не існує"
+
+#~ msgid "SQL view table with name"
+#~ msgstr "Таблиця розрізу даних SQL з назвою"
+
+#~ msgid "is created"
+#~ msgstr "створене"
+
+#~ msgid "Please execute query to create View table before viewing"
+#~ msgstr ""
+#~ "Будь ласка, перед переглядом виконайте запит зі створення таблиці "
+#~ "перегляду"
+
+#~ msgid "View data for"
+#~ msgstr "Подивитися дані за"
+
+#~ msgid "Failed to create view table for"
+#~ msgstr "Не вдалося створити таблицю перегляду для"
+
+#~ msgid "Show"
+#~ msgstr "Показати"
+
+#~ msgid "Sort"
+#~ msgstr "Сортувати"
+
+#~ msgid "Lock"
+#~ msgstr "Заблокувати"
+
+#~ msgid "Locked"
+#~ msgstr "Заблоковано"
+
+#~ msgid "Unlock"
+#~ msgstr "Розблокувати"
+
+#~ msgid "Append"
+#~ msgstr "Додати"
+
+#~ msgid "Removed values successfully"
+#~ msgstr "Значення прибрано успішно"
+
+#~ msgid "Recorded values"
+#~ msgstr "Записано значень"
+
+#~ msgid "Earliest date will be used if no date is selected"
+#~ msgstr "Якщо не обрано жодної дати, буде використано найбільш ранню дату"
+
+#~ msgid "Latest date will be used if no date is selected"
+#~ msgstr "Якщо не обрано жодної дати, буде використано найпізнішу дату"
+
+#~ msgid "Generated values successfully"
+#~ msgstr "Значення згенеровано успішно"
+
+#~ msgid "Start"
+#~ msgstr "Почати"
+
+#~ msgid "Data Set list"
+#~ msgstr "Перелік набору даних"
+
+#~ msgid "Data Element Group list"
+#~ msgstr "Перелік груп елементів даних"
+
+#~ msgid "Organisation Unit Group list"
+#~ msgstr "Перелік груп організаційних підрозділів"
+
+#~ msgid "Person Data Archive"
+#~ msgstr "Архів особистих даних"
+
+#~ msgid ""
+#~ "Archive person data which is not currently relevant to your system in "
+#~ "order to improve performance. Data can also be unarchived."
+#~ msgstr ""
+#~ "Архівувати особисті дані, які натепер не стосуються вашої системи, для "
+#~ "покращення її роботи. Дані також можна розархівувати."
+
+#~ msgid ""
+#~ "You must choose the organisation unit has parent to prune. Please try "
+#~ "again!"
+#~ msgstr ""
+#~ "Ви повинні обрати організаційний підрозділ, що має батьківський підрозділ "
+#~ "для скорочення. Будь ласка, спробуйте ще!"
+
+#~ msgid "Restricted user tables cannot be referenced in query"
+#~ msgstr ""
+#~ "У запитах не можна посилатися на таблиці користувачів з обмеженим доступом"
+
+#~ msgid "Sections with invalid category combinations"
+#~ msgstr "Секції з некоректними комбінаціями категорій"
+
+#~ msgid "Do you want to delete this SQL view object ?"
+#~ msgstr "Чи ви хочете видалити цей об'єкт розрізу даних SQL ?"
+
+#~ msgid "Clear data mart"
+#~ msgstr "Очистити вітрину даних"
+
+#~ msgid "Rebuild data mart index"
+#~ msgstr "Відбудувати індекс вітрини даних"
+
+#~ msgid "Display zeros"
+#~ msgstr "Показати нулі"
+
+#~ msgid "Raw data"
+#~ msgstr "Необроблені дані"
+
+#~ msgid "Download as Excel"
+#~ msgstr "Завантажити як файл Excel"
+
+#~ msgid "Download as CSV"
+#~ msgstr "Завантажити у форматі CSV"
+
+#~ msgid "Download as PDF"
+#~ msgstr "Завантажити у форматі PDF"
+
+#~ msgid "Download as HTML"
+#~ msgstr "Завантажити у форматі HTML"
+
+#~ msgid "Download as XML"
+#~ msgstr "Завантажити у форматі XML"
+
+#~ msgid "Download as JSON"
+#~ msgstr "Завантажити у форматі JSON"
+
+#~ msgid "Constant"
+#~ msgstr "Константа"
+
+#~ msgid "Constant Management"
+#~ msgstr "Керування константою"
+
+#~ msgid "Add Constant"
+#~ msgstr "Додати константу"
+
+#~ msgid "Edit Constant"
+#~ msgstr "Редагувати константу"
+
+#~ msgid "Value must be an number"
+#~ msgstr "Значення має бути числом"
+
+#~ msgid "Do you want to delete this constant?"
+#~ msgstr "Чи ви хочете видалити цю константу?"
+
+#~ msgid "Yesterday"
+#~ msgstr "Вчора"
+
+#~ msgid "Last 2 days"
+#~ msgstr "Останні 2 дні"
+
+#~ msgid "Last 7 days"
+#~ msgstr "Останні 7 днів"
+
+#~ msgid "Last 30 days"
+#~ msgstr "Останні 30 днів"
+
+#~ msgid "Dynamic Attributes"
+#~ msgstr "Динамічні атрибути"
+
+#~ msgid "Attribute"
+#~ msgstr "Атрибут"
+
+#~ msgid "Attribute Management"
+#~ msgstr "Керування атрибутом"
+
+#~ msgid "Value Type"
+#~ msgstr "Тип значення"
+
+#~ msgid "Mandatory"
+#~ msgstr "Обов'язкове"
+
+#~ msgid "Unique"
+#~ msgstr "Унікальне"
+
+#~ msgid "Organisation Unit Group Set"
+#~ msgstr "Набір груп організаційних підрозділів"
+
+#~ msgid "User"
+#~ msgstr "Користувач"
+
+#~ msgid "Program Stage"
+#~ msgstr "Етап програми"
+
+#~ msgid "Tracked Entity"
+#~ msgstr "Відстежуване явище"
+
+#~ msgid "Tracked Entity Attribute"
+#~ msgstr "Атрибут відстежуваного явища"
+
+#~ msgid "Integer"
+#~ msgstr "Ціле число"
+
+#~ msgid "Positive Integer"
+#~ msgstr "Додатне ціле число"
+
+#~ msgid "Negative Integer"
+#~ msgstr "Від'ємне ціле число"
+
+#~ msgid "Add Attribute"
+#~ msgstr "Додати атрибут"
+
+#~ msgid "Edit Attribute"
+#~ msgstr "Редагувати атрибут"
+
+#~ msgid "Assigned to"
+#~ msgstr "Призначене"
+
+#~ msgid "Attribute sort order"
+#~ msgstr "Порядок відображення атрибутів"
+
+#~ msgid "Data element does not exist"
+#~ msgstr "Елемент даних не існує"
+
+#~ msgid "Category option combo does not exist"
+#~ msgstr "Комбінація опцій категорій не існує"
+
+#~ msgid "Scheduling is"
+#~ msgstr "Планування"
+
+#~ msgid "Scheduling"
+#~ msgstr "Планування"
+
+#~ msgid "Scheduling management"
+#~ msgstr "Керування плануванням"
+
+#~ msgid "Stop"
+#~ msgstr "Зупинити"
+
+#~ msgid "Refresh"
+#~ msgstr "Оновити"
+
+#~ msgid "Aggregation period types"
+#~ msgstr "Типи періодів агрегації"
+
+#~ msgid "active"
+#~ msgstr "активне"
+
+#~ msgid "Resource tables"
+#~ msgstr "Ресурсні таблиці"
+
+#~ msgid "Data mart"
+#~ msgstr "Вітрина даних"
+
+#~ msgid "Analytics tables"
+#~ msgstr "Аналітичні таблиці"
+
+#~ msgid "Analytics tables task strategy"
+#~ msgstr "Стратегія завдань аналітичних таблиць"
+
+#~ msgid "Data statistics task strategy"
+#~ msgstr "Стратегія завдання статистики даних"
+
+#~ msgid "Last 2 years daily"
+#~ msgstr "Останні 2 роки поденно"
+
+#~ msgid "Last 3 years daily"
+#~ msgstr "Останні 3 роки поденно"
+
+#~ msgid "All daily"
+#~ msgstr "Все щоденно"
+
+#~ msgid "Right Now"
+#~ msgstr "Прямо зараз"
+
+#~ msgid "Execute Now"
+#~ msgstr "Виконати зараз"
+
+#~ msgid "All every 15 minutes"
+#~ msgstr "Все кожні 15 хвилин"
+
+#~ msgid "Resource tables task strategy"
+#~ msgstr "Стратегія завдань ресурсних таблиць"
+
+#~ msgid "Data mart task strategy"
+#~ msgstr "Стратегія завдань вітрини даних"
+
+#~ msgid "Never"
+#~ msgstr "Ніколи"
+
+#~ msgid "Last 12 months daily"
+#~ msgstr "Останні 12 місяців поденно"
+
+#~ msgid "Last 6 months daily + 6 to 12 months weekly"
+#~ msgstr "Останні 6 місяців поденно + від 6 до 12 місяців потижнево"
+
+#~ msgid "Daily"
+#~ msgstr "Щодня"
+
+#~ msgid "Organisation unit group set aggregation level"
+#~ msgstr "Рівень агрегації набору груп організаційних підрозділів"
+
+#~ msgid "Aggregated org unit data values"
+#~ msgstr "Агреговані значення даних організаційних підрозділів"
+
+#~ msgid "Aggregated org unit indicator values"
+#~ msgstr "Агреговані значення індикаторів організаційних підрозділів"
+
+#~ msgid "Execute now"
+#~ msgstr "Виконати зараз"
+
+#~ msgid ""
+#~ "Are you sure you want to execute all tasks now? Task processing might "
+#~ "fully utilize your system resources and slow down other operations."
+#~ msgstr ""
+#~ "Чи ви впевнені, що хочете виконати всі завдання зараз? Обробка завдань "
+#~ "може повністю використати ваші системні ресурси й уповільнити інші "
+#~ "операції."
+
+#~ msgid "No aggregation"
+#~ msgstr "Немає агрегації"
+
+#~ msgid "Option set"
+#~ msgstr "Набір опцій"
+
+#~ msgid "Option set management"
+#~ msgstr "Керування набором опцій"
+
+#~ msgid "Add option set"
+#~ msgstr "Додати набір опцій"
+
+#~ msgid "Option"
+#~ msgstr "Опція"
+
+#~ msgid "Edit option set"
+#~ msgstr "Редагувати набір опцій"
+
+#~ msgid "The number of members"
+#~ msgstr "Кількість членів"
+
+#~ msgid "Object not deleted because it is associated by objects of type"
+#~ msgstr "Об'єкт не видалено, бо його пов'язано з об'єктами типу"
+
+#~ msgid "Do you want to delete this lock exception?"
+#~ msgstr "Чи ви хочете видалити цей виняток блокування?"
+
+#~ msgid "Do you want to delete lock exceptions with this configuration?"
+#~ msgstr "Чи ви хочете видалити винятки блокування із цією конфігурацією?"
+
+#~ msgid "Edit lock exception"
+#~ msgstr "Редагувати виняток блокування"
+
+#~ msgid "Back to lock exception"
+#~ msgstr "Назад до винятку блокування"
+
+#~ msgid "Deleting lock exceptions"
+#~ msgstr "Видалення винятків блокування"
+
+#~ msgid "Error at"
+#~ msgstr "Помилка у"
+
+#~ msgid "not started"
+#~ msgstr "не розпочато"
+
+#~ msgid "Aggregated data set completeness"
+#~ msgstr "Завершеність набору агрегованих даних"
+
+#~ msgid "Show SQL view"
+#~ msgstr "Показати розріз даних SQL"
+
+#~ msgid "Financial Yearly"
+#~ msgstr "Щофінансовий рік"
+
+#~ msgid "Update option"
+#~ msgstr "Оновити опцію"
+
+#~ msgid "Removing min-max values"
+#~ msgstr "Прибираємо мін.-макс. значення"
+
+#~ msgid "Done"
+#~ msgstr "Зроблено"
+
+#~ msgid "Locale"
+#~ msgstr "Локація"
+
+#~ msgid "Locale Management"
+#~ msgstr "Керування локацією"
+
+#~ msgid "Create New Locale"
+#~ msgstr "Створити Нову Локацію"
+
+#~ msgid "Edit Locale"
+#~ msgstr "Редагувати локацію"
+
+#~ msgid "Are you sure you want to delete this locale?"
+#~ msgstr "Чи ви впевнені, що хочете видалити цю локацію?"
+
+#~ msgid "Language"
+#~ msgstr "Мова"
+
+#~ msgid "Country"
+#~ msgstr "Країна"
+
+#~ msgid "Please select a language"
+#~ msgstr "Будь ласка, оберіть мову"
+
+#~ msgid "Please select a country"
+#~ msgstr "Будь ласка, оберіть країну"
+
+#~ msgid "Data monitoring"
+#~ msgstr "Моніторинг даних"
+
+#~ msgid "Data monitoring strategy"
+#~ msgstr "Стратегія моніторингу даних"
+
+#~ msgid "Last year daily"
+#~ msgstr "Минулий рік поденно"
+
+#~ msgid "Show fewer options"
+#~ msgstr "Показати менше опцій"
+
+#~ msgid "Show more options"
+#~ msgstr "Показати менше опцій"
+
+#~ msgid "Disabled"
+#~ msgstr "Вимкнене"
+
+#~ msgid "Data synchronization"
+#~ msgstr "Синхронізація даних"
+
+#~ msgid "Metadata Synchronization"
+#~ msgstr "Синхронізація метаданих"
+
+#~ msgid "Data synchronization strategy"
+#~ msgstr "Стратегія синхронізації даних"
+
+#~ msgid "Metadata synchronization strategy"
+#~ msgstr "Стратегія синхронізації метаданих"
+
+#~ msgid ""
+#~ "To enable automated synchronisation, please select when it should occur."
+#~ msgstr ""
+#~ "Для ввімкнення автоматичної синхронізації, будь ласка, вкажіть, коли вона "
+#~ "має відбуватися."
+
+#~ msgid "SMS Scheduler Strategy"
+#~ msgstr "Стратегія планувальника СМС"
+
+#~ msgid "SMS Scheduler"
+#~ msgstr "Планувальник СМС"
+
+#~ msgid "Enabled"
+#~ msgstr "Ввімкнено"
+
+#~ msgid "Last success"
+#~ msgstr "Остання успішна дія"
+
+#~ msgid "Option management"
+#~ msgstr "Керування опціями"
+
+#~ msgid "Add option"
+#~ msgstr "Додати опцію"
+
+#~ msgid "Edit option"
+#~ msgstr "Редагувати опцію"
+
+#~ msgid "Sort options"
+#~ msgstr "Сортувати опції"
+
+#~ msgid "Available options"
+#~ msgstr "Наявні опції"
+
+#~ msgctxt "please_select_a_dataset"
+#~ msgid "Please select a data set"
+#~ msgstr "Будь ласка, оберіть набір даних"
+
+#~ msgctxt "please_select_an_organisation_unit"
+#~ msgid "Please select an organisation unit"
+#~ msgstr "Будь ласка, оберіть організаційний підрозділ"
+
+#~ msgid "Next year"
+#~ msgstr "Наступний рік"
+
+#~ msgid "Update the data elements and option combos in expression"
+#~ msgstr "Оновити елементи даних та комбінації опцій у вираженнях"
+
+#~ msgid "Org unit group does not exist"
+#~ msgstr "Група організаційних підрозділів не існує"
+
+#~ msgid "View name"
+#~ msgstr "Подивитися ім'я"
+
+#~ msgid "Category Option"
+#~ msgstr "Опція категорії"
+
+#~ msgid "Category Option Group"
+#~ msgstr "Група опцій категорій"
+
+#~ msgid "Document"
+#~ msgstr "Документ"
+
+#~ msgid "Legend Set"
+#~ msgstr "Набір умовних позначень"
+
+#~ msgid "Program Indicator"
+#~ msgstr "Показник програми"
+
+#~ msgid "Metadata synchronization is in progress"
+#~ msgstr "Відбувається синхронізація метаданих"
+
+#~ msgid "Metadata synchronization started"
+#~ msgstr "Розпочато синхронізацію метаданих"
+
+#~ msgid "Run now"
+#~ msgstr "Запустити зараз"
+
+#~ msgid "Program Notifications scheduler"
+#~ msgstr "Планувальник програмних сповіщень"
+
+#~ msgid "Program Notifications scheduling strategy"
+#~ msgstr "Стратегія планування програмних сповіщень"
+
+#~ msgid "Sync now"
+#~ msgstr "Синхронізувати зараз"
+
+#~ msgid "Every Minute"
+#~ msgstr "Щохвилини"
+
+#~ msgid "Every Hour"
+#~ msgstr "Щогодини"
