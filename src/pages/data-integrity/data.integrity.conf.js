@@ -118,4 +118,40 @@ export const dataIntegrityControls = [
         key: 'duplicatePeriods',
         label: i18nKeys.dataIntegrity.duplicatePeriods.label,
     },
+    {
+        key: 'programRulesWithNoCondition',
+        label: i18nKeys.dataIntegrity.programRulesWithNoCondition.label,
+    },
+    {
+        key: 'programRulesWithNoAction',
+        label: i18nKeys.dataIntegrity.programRulesWithNoAction.label,
+    },
+    {
+        key: 'programRulesWithNoPriority',
+        label: i18nKeys.dataIntegrity.programRulesWithNoPriority.label,
+    },
+    {
+        key: 'programRuleVariablesWithNoDataElement',
+        label: i18nKeys.dataIntegrity.programRuleVariablesWithNoDataElement.label,
+    },
+    {
+        key: 'programRuleVariablesWithNoAttribute',
+        label: i18nKeys.dataIntegrity.programRuleVariablesWithNoAttribute.label,
+    },
+    {
+        key: 'programRuleActionsWithNoDataObject',
+        label: i18nKeys.dataIntegrity.programRuleActionsWithNoDataObject.label,
+    },
+    {
+        key: 'programRuleActionsWithNoNotification',
+        label: i18nKeys.dataIntegrity.programRuleActionsWithNoNotification.label,
+    },
+    {
+        key: 'programRuleActionsWithNoSectionId',
+        label: i18nKeys.dataIntegrity.programRuleActionsWithNoSectionId.label,
+    },
+    {
+        key: 'programRuleActionsWithNoStageId',
+        label: i18nKeys.dataIntegrity.programRuleActionsWithNoStageId.label,
+    },
 ];
