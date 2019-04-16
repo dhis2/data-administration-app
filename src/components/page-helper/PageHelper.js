@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from 'material-ui';
-
-// i18n
 import i18n from '../../locales';
-
 import { getDocsVersion, DOCS_LINK, DOCS_TOOLTIP_LABEL } from '../../helpers/docs';
 
 class PageHelper extends PureComponent {

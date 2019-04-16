@@ -1,27 +1,21 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import {
     Checkbox,
     RaisedButton,
     GridTile,
     SelectField,
 } from 'material-ui';
-
 import Analytics from './Analytics';
 import NotificationsTable from '../../components/notifications-table/NotificationsTable';
-
 import {
     sections,
     ANALYTICS_SECTION_KEY,
 } from '../sections.conf';
-
 import {
     analyticsCheckboxes,
     DEFAULT_LAST_YEARS,
 } from '../analytics/analytics.conf';
-
 import {
     SUCCESS_LEVEL
 } from '../../components/notifications-table/notifications-table.conf';
@@ -90,6 +84,7 @@ it('Analytics renders a RaisedButton', () => {
 });
 
 it('Analytics calls initAnalyticsTablesGeneration method when button is clicked', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(Analytics.prototype, 'initAnalyticsTablesGeneration');
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');
@@ -123,6 +118,7 @@ it('Analytics renders a SelectField for lastYears', () => {
 });
 
 it('Should call onChangeLastYears function when Last years SelectField changes.', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(Analytics.prototype, 'onChangeLastYears').and.callThrough();
     const wrapper = ownShallow();
     const testLastYears  = 2;

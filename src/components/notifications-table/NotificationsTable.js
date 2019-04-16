@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-/* Material UI */
 import {
     Table,
     TableBody,
@@ -9,7 +7,6 @@ import {
     TableRowColumn,
     FontIcon,
 } from 'material-ui';
-
 import {
     notificationsTableStyles,
     notificationStylesInfo,

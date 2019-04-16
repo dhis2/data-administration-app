@@ -1,9 +1,6 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import App from './App';
-
 import AppRouter from './components/app-router/AppRouter';
 import SideBar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBar from 'd2-ui/lib/app-header/HeaderBar';

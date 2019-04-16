@@ -1,21 +1,14 @@
 import React from 'react';
-
 import { RaisedButton } from 'material-ui';
-
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import { getDocsKeyForSection } from '../sections.conf';
 import * as conf from './data.integrity.conf';
-
-// i18n
 import { i18nKeys } from '../../i18n';
 import i18n from '../../locales';
-
 import Page from '../Page';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 import PageHelper from '../../components/page-helper/PageHelper';
-
-import styles from './DataIntegrity.css';
+import styles from './DataIntegrity.module.css';
 
 class DataIntegrity extends Page {
     static STATE_PROPERTIES = [

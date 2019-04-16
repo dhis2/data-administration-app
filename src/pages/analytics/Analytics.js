@@ -1,6 +1,4 @@
 import React from 'react';
-
-/* Material UI */
 import {
     Card,
     CardText,
@@ -11,16 +9,10 @@ import {
     RaisedButton,
 } from 'material-ui';
 import classNames from 'classnames';
-
-/* d2-ui */
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
-/* Components */
 import Page from '../Page';
 import NotificationsTable from '../../components/notifications-table/NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
-
-/* Helpers */
 import { getDocsKeyForSection } from '../sections.conf';
 import {
     PULL_INTERVAL,
@@ -31,13 +23,9 @@ import {
     analyticsCheckboxes,
     lastYearElements,
 } from '../analytics/analytics.conf';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
-/* styles */
-import styles from '../Page.css';
+import styles from '../Page.module.css';
 
 class Analytics extends Page {
     static STATE_PROPERTIES = [

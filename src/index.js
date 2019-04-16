@@ -1,23 +1,14 @@
-// React
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, withRouter } from 'react-router-dom';
-
-// D2
 import { getManifest, getUserSettings } from 'd2/lib/d2';
 import D2UIApp from 'd2-ui/lib/app/D2UIApp';
-
-// logging
 import log from 'loglevel';
-
-/* i18n */
 import { configI18n } from './configI18n';
-
-import './index.css';
 import App from './App';
 import appTheme from './theme';
-
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
 const AppComponent = withRouter(App);
 

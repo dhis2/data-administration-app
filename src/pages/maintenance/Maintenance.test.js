@@ -1,21 +1,17 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import { GridTile } from 'material-ui/GridList';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
-
 import Maintenance from './Maintenance';
-
 import { maintenanceCheckboxes } from './maintenance.conf';
-
 import {
     sections,
     MAINTENANCE_SECTION_KEY,
 } from '../sections.conf';
 
 let maintenancePageInfo = {};
+
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === MAINTENANCE_SECTION_KEY) {
@@ -69,6 +65,7 @@ it('Maintenance renders a RaisedButton', () => {
 });
 
 it('Maintenance calls performMaintenance method when button is clicked', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(Maintenance.prototype, 'performMaintenance');
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');

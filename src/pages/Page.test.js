@@ -1,11 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Page from './Page';
 import DataStatistics from './data-statistics/DataStatistics';
 import Home from './home/Home';
-
 import {DATA_STATISTICS_SECTION_KEY} from './sections.conf';
 
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
@@ -52,7 +49,7 @@ beforeEach(() => {
 });
 
 it('Page constructor is called', () => {
-    const page = new Page();
+    new Page();
     expect(Page).toHaveBeenCalled();
 });
 
@@ -67,12 +64,14 @@ it('Page component calls page constructor', () => {
 });
 
 it('componentWillMount was called after render', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(Page.prototype, 'componentWillMount');
     pageComponentShallow();
     expect(spy).toHaveBeenCalled();
 });
 
 it('componentWillUnmount was called after unmount', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(Page.prototype, 'componentWillUnmount');
     const wrapper = pageComponentShallow();
     wrapper.unmount();

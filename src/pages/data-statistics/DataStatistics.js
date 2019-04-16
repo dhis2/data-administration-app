@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Material UI
 import { Card, CardText } from 'material-ui/Card';
-
 import { LOADING, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
-
 import Page from '../Page';
 import DataStatisticsTable from './DataStatisticsTable';
-
-/* constants */
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
-
-import styles from './DataStatistics.css';
+import styles from './DataStatistics.module.css';
 
 export const OBJECT_COUNTS_KEY = 'objectCounts';
 export const ACTIVE_USERS_KEY = 'activeUsers';
@@ -55,7 +44,6 @@ class DataStatistics extends Page {
     constructor() {
         super();
 
-        // state defaults
         this.state = {
             tables: {},
             loaded: false,

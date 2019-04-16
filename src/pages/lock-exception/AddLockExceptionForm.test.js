@@ -1,9 +1,6 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import AddLockExceptionForm from './AddLockExceptionForm';
-
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component';
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component';

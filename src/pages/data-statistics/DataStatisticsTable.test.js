@@ -1,15 +1,11 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
-// Material UI
 import {
     Table,
     TableBody,
     TableHeader,
     TableRow,
 } from 'material-ui/Table';
-
 import DataStatisticsTable from './DataStatisticsTable';
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));

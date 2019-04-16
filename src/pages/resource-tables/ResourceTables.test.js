@@ -1,22 +1,18 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import RaisedButton from 'material-ui/RaisedButton';
-
 import ResourceTables from './ResourceTables';
 import NotificationsTable from '../../components/notifications-table/NotificationsTable';
-
 import {
     sections,
     RESOURCE_TABLES_SECTION_KEY,
 } from '../sections.conf';
-
 import {
     SUCCESS_LEVEL
 } from '../../components/notifications-table/notifications-table.conf';
 
 let resourceTablesPageInfo = {};
+
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === RESOURCE_TABLES_SECTION_KEY) {
@@ -80,6 +76,7 @@ it('ResourceTables renders a RaisedButton', () => {
 });
 
 it('ResourceTables calls initResourceTablesGeneration method when button is clicked', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(ResourceTables.prototype, 'initResourceTablesGeneration');
     const wrapper = ownShallow();
     wrapper.find(RaisedButton).simulate('click');

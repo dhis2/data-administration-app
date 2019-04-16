@@ -54,7 +54,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "lint": "yarn localize && eslint src/",
+    "lint": "eslint src/",
     "coverage": "yarn test -- --coverage"
   },
   "manifest.webapp": {

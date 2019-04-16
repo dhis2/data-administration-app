@@ -1,12 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import { Link } from "react-router-dom";
 import { GridTile } from "material-ui/GridList/index";
-
 import GridSection from './GridSection';
-
 import { sections } from "../../sections.conf";
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));

@@ -1,4 +1,3 @@
-// i18n
 import { i18nKeys } from '../../i18n';
 
 export const MAINTENANCE_ENDPOINT = 'maintenance';

@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
 import { Card, CardText, CardHeader } from 'material-ui/Card';
 import { FontIcon } from 'material-ui';
-
-// i18n
 import i18n from '../../../locales';
-
-import styles from './DataIntegrityCard.css';
+import styles from './DataIntegrityCard.module.css';
 
 const jsStyles = {
     errorColor: '#ff5722',

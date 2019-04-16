@@ -1,6 +1,4 @@
 import React from 'react';
-
-/* Material UI */
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -9,30 +7,21 @@ import IconButton from 'material-ui/IconButton';
 import { Card, CardText } from 'material-ui/Card';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
-
-import 'd2-ui/lib/css/DataTable.css';
-import 'd2-ui/lib/css/Pagination.css';
 import { LOADING, SUCCESS, ERROR, ACTION_MESSAGE } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import classNames from 'classnames';
-
 import Page from '../Page';
 import AddLockExceptionForm from './AddLockExceptionForm';
-
 import { calculatePageValue } from '../../helpers/pagination';
-
 import { getDocsKeyForSection } from '../sections.conf';
 import PageHelper from '../../components/page-helper/PageHelper';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
-import styles from './LockException.css';
 import '../../custom-css/D2UIDataTableOverrides.css';
+import 'd2-ui/lib/css/Pagination.css';
+import 'd2-ui/lib/css/DataTable.css';
+import styles from './LockException.module.css';
 
 const jsStyles = {
     dialog: {
@@ -90,17 +79,12 @@ class LockException extends Page {
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this);
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this);
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this);
-
         this.removeLockException = this.removeLockException.bind(this);
-
         this.showLockExceptionFormDialog = this.showLockExceptionFormDialog.bind(this);
         this.closeLockExceptionFormDialog = this.closeLockExceptionFormDialog.bind(this);
-
         this.addLockException = this.addLockException.bind(this);
-
         this.backToLockExceptions = this.backToLockExceptions.bind(this);
         this.goToBatchDeletionPage = this.goToBatchDeletionPage.bind(this);
-
         this.onNextPageClick = this.onNextPageClick.bind(this);
         this.onPreviousPageClick = this.onPreviousPageClick.bind(this);
 
