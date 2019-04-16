@@ -1,5 +1,5 @@
-@import "typeface-roboto/index.css";
-@import "material-design-icons-iconfont/dist/material-design-icons.css";
+@import "~typeface-roboto/index.css";
+@import "~material-design-icons-iconfont/dist/material-design-icons.css";
 
 /* a hack to avoid the css module loader rewriting the imported css by
  * using a :global class to set up the .material-icons class used in the
