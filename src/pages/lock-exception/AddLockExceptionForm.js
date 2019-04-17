@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-/* Material UI */
 import Card from 'material-ui/Card/Card';
 import CardText from 'material-ui/Card/CardText';
-
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component';
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component';
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component';
 import SelectField from 'd2-ui/lib/select-field/SelectField';
 import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
-
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
-import styles from './AddLockExceptionForm.css';
+import styles from './AddLockExceptionForm.module.css';
 
 const d2UiSelectStyleOverride = {
     minWidth: 360,

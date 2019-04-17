@@ -1,9 +1,6 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import DataStatistics, { TableCard } from './DataStatistics';
-
 import {
     OBJECT_COUNTS_KEY,
     ACTIVE_USERS_KEY,
@@ -11,7 +8,6 @@ import {
     DATA_VALUE_COUNT_KEY,
     EVENT_COUNT_KEY,
 } from './DataStatistics';
-
 import {
     sections,
     DATA_STATISTICS_SECTION_KEY
@@ -43,6 +39,7 @@ const tableProps = {
         { label: 'object2', count: 2 }
     ],
 };
+
 const stateWithTablesForDataStatistics = {};
 stateWithTablesForDataStatistics[OBJECT_COUNTS_KEY] = tableProps;
 stateWithTablesForDataStatistics[ACTIVE_USERS_KEY] = tableProps;

@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
-// Material UI
 import {
     Table,
     TableBody,
@@ -10,9 +8,8 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui/Table';
-
 import FormattedNumber from '../../components/formatters/FormattedNumber';
-import styles from './DataStatistics.css';
+import styles from './DataStatistics.module.css';
 
 class DataStatisticsTable extends PureComponent {
     static propTypes = {
@@ -29,6 +26,7 @@ class DataStatisticsTable extends PureComponent {
                 </TableRowColumn>
             </TableRow>
         ));
+
         return (
             <Table selectable={false} className={styles.statisticsTable}>
                 <TableHeader

@@ -1,32 +1,20 @@
 import React from 'react';
-
-/* Material UI */
 import { Card, CardText } from 'material-ui/Card';
 import { RaisedButton } from 'material-ui';
-
-/* d2-ui */
 import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
-/* Components */
 import Page from '../Page';
 import NotificationsTable from '../../components/notifications-table/NotificationsTable';
 import PageHelper from '../../components/page-helper/PageHelper';
-
-/* Helpers */
 import { getDocsKeyForSection } from '../sections.conf';
 import {
     PULL_INTERVAL,
     RESOURCE_TABLES_ENDPOINT,
     RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT,
 } from '../resource-tables/resource-tables.conf';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
-/* styles */
-import pageStyles from '../Page.css';
-import styles from './ResourceTables.css';
+import pageStyles from '../Page.module.css';
+import styles from './ResourceTables.module.css';
 
 class ResourceTable extends Page {
     static STATE_PROPERTIES = [

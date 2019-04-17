@@ -1,16 +1,11 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
-/* Material UI */
 import {
     TableRow,
     TableRowColumn,
     FontIcon,
 } from 'material-ui';
-
 import NotificationsTable from './NotificationsTable';
-
 import {
     SUCCESS_LEVEL,
     ERROR_LEVEL,

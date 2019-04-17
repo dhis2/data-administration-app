@@ -1,9 +1,7 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import NoMatch from './NoMatch';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const location = {
     path: 'path',

@@ -1,23 +1,19 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-
 import DataTable from 'd2-ui/lib/data-table/DataTable.component';
 import Pagination from 'd2-ui/lib/pagination/Pagination.component';
-
 import LockException from './LockException';
 import AddLockExceptionForm from './AddLockExceptionForm';
-
 import {
     sections,
     LOCK_EXCEPTION_SECTION_KEY,
 } from '../sections.conf';
 
 let lockExceptionPageInfo = {};
+
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === LOCK_EXCEPTION_SECTION_KEY) {
@@ -134,6 +130,7 @@ it('Lock Exception Component renders Floating add button', () => {
 
 
 it('Lock Exception Component calls showLockExceptionFormDialog when ADD button is clicked', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(LockException.prototype, 'showLockExceptionFormDialog');
     const wrapper = ownShallow();
     wrapper.find(FloatingActionButton).simulate('click');
@@ -155,6 +152,7 @@ it('Lock Exception Component renders Add new lock exception dialog in close stat
 });
 
 it('Lock Exception Component calls goToBatchDeletionPage when BATCH DELETION button is clicked', () => {
+    // eslint-disable-next-line no-undef
     const spy = spyOn(LockException.prototype, 'goToBatchDeletionPage');
     const wrapper = ownShallow();
     const buttons = wrapper.find(RaisedButton);

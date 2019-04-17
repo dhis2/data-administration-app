@@ -1,4 +1,3 @@
-// Components
 import DataIntegrity from './data-integrity/DataIntegrity';
 import Maintenance from './maintenance/Maintenance';
 import ResourceTables from './resource-tables/ResourceTables';
@@ -6,8 +5,6 @@ import DataStatistics from './data-statistics/DataStatistics';
 import LockException from './lock-exception/LockException';
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
 import Analytics from './analytics/Analytics';
-
-// i18n
 import { i18nKeys } from '../i18n';
 
 export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';

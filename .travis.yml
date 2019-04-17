@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 env:
   global:
-  - secure: dXXtdBANGQ/7pB+s/nHhLnm0tNqKnUNQcZBkm8na2j3adevtQS8MC5uiPOuj3fTc+TgsXJ6bJzqaVJnKESXpGoENwzGzw54V4tXKZPxF5jdF1a8IdhD627/3+MK6VXKitXmlxucHUIstHOYmoKtMc4cW7OaQHtOLY0ahmoENexHh7dLQsJYzLJWoL3xfIU/oVIcoeD2ZH6kNPrwEjcOw8kkYp4KQ9CQ44SPrpcZqgYi6mGiHGlDPzBoMeq37D/flYg+M/0K5TgFKz7JVcZ7XfCjAKTGWnb1XOia/wst4XcCHVlZv+PDe4dQJ2S/ZlpRNB3pQNDCPoGR5eGjXZWBwHr1c0GRbUUzQlq+ThzfoOWIEIzyCPDYEGvtR0sB39h6sM/cTfTYD6RgI597U25MDgfh1EXbNK1mCPOVoc58m0Q9K4dtZaJLC2+ShyA3edy8XZzlOwZJ8IPklnVcXribPRzuOEwgUc4jqRkAIsPlFuih7XIgkavveElqr/DUVnOvu8FWCFIgQJwagVgObTz9uHVNQ2fodagZ27QqFBfFRIHb17+yHE95yafWx9oYCYozZRpXbYZlvQirS8MotgDNIxx5uwU1nUAE8JmixVbYxN28c9Ap06xSdR2JgQAgGmOmIPB0yyZpRcaWFOqILmI4O7b/iurZA+dQCXUFB6J/JBpE=
+    - secure: dXXtdBANGQ/7pB+s/nHhLnm0tNqKnUNQcZBkm8na2j3adevtQS8MC5uiPOuj3fTc+TgsXJ6bJzqaVJnKESXpGoENwzGzw54V4tXKZPxF5jdF1a8IdhD627/3+MK6VXKitXmlxucHUIstHOYmoKtMc4cW7OaQHtOLY0ahmoENexHh7dLQsJYzLJWoL3xfIU/oVIcoeD2ZH6kNPrwEjcOw8kkYp4KQ9CQ44SPrpcZqgYi6mGiHGlDPzBoMeq37D/flYg+M/0K5TgFKz7JVcZ7XfCjAKTGWnb1XOia/wst4XcCHVlZv+PDe4dQJ2S/ZlpRNB3pQNDCPoGR5eGjXZWBwHr1c0GRbUUzQlq+ThzfoOWIEIzyCPDYEGvtR0sB39h6sM/cTfTYD6RgI597U25MDgfh1EXbNK1mCPOVoc58m0Q9K4dtZaJLC2+ShyA3edy8XZzlOwZJ8IPklnVcXribPRzuOEwgUc4jqRkAIsPlFuih7XIgkavveElqr/DUVnOvu8FWCFIgQJwagVgObTz9uHVNQ2fodagZ27QqFBfFRIHb17+yHE95yafWx9oYCYozZRpXbYZlvQirS8MotgDNIxx5uwU1nUAE8JmixVbYxN28c9Ap06xSdR2JgQAgGmOmIPB0yyZpRcaWFOqILmI4O7b/iurZA+dQCXUFB6J/JBpE=
 before_script:
-- npm install --global @dhis2/deploy-build
+  - npm install --global @dhis2/deploy-build
 script:
-- yarn build
-- yarn test
+  - yarn build
+  - yarn test
 deploy:
-- provider: script
-  script: deploy-build
-  skip_cleanup: true
-  on:
-    all_branches: true
+  - provider: script
+    script: deploy-build
+    skip_cleanup: true
+    on:
+      all_branches: true

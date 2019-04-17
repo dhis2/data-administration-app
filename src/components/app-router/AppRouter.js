@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Route, Switch } from 'react-router-dom';
-
 import Home from '../../pages/home/Home';
 import NoMatch from './NoMatch';
-
-// App configs
 import { sections } from '../../pages/sections.conf';
 
 const AppRouter = ({ pageState }) => {

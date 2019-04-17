@@ -1,10 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Card, CardHeader, CardText, FontIcon } from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import DataIntegrityCard from './DataIntegrityCard';
-
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
 jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));

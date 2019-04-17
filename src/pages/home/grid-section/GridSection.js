@@ -1,17 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
-// Material UI
 import { GridTile } from 'material-ui/GridList';
 import FontIcon from 'material-ui/FontIcon';
-
 import classNames from 'classnames';
-
-/* i18n */
 import i18n from '../../../locales';
-
-import styles from './GridSection.css';
+import styles from './GridSection.module.css';
 
 class GridSection extends PureComponent {
     static propTypes = {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { shallow } from 'enzyme';
 import { DATA_INTEGRITY_SECTION_KEY, sections } from '../sections.conf';
@@ -6,6 +5,7 @@ import DataIntegrity from './DataIntegrity';
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard';
 
 let dataIntegrityPageInfo = {};
+
 for(let i = 0; i < sections.length; i++) {
     const section = sections[i];
     if (section.key === DATA_INTEGRITY_SECTION_KEY) {

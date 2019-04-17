@@ -1,30 +1,21 @@
 import React from 'react';
-
-// Material UI
 import { GridTile } from 'material-ui/GridList';
 import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import classNames from 'classnames';
-
 import { LOADING, SUCCESS, ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
-
 import Page from '../Page';
-
-// App configs
 import {
     maintenanceCheckboxes,
     PAGE_TITLE,
     MAINTENANCE_ENDPOINT,
 } from './maintenance.conf';
 import { getDocsKeyForSection } from '../sections.conf';
-
-import styles from '../Page.css';
 import PageHelper from '../../components/page-helper/PageHelper';
+import styles from '../Page.module.css';
 
 class Maintenance extends Page {
     static STATE_PROPERTIES = [
@@ -36,19 +27,18 @@ class Maintenance extends Page {
         super();
 
         const checkboxes = {};
+
         for (let i = 0; i < maintenanceCheckboxes.length; i++) {
             const checkbox = maintenanceCheckboxes[i];
             checkboxes[checkbox.key] = { checked: false };
         }
 
-        // state defaults
         this.state = {
             intervalId: null,
             checkboxes,
             loading: false,
         };
 
-        // actions
         this.performMaintenance = this.performMaintenance.bind(this);
     }
 

@@ -24,10 +24,6 @@
 .right {
     flex: 2 0;
     margin: 0 10px 0 10px;
-    /*
-    min-height: 280px;
-    max-height: 480px;
-    */
     height: 325px;
 }
 

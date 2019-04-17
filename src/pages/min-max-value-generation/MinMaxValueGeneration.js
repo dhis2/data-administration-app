@@ -1,24 +1,15 @@
 import React from 'react';
-
-// Material UI
 import { Card, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import { LOADING, SUCCESS, ERROR, WARNING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
-
 import Page from '../Page';
-
-import styles from './MinMaxValueGeneration.css';
-
 import PageHelper from '../../components/page-helper/PageHelper';
 import { getDocsKeyForSection } from '../sections.conf';
-
-// i18n
 import i18n from '../../locales';
 import { i18nKeys } from '../../i18n';
+import styles from './MinMaxValueGeneration.module.css';
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues';
 
