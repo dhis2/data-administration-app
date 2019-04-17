@@ -79,5 +79,16 @@
     "Firefox ESR",
     "ie 11",
     "not dead"
-  ]
+  ],
+  "greenkeeper": {
+    "ignore": [
+      "@dhis2/d2-ui-header-bar",
+      "cucumber",
+      "d2",
+      "rxjs",
+      "wdio-allure-reporter",
+      "wdio-selenium-standalone-service",
+      "webdriverio"
+    ]
+  }
 }
