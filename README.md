@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/dhis2/data-administration-app.svg?branch=master)](https://travis-ci.com/dhis2/data-administration-app)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdhis2%2Fdata-administration-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdhis2%2Fdata-administration-app?ref=badge_shield)
+[![Greenkeeper status](https://badges.greenkeeper.io/dhis2/data-administration-app.svg)](https://greenkeeper.io)
 
 ### Pre-requisites
 
