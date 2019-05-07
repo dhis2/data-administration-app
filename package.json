@@ -28,7 +28,7 @@
     "d3-color": "^1.0.3",
     "flexboxgrid": "^6.3.1",
     "loglevel": "^1.6.0",
-    "material-design-icons-iconfont": "^4.0.5",
+    "material-design-icons-iconfont": "^5.0.1",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
