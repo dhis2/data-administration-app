@@ -22,7 +22,6 @@
     "@dhis2/d2-ui-header-bar": "^1.1.7",
     "classnames": "^2.2.5",
     "d2": "^28.3.0",
-    "d2-manifest": "^1.0.0",
     "d2-ui": "^29.0.18",
     "d2-utilizr": "^0.2.15",
     "d3-color": "^1.0.3",
@@ -40,34 +39,14 @@
   "scripts": {
     "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
     "localize": "yarn extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
-    "manifest": "d2-manifest package.json ./public/manifest.webapp",
-    "prestart": "yarn manifest && yarn localize",
+    "prestart": "yarn localize",
     "start": "react-scripts start",
-    "prebuild": "yarn manifest && yarn localize",
+    "prebuild": "yarn localize",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-e2e": "wdio ./e2e/config/wdio.conf.js",
     "lint": "eslint src/",
     "coverage": "yarn test -- --coverage"
-  },
-  "manifest.webapp": {
-    "name": "Data Administration",
-    "description": "Data Administration",
-    "icons": {
-      "48": "icon.png"
-    },
-    "developer": {
-      "url": "https://dhis2.github.io",
-      "name": "DHIS2"
-    },
-    "dhis2": {
-      "apiVersion": "29"
-    },
-    "activities": {
-      "dhis": {
-        "href": ".."
-      }
-    }
   },
   "homepage": ".",
   "eslintConfig": {
