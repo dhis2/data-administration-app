@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import { DumbApp } from './App';
 import AppRouter from './components/app-router/AppRouter';
 import SideBar from 'd2-ui/lib/sidebar/Sidebar.component';
 import HeaderBar from 'd2-ui/lib/app-header/HeaderBar';
-import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress';
 
 jest.mock('d2-ui/lib/sidebar/Sidebar.component', () => ('Sidebar'));
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => ('HeaderBar'));
@@ -26,7 +25,7 @@ const t = jest.fn();
 
 const ownShallow = () => {
     return shallow(
-        <App t={t} />,
+        <DumbApp t={t} />,
         {
             disableLifecycleMethods: true
         }

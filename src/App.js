@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import HeaderBar from '@dhis2/d2-ui-header-bar';
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component';
@@ -13,7 +14,7 @@ import { sections } from './pages/sections.conf';
 import './custom-css/D2UISidebarOverrides.css';
 import styles from './App.module.css';
 
-class App extends PureComponent {
+export class DumbApp extends PureComponent {
     static childContextTypes = {
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
@@ -117,4 +118,4 @@ class App extends PureComponent {
     }
 }
 
-export default App;
+export default withRouter(DumbApp);

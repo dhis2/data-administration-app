@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, withRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { getManifest, getUserSettings } from 'd2/lib/d2';
 import D2UIApp from 'd2-ui/lib/app/D2UIApp';
 import log from 'loglevel';
@@ -9,8 +9,6 @@ import App from './App';
 import appTheme from './theme';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-
-const AppComponent = withRouter(App);
 
 log.setLevel(process.env.NODE_ENV === 'production' ? log.levels.INFO : log.levels.DEBUG);
 
@@ -43,7 +41,7 @@ getManifest('manifest.webapp').then((manifest) => {
             }}
         >
             <HashRouter>
-                <AppComponent />
+                <App />
             </HashRouter>
         </D2UIApp>,
         document.getElementById('app'),
