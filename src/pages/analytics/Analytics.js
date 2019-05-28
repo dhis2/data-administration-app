@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
     Card,
     CardText,
@@ -7,13 +7,16 @@ import {
     SelectField,
     MenuItem,
     RaisedButton,
-} from 'material-ui';
-import classNames from 'classnames';
-import { ERROR, LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes';
-import Page from '../Page';
-import NotificationsTable from '../../components/notifications-table/NotificationsTable';
-import PageHelper from '../../components/page-helper/PageHelper';
-import { getDocsKeyForSection } from '../sections.conf';
+} from 'material-ui'
+import classNames from 'classnames'
+import {
+    ERROR,
+    LOADING,
+} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
+import Page from '../Page'
+import NotificationsTable from '../../components/notifications-table/NotificationsTable'
+import PageHelper from '../../components/page-helper/PageHelper'
+import { getDocsKeyForSection } from '../sections.conf'
 import {
     PULL_INTERVAL,
     ANALYTICS_TABLES_ENDPOINT,
@@ -22,10 +25,10 @@ import {
     LAST_YEARS_INPUT_KEY,
     analyticsCheckboxes,
     lastYearElements,
-} from '../analytics/analytics.conf';
-import i18n from '../../locales';
-import { i18nKeys } from '../../i18n';
-import styles from '../Page.module.css';
+} from '../analytics/analytics.conf'
+import i18n from '../../locales'
+import { i18nKeys } from '../../i18n'
+import styles from '../Page.module.css'
 
 class Analytics extends Page {
     static STATE_PROPERTIES = [
@@ -35,15 +38,15 @@ class Analytics extends Page {
         'notifications',
         'jobId',
         'intervalId',
-    ];
+    ]
 
     constructor() {
-        super();
+        super()
 
-        const checkboxes = {};
+        const checkboxes = {}
         for (let i = 0; i < analyticsCheckboxes.length; i++) {
-            const checkbox = analyticsCheckboxes[i];
-            checkboxes[checkbox.key] = { checked: false };
+            const checkbox = analyticsCheckboxes[i]
+            checkboxes[checkbox.key] = { checked: false }
         }
 
         this.state = {
@@ -53,38 +56,43 @@ class Analytics extends Page {
             notifications: [],
             jobId: null,
             intervalId: null,
-        };
+        }
 
-        this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(this);
-        this.onChangeLastYears = this.onChangeLastYears.bind(this);
+        this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(
+            this
+        )
+        this.onChangeLastYears = this.onChangeLastYears.bind(this)
     }
 
     componentDidMount() {
-        this.requestTaskSummary();
+        this.requestTaskSummary()
     }
 
     componentWillReceiveProps(nextProps) {
-        const nextState = {};
+        const nextState = {}
 
-        Object.keys(nextProps).forEach((property) => {
-            if (nextProps.hasOwnProperty(property) && Analytics.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property];
+        Object.keys(nextProps).forEach(property => {
+            if (
+                nextProps.hasOwnProperty(property) &&
+                Analytics.STATE_PROPERTIES.includes(property)
+            ) {
+                nextState[property] = nextProps[property]
             }
-        });
+        })
 
         if (nextState !== {}) {
-            this.setState(nextState);
+            this.setState(nextState)
         }
     }
 
     componentWillUnmount() {
-        super.componentWillUnmount();
+        super.componentWillUnmount()
 
-        this.cancelPoollingRequests();
+        this.cancelPoollingRequests()
     }
 
     cancelPoollingRequests() {
-        clearInterval(this.state.intervalId);
+        clearInterval(this.state.intervalId)
     }
 
     setLoadingPageState() {
@@ -97,14 +105,15 @@ class Analytics extends Page {
                 loading: true,
                 notifications: [],
             },
-        });
+        })
     }
 
     setLoadedPageWithErrorState(error) {
-        const messageError = error && error.message ?
-            error.message :
-            i18n.t(i18nKeys.analytics.unexpectedError);
-        this.cancelPoollingRequests();
+        const messageError =
+            error && error.message
+                ? error.message
+                : i18n.t(i18nKeys.analytics.unexpectedError)
+        this.cancelPoollingRequests()
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -114,66 +123,70 @@ class Analytics extends Page {
             pageState: {
                 loading: false,
             },
-        });
+        })
     }
 
     areActionsDisabled() {
-        return this.state.loading;
+        return this.state.loading
     }
 
     buildFormData() {
-        let formData = null;
-        const checkboxKeys = Object.keys(this.state.checkboxes);
+        let formData = null
+        const checkboxKeys = Object.keys(this.state.checkboxes)
         for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i];
-            const checked = this.state.checkboxes[key].checked;
-            formData = formData || new FormData();
-            formData.append(key, checked);
+            const key = checkboxKeys[i]
+            const checked = this.state.checkboxes[key].checked
+            formData = formData || new FormData()
+            formData.append(key, checked)
         }
 
         if (this.state.lastYears !== DEFAULT_LAST_YEARS) {
-            formData.append(LAST_YEARS_INPUT_KEY, this.state.lastYears);
+            formData.append(LAST_YEARS_INPUT_KEY, this.state.lastYears)
         }
 
-        return formData;
+        return formData
     }
 
-    isAnalyzingTables = () => this.state.jobId && this.state.intervalId;
+    isAnalyzingTables = () => this.state.jobId && this.state.intervalId
 
-    startsPooling = () => setInterval(() => {
-        this.requestTaskSummary();
-    }, PULL_INTERVAL);
+    startsPooling = () =>
+        setInterval(() => {
+            this.requestTaskSummary()
+        }, PULL_INTERVAL)
 
-    isJobInProgress = jobNotifications => jobNotifications.every(notification => !notification.completed);
+    isJobInProgress = jobNotifications =>
+        jobNotifications.every(notification => !notification.completed)
 
     initAnalyticsTablesGeneration() {
-        const api = this.context.d2.Api.getApi();
-        const formData = this.buildFormData();
+        const api = this.context.d2.Api.getApi()
+        const formData = this.buildFormData()
 
-        this.setLoadingPageState();
-        api.post(ANALYTICS_TABLES_ENDPOINT, formData).then((response) => {
-            if (this.isPageMounted() && response) {
-                const jobId = response.response.id;
-                const intervalId = this.startsPooling();
+        this.setLoadingPageState()
+        api.post(ANALYTICS_TABLES_ENDPOINT, formData)
+            .then(response => {
+                if (this.isPageMounted() && response) {
+                    const jobId = response.response.id
+                    const intervalId = this.startsPooling()
 
-                this.setState({
-                    jobId,
-                    intervalId,
-                });
-            }
-        }).catch((e) => {
-            if (this.isPageMounted()) {
-                this.setLoadedPageWithErrorState(e);
-            }
-        });
+                    this.setState({
+                        jobId,
+                        intervalId,
+                    })
+                }
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
     }
 
-    updateStateForInProgressJobAccordingTaskSummaryResponse = (taskSummaryResponse) => {
-        const notifications = taskSummaryResponse[this.state.jobId] || [];
-        const completed = !this.isJobInProgress(notifications);
+    updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
+        const notifications = taskSummaryResponse[this.state.jobId] || []
+        const completed = !this.isJobInProgress(notifications)
 
         if (completed) {
-            this.cancelPoollingRequests();
+            this.cancelPoollingRequests()
         }
 
         this.context.updateAppState({
@@ -182,20 +195,22 @@ class Analytics extends Page {
                 notifications,
                 loading: !completed,
             },
-        });
-    };
+        })
+    }
 
-    verifyInProgressJobsForTaskSummaryResponseAndUpdateState = (taskSummaryResponse) => {
-        const jobIds = taskSummaryResponse ? Object.keys(taskSummaryResponse) : [];
+    verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
+        const jobIds = taskSummaryResponse
+            ? Object.keys(taskSummaryResponse)
+            : []
 
         // looking for the most recent in progress job
         for (let i = jobIds.length - 1; i >= 0; i--) {
-            const jobId = jobIds[i];
-            const notifications = taskSummaryResponse[jobId] || [];
+            const jobId = jobIds[i]
+            const notifications = taskSummaryResponse[jobId] || []
 
             // found in progress job: show current notifications and starts pooling
             if (this.isJobInProgress(notifications)) {
-                const intervalId = this.startsPooling();
+                const intervalId = this.startsPooling()
 
                 this.context.updateAppState({
                     showSnackbar: true,
@@ -208,50 +223,59 @@ class Analytics extends Page {
                         jobId,
                         intervalId,
                     },
-                });
+                })
 
-                break;
+                break
             }
         }
-    };
+    }
 
     requestTaskSummary() {
-        const api = this.context.d2.Api.getApi();
-        const lastId = this.state.notifications && this.state.notifications.length > 0
-            ? this.state.notifications[0].uid : null;
-        const url = lastId ?
-            `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}` : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`;
-        api.get(url).then((taskSummaryResponse) => {
-            /* not mounted finishes */
-            if (!this.isPageMounted()) {
-                return;
-            }
+        const api = this.context.d2.Api.getApi()
+        const lastId =
+            this.state.notifications && this.state.notifications.length > 0
+                ? this.state.notifications[0].uid
+                : null
+        const url = lastId
+            ? `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}`
+            : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`
+        api.get(url)
+            .then(taskSummaryResponse => {
+                /* not mounted finishes */
+                if (!this.isPageMounted()) {
+                    return
+                }
 
-            // showing current job
-            if (this.isAnalyzingTables()) {
-                this.updateStateForInProgressJobAccordingTaskSummaryResponse(taskSummaryResponse);
-            // so far no jobs is being processed, lets check if server is has any in progress job
-            } else {
-                this.verifyInProgressJobsForTaskSummaryResponseAndUpdateState(taskSummaryResponse);
-            }
-        }).catch((e) => {
-            if (this.isPageMounted()) {
-                this.setLoadedPageWithErrorState(e);
-            }
-        });
+                // showing current job
+                if (this.isAnalyzingTables()) {
+                    this.updateStateForInProgressJobAccordingTaskSummaryResponse(
+                        taskSummaryResponse
+                    )
+                    // so far no jobs is being processed, lets check if server is has any in progress job
+                } else {
+                    this.verifyInProgressJobsForTaskSummaryResponseAndUpdateState(
+                        taskSummaryResponse
+                    )
+                }
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
     }
 
     onChangeLastYears(event, index, value) {
         this.setState({
             lastYears: value,
-        });
+        })
     }
 
     toggleCheckbox = (initialCheckboxes, key) => () => {
-        const checkboxes = Object.assign({}, initialCheckboxes);
-        const checkboxState = checkboxes[key].checked;
-        checkboxes[key].checked = !checkboxState;
-        this.setState({ checkboxes });
+        const checkboxes = Object.assign({}, initialCheckboxes)
+        const checkboxState = checkboxes[key].checked
+        checkboxes[key].checked = !checkboxState
+        this.setState({ checkboxes })
     }
 
     renderCheckbox = checkbox => (
@@ -262,35 +286,44 @@ class Analytics extends Page {
             <Checkbox
                 label={i18n.t(checkbox.label)}
                 checked={this.state.checkboxes[checkbox.key].checked}
-                onCheck={this.toggleCheckbox(this.state.checkboxes, checkbox.key)}
+                onCheck={this.toggleCheckbox(
+                    this.state.checkboxes,
+                    checkbox.key
+                )}
                 labelStyle={{ color: '#000000' }}
                 iconStyle={{ fill: '#000000' }}
                 disabled={this.areActionsDisabled()}
             />
         </GridTile>
-    );
+    )
 
     render() {
-        const gridElements = analyticsCheckboxes.map(this.renderCheckbox);
+        const gridElements = analyticsCheckboxes.map(this.renderCheckbox)
         return (
             <div>
                 <h1>
-                    { i18n.t(i18nKeys.analytics.title) }
+                    {i18n.t(i18nKeys.analytics.title)}
                     <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(this.props.sectionKey)}
+                        sectionDocsKey={getDocsKeyForSection(
+                            this.props.sectionKey
+                        )}
                     />
                 </h1>
                 <Card className={styles.cardContainer}>
                     <CardText>
-                        <h4 className={styles.uppercase}>{i18nKeys.analytics.analyticsTablesUpdateHeader}</h4>
-                        <div className={classNames(styles.gridContainer, 'row')}>
+                        <h4 className={styles.uppercase}>
+                            {i18nKeys.analytics.analyticsTablesUpdateHeader}
+                        </h4>
+                        <div
+                            className={classNames(styles.gridContainer, 'row')}
+                        >
                             {gridElements}
                             <SelectField
                                 disabled={this.areActionsDisabled()}
                                 className="col-xs-12 col-md-6"
-                                floatingLabelText={
-                                    i18n.t(i18nKeys.analytics.lastYearsLabel)
-                                }
+                                floatingLabelText={i18n.t(
+                                    i18nKeys.analytics.lastYearsLabel
+                                )}
                                 onChange={this.onChangeLastYears}
                                 value={this.state.lastYears}
                                 fullWidth
@@ -313,16 +346,18 @@ class Analytics extends Page {
                         />
                     </CardText>
                 </Card>
-                {this.state.notifications.length > 0 &&
+                {this.state.notifications.length > 0 && (
                     <Card className={styles.cardContainer}>
                         <CardText>
-                            <NotificationsTable notifications={this.state.notifications} />
+                            <NotificationsTable
+                                notifications={this.state.notifications}
+                            />
                         </CardText>
                     </Card>
-                }
+                )}
             </div>
-        );
+        )
     }
 }
 
-export default Analytics;
+export default Analytics

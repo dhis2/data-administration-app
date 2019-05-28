@@ -1,19 +1,19 @@
-import DataIntegrity from './data-integrity/DataIntegrity';
-import Maintenance from './maintenance/Maintenance';
-import ResourceTables from './resource-tables/ResourceTables';
-import DataStatistics from './data-statistics/DataStatistics';
-import LockException from './lock-exception/LockException';
-import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration';
-import Analytics from './analytics/Analytics';
-import { i18nKeys } from '../i18n';
+import DataIntegrity from './data-integrity/DataIntegrity'
+import Maintenance from './maintenance/Maintenance'
+import ResourceTables from './resource-tables/ResourceTables'
+import DataStatistics from './data-statistics/DataStatistics'
+import LockException from './lock-exception/LockException'
+import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
+import Analytics from './analytics/Analytics'
+import { i18nKeys } from '../i18n'
 
-export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity';
-export const MAINTENANCE_SECTION_KEY = 'maintenance';
-export const RESOURCE_TABLES_SECTION_KEY = 'resourceTables';
-export const DATA_STATISTICS_SECTION_KEY = 'statistics';
-export const LOCK_EXCEPTION_SECTION_KEY = 'lock';
-export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax';
-export const ANALYTICS_SECTION_KEY = 'analytics';
+export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity'
+export const MAINTENANCE_SECTION_KEY = 'maintenance'
+export const RESOURCE_TABLES_SECTION_KEY = 'resourceTables'
+export const DATA_STATISTICS_SECTION_KEY = 'statistics'
+export const LOCK_EXCEPTION_SECTION_KEY = 'lock'
+export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax'
+export const ANALYTICS_SECTION_KEY = 'analytics'
 
 export const sections = [
     {
@@ -100,15 +100,15 @@ export const sections = [
             docs: 'dataAdmin_minMaxValueGeneration',
         },
     },
-];
+]
 
-export const getDocsKeyForSection = (sectionKey) => {
+export const getDocsKeyForSection = sectionKey => {
     for (let i = 0; i < sections.length; i++) {
-        const section = sections[i];
+        const section = sections[i]
         if (section.key === sectionKey) {
-            return section.info.docs;
+            return section.info.docs
         }
     }
 
-    return '';
-};
+    return ''
+}

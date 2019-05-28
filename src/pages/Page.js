@@ -1,5 +1,5 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Page extends Component {
     static propTypes = {
@@ -14,24 +14,23 @@ class Page extends Component {
     }
 
     componentWillMount() {
-        this.pageMounted = true;
+        this.pageMounted = true
 
         // update section on side bar
         if (this.context.currentSection !== this.props.sectionKey) {
             this.context.updateAppState({
                 currentSection: this.props.sectionKey,
-            });
+            })
         }
     }
 
     componentWillUnmount() {
-        this.pageMounted = false;
+        this.pageMounted = false
     }
 
     isPageMounted() {
-        return this.pageMounted;
+        return this.pageMounted
     }
 }
 
-export default Page;
-
+export default Page

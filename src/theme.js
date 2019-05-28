@@ -1,5 +1,5 @@
-import Spacing from 'material-ui/styles/spacing';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Spacing from 'material-ui/styles/spacing'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {
     blue100,
     blue700,
@@ -9,8 +9,8 @@ import {
     orangeA200,
     darkBlack,
     white,
-} from 'material-ui/styles/colors';
-import { fade } from 'material-ui/utils/colorManipulator';
+} from 'material-ui/styles/colors'
+import { fade } from 'material-ui/utils/colorManipulator'
 
 const theme = {
     spacing: Spacing,
@@ -28,8 +28,8 @@ const theme = {
         borderColor: grey400,
         disabledColor: fade(darkBlack, 0.3),
     },
-};
+}
 
-const muiTheme = getMuiTheme(theme);
+const muiTheme = getMuiTheme(theme)
 
-export default muiTheme;
+export default muiTheme
