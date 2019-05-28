@@ -5,17 +5,9 @@
   "devDependencies": {
     "@dhis2/d2-i18n-extract": "^1.0.7",
     "@dhis2/d2-i18n-generate": "1.1.1",
-    "chai": "^4.1.2",
-    "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest-enzyme": "^7.0.2",
-    "rxjs": "^5.5.4",
-    "wdio-allure-reporter": "^0.1.2",
-    "wdio-cucumber-framework": "^2.2.8",
-    "wdio-selenium-standalone-service": "0.0.10",
-    "wdio-spec-reporter": "^0.1.3",
-    "webdriverio": "^4.12.0"
+    "jest-enzyme": "^7.0.2"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.4",
@@ -25,7 +17,6 @@
     "d2-ui": "^29.0.18",
     "d2-utilizr": "^0.2.15",
     "d3-color": "^1.0.3",
-    "flexboxgrid": "^6.3.1",
     "loglevel": "^1.6.0",
     "material-design-icons-iconfont": "^4.0.5",
     "material-ui": "^0.20.0",
@@ -34,6 +25,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.0",
+    "rxjs": "^5.5.4",
     "typeface-roboto": "^0.0.54"
   },
   "scripts": {
@@ -41,17 +33,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-    "localize": "yarn extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
-    "prestart": "yarn localize",
-    "prebuild": "yarn localize",
-    "pretest": "yarn localize",
-    "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "lint": "eslint src/",
-    "coverage": "yarn test -- --coverage"
-  },
-  "homepage": ".",
-  "eslintConfig": {
-    "extends": "react-app"
+    "localize": "npm run extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
+    "prestart": "npm run localize",
+    "prebuild": "npm run localize",
+    "pretest": "npm run localize"
   },
   "browserslist": [
     ">0.5%",
@@ -63,12 +48,8 @@
   "greenkeeper": {
     "ignore": [
       "@dhis2/d2-ui-header-bar",
-      "cucumber",
       "d2",
-      "rxjs",
-      "wdio-allure-reporter",
-      "wdio-selenium-standalone-service",
-      "webdriverio"
+      "rxjs"
     ]
   }
 }
