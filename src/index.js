@@ -7,7 +7,7 @@ import log from 'loglevel'
 import { configI18n } from './configI18n'
 import App from './App'
 import appTheme from './theme'
-import registerServiceWorker from './registerServiceWorker'
+import * as serviceWorker from './serviceWorker'
 import './index.css'
 
 const { NODE_ENV, REACT_APP_DHIS2_BASE_URL } = process.env
@@ -51,7 +51,9 @@ getUserSettings().then(userSettings => {
 })
 
 /**
- * Service worker
+ * If you want your app to work offline and load faster, you can change
+ * unregister() to register() below. Note this comes with some pitfalls.
+ * Learn more about service workers: https://bit.ly/CRA-PWA
  */
 
-registerServiceWorker()
+serviceWorker.register()
