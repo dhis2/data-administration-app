@@ -40,7 +40,7 @@ ReactDOM.render(
             <App />
         </HashRouter>
     </D2UIApp>,
-    document.getElementById('app')
+    document.getElementById('root')
 )
 
 getUserSettings().then(userSettings => {
