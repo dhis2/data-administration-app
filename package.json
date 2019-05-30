@@ -3,30 +3,21 @@
   "version": "31.0.0",
   "private": true,
   "devDependencies": {
+    "@dhis2/cli-style": "^3.2.2",
     "@dhis2/d2-i18n-extract": "^1.0.7",
     "@dhis2/d2-i18n-generate": "1.1.1",
-    "chai": "^4.1.2",
-    "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest-enzyme": "^7.0.2",
-    "rxjs": "^5.5.4",
-    "wdio-allure-reporter": "^0.1.2",
-    "wdio-cucumber-framework": "^2.2.8",
-    "wdio-selenium-standalone-service": "0.0.10",
-    "wdio-spec-reporter": "^0.1.3",
-    "webdriverio": "^4.12.0"
+    "husky": "^2.3.0",
+    "jest-enzyme": "^7.0.2"
   },
   "dependencies": {
     "@dhis2/d2-i18n": "^1.0.4",
     "@dhis2/d2-ui-header-bar": "^1.1.7",
     "classnames": "^2.2.5",
     "d2": "^28.3.0",
-    "d2-manifest": "^1.0.0",
     "d2-ui": "^29.0.18",
-    "d2-utilizr": "^0.2.15",
     "d3-color": "^1.0.3",
-    "flexboxgrid": "^6.3.1",
     "loglevel": "^1.6.0",
     "material-design-icons-iconfont": "^5.0.1",
     "material-ui": "^0.20.0",
@@ -34,61 +25,32 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "^3.0.1",
+    "rxjs": "^5.5.4",
     "typeface-roboto": "^0.0.54"
   },
   "scripts": {
-    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
-    "localize": "yarn extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
-    "manifest": "d2-manifest package.json ./public/manifest.webapp",
-    "prestart": "yarn manifest && yarn localize",
     "start": "react-scripts start",
-    "prebuild": "yarn manifest && yarn localize",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test-e2e": "wdio ./e2e/config/wdio.conf.js",
-    "lint": "eslint src/",
-    "coverage": "yarn test -- --coverage"
+    "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
+    "localize": "npm run extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
+    "lint:style": "d2-style js check --all",
+    "prestart": "npm run localize",
+    "prebuild": "npm run localize",
+    "pretest": "npm run localize"
   },
-  "manifest.webapp": {
-    "name": "Data Administration",
-    "description": "Data Administration",
-    "icons": {
-      "48": "icon.png"
-    },
-    "developer": {
-      "url": "https://dhis2.github.io",
-      "name": "DHIS2"
-    },
-    "dhis2": {
-      "apiVersion": "29"
-    },
-    "activities": {
-      "dhis": {
-        "href": ".."
-      }
+  "husky": {
+    "hooks": {
+      "commit-msg": "d2-style commit check",
+      "pre-commit": "d2-style js apply"
     }
   },
-  "homepage": ".",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "ie 11",
-    "not dead"
-  ],
   "greenkeeper": {
     "ignore": [
       "@dhis2/d2-ui-header-bar",
-      "cucumber",
       "d2",
-      "rxjs",
-      "wdio-allure-reporter",
-      "wdio-selenium-standalone-service",
-      "webdriverio"
+      "rxjs"
     ]
   }
 }

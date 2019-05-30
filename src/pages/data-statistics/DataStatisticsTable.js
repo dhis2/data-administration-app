@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import {
     Table,
     TableBody,
@@ -7,9 +7,9 @@ import {
     TableHeaderColumn,
     TableRow,
     TableRowColumn,
-} from 'material-ui/Table';
-import FormattedNumber from '../../components/formatters/FormattedNumber';
-import styles from './DataStatistics.module.css';
+} from 'material-ui/Table'
+import FormattedNumber from '../../components/formatters/FormattedNumber'
+import styles from './DataStatistics.module.css'
 
 class DataStatisticsTable extends PureComponent {
     static propTypes = {
@@ -19,13 +19,16 @@ class DataStatisticsTable extends PureComponent {
 
     render() {
         const rows = this.props.elements.map(element => (
-            <TableRow key={element.label} className={'data-statistics-table-row'}>
+            <TableRow
+                key={element.label}
+                className={'data-statistics-table-row'}
+            >
                 <TableRowColumn>{element.label}</TableRowColumn>
                 <TableRowColumn>
                     <FormattedNumber value={element.count} />
                 </TableRowColumn>
             </TableRow>
-        ));
+        ))
 
         return (
             <Table selectable={false} className={styles.statisticsTable}>
@@ -36,18 +39,17 @@ class DataStatisticsTable extends PureComponent {
                     enableSelectAll={false}
                 >
                     <TableRow>
-                        <TableHeaderColumn>{this.props.label}</TableHeaderColumn>
+                        <TableHeaderColumn>
+                            {this.props.label}
+                        </TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
-                <TableBody
-                    displayRowCheckbox={false}
-                    stripedRows={false}
-                >
+                <TableBody displayRowCheckbox={false} stripedRows={false}>
                     {rows}
                 </TableBody>
             </Table>
-        );
+        )
     }
 }
 
-export default DataStatisticsTable;
+export default DataStatisticsTable

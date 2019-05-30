@@ -2,10 +2,12 @@ export const i18nKeys = {
     dataIntegrity: {
         title: 'Data Integrity',
         label: 'Data Integrity',
-        description: 'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
+        description:
+            'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
         actionText: 'Check Data Integrity',
         performing: 'Performing data integrity checks...',
-        unexpectedError: 'An unexpected error happened during data integrity checks',
+        unexpectedError:
+            'An unexpected error happened during data integrity checks',
         actionButton: 'RUN INTEGRITY CHECKS',
         dataElementsWithoutDataSet: {
             label: 'Data elements without data set',
@@ -17,7 +19,8 @@ export const i18nKeys = {
             label: 'Data elements violating exclusive group sets',
         },
         dataElementsAssignedToDataSetsWithDifferentPeriodTypes: {
-            label: 'Data elements assigned to data sets with different period types',
+            label:
+                'Data elements assigned to data sets with different period types',
         },
         dataSetsNotAssignedToOrganisationUnits: {
             label: 'Data sets not assigned to organisation units',
@@ -68,7 +71,8 @@ export const i18nKeys = {
             label: 'Invalid program indicator filters',
         },
         dataElementsInDataSetNotInForm: {
-            label: 'There are data elements in the form, but not in the form or sections',
+            label:
+                'There are data elements in the form, but not in the form or sections',
         },
         invalidCategoryCombos: {
             label: 'Invalid category combinations',
@@ -107,8 +111,9 @@ export const i18nKeys = {
     maintenance: {
         title: 'Maintenance',
         label: 'Maintenance',
-        description: 'Perform maintenance tasks and generate resource database tables for the organisation unit' +
-        ' hierarchy and group set structure.',
+        description:
+            'Perform maintenance tasks and generate resource database tables for the organisation unit' +
+            ' hierarchy and group set structure.',
         actionText: 'Perform Maintenance',
         actionButton: 'PERFORM MAINTENANCE',
         performing: 'Performing Maintenance...',
@@ -117,10 +122,13 @@ export const i18nKeys = {
         analyticsTableClear: 'Clear analytics tables',
         analyticsTableAnalyze: 'Analyze analytics tables',
         zeroDataValueRemoval: 'Remove zero data values',
-        softDeletedDataValueRemoval: 'Permanently remove soft deleted data values',
+        softDeletedDataValueRemoval:
+            'Permanently remove soft deleted data values',
         softDeletedEventRemoval: 'Permanently remove soft deleted events',
-        softDeletedEnrollmentRemoval: 'Permanently remove soft deleted enrollments',
-        softDeletedTrackedEntityInstanceRemoval: 'Permanently remove soft deleted tracked entity instances',
+        softDeletedEnrollmentRemoval:
+            'Permanently remove soft deleted enrollments',
+        softDeletedTrackedEntityInstanceRemoval:
+            'Permanently remove soft deleted tracked entity instances',
         periodPruning: 'Prune periods',
         expiredInvitationsClear: 'Remove expired invitations',
         sqlViewsDrop: 'Drop SQL views',
@@ -133,30 +141,36 @@ export const i18nKeys = {
     resourceTables: {
         title: 'Resource Tables',
         label: 'Resource Tables',
-        description: 'Generate resource database tables for the organisation unit hierarchy and group ' +
-        'set structure among others.',
+        description:
+            'Generate resource database tables for the organisation unit hierarchy and group ' +
+            'set structure among others.',
         actionText: 'Generate Resource Tables',
         actionButton: 'GENERATE TABLES',
         actionPerformed: 'Resource Tables generated',
         unexpectedError: 'An unexpected error happened during operation',
         organisationUnitStructure: 'Organisation unit structure',
-        organistionUnitCategoryOptionCombo: 'Organisation unit category option combo',
+        organistionUnitCategoryOptionCombo:
+            'Organisation unit category option combo',
         categoryOptionGroupSetStructure: 'Category option group set structure',
         dataElementGroupSetStructure: 'Data element group set structure',
         indicatorGroupSetStructure: 'Indicator group set structure',
-        organisationUnitGroupSetStructure: 'Organisation unit group set structure',
+        organisationUnitGroupSetStructure:
+            'Organisation unit group set structure',
         categoryStructure: 'Category structure',
-        dataElementCategoryOptionComboName: 'Data element category option combo name',
+        dataElementCategoryOptionComboName:
+            'Data element category option combo name',
         dataElementStructure: 'Data element structure',
         periodStructure: 'Period structure',
         dataPeriodStructure: 'Date period structure',
-        dataElementCategoryOptionCombinations: 'Data element category option combinations',
+        dataElementCategoryOptionCombinations:
+            'Data element category option combinations',
     },
     dataStatistics: {
         title: 'Data Statistics',
         label: 'Data Statistics',
-        description: 'Browse the number of objects in the database, like data elements, indicators,' +
-        ' data sets and data values.',
+        description:
+            'Browse the number of objects in the database, like data elements, indicators,' +
+            ' data sets and data values.',
         actionText: 'Overview Data Statistics',
         loadingMessage: 'Loading Data Statistics...',
         errorMessage: 'It was not possible to load Data Statistics',
@@ -200,7 +214,8 @@ export const i18nKeys = {
         batchDeletionSubHeader: 'Batch Deletion',
         addLockExceptionFormTitle: 'Add new lock exception',
         label: 'Lock Exception',
-        description: 'Add or remove exceptions to the the standard rules for locking of data entry forms.',
+        description:
+            'Add or remove exceptions to the the standard rules for locking of data entry forms.',
         actionText: 'Lock Exception Management',
         actionButton: 'BATCH DELETION',
         cancelButton: 'CANCEL',
@@ -267,8 +282,9 @@ export const i18nKeys = {
     minMaxValueGeneration: {
         title: 'Min-Max Value Generation',
         label: 'Min-Max Value Generation',
-        description: 'Generate min-max values which can be used for data validation during data entry and ' +
-        'validation processes.',
+        description:
+            'Generate min-max values which can be used for data validation during data entry and ' +
+            'validation processes.',
         actionText: 'Generate Min-Max Value',
         notPossibleToLoadMessage: 'It was not possible to load data',
         warningMessage: 'Select Data set and Organisation Unit',
@@ -286,11 +302,13 @@ export const i18nKeys = {
     analytics: {
         title: 'Analytics tables management',
         label: 'Analytics Tables',
-        description: 'The data mart is a set of tables in the DHIS database which is used by all reporting and ' +
-        'analysis tools to retrieve data from. ',
+        description:
+            'The data mart is a set of tables in the DHIS database which is used by all reporting and ' +
+            'analysis tools to retrieve data from. ',
         actionText: 'Analytics tables update',
         actionButton: 'START EXPORT',
-        skipAggregate: 'Skip generation of aggregate data and completeness data',
+        skipAggregate:
+            'Skip generation of aggregate data and completeness data',
         skipResourceTables: 'Skip generation of resource tables',
         skipEvents: 'Skip generation of event data',
         skipEnrollment: 'Skip generation of enrollment data',
@@ -315,6 +333,6 @@ export const i18nKeys = {
         interpretations: 'Interpretations',
         messages: 'Messages',
     },
-};
+}
 
-export default i18nKeys;
+export default i18nKeys

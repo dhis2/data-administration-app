@@ -1,9 +1,9 @@
-import { i18nKeys } from '../../i18n';
+import { i18nKeys } from '../../i18n'
 
-export const INIT_ENDPOINT = 'dataIntegrity';
-export const PULL_INTERVAL = 5000;
-export const DATA_ENDPOINT = 'system/taskSummaries/DATA_INTEGRITY';
-export const PAGE_TITLE = i18nKeys.dataIntegrity.title;
+export const INIT_ENDPOINT = 'dataIntegrity'
+export const PULL_INTERVAL = 5000
+export const DATA_ENDPOINT = 'system/taskSummaries/DATA_INTEGRITY'
+export const PAGE_TITLE = i18nKeys.dataIntegrity.title
 
 export const dataIntegrityControls = [
     {
@@ -18,18 +18,28 @@ export const dataIntegrityControls = [
     },
     {
         key: 'dataElementsViolatingExclusiveGroupSets',
-        label: i18nKeys.dataIntegrity.dataElementsViolatingExclusiveGroupSets.label,
-        text: i18nKeys.dataIntegrity.dataElementsViolatingExclusiveGroupSets.label,
+        label:
+            i18nKeys.dataIntegrity.dataElementsViolatingExclusiveGroupSets
+                .label,
+        text:
+            i18nKeys.dataIntegrity.dataElementsViolatingExclusiveGroupSets
+                .label,
     },
     {
         key: 'dataElementsAssignedToDataSetsWithDifferentPeriodTypes',
-        label: i18nKeys.dataIntegrity.dataElementsAssignedToDataSetsWithDifferentPeriodTypes.label,
-        text: i18nKeys.dataIntegrity.dataElementsAssignedToDataSetsWithDifferentPeriodTypes.text,
+        label:
+            i18nKeys.dataIntegrity
+                .dataElementsAssignedToDataSetsWithDifferentPeriodTypes.label,
+        text:
+            i18nKeys.dataIntegrity
+                .dataElementsAssignedToDataSetsWithDifferentPeriodTypes.text,
     },
     {
         key: 'dataSetsNotAssignedToOrganisationUnits',
-        label: i18nKeys.dataIntegrity.dataSetsNotAssignedToOrganisationUnits.label,
-        text: i18nKeys.dataIntegrity.dataSetsNotAssignedToOrganisationUnits.text,
+        label:
+            i18nKeys.dataIntegrity.dataSetsNotAssignedToOrganisationUnits.label,
+        text:
+            i18nKeys.dataIntegrity.dataSetsNotAssignedToOrganisationUnits.text,
     },
     {
         key: 'indicatorsWithIdenticalFormulas',
@@ -53,12 +63,14 @@ export const dataIntegrityControls = [
     },
     {
         key: 'indicatorsViolatingExclusiveGroupSets',
-        label: i18nKeys.dataIntegrity.indicatorsViolatingExclusiveGroupSets.label,
+        label:
+            i18nKeys.dataIntegrity.indicatorsViolatingExclusiveGroupSets.label,
         text: i18nKeys.dataIntegrity.indicatorsViolatingExclusiveGroupSets.text,
     },
     {
         key: 'organisationUnitsWithCyclicReferences',
-        label: i18nKeys.dataIntegrity.organisationUnitsWithCyclicReferences.label,
+        label:
+            i18nKeys.dataIntegrity.organisationUnitsWithCyclicReferences.label,
         text: i18nKeys.dataIntegrity.organisationUnitsWithCyclicReferences.text,
     },
     {
@@ -73,13 +85,19 @@ export const dataIntegrityControls = [
     },
     {
         key: 'organisationUnitsViolatingExclusiveGroupSets',
-        label: i18nKeys.dataIntegrity.organisationUnitsViolatingExclusiveGroupSets.label,
-        text: i18nKeys.dataIntegrity.organisationUnitsViolatingExclusiveGroupSets.text,
+        label:
+            i18nKeys.dataIntegrity.organisationUnitsViolatingExclusiveGroupSets
+                .label,
+        text:
+            i18nKeys.dataIntegrity.organisationUnitsViolatingExclusiveGroupSets
+                .text,
     },
     {
         key: 'organisationUnitGroupsWithoutGroupSets',
-        label: i18nKeys.dataIntegrity.organisationUnitGroupsWithoutGroupSets.label,
-        text: i18nKeys.dataIntegrity.organisationUnitGroupsWithoutGroupSets.text,
+        label:
+            i18nKeys.dataIntegrity.organisationUnitGroupsWithoutGroupSets.label,
+        text:
+            i18nKeys.dataIntegrity.organisationUnitGroupsWithoutGroupSets.text,
     },
     {
         key: 'validationRulesWithoutGroups',
@@ -88,13 +106,21 @@ export const dataIntegrityControls = [
     },
     {
         key: 'invalidValidationRuleLeftSideExpressions',
-        label: i18nKeys.dataIntegrity.invalidValidationRuleLeftSideExpressions.label,
-        text: i18nKeys.dataIntegrity.invalidValidationRuleLeftSideExpressions.text,
+        label:
+            i18nKeys.dataIntegrity.invalidValidationRuleLeftSideExpressions
+                .label,
+        text:
+            i18nKeys.dataIntegrity.invalidValidationRuleLeftSideExpressions
+                .text,
     },
     {
         key: 'invalidValidationRuleRightSideExpressions',
-        label: i18nKeys.dataIntegrity.invalidValidationRuleRightSideExpressions.label,
-        text: i18nKeys.dataIntegrity.invalidValidationRuleRightSideExpressions.text,
+        label:
+            i18nKeys.dataIntegrity.invalidValidationRuleRightSideExpressions
+                .label,
+        text:
+            i18nKeys.dataIntegrity.invalidValidationRuleRightSideExpressions
+                .text,
     },
     {
         key: 'invalidProgramIndicatorExpressions',
@@ -130,7 +156,8 @@ export const dataIntegrityControls = [
     },
     {
         key: 'programRuleVariablesWithNoDataElement',
-        label: i18nKeys.dataIntegrity.programRuleVariablesWithNoDataElement.label,
+        label:
+            i18nKeys.dataIntegrity.programRuleVariablesWithNoDataElement.label,
     },
     {
         key: 'programRuleVariablesWithNoAttribute',
@@ -142,7 +169,8 @@ export const dataIntegrityControls = [
     },
     {
         key: 'programRuleActionsWithNoNotification',
-        label: i18nKeys.dataIntegrity.programRuleActionsWithNoNotification.label,
+        label:
+            i18nKeys.dataIntegrity.programRuleActionsWithNoNotification.label,
     },
     {
         key: 'programRuleActionsWithNoSectionId',
@@ -152,4 +180,4 @@ export const dataIntegrityControls = [
         key: 'programRuleActionsWithNoStageId',
         label: i18nKeys.dataIntegrity.programRuleActionsWithNoStageId.label,
     },
-];
+]

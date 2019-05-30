@@ -1,5 +1,5 @@
-export const DOCS_LINK = 'https://ci.dhis2.org/docs';
-export const DOCS_TOOLTIP_LABEL = 'Open user guide';
+export const DOCS_LINK = 'https://ci.dhis2.org/docs'
+export const DOCS_TOOLTIP_LABEL = 'Open user guide'
 
 /**
  * Returns the "version" of the documentation that corresponds with the current dhis2 version.
@@ -12,9 +12,9 @@ export const DOCS_TOOLTIP_LABEL = 'Open user guide';
  */
 export const getDocsVersion = ({ major, minor, snapshot }) => {
     if (snapshot) {
-        return 'master';
+        return 'master'
     }
-    return `${major}.${minor}`;
-};
+    return `${major}.${minor}`
+}
 
-export default getDocsVersion;
+export default getDocsVersion

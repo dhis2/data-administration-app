@@ -1,22 +1,37 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import AddLockExceptionForm from './AddLockExceptionForm';
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component';
-import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component';
-import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component';
-import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component';
-import SelectField from 'd2-ui/lib/select-field/SelectField';
-import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component';
+import React from 'react'
+import { shallow } from 'enzyme'
+import AddLockExceptionForm from './AddLockExceptionForm'
+import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
+import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
+import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
+import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
+import SelectField from 'd2-ui/lib/select-field/SelectField'
+import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component'
 
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
-jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
-jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
-jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
-jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component',
+    () => 'OrgUnitSelectByLevel'
+)
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component',
+    () => 'OrgUnitSelectByGroup'
+)
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component',
+    () => 'OrgUnitSelectAll'
+)
+jest.mock('d2-ui/lib/select-field/SelectField', () => 'SelectField')
+jest.mock(
+    'd2-ui/lib/period-picker/PeriodPicker.component',
+    () => 'PeriodPicker'
+)
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => 'DataTable')
+jest.mock('d2-ui/lib/pagination/Pagination.component', () => 'Pagination')
+jest.mock(
+    'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes',
+    () => 'FeedbackSnackbarTypes'
+)
 
 const fakeDataSets = [
     {
@@ -29,12 +44,11 @@ const fakeDataSets = [
         name: 'weeklyDataSet',
         periodType: 'weekly',
     },
+]
 
-];
-
-const updateSelectedOrgUnits = jest.fn();
-const updateSeletedDataSetId = jest.fn();
-const updateSelectedPeriodId = jest.fn();
+const updateSelectedOrgUnits = jest.fn()
+const updateSeletedDataSetId = jest.fn()
+const updateSelectedPeriodId = jest.fn()
 
 const ownShallow = () => {
     return shallow(
@@ -47,56 +61,54 @@ const ownShallow = () => {
             updateSelectedPeriodId={updateSelectedPeriodId}
         />,
         {
-            disableLifecycleMethods: true
+            disableLifecycleMethods: true,
         }
-    );
-};
+    )
+}
 
 it('Add Lock Exception Form Component renders without crashing', () => {
-    ownShallow();
-});
+    ownShallow()
+})
 
 it('Add Lock Exception Form Component renders a SelectField', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.find(SelectField)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    expect(wrapper.find(SelectField)).toHaveLength(1)
+})
 
 it('Add Lock Exception Form Component renders no PeriodPicker', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.find(PeriodPicker)).toHaveLength(0);
-});
+    const wrapper = ownShallow()
+    expect(wrapper.find(PeriodPicker)).toHaveLength(0)
+})
 
 it('Add Lock Exception Form Component renders PeriodPicker', () => {
-    const wrapper = ownShallow();
-    wrapper.setState({dataSet: fakeDataSets[0]});
-    expect(wrapper.find(PeriodPicker)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    wrapper.setState({ dataSet: fakeDataSets[0] })
+    expect(wrapper.find(PeriodPicker)).toHaveLength(1)
+})
 
 it('Add Lock Exception Form Component renders OrgUnitTree', () => {
-    const wrapper = ownShallow();
+    const wrapper = ownShallow()
     wrapper.setState({
         dataSet: fakeDataSets[0],
         rootWithMembers: {},
-    });
-    expect(wrapper.find(OrgUnitTree)).toHaveLength(1);
-});
+    })
+    expect(wrapper.find(OrgUnitTree)).toHaveLength(1)
+})
 
 it('Add Lock Exception Form Component renders OrgUnitSelectByLevel', () => {
-    const wrapper = ownShallow();
-    wrapper.setState({dataSet: fakeDataSets[0]});
-    expect(wrapper.find(OrgUnitSelectByLevel)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    wrapper.setState({ dataSet: fakeDataSets[0] })
+    expect(wrapper.find(OrgUnitSelectByLevel)).toHaveLength(1)
+})
 
 it('Add Lock Exception Form Component renders OrgUnitSelectByGroup', () => {
-    const wrapper = ownShallow();
-    wrapper.setState({dataSet: fakeDataSets[0]});
-    expect(wrapper.find(OrgUnitSelectByGroup)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    wrapper.setState({ dataSet: fakeDataSets[0] })
+    expect(wrapper.find(OrgUnitSelectByGroup)).toHaveLength(1)
+})
 
 it('Add Lock Exception Form Component renders OrgUnitSelectAll', () => {
-    const wrapper = ownShallow();
-    wrapper.setState({dataSet: fakeDataSets[0]});
-    expect(wrapper.find(OrgUnitSelectAll)).toHaveLength(1);
-});
-
-
+    const wrapper = ownShallow()
+    wrapper.setState({ dataSet: fakeDataSets[0] })
+    expect(wrapper.find(OrgUnitSelectAll)).toHaveLength(1)
+})

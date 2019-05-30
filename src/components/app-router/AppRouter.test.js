@@ -1,24 +1,39 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import  AppRouter from './AppRouter';
-import { Route, Switch } from 'react-router-dom';
-import {sections} from "../../pages/sections.conf";
+import React from 'react'
+import { shallow } from 'enzyme'
+import AppRouter from './AppRouter'
+import { Route, Switch } from 'react-router-dom'
+import { sections } from '../../pages/sections.conf'
 
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component', () => ('OrgUnitSelectByLevel'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component', () => ('OrgUnitSelectByGroup'));
-jest.mock('d2-ui/lib/org-unit-select/OrgUnitSelectAll.component', () => ('OrgUnitSelectAll'));
-jest.mock('d2-ui/lib/select-field/SelectField', () => ('SelectField'));
-jest.mock('d2-ui/lib/period-picker/PeriodPicker.component', () => ('PeriodPicker'));
-jest.mock('d2-ui/lib/data-table/DataTable.component', () => ('DataTable'));
-jest.mock('d2-ui/lib/pagination/Pagination.component', () => ('Pagination'));
-jest.mock('d2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes', () => ('FeedbackSnackbarTypes'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component',
+    () => 'OrgUnitSelectByLevel'
+)
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component',
+    () => 'OrgUnitSelectByGroup'
+)
+jest.mock(
+    'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component',
+    () => 'OrgUnitSelectAll'
+)
+jest.mock('d2-ui/lib/select-field/SelectField', () => 'SelectField')
+jest.mock(
+    'd2-ui/lib/period-picker/PeriodPicker.component',
+    () => 'PeriodPicker'
+)
+jest.mock('d2-ui/lib/data-table/DataTable.component', () => 'DataTable')
+jest.mock('d2-ui/lib/pagination/Pagination.component', () => 'Pagination')
+jest.mock(
+    'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes',
+    () => 'FeedbackSnackbarTypes'
+)
 
-const notifySidebar = jest.fn();
-const toggleLoading = jest.fn();
-const pageState = {};
+const notifySidebar = jest.fn()
+const toggleLoading = jest.fn()
+const pageState = {}
 
-jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => ('OrgUnitTree'));
+jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 
 const ownShallow = () => {
     return shallow(
@@ -28,22 +43,21 @@ const ownShallow = () => {
             appState={pageState}
         />,
         {
-            disableLifecycleMethods: true
+            disableLifecycleMethods: true,
         }
-    );
-};
+    )
+}
 
 it('AppRouter renders without crashing', () => {
-    ownShallow();
-});
+    ownShallow()
+})
 
 it('AppRouter renders a Switch', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.find(Switch)).toHaveLength(1);
-});
+    const wrapper = ownShallow()
+    expect(wrapper.find(Switch)).toHaveLength(1)
+})
 
 it('AppRouter renders the correct number of Route', () => {
-    const wrapper = ownShallow();
-    expect(wrapper.find(Route)).toHaveLength(sections.length + 2);    // Pages plus home and no match route
-});
-
+    const wrapper = ownShallow()
+    expect(wrapper.find(Route)).toHaveLength(sections.length + 2) // Pages plus home and no match route
+})
