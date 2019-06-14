@@ -76,6 +76,33 @@ export const i18nKeys = {
         duplicatePeriods: {
             label: 'Duplicate periods',
         },
+        programRulesWithNoCondition: {
+            label: 'Program rules with no condition',
+        },
+        programRulesWithNoAction: {
+            label: 'Program rules with no action',
+        },
+        programRulesWithNoPriority: {
+            label: 'Program rules with no priority',
+        },
+        programRuleVariablesWithNoDataElement: {
+            label: 'Program rule variables with no data element',
+        },
+        programRuleVariablesWithNoAttribute: {
+            label: 'Program rule variables with no attribute',
+        },
+        programRuleActionsWithNoDataObject: {
+            label: 'Program rule actions with no data object',
+        },
+        programRuleActionsWithNoNotification: {
+            label: 'Program rule actions with no notification',
+        },
+        programRuleActionsWithNoSectionId: {
+            label: 'Program rule actions with no section id',
+        },
+        programRuleActionsWithNoStageId: {
+            label: 'Program rule actions with no stage id',
+        },
     },
     maintenance: {
         title: 'Maintenance',
