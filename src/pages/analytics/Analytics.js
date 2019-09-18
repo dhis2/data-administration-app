@@ -36,7 +36,6 @@ class Analytics extends Page {
         'loading',
         'lastYears',
         'notifications',
-        'jobId',
         'intervalId',
     ]
 
@@ -54,8 +53,8 @@ class Analytics extends Page {
             loading: false,
             lastYears: DEFAULT_LAST_YEARS,
             notifications: [],
-            jobId: null,
             intervalId: null,
+            allCompleted: false,
         }
 
         this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(
@@ -147,7 +146,7 @@ class Analytics extends Page {
         return formData
     }
 
-    isAnalyzingTables = () => this.state.jobId && this.state.intervalId
+    isAnalyzingTables = () => !!this.state.intervalId
 
     startsPooling = () =>
         setInterval(() => {
@@ -165,11 +164,9 @@ class Analytics extends Page {
         api.post(ANALYTICS_TABLES_ENDPOINT, formData)
             .then(response => {
                 if (this.isPageMounted() && response) {
-                    const jobId = response.response.id
                     const intervalId = this.startsPooling()
 
                     this.setState({
-                        jobId,
                         intervalId,
                     })
                 }
@@ -182,8 +179,8 @@ class Analytics extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const notifications = taskSummaryResponse[this.state.jobId] || []
-        const completed = !this.isJobInProgress(notifications)
+        const taskSummary = taskSummaryResponse || []
+        const completed = !this.isJobInProgress(taskSummary)
 
         if (completed) {
             this.cancelPoollingRequests()
@@ -192,54 +189,55 @@ class Analytics extends Page {
         this.context.updateAppState({
             showSnackbar: !completed,
             pageState: {
-                notifications,
+                notifications: this.getUpdatedNotifications(
+                    taskSummary,
+                    completed
+                ),
                 loading: !completed,
             },
         })
     }
 
+    getUpdatedNotifications(taskSummary = [], allCompleted) {
+        if (taskSummary.length <= this.state.notifications.length) {
+            return this.state.notifications
+        }
+
+        const currentNotificationLookup = new Set(
+            this.state.notifications.map(x => x.uid)
+        )
+
+        return taskSummary.reverse().map(x => ({
+            ...x,
+            completed:
+                allCompleted ||
+                currentNotificationLookup.has(x.uid) ||
+                x.completed,
+        }))
+    }
+
     verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
-        const jobIds = taskSummaryResponse
-            ? Object.keys(taskSummaryResponse)
-            : []
+        if (taskSummaryResponse && this.isJobInProgress(taskSummaryResponse)) {
+            const intervalId = this.startsPooling()
 
-        // looking for the most recent in progress job
-        for (let i = jobIds.length - 1; i >= 0; i--) {
-            const jobId = jobIds[i]
-            const notifications = taskSummaryResponse[jobId] || []
-
-            // found in progress job: show current notifications and starts pooling
-            if (this.isJobInProgress(notifications)) {
-                const intervalId = this.startsPooling()
-
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: LOADING,
-                    },
-                    pageState: {
-                        notifications,
-                        loading: true,
-                        jobId,
-                        intervalId,
-                    },
-                })
-
-                break
-            }
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    type: LOADING,
+                },
+                pageState: {
+                    notifications: taskSummaryResponse.reverse(),
+                    loading: true,
+                    intervalId,
+                },
+            })
         }
     }
 
     requestTaskSummary() {
         const api = this.context.d2.Api.getApi()
-        const lastId =
-            this.state.notifications && this.state.notifications.length > 0
-                ? this.state.notifications[0].uid
-                : null
-        const url = lastId
-            ? `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}`
-            : `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}`
-        api.get(url)
+
+        api.get(ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT)
             .then(taskSummaryResponse => {
                 /* not mounted finishes */
                 if (!this.isPageMounted()) {
@@ -351,6 +349,7 @@ class Analytics extends Page {
                         <CardText>
                             <NotificationsTable
                                 notifications={this.state.notifications}
+                                animateIncomplete
                             />
                         </CardText>
                     </Card>

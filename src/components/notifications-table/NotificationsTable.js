@@ -12,8 +12,9 @@ import {
     notificationStylesInfo,
     formatDateFromServer,
 } from './notifications-table.conf'
+import './style.css'
 
-const NotificationsTable = ({ notifications }) => {
+const NotificationsTable = ({ notifications, animateIncomplete }) => {
     const renderNotificationIcon = notification => {
         const notificationIconInfo = notificationStylesInfo[notification.level]
         if (
@@ -30,6 +31,8 @@ const NotificationsTable = ({ notifications }) => {
                     {notificationIconInfo.icon}
                 </FontIcon>
             )
+        } else if (animateIncomplete && !notification.completed) {
+            return <span className="notification-icon-busy">...</span>
         }
 
         return null
