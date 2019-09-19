@@ -189,30 +189,22 @@ class Analytics extends Page {
         this.context.updateAppState({
             showSnackbar: !completed,
             pageState: {
-                notifications: this.getUpdatedNotifications(
-                    taskSummary,
-                    completed
-                ),
+                notifications: this.getUpdatedNotifications(taskSummary),
                 loading: !completed,
             },
         })
     }
 
-    getUpdatedNotifications(taskSummary = [], allCompleted) {
+    getUpdatedNotifications(taskSummary = []) {
         if (taskSummary.length <= this.state.notifications.length) {
             return this.state.notifications
         }
 
-        const currentNotificationLookup = new Set(
-            this.state.notifications.map(x => x.uid)
-        )
+        const lastIndex = taskSummary.length - 1
 
-        return taskSummary.reverse().map(x => ({
+        return taskSummary.reverse().map((x, i) => ({
             ...x,
-            completed:
-                allCompleted ||
-                currentNotificationLookup.has(x.uid) ||
-                x.completed,
+            completed: x.completed || i < lastIndex,
         }))
     }
 
