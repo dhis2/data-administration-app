@@ -156,7 +156,11 @@ class ResourceTable extends Page {
 
     verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
         const taskSummary = taskSummaryResponse || []
-        if (taskSummaryResponse && this.isJobInProgress(taskSummary)) {
+        if (
+            taskSummaryResponse &&
+            taskSummaryResponse.length &&
+            this.isJobInProgress(taskSummary)
+        ) {
             const intervalId = this.startsPooling()
 
             this.context.updateAppState({

@@ -215,7 +215,11 @@ class Analytics extends Page {
     }
 
     verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
-        if (taskSummaryResponse && this.isJobInProgress(taskSummaryResponse)) {
+        if (
+            taskSummaryResponse &&
+            taskSummaryResponse.length &&
+            this.isJobInProgress(taskSummaryResponse)
+        ) {
             const intervalId = this.startsPooling()
 
             this.context.updateAppState({
