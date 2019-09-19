@@ -228,7 +228,6 @@ class Analytics extends Page {
                     type: LOADING,
                 },
                 pageState: {
-                    // reverse to sort oldest-newest
                     notifications: this.getUpdatedNotifications(
                         taskSummaryResponse
                     ),
