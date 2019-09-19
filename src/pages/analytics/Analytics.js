@@ -54,7 +54,6 @@ class Analytics extends Page {
             lastYears: DEFAULT_LAST_YEARS,
             notifications: [],
             intervalId: null,
-            allCompleted: false,
         }
 
         this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(
