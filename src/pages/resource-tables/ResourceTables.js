@@ -132,6 +132,7 @@ class ResourceTable extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
+        // reverse to sort oldest-newest
         const notifications = (taskSummaryResponse || []).reverse()
         const completed = !this.isJobInProgress(notifications)
 
@@ -142,6 +143,9 @@ class ResourceTable extends Page {
         this.context.updateAppState({
             showSnackbar: !completed,
             pageState: {
+                // This process only has 2 steps. When the first comes in
+                // it is effectively the in-progress task
+                // When the process is completed we mark both steps as completed
                 notifications: !completed
                     ? notifications
                     : notifications.map(x => ({ ...x, completed: true })),
@@ -161,6 +165,7 @@ class ResourceTable extends Page {
                     type: LOADING,
                 },
                 pageState: {
+                    // reverse to sort oldest-newest
                     notifications: taskSummary.reverse(),
                     loading: true,
                     intervalId,

@@ -153,6 +153,7 @@ class Analytics extends Page {
         }, PULL_INTERVAL)
 
     isJobInProgress = jobNotifications =>
+        // When the most recent job comes back as completed the whole process is done
         jobNotifications.every(notification => !notification.completed)
 
     initAnalyticsTablesGeneration() {
@@ -195,12 +196,18 @@ class Analytics extends Page {
     }
 
     getUpdatedNotifications(taskSummary = []) {
+        // Notification table needs to be updated when new tasks are added
         if (taskSummary.length <= this.state.notifications.length) {
             return this.state.notifications
         }
 
         const lastIndex = taskSummary.length - 1
 
+        // Reverse to sort oldest-newest
+        // Assumption: all tasks are completed, apart from the last one,
+        // which is the in-progress task.
+        // Exception is when the most recent task comes back as completed
+        // this indicates the entire process is done, so we respect that completed status.
         return taskSummary.reverse().map((x, i) => ({
             ...x,
             completed: x.completed || i < lastIndex,
@@ -217,6 +224,7 @@ class Analytics extends Page {
                     type: LOADING,
                 },
                 pageState: {
+                    // reverse to sort oldest-newest
                     notifications: taskSummaryResponse.reverse(),
                     loading: true,
                     intervalId,
