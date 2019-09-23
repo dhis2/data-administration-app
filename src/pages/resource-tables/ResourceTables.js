@@ -20,12 +20,7 @@ import pageStyles from '../Page.module.css'
 import styles from './ResourceTables.module.css'
 
 class ResourceTable extends Page {
-    static STATE_PROPERTIES = [
-        'loading',
-        'notifications',
-        'jobId',
-        'intervalId',
-    ]
+    static STATE_PROPERTIES = ['loading', 'notifications', 'intervalId']
 
     constructor() {
         super()
@@ -33,7 +28,6 @@ class ResourceTable extends Page {
         this.state = {
             loading: false,
             notifications: [],
-            jobId: null,
             intervalId: null,
         }
 
@@ -105,7 +99,7 @@ class ResourceTable extends Page {
         })
     }
 
-    isAnalyzingTables = () => this.state.jobId && this.state.intervalId
+    isAnalyzingTables = () => this.state.intervalId
 
     startsPooling = () =>
         setInterval(() => {
@@ -121,13 +115,11 @@ class ResourceTable extends Page {
         api.post(RESOURCE_TABLES_ENDPOINT)
             .then(response => {
                 if (this.isPageMounted() && response) {
-                    const jobId = response.response.id
                     const intervalId = setInterval(() => {
                         this.requestTaskSummary()
                     }, PULL_INTERVAL)
 
                     this.setState({
-                        jobId,
                         intervalId,
                     })
                 }
@@ -140,7 +132,8 @@ class ResourceTable extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const notifications = taskSummaryResponse[this.state.jobId] || []
+        // reverse to sort oldest-newest
+        const notifications = (taskSummaryResponse || []).reverse()
         const completed = !this.isJobInProgress(notifications)
 
         if (completed) {
@@ -150,55 +143,45 @@ class ResourceTable extends Page {
         this.context.updateAppState({
             showSnackbar: !completed,
             pageState: {
-                notifications,
+                // This process only has 2 steps. When the first comes in
+                // it is effectively the in-progress task
+                // When the process is completed we mark both steps as completed
+                notifications: !completed
+                    ? notifications
+                    : notifications.map(x => ({ ...x, completed: true })),
                 loading: !completed,
             },
         })
     }
 
     verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
-        const jobIds = taskSummaryResponse
-            ? Object.keys(taskSummaryResponse)
-            : []
+        const taskSummary = taskSummaryResponse || []
+        if (
+            taskSummaryResponse &&
+            taskSummaryResponse.length &&
+            this.isJobInProgress(taskSummary)
+        ) {
+            const intervalId = this.startsPooling()
 
-        // looking for the most recent in progress job
-        for (let i = jobIds.length - 1; i >= 0; i--) {
-            const jobId = jobIds[i]
-            const notifications = taskSummaryResponse[jobId] || []
-
-            // found in progress job: show current notifications and starts pooling
-            if (this.isJobInProgress(notifications)) {
-                const intervalId = this.startsPooling()
-
-                this.context.updateAppState({
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: LOADING,
-                    },
-                    pageState: {
-                        notifications,
-                        loading: true,
-                        jobId,
-                        intervalId,
-                    },
-                })
-
-                break
-            }
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    type: LOADING,
+                },
+                pageState: {
+                    // reverse to sort oldest-newest
+                    notifications: taskSummary.reverse(),
+                    loading: true,
+                    intervalId,
+                },
+            })
         }
     }
 
     requestTaskSummary() {
         const api = this.context.d2.Api.getApi()
-        const lastId =
-            this.state.notifications && this.state.notifications.length > 0
-                ? this.state.notifications[0].uid
-                : null
-        const url = lastId
-            ? `${RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT}?lastId=${lastId}`
-            : `${RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT}`
 
-        api.get(url)
+        api.get(RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT)
             .then(taskSummaryResponse => {
                 /* not mounted finishes */
                 if (!this.isPageMounted()) {
@@ -357,6 +340,7 @@ class ResourceTable extends Page {
                         <CardText>
                             <NotificationsTable
                                 notifications={this.state.notifications}
+                                animateIncomplete
                             />
                         </CardText>
                     </Card>
