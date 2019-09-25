@@ -8,6 +8,9 @@ import { configI18n } from './configI18n'
 import App from './App'
 import appTheme from './theme'
 import * as serviceWorker from './serviceWorker'
+
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import 'typeface-roboto'
 import './index.css'
 
 const { NODE_ENV, REACT_APP_DHIS2_BASE_URL } = process.env
