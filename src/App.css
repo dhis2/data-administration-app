@@ -1,6 +1,41 @@
+@import 'typeface-roboto/index.css';
+@import 'material-design-icons-iconfont/dist/material-design-icons.css';
+
+/* a hack to avoid the css module loader rewriting the imported css by
+ * using a :global class to set up the .material-icons class used in the
+ * app. 
+ *
+ * the @import statements above load the font files, so we don't need to
+ * duplicate that.
+ */
+:global(.material-icons) {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    font-display: block;
+}
+
 html {
-  background: #f3f3f3;
-  font-family: 'Roboto', sans-serif;
+    background: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -21,12 +56,12 @@ h1 {
 }
 
 .leftBar {
-  width: 295px;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  padding-top: 3rem;
+    width: 295px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    padding-top: 3rem;
 }
 
 .maxWith {
