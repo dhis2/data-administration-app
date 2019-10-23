@@ -1,0 +1,652 @@
+# Translators:
+# Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2019-06-26 08:00+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Integrity"
+msgstr "Integritas data"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
+msgstr ""
+"Jalankan pengecekan integritas data dan menyingkap anomali dan masalah-"
+"masalah setup metadata"
+
+msgid "Check Data Integrity"
+msgstr ""
+
+msgid "Performing data integrity checks..."
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr "Elemen data tanpa grup"
+
+msgid "Data elements violating exclusive group sets"
+msgstr ""
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr "Elemen data ditetapkan set data dengan tipe periode yang berbeda"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "Set data yang tidak tetapkan unit organisasi"
+
+msgid "Indicators with identical formulas"
+msgstr "Indikator dengan rumus yang identik"
+
+msgid "Indicators without groups"
+msgstr "Indikator tanpa grup"
+
+msgid "Invalid indicator numerators"
+msgstr ""
+
+msgid "Invalid indicator denominators"
+msgstr ""
+
+msgid "Indicators violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation units with cyclic references"
+msgstr "Unit organisasi dengan cyclic references"
+
+msgid "Orphaned organisation units"
+msgstr "Unit organisasi tidak berinduk"
+
+msgid "Organisation units without groups"
+msgstr "Unit organisasi tanpa grup"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr "Grup unit organisasi tanpa set grup"
+
+msgid "Validation rules without groups"
+msgstr "Validation rules tanpa grup"
+
+msgid "Invalid validation rule left side expressions"
+msgstr ""
+
+msgid "Invalid validation rule right side expressions"
+msgstr ""
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr ""
+
+msgid "Duplicate periods"
+msgstr "Duplikatkan periode"
+
+msgid "Maintenance"
+msgstr ""
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "Hapus tabel analitik"
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr "Pangkas periode"
+
+msgid "Remove expired invitations"
+msgstr "Hapus undangan yang sudah tidak berlaku"
+
+msgid "Drop SQL views"
+msgstr ""
+
+msgid "Create SQL views"
+msgstr ""
+
+msgid "Update category option combinations"
+msgstr ""
+
+msgid "Update organisation unit paths"
+msgstr "Update jalur unit organisasi"
+
+msgid "Clear application cache"
+msgstr ""
+
+msgid "Reload apps"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"Buat sumber tabel database untuk hierarki unit organisasi dan struktur set "
+"grup diantara yang lain."
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "Struktur unit organisasi"
+
+msgid "Organisation unit category option combo"
+msgstr ""
+
+msgid "Category option group set structure"
+msgstr "Struktur grup set Category option"
+
+msgid "Data element group set structure"
+msgstr "Struktur set grup elemen data"
+
+msgid "Indicator group set structure"
+msgstr "Struktur set grup indikator"
+
+msgid "Organisation unit group set structure"
+msgstr "Struktur set grup unit organisasi"
+
+msgid "Category structure"
+msgstr ""
+
+msgid "Data element category option combo name"
+msgstr "Nama elemen data category option combo"
+
+msgid "Data element structure"
+msgstr "Struktur elemen data"
+
+msgid "Period structure"
+msgstr "Struktur periode"
+
+msgid "Date period structure"
+msgstr "Struktur tanggal periode"
+
+msgid "Data element category option combinations"
+msgstr ""
+
+msgid "Data Statistics"
+msgstr "Statistik data"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"Browse jumlah obyek di database, seperti elemen data, indikator, data set "
+"dan nilai data."
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr "Tipe Obyek"
+
+msgid "Last hour"
+msgstr "1 jam terakhir"
+
+msgid "Today"
+msgstr "Hari ini"
+
+msgid "Last"
+msgstr "Terakhir"
+
+msgid "days"
+msgstr ""
+
+msgid "Users logged in"
+msgstr "User sedang log in"
+
+msgid "User account invitations"
+msgstr "Undangan akun user"
+
+msgid "Pending invitations"
+msgstr "Undangan yang tertunda"
+
+msgid "Expired invitations"
+msgstr "Undangan sudah tidak berlaku"
+
+msgid "Data values"
+msgstr "Nilai data"
+
+msgid "Events"
+msgstr "Event"
+
+msgid "Indicators"
+msgstr "Indikator"
+
+msgid "Periods"
+msgstr "Periode"
+
+msgid "Organisation units"
+msgstr "Unit organisasi"
+
+msgid "Validation rules"
+msgstr "Aturan validasi"
+
+msgid "Programs"
+msgstr "Program-program"
+
+msgid "Data elements"
+msgstr "Data elemen"
+
+msgid "Organisation unit groups"
+msgstr "Grup unit organisasi"
+
+msgid "Pivot tables"
+msgstr "Tabel pivot"
+
+msgid "Indicator types"
+msgstr "Tipe indikator"
+
+msgid "Data sets"
+msgstr "Data set"
+
+msgid "User groups"
+msgstr ""
+
+msgid "Users"
+msgstr "User"
+
+msgid "Maps"
+msgstr "Peta"
+
+msgid "Indicator groups"
+msgstr "Grup indikator"
+
+msgid "Charts"
+msgstr "Grafik"
+
+msgid "Data element groups"
+msgstr "Grup data elemen"
+
+msgid "Dashboards"
+msgstr ""
+
+msgid "Lock Exception Management"
+msgstr "Manajemen Lock Exception"
+
+msgid "Lock Exception"
+msgstr ""
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
+msgstr ""
+"Tambah atau hapus pengecualian aturan standar untuk mengunci formulir entri "
+"data"
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr "Anda yakin?"
+
+msgid "CONFIRM"
+msgstr ""
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Memperbarui Pohon Unit Organisasi.."
+
+msgid "For organisation units within"
+msgstr ""
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Data Set"
+msgstr "Data Set"
+
+msgid "Organisation Unit"
+msgstr "Unit Organisasi"
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr "Pilih"
+
+msgid "Deselect"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr "Hapus"
+
+msgid "Actions"
+msgstr ""
+
+msgid "of"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "For all organisation units:"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "Pembuatan Nilai Min-Maks"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"Buat nilai min-maks yang dapat digunakan untuk validasi entri data dan "
+"validasi proses."
+
+msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+msgid "Analytics tables management"
+msgstr ""
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr ""
+
+msgid "START EXPORT"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
+msgstr ""
+
+msgid "Skip generation of event data"
+msgstr ""
+
+msgid "Skip generation of enrollment data"
+msgstr ""
+
+msgid "Analytics Tables Update"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "[ All ]"
+msgstr ""
+
+msgid "Settings"
+msgstr "Setting"
+
+msgid "Search apps"
+msgstr "Cari app"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Account"
+msgstr "Akun"
+
+msgid "Help"
+msgstr "Bantuan"
+
+msgid "Log out"
+msgstr "Keluar"
+
+msgid "About DHIS 2"
+msgstr "Tentang DHIS2"
+
+msgid "Manage my apps"
+msgstr "Kelola app saya"
+
+msgid "No results found"
+msgstr "Tidak ada hasil ditemukan"
+
+msgid "Interpretations"
+msgstr "Interpretasi"
+
+msgid "Messages"
+msgstr "Pesan"
