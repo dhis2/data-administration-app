@@ -1,0 +1,621 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-08-14T11:59:48.325Z\n"
+"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Data Integrity"
+msgstr "ڈیٹا کی سالمیت"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
+msgstr ""
+"اعداد و شمار سالمیت کی جانچ پڑتال کریں اور میٹا ڈیٹا سیٹ اپ میں انضمام اور "
+"مسائل کو بے نقاب کریں."
+
+msgid "Check Data Integrity"
+msgstr ""
+
+msgid "Performing data integrity checks..."
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr "ڈیٹا عناصر کے بغیر"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "ڈیٹا عناصر خصوصی گروپ سیٹ کی خلاف ورزی کرتے ہیں"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr ""
+"اعداد و شمار کے مختلف عناصر کے ساتھ اعداد و شمار کے مقرر کردہ اعداد و شمار "
+"عناصر"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "ڈیٹا سیٹ تنظیم تنظیموں کو تفویض نہیں کرتی"
+
+msgid "Indicators with identical formulas"
+msgstr "ایک ہی فارمولا کے ساتھ اشارے"
+
+msgid "Indicators without groups"
+msgstr "گروہوں کے بغیر اشارے"
+
+msgid "Invalid indicator numerators"
+msgstr "غلط اشارے numerators"
+
+msgid "Invalid indicator denominators"
+msgstr "غلط اشارے ڈومینٹرز"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "خصوصی گروپ سیٹ کی خلاف ورزی کرنے والے اشارے"
+
+msgid "Organisation units with cyclic references"
+msgstr "سائیکل یونین کے ساتھ تنظیم یونٹس"
+
+msgid "Orphaned organisation units"
+msgstr "یتیم تنظیم تنظیم یونٹس"
+
+msgid "Organisation units without groups"
+msgstr "تنظیموں کے بغیر تنظیموں کے یونٹ"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr "آرگنائزیشن یونٹ گروپ گروپ کے بغیر بغیر"
+
+msgid "Validation rules without groups"
+msgstr "گروہوں کے بغیر توثیق کے قوانین"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "غلط توثیق کا اصول بائیں جانب اظہار"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "غلط توثیقی قاعدہ دائیں جانب اظہار"
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr "غلط زمرہ مجموعہ"
+
+msgid "Duplicate periods"
+msgstr "ڈپلیکیٹ مدت"
+
+msgid "Maintenance"
+msgstr "دیکھ بھال"
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "تجزیہ کاری میزیں صاف کریں"
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr "پراون دور"
+
+msgid "Remove expired invitations"
+msgstr "ختم شدہ دعوت نامہ ہٹائیں"
+
+msgid "Drop SQL views"
+msgstr "SQL خیالات چھوڑیں"
+
+msgid "Create SQL views"
+msgstr "SQL خیالات بنائیں"
+
+msgid "Update category option combinations"
+msgstr "تازہ ترین قسم کا اختیار مجموعہ"
+
+msgid "Update organisation unit paths"
+msgstr "تنظیم یونٹ راستوں کو اپ ڈیٹ کریں"
+
+msgid "Clear application cache"
+msgstr "درخواست کیش صاف کریں"
+
+msgid "Reload apps"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"تنظیم یونٹ کے تنظیمی ڈھانچے اور گروپ سیٹ ڈھانچے کے لئے دوسروں کے درمیان "
+"وسائل ڈیٹا بیس کی میزیں بنائیں."
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "تنظیم یونٹ کی ساخت"
+
+msgid "Organisation unit category option combo"
+msgstr "تنظیم یونٹ قسم کا اختیار کامبو"
+
+msgid "Category option group set structure"
+msgstr "زمرہ اختیار گروپ کی تشکیل"
+
+msgid "Data element group set structure"
+msgstr "ڈیٹا عنصر گروپ سیٹ ڈھانچہ"
+
+msgid "Indicator group set structure"
+msgstr "اشارے گروپ سیٹ ڈھانچہ"
+
+msgid "Organisation unit group set structure"
+msgstr "تنظیم یونٹ گروپ کی تشکیل"
+
+msgid "Category structure"
+msgstr "زمرہ کی ساخت"
+
+msgid "Data element category option combo name"
+msgstr "ڈیٹا عنصر کی قسم کا اختیار کامبو نام"
+
+msgid "Data element structure"
+msgstr "ڈیٹا عنصر کی ساخت"
+
+msgid "Period structure"
+msgstr "مدت کی ساخت"
+
+msgid "Date period structure"
+msgstr "تاریخ کی مدت کی ساخت"
+
+msgid "Data element category option combinations"
+msgstr "ڈیٹا عنصر زمرہ اختیار کے مجموعے"
+
+msgid "Data Statistics"
+msgstr "ڈیٹا کے اعداد و شمار"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"ڈیٹا بیس میں اشیاء کی تعداد کو براؤز کریں، جیسے ڈیٹا عناصر، اشارے، ڈیٹا سیٹ "
+"اور ڈیٹا اقدار."
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr "آبجیکٹ کی قسم"
+
+msgid "Last hour"
+msgstr "آخری گھنٹہ"
+
+msgid "Today"
+msgstr "آج"
+
+msgid "Last"
+msgstr "آخری"
+
+msgid "days"
+msgstr "دن"
+
+msgid "Users logged in"
+msgstr "لاگ ان صارفین"
+
+msgid "User account invitations"
+msgstr "صارف اکاؤنٹ کی دعوت نامہ"
+
+msgid "Pending invitations"
+msgstr "موصول ہونے والی دعوت نامہ"
+
+msgid "Expired invitations"
+msgstr "متوقع دعوت نامہ"
+
+msgid "Data values"
+msgstr "ڈیٹا اقدار"
+
+msgid "Events"
+msgstr "تقریبات"
+
+msgid "Indicators"
+msgstr "اشارے"
+
+msgid "Periods"
+msgstr "دور"
+
+msgid "Organisation units"
+msgstr "تنظیمی یونٹس"
+
+msgid "Validation rules"
+msgstr "توثیقی قائدہ"
+
+msgid "Programs"
+msgstr "پروگرامز"
+
+msgid "Data elements"
+msgstr "ڈیٹا عنصر"
+
+msgid "Organisation unit groups"
+msgstr "تنظیمی یونٹ کے گروپس"
+
+msgid "Pivot tables"
+msgstr "پیوٹ ٹیبلز"
+
+msgid "Indicator types"
+msgstr "اشارے کی اقسام"
+
+msgid "Data sets"
+msgstr "ڈیٹا سیٹس"
+
+msgid "User groups"
+msgstr "صارف کے گروہ"
+
+msgid "Users"
+msgstr "صارف"
+
+msgid "Maps"
+msgstr "نقسے"
+
+msgid "Indicator groups"
+msgstr "اشارے بمع گروپ"
+
+msgid "Charts"
+msgstr "چارٹس"
+
+msgid "Data element groups"
+msgstr "ڈیٹا عناصر کے گروپ"
+
+msgid "Dashboards"
+msgstr "ڈیشبورڈز"
+
+msgid "Lock Exception Management"
+msgstr "لاک استقبال مینجمنٹ"
+
+msgid "Lock Exception"
+msgstr "لاک استقبال"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
+msgstr ""
+"ڈیٹا انٹری فارموں کو تالا لگا کرنے کیلئے معیاری قواعد میں استثنا شامل کریں "
+"یا ہٹائیں."
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr "کیا تمہیں یقین ہے؟"
+
+msgid "CONFIRM"
+msgstr ""
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "For organisation units within"
+msgstr "تنظیم یونٹس کے اندر اندر"
+
+msgid "Period"
+msgstr "مدت"
+
+msgid "Data Set"
+msgstr "ڈیٹا سیٹ"
+
+msgid "Organisation Unit"
+msgstr ""
+
+msgid "Organisation Unit Group"
+msgstr ""
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr "منتخب کریں"
+
+msgid "Deselect"
+msgstr "منتخب کریں"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Actions"
+msgstr "ایکشنز"
+
+msgid "of"
+msgstr "کی"
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "For all organisation units:"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "مائن میکس ویلیو نسل"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"ڈیٹا انٹری اور توثیق کے عمل کے دوران ڈیٹا کی توثیق کے لئے استعمال کیا جا "
+"سکتا ہے جس میں کم سے زیادہ اقدار پیدا کریں."
+
+msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr "تنظیم یونٹ کا چناؤ"
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+msgid "Analytics tables management"
+msgstr ""
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr ""
+
+msgid "START EXPORT"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
+msgstr ""
+
+msgid "Skip generation of event data"
+msgstr ""
+
+msgid "Skip generation of enrollment data"
+msgstr ""
+
+msgid "Analytics Tables Update"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "[ All ]"
+msgstr ""
