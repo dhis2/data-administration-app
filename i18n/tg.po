@@ -1,35 +1,35 @@
-#, fuzzy
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Tajik (https://www.transifex.com/hisp-uio/teams/100509/tg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.0.0b3\n"
+"Language: tg\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Integrity"
 msgstr "Якпорчагии иттилоот"
 
 msgid ""
-"Run data integrity checks and unveil anomalies and problems in the meta data "
-"setup."
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
 msgstr ""
 "Санҷишҳои якпорчагии иттилоотро иҷро кунед ва аномалияҳо ва мушкилоти "
 "танзими метададтаро ошкор намоед."
 
-#, fuzzy
 msgid "Check Data Integrity"
-msgstr "Якпорчагии иттилоот"
+msgstr ""
 
-#, fuzzy
 msgid "Performing data integrity checks..."
-msgstr "Таъмир гузаронида мешавад"
+msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -37,9 +37,8 @@ msgstr ""
 msgid "RUN INTEGRITY CHECKS"
 msgstr ""
 
-#, fuzzy
 msgid "Data elements without data set"
-msgstr "Унсурҳои иттилооти бе маҷмӯи иттилоот"
+msgstr ""
 
 msgid "Data elements without groups"
 msgstr "Унсурҳои иттилооти бе гурӯҳҳо"
@@ -49,8 +48,8 @@ msgstr "Унсурҳои иттилоот, ки маҷмӯъҳои гурӯҳи�
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
-"Унсурҳои иттилооте, ки бо давраҳои гуногун ба маҷмӯъҳои иттилоот таъин карда "
-"шудаанд"
+"Унсурҳои иттилооте, ки бо давраҳои гуногун ба маҷмӯъҳои иттилоот таъин карда"
+" шудаанд"
 
 msgid "Data sets not assigned to organisation units"
 msgstr "Маҷмӯъҳои иттилооти ба воҳидҳои сохторӣ таъиннашуда"
@@ -80,7 +79,7 @@ msgid "Organisation units without groups"
 msgstr "Воҳидҳои сохторӣ бе гурӯҳҳо"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr "Воҳидҳои сохторие, ки маҷмӯи гурӯҳҳои истисноиро вайрон мекунанд"
+msgstr ""
 
 msgid "Organisation unit groups without group sets"
 msgstr "Воҳидҳои сохторӣ бе маҷмӯи гурӯҳҳо"
@@ -94,17 +93,14 @@ msgstr "Ифодаҳои тарафи чапи қоидаи санҷиши эъ�
 msgid "Invalid validation rule right side expressions"
 msgstr "Ифодаҳои тарафи рости қоидаи санҷиши эътибор"
 
-#, fuzzy
 msgid "Invalid program indicator expressions"
-msgstr "Суратҳои нодурусти индикатор"
+msgstr ""
 
-#, fuzzy
 msgid "Invalid program indicator filters"
-msgstr "Махраҷҳои нодурусти индикатор"
+msgstr ""
 
-#, fuzzy
 msgid "There are data elements in the form, but not in the form or sections"
-msgstr "Унсурҳои иттилоот дар маҷмӯи иттилот ҳастанд, на дар шакл ё қисмҳо"
+msgstr ""
 
 msgid "Invalid category combinations"
 msgstr ""
@@ -115,28 +111,22 @@ msgstr ""
 msgid "Maintenance"
 msgstr "Таъмир"
 
-#, fuzzy
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
-"Ҷадвалҳои захиравии пойгоҳи иттилоотиро барои воҳиди сохторӣ ва сохтори "
-"маҷмӯи гурӯҳҳо ва ғайра таҳия кунед."
 
-#, fuzzy
 msgid "Perform Maintenance"
-msgstr "Гузаронидани таъмир"
+msgstr ""
 
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
-#, fuzzy
 msgid "Performing Maintenance..."
-msgstr "Таъмир гузаронида мешавад"
+msgstr ""
 
-#, fuzzy
 msgid "Maintenance done"
-msgstr "Таъмир"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -186,9 +176,8 @@ msgstr ""
 msgid "Reload apps"
 msgstr ""
 
-#, fuzzy
 msgid "Resource Tables"
-msgstr "Ҷадвали захиравӣ"
+msgstr ""
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -197,20 +186,14 @@ msgstr ""
 "Ҷадвалҳои захиравии пойгоҳи иттилоотиро барои воҳиди сохторӣ ва сохтори "
 "маҷмӯи гурӯҳҳо ва ғайра таҳия кунед."
 
-#, fuzzy
 msgid "Generate Resource Tables"
-msgstr "Таҳиякунии ҷадвали захиравӣ"
+msgstr ""
 
 msgid "GENERATE TABLES"
 msgstr ""
 
-#, fuzzy
-msgid "Generating Resource Tables..."
-msgstr "Таҳиякунии ҷадвали захиравӣ"
-
-#, fuzzy
 msgid "Resource Tables generated"
-msgstr "Ҷадвалҳои захиравӣ таҳия шуданд"
+msgstr ""
 
 msgid "An unexpected error happened during operation"
 msgstr ""
@@ -258,23 +241,20 @@ msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
-"Шумораи объектҳои дар пойгоҳи иттилоотӣ бударо, аз қабили унсурҳои иттилоот, "
-"индикаторҳо, маҷмӯъҳои иттилоот ва қиматҳои иттилоот, паймоиш кунед."
+"Шумораи объектҳои дар пойгоҳи иттилоотӣ бударо, аз қабили унсурҳои иттилоот,"
+" индикаторҳо, маҷмӯъҳои иттилоот ва қиматҳои иттилоот, паймоиш кунед."
 
-#, fuzzy
 msgid "Overview Data Statistics"
-msgstr "Омори иттилоот"
+msgstr ""
 
-#, fuzzy
 msgid "Loading Data Statistics..."
-msgstr "Омори иттилоот"
+msgstr ""
 
 msgid "It was not possible to load Data Statistics"
 msgstr ""
 
-#, fuzzy
 msgid "No data to show."
-msgstr "Ягон иттилоот ёфт нашуд"
+msgstr ""
 
 msgid "Object type"
 msgstr "Навъи объект"
@@ -307,29 +287,25 @@ msgid "Data values"
 msgstr "Қиматҳои иттлоот"
 
 msgid "Events"
-msgstr ""
+msgstr "Рӯйдодҳо"
 
-#, fuzzy
 msgid "Indicators"
-msgstr "Индикатор"
+msgstr "Индикаторҳо"
 
 msgid "Periods"
 msgstr "Давраҳо"
 
-#, fuzzy
 msgid "Organisation units"
-msgstr "Воҳиди сохторӣ"
+msgstr "воҳидҳои сохторӣ"
 
-#, fuzzy
 msgid "Validation rules"
-msgstr "Қоидаҳои санҷиши эътибор бе гурӯҳҳо"
+msgstr "Қоидаҳои санҷиши эътибор"
 
 msgid "Programs"
-msgstr ""
+msgstr "Барномаҳо"
 
-#, fuzzy
 msgid "Data elements"
-msgstr "Унсури иттилоот"
+msgstr "Унсурҳои иттилоот"
 
 msgid "Organisation unit groups"
 msgstr "Гурӯҳҳои воҳидҳои сохторӣ"
@@ -340,13 +316,11 @@ msgstr ""
 msgid "Indicator types"
 msgstr "Навъҳои индикатор"
 
-#, fuzzy
 msgid "Data sets"
-msgstr "Маҷмӯи иттилоот"
+msgstr "Маҷмӯъҳои иттилоот"
 
-#, fuzzy
 msgid "User groups"
-msgstr "Гурӯҳи корбарон"
+msgstr "Гурӯҳҳои корбарон"
 
 msgid "Users"
 msgstr "Корбарон"
@@ -354,16 +328,14 @@ msgstr "Корбарон"
 msgid "Maps"
 msgstr ""
 
-#, fuzzy
 msgid "Indicator groups"
-msgstr "Гурӯҳи индикаторҳо"
+msgstr "Гурӯҳҳои индикаторҳо"
 
 msgid "Charts"
 msgstr ""
 
-#, fuzzy
 msgid "Data element groups"
-msgstr "Гурӯҳи унсурҳои иттилоот"
+msgstr "Гурӯҳҳои унсурҳои иттилоот"
 
 msgid "Dashboards"
 msgstr ""
@@ -374,17 +346,15 @@ msgstr "Идоракунии истиснои банд"
 msgid "Lock Exception"
 msgstr "Истинои банд"
 
-#, fuzzy
 msgid "Batch Deletion"
-msgstr "Несткунии баста"
+msgstr ""
 
-#, fuzzy
 msgid "Add new lock exception"
-msgstr "Сохтани истиснои банди нав"
+msgstr ""
 
 msgid ""
-"Add or remove exceptions to the the standard rules for locking of data entry "
-"forms."
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
 msgstr ""
 "Истисноҳо ба қоидаҳои стандартии санҷиши эътиборро барои бастани шаклҳои "
 "вуруди иттиллот илова ва тоза кунед."
@@ -398,63 +368,53 @@ msgstr ""
 msgid "ADD"
 msgstr ""
 
-#, fuzzy
 msgid "Loading Lock Exceptions..."
-msgstr "Истинои банд"
+msgstr ""
 
-#, fuzzy
 msgid "Adding Lock Exception..."
-msgstr "Истинои банд"
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception removed"
-msgstr "Истинои банд"
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception Added"
-msgstr "Истинои банд"
+msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Оё боварӣ доред?"
 
 msgid "CONFIRM"
 msgstr ""
 
-#, fuzzy
 msgid "Select a Data Set"
-msgstr "Лутфан маҷмӯи иттилоотро интихоб кунед"
+msgstr ""
 
-#, fuzzy
 msgid "Updating Organisation Units Tree..."
-msgstr "Ҳамроҳшавии воҳиди сохторӣ"
+msgstr ""
 
-#, fuzzy
 msgid "For organisation units within"
-msgstr "Воҳидҳои сохтории \"ятим\""
+msgstr ""
 
 msgid "Period"
 msgstr "Давра"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Маҷмӯи иттилоот"
 
 msgid "Organisation Unit"
 msgstr "Воҳиди сохторӣ"
 
 msgid "Organisation Unit Group"
-msgstr "Гурӯҳи воҳидҳои сохторӣ"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Level"
-msgstr "Ҳамроҳшавии воҳиди сохторӣ"
+msgstr ""
 
-#, fuzzy
 msgid "Select"
-msgstr "Ҳама"
+msgstr "Интихоб кунед"
 
-#, fuzzy
 msgid "Deselect"
-msgstr "Интихоб нашудааст"
+msgstr ""
 
 msgid "Select All Org Units"
 msgstr ""
@@ -463,17 +423,16 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Ном"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Тоза кардан"
 
-#, fuzzy
 msgid "Actions"
-msgstr "Имконот"
+msgstr ""
 
 msgid "of"
 msgstr ""
@@ -490,9 +449,8 @@ msgstr ""
 msgid "bi monthly"
 msgstr ""
 
-#, fuzzy
 msgid "day"
-msgstr "Имрӯз"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -578,6 +536,9 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
+msgid "For all organisation units:"
+msgstr ""
+
 msgid "Min-Max Value Generation"
 msgstr "Таҳияи қиматҳои мин-макс"
 
@@ -588,38 +549,32 @@ msgstr ""
 "Қиматҳои мин-макс-ро, ки метавонанд барои санҷиши эътибори иттилоот ҳангоми "
 "вуруди иттилоот ва раванди санҷиши эътибор истифода шаванд, таҳия кунед."
 
-#, fuzzy
 msgid "Generate Min-Max Value"
-msgstr "Таҳияи қиматҳои мин/макс"
+msgstr ""
 
 msgid "It was not possible to load data"
 msgstr ""
 
-#, fuzzy
 msgid "Select Data set and Organisation Unit"
-msgstr "Интихоби воҳиди сохтории болоӣ"
+msgstr ""
 
-#, fuzzy
 msgid "Doing Min Max generation..."
-msgstr "Таҳияи қиматҳои мин-макс"
+msgstr ""
 
 msgid "Removing Min Max generation..."
 msgstr ""
 
-#, fuzzy
 msgid "Min Max generation done"
-msgstr "Таҳияи қиматҳои мин-макс"
+msgstr ""
 
 msgid "Min Max removal done"
 msgstr ""
 
-#, fuzzy
 msgid "Loading data sets"
-msgstr "Маҷмӯъҳои иттилооти мавҷуда"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Selection"
-msgstr "Ҳамроҳшавии воҳиди сохторӣ"
+msgstr "Интихоби воҳиди сохторӣ"
 
 msgid "GENERATE"
 msgstr ""
@@ -627,771 +582,73 @@ msgstr ""
 msgid "REMOVE"
 msgstr ""
 
-#~ msgid "Data Administration"
-#~ msgstr "Маъмурияти иттилоот"
+msgid "Analytics tables management"
+msgstr ""
 
-#~ msgid "Period Type"
-#~ msgstr "Навъи давара"
+msgid "Analytics Tables"
+msgstr ""
 
-#~ msgid "Please select at least one option"
-#~ msgstr "Лутфан ақаллан як имконро интихоб кунед"
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
 
-#~ msgid "Maintenance performed"
-#~ msgstr "Таъмир гузаронида шуд"
+msgid "Analytics tables update"
+msgstr "Навсозии ҷадвалҳои таҳлилӣ"
 
-#~ msgid "Clear data set completeness"
-#~ msgstr "Мукаммалии маҷмӯи иттилоотро тоза кунед"
+msgid "START EXPORT"
+msgstr ""
 
-#~ msgid "Organisation unit group set structure normalized"
-#~ msgstr "Сохтори маҷмӯи гурҳҳои воҳидҳои сохторӣ муътадил гардонида шуд"
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
 
-#~ msgid "Generate tables"
-#~ msgstr "Ҷадвалҳои умумӣ"
+msgid "Skip generation of resource tables"
+msgstr ""
 
-#~ msgid "Cache Statistics"
-#~ msgstr "Омори кэш"
+msgid "Skip generation of event data"
+msgstr ""
 
-#~ msgid "Second Level Cache Statistics"
-#~ msgstr "Омори кэши сатҳи дуввум"
+msgid "Skip generation of enrollment data"
+msgstr ""
 
-#~ msgid "Region name"
-#~ msgstr "Номи минтақа"
+msgid "Analytics Tables Update"
+msgstr ""
 
-#~ msgid "Mem count"
-#~ msgstr "Шумораи хотира"
+msgid "Number of last years of data to include"
+msgstr ""
 
-#~ msgid "Disk count"
-#~ msgstr "Шумораи диск"
+msgid "[ All ]"
+msgstr ""
 
-#~ msgid "Mem size"
-#~ msgstr "Андозаи хотира"
+msgid "Settings"
+msgstr "Танзимот"
 
-#~ msgid "Total Second Level Cache"
-#~ msgstr "Ҳамагӣ кэши сатҳи дуввум"
+msgid "Search apps"
+msgstr ""
 
-#~ msgid "Total Query Cache"
-#~ msgstr "Ҳамаги кэши пурсиш"
+msgid "Profile"
+msgstr "Профил"
 
-#~ msgid "Query Cache Statistics"
-#~ msgstr "Омори кэши пурсиш"
+msgid "Account"
+msgstr "Ҳисоб"
 
-#~ msgid "Query name"
-#~ msgstr "Номи пурсиш"
+msgid "Help"
+msgstr "Кӯмак"
 
-#~ msgid "Exec count"
-#~ msgstr "Шумораи иҷроиш"
+msgid "Log out"
+msgstr "Хориҷ шудан"
 
-#~ msgid "Exec avg time"
-#~ msgstr "Вақти миёнаи иҷроиш"
+msgid "About DHIS 2"
+msgstr "Дар бораи DHIS 2"
 
-#~ msgid "Exec max time"
-#~ msgstr "Вақти максималии иҷроиш"
+msgid "Manage my apps"
+msgstr ""
 
-#~ msgid "Exec min time"
-#~ msgstr "Вақти минималии иҷроиш"
+msgid "No results found"
+msgstr ""
 
-#~ msgid "Exec row count"
-#~ msgstr "Шумораи сатрҳои иҷроиш"
+msgid "Interpretations"
+msgstr "Тафсирҳо"
 
-#~ msgid "Clear cache"
-#~ msgstr "Пок кардани кэш"
-
-#~ msgid "Data dictionaries"
-#~ msgstr "Луғатҳои иттилоот"
-
-#~ msgid "Number of objects"
-#~ msgstr "Шумораи объектҳо"
-
-#~ msgid "Data Browser"
-#~ msgstr "Браузери иттилоот"
-
-#~ msgid "From date"
-#~ msgstr "Аз санаи"
-
-#~ msgid "To date"
-#~ msgstr "То санаи"
-
-#~ msgid "Browse by"
-#~ msgstr "Паймоиш аз рӯи"
-
-#~ msgid "Select mode"
-#~ msgstr "Интихоби реҷа"
-
-#~ msgid "Browse"
-#~ msgstr "Паймоиш"
-
-#~ msgid "Select Period Type"
-#~ msgstr "Интихоби навъи давра"
-
-#~ msgid "Organisation units violating compulsory group sets"
-#~ msgstr "Воҳидҳои сохторие, ки маҷмӯи гурӯҳҳои ҳатмиро вайрон мекунанд"
-
-#~ msgid "Data integrity checks performed"
-#~ msgstr "Санҷишҳои якпорчагии иттилоот гузаронида шуданд"
-
-#~ msgid "Value"
-#~ msgstr "Қимат"
-
-#~ msgid "Found"
-#~ msgstr "Ёфт шуд"
-
-#~ msgid "values"
-#~ msgstr "қиматҳо"
-
-#~ msgid "Data element Group"
-#~ msgstr "Гурӯҳи унсурҳои иттилоот"
-
-#~ msgid "Aggregated data values"
-#~ msgstr "Қиматҳои ҳамҷояшудаи иттилоот"
-
-#~ msgid "Aggregated indicator values"
-#~ msgstr "Қиматҳои ҳамҷояшудаи индикаторҳо"
-
-#~ msgid "Organisation Unit Pruning"
-#~ msgstr "Буриши воҳиди сохторӣ"
-
-#~ msgid ""
-#~ "Browse the database and get an overview of where data exists. View and "
-#~ "export counts of data elements as well as raw data."
-#~ msgstr ""
-#~ "Пойгоҳи иттиллотиро паймоиш кунед ва тасаввурот ҳосил кунед, ки иттилоот "
-#~ "дар куҷо вуҷуд дорад. Шумораи унсурҳои иттилоот ва иттилооти ибтидоиро "
-#~ "бубинед ва содирот кунед."
-
-#~ msgid ""
-#~ "Archive data which is not currently relevant to your system in order to "
-#~ "improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Иттилоотеро, ки дар айни замон ба системаи шумо марбут нест, бойгонӣ "
-#~ "кунед, то ки самаранокии кор беҳтар шавад. Иттилоотро аз бойгонӣ "
-#~ "баровардан низ мумкин аст."
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system. Data "
-#~ "can also be unarchived."
-#~ msgstr ""
-#~ "Иттилоотеро, ки дар айни замон ба системаи шумо марбут нест, бойгонӣ "
-#~ "кунед. Иттилоотро аз бойгонӣ баровардан низ мумкин аст."
-
-#~ msgid ""
-#~ "Perform maintenance tasks such as pruning of data values and periods and "
-#~ "clearing of database resource tables."
-#~ msgstr ""
-#~ "Вазифаҳои нигоҳубинро аз қабили бурриши қиматҳои иттилоот ва давраҳо ва "
-#~ "тоза кардани ҷадвалҳои захиравии пойгоҳи иттилоотӣ иҷро кунед."
-
-#~ msgid ""
-#~ "Merge two organisation units and their data values. Data is merged "
-#~ "depending on existence and date of last modification."
-#~ msgstr ""
-#~ "Ду воҳиди сохторӣ ва қиматҳои иттилоти онҳоро якҷоя кунед. Иттилоот "
-#~ "вобаста аз вуҷуд доштани он ва санаи тағйироти охирин якҷоя карда мешавад."
-
-#~ msgid ""
-#~ "Monitor and clear the system database cache status. Provides information "
-#~ "on object and query caches."
-#~ msgstr ""
-#~ "Ҳолати кэши системаи пойгоҳи иттилоотиро назорат ва пок кунед. Дар бораи "
-#~ "объект ва кэши пурсиш маълумот пешниҳод мекунад."
-
-#~ msgid ""
-#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
-#~ "and deploying local databases."
-#~ msgstr ""
-#~ "Зердарахтҳоро аз дарахти воҳидҳои сохторӣ тоза кунед. Ин ҳангоми сохтан "
-#~ "ва ба истифода додани пойгоҳҳои иттилоотии маҳаллӣ муфид аст."
-
-#~ msgid ""
-#~ "Define which data elements for which zero values should be stored or "
-#~ "ignored. Useful for reducing database size."
-#~ msgstr ""
-#~ "Муайян намоед, ки барои кадом унсурҳои иттилоот қиматҳои сифрӣ бояд ҳифз "
-#~ "карда шванд ё сарфи назар карда шаванд. Ин барои коҳиш додан андозаи "
-#~ "пойгоҳи иттилоотӣ муфид аст."
-
-#~ msgid ""
-#~ "Eliminate data registered for duplicate data elements. Useful when data "
-#~ "has been entered for identical data elements."
-#~ msgstr ""
-#~ "Иттилоотеро, ки барои унсурҳои иттилооти такроршуда ба қайд гирифта "
-#~ "шудааст, нест кунед. Ин дар ҳолати иттилооте, ки барои унсурҳои иттилооти "
-#~ "якхела ворид карда шудааст, муфид аст."
-
-#~ msgid ""
-#~ "Create SQL database views. These views will typically use the resource "
-#~ "tables to provide convenient views for third-party tools."
-#~ msgstr ""
-#~ "Намудҳои пойгоҳи иттилоотии SQL-ро созед. Ин намудҳо одатан ҷадвалҳои "
-#~ "захиравиро истифода мебаранд, ки барои абзорҳои тарафҳои сеюм намудҳои "
-#~ "қулайро муҳайё менамоянд."
-
-#~ msgid ""
-#~ "Create constants which can be included in expressions of indicator and "
-#~ "validation rules."
-#~ msgstr ""
-#~ "Доимиҳое созед, ки метавонанд ба ифодаи индикатор ва қоидаҳои санҷиши "
-#~ "эътибор шомил карда шаванд."
-
-#~ msgid ""
-#~ "Create and update dynamic attributes. Attributes can be used for data "
-#~ "elements, indicators, organisation units and users."
-#~ msgstr ""
-#~ "Нишонҳои динамикиро созед ва навсозӣ кунед. Нишонҳо метавонанд барои "
-#~ "унсурҳои иттилоот, индикаторҳо, воҳидҳои сохторӣ ва корбарон истифода "
-#~ "шаванд."
-
-#~ msgid ""
-#~ "Create option sets which can be included in data elements and produce "
-#~ "drop-down lists in data entry forms."
-#~ msgstr ""
-#~ "Маҷмӯъҳои имконотеро созед, ки метавонанд ба унсурҳои иттилоот шомил "
-#~ "карда шаванд ва дар шаклҳои вуруди иттилоот рӯйхатҳои афтанда ҳосил "
-#~ "кунанд."
-
-#~ msgid ""
-#~ "Manage scheduled tasks such as data mart exports, where you can set "
-#~ "period types, aggregation level and frequency."
-#~ msgstr ""
-#~ "Вазифаҳои нақшавиро, аз қабили содироти киоски иттилоот, идора кунед, ки "
-#~ "дар он ҷо шумо метавонед навъҳои давраҳо, сатҳи ва зудии ҳамҷояшавиро "
-#~ "таъин кунед."
-
-#~ msgid "Expression is empty"
-#~ msgstr "Ифода холӣ аст"
-
-#~ msgid "Data element identifier must be a number"
-#~ msgstr "Идентификатори унсури иттилоот бояд адад бошад"
-
-#~ msgid "Category option combo identifier must be a number"
-#~ msgstr "Комбои имкони категория identifier must be a number"
-
-#~ msgid "Expression is not well formed"
-#~ msgstr "Ифода хуб ташаккул дода нашудааст"
-
-#~ msgid "Zero Value Storage"
-#~ msgstr "Захирагоҳи қиматҳои сифрӣ"
-
-#~ msgid "Ignore zero data values"
-#~ msgstr "Ба назар нагирифтани қиматҳои сифри иттилоот"
-
-#~ msgid "Store zero data values"
-#~ msgstr "Ҳифз кардани қиматҳои сифрӣ"
-
-#~ msgid "Select the organisation unit to eliminate"
-#~ msgstr "Воҳиди сохториро барои нест кардан интихоб кунед"
-
-#~ msgid "Select the organisation unit to keep"
-#~ msgstr "Воҳиди сохториро барои нигоҳ доштан интихоб кунед"
-
-#~ msgid "Merge"
-#~ msgstr "Ҳамроҳшавӣ"
-
-#~ msgid "Reset"
-#~ msgstr "Танзими дубора"
-
-#~ msgid "Confirm"
-#~ msgstr "Тасдиқ"
-
-#~ msgid "Merging"
-#~ msgstr "Ҳамроҳкунӣ"
-
-#~ msgid "Merging done"
-#~ msgstr "Ҳамроҳкунӣ иҷро шуд"
-
-#~ msgid "Eliminating"
-#~ msgstr "Несткунӣ"
-
-#~ msgid "Elimination done"
-#~ msgstr "Несткунии рамз"
-
-#~ msgid "Select the data element to eliminate"
-#~ msgstr "Унсури иттилоотро барои нест кардан интихоб кунед"
-
-#~ msgid "Select the data element to keep"
-#~ msgstr "Унсури иттилоотро барои нест кардан интихоб кунед"
-
-#~ msgid "Eliminate"
-#~ msgstr "Нест кардан"
-
-#~ msgid "Move All"
-#~ msgstr "Интиқоли ҳама"
-
-#~ msgid "Move Selected"
-#~ msgstr "Интиқоли интихобшудаҳо"
-
-#~ msgid "Duplicate Data Elimination"
-#~ msgstr "Такрори несткунии иттилоот"
-
-#~ msgid "Please select two different organisation units"
-#~ msgstr "Лутфан ду воҳиди сохтории гуногунро интихоб кунед"
-
-#~ msgid "Please select two different data elements"
-#~ msgstr "Лутфан ду унсурҳои иттилооти гуногунро интихоб кунед"
-
-#~ msgid "Filter"
-#~ msgstr "Филтр"
-
-#~ msgid "Data Archive"
-#~ msgstr "Бойгонии иттилоот"
-
-#~ msgid "There are"
-#~ msgstr "Ҳастанд"
-
-#~ msgid "overlapping data values in the archive."
-#~ msgstr "қиматҳои пӯшишдори иттилоот дар бойгонӣ."
-
-#~ msgid "There are no overlapping data in the archive."
-#~ msgstr "Қиматҳои пӯшишдори иттилоот дар бойгонӣ нестанд"
-
-#~ msgid "Eliminate the oldest duplicates"
-#~ msgstr "Ҳамтоҳои кӯҳнатаринро нест кунед"
-
-#~ msgid "Eliminate duplicates from archive source"
-#~ msgstr "Ҳамтоҳоро аз нест кумаъхаз дар бойгонӣ нест кунед"
-
-#~ msgid "Eliminate duplicates from regular source"
-#~ msgstr "Ҳамтоҳоро аз маъхази муқаррарӣ нест кунед"
-
-#~ msgid "Start date"
-#~ msgstr "Санаи оғоз"
-
-#~ msgid "End date"
-#~ msgstr "Санаи анҷом"
-
-#~ msgid "Archive"
-#~ msgstr "Бойгонӣ кардан"
-
-#~ msgid "Unarchive"
-#~ msgstr "Аз бойгонӣ баровардан"
-
-#~ msgid "Archiving"
-#~ msgstr "Бойгоникунӣ"
-
-#~ msgid "Unarchiving"
-#~ msgstr "Баровардан аз бойгонӣ"
-
-#~ msgid "done. Number of archived values is now"
-#~ msgstr "иҷро шуд. Миқдори қиматҳои бойгонишуда дар айни ҳол"
-
-#~ msgid "Prune"
-#~ msgstr "Буриши воҳиди сохторӣ"
-
-#~ msgid "Pruning"
-#~ msgstr "Буриш"
-
-#~ msgid "Pruning done"
-#~ msgstr "Буриш иҷро шуд"
-
-#~ msgid "Data browser"
-#~ msgstr "Браузери иттилоот"
-
-#~ msgid "Please choose a period type"
-#~ msgstr "Лутфан навъи давраро интихоб кунед"
-
-#~ msgid "Please enter a valid End date"
-#~ msgstr "Лутфан санаи анҷоми дурустеро интихоб кунед"
-
-#~ msgid "Please select a browser mode"
-#~ msgstr "Лутфан реҷаи браузерро интихоб кунед"
-
-#~ msgid "Please select an organization unit"
-#~ msgstr "Лутфан воҳиди сохториеро интихоб кунед"
-
-#~ msgid "Organisation unit group"
-#~ msgstr "Гурӯҳи воҳидҳои сохторӣ"
-
-#~ msgctxt "drilldown_data_element"
-#~ msgid "Data element"
-#~ msgstr "Унсури иттилоот"
-
-#~ msgid "Number of recorded values"
-#~ msgstr "Шумораи recorded values"
-
-#~ msgid "Browse data at this level only"
-#~ msgstr "Иттиллоотро танҳо дар ин сатҳ паймоиш кунед"
-
-#~ msgid "Summary drill down"
-#~ msgstr "Фишурдаи фурӯравӣ"
-
-#~ msgid "View raw data at this level"
-#~ msgstr "Иттилооти ибтидоиро дар ин сатҳ намоиш диҳед"
-
-#~ msgid "Click on this organisation unit"
-#~ msgstr "Ин воҳиди сохториро тафтиш кунед"
-
-#~ msgid "earliest"
-#~ msgstr "барвақттарин"
-
-#~ msgid "latest"
-#~ msgstr "дертарин"
-
-#~ msgid "Level must be a number"
-#~ msgstr "Сатҳ бояд адад бошад"
-
-#~ msgctxt "not_choose_organisation"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "Лутфан маҷмӯи воҳиди сохториро интихоб кунед"
-
-#~ msgid "Generate"
-#~ msgstr "Таҳия"
-
-#~ msgid "SQL View Management"
-#~ msgstr "Идоракунии намуди SQL"
-
-#~ msgid "SQL View"
-#~ msgstr "Намуди SQL"
-
-#~ msgid "SQL Statement"
-#~ msgstr "Гузориши намуди SQL"
-
-#~ msgid "Execute query"
-#~ msgstr "Иҷрои дархост"
-
-#~ msgid "Hide warning"
-#~ msgstr "Пинҳон кардани огоҳӣ"
-
-#~ msgid "Add new SQL view"
-#~ msgstr "Иловаи намуди нави SQL"
-
-#~ msgid "Update SQL view"
-#~ msgstr "Навсозии намуди SQL"
-
-#~ msgid "Name is not allowed to be null"
-#~ msgstr "Ном сифр буда наметавонад"
-
-#~ msgid "SQL statement cannot be null"
-#~ msgstr "Гузориши SQL сифр буда наметавонад"
-
-#~ msgid "This SQL statement is invalid"
-#~ msgstr "Гузориши SQL нодуруст аст"
-
-#~ msgid "This resource viewer is invalid or does not exist"
-#~ msgstr "Ин намоишгари захира нодуруст аст ё вуҷуд надорад."
-
-#~ msgid "SQL view table with name"
-#~ msgstr "Ҷадвали намуди SQL бо ном"
-
-#~ msgid "is created"
-#~ msgstr "сохта мешавад"
-
-#~ msgid "Please execute query to create View table before viewing"
-#~ msgstr ""
-#~ "Лутфан дархостро иҷро кунед, то ки ҷадвали Намоишро пеш аз намоиш додан "
-#~ "созед"
-
-#~ msgid "View data for"
-#~ msgstr "Намоиши иттилоот барои"
-
-#~ msgid "Failed to create view table for"
-#~ msgstr "Сохтани ҷадвали намоиш барои ... иҷро нашуд"
-
-#~ msgid "Show"
-#~ msgstr "Нишон додан"
-
-#~ msgid "Sort"
-#~ msgstr "Ҷудокунӣ"
-
-#~ msgid "Lock"
-#~ msgstr "Бастан"
-
-#~ msgid "Locked"
-#~ msgstr "Басташуда"
-
-#~ msgid "Unlock"
-#~ msgstr "Кушодан"
-
-#~ msgid "Append"
-#~ msgstr "Замима кардан"
-
-#~ msgid "Removed values successfully"
-#~ msgstr "Қиматҳо бомуваффақият тоза карда шуданд"
-
-#~ msgid "Recorded values"
-#~ msgstr "Ягон мувофиқат нестб аз нав кӯшиш кунед"
-
-#~ msgid "Earliest date will be used if no date is selected"
-#~ msgstr ""
-#~ "Агар ягон сана нишон интихоб карда нашавад, санаи барвақтттарин истифода "
-#~ "бурда мешавад"
-
-#~ msgid "Latest date will be used if no date is selected"
-#~ msgstr ""
-#~ "Агар ягон сана нишон интихоб карда нашавад, санаи дертарин истифода бурда "
-#~ "мешавад"
-
-#~ msgid "Generated values successfully"
-#~ msgstr "Қиматҳо бомуваффақият таҳия карда шуданд"
-
-#~ msgid "Start"
-#~ msgstr "Оғоз"
-
-#~ msgid "Data Set list"
-#~ msgstr "Рӯйхати маҷмуъҳои иттилоот"
-
-#~ msgid "Data Element Group list"
-#~ msgstr "Рӯйхати гурӯҳҳои унсурҳои иттилоот"
-
-#~ msgid "Organisation Unit Group list"
-#~ msgstr "Рӯйхати гурӯҳҳои воҳидҳои сохторӣ"
-
-#~ msgid "Person Data Archive"
-#~ msgstr "Бойгонии иттилооти шахс"
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system in "
-#~ "order to improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Иттилоотеро, ки дар айни замон ба системаи шумо марбут нест, бойгонӣ "
-#~ "кунед, то ки самаранокии кор беҳтар шавад. Иттилоотро аз бойгонӣ "
-#~ "баровардан низ мумкин аст."
-
-#~ msgid ""
-#~ "You must choose the organisation unit has parent to prune. Please try "
-#~ "again!"
-#~ msgstr ""
-#~ "Шумо бояд воҳиди сохториеро интихоб кунед, воҳиди болои барои ихтисор "
-#~ "дошта бошад. Лутфан аз сар кӯшиши кунед!"
-
-#~ msgid "Restricted user tables cannot be referenced in query"
-#~ msgstr "Дархост дар ҷадвалҳои махсус иҷозат нест!"
-
-#~ msgid "Sections with invalid category combinations"
-#~ msgstr "Қисмҳои дорои ҷуфтҳои нодурусти категорияҳо"
-
-#~ msgid "Do you want to delete this SQL view object ?"
-#~ msgstr "Оё мехоҳед, ки ин объекти намуди sql-ро нест кунед?"
-
-#~ msgid "Clear data mart"
-#~ msgstr "Пок кардани киоски иттилоот"
-
-#~ msgid "Rebuild data mart index"
-#~ msgstr "Такроран сохтани индекси киоски иттилоот"
-
-#~ msgid "Display zeros"
-#~ msgstr "Нишон додани сифрҳо"
-
-#~ msgid "Raw data"
-#~ msgstr "Иттилооти ибтидоӣ"
-
-#~ msgid "Download as Excel"
-#~ msgstr "Боргирӣ ҳамчун файли Excel"
-
-#~ msgid "Download as CSV"
-#~ msgstr "Боргирӣ ҳамчун файли CSV"
-
-#~ msgid "Download as PDF"
-#~ msgstr "Боргирӣ ҳамчун файли PDF"
-
-#~ msgid "Constant"
-#~ msgstr "Доимӣ"
-
-#~ msgid "Constant Management"
-#~ msgstr "Идоракунии доимӣ"
-
-#~ msgid "Add Constant"
-#~ msgstr "Иловаи доимӣ"
-
-#~ msgid "Edit Constant"
-#~ msgstr "Таҳрири доимӣ"
-
-#~ msgid "Value must be an number"
-#~ msgstr "Қимат бояд адад бошад"
-
-#~ msgid "Do you want to delete this constant?"
-#~ msgstr "Оё мехоҳед ин доимиро нест кунед?"
-
-#~ msgid "Yesterday"
-#~ msgstr "Дирӯз"
-
-#~ msgid "Last 7 days"
-#~ msgstr "7 рӯзи охир"
-
-#~ msgid "Last 30 days"
-#~ msgstr "30 рӯзи охир"
-
-#~ msgid "Dynamic Attributes"
-#~ msgstr "Нишонаҳои тағйирёбанда"
-
-#~ msgid "Attribute"
-#~ msgstr "Нишона"
-
-#~ msgid "Attribute Management"
-#~ msgstr "Идоракунии нишона"
-
-#~ msgid "Value Type"
-#~ msgstr "Навъи қимат"
-
-#~ msgid "Mandatory"
-#~ msgstr "Ҳатмӣ"
-
-#~ msgid "User"
-#~ msgstr "Корбар"
-
-#~ msgid "Integer"
-#~ msgstr "Адади бутун"
-
-#~ msgid "Positive Integer"
-#~ msgstr "Адади бутуни мусбӣ"
-
-#~ msgid "Negative Integer"
-#~ msgstr "Адади бутуни манфӣ"
-
-#~ msgid "Add Attribute"
-#~ msgstr "Иловаи нишона"
-
-#~ msgid "Edit Attribute"
-#~ msgstr "Таҳрири нишона"
-
-#~ msgid "Assigned to"
-#~ msgstr "таъиншуда ба"
-
-#~ msgid "Attribute sort order"
-#~ msgstr "Тартиби ҷудокунии нишонаҳо"
-
-#~ msgid "Scheduling is"
-#~ msgstr "Банақшагирӣ"
-
-#~ msgid "Scheduling"
-#~ msgstr "Банақшагирӣ"
-
-#~ msgid "Scheduling management"
-#~ msgstr "Идоракунии банақшагирӣ"
-
-#~ msgid "Stop"
-#~ msgstr "Қатъ"
-
-#~ msgid "Refresh"
-#~ msgstr "Таҷдид"
-
-#~ msgid "Aggregation period types"
-#~ msgstr "Навъҳои давраи ҳамҷоякунӣ"
-
-#~ msgid "active"
-#~ msgstr "фаъол"
-
-#~ msgid "Resource tables"
-#~ msgstr "Ҷадвалҳои захиравӣ"
-
-#~ msgid "Data mart"
-#~ msgstr "Киоски иттилоот"
-
-#~ msgid "Analytics tables"
-#~ msgstr "Ҷадвалҳои таҳлилӣ"
-
-#~ msgid "Analytics tables task strategy"
-#~ msgstr "Стратегияи вазифаҳои ҷадвалҳои таҳлилӣ"
-
-#~ msgid "Last 3 years daily"
-#~ msgstr "Ҳар рӯзи 3 соли охир"
-
-#~ msgid "All daily"
-#~ msgstr "Ҳамаи рӯзҳо"
-
-#~ msgid "Execute Now"
-#~ msgstr "Ҳозир иҷро кунед"
-
-#~ msgid "Resource tables task strategy"
-#~ msgstr "Стратегияи вазифаҳои ҷадвалҳои захиравӣ"
-
-#~ msgid "Data mart task strategy"
-#~ msgstr "Стратегияи вазифаҳои киоски иттилоот"
-
-#~ msgid "Never"
-#~ msgstr "Ҳеҷ гоҳ"
-
-#~ msgid "Last 12 months daily"
-#~ msgstr "Ҳар рӯзи 12 моҳи охир"
-
-#~ msgid "Last 6 months daily + 6 to 12 months weekly"
-#~ msgstr "Ҳар рӯзи 6 моҳи охир + ҳар ҳафтаи аз 6 то 12 моҳ"
-
-#~ msgid "Daily"
-#~ msgstr "Ҳаррӯза"
-
-#~ msgid "Organisation unit group set aggregation level"
-#~ msgstr "Сатҳи ҳамҷоякунии маҷмӯи гурӯҳи воҳиди сохторӣ"
-
-#~ msgid "Aggregated org unit data values"
-#~ msgstr "Қиматҳои ҳамҷояшудаи иттилооти воҳидҳои сохторӣ"
-
-#~ msgid "Aggregated org unit indicator values"
-#~ msgstr "Қиматҳои ҳамҷояшудаи индикаторҳои воҳидҳои сохторӣ"
-
-#~ msgid "Execute now"
-#~ msgstr "Ҳозир иҷро кунед"
-
-#~ msgid ""
-#~ "Are you sure you want to execute all tasks now? Task processing might "
-#~ "fully utilize your system resources and slow down other operations."
-#~ msgstr ""
-#~ "Оё боварӣ доред, ки ҳамаи вазифаҳоро ҳозир иҷро кардан мехоҳед? Коркарди "
-#~ "вазифа метавонад захираҳои системаи шуморо пурра истифода барад ва "
-#~ "амалиётҳои дигарро суст кунад."
-
-#~ msgid "No aggregation"
-#~ msgstr "Бе ҳамҷоякунӣ"
-
-#~ msgid "Option set"
-#~ msgstr "Маҷмӯи имконот"
-
-#~ msgid "Option set management"
-#~ msgstr "Идоракунии маҷмӯи имконот"
-
-#~ msgid "Add option set"
-#~ msgstr "Иловаи маҷмӯи миконот"
-
-#~ msgid "Option"
-#~ msgstr "Имкон"
-
-#~ msgid "Edit option set"
-#~ msgstr "Таҳрири маҷмӯи имконот"
-
-#~ msgid "The number of members"
-#~ msgstr "Шумораи аъзоён"
-
-#~ msgid "Object not deleted because it is associated by objects of type"
-#~ msgstr ""
-#~ "Объект нест карда нашуд, зеро онро объектҳои дигар истифода мебаранд:"
-
-#~ msgid "Do you want to delete this lock exception?"
-#~ msgstr "Оё мехоҳед ин истиснои бандро нест кунед?"
-
-#~ msgid "Do you want to delete lock exceptions with this configuration?"
-#~ msgstr ""
-#~ "Оё мехоҳед истисноҳои банди дорои ингуна конфигуратсияро нест кунед?"
-
-#~ msgid "Edit lock exception"
-#~ msgstr "Таҳрири истиснои банди нав"
-
-#~ msgid "Lock exception batch removal"
-#~ msgstr "Тоза кардани бастаи истиснои банд"
-
-#~ msgid "Back to lock exception"
-#~ msgstr "Бозпас ба истиснои банд"
-
-#~ msgid "Deleting lock exceptions"
-#~ msgstr "Нест кардани истисноҳои банд"
-
-#~ msgid "Error at"
-#~ msgstr "Хатогӣ дар"
-
-#~ msgid "not started"
-#~ msgstr "оғоз нашуд"
-
-#~ msgid "Aggregated data set completeness"
-#~ msgstr "Пуррагии маҷмӯи иттилооти ҳамҷояшуда"
-
-#~ msgid "Show SQL view"
-#~ msgstr "Нишон додани намуди SQL"
-
-#~ msgid "Financial Yearly"
-#~ msgstr "Аз рӯи солҳои молиявӣ"
-
-#~ msgid "Update option"
-#~ msgstr "Имкони навсозӣ"
-
-#~ msgid "Removing min-max values"
-#~ msgstr "Тоза кардани қиматҳои мин/макс"
-
-#~ msgid "Add option"
-#~ msgstr "Иловаи имкон"
+msgid "Messages"
+msgstr "Паёмҳо"
