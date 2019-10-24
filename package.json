@@ -3,7 +3,7 @@
   "version": "1.0.0-beta.1",
   "private": true,
   "devDependencies": {
-    "@dhis2/d2-i18n-generate": "^1.0.19",
+    "@dhis2/d2-i18n-generate": "^1.1.1",
     "chai": "^4.1.2",
     "cucumber": "^3.2.0",
     "enzyme": "^3.3.0",
@@ -19,7 +19,7 @@
     "webdriverio": "^4.12.0"
   },
   "dependencies": {
-    "@dhis2/d2-i18n": "^1.0.3",
+    "@dhis2/d2-i18n": "^1.0.6",
     "@dhis2/d2-ui-header-bar": "^1.1.7",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
