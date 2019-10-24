@@ -1,32 +1,35 @@
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.0.0b3\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Data Integrity"
 msgstr "Целостность данных"
 
 msgid ""
-"Run data integrity checks and unveil anomalies and problems in the meta data "
-"setup."
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
 msgstr ""
 "Запустить проверки целостности данных и объявить об аномалиях и проблемаъ в "
 "настройках мета данных."
 
 msgid "Check Data Integrity"
-msgstr "Целостность данных"
+msgstr ""
 
 msgid "Performing data integrity checks..."
-msgstr "Выполняется техническое обслуживание"
+msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -35,7 +38,7 @@ msgid "RUN INTEGRITY CHECKS"
 msgstr ""
 
 msgid "Data elements without data set"
-msgstr "Элементы данных без набора данных"
+msgstr ""
 
 msgid "Data elements without groups"
 msgstr "Элементы данных без групп"
@@ -75,7 +78,7 @@ msgid "Organisation units without groups"
 msgstr "Организации/отделы без групп"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr "Организации/отделы, нарушающие исключительные наборы групп"
+msgstr ""
 
 msgid "Organisation unit groups without group sets"
 msgstr "Организации/отделы без наборов групп"
@@ -90,13 +93,13 @@ msgid "Invalid validation rule right side expressions"
 msgstr "Недействительные правила проверки выражений правой части"
 
 msgid "Invalid program indicator expressions"
-msgstr "Недействительные числители индикатора"
+msgstr ""
 
 msgid "Invalid program indicator filters"
-msgstr "Недействительные знаменатели индикатора"
+msgstr ""
 
 msgid "There are data elements in the form, but not in the form or sections"
-msgstr "Элементы данных введены в набор данных но не в формы и разделы"
+msgstr ""
 
 msgid "Invalid category combinations"
 msgstr "Неверные комбинации категорий"
@@ -105,26 +108,24 @@ msgid "Duplicate periods"
 msgstr "Дублирующиеся периоды"
 
 msgid "Maintenance"
-msgstr "Содержание"
+msgstr "Maintenance"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
-"Генерировать таблицы ресурсов базы данных для иерархии организации и "
-"структуры набора  группы среды других."
 
 msgid "Perform Maintenance"
-msgstr "Выполнить техническое обслуживание"
+msgstr ""
 
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
 msgid "Performing Maintenance..."
-msgstr "Выполняется техническое обслуживание"
+msgstr ""
 
 msgid "Maintenance done"
-msgstr "Содержание"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -133,22 +134,22 @@ msgid "Clear analytics tables"
 msgstr "Очистить аналитические таблицы"
 
 msgid "Analyze analytics tables"
-msgstr "Анализировать аналитические таблицы"
+msgstr ""
 
 msgid "Remove zero data values"
-msgstr "Удалить нулевые значения данных"
+msgstr ""
 
 msgid "Permanently remove soft deleted data values"
-msgstr "Удалить безвозвратно значения данных, которые были удалены логически"
+msgstr ""
 
 msgid "Permanently remove soft deleted events"
-msgstr "Удалить безвозвратно события, которые были удалены логически"
+msgstr ""
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr "Удалить безвозвратно события, которые были удалены логически"
+msgstr ""
 
 msgid "Permanently remove soft deleted tracked entity instances"
-msgstr "Удалить безвозвратно события, которые были удалены логически"
+msgstr ""
 
 msgid "Prune periods"
 msgstr "Периоды вырезания"
@@ -157,7 +158,7 @@ msgid "Remove expired invitations"
 msgstr "Удалить просроченные приглашения"
 
 msgid "Drop SQL views"
-msgstr "Удалить SQL представления"
+msgstr "Удаление SQL представления"
 
 msgid "Create SQL views"
 msgstr "Создать SQL представления"
@@ -166,16 +167,16 @@ msgid "Update category option combinations"
 msgstr "Обновить комбинации категорий опций"
 
 msgid "Update organisation unit paths"
-msgstr "Обновите пути организационных единиц"
+msgstr "Обновить пути организационных единиц"
 
 msgid "Clear application cache"
-msgstr "Очистить кэш приложения"
+msgstr "Очистить кеш приложения"
 
 msgid "Reload apps"
-msgstr "Перезагрузить приложения"
+msgstr ""
 
 msgid "Resource Tables"
-msgstr "Ресурсная Таблица"
+msgstr ""
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -185,16 +186,13 @@ msgstr ""
 "структуры набора  группы среды других."
 
 msgid "Generate Resource Tables"
-msgstr "Генерирует ресурсные таблицы"
+msgstr ""
 
 msgid "GENERATE TABLES"
 msgstr ""
 
-msgid "Generating Resource Tables..."
-msgstr "Генерирует ресурсные таблицы"
-
 msgid "Resource Tables generated"
-msgstr "ресурсные таблицы сгенерированы"
+msgstr ""
 
 msgid "An unexpected error happened during operation"
 msgstr ""
@@ -230,7 +228,7 @@ msgid "Period structure"
 msgstr "Структура периода"
 
 msgid "Date period structure"
-msgstr "Структура периода времени"
+msgstr "Структура периода даты"
 
 msgid "Data element category option combinations"
 msgstr "Комбинации опции категории элементы данных"
@@ -246,31 +244,31 @@ msgstr ""
 "индикаторы, наборы данных и значение данных."
 
 msgid "Overview Data Statistics"
-msgstr "Статистические данные"
+msgstr ""
 
 msgid "Loading Data Statistics..."
-msgstr "Статистические данные"
+msgstr ""
 
 msgid "It was not possible to load Data Statistics"
 msgstr ""
 
 msgid "No data to show."
-msgstr "Данные не найдены"
+msgstr ""
 
 msgid "Object type"
-msgstr "тип объекта"
+msgstr "Тип объекта"
 
 msgid "Last hour"
 msgstr "За последний час"
 
 msgid "Today"
-msgstr "Сегодня"
+msgstr "Today"
 
 msgid "Last"
-msgstr "За последний час"
+msgstr "Последняя"
 
 msgid "days"
-msgstr ""
+msgstr "дни"
 
 msgid "Users logged in"
 msgstr "Пользователь зарегистировался"
@@ -288,58 +286,58 @@ msgid "Data values"
 msgstr "Значение данных"
 
 msgid "Events"
-msgstr ""
+msgstr "Events"
 
 msgid "Indicators"
-msgstr "Индикатор"
+msgstr "Индикаторы"
 
 msgid "Periods"
 msgstr "Периоды"
 
 msgid "Organisation units"
-msgstr "Организация/отдел"
+msgstr "Организация"
 
 msgid "Validation rules"
-msgstr "Правила проверки без учета групп"
+msgstr "Правила проверки"
 
 msgid "Programs"
-msgstr "Программа"
+msgstr "Programs"
 
 msgid "Data elements"
-msgstr "Элемент данных"
+msgstr "Элементы данных"
 
 msgid "Organisation unit groups"
 msgstr "Группы организаций"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Pivot tables"
 
 msgid "Indicator types"
 msgstr "Виды индикаторов"
 
 msgid "Data sets"
-msgstr "Набор данных"
+msgstr "Наборы данных"
 
 msgid "User groups"
-msgstr "Группа пользователей"
+msgstr "Группы пользователей"
 
 msgid "Users"
-msgstr "Пользователи"
+msgstr "Users"
 
 msgid "Maps"
-msgstr ""
+msgstr "Maps"
 
 msgid "Indicator groups"
-msgstr "Группа индикаторов"
+msgstr "Группы индикаторов"
 
 msgid "Charts"
-msgstr ""
+msgstr "Charts"
 
 msgid "Data element groups"
-msgstr "Группа элемента данных"
+msgstr "Группы элементов данных"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dashboards"
 
 msgid "Lock Exception Management"
 msgstr "Блокировать управление исключений"
@@ -348,14 +346,14 @@ msgid "Lock Exception"
 msgstr "Блокировать исключения"
 
 msgid "Batch Deletion"
-msgstr "Удаление группы"
+msgstr ""
 
 msgid "Add new lock exception"
-msgstr "Создать новое исключение блокировки"
+msgstr ""
 
 msgid ""
-"Add or remove exceptions to the the standard rules for locking of data entry "
-"forms."
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
 msgstr ""
 "Добавить или убрать исключения от стандартныз правил по блокировке форм "
 "ввода данных"
@@ -370,31 +368,31 @@ msgid "ADD"
 msgstr ""
 
 msgid "Loading Lock Exceptions..."
-msgstr "Блокировать исключения"
+msgstr ""
 
 msgid "Adding Lock Exception..."
-msgstr "Блокировать исключения"
+msgstr ""
 
 msgid "Lock Exception removed"
-msgstr "Блокировать исключения"
+msgstr ""
 
 msgid "Lock Exception Added"
-msgstr "Блокировать исключения"
+msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Вы уверены?"
 
 msgid "CONFIRM"
 msgstr ""
 
 msgid "Select a Data Set"
-msgstr "Пожалуйста выберите набор данных"
+msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr "Объединение организационных ячеек/отделов"
+msgstr "Обновление дерева организационных единиц ..."
 
 msgid "For organisation units within"
-msgstr "Сиротские организационные отделы"
+msgstr "Для организационных единиц в пределах"
 
 msgid "Period"
 msgstr "Период"
@@ -406,16 +404,16 @@ msgid "Organisation Unit"
 msgstr "Организация"
 
 msgid "Organisation Unit Group"
-msgstr "Группы организаций"
+msgstr ""
 
 msgid "Organisation Unit Level"
-msgstr "Объединение организационных ячеек/отделов"
+msgstr ""
 
 msgid "Select"
-msgstr "Все"
+msgstr "Выбрать"
 
 msgid "Deselect"
-msgstr "Не выбрано"
+msgstr "Отменить"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -424,19 +422,19 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
 msgid "Show Details"
-msgstr "Детали локали"
+msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Удалить"
 
 msgid "Actions"
-msgstr "Опции"
+msgstr "Действия"
 
 msgid "of"
-msgstr ""
+msgstr "management=управление"
 
 msgid "week"
 msgstr ""
@@ -445,13 +443,13 @@ msgid "month"
 msgstr ""
 
 msgid "year"
-msgstr "Предыдущий год"
+msgstr ""
 
 msgid "bi monthly"
 msgstr ""
 
 msgid "day"
-msgstr "Сегодня"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -537,6 +535,9 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
+msgid "For all organisation units:"
+msgstr ""
+
 msgid "Min-Max Value Generation"
 msgstr "Мин-макс генерирование"
 
@@ -544,35 +545,35 @@ msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
-"Генерировать мин-макс значения, которые могут быть использованы для проверки "
-"данных во время ввода данных и процесса проверки/валидации."
+"Генерировать мин-макс значения, которые могут быть использованы для проверки"
+" данных во время ввода данных и процесса проверки/валидации."
 
 msgid "Generate Min-Max Value"
-msgstr "генерирование мин-макс значений"
+msgstr ""
 
 msgid "It was not possible to load data"
 msgstr ""
 
 msgid "Select Data set and Organisation Unit"
-msgstr "выбрать родительскую организационную ячейку"
+msgstr ""
 
 msgid "Doing Min Max generation..."
-msgstr "Мин-макс генерирование"
+msgstr ""
 
 msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
-msgstr "Мин-макс генерирование"
+msgstr ""
 
 msgid "Min Max removal done"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr "Доступные наборы данных"
+msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr "Объединение организационных ячеек/отделов"
+msgstr "Выбор организации"
 
 msgid "GENERATE"
 msgstr ""
@@ -580,1020 +581,73 @@ msgstr ""
 msgid "REMOVE"
 msgstr ""
 
-#~ msgid "Remove All Locks"
-#~ msgstr "Удалить все блокировки"
+msgid "Analytics tables management"
+msgstr "Управление таблицами аналитики"
 
-#~ msgid "Optional"
-#~ msgstr "Необязательный"
+msgid "Analytics Tables"
+msgstr ""
 
-#~ msgid "Data Administration"
-#~ msgstr "Администрирование данных"
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
 
-#~ msgid "Period Type"
-#~ msgstr "Виды периода"
+msgid "Analytics tables update"
+msgstr "Обновление аналитических таблиц"
 
-#~ msgid "Please select at least one option"
-#~ msgstr "Пожалуйста, выберите по меньшей мере одну опцию"
+msgid "START EXPORT"
+msgstr ""
 
-#~ msgid "Maintenance performed"
-#~ msgstr "Техническое обслуживание выполнено"
+msgid "Skip generation of aggregate data and completeness data"
+msgstr "Skip generation of aggregate data and completeness data"
 
-#~ msgid "Clear data set completeness"
-#~ msgstr "Очистить завершенность набора данных"
+msgid "Skip generation of resource tables"
+msgstr "Skip generation of resource tables"
 
-#~ msgid "Organisation unit group set structure normalized"
-#~ msgstr "Структура групп наборов организации нормализована"
+msgid "Skip generation of event data"
+msgstr "Skip generation of event data"
 
-#~ msgid "Generate tables"
-#~ msgstr "Генерировать таблицы"
+msgid "Skip generation of enrollment data"
+msgstr "Skip generation of enrollment data"
 
-#~ msgid "Cache Statistics"
-#~ msgstr "Кэш статистика"
+msgid "Analytics Tables Update"
+msgstr ""
 
-#~ msgid "Second Level Cache Statistics"
-#~ msgstr "Кэш статистика второго уровня"
+msgid "Number of last years of data to include"
+msgstr "Number of last years of data to include"
 
-#~ msgid "Region name"
-#~ msgstr "Название региона"
+msgid "[ All ]"
+msgstr ""
 
-#~ msgid "Mem count"
-#~ msgstr "Число памяти"
+msgid "Settings"
+msgstr "Настройки"
 
-#~ msgid "Disk count"
-#~ msgstr "Число дисков"
+msgid "Search apps"
+msgstr "Search apps"
 
-#~ msgid "Mem size"
-#~ msgstr "Размер памяти"
+msgid "Profile"
+msgstr "Профиль"
 
-#~ msgid "Total Second Level Cache"
-#~ msgstr "Всего кэш второго уровня"
+msgid "Account"
+msgstr "Учетная запись"
 
-#~ msgid "Total Query Cache"
-#~ msgstr "Всего запроса кэш"
+msgid "Help"
+msgstr "Помощь"
 
-#~ msgid "Query Cache Statistics"
-#~ msgstr "Запросить кэш статистику"
+msgid "Log out"
+msgstr "Выйти"
 
-#~ msgid "Query name"
-#~ msgstr "название запроса"
+msgid "About DHIS 2"
+msgstr "О DHIS 2"
 
-#~ msgid "Put count"
-#~ msgstr "Количество записей в кэш"
+msgid "Manage my apps"
+msgstr "Manage my apps"
 
-#~ msgid "Hit count"
-#~ msgstr "Количество попаданий в кэш"
+msgid "No results found"
+msgstr "No results found"
 
-#~ msgid "Miss count"
-#~ msgstr "Количество промахов кэша"
+msgid "Interpretations"
+msgstr "Интерпретации"
 
-#~ msgid "Exec count"
-#~ msgstr "Выполнить подсчет"
-
-#~ msgid "Exec avg time"
-#~ msgstr "Среднее время выполнения"
-
-#~ msgid "Exec max time"
-#~ msgstr "Максимальное время выполнения"
-
-#~ msgid "Exec min time"
-#~ msgstr "Минимальное время выполнения"
-
-#~ msgid "Exec row count"
-#~ msgstr "Вып подсчет по строкам"
-
-#~ msgid "Clear cache"
-#~ msgstr "Очистить кэш"
-
-#~ msgid "Data dictionaries"
-#~ msgstr "Словари данных"
-
-#~ msgid "Number of objects"
-#~ msgstr "Количество объектов"
-
-#~ msgid "Data Browser"
-#~ msgstr "Браузер данных"
-
-#~ msgid "From date"
-#~ msgstr "От даты"
-
-#~ msgid "To date"
-#~ msgstr "До даты"
-
-#~ msgid "Browse by"
-#~ msgstr "Просмотреть по"
-
-#~ msgid "Select mode"
-#~ msgstr "выбрать метод"
-
-#~ msgid "Browse"
-#~ msgstr "Просмотреть"
-
-#~ msgid "Select Period Type"
-#~ msgstr "Выбрать тип периода"
-
-#~ msgid "Organisation units violating compulsory group sets"
-#~ msgstr "Организации/отделы, нарушающие обязательные наборы групп"
-
-#~ msgid ""
-#~ "Category option combos not in data element category combo in data entry "
-#~ "form"
-#~ msgstr ""
-#~ "Комбинации опций категории не в списке категорий элемента данных в форме "
-#~ "ввода данных"
-
-#~ msgid "Data integrity checks performed"
-#~ msgstr "Проверка целостности данных проведена"
-
-#~ msgid "Value"
-#~ msgstr "Значение"
-
-#~ msgid "Found"
-#~ msgstr "Найдено"
-
-#~ msgid "values"
-#~ msgstr "значения"
-
-#~ msgid "Data element Group"
-#~ msgstr "Группы элемента данных"
-
-#~ msgid "Aggregated data values"
-#~ msgstr "Савокупные значения данных"
-
-#~ msgid "Aggregated indicator values"
-#~ msgstr "Савокупные значения индикаторов"
-
-#~ msgid "Organisation Unit Pruning"
-#~ msgstr "Вырезание организации"
-
-#~ msgid ""
-#~ "Browse the database and get an overview of where data exists. View and "
-#~ "export counts of data elements as well as raw data."
-#~ msgstr ""
-#~ "Просмотреть базу данных и получить представление о том, где имеются "
-#~ "данные. Просмотреть и экспортировать еоличество элементов данных, а также "
-#~ "исходные данные"
-
-#~ msgid ""
-#~ "Archive data which is not currently relevant to your system in order to "
-#~ "improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Архивировать данные которые настоящее время не имеют отношения к Вашей "
-#~ "системе для улучшения ее работы. Данные также могут быть деархивированы."
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system. Data "
-#~ "can also be unarchived."
-#~ msgstr ""
-#~ "Архивировать персональные данные которые настоящее время не имеют "
-#~ "отношения к Вашей системе. Данные также могут быть деархивированы."
-
-#~ msgid ""
-#~ "Perform maintenance tasks such as pruning of data values and periods and "
-#~ "clearing of database resource tables."
-#~ msgstr ""
-#~ "Выполнить задачи по содежранию, такие как обрезание значений данных и "
-#~ "периодов, а также очистка ресусных таблиц базы данных."
-
-#~ msgid ""
-#~ "Create and manage locales for database content. A locale is a combination "
-#~ "of language and country."
-#~ msgstr ""
-#~ "Создание и управление языками для содержимого базы данных. Локаль - это "
-#~ "сочетание языка и страны."
-
-#~ msgid ""
-#~ "Merge two organisation units and their data values. Data is merged "
-#~ "depending on existence and date of last modification."
-#~ msgstr ""
-#~ "Объединить две организационные ячейки и их значение данных. Данные "
-#~ "объединияются в зависимости от существования и даты последних модификаций"
-
-#~ msgid ""
-#~ "Monitor and clear the system database cache status. Provides information "
-#~ "on object and query caches."
-#~ msgstr ""
-#~ "Мониторировать и очистить кэш статус базы данных системы. Предоставляет "
-#~ "информацию по объектам и кэш запросам."
-
-#~ msgid ""
-#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
-#~ "and deploying local databases."
-#~ msgstr ""
-#~ "Убрать по-дерево от дерева организации. Это полезно при создании и  "
-#~ "применении местной базы данных."
-
-#~ msgid ""
-#~ "Define which data elements for which zero values should be stored or "
-#~ "ignored. Useful for reducing database size."
-#~ msgstr ""
-#~ "Определить, какие элементы данных должны быть сохранены на нулевом "
-#~ "значении или проигнорированы. Это полезно для сокращения размера базы "
-#~ "данных."
-
-#~ msgid ""
-#~ "Eliminate data registered for duplicate data elements. Useful when data "
-#~ "has been entered for identical data elements."
-#~ msgstr ""
-#~ "Устранить данные, зарегистрированные для дублирования элементов данных. "
-#~ "Это полезно когда данные будут введены для идентичных элементов данных."
-
-#~ msgid ""
-#~ "Create SQL database views. These views will typically use the resource "
-#~ "tables to provide convenient views for third-party tools."
-#~ msgstr ""
-#~ "Создать просмотры базы данных SQL. Эти просмотры будут типично "
-#~ "использованы для ресурсных таблиц для предоставления удобных просмотром "
-#~ "для инструментов третьей стороны."
-
-#~ msgid ""
-#~ "Create constants which can be included in expressions of indicator and "
-#~ "validation rules."
-#~ msgstr ""
-#~ "Создать константы которые могут быть включены в вырадениях индикатора и "
-#~ "правил валидации/проверки."
-
-#~ msgid ""
-#~ "Create and update dynamic attributes. Attributes can be used for data "
-#~ "elements, indicators, organisation units and users."
-#~ msgstr ""
-#~ "Создать и обновить динамику атрибутов. Атрибуты могут быть использованы "
-#~ "для элементов данных, индикатороа, организаций и пользователей."
-
-#~ msgid ""
-#~ "Create option sets which can be included in data elements and produce "
-#~ "drop-down lists in data entry forms."
-#~ msgstr ""
-#~ "Создать наборы опций, которые можно включать в элементы данных и "
-#~ "производить раскрывающиеся списка в формах ввода данных."
-
-#~ msgid ""
-#~ "Manage scheduled tasks such as data mart exports, where you can set "
-#~ "period types, aggregation level and frequency."
-#~ msgstr ""
-#~ "Управлять запланированными задачами такими как экспорт, когда вы можете "
-#~ "установить типы периодов, уровень и частота агрегации."
-
-#~ msgid "Expression is empty"
-#~ msgstr "Выражение пустое"
-
-#~ msgid "Data element identifier must be a number"
-#~ msgstr "Идентификатором элементов данных должно быть число"
-
-#~ msgid "Category option combo identifier must be a number"
-#~ msgstr "Комбинированной опцией категории должно быть число"
-
-#~ msgid "Expression is not well formed"
-#~ msgstr "Выражение не правильно/не хорошо согласовано"
-
-#~ msgid "Zero Value Storage"
-#~ msgstr "Хранение нулевого значения данных"
-
-#~ msgid "Ignore zero data values"
-#~ msgstr "Игнорировать нулевое значение данных"
-
-#~ msgid "Store zero data values"
-#~ msgstr "Хранить нулевое значение данных"
-
-#~ msgid "Select the organisation unit to eliminate"
-#~ msgstr "Выбрать организацию/отдел для исключения"
-
-#~ msgid "Select the organisation unit to keep"
-#~ msgstr "Выбрать организацию/отдел для хранения"
-
-#~ msgid "Merge"
-#~ msgstr "Объединить"
-
-#~ msgid "Reset"
-#~ msgstr "Перезагрузить"
-
-#~ msgid "Confirm"
-#~ msgstr "Подтвердить"
-
-#~ msgid "Merging"
-#~ msgstr "Объединить"
-
-#~ msgid "Merging done"
-#~ msgstr "Объединение выполнено"
-
-#~ msgid "Eliminating"
-#~ msgstr "Идет исключение â¦"
-
-#~ msgid "Elimination done"
-#~ msgstr "Исключено"
-
-#~ msgid "Select the data element to eliminate"
-#~ msgstr "Выбрать элементы данных для исключения"
-
-#~ msgid "Select the data element to keep"
-#~ msgstr "Выбрать элементы данных для хранения"
-
-#~ msgid "Eliminate"
-#~ msgstr "Исключить"
-
-#~ msgid "Move All"
-#~ msgstr "Переместить все"
-
-#~ msgid "Move Selected"
-#~ msgstr "Переместить выбранное"
-
-#~ msgid "Duplicate Data Elimination"
-#~ msgstr "Дублировать исключение данных"
-
-#~ msgid "Please select two different organisation units"
-#~ msgstr "Пож-ста выберите две различные организации/отделы"
-
-#~ msgid "Please select two different data elements"
-#~ msgstr "Пож-ста выберите две различные элементы данных"
-
-#~ msgid "Filter"
-#~ msgstr "Фильтр"
-
-#~ msgid "Data Archive"
-#~ msgstr "Архив данных"
-
-#~ msgid "There are"
-#~ msgstr "Существует"
-
-#~ msgid "overlapping data values in the archive."
-#~ msgstr "повторение значение данных в архиве"
-
-#~ msgid "There are no overlapping data in the archive."
-#~ msgstr "нет повторения значения данных в архиве"
-
-#~ msgid "Eliminate the oldest duplicates"
-#~ msgstr "Исключить старые дубликаты"
-
-#~ msgid "Eliminate duplicates from archive source"
-#~ msgstr "Исключить дубликаты из архивного источника"
-
-#~ msgid "Eliminate duplicates from regular source"
-#~ msgstr "Исключить дубликаты из обычного источника"
-
-#~ msgid "Start date"
-#~ msgstr "Дата начала"
-
-#~ msgid "End date"
-#~ msgstr "Дата конца"
-
-#~ msgid "Archive"
-#~ msgstr "Архивировать"
-
-#~ msgid "Unarchive"
-#~ msgstr "Деархивировать"
-
-#~ msgid "Archiving"
-#~ msgstr "Архивация"
-
-#~ msgid "Unarchiving"
-#~ msgstr "Деархивация"
-
-#~ msgid "done. Number of archived values is now"
-#~ msgstr "Выполнено. Число архивированных значений настоящее время достигло"
-
-#~ msgid "Prune"
-#~ msgstr "Вырезать"
-
-#~ msgid "Pruning"
-#~ msgstr "Вырезание"
-
-#~ msgid "Pruning done"
-#~ msgstr "Вырезание выполнено"
-
-#~ msgid "Data browser"
-#~ msgstr "Браузер данных"
-
-#~ msgid "Please choose a period type"
-#~ msgstr "Пож-ста выберите вид периода"
-
-#~ msgid "Please enter a valid End date"
-#~ msgstr "Пож-ста введите действующую дату завершения"
-
-#~ msgid "Please select a browser mode"
-#~ msgstr "Пожалуйста, выберите вид браузера"
-
-#~ msgid "Please select an organization unit"
-#~ msgstr "Пожалуйста, выберите организацию/отдел"
-
-#~ msgid "Organisation unit group"
-#~ msgstr "Группа организации"
-
-#~ msgctxt "drilldown_data_element"
-#~ msgid "Data element"
-#~ msgstr "Элементы данных"
-
-#~ msgid "Number of recorded values"
-#~ msgstr "Число зарегистрированных значений"
-
-#~ msgid "Browse data at this level only"
-#~ msgstr "Просмотреть данные только на данном уровне"
-
-#~ msgid "Summary drill down"
-#~ msgstr "Суммарная детализация"
-
-#~ msgid "View raw data at this level"
-#~ msgstr "Смотруть сырые данные на данном уровне"
-
-#~ msgid "Click on this organisation unit"
-#~ msgstr "Нажать данную организацию/отдел"
-
-#~ msgid "earliest"
-#~ msgstr "Самые ранние"
-
-#~ msgid "latest"
-#~ msgstr "Самые последние"
-
-#~ msgid "Loading"
-#~ msgstr "Загрузка"
-
-#~ msgid "Level must be a number"
-#~ msgstr "Уровень должен быть числом"
-
-#~ msgctxt "not_choose_organisation"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "Пожалуйста выберите организцию/отдел"
-
-#~ msgid "Generate"
-#~ msgstr "Генерировать"
-
-#~ msgid "SQL View Management"
-#~ msgstr "SQL видеть управление"
-
-#~ msgid "SQL View"
-#~ msgstr "SQL вид"
-
-#~ msgid "SQL type"
-#~ msgstr "Тип SQL"
-
-#~ msgid "SQL view"
-#~ msgstr "SQL представление"
-
-#~ msgid "Materialized SQL view"
-#~ msgstr "Материализованное SQL представление"
-
-#~ msgid "SQL query"
-#~ msgstr "SQL запрос"
-
-#~ msgid "created in database"
-#~ msgstr "создано в базе данных"
-
-#~ msgid "materialized in database"
-#~ msgstr "материализовано в базе данных"
-
-#~ msgid "allows for variables"
-#~ msgstr "Допуск для переменных"
-
-#~ msgid "SQL Statement"
-#~ msgstr "SQL заявление"
-
-#~ msgid "Execute query"
-#~ msgstr "Выполнить запрос"
-
-#~ msgid "Hide warning"
-#~ msgstr "Скрыть предупреждение"
-
-#~ msgid "Add new SQL view"
-#~ msgstr "Добавить SQL вид"
-
-#~ msgid "Update SQL view"
-#~ msgstr "Обновить SQL вид"
-
-#~ msgid "Name is not allowed to be null"
-#~ msgstr "Имя не должно быть пустым"
-
-#~ msgid "Name is in use"
-#~ msgstr "Имя уже используется"
-
-#~ msgid "Code is in use"
-#~ msgstr "Код уже используется"
-
-#~ msgid "The language and country set is already in use"
-#~ msgstr "Набор языка и страны уже используется"
-
-#~ msgid "SQL statement cannot be null"
-#~ msgstr "Заявление SQL не может быть пустым"
-
-#~ msgid "This SQL statement is invalid"
-#~ msgstr "Данное заявление SQL не действительно"
-
-#~ msgid "Note: Only SELECT query is allowed (without INTO keyword)"
-#~ msgstr ""
-#~ "Примечание: Разрешен только запрос SELECT (без ключевого слова INTO)"
-
-#~ msgid "This resource viewer is invalid or does not exist"
-#~ msgstr "Данный ресурсный осмотрщик не действителен либо не существует"
-
-#~ msgid "SQL view table with name"
-#~ msgstr "SQL  таблица вида с названием"
-
-#~ msgid "is created"
-#~ msgstr "создана"
-
-#~ msgid "Please execute query to create View table before viewing"
-#~ msgstr ""
-#~ "Пожалуйста выполните запрос по созданию таблицы просмотра перед просмотром"
-
-#~ msgid "View data for"
-#~ msgstr "Смотреть данные по"
-
-#~ msgid "Failed to create view table for"
-#~ msgstr "сбой в создании таблицы просмотра для"
-
-#~ msgid "Show"
-#~ msgstr "Показать"
-
-#~ msgid "Sort"
-#~ msgstr "Сортировать"
-
-#~ msgid "Lock"
-#~ msgstr "Заблокировать"
-
-#~ msgid "Locked"
-#~ msgstr "разблокировано"
-
-#~ msgid "Unlock"
-#~ msgstr "Разблокировано"
-
-#~ msgid "Append"
-#~ msgstr "Добавить"
-
-#~ msgid "Removed values successfully"
-#~ msgstr "Значения удалены успешно"
-
-#~ msgid "Recorded values"
-#~ msgstr "Ни одного совпадения, попытайтесь еще раз"
-
-#~ msgid "Earliest date will be used if no date is selected"
-#~ msgstr ""
-#~ "в случае если не выбрана дата, будут использованы самые ранние данние"
-
-#~ msgid "Latest date will be used if no date is selected"
-#~ msgstr ""
-#~ "в случае если не выбрана дата, будут использованы самые последние данние"
-
-#~ msgid "Generated values successfully"
-#~ msgstr "Значения сгенерированы успешно"
-
-#~ msgid "Start"
-#~ msgstr "Начать"
-
-#~ msgid "Data Set list"
-#~ msgstr "Список набора данных"
-
-#~ msgid "Data Element Group list"
-#~ msgstr "Список группы элемента данных"
-
-#~ msgid "Organisation Unit Group list"
-#~ msgstr "Список группы организации"
-
-#~ msgid "Person Data Archive"
-#~ msgstr "Архив персональных данных"
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system in "
-#~ "order to improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Архивировать данные которые настоящее время не имеют отношения к Вашей "
-#~ "системе для улучшения ее работы. Данные также могут быть деархивированы."
-
-#~ msgid ""
-#~ "You must choose the organisation unit has parent to prune. Please try "
-#~ "again!"
-#~ msgstr ""
-#~ "Вы должны выбрать организационную ячейку, которая имеет родительскую для "
-#~ "отсечения. Пожалуйста, попробуйте еще раз!"
-
-#~ msgid "Restricted user tables cannot be referenced in query"
-#~ msgstr "Вопросы не допустимы в специальных таблицах!"
-
-#~ msgid "Sections with invalid category combinations"
-#~ msgstr "Разделы с недействительными комбинациями категорий"
-
-#~ msgid "Do you want to delete this SQL view object ?"
-#~ msgstr "Вы хотите удалить данный объект просмотра SQL?"
-
-#~ msgid "Clear data mart"
-#~ msgstr "Очистить витрину данных"
-
-#~ msgid "Rebuild data mart index"
-#~ msgstr "Восстановить индекс витрины данных"
-
-#~ msgid "Display zeros"
-#~ msgstr "Показать нули"
-
-#~ msgid "Raw data"
-#~ msgstr "не проверенные данные"
-
-#~ msgid "Download as Excel"
-#~ msgstr "Загрузить как Excel файл"
-
-#~ msgid "Download as CSV"
-#~ msgstr "Загрузить в формате CSV"
-
-#~ msgid "Download as PDF"
-#~ msgstr "Загрузить как PDF файл"
-
-#~ msgid "Download as HTML"
-#~ msgstr "Скачать как HTML"
-
-#~ msgid "Download as XML"
-#~ msgstr "Скачать как XML"
-
-#~ msgid "Download as JSON"
-#~ msgstr "Скачать как JSON"
-
-#~ msgid "Constant"
-#~ msgstr "Постоянная"
-
-#~ msgid "Constant Management"
-#~ msgstr "Управление константой"
-
-#~ msgid "Add Constant"
-#~ msgstr "Добавить константу"
-
-#~ msgid "Edit Constant"
-#~ msgstr "Редактировать константу"
-
-#~ msgid "Value must be an number"
-#~ msgstr "Значение должно быть в виде числа"
-
-#~ msgid "Do you want to delete this constant?"
-#~ msgstr "Вы хотите удалить данную константу?"
-
-#~ msgid "Yesterday"
-#~ msgstr "Вчера"
-
-#~ msgid "Last 2 days"
-#~ msgstr "Последние 2 дня"
-
-#~ msgid "Last 7 days"
-#~ msgstr "Последние 7 дней"
-
-#~ msgid "Last 30 days"
-#~ msgstr "Последние 30 дней"
-
-#~ msgid "Dynamic Attributes"
-#~ msgstr "Динамические атрибуты"
-
-#~ msgid "Attribute"
-#~ msgstr "атрибут"
-
-#~ msgid "Attribute Management"
-#~ msgstr "Управление атрибутом"
-
-#~ msgid "Value Type"
-#~ msgstr "Тип значения"
-
-#~ msgid "Mandatory"
-#~ msgstr "Обязательно"
-
-#~ msgid "Unique"
-#~ msgstr "Уникальный"
-
-#~ msgid "Organisation Unit Group Set"
-#~ msgstr "Набор групп организационных единиц"
-
-#~ msgid "User"
-#~ msgstr "Пользователь"
-
-#~ msgid "Program Stage"
-#~ msgstr "Этап программы"
-
-#~ msgid "Tracked Entity"
-#~ msgstr "Отслеживаемый объект"
-
-#~ msgid "Tracked Entity Attribute"
-#~ msgstr "Атрибут отслеживаемого объекта"
-
-#~ msgid "Integer"
-#~ msgstr "Целое число"
-
-#~ msgid "Positive Integer"
-#~ msgstr "Положительное целое число"
-
-#~ msgid "Negative Integer"
-#~ msgstr "Отрицательное целое число"
-
-#~ msgid "Add Attribute"
-#~ msgstr "Добавить атрибут"
-
-#~ msgid "Edit Attribute"
-#~ msgstr "Редактировать атрибут"
-
-#~ msgid "Assigned to"
-#~ msgstr "закреплено за"
-
-#~ msgid "Attribute sort order"
-#~ msgstr "Порядок сортировки атрибутов"
-
-#~ msgid "Data element does not exist"
-#~ msgstr "Элемент данных не существует"
-
-#~ msgid "Category option combo does not exist"
-#~ msgstr "Комбинация опций категории не существует"
-
-#~ msgid "Scheduling is"
-#~ msgstr "Планирование"
-
-#~ msgid "Scheduling"
-#~ msgstr "Планирование"
-
-#~ msgid "Scheduling management"
-#~ msgstr "Управление планом"
-
-#~ msgid "Stop"
-#~ msgstr "Остановить"
-
-#~ msgid "Refresh"
-#~ msgstr "Обновить"
-
-#~ msgid "Aggregation period types"
-#~ msgstr "Агрегация типов периодов"
-
-#~ msgid "active"
-#~ msgstr "активный"
-
-#~ msgid "Resource tables"
-#~ msgstr "ресурсные таблицы"
-
-#~ msgid "Data mart"
-#~ msgstr "Витрина данных"
-
-#~ msgid "Analytics tables"
-#~ msgstr "Аналитические таблицы"
-
-#~ msgid "Analytics tables task strategy"
-#~ msgstr "Стратегия задачи аналитических таблиц"
-
-#~ msgid "Data statistics task strategy"
-#~ msgstr "Стратегия задачи статистики данных"
-
-#~ msgid "Last 2 years daily"
-#~ msgstr "Последние 2 года ежедневно"
-
-#~ msgid "Last 3 years daily"
-#~ msgstr "За последние 3 года ежедневно"
-
-#~ msgid "All daily"
-#~ msgstr "Все ежедневно"
-
-#~ msgid "Right Now"
-#~ msgstr "Прямо сейчас"
-
-#~ msgid "Execute Now"
-#~ msgstr "Выполнить сейчас"
-
-#~ msgid "All every 15 minutes"
-#~ msgstr "Все каждые 15 минут"
-
-#~ msgid "Resource tables task strategy"
-#~ msgstr "Стратегия задачи ресурсных таблиц"
-
-#~ msgid "Data mart task strategy"
-#~ msgstr "Стратегия задачи витрины данных"
-
-#~ msgid "Never"
-#~ msgstr "Никогда"
-
-#~ msgid "Last 12 months daily"
-#~ msgstr "За последние 12 месяцев ежедневно"
-
-#~ msgid "Last 6 months daily + 6 to 12 months weekly"
-#~ msgstr "За последние 6 месяцев ежедневно+ от 6 до 12 месяцев еженедельно"
-
-#~ msgid "Daily"
-#~ msgstr "Ежедневно"
-
-#~ msgid "Organisation unit group set aggregation level"
-#~ msgstr "Уровень агрегации набора группы организации"
-
-#~ msgid "Aggregated org unit data values"
-#~ msgstr "Агрегированные значения данных организации"
-
-#~ msgid "Aggregated org unit indicator values"
-#~ msgstr "Агрегированные значения индикаторов организации"
-
-#~ msgid "Execute now"
-#~ msgstr "Выполнить сейчас"
-
-#~ msgid ""
-#~ "Are you sure you want to execute all tasks now? Task processing might "
-#~ "fully utilize your system resources and slow down other operations."
-#~ msgstr ""
-#~ "Вы уверены, что хотите выполнить все задачи сейчас? Обработка задачи "
-#~ "может полностью использовать все ресурсы системы и замедлить выполнение "
-#~ "других операций"
-
-#~ msgid "No aggregation"
-#~ msgstr "Агрегация отсутствует"
-
-#~ msgid "Option set"
-#~ msgstr "Набор опций"
-
-#~ msgid "Option set management"
-#~ msgstr "Управление набором опций"
-
-#~ msgid "Add option set"
-#~ msgstr "Добавить набор опций"
-
-#~ msgid "Option"
-#~ msgstr "Опция"
-
-#~ msgid "Edit option set"
-#~ msgstr "Редактировать набор опций"
-
-#~ msgid "The number of members"
-#~ msgstr "Число членов"
-
-#~ msgid "Object not deleted because it is associated by objects of type"
-#~ msgstr "Объект не был удален, потому что используется другими объектами:"
-
-#~ msgid "Do you want to delete this lock exception?"
-#~ msgstr "Вы хотите удалить блокирование исключения?"
-
-#~ msgid "Do you want to delete lock exceptions with this configuration?"
-#~ msgstr "Вы хотите удалить исключения блокировки с конфигурацией?"
-
-#~ msgid "Edit lock exception"
-#~ msgstr "Редактировать исключение блокировки"
-
-#~ msgid "Lock exception batch removal"
-#~ msgstr "Блокировать удаление группы исключений"
-
-#~ msgid "Back to lock exception"
-#~ msgstr "Назад в исключение блокировки"
-
-#~ msgid "Deleting lock exceptions"
-#~ msgstr "Удаление исключения блокировки"
-
-#~ msgid "Error at"
-#~ msgstr "Ошибка в"
-
-#~ msgid "not started"
-#~ msgstr "не начато"
-
-#~ msgid "Aggregated data set completeness"
-#~ msgstr "Завершенность агрегированного набора данных"
-
-#~ msgid "Show SQL view"
-#~ msgstr "Показать режим SQL"
-
-#~ msgid "Financial Yearly"
-#~ msgstr "Финансовый ежегодно"
-
-#~ msgid "Update option"
-#~ msgstr "Обновить опции"
-
-#~ msgid "Removing min-max values"
-#~ msgstr "Удаление мин-макс значений"
-
-#~ msgid "Done"
-#~ msgstr "Готово"
-
-#~ msgid "Locale"
-#~ msgstr "Локаль"
-
-#~ msgid "Locale Management"
-#~ msgstr "Управление языком"
-
-#~ msgid "Create New Locale"
-#~ msgstr "Создать новую локаль"
-
-#~ msgid "Edit Locale"
-#~ msgstr "Редактировать локаль"
-
-#~ msgid "Are you sure you want to delete this locale?"
-#~ msgstr "Вы уверены, что хотите удалить эту локаль?"
-
-#~ msgid "Language"
-#~ msgstr "Язык"
-
-#~ msgid "Country"
-#~ msgstr "Страна"
-
-#~ msgid "Please select a language"
-#~ msgstr "Пожалуйста, выберите язык"
-
-#~ msgid "Please select a country"
-#~ msgstr "Пожалуйста, выберите страну"
-
-#~ msgid "Data monitoring"
-#~ msgstr "Мониторинг данных"
-
-#~ msgid "Data monitoring strategy"
-#~ msgstr "Стратегия мониторинга данных"
-
-#~ msgid "Last year daily"
-#~ msgstr "Ежедневно в за прошлый год"
-
-#~ msgid "Show fewer options"
-#~ msgstr "Показать меньше вариантов"
-
-#~ msgid "Show more options"
-#~ msgstr "Показать больше вариантов"
-
-#~ msgid "Disabled"
-#~ msgstr "Неактивный"
-
-#~ msgid "Data synchronization"
-#~ msgstr "Синхронизация данных"
-
-#~ msgid "Metadata Synchronization"
-#~ msgstr "Синхронизация метаданных"
-
-#~ msgid "Data synchronization strategy"
-#~ msgstr "Стратегия синхронизации данных"
-
-#~ msgid "Metadata synchronization strategy"
-#~ msgstr "Стратегия синхронизации метаданных"
-
-#~ msgid ""
-#~ "To enable automated synchronisation, please select when it should occur."
-#~ msgstr ""
-#~ "Чтобы включить автоматическую синхронизацию, выберите время, когда это "
-#~ "должно произойти."
-
-#~ msgid "SMS Scheduler Strategy"
-#~ msgstr "Стратегия планировщика SMS"
-
-#~ msgid "SMS Scheduler"
-#~ msgstr "Планировщик SMS"
-
-#~ msgid "Enabled"
-#~ msgstr "Активирован"
-
-#~ msgid "Last success"
-#~ msgstr "Последняя успешная операция"
-
-#~ msgid "Option management"
-#~ msgstr "Управление опциями"
-
-#~ msgid "Add option"
-#~ msgstr "Добавить опцию"
-
-#~ msgid "Edit option"
-#~ msgstr "Редактировать опцию"
-
-#~ msgid "Sort options"
-#~ msgstr "Сортировать опции"
-
-#~ msgid "Available options"
-#~ msgstr "Доступные опции"
-
-#~ msgctxt "please_select_a_dataset"
-#~ msgid "Please select a data set"
-#~ msgstr "Пожалуйста, выберите набор данных"
-
-#~ msgctxt "please_select_an_organisation_unit"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "Пожалуйста, выберите организационную единицу"
-
-#~ msgid "Next year"
-#~ msgstr "Следующий год"
-
-#~ msgid "Update the data elements and option combos in expression"
-#~ msgstr "Обновите элементы данных и комбинации опций в выражении"
-
-#~ msgid "Org unit group does not exist"
-#~ msgstr "Группа организационных единиц не существует"
-
-#~ msgid "View name"
-#~ msgstr "Посмотреть имя"
-
-#~ msgid "Category Option"
-#~ msgstr "Вариант категории"
-
-#~ msgid "Category Option Group"
-#~ msgstr "Группа варианта категории"
-
-#~ msgid "Document"
-#~ msgstr "Документ"
-
-#~ msgid "Legend Set"
-#~ msgstr "Набор легенд"
-
-#~ msgid "Program Indicator"
-#~ msgstr "Индикатор программы"
-
-#~ msgid "Metadata synchronization is in progress"
-#~ msgstr "Идет синхронизация метаданных"
-
-#~ msgid "Metadata synchronization started"
-#~ msgstr "Синхронизация метаданных началась"
-
-#~ msgid "Run now"
-#~ msgstr "Выполнить сейчас"
-
-#~ msgid "Program Notifications scheduler"
-#~ msgstr "Планировщик программных уведомлений"
-
-#~ msgid "Program Notifications scheduling strategy"
-#~ msgstr "Стратегия планировки программных уведомлений"
-
-#~ msgid "Sync now"
-#~ msgstr "Синхронизировать сейчас"
-
-#~ msgid "Every Minute"
-#~ msgstr "Каждую минуту"
-
-#~ msgid "Every Hour"
-#~ msgstr "Каждый час"
+msgid "Messages"
+msgstr "Сообщения"
