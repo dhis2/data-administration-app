@@ -1,35 +1,35 @@
-#, fuzzy
+# Translators:
+# phil_dhis2, 2019
+# Viktor Varland <viktor@dhis2.org>, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2019-06-26 08:00+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.0.0b3\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Integrity"
 msgstr "Integridad de Datos"
 
 msgid ""
-"Run data integrity checks and unveil anomalies and problems in the meta data "
-"setup."
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
 msgstr ""
 "Ejecutar controles de integridad de datos y detectar anomalías y problemas "
 "en la configuración de los metadatos."
 
-#, fuzzy
 msgid "Check Data Integrity"
-msgstr "Integridad de Datos"
+msgstr ""
 
-#, fuzzy
 msgid "Performing data integrity checks..."
-msgstr "Realizando mantenimiento"
+msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -37,9 +37,8 @@ msgstr ""
 msgid "RUN INTEGRITY CHECKS"
 msgstr ""
 
-#, fuzzy
 msgid "Data elements without data set"
-msgstr "Elementos de datos sin conjunto de dato"
+msgstr ""
 
 msgid "Data elements without groups"
 msgstr "Elementos de datos sin grupos"
@@ -49,7 +48,8 @@ msgstr "Elementos de datos violando conjunto de datos obligatorio"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
-"Elemento de dato asignado a conjunto de datos con tipos de periodo diferentes"
+"Elemento de dato asignado a conjunto de datos con tipos de periodo "
+"diferentes"
 
 msgid "Data sets not assigned to organisation units"
 msgstr "Conjunto de datos no asignado a unidad organizativa"
@@ -79,7 +79,7 @@ msgid "Organisation units without groups"
 msgstr "Unidades organizativas sin grupos"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr "Unidades organizativas violando conjuntos de grupo exclusivo"
+msgstr ""
 
 msgid "Organisation unit groups without group sets"
 msgstr "Grupos de unidades organizativas sin conjuntos de grupo"
@@ -93,19 +93,14 @@ msgstr "Expresión del lado izquierdo de la regla de validación inválida"
 msgid "Invalid validation rule right side expressions"
 msgstr "Expresión del lado derecho de la regla de validación inválida"
 
-#, fuzzy
 msgid "Invalid program indicator expressions"
-msgstr "Numerador inválido"
+msgstr ""
 
-#, fuzzy
 msgid "Invalid program indicator filters"
-msgstr "Denominador inválido"
+msgstr ""
 
-#, fuzzy
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
-"Hay elementos de datos en el set de datos, pero no en el formulario o en "
-"ninguna sección"
 
 msgid "Invalid category combinations"
 msgstr ""
@@ -114,30 +109,24 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Mantenimiento"
+msgstr "Maintenance"
 
-#, fuzzy
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
-"Generat tablas de recursos de base de datos para la jerarquía de unidades "
-"organizativas y la estructura de conjuntos de datos, entre otros."
 
-#, fuzzy
 msgid "Perform Maintenance"
-msgstr "Realizar mantenimiento"
+msgstr ""
 
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
-#, fuzzy
 msgid "Performing Maintenance..."
-msgstr "Realizando mantenimiento"
+msgstr ""
 
-#, fuzzy
 msgid "Maintenance done"
-msgstr "Mantenimiento"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -187,9 +176,8 @@ msgstr ""
 msgid "Reload apps"
 msgstr ""
 
-#, fuzzy
 msgid "Resource Tables"
-msgstr "Tabla de recursos"
+msgstr ""
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -198,20 +186,14 @@ msgstr ""
 "Generat tablas de recursos de base de datos para la jerarquía de unidades "
 "organizativas y la estructura de conjuntos de datos, entre otros."
 
-#, fuzzy
 msgid "Generate Resource Tables"
-msgstr "Generando tablas de recursos"
+msgstr ""
 
 msgid "GENERATE TABLES"
 msgstr ""
 
-#, fuzzy
-msgid "Generating Resource Tables..."
-msgstr "Generando tablas de recursos"
-
-#, fuzzy
 msgid "Resource Tables generated"
-msgstr "Tabla de recursos generada"
+msgstr ""
 
 msgid "An unexpected error happened during operation"
 msgstr ""
@@ -262,20 +244,17 @@ msgstr ""
 "Buscar el numero de objetos en la base de datos como elementos de datos, "
 "indicadores, conjuntos de datos y valores."
 
-#, fuzzy
 msgid "Overview Data Statistics"
-msgstr "Estadisticas de Dato"
+msgstr ""
 
-#, fuzzy
 msgid "Loading Data Statistics..."
-msgstr "Estadisticas de Dato"
+msgstr ""
 
 msgid "It was not possible to load Data Statistics"
 msgstr ""
 
-#, fuzzy
 msgid "No data to show."
-msgstr "Dato no encontrado"
+msgstr ""
 
 msgid "Object type"
 msgstr "Tipo de objeto"
@@ -287,7 +266,7 @@ msgid "Today"
 msgstr "Hoy"
 
 msgid "Last"
-msgstr ""
+msgstr "Ultimo"
 
 msgid "days"
 msgstr ""
@@ -308,66 +287,58 @@ msgid "Data values"
 msgstr "Valores de datos"
 
 msgid "Events"
-msgstr ""
+msgstr "Eventos"
 
-#, fuzzy
 msgid "Indicators"
-msgstr "Indicador"
+msgstr "Indicadores"
 
 msgid "Periods"
 msgstr "Periodos"
 
-#, fuzzy
 msgid "Organisation units"
-msgstr "Unidad organizativa"
+msgstr "Unidades orgenizativas"
 
-#, fuzzy
 msgid "Validation rules"
-msgstr "Reglas de validación sin grupo"
+msgstr "Reglas de validación"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programas"
 
-#, fuzzy
 msgid "Data elements"
-msgstr "Elemento de datos"
+msgstr "Elementos de datos"
 
 msgid "Organisation unit groups"
-msgstr "Listado de grupos de unidades organizativas"
+msgstr "Grupos de unidad organizativa"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Tablas dinámicas"
 
 msgid "Indicator types"
 msgstr "Tipos de indicador"
 
-#, fuzzy
 msgid "Data sets"
-msgstr "Organisation unit"
+msgstr "Sets de datos"
 
-#, fuzzy
 msgid "User groups"
-msgstr "Grupo de usuarios"
+msgstr "Grupos de usuario"
 
 msgid "Users"
 msgstr "Usuarios"
 
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
-#, fuzzy
 msgid "Indicator groups"
-msgstr "Grupo de Indicadores"
+msgstr "Grupos de indicadores"
 
 msgid "Charts"
-msgstr ""
+msgstr "Gráficas"
 
-#, fuzzy
 msgid "Data element groups"
-msgstr "Grupo de elementos de datos"
+msgstr "Grupos de elementos de datos"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Cuadros de mandos"
 
 msgid "Lock Exception Management"
 msgstr "Administración de Excepciones de Bloqueo"
@@ -375,17 +346,15 @@ msgstr "Administración de Excepciones de Bloqueo"
 msgid "Lock Exception"
 msgstr "Excepción de Bloqueo"
 
-#, fuzzy
 msgid "Batch Deletion"
-msgstr "Eliminación de lote"
+msgstr ""
 
-#, fuzzy
 msgid "Add new lock exception"
-msgstr "Crear nueva excepción de bloqueo"
+msgstr ""
 
 msgid ""
-"Add or remove exceptions to the the standard rules for locking of data entry "
-"forms."
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
 msgstr ""
 "Añadir o eliminar excepciones a las reglas estándar de bloqueo de "
 "formularios de entrada de datos."
@@ -399,63 +368,53 @@ msgstr ""
 msgid "ADD"
 msgstr ""
 
-#, fuzzy
 msgid "Loading Lock Exceptions..."
-msgstr "Excepción de Bloqueo"
+msgstr ""
 
-#, fuzzy
 msgid "Adding Lock Exception..."
-msgstr "Excepción de Bloqueo"
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception removed"
-msgstr "Excepción de Bloqueo"
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception Added"
-msgstr "Excepción de Bloqueo"
+msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "¿Está seguro?"
 
 msgid "CONFIRM"
 msgstr ""
 
-#, fuzzy
 msgid "Select a Data Set"
-msgstr "Seleccione un grupo de datos"
+msgstr ""
 
-#, fuzzy
 msgid "Updating Organisation Units Tree..."
-msgstr "Unir Unidades Organizativas"
+msgstr ""
 
-#, fuzzy
 msgid "For organisation units within"
-msgstr "Unidades organizativas huérfanas"
+msgstr ""
 
 msgid "Period"
-msgstr "Periodos"
+msgstr "Periodo"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Set de Datos"
 
 msgid "Organisation Unit"
 msgstr "Unidad Organizativa"
 
 msgid "Organisation Unit Group"
-msgstr "Grupo de Unidades Organizativas"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Level"
-msgstr "Unir Unidades Organizativas"
+msgstr ""
 
-#, fuzzy
 msgid "Select"
-msgstr "Seleccionar / TODOS"
+msgstr "Seleccionar"
 
-#, fuzzy
 msgid "Deselect"
-msgstr "No seleccionado"
+msgstr ""
 
 msgid "Select All Org Units"
 msgstr ""
@@ -464,17 +423,16 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
-#, fuzzy
 msgid "Actions"
-msgstr "Opciones"
+msgstr "Acciones"
 
 msgid "of"
 msgstr ""
@@ -491,9 +449,8 @@ msgstr ""
 msgid "bi monthly"
 msgstr ""
 
-#, fuzzy
 msgid "day"
-msgstr "Hoy"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -579,6 +536,9 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
+msgid "For all organisation units:"
+msgstr ""
+
 msgid "Min-Max Value Generation"
 msgstr "Generación de Valores Min-Max"
 
@@ -589,38 +549,32 @@ msgstr ""
 "Generar valores máximo y mínimo que se pueden usar para validación en los "
 "procesos de entrada y validación de datos."
 
-#, fuzzy
 msgid "Generate Min-Max Value"
-msgstr "Generando valores min-max"
+msgstr ""
 
 msgid "It was not possible to load data"
 msgstr ""
 
-#, fuzzy
 msgid "Select Data set and Organisation Unit"
-msgstr "Seleccionar padre de unidad organizativa"
+msgstr ""
 
-#, fuzzy
 msgid "Doing Min Max generation..."
-msgstr "Generación de Valores Min-Max"
+msgstr ""
 
 msgid "Removing Min Max generation..."
 msgstr ""
 
-#, fuzzy
 msgid "Min Max generation done"
-msgstr "Generación de Valores Min-Max"
+msgstr ""
 
 msgid "Min Max removal done"
 msgstr ""
 
-#, fuzzy
 msgid "Loading data sets"
-msgstr "Conjuntos de datos disponibles"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Selection"
-msgstr "Unir Unidades Organizativas"
+msgstr "Selección de Unidades Organizativas"
 
 msgid "GENERATE"
 msgstr ""
@@ -628,770 +582,73 @@ msgstr ""
 msgid "REMOVE"
 msgstr ""
 
-#~ msgid "Remove All Locks"
-#~ msgstr "Eliminar todos los bloqueos"
+msgid "Analytics tables management"
+msgstr ""
 
-#~ msgid "Data Administration"
-#~ msgstr "Administración de Datos"
+msgid "Analytics Tables"
+msgstr ""
 
-#~ msgid "Period Type"
-#~ msgstr "Tipo de periodo"
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
 
-#~ msgid "Please select at least one option"
-#~ msgstr "Seleccionar al menos una opcion"
+msgid "Analytics tables update"
+msgstr "Actualizar tablas Analytics"
 
-#~ msgid "Maintenance performed"
-#~ msgstr "Mantenimiento realizado"
+msgid "START EXPORT"
+msgstr ""
 
-#~ msgid "Clear data set completeness"
-#~ msgstr "Limpiar completitud de Set  de datos"
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
 
-#~ msgid "Organisation unit group set structure normalized"
-#~ msgstr "Estructura de set de grupos de unidades organizativas normalizada"
+msgid "Skip generation of resource tables"
+msgstr ""
 
-#~ msgid "Generate tables"
-#~ msgstr "Generar tablas"
+msgid "Skip generation of event data"
+msgstr ""
 
-#~ msgid "Cache Statistics"
-#~ msgstr "Estadisticas de Cache"
+msgid "Skip generation of enrollment data"
+msgstr ""
 
-#~ msgid "Second Level Cache Statistics"
-#~ msgstr "Estadisticas de cache de segundo nivel"
+msgid "Analytics Tables Update"
+msgstr ""
 
-#~ msgid "Region name"
-#~ msgstr "Nombre de region"
+msgid "Number of last years of data to include"
+msgstr ""
 
-#~ msgid "Mem count"
-#~ msgstr "Conteo de memoria"
+msgid "[ All ]"
+msgstr ""
 
-#~ msgid "Disk count"
-#~ msgstr "Conteo de disco"
+msgid "Settings"
+msgstr "Configuración"
 
-#~ msgid "Mem size"
-#~ msgstr "Tamaño de memoria"
+msgid "Search apps"
+msgstr "Buscar aplicaciones"
 
-#~ msgid "Total Second Level Cache"
-#~ msgstr "Segundo nivel de cache total"
+msgid "Profile"
+msgstr "Perfil"
 
-#~ msgid "Total Query Cache"
-#~ msgstr "Consulta total de cache"
+msgid "Account"
+msgstr "Cuenta"
 
-#~ msgid "Query Cache Statistics"
-#~ msgstr "Consultar estadisticas de cache"
+msgid "Help"
+msgstr "Ayuda"
 
-#~ msgid "Query name"
-#~ msgstr "Consultar nombre"
+msgid "Log out"
+msgstr "Salir"
 
-#~ msgid "Exec count"
-#~ msgstr "Conteo de ejecución"
+msgid "About DHIS 2"
+msgstr "Sobre DHIS 2"
 
-#~ msgid "Exec avg time"
-#~ msgstr "Promedio de tiempo de ejecución"
+msgid "Manage my apps"
+msgstr "Manage my apps"
 
-#~ msgid "Exec max time"
-#~ msgstr "Tiempo maximo de ejecución"
+msgid "No results found"
+msgstr "No results found"
 
-#~ msgid "Exec min time"
-#~ msgstr "Tiempo minimo de ejecución"
+msgid "Interpretations"
+msgstr "Interpretaciones"
 
-#~ msgid "Exec row count"
-#~ msgstr "Conteo de filas en la ejecución"
-
-#~ msgid "Clear cache"
-#~ msgstr "Limpiar cache"
-
-#~ msgid "Data dictionaries"
-#~ msgstr "Diccionarios de datos"
-
-#~ msgid "Number of objects"
-#~ msgstr "Numero de objetos"
-
-#~ msgid "Data Browser"
-#~ msgstr "Navegador de Datos"
-
-#~ msgid "From date"
-#~ msgstr "Desde fecha"
-
-#~ msgid "To date"
-#~ msgstr "A la fecha"
-
-#~ msgid "Browse by"
-#~ msgstr "Navegar por"
-
-#~ msgid "Select mode"
-#~ msgstr "Seleccionar modo"
-
-#~ msgid "Browse"
-#~ msgstr "Navegar"
-
-#~ msgid "Select Period Type"
-#~ msgstr "Seleccionar tipo de periodo"
-
-#~ msgid "Organisation units violating compulsory group sets"
-#~ msgstr "Unidades organizativas violando conjuntos de grupo obligatorio"
-
-#~ msgid "Data integrity checks performed"
-#~ msgstr "Revisión de integridad de datos realizada"
-
-#~ msgid "Value"
-#~ msgstr "Valor"
-
-#~ msgid "Found"
-#~ msgstr "Encontrado"
-
-#~ msgid "values"
-#~ msgstr "valores"
-
-#~ msgid "Data element Group"
-#~ msgstr "Grupo de elementos de datos"
-
-#~ msgid "Aggregated data values"
-#~ msgstr "Valores de dato agregados"
-
-#~ msgid "Aggregated indicator values"
-#~ msgstr "Valores de indicador agregados"
-
-#~ msgid "Organisation Unit Pruning"
-#~ msgstr "Depuración de Unidades Organizativas"
-
-#~ msgid ""
-#~ "Browse the database and get an overview of where data exists. View and "
-#~ "export counts of data elements as well as raw data."
-#~ msgstr ""
-#~ "Explorar la Base de Datos y obtener una visión general de donde hay "
-#~ "datos. Ver y exprotar cuentas de Elementos de Datos y datos en bruto."
-
-#~ msgid ""
-#~ "Archive data which is not currently relevant to your system in order to "
-#~ "improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Archivar datos no relevantes para mejorar el rendimiento del Sistema. Los "
-#~ "datos se pueden desarchivar."
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system. Data "
-#~ "can also be unarchived."
-#~ msgstr ""
-#~ "Archivar datos individuales que no son relevantes para el sistema "
-#~ "actualmente. Los datos podrán ser restaurados."
-
-#~ msgid ""
-#~ "Perform maintenance tasks such as pruning of data values and periods and "
-#~ "clearing of database resource tables."
-#~ msgstr ""
-#~ "Realizar tareas de mantenimiento como depuracion de datos y periodos y "
-#~ "limpieza de las tablas de recursos de la base de datos."
-
-#~ msgid ""
-#~ "Merge two organisation units and their data values. Data is merged "
-#~ "depending on existence and date of last modification."
-#~ msgstr ""
-#~ "Fusionar dos Unidades Organizativas y sus datos. Los datos se mezcalen "
-#~ "función de su existencia y fecha de última modificación."
-
-#~ msgid ""
-#~ "Monitor and clear the system database cache status. Provides information "
-#~ "on object and query caches."
-#~ msgstr ""
-#~ "Monitorizar y borrar el estado de caché de base de datos del sistema. "
-#~ "Proporciona información sobre la caché de objetos y consultas."
-
-#~ msgid ""
-#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
-#~ "and deploying local databases."
-#~ msgstr ""
-#~ "Eliminar sub-árboles del árbol, de Unidades Organizativas. Util cuando se "
-#~ "están creando y utilizando bases de datos locales."
-
-#~ msgid ""
-#~ "Define which data elements for which zero values should be stored or "
-#~ "ignored. Useful for reducing database size."
-#~ msgstr ""
-#~ "Definir los Elementos de Datos para los que se bene almacenar los valores "
-#~ "cero. Util para reducir el tamaño de la Base de Datos."
-
-#~ msgid ""
-#~ "Eliminate data registered for duplicate data elements. Useful when data "
-#~ "has been entered for identical data elements."
-#~ msgstr ""
-#~ "Eliminar datos registrados para Elementos de Datos duplicados. Util "
-#~ "cuando los datos se han introducido para Elementos de Datos idénticos."
-
-#~ msgid ""
-#~ "Create SQL database views. These views will typically use the resource "
-#~ "tables to provide convenient views for third-party tools."
-#~ msgstr ""
-#~ "Crear Vista de base de datos. Estas vists normalmente utilizan las tablas "
-#~ "de recursos para proporcionar vistas a terceras herramientas."
-
-#~ msgid ""
-#~ "Create constants which can be included in expressions of indicator and "
-#~ "validation rules."
-#~ msgstr ""
-#~ "Crear constante a incluir en expresiones de indicador o reglas de "
-#~ "validación."
-
-#~ msgid ""
-#~ "Create and update dynamic attributes. Attributes can be used for data "
-#~ "elements, indicators, organisation units and users."
-#~ msgstr ""
-#~ "Crear y actualizar atributos dinámicos. Los atributos puedes ser "
-#~ "utilizados por elementos de datos, indicadores, unidades organizativas y "
-#~ "usuarios."
-
-#~ msgid ""
-#~ "Create option sets which can be included in data elements and produce "
-#~ "drop-down lists in data entry forms."
-#~ msgstr ""
-#~ "Crear sets de opciones que pueden ser asignados a elementos de datos para "
-#~ "generar listas desplegables en los formularios de entrada de datos."
-
-#~ msgid ""
-#~ "Manage scheduled tasks such as data mart exports, where you can set "
-#~ "period types, aggregation level and frequency."
-#~ msgstr ""
-#~ "Administrar tareas programadas como la ejecución del data mart, se pueden "
-#~ "especificar tipos de periodos, niveles de agregación y frecuencia."
-
-#~ msgid "Expression is empty"
-#~ msgstr "La expresión esta vacia"
-
-#~ msgid "Data element identifier must be a number"
-#~ msgstr "El identificador del elemento de datos debe ser un número"
-
-#~ msgid "Category option combo identifier must be a number"
-#~ msgstr ""
-#~ "El identificador del conjunto de opciones de categorías debe ser un número"
-
-#~ msgid "Expression is not well formed"
-#~ msgstr "La expresión no esta bien construida"
-
-#~ msgid "Zero Value Storage"
-#~ msgstr "Almacenar Valores Cero"
-
-#~ msgid "Ignore zero data values"
-#~ msgstr "Ignorar valores cero"
-
-#~ msgid "Store zero data values"
-#~ msgstr "Alamacenar valores cero"
-
-#~ msgid "Select the organisation unit to eliminate"
-#~ msgstr "Seleccione la unidad organizativa a eliminar"
-
-#~ msgid "Select the organisation unit to keep"
-#~ msgstr "Seleccione la unidad organizativa a mantener"
-
-#~ msgid "Merge"
-#~ msgstr "Mezclar"
-
-#~ msgid "Reset"
-#~ msgstr "Reiniciar"
-
-#~ msgid "Confirm"
-#~ msgstr "Confirmar"
-
-#~ msgid "Merging"
-#~ msgstr "Mezclando"
-
-#~ msgid "Merging done"
-#~ msgstr "Mezclado"
-
-#~ msgid "Eliminating"
-#~ msgstr "Eliminando"
-
-#~ msgid "Elimination done"
-#~ msgstr "Eliminacion realizada"
-
-#~ msgid "Select the data element to eliminate"
-#~ msgstr "Seleccione el elemento de datos a eliminar"
-
-#~ msgid "Select the data element to keep"
-#~ msgstr "Seleccione el elemento de datos a mantener"
-
-#~ msgid "Eliminate"
-#~ msgstr "Eliminar"
-
-#~ msgid "Move All"
-#~ msgstr "Mover todos"
-
-#~ msgid "Move Selected"
-#~ msgstr "Mover seleccionados"
-
-#~ msgid "Duplicate Data Elimination"
-#~ msgstr "Eliminación de datos duplicados"
-
-#~ msgid "Please select two different organisation units"
-#~ msgstr "Por favor seleccione dos unidades organizativas diferentes"
-
-#~ msgid "Please select two different data elements"
-#~ msgstr "Por favor seleccione dos elementos de datos diferentes"
-
-#~ msgid "Filter"
-#~ msgstr "Filtro"
-
-#~ msgid "Data Archive"
-#~ msgstr "Archivo de Datos"
-
-#~ msgid "There are"
-#~ msgstr "Hay"
-
-#~ msgid "overlapping data values in the archive."
-#~ msgstr "superposición de valores en el archivo."
-
-#~ msgid "There are no overlapping data in the archive."
-#~ msgstr "No hay solapamiento de datos en el archivo."
-
-#~ msgid "Eliminate the oldest duplicates"
-#~ msgstr "Eliminar duplicados más antiguos"
-
-#~ msgid "Eliminate duplicates from archive source"
-#~ msgstr "Eliminar duplicados del archivo"
-
-#~ msgid "Eliminate duplicates from regular source"
-#~ msgstr "Eliminar duplicados"
-
-#~ msgid "Start date"
-#~ msgstr "Fecha de inicio"
-
-#~ msgid "End date"
-#~ msgstr "Fecha de fin"
-
-#~ msgid "Archive"
-#~ msgstr "Archivo de datos"
-
-#~ msgid "Unarchive"
-#~ msgstr "Desarchivar"
-
-#~ msgid "Archiving"
-#~ msgstr "Archivando"
-
-#~ msgid "Unarchiving"
-#~ msgstr "Desarchivando"
-
-#~ msgid "done. Number of archived values is now"
-#~ msgstr "hecho. El número de valores archivados es correcto"
-
-#~ msgid "Prune"
-#~ msgstr "Depurar"
-
-#~ msgid "Pruning"
-#~ msgstr "Depurando"
-
-#~ msgid "Pruning done"
-#~ msgstr "Depuración completada"
-
-#~ msgid "Data browser"
-#~ msgstr "Navegador de datos"
-
-#~ msgid "Please choose a period type"
-#~ msgstr "Seleccione un periodo de tiempo"
-
-#~ msgid "Please enter a valid End date"
-#~ msgstr "Por favor, introduzca una fecha final válida"
-
-#~ msgid "Please select a browser mode"
-#~ msgstr "Por favor, selecione modo de navegación"
-
-#~ msgid "Please select an organization unit"
-#~ msgstr "Por favor, seleccione unidad organizativa"
-
-#~ msgid "Organisation unit group"
-#~ msgstr "Listado de grupos de unidades organizativas"
-
-#~ msgctxt "drilldown_data_element"
-#~ msgid "Data element"
-#~ msgstr "Elemento de datos"
-
-#~ msgid "Number of recorded values"
-#~ msgstr "Numero de valores guardados"
-
-#~ msgid "Browse data at this level only"
-#~ msgstr "Examinar datos en este nivel"
-
-#~ msgid "Summary drill down"
-#~ msgstr "Profundizar en el resumen"
-
-#~ msgid "View raw data at this level"
-#~ msgstr "Ver datos en bruto en éste nivel"
-
-#~ msgid "Click on this organisation unit"
-#~ msgstr "Haga clic en esta unidad de organización"
-
-#~ msgid "earliest"
-#~ msgstr "primera"
-
-#~ msgid "latest"
-#~ msgstr "mas reciente"
-
-#~ msgid "Level must be a number"
-#~ msgstr "Nivel debe ser un número"
-
-#~ msgctxt "not_choose_organisation"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "Seleccione una unidad organizativa"
-
-#~ msgid "Generate"
-#~ msgstr "Generar"
-
-#~ msgid "SQL View Management"
-#~ msgstr "Administración de vista SQL"
-
-#~ msgid "SQL View"
-#~ msgstr "Vista SQL"
-
-#~ msgid "SQL Statement"
-#~ msgstr "Instrucción SQL"
-
-#~ msgid "Execute query"
-#~ msgstr "Ejecutar consulta"
-
-#~ msgid "Hide warning"
-#~ msgstr "Ocultar avisos"
-
-#~ msgid "Add new SQL view"
-#~ msgstr "Añadir nueva vista SLQ"
-
-#~ msgid "Update SQL view"
-#~ msgstr "Actualizar vista SQL"
-
-#~ msgid "Name is not allowed to be null"
-#~ msgstr "El nombre no puede estar vacío"
-
-#~ msgid "SQL statement cannot be null"
-#~ msgstr "Instrucción SQL no puede estar vacío"
-
-#~ msgid "This SQL statement is invalid"
-#~ msgstr "Instrucción SQL no válida."
-
-#~ msgid "This resource viewer is invalid or does not exist"
-#~ msgstr "Este visor de recursos no es válido o no existe."
-
-#~ msgid "SQL view table with name"
-#~ msgstr "Mostrar tabla de vista SQL con nombre"
-
-#~ msgid "is created"
-#~ msgstr "es creado"
-
-#~ msgid "Please execute query to create View table before viewing"
-#~ msgstr "Ejecute la consulta para crear la vista antes de abrirla"
-
-#~ msgid "View data for"
-#~ msgstr "Ver datos de"
-
-#~ msgid "Failed to create view table for"
-#~ msgstr "No se pudo crear la vista para"
-
-#~ msgid "Show"
-#~ msgstr "Mostrar"
-
-#~ msgid "Sort"
-#~ msgstr "Ordenar"
-
-#~ msgid "Lock"
-#~ msgstr "Bloquear"
-
-#~ msgid "Locked"
-#~ msgstr "Bloqueado"
-
-#~ msgid "Unlock"
-#~ msgstr "Desbloquear"
-
-#~ msgid "Append"
-#~ msgstr "Añadido"
-
-#~ msgid "Removed values successfully"
-#~ msgstr "Valores eliminados"
-
-#~ msgid "Recorded values"
-#~ msgstr "Valores grabados"
-
-#~ msgid "Earliest date will be used if no date is selected"
-#~ msgstr "Si no se selecciona ninguna fecha, se utilizará la mas antigua"
-
-#~ msgid "Latest date will be used if no date is selected"
-#~ msgstr "Si no selecciona una fecha se utilizará la mas reciente"
-
-#~ msgid "Generated values successfully"
-#~ msgstr "Valores generados correctamente"
-
-#~ msgid "Start"
-#~ msgstr "Comienzo"
-
-#~ msgid "Data Set list"
-#~ msgstr "Listado de conjuntos de datos"
-
-#~ msgid "Data Element Group list"
-#~ msgstr "Listado de grupos de elementos de datos"
-
-#~ msgid "Organisation Unit Group list"
-#~ msgstr "Listado de Grupos de Unidades Organizativas"
-
-#~ msgid "Person Data Archive"
-#~ msgstr "Archivar Datos Individuales"
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system in "
-#~ "order to improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "Archivar datos de persona que no son relevantes actualmente para mejorar "
-#~ "la eficiencia del sistema. Los datos se podrán recuperar."
-
-#~ msgid ""
-#~ "You must choose the organisation unit has parent to prune. Please try "
-#~ "again!"
-#~ msgstr ""
-#~ "Debe elegir una la Unidad Organizativa que tenga padre para podar. "
-#~ "¡Inténtelo de nuevo!"
-
-#~ msgid "Restricted user tables cannot be referenced in query"
-#~ msgstr "No se permite lanzar consultas a las tablas especiales."
-
-#~ msgid "Sections with invalid category combinations"
-#~ msgstr "Secciones con combinaciones de categorias no válidas"
-
-#~ msgid "Do you want to delete this SQL view object ?"
-#~ msgstr "¿Está seguro de querer eliminar esta vista SLQ?"
-
-#~ msgid "Clear data mart"
-#~ msgstr "Vaciar data mart"
-
-#~ msgid "Display zeros"
-#~ msgstr "Mostrar ceros"
-
-#~ msgid "Raw data"
-#~ msgstr "Datos en bruto"
-
-#~ msgid "Download as Excel"
-#~ msgstr "Descargar como Excel"
-
-#~ msgid "Download as CSV"
-#~ msgstr "Descargar archivo CSV"
-
-#~ msgid "Download as PDF"
-#~ msgstr "Descargar en formato PDF"
-
-#~ msgid "Constant"
-#~ msgstr "Constante"
-
-#~ msgid "Constant Management"
-#~ msgstr "Administración de constantes"
-
-#~ msgid "Add Constant"
-#~ msgstr "Añadir constante"
-
-#~ msgid "Edit Constant"
-#~ msgstr "Editar Constante"
-
-#~ msgid "Value must be an number"
-#~ msgstr "El valor debe ser un número"
-
-#~ msgid "Do you want to delete this constant?"
-#~ msgstr "¿Quiere eliminar esta constante?"
-
-#~ msgid "Yesterday"
-#~ msgstr "Ayer"
-
-#~ msgid "Last 7 days"
-#~ msgstr "Últimos 7 diass"
-
-#~ msgid "Last 30 days"
-#~ msgstr "Últimos 30 días"
-
-#~ msgid "Dynamic Attributes"
-#~ msgstr "Atributos dinámicos"
-
-#~ msgid "Attribute"
-#~ msgstr "Atributo"
-
-#~ msgid "Attribute Management"
-#~ msgstr "Administración de atributos"
-
-#~ msgid "Value Type"
-#~ msgstr "Tipo de valor"
-
-#~ msgid "Mandatory"
-#~ msgstr "Obligatorio"
-
-#~ msgid "Unique"
-#~ msgstr "Unique"
-
-#~ msgid "User"
-#~ msgstr "Usuario"
-
-#~ msgid "Integer"
-#~ msgstr "Entero"
-
-#~ msgid "Positive Integer"
-#~ msgstr "Entero positivo"
-
-#~ msgid "Negative Integer"
-#~ msgstr "Entero Negativo"
-
-#~ msgid "Add Attribute"
-#~ msgstr "Añadir atributo"
-
-#~ msgid "Edit Attribute"
-#~ msgstr "Editar Atributo"
-
-#~ msgid "Assigned to"
-#~ msgstr "Asignado a"
-
-#~ msgid "Attribute sort order"
-#~ msgstr "Ordenar atributos"
-
-#~ msgid "Scheduling is"
-#~ msgstr "La planificación es"
-
-#~ msgid "Scheduling"
-#~ msgstr "Planificación"
-
-#~ msgid "Scheduling management"
-#~ msgstr "Administración planificación"
-
-#~ msgid "Stop"
-#~ msgstr "Parar"
-
-#~ msgid "Refresh"
-#~ msgstr "Actualizar"
-
-#~ msgid "Aggregation period types"
-#~ msgstr "Tipos de periodos de agregación"
-
-#~ msgid "active"
-#~ msgstr "activo"
-
-#~ msgid "Resource tables"
-#~ msgstr "Tablas de recursos"
-
-#~ msgid "Data mart"
-#~ msgstr "Data Mart"
-
-#~ msgid "Analytics tables"
-#~ msgstr "Tablas Analytics"
-
-#~ msgid "Analytics tables task strategy"
-#~ msgstr "Estrategia de generación de tablas Analytics"
-
-#~ msgid "Last 3 years daily"
-#~ msgstr "Últimos 3 años diariamente"
-
-#~ msgid "All daily"
-#~ msgstr "Todo diariamente"
-
-#~ msgid "Execute Now"
-#~ msgstr "Ejecutar"
-
-#~ msgid "Resource tables task strategy"
-#~ msgstr "Estrategia de generación de tablas de recursos"
-
-#~ msgid "Data mart task strategy"
-#~ msgstr "Estrategia de generación de Data Mart"
-
-#~ msgid "Never"
-#~ msgstr "Nunca"
-
-#~ msgid "Last 12 months daily"
-#~ msgstr "Últimos 12 meses diariamente"
-
-#~ msgid "Last 6 months daily + 6 to 12 months weekly"
-#~ msgstr "Últimos 6 meses diariamente + 6 a 12 meses semanalmente"
-
-#~ msgid "Daily"
-#~ msgstr "Diariamente"
-
-#~ msgid "Organisation unit group set aggregation level"
-#~ msgstr ""
-#~ "Seleccionar nivel de agregación de set de grupo de unidades organzativas"
-
-#~ msgid "Aggregated org unit data values"
-#~ msgstr "Valores agregados de datos de unidad organizativa"
-
-#~ msgid "Aggregated org unit indicator values"
-#~ msgstr "Valores agregados de indicadores de unidad organizativa"
-
-#~ msgid "Execute now"
-#~ msgstr "Ejecutar"
-
-#~ msgid ""
-#~ "Are you sure you want to execute all tasks now? Task processing might "
-#~ "fully utilize your system resources and slow down other operations."
-#~ msgstr ""
-#~ "¿Está seguro de querer ejecutar todas estas tareas ahora? La ejecución de "
-#~ "las tareas puede consumir muchos recursos y ralentizar otras operaciones."
-
-#~ msgid "No aggregation"
-#~ msgstr "Sin agregación"
-
-#~ msgid "Option set"
-#~ msgstr "Set de opciones"
-
-#~ msgid "Option set management"
-#~ msgstr "Administración de set de opciones"
-
-#~ msgid "Add option set"
-#~ msgstr "Añadir set de opciones"
-
-#~ msgid "Option"
-#~ msgstr "Opción"
-
-#~ msgid "Edit option set"
-#~ msgstr "Editar set de opciones"
-
-#~ msgid "The number of members"
-#~ msgstr "El número de mienbros"
-
-#~ msgid "Object not deleted because it is associated by objects of type"
-#~ msgstr "El objetó no se eliminó por estar asociado con objetos de tipo"
-
-#~ msgid "Do you want to delete this lock exception?"
-#~ msgstr "¿Quiere eliminar esta excepción de bloqueo?"
-
-#~ msgid "Do you want to delete lock exceptions with this configuration?"
-#~ msgstr "¿Quiere eliminar las excepciones de bloqueo con esta configuración?"
-
-#~ msgid "Edit lock exception"
-#~ msgstr "Editar excepción de bloqueo"
-
-#~ msgid "Lock exception batch removal"
-#~ msgstr "Eliminar lote de excepciones de bloqueo"
-
-#~ msgid "Back to lock exception"
-#~ msgstr "Volver a excepción de bloqueo"
-
-#~ msgid "Deleting lock exceptions"
-#~ msgstr "Eliminando excepciones de bloqueo"
-
-#~ msgid "Error at"
-#~ msgstr "Error en"
-
-#~ msgid "not started"
-#~ msgstr "no iniciado"
-
-#~ msgid "Aggregated data set completeness"
-#~ msgstr "Completitud de sets de datos agregados"
-
-#~ msgid "Show SQL view"
-#~ msgstr "Mostrar vista de SQL"
-
-#~ msgid "Financial Yearly"
-#~ msgstr "Ejercicio económico"
-
-#~ msgid "Update option"
-#~ msgstr "Actualizar opción"
-
-#~ msgid "Removing min-max values"
-#~ msgstr "Eliminando valores min-max"
-
-#~ msgid "Add option"
-#~ msgstr "Añadir opción"
-
-#~ msgctxt "please_select_a_dataset"
-#~ msgid "Please select a data set"
-#~ msgstr "Seleccione un grupo de datos"
-
-#~ msgctxt "please_select_an_organisation_unit"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "Seleccione una unidad organizativa"
-
-#~ msgid "Document"
-#~ msgstr "Document"
+msgid "Messages"
+msgstr "Mensajes"
