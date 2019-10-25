@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "@dhis2/cli-style": "^3.2.2",
-    "@dhis2/d2-i18n-extract": "^1.0.7",
+    "@dhis2/d2-i18n-extract": "^1.0.8",
     "@dhis2/d2-i18n-generate": "^1.1.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
