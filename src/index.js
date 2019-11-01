@@ -10,6 +10,9 @@ import appTheme from './theme'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 
+import { Provider } from '@dhis2/app-runtime'
+import { CssReset } from '@dhis2/ui-core'
+
 const { NODE_ENV, REACT_APP_DHIS2_BASE_URL } = process.env
 const isProduction = NODE_ENV === 'production'
 
@@ -23,23 +26,31 @@ log.setLevel(isProduction ? log.levels.INFO : log.levels.DEBUG)
  * Render app
  */
 
+const config = {
+    baseUrl: REACT_APP_DHIS2_BASE_URL,
+    apiVersion: '33',
+}
+
 ReactDOM.render(
-    <D2UIApp
-        muiTheme={appTheme}
-        initConfig={{
-            baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api`,
-            schemas: [
-                'organisationUnitLevel',
-                'organisationUnitGroup',
-                'organisationUnit',
-                'dataSet',
-            ],
-        }}
-    >
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </D2UIApp>,
+    <Provider config={config}>
+        <D2UIApp
+            muiTheme={appTheme}
+            initConfig={{
+                baseUrl: `${REACT_APP_DHIS2_BASE_URL}/api`,
+                schemas: [
+                    'organisationUnitLevel',
+                    'organisationUnitGroup',
+                    'organisationUnit',
+                    'dataSet',
+                ],
+            }}
+        >
+            <HashRouter>
+                <CssReset />
+                <App />
+            </HashRouter>
+        </D2UIApp>
+    </Provider>,
     document.getElementById('root')
 )
 

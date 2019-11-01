@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import HeaderBar from '@dhis2/d2-ui-header-bar'
 import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
 import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
@@ -12,6 +11,8 @@ import { injectTranslationsToD2 } from './configI18n'
 import AppRouter from './components/app-router/AppRouter'
 import { sections } from './pages/sections.conf'
 import './custom-css/D2UISidebarOverrides.css'
+import { HeaderBar } from '@dhis2/ui-widgets'
+
 import styles from './App.module.css'
 
 export class DumbApp extends PureComponent {
@@ -105,7 +106,7 @@ export class DumbApp extends PureComponent {
 
         return (
             <div>
-                <HeaderBar d2={this.context.d2} />
+                <HeaderBar appName="Data Administration" />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
