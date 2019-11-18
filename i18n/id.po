@@ -397,7 +397,7 @@ msgid "Period"
 msgstr "Periode"
 
 msgid "Data Set"
-msgstr "Data Set"
+msgstr ""
 
 msgid "Organisation Unit"
 msgstr "Unit Organisasi"
