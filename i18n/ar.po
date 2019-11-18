@@ -267,7 +267,7 @@ msgid "Last"
 msgstr "الأخير"
 
 msgid "days"
-msgstr "days"
+msgstr ""
 
 msgid "Users logged in"
 msgstr "المستخدمون الذي قامو بتسجيل الدخول"
@@ -389,7 +389,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "جار تحديث شجرة الوحدات التنظيمية..."
 
 msgid "For organisation units within"
-msgstr "For organisation units within"
+msgstr ""
 
 msgid "Period"
 msgstr "الفترة الزمنية"
