@@ -109,7 +109,7 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Maintenance"
+msgstr "Mantenimiento"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -642,10 +642,10 @@ msgid "About DHIS 2"
 msgstr "Sobre DHIS 2"
 
 msgid "Manage my apps"
-msgstr "Manage my apps"
+msgstr ""
 
 msgid "No results found"
-msgstr "No results found"
+msgstr ""
 
 msgid "Interpretations"
 msgstr "Interpretaciones"
