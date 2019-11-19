@@ -1,38 +1,33 @@
+# Translators:
+# phil_dhis2, 2019
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06T07:26:26.304Z\n"
-"PO-Revision-Date: 2017-04-28 04:12+0000\n"
-"Last-Translator: baktashsalehi <baktash.salehi@thepalladiumgroup.com>\n"
-"Language-Team: \n"
-"Language: prs\n"
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"PO-Revision-Date: 2019-06-26 08:00+0000\n"
+"Last-Translator: phil_dhis2, 2019\n"
+"Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 2.8\n"
-"X-Pootle-Path: /prs/dhis2-translations/dhis-web-maintenance-dataadmin/en-prs."
-"po\n"
-"X-Pootle-Revision: 1477\n"
-"X-POOTLE-MTIME: 1493352721.000000\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Data Integrity"
-msgstr "تمامیت اطلاعات"
+msgstr "درستی اطلاعات"
 
 msgid ""
-"Run data integrity checks and unveil anomalies and problems in the meta data "
-"setup."
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
 msgstr ""
-"راه اندازی پروسه بررسی تمامیت اطلاعات و آشکاری سازی مشکلات و ناهنجاری ها در "
-"جزئیات تنظیم اطلاعات"
+"اجرای دیتا چک یکپارچگی و پرده ناهنجاری و مشکلات در راه اندازی میتا دیتا"
 
-#, fuzzy
 msgid "Check Data Integrity"
-msgstr "تمامیت اطلاعات"
+msgstr ""
 
-#, fuzzy
 msgid "Performing data integrity checks..."
-msgstr "در حال اجرای حفظ و مراقبت"
+msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -40,180 +35,161 @@ msgstr ""
 msgid "RUN INTEGRITY CHECKS"
 msgstr ""
 
-#, fuzzy
 msgid "Data elements without data set"
-msgstr "عناصر اطلاعات بدون یک مجموعه اطلاعات"
+msgstr ""
 
 msgid "Data elements without groups"
-msgstr "عناصر اطلاعات بدون گروپ ها"
+msgstr "عنصر اطلاعات بیدون گروپ ها"
 
 msgid "Data elements violating exclusive group sets"
-msgstr "عناصر اطلاعات باعث تخطی از مجموعه های انحصاری گروپ میگردد"
+msgstr "عنصر اطلاعات وجود ندار"
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr "عناصر اطلاعات به مجموعه اطلاعات با انواع مختلف معیاد تعین گردیده است"
+msgstr "دیتا ایلمنت ها در دیتا سیت اضافه شده اند در دوره های متفاوت"
 
 msgid "Data sets not assigned to organisation units"
-msgstr "مجموعه های اطلاعات برای واحد های سازمان تعین نه گردیده است"
+msgstr "دیتا سیت به واحد های سازمان تعین نگردید"
 
 msgid "Indicators with identical formulas"
-msgstr "شاخص ها با فورمول های یکسان"
+msgstr "شاخص ها با شناسایی فارمولا"
 
 msgid "Indicators without groups"
-msgstr "شاخص های بدون گروپ ها"
+msgstr "شاخص بیدون گروپ ها"
 
 msgid "Invalid indicator numerators"
-msgstr "شاخص شمارش نا معتبر "
+msgstr "صورت شاخص باطل است"
 
 msgid "Invalid indicator denominators"
-msgstr "شاخص مخرج نامعتبر "
+msgstr "مخرج شاخص باطل است"
 
 msgid "Indicators violating exclusive group sets"
-msgstr "شاخص های باعث تخطی از مجموعه های انحصاری گروپ میگردد"
+msgstr "تصحیح مجموعه گروپ واحد سازمان"
 
 msgid "Organisation units with cyclic references"
-msgstr "واحد های سازمان با مؤخذ متناوب"
+msgstr "شمارش واحد سازمان"
 
 msgid "Orphaned organisation units"
-msgstr "واحد های سازمانی غیرمؤثر "
+msgstr "ایجاد واحد سازمان جدید"
 
 msgid "Organisation units without groups"
-msgstr "واحد های سازمان بدون گروپ ها "
+msgstr "واحد سازمان بیدون گروپ ها"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr "مجموعه های گروپ انحصاری تخطی واحد های سازمان"
+msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr "گروپ های واحد سازمان بدون گروپ مجموعه ها "
+msgstr "واحد سازمان بیدون مجموعه گروپ"
 
 msgid "Validation rules without groups"
-msgstr "قوانین اعتبار دهی بدون گروپ ها "
+msgstr "دستور سنجی بیدون گروپ ها"
 
 msgid "Invalid validation rule left side expressions"
-msgstr "قوانین اعتباردهی نا معتبر طرف چپ نمایش "
+msgstr "قانون اعتبار سنجی باطل به سمت چپ اصطلاحات"
 
 msgid "Invalid validation rule right side expressions"
-msgstr "قانون اعتبار دهی نا معتبر طرف راست نمایش "
+msgstr "قانون اعتبار سنجی باطل به سمت راست اصطلاحات"
 
-#, fuzzy
 msgid "Invalid program indicator expressions"
-msgstr "شاخص شمارش نا معتبر "
+msgstr ""
 
-#, fuzzy
 msgid "Invalid program indicator filters"
-msgstr "شاخص مخرج نامعتبر "
+msgstr ""
 
-#, fuzzy
 msgid "There are data elements in the form, but not in the form or sections"
-msgstr "عناصر اطلاعا در مجموعه اطلاعات ولی نه در فورمه ها ویا بخش ها "
+msgstr ""
 
 msgid "Invalid category combinations"
-msgstr "بخش ها با ترکیب کتگوری های نامعتبر "
+msgstr "ترکیب کتگوری باطل"
 
 msgid "Duplicate periods"
-msgstr "معیاد های مشابه "
+msgstr "دوره های تکراری"
 
 msgid "Maintenance"
-msgstr "حفظ و مراقبت"
+msgstr "نگهداری"
 
-#, fuzzy
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
-"تولید جداول منابع دیتابیس برای ساختار واحد سازمان و ساختار مجموعه گروپ در "
-"میان سایر گروپ ها "
 
-#, fuzzy
 msgid "Perform Maintenance"
-msgstr "اجرای حفظ و مراقبت"
+msgstr ""
 
 msgid "PERFORM MAINTENANCE"
 msgstr ""
 
-#, fuzzy
 msgid "Performing Maintenance..."
-msgstr "در حال اجرای حفظ و مراقبت"
+msgstr ""
 
-#, fuzzy
 msgid "Maintenance done"
-msgstr "حفظ و مراقبت"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr "جداول واضح تحلیلی"
+msgstr "پاک کردن جدول های انالیتیکس"
 
 msgid "Analyze analytics tables"
-msgstr "جداول واضح تحلیلی"
+msgstr ""
 
 msgid "Remove zero data values"
-msgstr "ذخیره ارزش اطلاعات صفر"
+msgstr ""
 
 msgid "Permanently remove soft deleted data values"
-msgstr "حذف کردن ارزش هایکه سافت حذف گریده قبل"
+msgstr ""
 
 msgid "Permanently remove soft deleted events"
-msgstr "حذف کردن رویداد هایکه سافت حذف گردیده قبلآ"
+msgstr ""
 
-#, fuzzy
 msgid "Permanently remove soft deleted enrollments"
-msgstr "حذف کردن رویداد هایکه سافت حذف گردیده قبلآ"
+msgstr ""
 
-#, fuzzy
 msgid "Permanently remove soft deleted tracked entity instances"
-msgstr "حذف کردن رویداد هایکه سافت حذف گردیده قبلآ"
+msgstr ""
 
 msgid "Prune periods"
-msgstr "مراحل تنظیم و آراستن"
+msgstr "اجازه مراحل بعدی"
 
 msgid "Remove expired invitations"
-msgstr "حذف دعوت نامه های انقضا یافته "
+msgstr "حذف کردن دعوت نامه منقضی شده"
 
 msgid "Drop SQL views"
-msgstr "صرف نظر  از نمایش اس کیو ال"
+msgstr "حذف SQL views"
 
 msgid "Create SQL views"
-msgstr "ایجاد نمایش های اس کیو ال"
+msgstr "ایجاد SQL views"
 
 msgid "Update category option combinations"
-msgstr "تجدید ترتیبات کتگوری گزینه "
+msgstr "تجدید ترکیبات کتگوری گزینه ها"
 
 msgid "Update organisation unit paths"
-msgstr "تجدید مسیر های واحد سازمان"
+msgstr "تصحیح آدرس واحد سازمان"
 
 msgid "Clear application cache"
-msgstr "حذف ذخیره"
+msgstr "پاک کردن حافظه اپلیکیشن"
 
 msgid "Reload apps"
-msgstr "بازنگری اپ"
+msgstr ""
 
-#, fuzzy
 msgid "Resource Tables"
-msgstr "جدول منابع"
+msgstr ""
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
-"تولید جداول منابع دیتابیس برای ساختار واحد سازمان و ساختار مجموعه گروپ در "
-"میان سایر گروپ ها "
+"جدول های منبع دیتابیس را اجرا نماید برای مرحله واحد سازمان و سیت گروپ "
+"استرکچر همراه دیگران."
 
-#, fuzzy
 msgid "Generate Resource Tables"
-msgstr "تولید جداول منابع"
+msgstr ""
 
 msgid "GENERATE TABLES"
 msgstr ""
 
-#, fuzzy
-msgid "Generating Resource Tables..."
-msgstr "تولید جداول منابع"
-
-#, fuzzy
 msgid "Resource Tables generated"
-msgstr "جداول منابع تولید گردید"
+msgstr ""
 
 msgid "An unexpected error happened during operation"
 msgstr ""
@@ -222,177 +198,162 @@ msgid "Organisation unit structure"
 msgstr "ساختار واحد سازمان"
 
 msgid "Organisation unit category option combo"
-msgstr "گروپ واحد سازمان"
+msgstr "گزینه ترکیب کتگوری واحد سازمان"
 
 msgid "Category option group set structure"
-msgstr "ساختار مجموعه گروپ کتگوری گزینه ها"
+msgstr "ساختار گزینه کتگوری گروپ"
 
 msgid "Data element group set structure"
-msgstr "ساختار مجموعه گروپ عنصر اطلاعات "
+msgstr "ساختار مجموعه گروپ عنصر اطلاعات"
 
 msgid "Indicator group set structure"
-msgstr "ساختار مجموعه گروپ شاخص "
+msgstr "ساختار مجموعه گروپ شاخص"
 
 msgid "Organisation unit group set structure"
-msgstr "ساختار مجموعه گروپ واحد سازمان "
+msgstr "ساختار مجموعه گروپ واحد سازمان"
 
 msgid "Category structure"
 msgstr "ساختار کتگوری"
 
 msgid "Data element category option combo name"
-msgstr "اسم انتخابی کتگوری عنصر اطلاعات"
+msgstr "اسم گزینه ترکیب کتگوری عناصر معلومات"
 
 msgid "Data element structure"
-msgstr "ساختار عناصر اطلاعات"
+msgstr "ساختار عنصر اطلاعات"
 
 msgid "Period structure"
 msgstr "ساختار معیاد"
 
 msgid "Date period structure"
-msgstr "ساختار معیاد اطلاعات"
+msgstr "استرکچر دوره دیتا"
 
 msgid "Data element category option combinations"
-msgstr "ترکیبات کتگوری گزینه عنصر اطلاعات"
+msgstr "مدیریت ترکیبات کتگوری گزینه عنصر اطلاعات"
 
 msgid "Data Statistics"
-msgstr "ارقام احصائیوی"
+msgstr "مجموعه های اطلاعات"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
-"جستجوی تعداد موضوعات در دیتابیس، مانند عناصر اطلاعات، شاخص ها، مجموعه "
-"اطلاعات و ارزش های اطلاعات"
+"تعداد شی را در دیتابیس بروز کنید، مانند دیتا ایلمنت ها، شاخص ها، سیت دیتا و "
+"ارزش دیتا"
 
-#, fuzzy
 msgid "Overview Data Statistics"
-msgstr "ارقام احصائیوی"
+msgstr ""
 
-#, fuzzy
 msgid "Loading Data Statistics..."
-msgstr "ارقام احصائیوی"
+msgstr ""
 
 msgid "It was not possible to load Data Statistics"
 msgstr ""
 
-#, fuzzy
 msgid "No data to show."
-msgstr "هیج اطلاعات دریافت نه گردید"
+msgstr ""
 
 msgid "Object type"
-msgstr "نوع موضوع"
+msgstr "نوع اعداد"
 
 msgid "Last hour"
-msgstr "آخرین ساعت"
+msgstr "ساعت گذشته"
 
 msgid "Today"
 msgstr "امروز"
 
-#, fuzzy
 msgid "Last"
-msgstr "آخرین ساعت"
+msgstr "آخری"
 
 msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr "استفاده کننده گان که داخل سیستم شده اند"
+msgstr "استفاده کننده داخل سیستم شده"
 
 msgid "User account invitations"
-msgstr "دعوت نامه استفاده کننده حساب"
+msgstr "دعوت نامه استفاده کننده"
 
 msgid "Pending invitations"
-msgstr "دعوت نامه های معلق"
+msgstr "دعوت نامه ها در انتظار"
 
 msgid "Expired invitations"
-msgstr "دعوت نامه های انقضا یافته "
+msgstr "دعوتنامه های انقضا"
 
 msgid "Data values"
-msgstr "ارزش اطلاعات"
+msgstr "مجموعه های اطلاعات"
 
 msgid "Events"
-msgstr ""
+msgstr "پېښې"
 
-#, fuzzy
 msgid "Indicators"
-msgstr "شاخص"
+msgstr "شاخص ها"
 
 msgid "Periods"
-msgstr "معیاد "
+msgstr "دوره ها"
 
-#, fuzzy
 msgid "Organisation units"
-msgstr "واحد سازمان"
+msgstr "واحد های سازمان"
 
-#, fuzzy
 msgid "Validation rules"
-msgstr "قوانین اعتبار دهی بدون گروپ ها "
+msgstr "قانون های اعتبار سنجی"
 
-#, fuzzy
 msgid "Programs"
-msgstr "برنامه "
+msgstr "برنامه ها"
 
-#, fuzzy
 msgid "Data elements"
-msgstr "عنصر اطلاعات"
+msgstr "دیتا ایلمنت ها"
 
 msgid "Organisation unit groups"
-msgstr "گروپ های واحد سازمان"
+msgstr "د سازمان د واحد ګروپونه"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "جداول محوری"
 
 msgid "Indicator types"
-msgstr "انواع شاخص ها "
+msgstr "شاخص ها"
 
-#, fuzzy
 msgid "Data sets"
-msgstr "مجموعه اطلاعات"
+msgstr "دیتا سیت ها"
 
-#, fuzzy
 msgid "User groups"
-msgstr "گروپ استفاده کننده "
+msgstr "گروپ های استفاده کننده گان"
 
 msgid "Users"
 msgstr "استفاده کننده گان"
 
 msgid "Maps"
-msgstr ""
+msgstr "نقشه ها"
 
-#, fuzzy
 msgid "Indicator groups"
-msgstr "گروپ شاخص"
+msgstr "گروپ های شاخص"
 
 msgid "Charts"
-msgstr ""
+msgstr "چارت ها"
 
-#, fuzzy
 msgid "Data element groups"
-msgstr "گروپ عنصر اطلاعات"
+msgstr "گروپ های عنصر اطلاعات"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "داشبورد ها"
 
 msgid "Lock Exception Management"
-msgstr "مدیریت موارد استثنا قفل"
+msgstr "بستن مدیریت مفهوم"
 
 msgid "Lock Exception"
-msgstr "استثنای قفل "
+msgstr "قفل کردن استثنات"
 
-#, fuzzy
 msgid "Batch Deletion"
-msgstr "حذف مقدار تعین شده "
+msgstr ""
 
-#, fuzzy
 msgid "Add new lock exception"
-msgstr "استثنای جدید فقل را ایجاد نمائید"
+msgstr ""
 
 msgid ""
-"Add or remove exceptions to the the standard rules for locking of data entry "
-"forms."
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
 msgstr ""
-"قائیل شدن ویا برطرف سازی استثنات مطابق قوانین استندرد جهت بسته نمودن فورمه "
-"های درج اطلاعات"
+"اضافه کردن یا حذف کردن استثنات در قانون استندرد برای قفل کردن فارم درج "
+"معلومات"
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -403,42 +364,35 @@ msgstr ""
 msgid "ADD"
 msgstr ""
 
-#, fuzzy
 msgid "Loading Lock Exceptions..."
-msgstr "استثنای قفل "
+msgstr ""
 
-#, fuzzy
 msgid "Adding Lock Exception..."
-msgstr "استثنای قفل "
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception removed"
-msgstr "استثنای قفل "
+msgstr ""
 
-#, fuzzy
 msgid "Lock Exception Added"
-msgstr "استثنای قفل "
+msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "آیا ډاډه یاست؟"
 
 msgid "CONFIRM"
 msgstr ""
 
-#, fuzzy
 msgid "Select a Data Set"
-msgstr "لطفاً یک مجموعه اطلاعات را انتخاب نمائید"
+msgstr ""
 
-#, fuzzy
 msgid "Updating Organisation Units Tree..."
-msgstr "مذغم سازی سازمان"
+msgstr ""
 
-#, fuzzy
 msgid "For organisation units within"
-msgstr "واحد های سازمانی غیرمؤثر "
+msgstr "برای واحدهای سازمانی در"
 
 msgid "Period"
-msgstr "معیاد"
+msgstr "دوره"
 
 msgid "Data Set"
 msgstr "مجموعه اطلاعات"
@@ -447,19 +401,16 @@ msgid "Organisation Unit"
 msgstr "واحد سازمان"
 
 msgid "Organisation Unit Group"
-msgstr "گروپ واحد سازمان"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Level"
-msgstr "مذغم سازی سازمان"
+msgstr ""
 
-#, fuzzy
 msgid "Select"
-msgstr "انتخاب/ تمام"
+msgstr "انتخاب"
 
-#, fuzzy
 msgid "Deselect"
-msgstr "انتخاب نه گردیده است"
+msgstr "عدم انتخاب"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -468,21 +419,19 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
-#, fuzzy
 msgid "Show Details"
-msgstr "جزئیات ساحه"
+msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
-#, fuzzy
 msgid "Actions"
-msgstr "گزینه ها "
+msgstr "گزینه ها"
 
 msgid "of"
-msgstr ""
+msgstr "از"
 
 msgid "week"
 msgstr ""
@@ -490,16 +439,14 @@ msgstr ""
 msgid "month"
 msgstr ""
 
-#, fuzzy
 msgid "year"
-msgstr "سال گذشته"
+msgstr ""
 
 msgid "bi monthly"
 msgstr ""
 
-#, fuzzy
 msgid "day"
-msgstr "امروز"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -585,48 +532,45 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
+msgid "For all organisation units:"
+msgstr ""
+
 msgid "Min-Max Value Generation"
-msgstr "تولید حد اقل-حد اکثر ارزش"
+msgstr "تولید کردن ارزش کروچک-بزرگ"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
-"تولید ارزش های حد اقل و حد اکثر که جهت اعتبار دهی ارزش ها در جریان درج "
-"اطلاعات و پروسه اعتبار دهی مورد استفاده قرار میگیرد"
+"اجرا ارزش کوچکتر-بزرگتر که در اعتبار سنجی در جریان درج معلومات و پروسه "
+"اعتبار سنجی استفاره دیتا"
 
-#, fuzzy
 msgid "Generate Min-Max Value"
-msgstr "تولید ارزش های حد اقل-حد اکثر"
+msgstr ""
 
 msgid "It was not possible to load data"
 msgstr ""
 
-#, fuzzy
 msgid "Select Data set and Organisation Unit"
-msgstr "انتخاب اصل واحد سازمان "
+msgstr ""
 
-#, fuzzy
 msgid "Doing Min Max generation..."
-msgstr "تولید حد اقل-حد اکثر ارزش"
+msgstr ""
 
 msgid "Removing Min Max generation..."
 msgstr ""
 
-#, fuzzy
 msgid "Min Max generation done"
-msgstr "تولید حد اقل-حد اکثر ارزش"
+msgstr ""
 
 msgid "Min Max removal done"
 msgstr ""
 
-#, fuzzy
 msgid "Loading data sets"
-msgstr "مجموعه های اطلاعات قابل دسترس"
+msgstr ""
 
-#, fuzzy
 msgid "Organisation Unit Selection"
-msgstr "مذغم سازی سازمان"
+msgstr "انتخاب واحد سازمان"
 
 msgid "GENERATE"
 msgstr ""
@@ -634,1014 +578,73 @@ msgstr ""
 msgid "REMOVE"
 msgstr ""
 
-#~ msgid "Remove All Locks"
-#~ msgstr "تمام قفل ها را از میان بردارید"
+msgid "Analytics tables management"
+msgstr "مدیریت جداول تحلیلی"
 
-#~ msgid "Optional"
-#~ msgstr "انتخابی"
+msgid "Analytics Tables"
+msgstr ""
 
-#~ msgid "Data Administration"
-#~ msgstr "تنظیم اطلاعات"
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
 
-#~ msgid "Period Type"
-#~ msgstr "نوع معیاد"
+msgid "Analytics tables update"
+msgstr "تجدید جداول تحلیلی"
 
-#~ msgid "Please select at least one option"
-#~ msgstr "لطفاً حداقل یک گزینه را انتخاب نمائید"
+msgid "START EXPORT"
+msgstr ""
 
-#~ msgid "Maintenance performed"
-#~ msgstr "حفظ و مراقبت انجام یافته است"
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
 
-#~ msgid "Clear data set completeness"
-#~ msgstr "حذف مجموعه اطلاعات"
+msgid "Skip generation of resource tables"
+msgstr ""
 
-#~ msgid "Organisation unit group set structure normalized"
-#~ msgstr "ساختار گروپ مجموعه واحد سازمان نورمال گردید"
+msgid "Skip generation of event data"
+msgstr ""
 
-#~ msgid "Generate tables"
-#~ msgstr "تولید جداول"
+msgid "Skip generation of enrollment data"
+msgstr ""
 
-#~ msgid "Cache Statistics"
-#~ msgstr "ذخیره ارقام احصائیوی"
+msgid "Analytics Tables Update"
+msgstr ""
 
-#~ msgid "Second Level Cache Statistics"
-#~ msgstr "سطح دوم ذخیره ارقام احصائیوی "
+msgid "Number of last years of data to include"
+msgstr ""
 
-#~ msgid "Region name"
-#~ msgstr "نام منطقه"
+msgid "[ All ]"
+msgstr ""
 
-#~ msgid "Mem count"
-#~ msgstr "حساب حافظه"
+msgid "Settings"
+msgstr "تنظیمات"
 
-#~ msgid "Disk count"
-#~ msgstr "حساب دیسک"
+msgid "Search apps"
+msgstr "جستجوی برنامه ها"
 
-#~ msgid "Mem size"
-#~ msgstr "اندازه حافظه"
+msgid "Profile"
+msgstr "مشخصات"
 
-#~ msgid "Total Second Level Cache"
-#~ msgstr "اندازه مجموعی ذخیره سطح دوم"
+msgid "Account"
+msgstr "حساب"
 
-#~ msgid "Total Query Cache"
-#~ msgstr "مجموعه ذخیره پرسش ها "
+msgid "Help"
+msgstr "کمک"
 
-#~ msgid "Query Cache Statistics"
-#~ msgstr "احصائیه ذخیره پرسش ها"
+msgid "Log out"
+msgstr "خروج از سیستم"
 
-#~ msgid "Query name"
-#~ msgstr "نام کیوری "
+msgid "About DHIS 2"
+msgstr "درباره DHIS 2"
 
-#~ msgid "Put count"
-#~ msgstr "شمارش کلمات گذاشتن "
+msgid "Manage my apps"
+msgstr "مدیریت برنامه ها"
 
-#~ msgid "Hit count"
-#~ msgstr "شمارش ضربات"
+msgid "No results found"
+msgstr "هیج نتیجه ی یافت نشد"
 
-#~ msgid "Miss count"
-#~ msgstr "شمارش ناکامی ها"
+msgid "Interpretations"
+msgstr "تفسیر ها"
 
-#~ msgid "Exec count"
-#~ msgstr "شمارش اجراات"
-
-#~ msgid "Exec avg time"
-#~ msgstr "اوسط زمان اجراات"
-
-#~ msgid "Exec max time"
-#~ msgstr "زمان حداکثر اجراات"
-
-#~ msgid "Exec min time"
-#~ msgstr "زمان حد اقل اجراات"
-
-#~ msgid "Exec row count"
-#~ msgstr "شمارش قطار اجراات"
-
-#~ msgid "Clear cache"
-#~ msgstr "حذف ذخیره"
-
-#~ msgid "Data dictionaries"
-#~ msgstr "دیکشنری های اطلاعات"
-
-#~ msgid "Number of objects"
-#~ msgstr "تعداد موضوع"
-
-#~ msgid "Data Browser"
-#~ msgstr "صفحه جستجو کننده اطلاعات"
-
-#~ msgid "From date"
-#~ msgstr "از تاریخ "
-
-#~ msgid "To date"
-#~ msgstr "الی تاریخ"
-
-#~ msgid "Browse by"
-#~ msgstr "جستجو به اساس"
-
-#~ msgid "Select mode"
-#~ msgstr "انتخاب شیوه"
-
-#~ msgid "Browse"
-#~ msgstr "صفحه جستجو کننده"
-
-#~ msgid "Select Period Type"
-#~ msgstr "انتخاب نوع معیاد"
-
-#~ msgid "Organisation units violating compulsory group sets"
-#~ msgstr "مجموعه های گروپ اجباری تخطی واحد های سازمان "
-
-#~ msgid ""
-#~ "Category option combos not in data element category combo in data entry "
-#~ "form"
-#~ msgstr ""
-#~ "گروپ های کوچک گزینه کتگوری در فورمه درج اطلاعات گروپ کوچک کتگوری اطلاعات "
-#~ "نه میباشد "
-
-#~ msgid "Data integrity checks performed"
-#~ msgstr "بررسی تمامیت اطلاعات انجام یافت"
-
-#~ msgid "Value"
-#~ msgstr "ارزش"
-
-#~ msgid "Found"
-#~ msgstr "دریافت گردید"
-
-#~ msgid "values"
-#~ msgstr "ارزش ها"
-
-#~ msgid "Data element Group"
-#~ msgstr "گروپ عنصر اطلاعات"
-
-#~ msgid "Aggregated data values"
-#~ msgstr "مجموعه ارزش های اطلاعات"
-
-#~ msgid "Aggregated indicator values"
-#~ msgstr "مجموعه ارزش های شاخص "
-
-#~ msgid "Organisation Unit Pruning"
-#~ msgstr "تنظیم واحد سازمان "
-
-#~ msgid ""
-#~ "Browse the database and get an overview of where data exists. View and "
-#~ "export counts of data elements as well as raw data."
-#~ msgstr ""
-#~ "جستجوی دیتابیس و دریافت معلومات فشرده در مورد ساحه موجودیت اطلاعات. نمایش "
-#~ "و صادر پروسه شمارش اطلاعات و همچنان اطلاعات خام"
-
-#~ msgid ""
-#~ "Archive data which is not currently relevant to your system in order to "
-#~ "improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "آرشیف سازی اطلاعات که در حال حاضر به سیستم مربتط نه میباشد تا اجراات "
-#~ "بهبود یابد. اطلاعات میتواند از آرشیف بیرون کشیده شود."
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system. Data "
-#~ "can also be unarchived."
-#~ msgstr ""
-#~ "آرشیف سازی اطلاعات شخص که در حال حاضر به سیستم شما مرتبط می باشد. اطلاعات "
-#~ "را میتوان از آرشیف بیرون کشید."
-
-#~ msgid ""
-#~ "Perform maintenance tasks such as pruning of data values and periods and "
-#~ "clearing of database resource tables."
-#~ msgstr ""
-#~ "اجرای وظایف مربوط به حفظ و مراقبت مانند تنظیم ارزش ها و معیاد های اطلاعات "
-#~ "و حذف جداول منابع دیتابیس "
-
-#~ msgid ""
-#~ "Create and manage locales for database content. A locale is a combination "
-#~ "of language and country."
-#~ msgstr ""
-#~ "ایجاد و  تنظیم ساحه مناسب برای محتویات دیتابیس. این ساحه متشکل از زبان و "
-#~ "کشور میباشد"
-
-#~ msgid ""
-#~ "Merge two organisation units and their data values. Data is merged "
-#~ "depending on existence and date of last modification."
-#~ msgstr ""
-#~ "مدغم سازی دو واحد سازمان و ارزش های اطلاعاتی آنها. مدغم سازی اطلاعات به "
-#~ "موجودیت و آخرین ایجاد تغییرات ارتباط میگیرد"
-
-#~ msgid ""
-#~ "Monitor and clear the system database cache status. Provides information "
-#~ "on object and query caches."
-#~ msgstr ""
-#~ "نظارت و پاک کاری وضعیت ذخیره سیستم دیتابیس. ارایه معلومات در مورد موضوع و "
-#~ "ذخایر پرسش "
-
-#~ msgid ""
-#~ "Remove sub-trees from the organisation unit tree. Useful when creating "
-#~ "and deploying local databases."
-#~ msgstr ""
-#~ "حذف ساختار های فرعی از ساختار واحد سازمان.  این امر هنگام ایجاد و انکشاف "
-#~ "دیتابیس محلی مفید محسوب میگردد"
-
-#~ msgid ""
-#~ "Define which data elements for which zero values should be stored or "
-#~ "ignored. Useful for reducing database size."
-#~ msgstr ""
-#~ "تشخیص اینکه کدام عناصر اطلاعات برای کدام ارزش صفری باید نگهداری گردیده "
-#~ "ویا از آن طرف نظر گردد. این امر در قسمت کاهش اندازه دیتابیس مفید واقع "
-#~ "میگردد. "
-
-#~ msgid ""
-#~ "Eliminate data registered for duplicate data elements. Useful when data "
-#~ "has been entered for identical data elements."
-#~ msgstr ""
-#~ "محو اطلاعات راجستر شده برای عناصر اطلاعات مشابه.  این امر هنگام درج عناصر "
-#~ "اطلاعات همسان مفید واقع میگردد"
-
-#~ msgid ""
-#~ "Create SQL database views. These views will typically use the resource "
-#~ "tables to provide convenient views for third-party tools."
-#~ msgstr ""
-#~ "طرح پروسه نمایش دیتایس اس کیو ال.  معمولاً در این نوع نمایش ها از جداول "
-#~ "منابع بمنظور ارایه نمایش مناسب برای جناح سومی استفاده میگردد"
-
-#~ msgid ""
-#~ "Create constants which can be included in expressions of indicator and "
-#~ "validation rules."
-#~ msgstr ""
-#~ "ایجاد ثابت ها که میتواند در شرح شاخص ها و قوانین اعتبار دهی شامل گردد."
-
-#~ msgid ""
-#~ "Create and update dynamic attributes. Attributes can be used for data "
-#~ "elements, indicators, organisation units and users."
-#~ msgstr ""
-#~ "طرح و تجدید مشخصات داینامیک. مشخصات میتواند در قسمت عناصر اطلاعات، شاخص "
-#~ "ها، واحد های سازمان و استفاده کننده گان مورد استفاده قرار گیرد"
-
-#~ msgid ""
-#~ "Create option sets which can be included in data elements and produce "
-#~ "drop-down lists in data entry forms."
-#~ msgstr ""
-#~ "ایجاد مجموعه های گزینه ها که میتواند در عناصر اطلاعات و تولید لست های "
-#~ "اساسی در فورمه های درج اطلاعات استفاده گردد."
-
-#~ msgid ""
-#~ "Manage scheduled tasks such as data mart exports, where you can set "
-#~ "period types, aggregation level and frequency."
-#~ msgstr ""
-#~ "مدیریت وظایف تنظیم شده مانند صادرات مرکز اطلاعات، جائیکه شما میتواند "
-#~ "انواع معیاد ، سطح تراکم و فریکوینسی را تعین نمائید"
-
-#~ msgid "Expression is empty"
-#~ msgstr "نمایش تهی میباشد"
-
-#~ msgid "Data element identifier must be a number"
-#~ msgstr "شناسائی کننده عنصر اطلاعات باید یک عدد باشد"
-
-#~ msgid "Category option combo identifier must be a number"
-#~ msgstr "شناسائی کننده گزینه کتگوری باید یک عدد باشد."
-
-#~ msgid "Expression is not well formed"
-#~ msgstr "نمایش بصورت مناسب آراسته نه گردیده است"
-
-#~ msgid "Zero Value Storage"
-#~ msgstr "ذخیره صفر ارزش "
-
-#~ msgid "Ignore zero data values"
-#~ msgstr "صرف نظر از ارزش اطلاعات صفر"
-
-#~ msgid "Store zero data values"
-#~ msgstr "ذخیره ارزش اطلاعات صفر"
-
-#~ msgid "Select the organisation unit to eliminate"
-#~ msgstr "انتخاب واحد سازمان جهت محو "
-
-#~ msgid "Select the organisation unit to keep"
-#~ msgstr "انتخاب واحد سازمان جهت حفظ "
-
-#~ msgid "Merge"
-#~ msgstr "مدغم"
-
-#~ msgid "Reset"
-#~ msgstr "تعین مجدد"
-
-#~ msgid "Confirm"
-#~ msgstr "تائید"
-
-#~ msgid "Merging"
-#~ msgstr "مدغم سازی"
-
-#~ msgid "Merging done"
-#~ msgstr "مدغم سازی انجام یافت"
-
-#~ msgid "Eliminating"
-#~ msgstr "محو نمودن"
-
-#~ msgid "Elimination done"
-#~ msgstr "محو نمودن انجام یافت"
-
-#~ msgid "Select the data element to eliminate"
-#~ msgstr "انتخاب عنصر اطلاعات جهت محو"
-
-#~ msgid "Select the data element to keep"
-#~ msgstr "انتخاب عنصر اطلاعات جهت حفظ "
-
-#~ msgid "Eliminate"
-#~ msgstr "محو "
-
-#~ msgid "Move All"
-#~ msgstr "انتقال همه"
-
-#~ msgid "Move Selected"
-#~ msgstr "انتقال انتخاب شده ها"
-
-#~ msgid "Duplicate Data Elimination"
-#~ msgstr "محو نمودن اطلاعات مشابه "
-
-#~ msgid "Please select two different organisation units"
-#~ msgstr "انتخاب دو واحد مختلف سازمان"
-
-#~ msgid "Please select two different data elements"
-#~ msgstr "لطفاً دو عنصر مختلف اطلاعات را انتخاب نمائید"
-
-#~ msgid "Filter"
-#~ msgstr "فلتر"
-
-#~ msgid "Data Archive"
-#~ msgstr "آرشیف اطلاعات"
-
-#~ msgid "There are"
-#~ msgstr "در آنجا "
-
-#~ msgid "overlapping data values in the archive."
-#~ msgstr "تداخل ارزش اطلاعات در آرشیف"
-
-#~ msgid "There are no overlapping data in the archive."
-#~ msgstr "در آرشیف اطلاعات تداخل ارزش ها وجود ندارد"
-
-#~ msgid "Eliminate the oldest duplicates"
-#~ msgstr "محو نمودن کهنه ترین اطلاعات مشابه "
-
-#~ msgid "Eliminate duplicates from archive source"
-#~ msgstr "محو نمودن اطلاعات مشابه از منبع آرشیف"
-
-#~ msgid "Eliminate duplicates from regular source"
-#~ msgstr "محو نمودن اطلاعات مشابه از منبع منظم "
-
-#~ msgid "Start date"
-#~ msgstr "تاریخ آغاز "
-
-#~ msgid "End date"
-#~ msgstr "تاریخ ختم"
-
-#~ msgid "Archive"
-#~ msgstr "آرشیف"
-
-#~ msgid "Unarchive"
-#~ msgstr "آرشیف ناشده "
-
-#~ msgid "Archiving"
-#~ msgstr "در حال آرشیف سازی"
-
-#~ msgid "Unarchiving"
-#~ msgstr "در حال بیرون کشیدن از آرشیف"
-
-#~ msgid "done. Number of archived values is now"
-#~ msgstr "انجام یافت. در حال حاضر تعداد ارزش های آرشیف شده "
-
-#~ msgid "Prune"
-#~ msgstr "آراستن"
-
-#~ msgid "Pruning"
-#~ msgstr "در حال آراستن"
-
-#~ msgid "Pruning done"
-#~ msgstr "تنظیم و آراستن انجام یافت"
-
-#~ msgid "Data browser"
-#~ msgstr "صفحه جستجو کننده اطلاعات"
-
-#~ msgid "Please choose a period type"
-#~ msgstr "لطفاً یک نوع معیاد را انتخاب نمائید"
-
-#~ msgid "Please enter a valid End date"
-#~ msgstr "لطفاً یک تاریخ ختم معتبر درج نمائید"
-
-#~ msgid "Please select a browser mode"
-#~ msgstr "لطفاً یک شیوه جستجو کننده را انتخاب نمائید"
-
-#~ msgid "Please select an organization unit"
-#~ msgstr "لطفاً یک واحد سازمان را انتخاب نمائید"
-
-#~ msgid "Organisation unit group"
-#~ msgstr "گروپ واحد سازمان"
-
-#~ msgctxt "drilldown_data_element"
-#~ msgid "Data element"
-#~ msgstr "عنصر اطلاعات"
-
-#~ msgid "Number of recorded values"
-#~ msgstr "تعداد ارزش های ثبت شده "
-
-#~ msgid "Browse data at this level only"
-#~ msgstr "تنها در این سطح اطلاعات را جستجو نمائید"
-
-#~ msgid "Summary drill down"
-#~ msgstr "فشرده معلومات"
-
-#~ msgid "View raw data at this level"
-#~ msgstr "نمایش اطلاعات خام در این سطح "
-
-#~ msgid "Click on this organisation unit"
-#~ msgstr "روی این واحد سازمان کلیک نمائید"
-
-#~ msgid "earliest"
-#~ msgstr "زودترین "
-
-#~ msgid "latest"
-#~ msgstr "آخرین"
-
-#~ msgid "Loading"
-#~ msgstr "در حال بارگیری"
-
-#~ msgid "Level must be a number"
-#~ msgstr "باید یک عدد باشد"
-
-#~ msgctxt "not_choose_organisation"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "لطفاً یک واحد سازمان را انتخاب نمائید"
-
-#~ msgid "Generate"
-#~ msgstr "تولید"
-
-#~ msgid "SQL View Management"
-#~ msgstr "مدیریت نمایش اس کیو ال"
-
-#~ msgid "SQL View"
-#~ msgstr "نمایش اس کیو ال"
-
-#~ msgid "SQL type"
-#~ msgstr "نوع اس کیو ال"
-
-#~ msgid "SQL view"
-#~ msgstr "نمایش اس کیو ال"
-
-#~ msgid "Materialized SQL view"
-#~ msgstr "نمایش اس کیو ال ترتیب شده "
-
-#~ msgid "SQL query"
-#~ msgstr "پرسش اس کیو ال"
-
-#~ msgid "created in database"
-#~ msgstr "ایجاد شده در دیتابیس "
-
-#~ msgid "materialized in database"
-#~ msgstr "ترتیب شده در دیتابیس "
-
-#~ msgid "allows for variables"
-#~ msgstr "اجازه برای متغییر ها"
-
-#~ msgid "SQL Statement"
-#~ msgstr "اظهارات اس کیو ال"
-
-#~ msgid "Execute query"
-#~ msgstr "پرسش نمودن"
-
-#~ msgid "Hide warning"
-#~ msgstr "پنهان سازی اخطاریه ها "
-
-#~ msgid "Add new SQL view"
-#~ msgstr "اضافه نمودن نمایش جدید اس کیو ال"
-
-#~ msgid "Update SQL view"
-#~ msgstr "تجدید نمایش اس کیو ال "
-
-#~ msgid "Name is not allowed to be null"
-#~ msgstr "اجازه نیست تا در بخش اسم هیچ نوشته شود"
-
-#~ msgid "Name is in use"
-#~ msgstr "اسم مورد استفاده قرار دارد"
-
-#~ msgid "Code is in use"
-#~ msgstr "کود مورد استفاده قرار دارد"
-
-#~ msgid "The language and country set is already in use"
-#~ msgstr "مجموعه کشور و لسان از قبل مورد استفاده قرار دارد"
-
-#~ msgid "SQL statement cannot be null"
-#~ msgstr "اظهارات اس کیو ال نمیتواند صفر باشد."
-
-#~ msgid "This SQL statement is invalid"
-#~ msgstr "اظهارات اس کیو ال نا معتبر است"
-
-#~ msgid "Note: Only SELECT query is allowed (without INTO keyword)"
-#~ msgstr "یادداشت: تنها پرسش انتخاب شده اجازه است( بدون کلمات کلیدی)"
-
-#~ msgid "This resource viewer is invalid or does not exist"
-#~ msgstr "این نمایش کننده منابع غیرمؤثق بوده ویا هیچ وجود ندارد"
-
-#~ msgid "SQL view table with name"
-#~ msgstr "نمایش جدول اس کیو ال به اساس اسم"
-
-#~ msgid "is created"
-#~ msgstr "ایجاد گردیده است"
-
-#~ msgid "Please execute query to create View table before viewing"
-#~ msgstr "لطفاً بخش پرسش را انجام دهید تا جدول مربوطه قبل از نمایش ایجاد گردد"
-
-#~ msgid "View data for"
-#~ msgstr "نمایش اطلاعات برای "
-
-#~ msgid "Failed to create view table for"
-#~ msgstr "عدم مؤفقیت در قسمت ایجاد جدول برای "
-
-#~ msgid "Show"
-#~ msgstr "نمایش "
-
-#~ msgid "Sort"
-#~ msgstr "تنظیم"
-
-#~ msgid "Lock"
-#~ msgstr "قفل"
-
-#~ msgid "Locked"
-#~ msgstr "قفل شذه "
-
-#~ msgid "Unlock"
-#~ msgstr "باز "
-
-#~ msgid "Append"
-#~ msgstr "ضمیمه "
-
-#~ msgid "Removed values successfully"
-#~ msgstr "حذف  مؤفقانه ارزش ها "
-
-#~ msgid "Recorded values"
-#~ msgstr "ارزش های ثبت شده "
-
-#~ msgid "Earliest date will be used if no date is selected"
-#~ msgstr "در صورت عدم انتخاب تاریخ، اولین تاریخ مورد استفاده قرار خواهد گرفت"
-
-#~ msgid "Latest date will be used if no date is selected"
-#~ msgstr "در صورت عدم انتخاب تاریخ، آخرین تاریخ مورد استفاده قرار خواهد گرفت"
-
-#~ msgid "Generated values successfully"
-#~ msgstr "تولید مؤفقانه ارزش ها "
-
-#~ msgid "Start"
-#~ msgstr "آغاز "
-
-#~ msgid "Data Set list"
-#~ msgstr "لست مجموعه اطلاعات"
-
-#~ msgid "Data Element Group list"
-#~ msgstr "لست گروپ عنصر اطلاعات"
-
-#~ msgid "Organisation Unit Group list"
-#~ msgstr "لست گروپ واحد سازمان"
-
-#~ msgid "Person Data Archive"
-#~ msgstr "آرشیف اطلاعات شخص "
-
-#~ msgid ""
-#~ "Archive person data which is not currently relevant to your system in "
-#~ "order to improve performance. Data can also be unarchived."
-#~ msgstr ""
-#~ "آرشیف سازی اطلاعات شخص که در حال حاضر مرتبط به سیستم شما نه میباشد تا "
-#~ "اجراات بهبود یابد. اطلاعات میتواند نیز از آرشیف بیرون کشیده شود"
-
-#~ msgid ""
-#~ "You must choose the organisation unit has parent to prune. Please try "
-#~ "again!"
-#~ msgstr ""
-#~ "شما باید واحد سازمان را که دارای فواید و تنظیمآب باشد، انتخاب نمائید. "
-#~ "لطفاً دوباره کوشش نمائید"
-
-#~ msgid "Restricted user tables cannot be referenced in query"
-#~ msgstr "جداول استفاده کننده محدود شده نمیتواند در بخش پرسش راجع گردد"
-
-#~ msgid "Sections with invalid category combinations"
-#~ msgstr "بخش ها با ترکیب کتگوری های نامعتبر "
-
-#~ msgid "Do you want to delete this SQL view object ?"
-#~ msgstr "آیا شما میخواهید تا این موضوع نمایش شده در اس کیو ال را حذف نمائید؟"
-
-#~ msgid "Clear data mart"
-#~ msgstr "حذف مرکز معلومات"
-
-#~ msgid "Rebuild data mart index"
-#~ msgstr "ایجاد مجدد جدول مرکز معلومات"
-
-#~ msgid "Display zeros"
-#~ msgstr "نمایش صفر ها "
-
-#~ msgid "Raw data"
-#~ msgstr "اطلاعات خام "
-
-#~ msgid "Download as Excel"
-#~ msgstr "داونلود به فارمت ایکسل "
-
-#~ msgid "Download as CSV"
-#~ msgstr "داونلود به فارمت سی اس وی "
-
-#~ msgid "Download as PDF"
-#~ msgstr "داونلود به فارمت پی دی اف"
-
-#~ msgid "Download as HTML"
-#~ msgstr "داونلود به فارمت اچ تی ام ال"
-
-#~ msgid "Download as XML"
-#~ msgstr "داونلود به فارمت اکس ام ال"
-
-#~ msgid "Download as JSON"
-#~ msgstr "داونلود به فارمت جی اس او ان"
-
-#~ msgid "Constant"
-#~ msgstr "ثابت"
-
-#~ msgid "Constant Management"
-#~ msgstr "مدیریت ثابت"
-
-#~ msgid "Add Constant"
-#~ msgstr "اضافه نمودن ثابت"
-
-#~ msgid "Edit Constant"
-#~ msgstr "تصحیح ثابت"
-
-#~ msgid "Value must be an number"
-#~ msgstr "ارزش باید یک عدد باشد"
-
-#~ msgid "Do you want to delete this constant?"
-#~ msgstr "آیا شما میخواهد تا این ثابت را حذف نمائید؟"
-
-#~ msgid "Yesterday"
-#~ msgstr "دیروز"
-
-#~ msgid "Last 2 days"
-#~ msgstr "2 روز اخیر"
-
-#~ msgid "Last 7 days"
-#~ msgstr "7 روز اخیر"
-
-#~ msgid "Last 30 days"
-#~ msgstr "30 روز اخیر"
-
-#~ msgid "Dynamic Attributes"
-#~ msgstr "مشخصات داینامیک"
-
-#~ msgid "Attribute"
-#~ msgstr "مشخصات"
-
-#~ msgid "Attribute Management"
-#~ msgstr "مدیریت مشخصات"
-
-#~ msgid "Value Type"
-#~ msgstr "نوع ارزش"
-
-#~ msgid "Mandatory"
-#~ msgstr "اجباری"
-
-#~ msgid "Unique"
-#~ msgstr "یکتا"
-
-#~ msgid "Organisation Unit Group Set"
-#~ msgstr "مجموعه گروپ واحد سازمان"
-
-#~ msgid "User"
-#~ msgstr "استفاده کننده "
-
-#~ msgid "Program Stage"
-#~ msgstr "مرحله برنامه "
-
-#~ msgid "Tracked Entity"
-#~ msgstr "بخش پیگیری شده"
-
-#~ msgid "Tracked Entity Attribute"
-#~ msgstr "مشخصات بخش پیگیری شده"
-
-#~ msgid "Integer"
-#~ msgstr "عدد صحیح"
-
-#~ msgid "Positive Integer"
-#~ msgstr "عدد صحیح مثبت"
-
-#~ msgid "Negative Integer"
-#~ msgstr "عدد صحیح منفی"
-
-#~ msgid "Add Attribute"
-#~ msgstr "اضافه نمودن مشخصات"
-
-#~ msgid "Edit Attribute"
-#~ msgstr "تصحیح مشخصات"
-
-#~ msgid "Assigned to"
-#~ msgstr "تعین گردیده است به "
-
-#~ msgid "Attribute sort order"
-#~ msgstr "سلسله تنظیم مشخصات"
-
-#~ msgid "Data element does not exist"
-#~ msgstr "عنصر اطلاعات وجود ندارد"
-
-#~ msgid "Category option combo does not exist"
-#~ msgstr "کتگوری گزینه وجود ندارد"
-
-#~ msgid "Scheduling is"
-#~ msgstr "تنظیم اوقات به "
-
-#~ msgid "Scheduling"
-#~ msgstr "در حال تنظیم اوقات"
-
-#~ msgid "Scheduling management"
-#~ msgstr "مدیریت تنظیم اوقات"
-
-#~ msgid "Stop"
-#~ msgstr "توقف"
-
-#~ msgid "Refresh"
-#~ msgstr "تجدید قوا"
-
-#~ msgid "Aggregation period types"
-#~ msgstr "انواع مرحله تجمع "
-
-#~ msgid "active"
-#~ msgstr "فعال "
-
-#~ msgid "Resource tables"
-#~ msgstr "جداول منابع"
-
-#~ msgid "Data mart"
-#~ msgstr "مرکز اطلاعات"
-
-#~ msgid "Analytics tables"
-#~ msgstr "جداول تحلیلی"
-
-#~ msgid "Analytics tables task strategy"
-#~ msgstr "استراتیژی وظایف جداول تحلیلی "
-
-#~ msgid "Data statistics task strategy"
-#~ msgstr "استراتیژی وظایف مرکزی اطلاعات"
-
-#~ msgid "Last 2 years daily"
-#~ msgstr "روزانه از 2 سال اخیر"
-
-#~ msgid "Last 3 years daily"
-#~ msgstr "روزانه از 3سال اخیر"
-
-#~ msgid "All daily"
-#~ msgstr "روزانه "
-
-#~ msgid "Right Now"
-#~ msgstr "راست ‌بر"
-
-#~ msgid "Execute Now"
-#~ msgstr "حال انجام دهید"
-
-#~ msgid "All every 15 minutes"
-#~ msgstr "هر 15 دقیقه "
-
-#~ msgid "Resource tables task strategy"
-#~ msgstr "استراتیژی وظایف جداول منابع "
-
-#~ msgid "Data mart task strategy"
-#~ msgstr "استراتیژی وظایف مرکزی اطلاعات"
-
-#~ msgid "Never"
-#~ msgstr "هیچگاهی "
-
-#~ msgid "Last 12 months daily"
-#~ msgstr "روزانه در 12 ماه اخیر "
-
-#~ msgid "Last 6 months daily + 6 to 12 months weekly"
-#~ msgstr "روزانه در 6 ماه اخیر + هفته وار در 6 الی 12 ماه اخیر"
-
-#~ msgid "Daily"
-#~ msgstr "روزانه "
-
-#~ msgid "Organisation unit group set aggregation level"
-#~ msgstr "سطح تجمع مجموعه گروپ واحد سازمان "
-
-#~ msgid "Aggregated org unit data values"
-#~ msgstr "ارزش اطلاعات واحد سازمان "
-
-#~ msgid "Aggregated org unit indicator values"
-#~ msgstr "ارزش شاخص تجمع شده واحد سازمان "
-
-#~ msgid "Execute now"
-#~ msgstr "حال انجام دهید"
-
-#~ msgid ""
-#~ "Are you sure you want to execute all tasks now? Task processing might "
-#~ "fully utilize your system resources and slow down other operations."
-#~ msgstr ""
-#~ "آیا مطمین هستید تا وظایف را حال انجام دهید؟ احتمالاً پروسس وظایف تمام "
-#~ "سیستم شما مورد استفاده قرار داده و سایر سرعت سایر فعالیت ها را کاهش "
-#~ "میدهد. "
-
-#~ msgid "No aggregation"
-#~ msgstr "عدم تجمع "
-
-#~ msgid "Option set"
-#~ msgstr "مجموعه گزینه "
-
-#~ msgid "Option set management"
-#~ msgstr "مدیریت مجموعه گزینه "
-
-#~ msgid "Add option set"
-#~ msgstr "اضافه نمودن مجموعه گزینه "
-
-#~ msgid "Option"
-#~ msgstr "گزینه "
-
-#~ msgid "Edit option set"
-#~ msgstr "تصحیح مجموعه گزینه "
-
-#~ msgid "The number of members"
-#~ msgstr "تعداد عضو "
-
-#~ msgid "Object not deleted because it is associated by objects of type"
-#~ msgstr "موضوع به دلیل اینکه با نوع موضوعات مرتبط بود، حذف گردید"
-
-#~ msgid "Do you want to delete this lock exception?"
-#~ msgstr "آیا شما خواهان حذف این استثنای قفل هستید؟"
-
-#~ msgid "Do you want to delete lock exceptions with this configuration?"
-#~ msgstr "آیا شما خواهان حذف این استثنا قفل با ترتیبات مربوطه هستید؟"
-
-#~ msgid "Edit lock exception"
-#~ msgstr "استثنای فقل را تصحیح نمائید"
-
-#~ msgid "Lock exception batch removal"
-#~ msgstr "حذف مورد تعین شده استثای فقل"
-
-#~ msgid "Back to lock exception"
-#~ msgstr "برگشت دوباره به بخش استثنای فقل"
-
-#~ msgid "Deleting lock exceptions"
-#~ msgstr "حذف استثنای قفل"
-
-#~ msgid "Error at"
-#~ msgstr "اشتباه در "
-
-#~ msgid "not started"
-#~ msgstr "آغاز نه گردیده است"
-
-#~ msgid "Aggregated data set completeness"
-#~ msgstr "تکمیل مجموعه اطلاعات تجمع شده "
-
-#~ msgid "Show SQL view"
-#~ msgstr "نمایش اس کیو ال "
-
-#~ msgid "Financial Yearly"
-#~ msgstr "سال مالی "
-
-#~ msgid "Update option"
-#~ msgstr "تجدید گزینه "
-
-#~ msgid "Removing min-max values"
-#~ msgstr "پاک کاری ارزش های حداقل-حد اکثر"
-
-#~ msgid "Done"
-#~ msgstr "انجام یافت"
-
-#~ msgid "Locale"
-#~ msgstr "ساحه "
-
-#~ msgid "Locale Management"
-#~ msgstr "مدیریت ساحه"
-
-#~ msgid "Create New Locale"
-#~ msgstr "ایجاد ساحه جدید"
-
-#~ msgid "Edit Locale"
-#~ msgstr "تصحیح ساحه "
-
-#~ msgid "Are you sure you want to delete this locale?"
-#~ msgstr "آیا شما خواهان حذف این ساحه میباشید؟"
-
-#~ msgid "Language"
-#~ msgstr "لسان"
-
-#~ msgid "Country"
-#~ msgstr "کشور"
-
-#~ msgid "Please select a language"
-#~ msgstr "لطفاً یک لسان را انتخاب نمائید"
-
-#~ msgid "Please select a country"
-#~ msgstr "لطفاً یک کشور را انتخاب نمائید"
-
-#~ msgid "Data monitoring"
-#~ msgstr "نظارت اطلاعات"
-
-#~ msgid "Data monitoring strategy"
-#~ msgstr "استراتیژی نظارت اطلاعات"
-
-#~ msgid "Last year daily"
-#~ msgstr "سال گذشته روزانه "
-
-#~ msgid "Show fewer options"
-#~ msgstr "نمایش گزینه های کمتر "
-
-#~ msgid "Show more options"
-#~ msgstr "نمایش گزینه های بیشتر "
-
-#~ msgid "Disabled"
-#~ msgstr "غیرفعال سازی "
-
-#~ msgid "Data synchronization"
-#~ msgstr "منطبق سازی اطلاعات"
-
-#~ msgid "Metadata Synchronization"
-#~ msgstr "منطبق سازی اطلاعات"
-
-#~ msgid "Data synchronization strategy"
-#~ msgstr "استراتیژی منطبق سازی اطلاعات"
-
-#~ msgid "Metadata synchronization strategy"
-#~ msgstr "استراتیژی منطبق سازی اطلاعات"
-
-#~ msgid ""
-#~ "To enable automated synchronisation, please select when it should occur."
-#~ msgstr "بخاطر هم سازی اتومات. لطفآ وقت آنرا انتخاب نماید که چه وقت وقوع شود"
-
-#~ msgid "SMS Scheduler Strategy"
-#~ msgstr "استراتیژی برنامه SMS"
-
-#~ msgid "SMS Scheduler"
-#~ msgstr "در حال تنظیم اوقات"
-
-#~ msgid "Enabled"
-#~ msgstr "فعال سازی"
-
-#~ msgid "Last success"
-#~ msgstr "آخرین مؤفقیت"
-
-#~ msgid "Option management"
-#~ msgstr "مدیریت گزینه "
-
-#~ msgid "Add option"
-#~ msgstr "اضافه نمودن گزینه"
-
-#~ msgid "Edit option"
-#~ msgstr "تصحیح گزینه "
-
-#~ msgid "Sort options"
-#~ msgstr "تنظیم گزینه ها "
-
-#~ msgid "Available options"
-#~ msgstr "گزینه های قابل دسترس "
-
-#~ msgctxt "please_select_a_dataset"
-#~ msgid "Please select a data set"
-#~ msgstr "لطفاً یک مجموعه اطلاعات را انتخاب نمائید"
-
-#~ msgctxt "please_select_an_organisation_unit"
-#~ msgid "Please select an organisation unit"
-#~ msgstr "لطفاً یک واحد سازمان را انتخاب نمائید"
-
-#~ msgid "Next year"
-#~ msgstr "سال بعدی"
-
-#~ msgid "Update the data elements and option combos in expression"
-#~ msgstr "تجدید عناصر اطلاعات و گزینه ها در بخش مربوطه "
-
-#~ msgid "Org unit group does not exist"
-#~ msgstr "گروپ واحد سازمان وجود ندارد"
-
-#~ msgid "View name"
-#~ msgstr "نمایش اسم"
-
-#~ msgid "Category Option"
-#~ msgstr "کتگوری گزینه "
-
-#~ msgid "Category Option Group"
-#~ msgstr "گروپ کتگوری گزینه "
-
-#~ msgid "Document"
-#~ msgstr "داکمنت"
-
-#~ msgid "Legend Set"
-#~ msgstr "سیت لیجند"
-
-#~ msgid "Program Indicator"
-#~ msgstr "شاخص"
-
-#~ msgid "Metadata synchronization is in progress"
-#~ msgstr "استراتیژی منطبق سازی اطلاعات"
-
-#~ msgid "Metadata synchronization started"
-#~ msgstr "استراتیژی منطبق سازی اطلاعات"
-
-#~ msgid "Run now"
-#~ msgstr "حالا شروع کنید"
-
-#~ msgid "Program Notifications scheduler"
-#~ msgstr "برنامه اطلاع پروگرام"
-
-#~ msgid "Program Notifications scheduling strategy"
-#~ msgstr "استراتیژی برنام اطلاع پروگرام"
-
-#~ msgid "Sync now"
-#~ msgstr "همگام سازی در حال حاضر"
-
-#~ msgid "Every Minute"
-#~ msgstr "هر 15 دقیقه "
-
-#~ msgid "Every Hour"
-#~ msgstr "هر ساعت"
-
-#~ msgid "Clear zero values"
-#~ msgstr "حذف ارزش صفر "
+msgid "Messages"
+msgstr "پیام ها"
