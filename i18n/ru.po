@@ -1,13 +1,13 @@
 # Translators:
-# phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: phil_dhis2, 2019\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -108,7 +108,7 @@ msgid "Duplicate periods"
 msgstr "Дублирующиеся периоды"
 
 msgid "Maintenance"
-msgstr "Maintenance"
+msgstr "Содержание"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -262,7 +262,7 @@ msgid "Last hour"
 msgstr "За последний час"
 
 msgid "Today"
-msgstr "Today"
+msgstr "Сегодня"
 
 msgid "Last"
 msgstr "Последняя"
@@ -286,7 +286,7 @@ msgid "Data values"
 msgstr "Значение данных"
 
 msgid "Events"
-msgstr "Events"
+msgstr "События"
 
 msgid "Indicators"
 msgstr "Индикаторы"
@@ -301,7 +301,7 @@ msgid "Validation rules"
 msgstr "Правила проверки"
 
 msgid "Programs"
-msgstr "Programs"
+msgstr "Программы"
 
 msgid "Data elements"
 msgstr "Элементы данных"
@@ -310,7 +310,7 @@ msgid "Organisation unit groups"
 msgstr "Группы организаций"
 
 msgid "Pivot tables"
-msgstr "Pivot tables"
+msgstr "Сводные таблицы"
 
 msgid "Indicator types"
 msgstr "Виды индикаторов"
@@ -322,7 +322,7 @@ msgid "User groups"
 msgstr "Группы пользователей"
 
 msgid "Users"
-msgstr "Users"
+msgstr "Пользователи"
 
 msgid "Maps"
 msgstr "Maps"
@@ -331,13 +331,13 @@ msgid "Indicator groups"
 msgstr "Группы индикаторов"
 
 msgid "Charts"
-msgstr "Charts"
+msgstr "Диаграммы"
 
 msgid "Data element groups"
 msgstr "Группы элементов данных"
 
 msgid "Dashboards"
-msgstr "Dashboards"
+msgstr "Информационные панели"
 
 msgid "Lock Exception Management"
 msgstr "Блокировать управление исключений"
@@ -599,22 +599,22 @@ msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr "Skip generation of aggregate data and completeness data"
+msgstr ""
 
 msgid "Skip generation of resource tables"
-msgstr "Skip generation of resource tables"
+msgstr ""
 
 msgid "Skip generation of event data"
-msgstr "Skip generation of event data"
+msgstr ""
 
 msgid "Skip generation of enrollment data"
-msgstr "Skip generation of enrollment data"
+msgstr ""
 
 msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr "Number of last years of data to include"
+msgstr ""
 
 msgid "[ All ]"
 msgstr ""
@@ -623,7 +623,7 @@ msgid "Settings"
 msgstr "Настройки"
 
 msgid "Search apps"
-msgstr "Search apps"
+msgstr "Поиск приложений"
 
 msgid "Profile"
 msgstr "Профиль"
@@ -641,10 +641,10 @@ msgid "About DHIS 2"
 msgstr "О DHIS 2"
 
 msgid "Manage my apps"
-msgstr "Manage my apps"
+msgstr "Управление моими приложениями"
 
 msgid "No results found"
-msgstr "No results found"
+msgstr "Результаты не найдены"
 
 msgid "Interpretations"
 msgstr "Интерпретации"
