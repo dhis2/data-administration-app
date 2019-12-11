@@ -10,6 +10,9 @@ import appTheme from './theme'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 
+import 'typeface-roboto'
+import 'material-design-icons-iconfont'
+
 import { Provider } from '@dhis2/app-runtime'
 import { CssReset } from '@dhis2/ui-core'
 

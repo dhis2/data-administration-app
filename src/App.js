@@ -106,7 +106,7 @@ export class DumbApp extends PureComponent {
 
         return (
             <div>
-                <HeaderBar appName="Data Administration" />
+                <HeaderBar appName={i18n.t('Data Administration')} />
                 <Sidebar
                     sections={translatedSections}
                     currentSection={this.state.currentSection}
