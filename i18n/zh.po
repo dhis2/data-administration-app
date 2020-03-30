@@ -2,13 +2,14 @@
 # phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
 # easylin <lin_xd@126.com>, 2020
+# 晓东 林 <13981924470@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,10 +101,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Invalid 分类组合s"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "复制期间"
 
 msgid "Maintenance"
 msgstr "系统维护"
@@ -129,7 +130,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Clear analytics tables"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -153,22 +154,22 @@ msgid "Prune periods"
 msgstr "裁剪周期"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "移除过期的邀请"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "删除 SQL视图"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "创建 SQL 视图"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Update 分类组合选项s"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Update 机构 paths"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Clear application cache"
 
 msgid "Reload apps"
 msgstr ""
@@ -197,10 +198,10 @@ msgid "Organisation unit structure"
 msgstr "组织机构结构"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "机构 分类选项 组合"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "分类选项组集结构"
 
 msgid "Data element group set structure"
 msgstr "数据元组集结构"
@@ -221,13 +222,13 @@ msgid "Data element structure"
 msgstr "数据元结构"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Period结构"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "日期期间结构"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "数据元 分类组合选项s"
 
 msgid "Data Statistics"
 msgstr "数据统计"
@@ -253,7 +254,7 @@ msgid "Object type"
 msgstr "对象类型"
 
 msgid "Last hour"
-msgstr ""
+msgstr "上一小时"
 
 msgid "Today"
 msgstr "今天"
@@ -262,16 +263,16 @@ msgid "Last"
 msgstr "最后"
 
 msgid "days"
-msgstr ""
+msgstr "天数"
 
 msgid "Users logged in"
 msgstr "已经登入的用户"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "用户帐号邀请"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Pending invitations"
 
 msgid "Expired invitations"
 msgstr "过期的邀请"
@@ -280,7 +281,7 @@ msgid "Data values"
 msgstr "数据值"
 
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 msgid "Indicators"
 msgstr "指标"
@@ -313,7 +314,7 @@ msgid "Data sets"
 msgstr "数据集"
 
 msgid "User groups"
-msgstr ""
+msgstr "用户组"
 
 msgid "Users"
 msgstr "用户"
@@ -384,7 +385,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "机构属于"
 
 msgid "Period"
 msgstr "周期"
@@ -405,7 +406,7 @@ msgid "Select"
 msgstr "选择"
 
 msgid "Deselect"
-msgstr ""
+msgstr "去选择"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -423,10 +424,10 @@ msgid "Remove"
 msgstr "移除"
 
 msgid "Actions"
-msgstr ""
+msgstr "行动"
 
 msgid "of"
-msgstr ""
+msgstr "中"
 
 msgid "week"
 msgstr ""
