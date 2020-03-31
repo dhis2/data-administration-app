@@ -408,7 +408,7 @@ msgid "Organisation Unit"
 msgstr "Unité d'organisation"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Groupe d'Unités d'Organisation"
 
 msgid "Organisation Unit Level"
 msgstr ""
@@ -444,7 +444,7 @@ msgid "week"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "mois"
 
 msgid "year"
 msgstr ""
