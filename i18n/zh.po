@@ -305,7 +305,7 @@ msgid "Organisation unit groups"
 msgstr "组织机构分组"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "透视表"
 
 msgid "Indicator types"
 msgstr "指标类型"
@@ -320,13 +320,13 @@ msgid "Users"
 msgstr "用户"
 
 msgid "Maps"
-msgstr ""
+msgstr "地图"
 
 msgid "Indicator groups"
 msgstr "指标分组"
 
 msgid "Charts"
-msgstr ""
+msgstr "图表"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -638,7 +638,7 @@ msgid "No results found"
 msgstr "没有发现"
 
 msgid "Interpretations"
-msgstr ""
+msgstr "注释"
 
 msgid "Messages"
-msgstr ""
+msgstr "消息"
