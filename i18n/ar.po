@@ -27,13 +27,13 @@ msgstr ""
 "البيانات الوصفية."
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "تحقق من سلامة البيانات"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "جاري التحقق من سلامة البيانات ..."
 
 msgid "An unexpected error happened during data integrity checks"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء التحقق من سلامة البيانات"
 
 msgid "RUN INTEGRITY CHECKS"
 msgstr ""
@@ -125,10 +125,10 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "تم إجراء عملية الصيانة"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء عملية الصيانة"
 
 msgid "Clear analytics tables"
 msgstr "مسح جداول التحليلات"
@@ -137,7 +137,7 @@ msgid "Analyze analytics tables"
 msgstr ""
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "حذف القيم الصفرية"
 
 msgid "Permanently remove soft deleted data values"
 msgstr ""
@@ -173,7 +173,7 @@ msgid "Clear application cache"
 msgstr "تنظيف ذاكرة التخزين المؤقت للتطبيق"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "إعادة تحميل التطبيقات"
 
 msgid "Resource Tables"
 msgstr ""
@@ -253,7 +253,7 @@ msgid "It was not possible to load Data Statistics"
 msgstr ""
 
 msgid "No data to show."
-msgstr ""
+msgstr "لا توجد بيانات لإظهارها."
 
 msgid "Object type"
 msgstr "نوع العنصر"
@@ -360,10 +360,10 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "ADD"
-msgstr ""
+msgstr "إضافة"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -381,7 +381,7 @@ msgid "Are you sure?"
 msgstr "هل أنت متأكد؟"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "تأكيد"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -414,16 +414,16 @@ msgid "Deselect"
 msgstr "إلغاء التحديد"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "تحديد كل الوحدات التنظيمية"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "إلغاء التحديد عن كل الوحدات التنظيمية"
 
 msgid "Name"
 msgstr "الاسم"
 
 msgid "Show Details"
-msgstr ""
+msgstr "عرض التفاصيل"
 
 msgid "Remove"
 msgstr "إزالة"
@@ -435,13 +435,13 @@ msgid "of"
 msgstr "management=الإدارة"
 
 msgid "week"
-msgstr ""
+msgstr "اسبوع"
 
 msgid "month"
 msgstr "شهر"
 
 msgid "year"
-msgstr ""
+msgstr "سنة"
 
 msgid "bi monthly"
 msgstr ""
@@ -450,76 +450,76 @@ msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "يناير"
 
 msgid "feb"
-msgstr ""
+msgstr "فبراير"
 
 msgid "mar"
-msgstr ""
+msgstr "مارس"
 
 msgid "apr"
-msgstr ""
+msgstr "ابريل"
 
 msgid "may"
-msgstr ""
+msgstr "مايو"
 
 msgid "jun"
-msgstr ""
+msgstr "يونيو"
 
 msgid "jul"
-msgstr ""
+msgstr "يوليو"
 
 msgid "aug"
-msgstr ""
+msgstr "اغسطس"
 
 msgid "sep"
-msgstr ""
+msgstr "سبتمبر"
 
 msgid "oct"
-msgstr ""
+msgstr "اكتوبر"
 
 msgid "nov"
-msgstr ""
+msgstr "نوفمبر"
 
 msgid "dec"
-msgstr ""
+msgstr "ديسمبر"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "يناير-فبراير"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "مارس-ابريل"
 
 msgid "may-jun"
-msgstr ""
+msgstr "مايو-يونيو"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "يوليو-اغسطس"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "سبتمبر-اكتوبر"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "نوفمبر-ديسمبر"
 
 msgid "quarter"
-msgstr ""
+msgstr "ربع"
 
 msgid "Q1"
-msgstr ""
+msgstr "الربع1"
 
 msgid "Q2"
-msgstr ""
+msgstr "الربع2"
 
 msgid "Q3"
-msgstr ""
+msgstr "الربع3"
 
 msgid "Q4"
-msgstr ""
+msgstr "الربع4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "كل ستة أشهر"
 
 msgid "jan-jun"
 msgstr ""
@@ -534,7 +534,7 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "لكل الوحدات التنظيمية"
 
 msgid "Min-Max Value Generation"
 msgstr "توليد قيم الحد الأدنى-الحد الأعلى"
