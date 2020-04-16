@@ -1,15 +1,15 @@
 # Translators:
 # phil_dhis2, 2019
 # Viktor Varland <viktor@dhis2.org>, 2019
-# easylin <lin_xd@126.com>, 2020
 # 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2020\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -133,7 +133,7 @@ msgid "Clear analytics tables"
 msgstr "Clear analytics tables"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "分析分析表"
 
 msgid "Remove zero data values"
 msgstr ""
@@ -332,7 +332,7 @@ msgid "Data element groups"
 msgstr "数据元组"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "仪表盘"
 
 msgid "Lock Exception Management"
 msgstr "锁异常管理"
@@ -382,7 +382,7 @@ msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "For organisation units within"
 msgstr "机构属于"
@@ -573,10 +573,10 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Analytics tables management"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "分析表"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -584,28 +584,28 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Analytics tables update"
 
 msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Skip generation of aggregate data and completeness data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Skip generation of resource tables"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Skip generation of event data"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Skip generation of enrollment data"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "分析表更新"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Number of last years of data to include"
 
 msgid "[ All ]"
 msgstr ""
