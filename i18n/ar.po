@@ -119,7 +119,7 @@ msgid "Perform Maintenance"
 msgstr "إجراء صيانة"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "إجراء الصيانة"
 
 msgid "Performing Maintenance..."
 msgstr "يتم إجراء الصيانة..."
@@ -140,13 +140,13 @@ msgid "Remove zero data values"
 msgstr "حذف القيم الصفرية"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "إزالة قيم البيانات المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "إزالة الأحداث المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "إزالة التسجيلات المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
@@ -556,16 +556,16 @@ msgid "Select Data set and Organisation Unit"
 msgstr ""
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "توليد القيمة الأدنى والأعلى"
 
 msgid "Removing Min Max generation..."
 msgstr "حذف قيم الحد الأدنى - الحد الأعلى"
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "توليد القيمة الأدنى والأعلى تم"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "إزالة القيمة الأدنى والأعلى تم"
 
 msgid "Loading data sets"
 msgstr "تحميل حزم البيانات"
@@ -583,7 +583,7 @@ msgid "Analytics tables management"
 msgstr "إدارة جداول التحليلات"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "الجداول التحليلية"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -596,7 +596,7 @@ msgid "Analytics tables update"
 msgstr "تحديث جداول التحليلات"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "بدء التصدير"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr "تخطي توليد البيانات التجميعية والبيانات المكتملة"
