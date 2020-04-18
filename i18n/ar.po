@@ -27,19 +27,19 @@ msgstr ""
 "البيانات الوصفية."
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "تحقق من سلامة البيانات"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "جاري التحقق من سلامة البيانات ..."
 
 msgid "An unexpected error happened during data integrity checks"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء التحقق من سلامة البيانات"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "قم بتشغيل اختبارات سلامة البيانات"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "عناصر بيانات ليست ضمن حزمة بيانات"
 
 msgid "Data elements without groups"
 msgstr "عناصر البيانات بدون مجموعات"
@@ -93,10 +93,10 @@ msgid "Invalid validation rule right side expressions"
 msgstr "تعابير الطرف الأيمن لقاعدة التحقق غير صالحة"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "تعبيرات مؤشر البرنامج غير صالحة"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "عوامل تصفية مؤشرات البرنامج غير صالحة"
 
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
@@ -116,19 +116,19 @@ msgid ""
 msgstr ""
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "إجراء صيانة"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "إجراء الصيانة"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "يتم إجراء الصيانة..."
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "تم إجراء عملية الصيانة"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء عملية الصيانة"
 
 msgid "Clear analytics tables"
 msgstr "مسح جداول التحليلات"
@@ -137,16 +137,16 @@ msgid "Analyze analytics tables"
 msgstr ""
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "حذف القيم الصفرية"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "إزالة قيم البيانات المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "إزالة الأحداث المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "إزالة التسجيلات المحذوفة بشكل دائم"
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
@@ -173,7 +173,7 @@ msgid "Clear application cache"
 msgstr "تنظيف ذاكرة التخزين المؤقت للتطبيق"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "إعادة تحميل التطبيقات"
 
 msgid "Resource Tables"
 msgstr ""
@@ -195,7 +195,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء العملية"
 
 msgid "Organisation unit structure"
 msgstr "هيكلية الوحدة التنظيمية"
@@ -244,16 +244,16 @@ msgstr ""
 "البيانات وقيم البيانات."
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "نظرة عامة على إحصائيات البيانات"
 
 msgid "Loading Data Statistics..."
-msgstr ""
+msgstr "تحميل إحصائيات البيانات..."
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "لم يكن من الممكن تحميل إحصائيات البيانات"
 
 msgid "No data to show."
-msgstr ""
+msgstr "لا توجد بيانات لإظهارها."
 
 msgid "Object type"
 msgstr "نوع العنصر"
@@ -346,10 +346,10 @@ msgid "Lock Exception"
 msgstr "استثناء القفل"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "حذف جماعي"
 
 msgid "Add new lock exception"
-msgstr ""
+msgstr "إضافة استثناء قفل جديد"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
@@ -360,37 +360,37 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "ADD"
-msgstr ""
+msgstr "إضافة"
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "تحميل استثناءات القفل"
 
 msgid "Adding Lock Exception..."
-msgstr ""
+msgstr "إضافة استثناء قفل"
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "إزالة استثناء القفل"
 
 msgid "Lock Exception Added"
-msgstr ""
+msgstr "تم إضافة استثناء القفل"
 
 msgid "Are you sure?"
 msgstr "هل أنت متأكد؟"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "تأكيد"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "إختر حزمة بيانات"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "جار تحديث شجرة الوحدات التنظيمية..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "للوحدات التنظيمية التي ضمن"
 
 msgid "Period"
 msgstr "الفترة الزمنية"
@@ -402,10 +402,10 @@ msgid "Organisation Unit"
 msgstr "الوحدة التنظيمية"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "مجموعة الوحدات التنظيمية"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "مستوى الوحدة التنظيمية"
 
 msgid "Select"
 msgstr "تحديد"
@@ -414,16 +414,16 @@ msgid "Deselect"
 msgstr "إلغاء التحديد"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "حدد كل الوحدات التنظيمية"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "إلغاء التحديد عن كل الوحدات التنظيمية"
 
 msgid "Name"
 msgstr "الاسم"
 
 msgid "Show Details"
-msgstr ""
+msgstr "عرض التفاصيل"
 
 msgid "Remove"
 msgstr "إزالة"
@@ -435,106 +435,106 @@ msgid "of"
 msgstr "management=الإدارة"
 
 msgid "week"
-msgstr ""
+msgstr "اسبوع"
 
 msgid "month"
 msgstr "شهر"
 
 msgid "year"
-msgstr ""
+msgstr "سنة"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "كل شهرين"
 
 msgid "day"
-msgstr ""
+msgstr "يوم"
 
 msgid "jan"
-msgstr ""
+msgstr "يناير"
 
 msgid "feb"
-msgstr ""
+msgstr "فبراير"
 
 msgid "mar"
-msgstr ""
+msgstr "مارس"
 
 msgid "apr"
-msgstr ""
+msgstr "ابريل"
 
 msgid "may"
-msgstr ""
+msgstr "مايو"
 
 msgid "jun"
-msgstr ""
+msgstr "يونيو"
 
 msgid "jul"
-msgstr ""
+msgstr "يوليو"
 
 msgid "aug"
-msgstr ""
+msgstr "اغسطس"
 
 msgid "sep"
-msgstr ""
+msgstr "سبتمبر"
 
 msgid "oct"
-msgstr ""
+msgstr "اكتوبر"
 
 msgid "nov"
-msgstr ""
+msgstr "نوفمبر"
 
 msgid "dec"
-msgstr ""
+msgstr "ديسمبر"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "يناير-فبراير"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "مارس-ابريل"
 
 msgid "may-jun"
-msgstr ""
+msgstr "مايو-يونيو"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "يوليو-اغسطس"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "سبتمبر-اكتوبر"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "نوفمبر-ديسمبر"
 
 msgid "quarter"
-msgstr ""
+msgstr "ربع"
 
 msgid "Q1"
-msgstr ""
+msgstr "الربع1"
 
 msgid "Q2"
-msgstr ""
+msgstr "الربع2"
 
 msgid "Q3"
-msgstr ""
+msgstr "الربع3"
 
 msgid "Q4"
-msgstr ""
+msgstr "الربع4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "كل ستة أشهر"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "يناير-يونيو"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "يوليو-ديسمبر"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "ابريل-سبتمبر"
 
 msgid "oct-mar"
 msgstr ""
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "لكل الوحدات التنظيمية"
 
 msgid "Min-Max Value Generation"
 msgstr "توليد قيم الحد الأدنى-الحد الأعلى"
@@ -547,54 +547,56 @@ msgstr ""
 "البيانات أثناء إدخال البيانات وعمليات التحقق."
 
 msgid "Generate Min-Max Value"
-msgstr ""
+msgstr "توليد قيم الحد الأدنى - الحد الأعلى"
 
 msgid "It was not possible to load data"
-msgstr ""
+msgstr "لم يكن من الممكن تحميل البيانات"
 
 msgid "Select Data set and Organisation Unit"
 msgstr ""
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "توليد القيمة الأدنى والأعلى"
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "حذف قيم الحد الأدنى - الحد الأعلى"
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "توليد القيمة الأدنى والأعلى تم"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "إزالة القيمة الأدنى والأعلى تم"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "تحميل حزم البيانات"
 
 msgid "Organisation Unit Selection"
 msgstr "تحديد الوحدة التنظيمية"
 
 msgid "GENERATE"
-msgstr ""
+msgstr "توليد"
 
 msgid "REMOVE"
-msgstr ""
+msgstr "إزالة"
 
 msgid "Analytics tables management"
 msgstr "إدارة جداول التحليلات"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "الجداول التحليلية"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from. "
 msgstr ""
+"الـ data mart هو مجموعة من الجداول في قاعدة بيانات DHIS التي تستخدمها جميع "
+"أدوات الإبلاغ والتحليل لاسترداد البيانات."
 
 msgid "Analytics tables update"
 msgstr "تحديث جداول التحليلات"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "بدء التصدير"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr "تخطي توليد البيانات التجميعية والبيانات المكتملة"
