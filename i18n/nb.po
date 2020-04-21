@@ -116,13 +116,13 @@ msgid "Perform Maintenance"
 msgstr ""
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "UTFØR VEDLIKEHOLD"
 
 msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Vedlikehold utført"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
