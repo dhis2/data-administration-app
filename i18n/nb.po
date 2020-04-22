@@ -1,13 +1,13 @@
 # Translators:
-# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +54,7 @@ msgid "Indicators with identical formulas"
 msgstr ""
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indikatorer uten grupper"
 
 msgid "Invalid indicator numerators"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Organisasjonsenhet struktur"
 
 msgid "Organisation unit category option combo"
 msgstr ""
@@ -217,10 +217,10 @@ msgid "Data element category option combo name"
 msgstr ""
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Dataelement struktur"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Periodestruktur"
 
 msgid "Date period structure"
 msgstr ""
@@ -249,7 +249,7 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Objekttype"
 
 msgid "Last hour"
 msgstr "Siste timen"
@@ -333,7 +333,7 @@ msgid "Dashboards"
 msgstr "Dashbord"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Lås administrering av unntak"
 
 msgid "Lock Exception"
 msgstr "Lås unntak"
@@ -383,7 +383,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "For organisasjonsenhet innenfor"
 
 msgid "Period"
 msgstr "Periode"
@@ -404,7 +404,7 @@ msgid "Select"
 msgstr "Velg"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Fjern merking"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -425,7 +425,7 @@ msgid "Actions"
 msgstr "Handlinger"
 
 msgid "of"
-msgstr ""
+msgstr "av"
 
 msgid "week"
 msgstr ""
