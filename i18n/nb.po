@@ -1,3 +1,4 @@
+# 
 # Translators:
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Caroline Hesthagen Holen <carolinehholen@gmail.com>, 2020
@@ -16,12 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Dataintegritet"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Kjør dataintegritetskontroller og avdekke avvik og problemer i "
+"metadataoppsettet."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -39,31 +42,31 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Dataelementer uten grupper"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Dataelementer som bryter eksklusive gruppesett"
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr ""
+msgstr "Dataelementer tildelt datasett med forskjellige periodetyper"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Datasetter er ikke tildelt til organisasjonsenheter"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indikatorer med identiske formler"
 
 msgid "Indicators without groups"
 msgstr "Indikatorer uten grupper"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Ugyldige indikatortellere"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Ugyldige indikatornevnere"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Indikatorer som bryter eksklusive gruppesett"
 
 msgid "Organisation units with cyclic references"
 msgstr ""
@@ -72,22 +75,22 @@ msgid "Orphaned organisation units"
 msgstr ""
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Organisasjonsenheter uten grupper"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Organisasjonsenhetgrupper uten gruppesett"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Valideringsregler uten grupper"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Ugyldig valideringsregel uttrykk fra venstre side"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Ugyldig valideringsregel uttrykk fra høyre side"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -99,10 +102,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Ugyldige kategorikombinasjoner"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplikat perioder"
 
 msgid "Maintenance"
 msgstr "Vedlikehold"
@@ -128,7 +131,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Fjern analysetabeller"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -149,25 +152,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Beskjær perioder"
 
 msgid "Remove expired invitations"
 msgstr "Fjern utgåtte invitasjoner"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Dropp SQL-visninger"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "Opprett SQL visninger"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Oppdater kategorialternativ kombinasjoner"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Oppdater organisasjonsenhet baner"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Fjern applikasjonsbuffer"
 
 msgid "Reload apps"
 msgstr ""
@@ -179,6 +182,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Generer ressursdatabasetabeller for organisasjonsenhetens hierarki og "
+"gruppesettstruktur."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -196,25 +201,25 @@ msgid "Organisation unit structure"
 msgstr "Organisasjonsenhet struktur"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Organisasjonsenhet kategorialternativ kombo"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Kategorialternativ gruppesett struktur"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Dataelement gruppesett struktur"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Indikator gruppesett struktur"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Organisasjonsenhet gruppsett struktur"
 
 msgid "Category structure"
 msgstr "Kategoristruktur"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Dataelement kategorialternativ kombo navn"
 
 msgid "Data element structure"
 msgstr "Dataelement struktur"
@@ -223,10 +228,10 @@ msgid "Period structure"
 msgstr "Periodestruktur"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Dataperiode struktur"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Dataelement kategorialternativ kombinasjoner"
 
 msgid "Data Statistics"
 msgstr ""
@@ -235,6 +240,8 @@ msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Bla gjennom antall objekter i databasen, for eksempel dataelementer, "
+"indikatorer, datasett og dataverdier."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -276,7 +283,7 @@ msgid "Expired invitations"
 msgstr "Utgåtte invitasjoner"
 
 msgid "Data values"
-msgstr ""
+msgstr "Dataverdier"
 
 msgid "Events"
 msgstr "Hendelser"
@@ -306,7 +313,7 @@ msgid "Pivot tables"
 msgstr "Pivottabeller"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Indikatortyper"
 
 msgid "Data sets"
 msgstr "Datasett"
@@ -348,6 +355,8 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Legg til eller fjern unntak fra standardreglene for låsing av "
+"dataregistreringsskjemaer."
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -530,12 +539,14 @@ msgid "For all organisation units:"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Min-maks verdi generering"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Generer min-maksverdier som kan brukes til datavalidering under "
+"datainnførings- og valideringsprosesser."
 
 msgid "Generate Min-Max Value"
 msgstr ""
