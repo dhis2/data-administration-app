@@ -1,0 +1,643 @@
+# 
+# Translators:
+# 晓东 林 <13981924470@126.com>, 2020
+# easylin <lin_xd@126.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2019-10-24T14:00:22.740Z\n"
+"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Integrity"
+msgstr "数据完整性"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
+msgstr "运行数据完整性检查并在元数据设置中发现异常和问题。"
+
+msgid "Check Data Integrity"
+msgstr ""
+
+msgid "Performing data integrity checks..."
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr "没有组的数据元"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "数据元违反互斥的组集规则"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr "数据元以不同周期的类型分配到数据集"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "指定组织机构的数据集"
+
+msgid "Indicators with identical formulas"
+msgstr "指标以相同的公式"
+
+msgid "Indicators without groups"
+msgstr "无组的指标"
+
+msgid "Invalid indicator numerators"
+msgstr "无效指标分子"
+
+msgid "Invalid indicator denominators"
+msgstr "无效指标分母"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "指标违反互斥性的组集"
+
+msgid "Organisation units with cyclic references"
+msgstr "组织机构违反强制的组集规则"
+
+msgid "Orphaned organisation units"
+msgstr "孤立的组织机构"
+
+msgid "Organisation units without groups"
+msgstr "无组的组织机构"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr "没有组集的组织机构组"
+
+msgid "Validation rules without groups"
+msgstr "无分组的验证规则"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "左侧的验证规则表达式无效"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "右侧的验证规则表达式无效"
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr "Invalid 分类组合s"
+
+msgid "Duplicate periods"
+msgstr "复制期间"
+
+msgid "Maintenance"
+msgstr "系统维护"
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "Clear analytics tables"
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr "裁剪周期"
+
+msgid "Remove expired invitations"
+msgstr "移除过期的邀请"
+
+msgid "Drop SQL views"
+msgstr "删除 SQL视图"
+
+msgid "Create SQL views"
+msgstr "创建 SQL 视图"
+
+msgid "Update category option combinations"
+msgstr "Update 分类组合选项s"
+
+msgid "Update organisation unit paths"
+msgstr "Update 机构 paths"
+
+msgid "Clear application cache"
+msgstr "Clear application cache"
+
+msgid "Reload apps"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr "为组织机构体系和组集结构在数据库中生成的其它相关的数据库资源表。\n"
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "组织机构结构"
+
+msgid "Organisation unit category option combo"
+msgstr "机构 分类选项 组合"
+
+msgid "Category option group set structure"
+msgstr "分类选项组集结构"
+
+msgid "Data element group set structure"
+msgstr "数据元组集结构"
+
+msgid "Indicator group set structure"
+msgstr "指标组集合结构"
+
+msgid "Organisation unit group set structure"
+msgstr "若干组织机构组集结构"
+
+msgid "Category structure"
+msgstr "分类结构"
+
+msgid "Data element category option combo name"
+msgstr "数据元分类选项组合的名称"
+
+msgid "Data element structure"
+msgstr "数据元结构"
+
+msgid "Period structure"
+msgstr "Period结构"
+
+msgid "Date period structure"
+msgstr "日期期间结构"
+
+msgid "Data element category option combinations"
+msgstr "数据元 分类组合选项s"
+
+msgid "Data Statistics"
+msgstr "数据统计"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr "浏览在数据库中的对象数量，如数据元，指标、数据和数据值。"
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr "对象类型"
+
+msgid "Last hour"
+msgstr "上一小时"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "Last"
+msgstr "最后"
+
+msgid "days"
+msgstr "天数"
+
+msgid "Users logged in"
+msgstr "已经登入的用户"
+
+msgid "User account invitations"
+msgstr "用户帐号邀请"
+
+msgid "Pending invitations"
+msgstr "Pending invitations"
+
+msgid "Expired invitations"
+msgstr "过期的邀请"
+
+msgid "Data values"
+msgstr "数据值"
+
+msgid "Events"
+msgstr "事件"
+
+msgid "Indicators"
+msgstr "指标"
+
+msgid "Periods"
+msgstr "周期"
+
+msgid "Organisation units"
+msgstr "组织机构"
+
+msgid "Validation rules"
+msgstr "验证规则"
+
+msgid "Programs"
+msgstr "项目"
+
+msgid "Data elements"
+msgstr "数据元"
+
+msgid "Organisation unit groups"
+msgstr "组织机构分组"
+
+msgid "Pivot tables"
+msgstr "透视表"
+
+msgid "Indicator types"
+msgstr "指标类型"
+
+msgid "Data sets"
+msgstr "数据集"
+
+msgid "User groups"
+msgstr "用户组"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "Maps"
+msgstr "地图"
+
+msgid "Indicator groups"
+msgstr "指标分组"
+
+msgid "Charts"
+msgstr "图表"
+
+msgid "Data element groups"
+msgstr "数据元组"
+
+msgid "Dashboards"
+msgstr "仪表盘"
+
+msgid "Lock Exception Management"
+msgstr "锁异常管理"
+
+msgid "Lock Exception"
+msgstr "锁异常"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
+msgstr "添加或删除数据录入表单锁标准规则异常"
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr "你确信？"
+
+msgid "CONFIRM"
+msgstr ""
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr ""
+
+msgid "For organisation units within"
+msgstr "机构属于"
+
+msgid "Period"
+msgstr "期间"
+
+msgid "Data Set"
+msgstr "数据集"
+
+msgid "Organisation Unit"
+msgstr "组织机构"
+
+msgid "Organisation Unit Group"
+msgstr "机构组"
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr "选择"
+
+msgid "Deselect"
+msgstr "去选择"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "Actions"
+msgstr "行动"
+
+msgid "of"
+msgstr "中"
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr "月"
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "For all organisation units:"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "生成最小-最大值"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr "产生最小-最大值，在数据的输入和验证过程中用于数据的验证。"
+
+msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr ""
+
+msgid "GENERATE"
+msgstr ""
+
+msgid "REMOVE"
+msgstr ""
+
+msgid "Analytics tables management"
+msgstr ""
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from. "
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr ""
+
+msgid "START EXPORT"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
+msgstr ""
+
+msgid "Skip generation of event data"
+msgstr ""
+
+msgid "Skip generation of enrollment data"
+msgstr ""
+
+msgid "Analytics Tables Update"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "[ All ]"
+msgstr ""
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Search apps"
+msgstr "搜索应用"
+
+msgid "Profile"
+msgstr "基本信息"
+
+msgid "Account"
+msgstr "账号"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Log out"
+msgstr "退出"
+
+msgid "About DHIS 2"
+msgstr "关于"
+
+msgid "Manage my apps"
+msgstr "管理我的应用"
+
+msgid "No results found"
+msgstr "没有发现"
+
+msgid "Interpretations"
+msgstr "注释"
+
+msgid "Messages"
+msgstr "消息"
