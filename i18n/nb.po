@@ -72,7 +72,7 @@ msgid "Organisation units with cyclic references"
 msgstr ""
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Organisasjonsenheter uten overordnet"
 
 msgid "Organisation units without groups"
 msgstr "Organisasjonsenheter uten grupper"
@@ -234,7 +234,7 @@ msgid "Data element category option combinations"
 msgstr "Dataelement kategorialternativ kombinasjoner"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Datastatistikk"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
