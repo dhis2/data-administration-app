@@ -1,13 +1,14 @@
+# 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# phil_dhis2, 2020
+# Viktor Varland <viktor@dhis2.org>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"POT-Creation-Date: 2019-10-24T14:00:22.740Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2020\n"
 "Language-Team: Lao (https://www.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -264,7 +265,7 @@ msgid "Today"
 msgstr "ມື້ນີ້"
 
 msgid "Last"
-msgstr "Last"
+msgstr "ສຸດທ້າຍ"
 
 msgid "days"
 msgstr ""
@@ -288,7 +289,7 @@ msgid "Events"
 msgstr "ເຫດການ"
 
 msgid "Indicators"
-msgstr "Indicators"
+msgstr "ຕົວຊີ້ວັດ"
 
 msgid "Periods"
 msgstr "ຊ່ວງເວລາ"
@@ -300,13 +301,13 @@ msgid "Validation rules"
 msgstr "ການກວດສອບ ຄວາມຖືກຕ້ອງ"
 
 msgid "Programs"
-msgstr "Programs"
+msgstr "ສາຍງານ"
 
 msgid "Data elements"
 msgstr "ອົງປະກອບຂໍ້ມູນ"
 
 msgid "Organisation unit groups"
-msgstr "Organisation unit groups"
+msgstr "ກຸ່ມໂຄງຮ່າງການຈັດຕັ້ງ"
 
 msgid "Pivot tables"
 msgstr "ຕາຕະລາງຂໍ້ມູນ"
@@ -321,7 +322,7 @@ msgid "User groups"
 msgstr "ກຸ່ມຜູ້ໃຊ້"
 
 msgid "Users"
-msgstr "Users"
+msgstr "ຜູ້ນໍາໃຊ້"
 
 msgid "Maps"
 msgstr "ແຜນທີ່"
@@ -333,7 +334,7 @@ msgid "Charts"
 msgstr "ແຜນວາດຂໍ້ມູນ"
 
 msgid "Data element groups"
-msgstr "Data element groups"
+msgstr "Data Element Groups"
 
 msgid "Dashboards"
 msgstr ""
@@ -622,10 +623,10 @@ msgid "Settings"
 msgstr "ຕັ້ງຄ່າ"
 
 msgid "Search apps"
-msgstr "Search apps"
+msgstr "ຄົ້ນຫາແອັບ"
 
 msgid "Profile"
-msgstr "Profile"
+msgstr "ລາຍລະອຽດສ່ວນຕົົວ"
 
 msgid "Account"
 msgstr "ບັນຊີ"

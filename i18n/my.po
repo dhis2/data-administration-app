@@ -1,13 +1,14 @@
+# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2019
-# phil_dhis2, 2019
+# phil_dhis2, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2018-11-22T15:46:29.775Z\n"
+"POT-Creation-Date: 2019-10-24T14:00:22.740Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"Last-Translator: phil_dhis2, 2020\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,7 +106,7 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Maintenance"
+msgstr "ထိမ်းသိမ်းခြင်း"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -282,13 +283,13 @@ msgid "Events"
 msgstr "Events"
 
 msgid "Indicators"
-msgstr "Indicators"
+msgstr "အညွှန်းများ"
 
 msgid "Periods"
-msgstr "Periods"
+msgstr "အချိန်ကာလများ"
 
 msgid "Organisation units"
-msgstr "Organisation units"
+msgstr "အဖွဲ့အစည်းယူနစ်"
 
 msgid "Validation rules"
 msgstr "မှန်ကန်ခြင်းစစ်ဆေးရန်စည်းမျဉ်းများ"
@@ -297,7 +298,7 @@ msgid "Programs"
 msgstr "Programs"
 
 msgid "Data elements"
-msgstr "Data elements"
+msgstr "အချက်အလတ်အစိတ်အပိုင်းများ"
 
 msgid "Organisation unit groups"
 msgstr "အဖွဲ့အစည်းအုပ်စု"
