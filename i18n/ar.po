@@ -532,7 +532,7 @@ msgid "apr-sep"
 msgstr "ابريل-سبتمبر"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "اكتوبر-مارس"
 
 msgid "For all organisation units:"
 msgstr "لكل الوحدات التنظيمية"
@@ -554,7 +554,7 @@ msgid "It was not possible to load data"
 msgstr "لم يكن من الممكن تحميل البيانات"
 
 msgid "Select Data set and Organisation Unit"
-msgstr ""
+msgstr "اختر حزمة بيانات ووحدة تنظيمية"
 
 msgid "Doing Min Max generation..."
 msgstr "توليد القيمة الأدنى والأعلى"
