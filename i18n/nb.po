@@ -383,7 +383,7 @@ msgid "Are you sure?"
 msgstr "Er du sikker?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "BEKREFT"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -437,19 +437,19 @@ msgid "of"
 msgstr "av"
 
 msgid "week"
-msgstr ""
+msgstr "uke"
 
 msgid "month"
 msgstr "Måned"
 
 msgid "year"
-msgstr ""
+msgstr "år"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "Tomånedlig"
 
 msgid "day"
-msgstr ""
+msgstr "dag"
 
 msgid "jan"
 msgstr ""
@@ -506,22 +506,22 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "kvartal"
 
 msgid "Q1"
-msgstr ""
+msgstr "S1"
 
 msgid "Q2"
-msgstr ""
+msgstr "S2"
 
 msgid "Q3"
-msgstr ""
+msgstr "S3"
 
 msgid "Q4"
-msgstr ""
+msgstr "S4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "Halvårlig"
 
 msgid "jan-jun"
 msgstr ""
