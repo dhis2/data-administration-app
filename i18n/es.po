@@ -437,7 +437,7 @@ msgid "Actions"
 msgstr "Acciones"
 
 msgid "of"
-msgstr ""
+msgstr "de"
 
 msgid "week"
 msgstr ""
