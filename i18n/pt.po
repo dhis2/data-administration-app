@@ -644,10 +644,10 @@ msgid "About DHIS 2"
 msgstr "Acerca de DHIS2"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "Gerenciar meus aplicativos"
 
 msgid "No results found"
-msgstr ""
+msgstr "Nenhum resultado encontrado"
 
 msgid "Interpretations"
 msgstr "Interpretações"
