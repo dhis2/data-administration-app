@@ -386,13 +386,13 @@ msgid "Are you sure?"
 msgstr "Tem certeza?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "Confirmar "
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Atualizando a árvore das unidades da organizacionais..."
 
 msgid "For organisation units within"
 msgstr ""
@@ -440,19 +440,19 @@ msgid "of"
 msgstr "de"
 
 msgid "week"
-msgstr ""
+msgstr "Semana"
 
 msgid "month"
 msgstr "mês"
 
 msgid "year"
-msgstr ""
+msgstr "Ano"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "Bimensal "
 
 msgid "day"
-msgstr ""
+msgstr "Dia"
 
 msgid "jan"
 msgstr ""
@@ -509,22 +509,22 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "Trimestre"
 
 msgid "Q1"
-msgstr ""
+msgstr "Q1"
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
-msgstr ""
+msgstr "Q3"
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "Seis meses"
 
 msgid "jan-jun"
 msgstr ""
@@ -585,7 +585,7 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Gerenciamento de tabelas de análise"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -602,22 +602,22 @@ msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Ignorar a geração de dados agregados e de integridade"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Ignorar geração de tabelas de recursos"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Ignorar geração de dados do evento"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Ignorar geração de dados de inscrição"
 
 msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Número de últimos anos de dados a incluir"
 
 msgid "[ All ]"
 msgstr ""
