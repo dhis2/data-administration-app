@@ -30,19 +30,20 @@ msgstr ""
 "problemas na configuração de metadados."
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "Verificar a integridade dos dados. "
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "Executando verificações de integridade de dados ..."
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
+"Ocorreu um erro inesperado durante as verificações de integridade de dados"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "EXECUTAR CONTROLOS DE INTEGRIDADE"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "Elementos de dados sem conjunto de dados"
 
 msgid "Data elements without groups"
 msgstr "Elementos de dados sem grupos"
@@ -81,7 +82,7 @@ msgid "Organisation units without groups"
 msgstr "Unidades organizacionais sem grupos"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr ""
+msgstr "Unidades organizacionais que violam conjuntos de grupos exclusivos"
 
 msgid "Organisation unit groups without group sets"
 msgstr "Grupos de unidades Organização sem sets grupo"
@@ -96,19 +97,20 @@ msgid "Invalid validation rule right side expressions"
 msgstr "Regra de validação inválida de expressões à direita"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Expressões inválidas de indicadores do programa"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "Expressões inválidas de indicadores de filtros"
 
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
+"Existem elementos de dados no formulário, mas não nas seções do formulário. "
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Categorias de combinações invalidas"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplicar periodos "
 
 msgid "Maintenance"
 msgstr "Manutenção"
@@ -117,69 +119,74 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Execute tarefas de manutenção e gere tabelas de banco de dados de recursos "
+"para a hierarquia da unidade organizacional e a estrutura do conjunto de "
+"grupos."
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "Executar manutenção"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "EXECUTAR MANUTENÇÃO"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "Executando manutenção ..."
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Manunteção concluida "
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Ocorreu um erro inesperado durante a manutenção"
 
 msgid "Clear analytics tables"
 msgstr "Limpar tabelas analíticas"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "Analisar tabelas"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "Remova zero valor de dados"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "Remover permanentemente valores de dados excluídos"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "Remover permanentemente eventos excluídos"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "Remover permanentemente inscrições excluídas temporariamente"
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
+"Remover permanentemente instâncias de entidades rastreadas excluídas "
+"temporariamente"
 
 msgid "Prune periods"
 msgstr "Excluir períodos"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Removedor convites expirados"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Descartar visualizações SQL"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "Crie visualizações SQL"
 
 msgid "Update category option combinations"
 msgstr "Actualizar as combinações de opções de categoria"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Actualizar caminhos da unidade organizacional"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Limpar cache do aplicativo"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "Recarregar aplicativos"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "Tabelas de recursos"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -189,25 +196,25 @@ msgstr ""
 "organizacional e da estrutura definida grupo entre outros."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Gerar recursos de tabelas "
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "GERAR TABELAS "
 
 msgid "Resource Tables generated"
-msgstr ""
+msgstr "Tabelas de recursos geradas"
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Ocorreu um erro inesperado durante a operação"
 
 msgid "Organisation unit structure"
 msgstr "Estrutura da Unidade Organizacional"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Combinação de opções de categoria de unidade organizacional"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Estrutura do conjunto de grupos de opções de categoria"
 
 msgid "Data element group set structure"
 msgstr "Estrutura de Dados de Elementos do Grupo"
@@ -247,22 +254,22 @@ msgstr ""
 "conjuntos de indicadores, dados e valores de dados."
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "Estatísticas de dados"
 
 msgid "Loading Data Statistics..."
-msgstr ""
+msgstr "Estatísticas de dados"
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "Não foi possível carregar estatísticas de dados"
 
 msgid "No data to show."
-msgstr ""
+msgstr "Não há dados para mostrar."
 
 msgid "Object type"
 msgstr "Tipo de objecto"
 
 msgid "Last hour"
-msgstr ""
+msgstr "Ultima hora "
 
 msgid "Today"
 msgstr "Hoje"
@@ -271,16 +278,16 @@ msgid "Last"
 msgstr "Último"
 
 msgid "days"
-msgstr ""
+msgstr "Dias"
 
 msgid "Users logged in"
 msgstr "Utilizadores autênticados"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Convites de conta de usuário"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Convites pendentes"
 
 msgid "Expired invitations"
 msgstr "Convites expirados"
@@ -349,10 +356,10 @@ msgid "Lock Exception"
 msgstr "Excepção de bloqueio"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "Exclusão em lote"
 
 msgid "Add new lock exception"
-msgstr ""
+msgstr "Adicionar nova exceção de bloqueio"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
@@ -362,25 +369,25 @@ msgstr ""
 "formulários de entrada de dados."
 
 msgid "BATCH DELETION"
-msgstr ""
+msgstr "EXCLUSÃO DO LOTE"
 
 msgid "CANCEL"
-msgstr ""
+msgstr "CANCELAR "
 
 msgid "ADD"
-msgstr ""
+msgstr "ADICIONAR "
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Carregando exceções de bloqueio ..."
 
 msgid "Adding Lock Exception..."
-msgstr ""
+msgstr "Adicionando exceção de bloqueio ..."
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Exceção de bloqueio removida"
 
 msgid "Lock Exception Added"
-msgstr ""
+msgstr "Exceção de bloqueio adicionada"
 
 msgid "Are you sure?"
 msgstr "Tem certeza?"
@@ -389,13 +396,13 @@ msgid "CONFIRM"
 msgstr "Confirmar "
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Selecione um conjunto de dados"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Atualizando a árvore das unidades da organizacionais..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Para unidades organizacionais dentro"
 
 msgid "Period"
 msgstr "Período"
@@ -410,25 +417,25 @@ msgid "Organisation Unit Group"
 msgstr "Grupo de unidades de organização"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "Nível da unidade organizacional"
 
 msgid "Select"
 msgstr "Seleccione"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Desmarcar"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Selecionar todas unidades organizacionais "
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Desmarcar todas unidades organizacionais "
 
 msgid "Name"
 msgstr "Nome"
 
 msgid "Show Details"
-msgstr ""
+msgstr "Mostrar detalhes "
 
 msgid "Remove"
 msgstr "Remover"
@@ -455,58 +462,58 @@ msgid "day"
 msgstr "Dia"
 
 msgid "jan"
-msgstr ""
+msgstr "jan"
 
 msgid "feb"
-msgstr ""
+msgstr "feb"
 
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 msgid "apr"
-msgstr ""
+msgstr "apr"
 
 msgid "may"
-msgstr ""
+msgstr "may"
 
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 msgid "aug"
-msgstr ""
+msgstr "aug"
 
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 msgid "oct"
-msgstr ""
+msgstr "oct"
 
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 msgid "dec"
-msgstr ""
+msgstr "dec"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "jan-feb"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "mar-apr"
 
 msgid "may-jun"
-msgstr ""
+msgstr "may-jun"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "jul-aug"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "sep-oct"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "nov-dec"
 
 msgid "quarter"
 msgstr "Trimestre"
@@ -527,19 +534,19 @@ msgid "six monthly"
 msgstr "Seis meses"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "jan-jun"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "jul-dec"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "apr-sep"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "oct-mar"
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "Para todas as unidades da organização:"
 
 msgid "Min-Max Value Generation"
 msgstr "Min-Max Geração de Valor"
@@ -552,54 +559,56 @@ msgstr ""
 "os processos de entrada de dados e validação."
 
 msgid "Generate Min-Max Value"
-msgstr ""
+msgstr "Gerar valor mínimo e máximo"
 
 msgid "It was not possible to load data"
-msgstr ""
+msgstr "Não foi possível carregar dados"
 
 msgid "Select Data set and Organisation Unit"
-msgstr ""
+msgstr "Selecione Conjunto de dados e Unidade de organização"
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "Fazendo a geração Min Max ..."
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "Removendo a geração Min Max ..."
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Min Max geração concluída"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "Remoção mínima do Max realizada"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Carregando conjuntos de dados"
 
 msgid "Organisation Unit Selection"
 msgstr "Selecção de unidade organizacional"
 
 msgid "GENERATE"
-msgstr ""
+msgstr "GERAR"
 
 msgid "REMOVE"
-msgstr ""
+msgstr "REMOVER"
 
 msgid "Analytics tables management"
 msgstr "Gerenciamento de tabelas de análise"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Analise de tabelas "
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from. "
 msgstr ""
+"O data mart é um conjunto de tabelas no banco de dados DHIS que é usado por "
+"todas as ferramentas de relatório e análise para recuperar dados."
 
 msgid "Analytics tables update"
 msgstr "Actualização das tabelas analiticas"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "Inicio de exportação"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr "Ignorar a geração de dados agregados e de integridade"
@@ -614,10 +623,10 @@ msgid "Skip generation of enrollment data"
 msgstr "Ignorar geração de dados de inscrição"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "Atualização de tabelas de analise "
 
 msgid "Number of last years of data to include"
 msgstr "Número de últimos anos de dados a incluir"
 
 msgid "[ All ]"
-msgstr ""
+msgstr "[ Todos]"
