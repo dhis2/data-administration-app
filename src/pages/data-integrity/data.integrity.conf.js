@@ -180,4 +180,8 @@ export const dataIntegrityControls = [
         key: 'programRuleActionsWithNoStageId',
         label: i18nKeys.dataIntegrity.programRuleActionsWithNoStageId.label,
     },
+    {
+        key: 'programIndicatorsWithNoExpression',
+        label: i18nKeys.dataIntegrity.programIndicatorsWithNoExpression.label,
+    },
 ]
