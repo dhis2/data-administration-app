@@ -108,7 +108,7 @@ export const i18nKeys = {
             label: 'Program rule actions with no stage id',
         },
         programIndicatorsWithNoExpression: {
-            label: 'Program indicators wit no expression',
+            label: 'Program indicators with no expression',
         },
     },
     maintenance: {
