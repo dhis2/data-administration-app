@@ -183,5 +183,5 @@ export const dataIntegrityControls = [
     {
         key: 'programIndicatorsWithNoExpression',
         label: i18nKeys.dataIntegrity.programIndicatorsWithNoExpression.label,
-    }
+    },
 ]

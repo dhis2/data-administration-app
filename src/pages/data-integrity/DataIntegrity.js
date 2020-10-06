@@ -156,12 +156,14 @@ class DataIntegrity extends Page {
                 if (!control) {
                     return null
                 }
-                return <DataIntegrityCard
-                    cardId={`errorElement-${element}`}
-                    key={element}
-                    title={control.label}
-                    content={this.state.cards[element]}
-                />
+                return (
+                    <DataIntegrityCard
+                        cardId={`errorElement-${element}`}
+                        key={element}
+                        title={control.label}
+                        content={this.state.cards[element]}
+                    />
+                )
             })
             if (this.state.loaded) {
                 const noErrors = conf.dataIntegrityControls
