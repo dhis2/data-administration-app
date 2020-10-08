@@ -258,7 +258,7 @@ msgid "Today"
 msgstr "бугун"
 
 msgid "Last"
-msgstr ""
+msgstr "Кейинги"
 
 msgid "days"
 msgstr ""
@@ -276,7 +276,7 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "Маълумотларнинг қийматлари"
 
 msgid "Events"
 msgstr "Ҳодисалар"
@@ -330,7 +330,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Бошқарув Панели"
 
 msgid "Lock Exception Management"
 msgstr ""
