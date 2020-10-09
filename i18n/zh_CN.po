@@ -25,19 +25,19 @@ msgid ""
 msgstr "运行数据完整性检查并在元数据设置中发现异常和问题。"
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "检查数据一致性"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "执行数据完整性检查"
 
 msgid "An unexpected error happened during data integrity checks"
-msgstr ""
+msgstr "完整性检查中发生意外错误"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "运行完整性检查"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "没有归属数据集的数据元"
 
 msgid "Data elements without groups"
 msgstr "没有组的数据元"
@@ -76,7 +76,7 @@ msgid "Organisation units without groups"
 msgstr "无组的组织机构"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr ""
+msgstr "违反组集互斥的机构"
 
 msgid "Organisation unit groups without group sets"
 msgstr "没有组集的组织机构组"
@@ -91,13 +91,13 @@ msgid "Invalid validation rule right side expressions"
 msgstr "右侧的验证规则表达式无效"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "无效的项目指标表达式"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "无效的项目指标过滤器"
 
 msgid "There are data elements in the form, but not in the form or sections"
-msgstr ""
+msgstr "表单中有数据元，但是不在表单或分段中"
 
 msgid "Invalid category combinations"
 msgstr "Invalid 分类组合s"
@@ -111,43 +111,43 @@ msgstr "系统维护"
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
-msgstr ""
+msgstr "运行维护任务，按机构体系或组集结构生成资源数据库表"
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "执行维护"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "执行维护"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "执行维护中"
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "维护完成"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "维护中发生意外错误"
 
 msgid "Clear analytics tables"
 msgstr "Clear analytics tables"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "分析分析表"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "移除零值"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "永久移除软删除的数据值"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "永久移除软删除的事件"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "永久移除软删除的注册登记"
 
 msgid "Permanently remove soft deleted tracked entity instances"
-msgstr ""
+msgstr "永久移除软删除的跟踪实体实例"
 
 msgid "Prune periods"
 msgstr "裁剪周期"
@@ -171,10 +171,10 @@ msgid "Clear application cache"
 msgstr "Clear application cache"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "重新载入APP"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "资源表"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -182,16 +182,16 @@ msgid ""
 msgstr "为组织机构体系和组集结构在数据库中生成的其它相关的数据库资源表。\n"
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "生成资源表"
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "生成资源表"
 
 msgid "Resource Tables generated"
-msgstr ""
+msgstr "资源表已经生成"
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "操作中发生意外错误"
 
 msgid "Organisation unit structure"
 msgstr "组织机构结构"
@@ -238,16 +238,16 @@ msgid ""
 msgstr "浏览在数据库中的对象数量，如数据元，指标、数据和数据值。"
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "数据统计概要"
 
 msgid "Loading Data Statistics..."
-msgstr ""
+msgstr "载入数据统计"
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "不可能载入数据统计"
 
 msgid "No data to show."
-msgstr ""
+msgstr "没有数据可显示"
 
 msgid "Object type"
 msgstr "对象类型"
@@ -340,10 +340,10 @@ msgid "Lock Exception"
 msgstr "锁异常"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "批量删除"
 
 msgid "Add new lock exception"
-msgstr ""
+msgstr "添加新锁异常"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
@@ -351,37 +351,37 @@ msgid ""
 msgstr "添加或删除数据录入表单锁标准规则异常"
 
 msgid "BATCH DELETION"
-msgstr ""
+msgstr "批量删除"
 
 msgid "CANCEL"
-msgstr ""
+msgstr "取消"
 
 msgid "ADD"
-msgstr ""
+msgstr "添加"
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "载入锁异常"
 
 msgid "Adding Lock Exception..."
-msgstr ""
+msgstr "添加锁异常"
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "锁异常已经移除"
 
 msgid "Lock Exception Added"
-msgstr ""
+msgstr "锁异常已经添加"
 
 msgid "Are you sure?"
 msgstr "你确信？"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "确认"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "选择数据集"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "更新机构树"
 
 msgid "For organisation units within"
 msgstr "机构属于"
@@ -399,7 +399,7 @@ msgid "Organisation Unit Group"
 msgstr "机构组"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "机构等级"
 
 msgid "Select"
 msgstr "选择"
@@ -408,16 +408,16 @@ msgid "Deselect"
 msgstr "去选择"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "选择所有机构"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "去选所有机构"
 
 msgid "Name"
 msgstr "名称"
 
 msgid "Show Details"
-msgstr ""
+msgstr "显示详情"
 
 msgid "Remove"
 msgstr "移除"
@@ -429,106 +429,106 @@ msgid "of"
 msgstr "中"
 
 msgid "week"
-msgstr ""
+msgstr "周"
 
 msgid "month"
 msgstr "月"
 
 msgid "year"
-msgstr ""
+msgstr "年"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "两月"
 
 msgid "day"
-msgstr ""
+msgstr "天"
 
 msgid "jan"
-msgstr ""
+msgstr "一月"
 
 msgid "feb"
-msgstr ""
+msgstr "二月"
 
 msgid "mar"
-msgstr ""
+msgstr "三月"
 
 msgid "apr"
-msgstr ""
+msgstr "四月"
 
 msgid "may"
-msgstr ""
+msgstr "五月"
 
 msgid "jun"
-msgstr ""
+msgstr "六月"
 
 msgid "jul"
-msgstr ""
+msgstr "七月"
 
 msgid "aug"
-msgstr ""
+msgstr "八月"
 
 msgid "sep"
-msgstr ""
+msgstr "九月"
 
 msgid "oct"
-msgstr ""
+msgstr "十月"
 
 msgid "nov"
-msgstr ""
+msgstr "十一月"
 
 msgid "dec"
-msgstr ""
+msgstr "十二月"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "一二月"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "三四月"
 
 msgid "may-jun"
-msgstr ""
+msgstr "五六月"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "七八月"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "九十月"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "冬腊月"
 
 msgid "quarter"
-msgstr ""
+msgstr "季度"
 
 msgid "Q1"
-msgstr ""
+msgstr "春季"
 
 msgid "Q2"
-msgstr ""
+msgstr "夏季"
 
 msgid "Q3"
-msgstr ""
+msgstr "秋季"
 
 msgid "Q4"
-msgstr ""
+msgstr "冬季"
 
 msgid "six monthly"
-msgstr ""
+msgstr "每六个月"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "1-6月"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "7-12月"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "4-9月"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "10-3月"
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "所有机构："
 
 msgid "Min-Max Value Generation"
 msgstr "生成最小-最大值"
@@ -539,72 +539,72 @@ msgid ""
 msgstr "产生最小-最大值，在数据的输入和验证过程中用于数据的验证。"
 
 msgid "Generate Min-Max Value"
-msgstr ""
+msgstr "生成最大最小值"
 
 msgid "It was not possible to load data"
-msgstr ""
+msgstr "不能载入数据"
 
 msgid "Select Data set and Organisation Unit"
-msgstr ""
+msgstr "选择数据集和机构"
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "执行最大最小值生成"
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "移除最小值最大值生成"
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "最小最大值生成完成"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "移除最小最大值完成"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "载入数据集"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "组织机构选择"
 
 msgid "GENERATE"
-msgstr ""
+msgstr "生成"
 
 msgid "REMOVE"
-msgstr ""
+msgstr "移除"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Analytics tables management"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "分析表"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from. "
-msgstr ""
+msgstr "数据集市就是DHIS数据库中共报表和分析工具提取数据的表集合。"
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Analytics tables update"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "开始导出"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Skip generation of aggregate data and completeness data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Skip generation of resource tables"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Skip generation of event data"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Skip generation of enrollment data"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "分析表更新"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Number of last years of data to include"
 
 msgid "[ All ]"
-msgstr ""
+msgstr "【所有】"
