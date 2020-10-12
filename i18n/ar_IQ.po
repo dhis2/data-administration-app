@@ -1,19 +1,19 @@
 # 
 # Translators:
-# Ibatov <ibatovk@who.int>, 2020
+# KRG HIS <antonia.bezenchek@informa.pro>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-24T14:00:22.740Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Ibatov <ibatovk@who.int>, 2020\n"
-"Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
+"Last-Translator: KRG HIS <antonia.bezenchek@informa.pro>, 2020\n"
+"Language-Team: Arabic (Iraq) (https://www.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uz@Cyrl\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ar_IQ\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -255,10 +255,10 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr "бугун"
+msgstr "اليوم"
 
 msgid "Last"
-msgstr "Кейинги"
+msgstr ""
 
 msgid "days"
 msgstr ""
@@ -276,19 +276,19 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr "Маълумотларнинг қийматлари"
+msgstr ""
 
 msgid "Events"
-msgstr "Ҳодисалар"
+msgstr ""
 
 msgid "Indicators"
-msgstr "Индикаторлар"
+msgstr "المؤشرات"
 
 msgid "Periods"
-msgstr "Даврлар"
+msgstr "الفترات الزمنية"
 
 msgid "Organisation units"
-msgstr "Ташкилий бирликлар"
+msgstr "الوحدات التنظيمية"
 
 msgid "Validation rules"
 msgstr ""
@@ -297,40 +297,40 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr "Маълумот элементлари"
+msgstr "عناصر البيانات"
 
 msgid "Organisation unit groups"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr "Таянч жадваллар"
+msgstr "الجداول المحورية"
 
 msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Маълумотлар тўплами"
+msgstr "حزم البيانات"
 
 msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr "Фойдаланувчилар"
+msgstr "المستخدمون"
 
 msgid "Maps"
-msgstr "Хариталар"
+msgstr "الخرائط"
 
 msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr "Диаграммалар"
+msgstr "المخططات البيانية"
 
 msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr "Бошқарув Панели"
+msgstr ""
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -371,28 +371,28 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr "Ишончинигиз комилми?"
+msgstr "هل أنت متأكد؟"
 
 msgid "CONFIRM"
-msgstr "ТАСДИҚЛАНГ"
+msgstr ""
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
+msgstr ""
 
 msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr "давр"
+msgstr ""
 
 msgid "Data Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Ташкилий бирлик"
+msgstr "الوحدة التنظيمية"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -401,7 +401,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr "Танланг"
+msgstr "تحديد"
 
 msgid "Deselect"
 msgstr ""
@@ -413,34 +413,34 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr "Исми"
+msgstr "الاسم"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "إزالة"
 
 msgid "Actions"
-msgstr "Амаллар"
+msgstr ""
 
 msgid "of"
 msgstr ""
 
 msgid "week"
-msgstr "ҳафта"
+msgstr ""
 
 msgid "month"
-msgstr "ой"
+msgstr ""
 
 msgid "year"
-msgstr "йил"
+msgstr ""
 
 msgid "bi monthly"
-msgstr "жуфт ой"
+msgstr ""
 
 msgid "day"
-msgstr "кун"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -497,22 +497,22 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr "квартал"
+msgstr ""
 
 msgid "Q1"
-msgstr "Q1"
+msgstr ""
 
 msgid "Q2"
-msgstr "Q2"
+msgstr ""
 
 msgid "Q3"
-msgstr "Q3"
+msgstr ""
 
 msgid "Q4"
-msgstr "Q4"
+msgstr ""
 
 msgid "six monthly"
-msgstr "6 ойлик"
+msgstr ""
 
 msgid "jan-jun"
 msgstr ""
@@ -609,34 +609,34 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr "Созламалар"
+msgstr ""
 
 msgid "Search apps"
-msgstr "Иловаларни қидириш"
+msgstr ""
 
 msgid "Profile"
-msgstr "Профил"
+msgstr "ملف التعريف"
 
 msgid "Account"
-msgstr "Рақами"
+msgstr ""
 
 msgid "Help"
-msgstr "Ёрдам"
+msgstr ""
 
 msgid "Log out"
-msgstr "Чиқиш"
+msgstr ""
 
 msgid "About DHIS 2"
-msgstr "DHIS2 ҳақида"
+msgstr ""
 
 msgid "Manage my apps"
-msgstr "Иловаларимни бошқариш"
+msgstr ""
 
 msgid "No results found"
-msgstr "Ҳеч қандай натижа топилмади"
+msgstr ""
 
 msgid "Interpretations"
-msgstr "Шарҳлар"
+msgstr "التفسيرات"
 
 msgid "Messages"
-msgstr "Хабарлар"
+msgstr "الرسائل"
