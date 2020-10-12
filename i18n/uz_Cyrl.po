@@ -386,7 +386,7 @@ msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "давр"
 
 msgid "Data Set"
 msgstr ""
