@@ -389,7 +389,7 @@ msgid "Period"
 msgstr "давр"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Маълумотлар тўплами"
 
 msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
