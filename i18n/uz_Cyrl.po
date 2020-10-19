@@ -105,7 +105,7 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Техник хизмат"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
