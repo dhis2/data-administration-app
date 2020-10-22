@@ -571,7 +571,7 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Аналитика жадвалларини бошқариш"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -582,28 +582,30 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Аналитик жадвалларни янгиланг"
 
 msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
+"Умумий маълумотлар бирлаштирилиши ва маълумотларни тўлдирилишини ўтказиб "
+"юбориш"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Манба жадвалини яратишни ўтказиб юбориш"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Ҳодиса/Тадбир маълумотларини яратишни ўтказиб юбориш"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Рўйхатга олиш маълумотларини яратишни ўтказиб юбориш"
 
 msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Охирги йиллар учун маълумотлар сони, қўшичи қилиш учун"
 
 msgid "[ All ]"
 msgstr ""
