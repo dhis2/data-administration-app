@@ -294,7 +294,7 @@ msgid "Validation rules"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Дастурлар"
 
 msgid "Data elements"
 msgstr "Маълумот элементлари"
@@ -312,7 +312,7 @@ msgid "Data sets"
 msgstr "Маълумотлар тўплами"
 
 msgid "User groups"
-msgstr ""
+msgstr "Фойдаланувчи гуруҳлари"
 
 msgid "Users"
 msgstr "Фойдаланувчилар"
