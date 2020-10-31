@@ -309,7 +309,7 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Datové sady"
 
 msgid "User groups"
 msgstr ""
@@ -618,7 +618,7 @@ msgid "Profile"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "Účet"
 
 msgid "Help"
 msgstr ""
@@ -627,7 +627,7 @@ msgid "Log out"
 msgstr ""
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "O DHIS 2"
 
 msgid "Manage my apps"
 msgstr ""
