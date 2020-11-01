@@ -282,7 +282,7 @@ msgid "Events"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikátory"
 
 msgid "Periods"
 msgstr ""
@@ -386,7 +386,7 @@ msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Data Set"
 msgstr "Datová sada"
@@ -419,7 +419,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Odebrat"
 
 msgid "Actions"
 msgstr ""
