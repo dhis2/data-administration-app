@@ -291,7 +291,7 @@ msgid "Organisation units"
 msgstr "Ташкилий бўлимлар"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Тасдиқлаш қоидалари"
 
 msgid "Programs"
 msgstr "Дастурлар"
@@ -321,13 +321,13 @@ msgid "Maps"
 msgstr "Хариталар"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Индикатор гуруҳлари"
 
 msgid "Charts"
 msgstr "Диаграммалар"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Маълумотлар элементи гуруҳлари"
 
 msgid "Dashboards"
 msgstr "Бошқарув Панели"
@@ -562,7 +562,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Ташкилий Бўлим Танлаш"
 
 msgid "GENERATE"
 msgstr ""
