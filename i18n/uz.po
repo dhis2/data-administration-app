@@ -425,7 +425,7 @@ msgid "Actions"
 msgstr "Амаллар"
 
 msgid "of"
-msgstr ""
+msgstr "нинг"
 
 msgid "week"
 msgstr "ҳафта"
