@@ -285,7 +285,7 @@ msgid "Indicators"
 msgstr "Indikátory"
 
 msgid "Periods"
-msgstr ""
+msgstr "Období"
 
 msgid "Organisation units"
 msgstr "Organizační jednotky"
@@ -318,7 +318,7 @@ msgid "Users"
 msgstr "Uživatelé"
 
 msgid "Maps"
-msgstr ""
+msgstr "Mapy"
 
 msgid "Indicator groups"
 msgstr ""
@@ -374,13 +374,13 @@ msgid "Are you sure?"
 msgstr ""
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "POTVRDIT"
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "For organisation units within"
 msgstr ""
@@ -422,25 +422,25 @@ msgid "Remove"
 msgstr "Odebrat"
 
 msgid "Actions"
-msgstr ""
+msgstr "Akce"
 
 msgid "of"
 msgstr ""
 
 msgid "week"
-msgstr ""
+msgstr "týden"
 
 msgid "month"
-msgstr ""
+msgstr "Měsíc"
 
 msgid "year"
-msgstr ""
+msgstr "rok"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "dvakrát za měsíc"
 
 msgid "day"
-msgstr ""
+msgstr "den"
 
 msgid "jan"
 msgstr ""
@@ -497,7 +497,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "čtvrtletí"
 
 msgid "Q1"
 msgstr ""
@@ -512,7 +512,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr ""
+msgstr "půlrok"
 
 msgid "jan-jun"
 msgstr ""
