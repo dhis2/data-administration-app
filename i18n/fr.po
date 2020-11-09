@@ -399,7 +399,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Pour les unités d'organisation dans"
 
 msgid "Period"
 msgstr "Période"
