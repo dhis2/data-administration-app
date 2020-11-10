@@ -276,7 +276,7 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "Hodnoty dat"
 
 msgid "Events"
 msgstr "Události"
@@ -300,7 +300,7 @@ msgid "Data elements"
 msgstr "Datové prvky"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Skupiny organizačních jednotek"
 
 msgid "Pivot tables"
 msgstr ""
@@ -324,13 +324,13 @@ msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "Grafy"
 
 msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Ovládací panely"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -371,7 +371,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jste si jist?"
 
 msgid "CONFIRM"
 msgstr "POTVRDIT"
