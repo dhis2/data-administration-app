@@ -303,7 +303,7 @@ msgid "Organisation unit groups"
 msgstr "Skupiny organizačních jednotek"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Kontingenční tabulky"
 
 msgid "Indicator types"
 msgstr ""
