@@ -16,264 +16,272 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Integrita dat"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Spusťte kontroly integrity dat a odhalte anomálie a problémy v nastavení "
+"metadat."
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "Kontrola integrity dat"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "Provádění kontrol integrity dat ..."
 
 msgid "An unexpected error happened during data integrity checks"
-msgstr ""
+msgstr "Během kontrol integrity dat došlo k neočekávané chybě"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "SPUSTIT KONTROLY INTEGRITY"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "Datové prvky bez datové sady"
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Datové prvky bez skupin"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Datové prvky porušující exkluzivní sady skupin"
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr ""
+msgstr "Datové prvky přiřazené souborům dat s různými typy období"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Datové sady, které nejsou přiřazeny organizačním jednotkám"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indikátory se stejnými vzorci"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Ukazatele bez skupin"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Neplatné čitatele indikátoru"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Neplatní jmenovatelé indikátorů"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Indikátory porušující exkluzivní sady skupin"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Organizační jednotky s cyklickými odkazy"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Osamocené organizační jednotky"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Organizační jednotky bez skupin"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr ""
+msgstr "Organizační jednotky porušující exkluzivní skupiny"
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Skupiny organizačních jednotek bez sad skupin"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Pravidla ověření bez skupin"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Neplatné výrazy pravidla ověření na levé straně"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Neplatné výrazy na pravé straně pravidla pro ověření"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Neplatné výrazy indikátoru programu"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "Neplatné filtry indikátorů programu"
 
 msgid "There are data elements in the form, but not in the form or sections"
-msgstr ""
+msgstr "Ve formuláři jsou datové prvky, ale ne ve formuláři nebo sekcích"
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Neplatné kombinace kategorií"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplicitní období"
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Údržba"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Provádějte úlohy údržby a generujte tabulky databází prostředků pro "
+"hierarchii organizačních jednotek a strukturu skupin."
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "Provést údržbu"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "VYKONAT ÚDRŽBU"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "Provádění údržby ..."
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Údržba hotová"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Během údržby došlo k neočekávané chybě"
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Vymazat analytické tabulky"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "Analyzujte analytické tabulky"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "Odebrat nulové hodnoty dat"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "Trvale odstranit měkce smazané hodnoty dat"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "Trvale odebrat měkce smazané události"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "Trvale odebrat měkce smazané registrace"
 
 msgid "Permanently remove soft deleted tracked entity instances"
-msgstr ""
+msgstr "Trvale odstranit odebrané trasované instance entit"
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Omezit období"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Odebrat pozvánky s vypršenou platností"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Zrušte zobrazení SQL"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "Vytvořit SQL pohledy"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Aktualizovat kombinace možností kategorií"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Aktualizovat cesty organizační jednotky"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Vymazat mezipaměť aplikace"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "Znovu načíst aplikace"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "Tabulky zdrojů"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Generujte mimo jiné tabulky databází prostředků pro hierarchii organizačních"
+" jednotek a strukturu  skupin."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Generovat tabulky zdrojů"
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "VYTVOŘIT TABULKY"
 
 msgid "Resource Tables generated"
-msgstr ""
+msgstr "Generované tabulky zdrojů"
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Během operace došlo k neočekávané chybě"
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Struktura organizační jednotky"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Kombinace možností kategorie organizační jednotky"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Struktura sady skupin možností"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Struktura sady datových prvků"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Struktura skupiny indikátorů"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Struktura sady skupin organizačních jednotek"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Struktura kategorie"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Název kombinované kategorie datových prvků"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Struktura datových prvků"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Struktura období"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Struktura období"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Kombinace možností kategorie datových prvků"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Statistika dat"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Procházet počet objektů v databázi, jako jsou datové prvky, indikátory, "
+"datové sady a datové hodnoty."
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "Přehled statistik dat"
 
 msgid "Loading Data Statistics..."
-msgstr ""
+msgstr "Načítání statistik dat ..."
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "Statistiku dat nebylo možné načíst"
 
 msgid "No data to show."
-msgstr ""
+msgstr "Žádná data k zobrazení."
 
 msgid "Object type"
-msgstr ""
+msgstr "Typ objektu"
 
 msgid "Last hour"
-msgstr ""
+msgstr "Poslední hodina"
 
 msgid "Today"
 msgstr "Dnes"
 
 msgid "Last"
-msgstr ""
+msgstr "Poslední"
 
 msgid "days"
-msgstr ""
+msgstr "dnů"
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Uživatelé přihlášeni"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Pozvánky uživatelských účtů"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Nevyřízené pozvánky"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Vypršené Pozvánky"
 
 msgid "Data values"
 msgstr "Hodnoty dat"
@@ -291,10 +299,10 @@ msgid "Organisation units"
 msgstr "Organizační jednotky"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Pravidla ověřování"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programy"
 
 msgid "Data elements"
 msgstr "Datové prvky"
@@ -306,13 +314,13 @@ msgid "Pivot tables"
 msgstr "Kontingenční tabulky"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Typy indikátorů"
 
 msgid "Data sets"
 msgstr "Datové sady"
 
 msgid "User groups"
-msgstr ""
+msgstr "Skupiny uživatelů"
 
 msgid "Users"
 msgstr "Uživatelé"
@@ -321,54 +329,56 @@ msgid "Maps"
 msgstr "Mapy"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Skupiny indikátorů"
 
 msgid "Charts"
 msgstr "Grafy"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Skupiny datových prvků"
 
 msgid "Dashboards"
 msgstr "Ovládací panely"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Zamknout správu výjimek"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Zamknout výjimku"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "Dávkové mazání"
 
 msgid "Add new lock exception"
-msgstr ""
+msgstr "Přidat novou výjimku zámku"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Přidat nebo odebrat výjimky ze standardních pravidel pro zamykání formulářů "
+"pro zadávání údajů."
 
 msgid "BATCH DELETION"
-msgstr ""
+msgstr "DÁVKOVÉ MAZÁNÍ"
 
 msgid "CANCEL"
-msgstr ""
+msgstr "ZRUŠIT"
 
 msgid "ADD"
-msgstr ""
+msgstr "PŘIDAT"
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Načítání výjimek zámku ..."
 
 msgid "Adding Lock Exception..."
-msgstr ""
+msgstr "Přidání výjimky zámku ..."
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Výjimka zámku odstraněna"
 
 msgid "Lock Exception Added"
-msgstr ""
+msgstr "Přidána výjimka zámku"
 
 msgid "Are you sure?"
 msgstr "Jste si jist?"
@@ -377,13 +387,13 @@ msgid "CONFIRM"
 msgstr "POTVRDIT"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Vybrat datovou sadu"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Aktualizace stromu Organizačních jednotek ..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Pro organizační jednotky uvnitř"
 
 msgid "Period"
 msgstr "Období"
@@ -395,28 +405,28 @@ msgid "Organisation Unit"
 msgstr "Organizační jednotka"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Skupina organizačních jednotek"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "Úroveň organizační jednotky"
 
 msgid "Select"
 msgstr "Vybrat"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Zrušit výběr"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Vybrat všechny organizační jednotky"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Zrušit výběr všech organizačních jednotek"
 
 msgid "Name"
 msgstr "Název"
 
 msgid "Show Details"
-msgstr ""
+msgstr "Ukázat detaily"
 
 msgid "Remove"
 msgstr "Odebrat"
@@ -425,7 +435,7 @@ msgid "Actions"
 msgstr "Akce"
 
 msgid "of"
-msgstr ""
+msgstr "z"
 
 msgid "week"
 msgstr "týden"
@@ -443,170 +453,174 @@ msgid "day"
 msgstr "den"
 
 msgid "jan"
-msgstr ""
+msgstr "led"
 
 msgid "feb"
-msgstr ""
+msgstr "úno"
 
 msgid "mar"
-msgstr ""
+msgstr "bře"
 
 msgid "apr"
-msgstr ""
+msgstr "dub"
 
 msgid "may"
-msgstr ""
+msgstr "kvě"
 
 msgid "jun"
-msgstr ""
+msgstr "čer"
 
 msgid "jul"
-msgstr ""
+msgstr "čvc"
 
 msgid "aug"
-msgstr ""
+msgstr "srp"
 
 msgid "sep"
-msgstr ""
+msgstr "zář"
 
 msgid "oct"
-msgstr ""
+msgstr "říj"
 
 msgid "nov"
-msgstr ""
+msgstr "lis"
 
 msgid "dec"
-msgstr ""
+msgstr "pro"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "led-úno"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "bře-dub"
 
 msgid "may-jun"
-msgstr ""
+msgstr "kvě-čer"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "čvc-srp"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "zář-říj"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "lis-pro"
 
 msgid "quarter"
 msgstr "čtvrtletí"
 
 msgid "Q1"
-msgstr ""
+msgstr "Q1"
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
-msgstr ""
+msgstr "Q3"
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr "půlrok"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "led-čer"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "čvc-pro"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "dub-zář"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "říj-bře"
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "Pro všechny organizační jednotky:"
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Generování hodnoty min-max"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Generujte hodnoty min-max, které lze použít pro ověření dat během procesu "
+"zadávání a ověřování dat."
 
 msgid "Generate Min-Max Value"
-msgstr ""
+msgstr "Generovat minimální a maximální hodnotu"
 
 msgid "It was not possible to load data"
-msgstr ""
+msgstr "Nelze načíst data"
 
 msgid "Select Data set and Organisation Unit"
-msgstr ""
+msgstr "Vyberte datovou sadu a organizační jednotku"
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "Generování Min Max  ..."
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "Odebírání generování Min Max ..."
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Vytvoření Min Max dokončeno"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "Odstranění Min. Max. hotovo"
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Načítání datových sad"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Výběr organizační jednotky"
 
 msgid "GENERATE"
-msgstr ""
+msgstr "GENEROVAT"
 
 msgid "REMOVE"
-msgstr ""
+msgstr "ODSTRANIT"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Správa tabulek Analytics"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tabulky analytiky"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from. "
 msgstr ""
+"Datový trh je sada tabulek v databázi DHIS, kterou používají všechny "
+"nástroje pro vykazování a analýzu k načítání dat."
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Aktualizace tabulek Analytics"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "START EXPORTU"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Přeskočit generování souhrnných údajů a údajů o úplnosti"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Přeskočit generování tabulek zdrojů"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Přeskočit generování dat událostí"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Přeskočit generování údajů o zápisu"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "Aktualizace tabulek Analytics"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Počet posledních let údajů, které mají být zahrnuty"
 
 msgid "[ All ]"
-msgstr ""
+msgstr "[ Vše ]"
 
 msgid "Settings"
 msgstr "Nastavení"
