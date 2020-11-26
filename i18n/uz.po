@@ -273,7 +273,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Муддати ўтган таклифномалар"
 
 msgid "Data values"
 msgstr "Маълумотларнинг қийматлари"
@@ -395,7 +395,7 @@ msgid "Organisation Unit"
 msgstr "Ташкилий бирлик"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Ташкилий Бўлим Гуруҳи"
 
 msgid "Organisation Unit Level"
 msgstr ""
