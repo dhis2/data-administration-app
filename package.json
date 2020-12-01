@@ -38,7 +38,7 @@
     "test": "react-scripts test",
     "extract-pot": "d2-i18n-extract -p src/ -o i18n/",
     "localize": "npm run extract-pot && d2-i18n-generate -n data-admin-app -p ./i18n/ -o ./src/locales/",
-    "lint:style": "d2-style js check --all",
+    "lint": "d2-style js check --all",
     "prestart": "npm run localize",
     "prebuild": "npm run localize",
     "pretest": "npm run localize"
@@ -48,12 +48,5 @@
       "commit-msg": "d2-style commit check",
       "pre-commit": "d2-style js apply"
     }
-  },
-  "greenkeeper": {
-    "ignore": [
-      "@dhis2/d2-ui-header-bar",
-      "d2",
-      "rxjs"
-    ]
   }
 }
