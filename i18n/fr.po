@@ -109,7 +109,7 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Combinaison de Catégories invalide"
 
 msgid "Duplicate periods"
 msgstr "Périodes dupliquées"
@@ -165,7 +165,7 @@ msgid "Remove expired invitations"
 msgstr "Supprimer les invitations périmées"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Supprimer les vues SQL"
 
 msgid "Create SQL views"
 msgstr "Créer vues SQL"
@@ -177,7 +177,7 @@ msgid "Update organisation unit paths"
 msgstr "Mettre à jour les chemins d'accès des unités d'organisation"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Vider le cache de l'application"
 
 msgid "Reload apps"
 msgstr ""
@@ -275,7 +275,7 @@ msgid "Last"
 msgstr "Dernier"
 
 msgid "days"
-msgstr ""
+msgstr "jours"
 
 msgid "Users logged in"
 msgstr "Utilisateurs identifiés"
