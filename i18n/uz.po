@@ -249,7 +249,7 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Объект тури"
 
 msgid "Last hour"
 msgstr ""
