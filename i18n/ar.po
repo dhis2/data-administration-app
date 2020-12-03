@@ -190,7 +190,7 @@ msgid "Generate Resource Tables"
 msgstr ""
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "توليد الجداول"
 
 msgid "Resource Tables generated"
 msgstr ""
@@ -358,7 +358,7 @@ msgid ""
 msgstr "إضافة أو إزالة استثناءات القواعد القياسية لقفل نماذج إدخال البيانات."
 
 msgid "BATCH DELETION"
-msgstr ""
+msgstr "حذف جماعي"
 
 msgid "CANCEL"
 msgstr "إلغاء"
@@ -618,7 +618,7 @@ msgid "Number of last years of data to include"
 msgstr "عدد السنوات الأخيرة للبيانات التي يجب تضمينها"
 
 msgid "[ All ]"
-msgstr ""
+msgstr "[ كل ]"
 
 msgid "Settings"
 msgstr "الإعدادات"
