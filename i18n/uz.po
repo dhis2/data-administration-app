@@ -103,10 +103,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Нотўғри категориядаги комбинациялар"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Даврлардан нусха олиш"
 
 msgid "Maintenance"
 msgstr "Техник хизмат"
@@ -156,7 +156,7 @@ msgid "Prune periods"
 msgstr "Кесишма даврлари"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Муддати ўтган таклифномаларни олиб ташлаш"
 
 msgid "Drop SQL views"
 msgstr "SQL кўринишини қолдиринг"
@@ -229,7 +229,7 @@ msgid "Period structure"
 msgstr "йлик тузилиши"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Сананинг даврийлик таркиби"
 
 msgid "Data element category option combinations"
 msgstr "Маълумотлар элементи категория варианти комбинациялари"
@@ -260,7 +260,7 @@ msgid "Object type"
 msgstr "Объект тури"
 
 msgid "Last hour"
-msgstr ""
+msgstr "Охирги соатда"
 
 msgid "Today"
 msgstr "бугун"
@@ -275,10 +275,10 @@ msgid "Users logged in"
 msgstr "Фойдаланувчи тизимга кирди"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Фойдаланувчи аккаунтидаги таклифномалар"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Кутилаётган таклифномалар"
 
 msgid "Expired invitations"
 msgstr "Муддати ўтган таклифномалар"
