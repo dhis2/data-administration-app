@@ -16,12 +16,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Маълумотлар яхлитлиги"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Маълумотларнинг яхлитлигини текширишни бошланг ва мета-маълумотни ўрнатишда "
+"аномалиялар ва муаммоларни очинг."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -39,55 +41,57 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Гуруҳлар бўлмаган маълумотлар элементлари"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Янги SQL кўринишини қўшинг"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"Турли хил давр турлари билан маълумотлар тўпламига тайинланган маълумотлар "
+"элементлари"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Маълумотлар тўпламлари ташкилий бўлимларига бириктирилмаган"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Бир хил формулаларга эга индикаторлар"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Гуруҳсиз индикаторлар"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Нотўғри индикатор сурати"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Нотўғри кўрсатгич индикаторлари"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Эксклюзив гуруҳлар тўпламини бузадиган кўрсатгичлар"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Циклик маълумотларга эга бўлган ташкилий бўлимлар"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Етим қолган ташкилий бўлимлар"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Гуруҳсиз ташкилий бўлимлар"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Гуруҳ тўплами бўлмаган ташкилий бўлим гуруҳлари"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Гуруҳларсиз тасдиқлаш қоидалари"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Нотўғри текшириш қоидаси чап томондаги ифодалар"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Нотўғри текшириш қоидаси ўнг томондаги ифодалар"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -128,7 +132,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Аналитик жадвалларни тозалаш"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -149,25 +153,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Кесишма даврлари"
 
 msgid "Remove expired invitations"
 msgstr ""
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "SQL кўринишини қолдиринг"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "SQL кўринишни яратиш"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Категория вариантлари комбинацияларини янгилаш"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Ташкилий бўлим шажарасини янгилаш"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Илова кешини тозалаш"
 
 msgid "Reload apps"
 msgstr ""
@@ -179,6 +183,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Ташкилий бўлим иерархияси ва бошқалар қаторида гуруҳлар тўплами учун "
+"ресурслар базаси жадвалларини яратиш."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -193,48 +199,50 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Ташкилий бўлимнинг тузилиши"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Ташкилий бўлим категорияси варианти комбинацияси"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Категория вариантлари гуруҳи тўпламининг тузилиши"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Маълумотлар элементи гуруҳи тўпламининг тузилиши"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Индикатор гуруҳи тўпламининг тузилиши"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "ташкилий бўлим гуруҳи тўпламининг тузилиши"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Категория таркиби"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Маълумотлар элементлари категорияси параметрлари комбинацияси номи"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Маълумотлар элементи структураси"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Даврийлик тузилиши"
 
 msgid "Date period structure"
 msgstr ""
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Маълумотлар элементи категория варианти комбинациялари"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Маълумотлар статистикаси"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Маълумотлар базаси, маълумотлар элементлари, кўрсатгичлар, маълумотлар "
+"тўпламлари ва маълумотлар қийматлари каби объектлар сонини кўриб чиқинг."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -264,7 +272,7 @@ msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Фойдаланувчи тизимга кирди"
 
 msgid "User account invitations"
 msgstr ""
@@ -306,7 +314,7 @@ msgid "Pivot tables"
 msgstr "Таянч жадваллар"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Индикатор турлари"
 
 msgid "Data sets"
 msgstr "Маълумотлар тўплами"
@@ -333,10 +341,10 @@ msgid "Dashboards"
 msgstr "Бошқарув Панели"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Истисно ҳолатларини бошқариш"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Истисно ҳолатини қулфлаш"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -348,6 +356,8 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Маълумотларни киритиш шаклларини блокировкалашнинг стандарт қоидалари "
+"истисноларни қўшиш ёки олиб танлаш."
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -383,7 +393,7 @@ msgid "Updating Organisation Units Tree..."
 msgstr "Муассасалар дарахти (кетма-кетлиги) янгиланмоқда..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Ташкилий бўлимлар учун"
 
 msgid "Period"
 msgstr "давр"
@@ -404,7 +414,7 @@ msgid "Select"
 msgstr "Танланг"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Танланмани бекор қилиш"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -530,12 +540,14 @@ msgid "For all organisation units:"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Минимал-Максимал қийматни яратиш"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Маълумотларни киритиш ва текшириш жараёнида маълумотларини текшириш учун "
+"ишлатиши мумкин бўлган минимал-максимал қийматларни яратинг."
 
 msgid "Generate Min-Max Value"
 msgstr ""
