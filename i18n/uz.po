@@ -269,7 +269,7 @@ msgid "Last"
 msgstr "Кейинги"
 
 msgid "days"
-msgstr ""
+msgstr "кунлар"
 
 msgid "Users logged in"
 msgstr "Фойдаланувчи тизимга кирди"
