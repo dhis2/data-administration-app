@@ -429,7 +429,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Ўчириш"
+msgstr "Олиб ташлаш"
 
 msgid "Actions"
 msgstr "Амаллар"
