@@ -403,7 +403,7 @@ msgid "Organisation Unit"
 msgstr "Đơn vị"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Nhóm đơn vị"
 
 msgid "Organisation Unit Level"
 msgstr ""
