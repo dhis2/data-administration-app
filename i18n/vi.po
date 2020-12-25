@@ -28,19 +28,21 @@ msgstr ""
 "hình siêu dữ liệu"
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "Kiểm tra tính toàn vẹn của dữ liệu"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "Thực hiện kiểm tra tính toàn vẹn của dữ liệu ..."
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
+"Đã xảy ra lỗi không mong muốn trong quá trình kiểm tra tính toàn vẹn của dữ "
+"liệu"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "CHẠY KIỂM TRA TÍCH HỢP"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "Phần tử dữ liệu không có tập dữ liệu"
 
 msgid "Data elements without groups"
 msgstr "Phần Tử Dữ Liệu không thuộc Nhóm Phần Tử Dữ Liệu nào"
@@ -80,7 +82,7 @@ msgid "Organisation units without groups"
 msgstr "Đơn vị không thuộc Nhóm Đơn Vị nào"
 
 msgid "Organisation units violating exclusive group sets"
-msgstr ""
+msgstr "Đơn vị vi phạm tập nhóm duy nhất"
 
 msgid "Organisation unit groups without group sets"
 msgstr "Nhóm Đơn Vị không thuộc Tập Nhóm Đơn Vị nào"
@@ -95,13 +97,15 @@ msgid "Invalid validation rule right side expressions"
 msgstr "Biểu thức vế phải không hợp lệ"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Biểu thức chỉ báo chương trình không hợp lệ"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "Bộ lọc chỉ số chương trình không hợp lệ"
 
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
+"Có các phần tử dữ liệu trong biểu mẫu, nhưng không có trong biểu mẫu hoặc "
+"các phần"
 
 msgid "Invalid category combinations"
 msgstr "Tổ hợp phân loại không hợp lệ"
@@ -116,42 +120,44 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Thực hiện các nhiệm vụ bảo trì và tạo các bảng cơ sở dữ liệu tài nguyên cho "
+"cấu trúc phân cấp đơn vị và cấu trúc tập nhóm."
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "Thực hiện bảo trì"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "Thực hiện bảo trì"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "Thực hiện Bảo trì ..."
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Đã bảo trì xong"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Đã xảy ra lỗi không mong muốn trong quá trình bảo trì"
 
 msgid "Clear analytics tables"
 msgstr "Xóa bảng phân tích"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "Chạy bảng phân tích"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "Xóa giá trị dữ liệu bằng 0"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "Xóa vĩnh viễn các giá trị dữ liệu đã xóa mềm"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "Xóa vĩnh viễn các sự kiện đã xóa mềm"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "Xóa vĩnh viễn các đăng ký đã xóa mềm"
 
 msgid "Permanently remove soft deleted tracked entity instances"
-msgstr ""
+msgstr "Xóa vĩnh viễn các thực thể được theo dõi đã xóa mềm"
 
 msgid "Prune periods"
 msgstr "Lược bớt thời điểm"
@@ -175,10 +181,10 @@ msgid "Clear application cache"
 msgstr "Xóa dữ liệu tạm ứng dụng"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "Tải lại ứng dụng"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "Bảng tài nguyên"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -187,16 +193,16 @@ msgstr ""
 "Xuất bảng tài nguyên cơ sở dữ liệu cho cây đơn vị, cấu trúc tập nhóm,..."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Tạo bảng tài nguyên"
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "TẠO BẢNG"
 
 msgid "Resource Tables generated"
-msgstr ""
+msgstr "Bảng tài nguyên được tạo"
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Đã xảy ra lỗi không mong muốn trong quá trình hoạt động"
 
 msgid "Organisation unit structure"
 msgstr "Cấu trúc đơn vị"
@@ -245,16 +251,16 @@ msgstr ""
 "liệu và giá trị dữ liệu"
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "Thống kê dữ liệu tổng quan"
 
 msgid "Loading Data Statistics..."
-msgstr ""
+msgstr "Đang tải thống kê dữ liệu ..."
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "Không thể tải Thống kê dữ liệu"
 
 msgid "No data to show."
-msgstr ""
+msgstr "Không có dữ liệu để hiển thị."
 
 msgid "Object type"
 msgstr "Kiểu đối tượng"
@@ -269,7 +275,7 @@ msgid "Last"
 msgstr "Tên họ"
 
 msgid "days"
-msgstr ""
+msgstr "ngày"
 
 msgid "Users logged in"
 msgstr "Người dùng đã đăng nhập"
@@ -347,10 +353,10 @@ msgid "Lock Exception"
 msgstr "Khóa ngoại lệ"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "Xóa hàng loạt"
 
 msgid "Add new lock exception"
-msgstr ""
+msgstr "Thêm khóa ngoại lệ mới"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
@@ -358,25 +364,25 @@ msgid ""
 msgstr "Thêm hoặc bỏ các ngoại lệ đến luật chuẩn để khóa biểu mẫu nhập liệu"
 
 msgid "BATCH DELETION"
-msgstr ""
+msgstr "XÓA HÀNG LOẠT"
 
 msgid "CANCEL"
-msgstr ""
+msgstr "HỦY"
 
 msgid "ADD"
-msgstr ""
+msgstr "THÊM VÀO"
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Đang tải ngoại lệ khóa ..."
 
 msgid "Adding Lock Exception..."
-msgstr ""
+msgstr "Thêm ngoại lệ khóa ..."
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Khóa ngoại lệ đã bị xóa"
 
 msgid "Lock Exception Added"
-msgstr ""
+msgstr "Thêm khóa ngoại lệ "
 
 msgid "Are you sure?"
 msgstr "Bạn có chắc chắn không?"
@@ -385,7 +391,7 @@ msgid "CONFIRM"
 msgstr "Xác nhận"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Chọn Tập dữ liệu"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Cập nhật cây đơn vị"
@@ -406,7 +412,7 @@ msgid "Organisation Unit Group"
 msgstr "Nhóm đơn vị"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "Cấp đơn vị "
 
 msgid "Select"
 msgstr "Chọn"
@@ -415,16 +421,16 @@ msgid "Deselect"
 msgstr "Bỏ chọn"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Chọn tất cả các đơn vị "
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Bỏ chọn tất cả các đơn vị "
 
 msgid "Name"
 msgstr "Tên tài khoản"
 
 msgid "Show Details"
-msgstr ""
+msgstr "Hiển thị chi tiết"
 
 msgid "Remove"
 msgstr "Tháo ra"
@@ -451,58 +457,58 @@ msgid "day"
 msgstr "Ngày"
 
 msgid "jan"
-msgstr ""
+msgstr "tháng một"
 
 msgid "feb"
-msgstr ""
+msgstr "tháng 2"
 
 msgid "mar"
-msgstr ""
+msgstr "tháng 3"
 
 msgid "apr"
-msgstr ""
+msgstr "tháng 4"
 
 msgid "may"
-msgstr ""
+msgstr "tháng 5"
 
 msgid "jun"
-msgstr ""
+msgstr "tháng 6"
 
 msgid "jul"
-msgstr ""
+msgstr "tháng 7"
 
 msgid "aug"
-msgstr ""
+msgstr "tháng 8"
 
 msgid "sep"
-msgstr ""
+msgstr "tháng 9"
 
 msgid "oct"
-msgstr ""
+msgstr "tháng 10"
 
 msgid "nov"
-msgstr ""
+msgstr "tháng 11"
 
 msgid "dec"
-msgstr ""
+msgstr "tháng 12"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "tháng 1 -  tháng 2"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "tháng 3 - tháng 4"
 
 msgid "may-jun"
-msgstr ""
+msgstr "tháng 5 - tháng 6"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "tháng 7 - tháng 8"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "tháng 9 - tháng 10"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "tháng 11 - tháng 12"
 
 msgid "quarter"
 msgstr "Quý"
@@ -523,19 +529,19 @@ msgid "six monthly"
 msgstr "6 tháng"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "tháng 1 - tháng 6"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "tháng 7 - tháng 12"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "tháng 4 - tháng 9"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "tháng 10 - tháng 3"
 
 msgid "For all organisation units:"
-msgstr ""
+msgstr "Đối với tất cả các đơn vị "
 
 msgid "Min-Max Value Generation"
 msgstr "Xuất giá trị Lớn nhất - Nhỏ nhất"
@@ -548,75 +554,77 @@ msgstr ""
 "liệu trong khi nhập dữ liệu và tiến trình kiểm tra hợp lệ."
 
 msgid "Generate Min-Max Value"
-msgstr ""
+msgstr "Tạo giá trị tối thiểu-tối đa"
 
 msgid "It was not possible to load data"
-msgstr ""
+msgstr "Không thể tải dữ liệu"
 
 msgid "Select Data set and Organisation Unit"
-msgstr ""
+msgstr "Chọn Tập dữ liệu và Đơn vị"
 
 msgid "Doing Min Max generation..."
-msgstr ""
+msgstr "Đang tạo Lớn nhất-Nhỏ nhất..."
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "Đang xóa Lớn nhất-Nhỏ nhất..."
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Tạo Lớn nhất-Nhỏ nhất..."
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "Đã xóa Lớn nhất-Nhỏ nhất..."
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Đang tải tập dữ liệu"
 
 msgid "Organisation Unit Selection"
 msgstr "Chọn đơn vị"
 
 msgid "GENERATE"
-msgstr ""
+msgstr "TẠO"
 
 msgid "REMOVE"
-msgstr ""
+msgstr "XÓA"
 
 msgid "Analytics tables management"
 msgstr "Quản lý bảng phân tích tổng hợp"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Bảng phân tích"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from. "
 msgstr ""
+"Data mart là một tập hợp các bảng trong cơ sở dữ liệu DHIS được sử dụng bởi "
+"tất cả các công cụ báo cáo và phân tích để truy xuất dữ liệu."
 
 msgid "Analytics tables update"
 msgstr "Cập nhật bảng phân tích"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "BẮT ĐẦU TRÍCH XUẤT "
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Bỏ qua việc tạo dữ liệu tổng hợp và dữ liệu đầy đủ"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Bỏ qua việc tạo bảng tài nguyên"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Bỏ qua việc tạo dữ liệu sự kiện"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Bỏ qua việc tạo dữ liệu đăng ký"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "Cập nhật bảng phân tích"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Số năm phân tích "
 
 msgid "[ All ]"
-msgstr ""
+msgstr "[ Tất cả ]"
 
 msgid "Settings"
 msgstr "Các thiết lập"
