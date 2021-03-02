@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
 import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
@@ -6,22 +7,21 @@ import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { injectTranslationsToD2 } from '../configI18n.js'
+import { sections } from '../pages/sections.conf'
+import AppRouter from './app-router/AppRouter'
 import styles from './App.module.css'
-import AppRouter from './components/app-router/AppRouter'
-import { injectTranslationsToD2 } from './configI18n'
-import { sections } from './pages/sections.conf'
-import './custom-css/D2UISidebarOverrides.css'
-import i18n from '@dhis2/d2-i18n'
+import '../custom-css/D2UISidebarOverrides.css'
 
 export class DumbApp extends PureComponent {
     static childContextTypes = {
+        currentSection: PropTypes.string,
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
-            type: PropTypes.string,
-            message: PropTypes.string,
             duration: PropTypes.number,
+            message: PropTypes.string,
+            type: PropTypes.string,
         }),
-        currentSection: PropTypes.string,
         updateAppState: PropTypes.func,
     }
 

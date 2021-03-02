@@ -66,21 +66,16 @@ class Analytics extends Page {
         this.requestTaskSummary()
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                Analytics.STATE_PROPERTIES.includes(property)
-            ) {
+            if (Analytics.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     componentWillUnmount() {

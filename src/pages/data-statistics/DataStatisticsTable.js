@@ -13,8 +13,8 @@ import styles from './DataStatistics.module.css'
 
 class DataStatisticsTable extends PureComponent {
     static propTypes = {
-        label: PropTypes.string.isRequired,
         elements: PropTypes.array.isRequired,
+        label: PropTypes.string.isRequired,
     }
 
     render() {

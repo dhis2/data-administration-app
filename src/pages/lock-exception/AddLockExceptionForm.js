@@ -20,14 +20,14 @@ const d2UiSelectStyleOverride = {
 
 class AddLockExceptionForm extends Component {
     static propTypes = {
-        levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
-            .isRequired,
+        dataSets: PropTypes.array.isRequired,
         groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
             .isRequired,
-        dataSets: PropTypes.array.isRequired,
+        levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+            .isRequired,
         updateSelectedOrgUnits: PropTypes.func.isRequired,
-        updateSeletedDataSetId: PropTypes.func.isRequired,
         updateSelectedPeriodId: PropTypes.func.isRequired,
+        updateSeletedDataSetId: PropTypes.func.isRequired,
     }
 
     static contextTypes = {

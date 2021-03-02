@@ -29,21 +29,16 @@ class DataIntegrity extends Page {
         this.initDataIntegrityCheck = this.initDataIntegrityCheck.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                DataIntegrity.STATE_PROPERTIES.includes(property)
-            ) {
+            if (DataIntegrity.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     componentWillUnmount() {

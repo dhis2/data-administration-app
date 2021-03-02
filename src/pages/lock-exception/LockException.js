@@ -244,21 +244,16 @@ class LockException extends Page {
         this.loadLockExceptionsForPager(this.state.pager)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                LockException.STATE_PROPERTIES.includes(property)
-            ) {
+            if (LockException.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     loadLockExceptionsForPager(pager, userAction) {
@@ -698,13 +693,15 @@ class LockException extends Page {
 
         const addLockException = [
             <FlatButton
+                key="cancel-button"
                 className={styles.actionButton}
                 label={i18n.t(i18nKeys.lockException.cancelButton)}
                 onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
+                key="add-button"
                 className={styles.actionButton}
-                primary={Boolean(true)}
+                primary={true}
                 label={i18n.t(i18nKeys.lockException.addButton)}
                 onClick={this.addLockException}
                 disabled={!this.addLockExceptionEnabled()}

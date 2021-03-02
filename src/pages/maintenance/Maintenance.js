@@ -43,21 +43,16 @@ class Maintenance extends Page {
         this.performMaintenance = this.performMaintenance.bind(this)
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                Maintenance.STATE_PROPERTIES.includes(property)
-            ) {
+            if (Maintenance.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     setLoadingPageState() {

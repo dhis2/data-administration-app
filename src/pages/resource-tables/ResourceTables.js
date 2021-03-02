@@ -36,21 +36,16 @@ class ResourceTable extends Page {
         )
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                ResourceTable.STATE_PROPERTIES.includes(property)
-            ) {
+            if (ResourceTable.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     componentDidMount() {

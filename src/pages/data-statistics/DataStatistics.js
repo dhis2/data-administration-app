@@ -30,8 +30,8 @@ export const TableCard = ({ label, elements }) => (
 )
 
 TableCard.propTypes = {
-    label: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
 }
 
 class DataStatistics extends Page {
@@ -115,7 +115,8 @@ class DataStatistics extends Page {
             }
 
             if (
-                userInvitationsResponse.hasOwnProperty(
+                Object.hasOwnProperty.call(
+                    userInvitationsResponse,
                     PENDING_INVITATION_ALL_KEY
                 )
             ) {
@@ -126,7 +127,10 @@ class DataStatistics extends Page {
             }
 
             if (
-                userInvitationsResponse.hasOwnProperty(EXPIRED_INVITATION_KEY)
+                Object.hasOwnProperty.call(
+                    userInvitationsResponse,
+                    EXPIRED_INVITATION_KEY
+                )
             ) {
                 userInvitationsTable.elements.push({
                     label: i18n.t(i18nKeys.dataStatistics.expiredInvitations),
@@ -269,21 +273,16 @@ class DataStatistics extends Page {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                DataStatistics.STATE_PROPERTIES.includes(property)
-            ) {
+            if (DataStatistics.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     hasTables = () =>

@@ -13,7 +13,7 @@ class Page extends Component {
         updateAppState: PropTypes.func,
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.pageMounted = true
 
         // update section on side bar

@@ -49,21 +49,16 @@ class MinMaxValueGeneration extends Page {
         this.loadData()
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         const nextState = {}
 
         Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                MinMaxValueGeneration.STATE_PROPERTIES.includes(property)
-            ) {
+            if (MinMaxValueGeneration.STATE_PROPERTIES.includes(property)) {
                 nextState[property] = nextProps[property]
             }
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.setState(nextState)
     }
 
     isUserInteractionDisabled() {

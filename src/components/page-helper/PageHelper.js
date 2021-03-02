@@ -10,8 +10,8 @@ import i18n from '../../locales'
 
 class PageHelper extends PureComponent {
     static propTypes = {
-        lng: PropTypes.string,
         sectionDocsKey: PropTypes.string.isRequired,
+        lng: PropTypes.string,
     }
 
     static defaultProps = {
