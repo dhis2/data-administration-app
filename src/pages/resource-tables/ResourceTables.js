@@ -1,22 +1,22 @@
-import React from 'react'
-import { Card, CardText } from 'material-ui/Card'
-import { RaisedButton } from 'material-ui'
 import {
     ERROR,
     LOADING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import Page from '../Page'
+import { RaisedButton } from 'material-ui'
+import { Card, CardText } from 'material-ui/Card'
+import React from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
+import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import pageStyles from '../Page.module.css'
 import {
     PULL_INTERVAL,
     RESOURCE_TABLES_ENDPOINT,
     RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT,
 } from '../resource-tables/resource-tables.conf'
-import i18n from '../../locales'
-import { i18nKeys } from '../../i18n'
-import pageStyles from '../Page.module.css'
+import { getDocsKeyForSection } from '../sections.conf'
 import styles from './ResourceTables.module.css'
 
 class ResourceTable extends Page {

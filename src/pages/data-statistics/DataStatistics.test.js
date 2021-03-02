@@ -1,5 +1,6 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
+import { sections, DATA_STATISTICS_SECTION_KEY } from '../sections.conf'
 import DataStatistics, { TableCard } from './DataStatistics'
 import {
     OBJECT_COUNTS_KEY,
@@ -8,7 +9,6 @@ import {
     DATA_VALUE_COUNT_KEY,
     EVENT_COUNT_KEY,
 } from './DataStatistics'
-import { sections, DATA_STATISTICS_SECTION_KEY } from '../sections.conf'
 
 let dataStatisticsPageInfo = {}
 for (let i = 0; i < sections.length; i++) {
@@ -46,7 +46,10 @@ jest.mock(
 
 const tableProps = {
     label: 'Object type',
-    elements: [{ label: 'object1', count: 1 }, { label: 'object2', count: 2 }],
+    elements: [
+        { label: 'object1', count: 1 },
+        { label: 'object2', count: 2 },
+    ],
 }
 
 const stateWithTablesForDataStatistics = {}

@@ -1,13 +1,13 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
-import MinMaxValueGeneration from './MinMaxValueGeneration'
+import { shallow } from 'enzyme'
+import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
 import {
     sections,
     MIN_MAX_VALUE_GENERATION_SECTION_KEY,
 } from '../sections.conf'
+import MinMaxValueGeneration from './MinMaxValueGeneration'
 
 let pageInfo = {}
 

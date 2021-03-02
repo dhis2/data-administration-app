@@ -1,8 +1,8 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import Page from './Page'
+import React from 'react'
 import DataStatistics from './data-statistics/DataStatistics'
 import Home from './home/Home'
+import Page from './Page'
 import { DATA_STATISTICS_SECTION_KEY } from './sections.conf'
 
 jest.mock('d2-ui/lib/app-header/HeaderBar', () => 'HeaderBar')

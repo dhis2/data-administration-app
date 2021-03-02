@@ -1,28 +1,28 @@
-import React from 'react'
-import Dialog from 'material-ui/Dialog'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
-import FontIcon from 'material-ui/FontIcon'
-import IconButton from 'material-ui/IconButton'
-import { Card, CardText } from 'material-ui/Card'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
-import ContentAdd from 'material-ui/svg-icons/content/add'
+import classNames from 'classnames'
 import DataTable from 'd2-ui/lib/data-table/DataTable.component'
-import Pagination from 'd2-ui/lib/pagination/Pagination.component'
 import {
     LOADING,
     SUCCESS,
     ERROR,
     ACTION_MESSAGE,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import classNames from 'classnames'
-import Page from '../Page'
-import AddLockExceptionForm from './AddLockExceptionForm'
-import { calculatePageValue } from '../../helpers/pagination'
-import { getDocsKeyForSection } from '../sections.conf'
+import Pagination from 'd2-ui/lib/pagination/Pagination.component'
+import { Card, CardText } from 'material-ui/Card'
+import Dialog from 'material-ui/Dialog'
+import FlatButton from 'material-ui/FlatButton'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import FontIcon from 'material-ui/FontIcon'
+import IconButton from 'material-ui/IconButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import ContentAdd from 'material-ui/svg-icons/content/add'
+import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import i18n from '../../locales'
+import { calculatePageValue } from '../../helpers/pagination'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
+import AddLockExceptionForm from './AddLockExceptionForm'
 import '../../custom-css/D2UIDataTableOverrides.css'
 import 'd2-ui/lib/css/Pagination.css'
 import 'd2-ui/lib/css/DataTable.css'
@@ -464,9 +464,7 @@ class LockException extends Page {
                 action: i18n.t(i18nKeys.lockException.confirmButton),
                 onActionClick: () => {
                     const api = this.context.d2.Api.getApi()
-                    let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${
-                        le.dataSetId
-                    }`
+                    let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`
 
                     if (le.organisationUnitId) {
                         deleteUrl += `&ou=${le.organisationUnitId}`

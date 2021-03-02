@@ -1,7 +1,3 @@
-import React from 'react'
-import { Card, CardText } from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
-import RaisedButton from 'material-ui/RaisedButton'
 import {
     LOADING,
     SUCCESS,
@@ -9,11 +5,15 @@ import {
     WARNING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
-import Page from '../Page'
+import { Card, CardText } from 'material-ui/Card'
+import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
-import i18n from '../../locales'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
 import styles from './MinMaxValueGeneration.module.css'
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues'
@@ -376,10 +376,7 @@ class MinMaxValueGeneration extends Page {
                                             root={this.state.rootWithMembers}
                                             selected={this.state.selected}
                                             initiallyExpanded={[
-                                                `/${
-                                                    this.state.rootWithMembers
-                                                        .id
-                                                }`,
+                                                `/${this.state.rootWithMembers.id}`,
                                             ]}
                                             onSelectClick={
                                                 this.handleOrgUnitClick

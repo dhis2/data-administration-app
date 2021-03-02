@@ -1,4 +1,8 @@
-import React from 'react'
+import classNames from 'classnames'
+import {
+    ERROR,
+    LOADING,
+} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import {
     Card,
     CardText,
@@ -8,15 +12,11 @@ import {
     MenuItem,
     RaisedButton,
 } from 'material-ui'
-import classNames from 'classnames'
-import {
-    ERROR,
-    LOADING,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import Page from '../Page'
+import React from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
+import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
 import {
     PULL_INTERVAL,
     ANALYTICS_TABLES_ENDPOINT,
@@ -26,9 +26,9 @@ import {
     analyticsCheckboxes,
     lastYearElements,
 } from '../analytics/analytics.conf'
-import i18n from '../../locales'
-import { i18nKeys } from '../../i18n'
+import Page from '../Page'
 import styles from '../Page.module.css'
+import { getDocsKeyForSection } from '../sections.conf'
 
 class Analytics extends Page {
     static STATE_PROPERTIES = [

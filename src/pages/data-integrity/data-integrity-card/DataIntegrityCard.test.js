@@ -1,7 +1,7 @@
-import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { Card, CardHeader, CardText, FontIcon } from 'material-ui'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import React from 'react'
 import DataIntegrityCard from './DataIntegrityCard'
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
@@ -84,44 +84,24 @@ it('DataIntegrityCard - error card has correct title style when typeof Array.', 
 
 it('DataIntegrityCard - error card renders correct number of fields when typeof Array.', () => {
     const wrapper = ownShallowError(errorArrayCardSample)
-    expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('p')
-    ).toHaveLength(3)
+    expect(wrapper.find(Card).find(CardText).find('p')).toHaveLength(3)
 })
 
 it('DataIntegrityCard - error card renders correct error content when typeof Array.', () => {
     const wrapper = ownShallowError(errorArrayCardSample)
-    expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('p')
-            .first()
-            .text()
-    ).toBe('Check 1')
-    expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('p')
-            .at(1)
-            .text()
-    ).toBe('Check 2')
+    expect(wrapper.find(Card).find(CardText).find('p').first().text()).toBe(
+        'Check 1'
+    )
+    expect(wrapper.find(Card).find(CardText).find('p').at(1).text()).toBe(
+        'Check 2'
+    )
 })
 
 it('DataIntegrityCard - error card renders correct error content when typeof Array inside Array', () => {
     const wrapper = ownShallowError(errorArray_ArrayCardSample)
-    expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('p')
-            .first()
-            .text()
-    ).toBe('Check 1, Check 2, Check 3')
+    expect(wrapper.find(Card).find(CardText).find('p').first().text()).toBe(
+        'Check 1, Check 2, Check 3'
+    )
 })
 
 it('DataIntegrityCard - error card has correct title style when typeof {}.', () => {
@@ -131,64 +111,32 @@ it('DataIntegrityCard - error card has correct title style when typeof {}.', () 
 
 it('DataIntegrityCard - error card renders correct number of fields when typeof {}.', () => {
     const wrapper = ownShallowError(errorObjectCardSample)
-    expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('span')
-    ).toHaveLength(5)
+    expect(wrapper.find(Card).find(CardText).find('span')).toHaveLength(5)
 })
 
 it('DataIntegrityCard - error card renders correct error content when typeof {}.', () => {
     const wrapper = ownShallowError(errorObjectCardSample)
     expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('span')
-            .first()
-            .find('h4')
-            .text()
+        wrapper.find(Card).find(CardText).find('span').first().find('h4').text()
     ).toBe('IDSR Measles')
     expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('span')
-            .first()
-            .find('p')
-            .text()
+        wrapper.find(Card).find(CardText).find('span').first().find('p').text()
     ).toBe('IDSR Weekly (Start' + ' Wednesday), IDSR Weekly')
 })
 
 it('DataIntegrityCard - error card renders correct error content when typeof {} - just strings.', () => {
     const wrapper = ownShallowError(errorObjectString)
     expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('span')
-            .first()
-            .find('h4')
-            .text()
+        wrapper.find(Card).find(CardText).find('span').first().find('h4').text()
     ).toBe('IDSR Measles')
     expect(
-        wrapper
-            .find(Card)
-            .find(CardText)
-            .find('span')
-            .first()
-            .find('p')
-            .text()
+        wrapper.find(Card).find(CardText).find('span').first().find('p').text()
     ).toBe('IDSR Weekly (Start' + ' Wednesday)')
 })
 
 it('DataIntegrityCard - error card renders correct open button.', () => {
     const wrapper = ownShallowError(errorArrayCardSample)
-    const openIcon = wrapper
-        .find(Card)
-        .find(CardHeader)
-        .prop('openIcon')
+    const openIcon = wrapper.find(Card).find(CardHeader).prop('openIcon')
     const fontIconElement = mount(
         <MuiThemeProvider>{openIcon}</MuiThemeProvider>
     )
@@ -196,19 +144,13 @@ it('DataIntegrityCard - error card renders correct open button.', () => {
         fontIconElement.find(FontIcon).find('span.material-icons')
     ).toHaveLength(1)
     expect(
-        fontIconElement
-            .find(FontIcon)
-            .find('span.material-icons')
-            .text()
+        fontIconElement.find(FontIcon).find('span.material-icons').text()
     ).toBe('keyboard_arrow_up')
 })
 
 it('DataIntegrityCard - error card renders correct close button.', () => {
     const wrapper = ownShallowError(errorArrayCardSample)
-    const openIcon = wrapper
-        .find(Card)
-        .find(CardHeader)
-        .prop('closeIcon')
+    const openIcon = wrapper.find(Card).find(CardHeader).prop('closeIcon')
     const fontIconElement = mount(
         <MuiThemeProvider>{openIcon}</MuiThemeProvider>
     )
@@ -216,10 +158,7 @@ it('DataIntegrityCard - error card renders correct close button.', () => {
         fontIconElement.find(FontIcon).find('span.material-icons')
     ).toHaveLength(1)
     expect(
-        fontIconElement
-            .find(FontIcon)
-            .find('span.material-icons')
-            .text()
+        fontIconElement.find(FontIcon).find('span.material-icons').text()
     ).toBe('keyboard_arrow_down')
 })
 
@@ -234,32 +173,20 @@ it('DataIntegrityCard - no error card has correct title style.', () => {
 
 it('DataIntegrityCard - no error card renders correct icon.', () => {
     const wrapper = ownShallowNoError(noErrorCardSample)
-    const openIcon = wrapper
-        .find(Card)
-        .find(CardHeader)
-        .prop('openIcon')
+    const openIcon = wrapper.find(Card).find(CardHeader).prop('openIcon')
     let fontIconElement = mount(<MuiThemeProvider>{openIcon}</MuiThemeProvider>)
     expect(
         fontIconElement.find(FontIcon).find('span.material-icons')
     ).toHaveLength(1)
     expect(
-        fontIconElement
-            .find(FontIcon)
-            .find('span.material-icons')
-            .text()
+        fontIconElement.find(FontIcon).find('span.material-icons').text()
     ).toBe('done')
-    const closeIcon = wrapper
-        .find(Card)
-        .find(CardHeader)
-        .prop('closeIcon')
+    const closeIcon = wrapper.find(Card).find(CardHeader).prop('closeIcon')
     fontIconElement = mount(<MuiThemeProvider>{closeIcon}</MuiThemeProvider>)
     expect(
         fontIconElement.find(FontIcon).find('span.material-icons')
     ).toHaveLength(1)
     expect(
-        fontIconElement
-            .find(FontIcon)
-            .find('span.material-icons')
-            .text()
+        fontIconElement.find(FontIcon).find('span.material-icons').text()
     ).toBe('done')
 })

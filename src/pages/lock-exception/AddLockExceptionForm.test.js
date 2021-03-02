@@ -1,12 +1,12 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import AddLockExceptionForm from './AddLockExceptionForm'
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
-import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
-import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
-import SelectField from 'd2-ui/lib/select-field/SelectField'
+import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
+import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
+import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
 import PeriodPicker from 'd2-ui/lib/period-picker/PeriodPicker.component'
+import SelectField from 'd2-ui/lib/select-field/SelectField'
+import { shallow } from 'enzyme'
+import React from 'react'
+import AddLockExceptionForm from './AddLockExceptionForm'
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 jest.mock(

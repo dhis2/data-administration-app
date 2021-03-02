@@ -1,10 +1,10 @@
-import React from 'react'
 import { shallow } from 'enzyme'
 import RaisedButton from 'material-ui/RaisedButton'
-import ResourceTables from './ResourceTables'
+import React from 'react'
+import { SUCCESS_LEVEL } from '../../components/notifications-table/notifications-table.conf'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
 import { sections, RESOURCE_TABLES_SECTION_KEY } from '../sections.conf'
-import { SUCCESS_LEVEL } from '../../components/notifications-table/notifications-table.conf'
+import ResourceTables from './ResourceTables'
 
 let resourceTablesPageInfo = {}
 

@@ -1,5 +1,3 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import {
     Table,
     TableBody,
@@ -8,6 +6,8 @@ import {
     TableRow,
     TableRowColumn,
 } from 'material-ui/Table'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import FormattedNumber from '../../components/formatters/FormattedNumber'
 import styles from './DataStatistics.module.css'
 

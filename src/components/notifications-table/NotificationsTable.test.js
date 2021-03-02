@@ -1,7 +1,6 @@
-import React from 'react'
 import { shallow } from 'enzyme'
 import { TableRow, TableRowColumn, FontIcon } from 'material-ui'
-import NotificationsTable from './NotificationsTable'
+import React from 'react'
 import {
     SUCCESS_LEVEL,
     ERROR_LEVEL,
@@ -12,6 +11,7 @@ import {
     ERROR_NOTIFICATION_ICON,
     SUCCESS_NOTIFICATION_ICON,
 } from './notifications-table.conf'
+import NotificationsTable from './NotificationsTable'
 
 const NUMBER_OF_COLUMNS = 2
 const fakeNotifications = [

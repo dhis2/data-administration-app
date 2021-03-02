@@ -1,11 +1,11 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import Checkbox from 'material-ui/Checkbox'
 import { GridTile } from 'material-ui/GridList'
 import RaisedButton from 'material-ui/RaisedButton'
-import Checkbox from 'material-ui/Checkbox'
+import React from 'react'
+import { sections, MAINTENANCE_SECTION_KEY } from '../sections.conf'
 import Maintenance from './Maintenance'
 import { maintenanceCheckboxes } from './maintenance.conf'
-import { sections, MAINTENANCE_SECTION_KEY } from '../sections.conf'
 
 let maintenancePageInfo = {}
 
@@ -89,10 +89,7 @@ it('Maintenance state changes Checkbox state when a Checkbox is checked', () => 
     const state = wrapper.state()
     const grid = wrapper.find('div.row').first()
     const maintenanceCheckbox = grid.find(GridTile).first()
-    maintenanceCheckbox
-        .find(Checkbox)
-        .first()
-        .simulate('check')
+    maintenanceCheckbox.find(Checkbox).first().simulate('check')
 
     // assert checkbox states
     const checkedCheckboxKey = maintenanceCheckbox.key()

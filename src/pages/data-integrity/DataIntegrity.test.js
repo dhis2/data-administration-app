@@ -1,8 +1,8 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
 import { DATA_INTEGRITY_SECTION_KEY, sections } from '../sections.conf'
-import DataIntegrity from './DataIntegrity'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
+import DataIntegrity from './DataIntegrity'
 
 let dataIntegrityPageInfo = {}
 

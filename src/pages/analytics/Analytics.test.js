@@ -1,14 +1,14 @@
-import React from 'react'
 import { shallow } from 'enzyme'
 import { Checkbox, RaisedButton, GridTile, SelectField } from 'material-ui'
-import Analytics from './Analytics'
+import React from 'react'
+import { SUCCESS_LEVEL } from '../../components/notifications-table/notifications-table.conf'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
-import { sections, ANALYTICS_SECTION_KEY } from '../sections.conf'
 import {
     analyticsCheckboxes,
     DEFAULT_LAST_YEARS,
 } from '../analytics/analytics.conf'
-import { SUCCESS_LEVEL } from '../../components/notifications-table/notifications-table.conf'
+import { sections, ANALYTICS_SECTION_KEY } from '../sections.conf'
+import Analytics from './Analytics'
 
 let analyticsPageInfo = {}
 for (let i = 0; i < sections.length; i++) {
@@ -106,10 +106,7 @@ it('Analytics state changes Checkbox state when a Checkbox is checked', () => {
     const state = wrapper.state()
     const grid = wrapper.find('div.row').first()
     const analyticCheckbox = grid.find(GridTile).first()
-    analyticCheckbox
-        .find(Checkbox)
-        .first()
-        .simulate('check')
+    analyticCheckbox.find(Checkbox).first().simulate('check')
 
     // assert checkbox states
     const checkedCheckboxKey = analyticCheckbox.key()

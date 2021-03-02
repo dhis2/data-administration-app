@@ -1,8 +1,8 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import AppRouter from './AppRouter'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { sections } from '../../pages/sections.conf'
+import AppRouter from './AppRouter'
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 jest.mock(

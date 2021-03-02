@@ -1,17 +1,17 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
+import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
 import FeedbackSnackbar from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbar.component'
 import { LOADING } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import CircularProgress from 'd2-ui/lib/circular-progress/CircularProgress'
-import { injectTranslationsToD2 } from './configI18n'
+import Sidebar from 'd2-ui/lib/sidebar/Sidebar.component'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
+import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import styles from './App.module.css'
 import AppRouter from './components/app-router/AppRouter'
+import { injectTranslationsToD2 } from './configI18n'
 import { sections } from './pages/sections.conf'
 import './custom-css/D2UISidebarOverrides.css'
 import i18n from '@dhis2/d2-i18n'
-import styles from './App.module.css'
 
 export class DumbApp extends PureComponent {
     static childContextTypes = {
@@ -53,7 +53,7 @@ export class DumbApp extends PureComponent {
         }
     }
 
-    updateAppState = (appState) => {
+    updateAppState = appState => {
         if (
             appState.currentSection &&
             !appState.pageState &&

@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Card, CardText } from 'material-ui/Card'
+import classNames from 'classnames'
 import {
     LOADING,
     ERROR,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import classNames from 'classnames'
-import Page from '../Page'
-import DataStatisticsTable from './DataStatisticsTable'
+import { Card, CardText } from 'material-ui/Card'
+import PropTypes from 'prop-types'
+import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
-import i18n from '../../locales'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
 import styles from './DataStatistics.module.css'
+import DataStatisticsTable from './DataStatisticsTable'
 
 export const OBJECT_COUNTS_KEY = 'objectCounts'
 export const ACTIVE_USERS_KEY = 'activeUsers'

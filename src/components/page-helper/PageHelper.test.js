@@ -1,11 +1,11 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import PageHelper from './PageHelper'
 import { IconButton } from 'material-ui'
+import React from 'react'
 import {
     DATA_STATISTICS_SECTION_KEY,
     getDocsKeyForSection,
 } from '../../pages/sections.conf'
+import PageHelper from './PageHelper'
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 jest.mock(

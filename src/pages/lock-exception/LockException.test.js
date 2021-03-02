@@ -1,13 +1,13 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import Dialog from 'material-ui/Dialog'
-import RaisedButton from 'material-ui/RaisedButton'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
 import DataTable from 'd2-ui/lib/data-table/DataTable.component'
 import Pagination from 'd2-ui/lib/pagination/Pagination.component'
-import LockException from './LockException'
-import AddLockExceptionForm from './AddLockExceptionForm'
+import { shallow } from 'enzyme'
+import Dialog from 'material-ui/Dialog'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
 import { sections, LOCK_EXCEPTION_SECTION_KEY } from '../sections.conf'
+import AddLockExceptionForm from './AddLockExceptionForm'
+import LockException from './LockException'
 
 let lockExceptionPageInfo = {}
 

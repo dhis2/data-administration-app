@@ -1,16 +1,16 @@
-import React from 'react'
-import { RaisedButton } from 'material-ui'
 import {
     ERROR,
     LOADING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { getDocsKeyForSection } from '../sections.conf'
-import * as conf from './data.integrity.conf'
+import { RaisedButton } from 'material-ui'
+import React from 'react'
+import PageHelper from '../../components/page-helper/PageHelper'
 import { i18nKeys } from '../../i18n'
 import i18n from '../../locales'
 import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
-import PageHelper from '../../components/page-helper/PageHelper'
+import * as conf from './data.integrity.conf'
 import styles from './DataIntegrity.module.css'
 
 class DataIntegrity extends Page {
@@ -172,9 +172,7 @@ class DataIntegrity extends Page {
                     )
                     .map(resultNoErrorElement => (
                         <DataIntegrityCard
-                            cardId={`noErrorElement-${
-                                resultNoErrorElement.key
-                            }`}
+                            cardId={`noErrorElement-${resultNoErrorElement.key}`}
                             key={resultNoErrorElement.key}
                             title={resultNoErrorElement.label}
                             content={[]}

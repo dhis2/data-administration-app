@@ -1,9 +1,9 @@
-import React from 'react'
 import { shallow } from 'enzyme'
-import { Link } from 'react-router-dom'
 import { GridTile } from 'material-ui/GridList/index'
-import GridSection from './GridSection'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { sections } from '../../sections.conf'
+import GridSection from './GridSection'
 
 jest.mock('d2-ui/lib/org-unit-tree/OrgUnitTree.component', () => 'OrgUnitTree')
 jest.mock(
