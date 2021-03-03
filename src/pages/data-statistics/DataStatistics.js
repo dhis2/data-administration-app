@@ -193,84 +193,82 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
-        const api = this.context.d2.Api.getApi()
-
-        // request to GET statistics
-        if (!this.state.loading && !this.state.loaded) {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                    message: i18n.t(i18nKeys.dataStatistics.loadingMessage),
-                },
-                pageState: {
-                    loaded: false,
-                    tables: {},
-                    loading: true,
-                },
-            })
-
-            if (api) {
-                api.get('dataSummary')
-                    .then(response => {
-                        if (this.isPageMounted()) {
-                            const tables = {}
-                            tables[
-                                OBJECT_COUNTS_KEY
-                            ] = DataStatistics.objectCountsTableObjectToShowFromServerResponse(
-                                response[OBJECT_COUNTS_KEY]
-                            )
-                            tables[
-                                ACTIVE_USERS_KEY
-                            ] = DataStatistics.activeUsersTableObjectToShowFromServerResponse(
-                                response[ACTIVE_USERS_KEY]
-                            )
-                            tables[
-                                USER_INVITATIONS_KEY
-                            ] = DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
-                                response[USER_INVITATIONS_KEY]
-                            )
-                            tables[
-                                DATA_VALUE_COUNT_KEY
-                            ] = DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
-                                response[DATA_VALUE_COUNT_KEY]
-                            )
-                            tables[
-                                EVENT_COUNT_KEY
-                            ] = DataStatistics.eventCountsTableObjectToShowFromServerResponse(
-                                response[EVENT_COUNT_KEY]
-                            )
-
-                            this.context.updateAppState({
-                                showSnackbar: false,
-                                pageState: {
-                                    loaded: true,
-                                    tables,
-                                    loading: false,
-                                },
-                            })
-                        }
-                    })
-                    .catch(() => {
-                        if (this.isPageMounted()) {
-                            this.context.updateAppState({
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: ERROR,
-                                    message: i18n.t(
-                                        i18nKeys.dataStatistics.errorMessage
-                                    ),
-                                },
-                                pageState: {
-                                    loaded: true,
-                                    tables: {},
-                                    loading: false,
-                                },
-                            })
-                        }
-                    })
-            }
+        if (this.state.loading || this.state.loaded) {
+            return
         }
+
+        this.context.updateAppState({
+            showSnackbar: true,
+            snackbarConf: {
+                type: LOADING,
+                message: i18n.t(i18nKeys.dataStatistics.loadingMessage),
+            },
+            pageState: {
+                loaded: false,
+                tables: {},
+                loading: true,
+            },
+        })
+
+        const api = this.context.d2.Api.getApi()
+        api.get('dataSummary')
+            .then(response => {
+                if (this.isPageMounted()) {
+                    const tables = {}
+                    tables[
+                        OBJECT_COUNTS_KEY
+                    ] = DataStatistics.objectCountsTableObjectToShowFromServerResponse(
+                        response[OBJECT_COUNTS_KEY]
+                    )
+                    tables[
+                        ACTIVE_USERS_KEY
+                    ] = DataStatistics.activeUsersTableObjectToShowFromServerResponse(
+                        response[ACTIVE_USERS_KEY]
+                    )
+                    tables[
+                        USER_INVITATIONS_KEY
+                    ] = DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
+                        response[USER_INVITATIONS_KEY]
+                    )
+                    tables[
+                        DATA_VALUE_COUNT_KEY
+                    ] = DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
+                        response[DATA_VALUE_COUNT_KEY]
+                    )
+                    tables[
+                        EVENT_COUNT_KEY
+                    ] = DataStatistics.eventCountsTableObjectToShowFromServerResponse(
+                        response[EVENT_COUNT_KEY]
+                    )
+
+                    this.context.updateAppState({
+                        showSnackbar: false,
+                        pageState: {
+                            loaded: true,
+                            tables,
+                            loading: false,
+                        },
+                    })
+                }
+            })
+            .catch(() => {
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: i18n.t(
+                                i18nKeys.dataStatistics.errorMessage
+                            ),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables: {},
+                            loading: false,
+                        },
+                    })
+                }
+            })
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
