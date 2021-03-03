@@ -26,6 +26,10 @@ export class DumbApp extends PureComponent {
         updateAppState: PropTypes.func,
     }
 
+    static propTypes = {
+        d2: PropTypes.object,
+    }
+
     constructor(props) {
         super(props)
 

@@ -1,3 +1,4 @@
+import { PropTypes } from '@dhis2/prop-types'
 import {
     Button,
     Table,
@@ -26,7 +27,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { calculatePageValue } from '../../helpers/pagination'
 import { i18nKeys } from '../../i18n'
 import i18n from '../../locales'
 import Page from '../Page'
@@ -73,6 +73,12 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
         </TableBody>
     </Table>
 )
+
+LockExceptionsTable.propTypes = {
+    onRemoveLockException: PropTypes.func.isRequired,
+    columns: PropTypes.array,
+    rows: PropTypes.array,
+}
 
 class LockException extends Page {
     static STATE_PROPERTIES = [
@@ -714,7 +720,6 @@ class LockException extends Page {
     }
 
     render() {
-        const currentlyShown = calculatePageValue(this.state.pager)
         const paginationProps = {
             ...this.state.pager,
             onPageSizeChange: this.handlePageSizeChange,
