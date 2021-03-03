@@ -1,10 +1,10 @@
+import { OrganisationUnitTree } from '@dhis2/ui'
 import {
     LOADING,
     SUCCESS,
     ERROR,
     WARNING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import OrgUnitTree from 'd2-ui/lib/org-unit-tree/OrgUnitTree.component'
 import { Card, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -38,7 +38,6 @@ class MinMaxValueGeneration extends Page {
             dataSetsSelectedCount: 1,
         }
 
-        this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this)
         this.dataSetsSelectRef = this.dataSetsSelectRef.bind(this)
         this.dataSetsSelectClick = this.dataSetsSelectClick.bind(this)
         this.generateMinMaxValueClick = this.generateMinMaxValueClick.bind(this)
@@ -130,9 +129,9 @@ class MinMaxValueGeneration extends Page {
         })
     }
 
-    handleOrgUnitClick(event, orgUnit) {
-        if (!this.state.selected.includes(orgUnit.path)) {
-            this.setState({ selected: [orgUnit.path] })
+    handleOrgUnitChange = ({ path }) => {
+        if (!this.state.selected.includes(path)) {
+            this.setState({ selected: [path] })
         }
     }
 
@@ -365,17 +364,14 @@ class MinMaxValueGeneration extends Page {
                                         )}
                                     </div>
                                     <div className={styles.tree}>
-                                        <OrgUnitTree
+                                        <OrganisationUnitTree
                                             className={styles.tree}
-                                            hideMemberCount
-                                            root={this.state.rootWithMembers}
+                                            roots={[this.state.rootWithMembers]}
                                             selected={this.state.selected}
                                             initiallyExpanded={[
                                                 `/${this.state.rootWithMembers.id}`,
                                             ]}
-                                            onSelectClick={
-                                                this.handleOrgUnitClick
-                                            }
+                                            onChange={this.handleOrgUnitChange}
                                         />
                                     </div>
                                 </div>
