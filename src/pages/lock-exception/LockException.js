@@ -468,6 +468,14 @@ class LockException extends Page {
         this.loadLockExceptionsForPager(pager, true)
     }
 
+    handlePageSizeChange = pageSize => {
+         const pager = {
+            ...this.state.pager,
+            pageSize
+        }
+        this.loadLockExceptionsForPager(pager, true)
+    }
+
     backToLockExceptions() {
         this.loadLockExceptionsForPager(this.state.pager, true)
     }
@@ -706,6 +714,7 @@ class LockException extends Page {
         const currentlyShown = calculatePageValue(this.state.pager)
         const paginationProps = {
             ...this.state.pager,
+            onPageSizeChange: this.handlePageSizeChange,
             onPageChange: this.handlePageChange,
         }
 
