@@ -13,7 +13,7 @@ import AppRouter from './app-router/AppRouter'
 import styles from './App.module.css'
 import '../custom-css/D2UISidebarOverrides.css'
 
-export class DumbApp extends PureComponent {
+export class App extends PureComponent {
     static childContextTypes = {
         d2: PropTypes.object,
         currentSection: PropTypes.string,
@@ -118,4 +118,4 @@ export class DumbApp extends PureComponent {
     }
 }
 
-export default withRouter(DumbApp)
+export default withRouter(App)

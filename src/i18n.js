@@ -290,7 +290,6 @@ export const i18nKeys = {
             'validation processes.',
         actionText: 'Generate Min-Max Value',
         notPossibleToLoadMessage: 'It was not possible to load data',
-        warningMessage: 'Select Data set and Organisation Unit',
         performingMessage: 'Doing Min Max generation...',
         removingMessage: 'Removing Min Max generation...',
         minMaxGenerationDone: 'Min Max generation done',
@@ -299,8 +298,8 @@ export const i18nKeys = {
         loadingDataSetsMessage: 'Loading data sets',
         organisationUnitSelect: 'Organisation Unit Selection',
         updatingTree: 'Updating Organisation Units Tree...',
-        actionButton: 'GENERATE',
-        removeButton: 'REMOVE',
+        actionButton: 'Generate',
+        removeButton: 'Remove',
     },
     analytics: {
         title: 'Analytics tables management',
