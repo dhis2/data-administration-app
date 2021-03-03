@@ -7,7 +7,7 @@ import {
     TableBody,
     TableRow,
     TableCell,
-    Pagination
+    Pagination,
 } from '@dhis2/ui'
 import classNames from 'classnames'
 import {
@@ -466,15 +466,15 @@ class LockException extends Page {
     handlePageChange = page => {
         const pager = {
             ...this.state.pager,
-            page
+            page,
         }
         this.loadLockExceptionsForPager(pager, true)
     }
 
     handlePageSizeChange = pageSize => {
-         const pager = {
+        const pager = {
             ...this.state.pager,
-            pageSize
+            pageSize,
         }
         this.loadLockExceptionsForPager(pager, true)
     }

@@ -1,9 +1,8 @@
+import { OrganisationUnitTree } from '@dhis2/ui'
 import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
-import { OrganisationUnitTree } from '@dhis2/ui'
-import PeriodPicker from './PeriodPicker'
 import SelectField from 'd2-ui/lib/select-field/SelectField'
 import Card from 'material-ui/Card/Card'
 import CardText from 'material-ui/Card/CardText'
@@ -12,6 +11,7 @@ import React, { Component } from 'react'
 import { i18nKeys } from '../../i18n'
 import i18n from '../../locales'
 import styles from './AddLockExceptionForm.module.css'
+import PeriodPicker from './PeriodPicker'
 
 const d2UiSelectStyleOverride = {
     minWidth: 360,
@@ -121,10 +121,10 @@ class AddLockExceptionForm extends Component {
         this.props.updateSelectedOrgUnits(this.state.selected)
     }
 
-    handleOrgUnitChange = (orgUnit) => {
-        const selected = this.state.selected.includes(orgUnit.path) ?
-              selected.filter(ou => ou.path != orgUnit.path) :
-              [...selected, orgUnit.path]
+    handleOrgUnitChange = orgUnit => {
+        const selected = this.state.selected.includes(orgUnit.path)
+            ? selected.filter(ou => ou.path != orgUnit.path)
+            : [...selected, orgUnit.path]
         this.setState({ selected }, () => {
             this.props.updateSelectedOrgUnits(this.state.selected)
         })
@@ -175,7 +175,10 @@ class AddLockExceptionForm extends Component {
                             <div className={styles.left}>
                                 {this.state.rootWithMembers ? (
                                     <OrganisationUnitTree
-                                        root={[this.state.currentRoot || this.state.rootWithMembers]}
+                                        root={[
+                                            this.state.currentRoot ||
+                                                this.state.rootWithMembers,
+                                        ]}
                                         selected={this.state.selected}
                                         initiallyExpanded={[
                                             `/${this.state.rootWithMembers.id}`,
