@@ -3,7 +3,6 @@ import {
     LOADING,
     SUCCESS,
     ERROR,
-    WARNING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
@@ -15,7 +14,7 @@ import styles from './MinMaxValueGeneration.module.css'
 
 const MIX_MAX_VALUE_ENDPOINT = '/minMaxValues'
 
-const orgIdFromPath = (path) => {
+const orgIdFromPath = path => {
     const last = array => array[array.length - 1]
 
     return last(path.split('/'))
@@ -67,7 +66,10 @@ class MinMaxValueGeneration extends Page {
     }
 
     isFormValid = () => {
-        return this.state.dataSetsSelectedCount > 0 && this.state.selected.length > 0
+        return (
+            this.state.dataSetsSelectedCount > 0 &&
+            this.state.selected.length > 0
+        )
     }
 
     loadData() {
@@ -114,7 +116,7 @@ class MinMaxValueGeneration extends Page {
         }
     }
 
-    dataSetsSelectRef = (ref) => {
+    dataSetsSelectRef = ref => {
         this.dataSetsSelect = ref
     }
 
