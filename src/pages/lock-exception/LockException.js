@@ -63,7 +63,9 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
                     ))}
                     <TableCell>
                         <Button small secondary onClick={onRemoveLockException}>
-                            {i18n.t('Remove lock exception')}
+                            <FontIcon className="material-icons">
+                                delete
+                            </FontIcon>
                         </Button>
                     </TableCell>
                 </TableRow>
@@ -246,13 +248,14 @@ class LockException extends Page {
                     />
                 </h1>
                 <div>
-                    <RaisedButton
+                    <Button
                         className={styles.actionButton}
-                        label={i18n.t(i18nKeys.lockException.actionButton)}
                         onClick={this.goToBatchDeletionPage}
                         primary
                         disabled={this.areActionsDisabled()}
-                    />
+                    >
+                        {i18n.t(i18nKeys.lockException.actionButton)}
+                    </Button>
                 </div>
             </div>
         )
