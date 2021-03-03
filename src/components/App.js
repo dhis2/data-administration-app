@@ -15,6 +15,7 @@ import '../custom-css/D2UISidebarOverrides.css'
 
 export class DumbApp extends PureComponent {
     static childContextTypes = {
+        d2: PropTypes.object,
         currentSection: PropTypes.string,
         showSnackbar: PropTypes.bool,
         snackbarConf: PropTypes.shape({
@@ -25,14 +26,10 @@ export class DumbApp extends PureComponent {
         updateAppState: PropTypes.func,
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-    }
-
-    constructor(props, context) {
+    constructor(props) {
         super(props)
 
-        injectTranslationsToD2(context.d2)
+        injectTranslationsToD2(props.d2)
 
         this.state = {
             currentSection: '',
@@ -46,6 +43,7 @@ export class DumbApp extends PureComponent {
 
     getChildContext() {
         return {
+            d2: this.props.d2,
             showSnackbar: this.state.showSnackbar,
             snackbarConf: this.state.snackbarConf,
             currentSection: this.state.currentSection,
