@@ -24,7 +24,7 @@ class MinMaxValueGeneration extends Page {
     static STATE_PROPERTIES = [
         'selected',
         'dataSets',
-        'rootId',
+        'roots',
         'loading',
         'dataSetsSelectedCount',
     ]
@@ -35,7 +35,7 @@ class MinMaxValueGeneration extends Page {
         this.state = {
             selected: [],
             dataSets: null,
-            rootId: null,
+            roots: null,
             loading: false,
             dataSetsSelectedCount: 0,
         }
@@ -61,7 +61,7 @@ class MinMaxValueGeneration extends Page {
         return (
             this.state.loading ||
             this.state.dataSets == null ||
-            this.state.rootId === null
+            this.state.roots === null
         )
     }
 
@@ -74,7 +74,7 @@ class MinMaxValueGeneration extends Page {
 
     loadData() {
         const d2 = this.context.d2
-        if (this.state.dataSets == null || this.state.rootId == null) {
+        if (this.state.dataSets == null || this.state.roots == null) {
             Promise.all([
                 d2.models.organisationUnits.list({
                     paging: false,
@@ -86,11 +86,10 @@ class MinMaxValueGeneration extends Page {
                     fields: 'id,displayName',
                 }),
             ])
-                .then(([organisationUnitsResponse, dataSetsResponse]) => {
+                .then(([rootsResponse, dataSetsResponse]) => {
                     if (this.isPageMounted()) {
-                        const organisationUnits = organisationUnitsResponse.toArray()
                         this.setState({
-                            rootId: organisationUnits[0]?.id,
+                            roots: rootsResponse.toArray(),
                             dataSets: dataSetsResponse.toArray(),
                         })
                     }
@@ -298,7 +297,7 @@ class MinMaxValueGeneration extends Page {
                                 </span>
                             </div>
                         )}
-                        {this.state.rootId ? (
+                        {this.state.roots ? (
                             <div className={styles.right}>
                                 <div className={styles.label}>
                                     {i18n.t(
@@ -309,7 +308,7 @@ class MinMaxValueGeneration extends Page {
                                 <div className={styles.tree}>
                                     <OrganisationUnitTree
                                         className={styles.tree}
-                                        roots={[this.state.rootId]}
+                                        roots={this.state.roots.map(r => r.id)}
                                         selected={this.state.selected}
                                         onChange={this.handleOrgUnitChange}
                                     />
