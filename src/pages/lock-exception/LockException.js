@@ -57,9 +57,13 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
         <TableHead>
             <TableRowHead>
                 {columns.map(column => (
-                    <TableCellHead key={column}>{columnLabels[column]}</TableCellHead>
+                    <TableCellHead key={column}>
+                        {columnLabels[column]}
+                    </TableCellHead>
                 ))}
-                <TableCellHead>{/* Column for 'remove lock exception' button */}</TableCellHead>
+                <TableCellHead>
+                    {/* Column for 'remove lock exception' button */}
+                </TableCellHead>
             </TableRowHead>
         </TableHead>
         <TableBody>
