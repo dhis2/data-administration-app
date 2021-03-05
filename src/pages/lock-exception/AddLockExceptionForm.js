@@ -1,5 +1,3 @@
-import { OrganisationUnitTree } from '@dhis2/ui'
-import { ERROR } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
@@ -11,6 +9,7 @@ import React, { Component } from 'react'
 import { i18nKeys } from '../../i18n'
 import i18n from '../../locales'
 import styles from './AddLockExceptionForm.module.css'
+import OrgUnitTree from './OrgUnitTree'
 import PeriodPicker from './PeriodPicker'
 
 const d2UiSelectStyleOverride = {
@@ -48,6 +47,7 @@ class AddLockExceptionForm extends Component {
         this.onPeriodChange = this.onPeriodChange.bind(this)
 
         this.handleSelectionUpdate = this.handleSelectionUpdate.bind(this)
+        this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this)
         this.changeRoot = this.changeRoot.bind(this)
     }
 
@@ -92,22 +92,7 @@ class AddLockExceptionForm extends Component {
                     })
                 })
                 .catch(error => {
-                    if (this.isPageMounted()) {
-                        const messageError =
-                            error && error.message
-                                ? error.message
-                                : i18n.t(i18nKeys.messages.unexpectedError)
-
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            loading: false,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: { ...this.state },
-                        })
-                    }
+                    console.error(error)
                 })
         }
     }
@@ -121,13 +106,17 @@ class AddLockExceptionForm extends Component {
         this.props.updateSelectedOrgUnits(this.state.selected)
     }
 
-    handleOrgUnitChange = orgUnit => {
-        const selected = this.state.selected.includes(orgUnit.path)
-            ? selected.filter(ou => ou.path != orgUnit.path)
-            : [...selected, orgUnit.path]
-        this.setState({ selected }, () => {
-            this.props.updateSelectedOrgUnits(this.state.selected)
-        })
+    handleOrgUnitClick(event, orgUnit) {
+        if (this.state.selected.includes(orgUnit.path)) {
+            const selected = this.state.selected
+            selected.splice(selected.indexOf(orgUnit.path), 1)
+            this.setState({ selected })
+        } else {
+            const selected = this.state.selected
+            selected.push(orgUnit.path)
+            this.setState({ selected })
+        }
+        this.props.updateSelectedOrgUnits(this.state.selected)
     }
 
     changeRoot(currentRoot) {
@@ -174,16 +163,20 @@ class AddLockExceptionForm extends Component {
                         >
                             <div className={styles.left}>
                                 {this.state.rootWithMembers ? (
-                                    <OrganisationUnitTree
-                                        root={[
-                                            this.state.currentRoot ||
-                                                this.state.rootWithMembers,
-                                        ]}
+                                    <OrgUnitTree
+                                        root={this.state.rootWithMembers}
                                         selected={this.state.selected}
+                                        currentRoot={this.state.currentRoot}
                                         initiallyExpanded={[
                                             `/${this.state.rootWithMembers.id}`,
                                         ]}
-                                        onChange={this.handleOrgUnitChange}
+                                        memberCollection="dataSets"
+                                        memberObject={this.state.dataSet.id}
+                                        onSelectClick={this.handleOrgUnitClick}
+                                        onChangeCurrentRoot={this.changeRoot}
+                                        orgUnitsPathsToInclude={
+                                            this.state.orgUnitPaths
+                                        }
                                     />
                                 ) : (
                                     <span>
