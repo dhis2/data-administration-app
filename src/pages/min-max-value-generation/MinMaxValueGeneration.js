@@ -261,7 +261,7 @@ class MinMaxValueGeneration extends Page {
                         )}
                     />
                 </h1>
-                <Card>
+                <Card className={styles.card}>
                     <div className={styles.container}>
                         {this.state.dataSets ? (
                             <div className={styles.left}>
