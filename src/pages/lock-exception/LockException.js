@@ -46,13 +46,20 @@ const jsStyles = {
     },
 }
 
+const columnLabels = {
+    dataSet: i18n.t('Data set'),
+    period: i18n.t('Period'),
+    organisationUnit: i18n.t('Organisation unit'),
+}
+
 const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
     <Table>
         <TableHead>
             <TableRowHead>
                 {columns.map(column => (
-                    <TableCellHead key={column}>{column}</TableCellHead>
+                    <TableCellHead key={column}>{columnLabels[column]}</TableCellHead>
                 ))}
+                <TableCellHead>{/* Column for 'remove lock exception' button */}</TableCellHead>
             </TableRowHead>
         </TableHead>
         <TableBody>
