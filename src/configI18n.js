@@ -1,5 +1,5 @@
-import i18n from './locales'
 import { i18nKeys } from './i18n'
+import i18n from './locales'
 
 const isLangRTL = code => {
     const langs = ['ar', 'fa', 'ur']

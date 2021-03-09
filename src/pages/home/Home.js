@@ -1,7 +1,7 @@
-import React from 'react'
 import classNames from 'classnames'
-import GridSection from './grid-section/GridSection'
+import React from 'react'
 import { sections } from '../sections.conf'
+import GridSection from './grid-section/GridSection'
 import styles from './Home.module.css'
 
 const Home = () => {

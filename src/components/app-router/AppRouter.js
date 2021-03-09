@@ -1,9 +1,9 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../../pages/home/Home'
-import NoMatch from './NoMatch'
 import { sections } from '../../pages/sections.conf'
+import NoMatch from './NoMatch'
 
 const AppRouter = ({ pageState }) => {
     const routes = sections.map(section => {

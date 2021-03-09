@@ -1,31 +1,38 @@
-import React from 'react'
-import Dialog from 'material-ui/Dialog'
-import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
-import FontIcon from 'material-ui/FontIcon'
-import IconButton from 'material-ui/IconButton'
-import { Card, CardText } from 'material-ui/Card'
-import FloatingActionButton from 'material-ui/FloatingActionButton'
-import ContentAdd from 'material-ui/svg-icons/content/add'
-import DataTable from 'd2-ui/lib/data-table/DataTable.component'
-import Pagination from 'd2-ui/lib/pagination/Pagination.component'
+import { PropTypes } from '@dhis2/prop-types'
+import {
+    Button,
+    Table,
+    TableHead,
+    TableRowHead,
+    TableCellHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    Pagination,
+} from '@dhis2/ui'
+import classNames from 'classnames'
 import {
     LOADING,
     SUCCESS,
     ERROR,
     ACTION_MESSAGE,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import classNames from 'classnames'
-import Page from '../Page'
-import AddLockExceptionForm from './AddLockExceptionForm'
-import { calculatePageValue } from '../../helpers/pagination'
-import { getDocsKeyForSection } from '../sections.conf'
+import { Card, CardText } from 'material-ui/Card'
+import Dialog from 'material-ui/Dialog'
+import FlatButton from 'material-ui/FlatButton'
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import FontIcon from 'material-ui/FontIcon'
+import IconButton from 'material-ui/IconButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import ContentAdd from 'material-ui/svg-icons/content/add'
+import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import i18n from '../../locales'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
+import AddLockExceptionForm from './AddLockExceptionForm'
 import '../../custom-css/D2UIDataTableOverrides.css'
-import 'd2-ui/lib/css/Pagination.css'
-import 'd2-ui/lib/css/DataTable.css'
 import styles from './LockException.module.css'
 
 const jsStyles = {
@@ -39,22 +46,52 @@ const jsStyles = {
     },
 }
 
-class LockException extends Page {
-    static STATE_PROPERTIES = [
-        'lockExceptions',
-        'showAddDialogOpen',
-        'selectedLockException',
-        'levels',
-        'groups',
-        'dataSets',
-        'selectedOrgUnits',
-        'selectedDataSetId',
-        'selectedPeriodId',
-        'pager',
-        'loading',
-        'atBatchDeletionPage',
-    ]
+const columnLabels = {
+    dataSet: i18n.t('Data set'),
+    period: i18n.t('Period'),
+    organisationUnit: i18n.t('Organisation unit'),
+}
 
+const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
+    <Table>
+        <TableHead>
+            <TableRowHead>
+                {columns.map(column => (
+                    <TableCellHead key={column}>
+                        {columnLabels[column]}
+                    </TableCellHead>
+                ))}
+                <TableCellHead>
+                    {/* Column for 'remove lock exception' button */}
+                </TableCellHead>
+            </TableRowHead>
+        </TableHead>
+        <TableBody>
+            {rows.map((row, index) => (
+                <TableRow key={index}>
+                    {columns.map(column => (
+                        <TableCell key={column}>{row[column]}</TableCell>
+                    ))}
+                    <TableCell>
+                        <Button small secondary onClick={onRemoveLockException}>
+                            <FontIcon className="material-icons">
+                                delete
+                            </FontIcon>
+                        </Button>
+                    </TableCell>
+                </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+)
+
+LockExceptionsTable.propTypes = {
+    onRemoveLockException: PropTypes.func.isRequired,
+    columns: PropTypes.array,
+    rows: PropTypes.array,
+}
+
+class LockException extends Page {
     static initialPager = {
         pageSize: 20,
         page: 1,
@@ -66,25 +103,18 @@ class LockException extends Page {
         super(props, context)
 
         this.state = {
-            lockExceptions: [],
-            showAddDialogOpen: false,
-            selectedLockException: null,
-            levels: null,
-            groups: null,
-            dataSets: [],
             selectedOrgUnits: [],
             selectedDataSetId: null,
             selectedPeriodId: null,
-            pager: LockException.initialPager,
-            loading: false,
-            loaded: false,
-            atBatchDeletionPage: false,
+            showAddDialogOpen: false,
+            levels: null,
+            groups: null,
+            dataSets: [],
         }
 
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this)
         this.updateSeletedDataSetId = this.updateSeletedDataSetId.bind(this)
         this.updateSelectedPeriodId = this.updateSelectedPeriodId.bind(this)
-        this.removeLockException = this.removeLockException.bind(this)
         this.showLockExceptionFormDialog = this.showLockExceptionFormDialog.bind(
             this
         )
@@ -94,8 +124,6 @@ class LockException extends Page {
         this.addLockException = this.addLockException.bind(this)
         this.backToLockExceptions = this.backToLockExceptions.bind(this)
         this.goToBatchDeletionPage = this.goToBatchDeletionPage.bind(this)
-        this.onNextPageClick = this.onNextPageClick.bind(this)
-        this.onPreviousPageClick = this.onPreviousPageClick.bind(this)
 
         // FIXME Hack in some translations
         const d2 = context.d2
@@ -157,7 +185,7 @@ class LockException extends Page {
     prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
         return lockExceptionResponse.map(le => {
             const row = {}
-            if (!this.state.atBatchDeletionPage) {
+            if (!this.props.atBatchDeletionPage) {
                 row.organisationUnit = le.organisationUnit.displayName
                 row.organisationUnitId = le.organisationUnit.id
             }
@@ -170,14 +198,14 @@ class LockException extends Page {
     }
 
     dataTableColumns() {
-        if (this.state.atBatchDeletionPage) {
+        if (this.props.atBatchDeletionPage) {
             return ['dataSet', 'period']
         }
         return ['organisationUnit', 'dataSet', 'period']
     }
 
     header() {
-        if (this.state.atBatchDeletionPage) {
+        if (this.props.atBatchDeletionPage) {
             return (
                 <div className={styles.headerContainer}>
                     <h1 className={styles.header}>
@@ -216,20 +244,21 @@ class LockException extends Page {
                     />
                 </h1>
                 <div>
-                    <RaisedButton
+                    <Button
                         className={styles.actionButton}
-                        label={i18n.t(i18nKeys.lockException.actionButton)}
                         onClick={this.goToBatchDeletionPage}
                         primary
                         disabled={this.areActionsDisabled()}
-                    />
+                    >
+                        {i18n.t(i18nKeys.lockException.actionButton)}
+                    </Button>
                 </div>
             </div>
         )
     }
 
     areActionsDisabled() {
-        return this.state.loading
+        return this.props.loading
     }
 
     addLockExceptionEnabled() {
@@ -241,24 +270,7 @@ class LockException extends Page {
     }
 
     componentDidMount() {
-        this.loadLockExceptionsForPager(this.state.pager)
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                LockException.STATE_PROPERTIES.includes(property)
-            ) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        this.loadLockExceptionsForPager(LockException.initialPager)
     }
 
     loadLockExceptionsForPager(pager, userAction) {
@@ -272,10 +284,10 @@ class LockException extends Page {
             '&order=name:asc'
 
         // request to GET lock exceptions
-        if (userAction || (!this.state.loading && !this.state.loaded)) {
+        if (userAction || (!this.props.loading && !this.props.loaded)) {
             // Keep the previous message visible (p.e. deleting lock exception || add lock exception)
             this.context.updateAppState(
-                this.state.deleteInProgress || this.state.addInProgress
+                this.props.deleteInProgress || this.props.addInProgress
                     ? {
                           atBatchDeletionPage: false,
                           loaded: false,
@@ -301,7 +313,7 @@ class LockException extends Page {
                         let loadedState
 
                         // If deleting a lock exception, show a success message instead of hiding the loading
-                        if (this.state.deleteInProgress) {
+                        if (this.props.deleteInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -311,9 +323,9 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.state.deleteInProgress = false
+                            this.props.deleteInProgress = false
                             // If adding a lock exception, show a success message instead of hiding the loading
-                        } else if (this.state.addInProgress) {
+                        } else if (this.props.addInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -323,7 +335,7 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.state.addInProgress = false
+                            this.props.addInProgress = false
                         } else {
                             loadedState = {
                                 showSnackbar: false,
@@ -435,120 +447,119 @@ class LockException extends Page {
         this.setState({ selectedPeriodId })
     }
 
-    onNextPageClick() {
-        const pager = Object.assign({}, this.state.pager)
-        pager.page += 1
+    handlePageChange = page => {
+        const pager = {
+            ...this.props.pager,
+            page,
+        }
         this.loadLockExceptionsForPager(pager, true)
     }
 
-    onPreviousPageClick() {
-        const pager = Object.assign({}, this.state.pager)
-        pager.page -= 1
+    handlePageSizeChange = pageSize => {
+        const pager = {
+            ...this.props.pager,
+            pageSize,
+        }
         this.loadLockExceptionsForPager(pager, true)
     }
 
     backToLockExceptions() {
-        this.loadLockExceptionsForPager(this.state.pager, true)
+        this.loadLockExceptionsForPager(this.props.pager, true)
     }
 
     goToBatchDeletionPage() {
         this.loadLockExceptionCombinations()
     }
 
-    removeLockException(le) {
+    removeLockException = le => {
+        const handleActionClick = () => {
+            let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`
+
+            if (le.organisationUnitId) {
+                deleteUrl += `&ou=${le.organisationUnitId}`
+            }
+
+            this.context.updateAppState({
+                showSnackbar: true,
+                snackbarConf: {
+                    type: LOADING,
+                    message: i18n.t(i18nKeys.lockException.loadingMessage),
+                },
+                pageState: {
+                    ...this.props,
+                    loading: true,
+                },
+            })
+
+            const api = this.context.d2.Api.getApi()
+            api.delete(deleteUrl)
+                .then(() => {
+                    if (this.isPageMounted()) {
+                        const newPageState = {
+                            ...this.props,
+                            loading: false,
+                        }
+
+                        if (this.props.atBatchDeletionPage) {
+                            newPageState.lockExceptions = this.props.lockExceptions.filter(
+                                existingLockException =>
+                                    existingLockException.periodId !==
+                                        le.periodId ||
+                                    existingLockException.dataSetId !==
+                                        le.dataSetId
+                            )
+
+                            this.context.updateAppState({
+                                showSnackbar: true,
+                                snackbarConf: {
+                                    type: SUCCESS,
+                                    message: i18n.t(
+                                        i18nKeys.lockException.removedMessage
+                                    ),
+                                },
+                                pageState: newPageState,
+                            })
+                        } else {
+                            this.props.deleteInProgress = true
+                            this.context.updateAppState({
+                                pageState: newPageState,
+                            })
+                            this.loadLockExceptionsForPager(
+                                LockException.initialPager,
+                                false
+                            )
+                        }
+                    }
+                })
+                .catch(error => {
+                    if (this.isPageMounted()) {
+                        const messageError =
+                            error && error.message
+                                ? error.message
+                                : i18n.t(i18nKeys.messages.unexpectedError)
+
+                        this.context.updateAppState({
+                            showSnackbar: true,
+                            snackbarConf: {
+                                type: ERROR,
+                                message: messageError,
+                            },
+                            pageState: {
+                                ...this.props,
+                                loading: false,
+                            },
+                        })
+                    }
+                })
+        }
+
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
                 type: ACTION_MESSAGE,
                 message: i18n.t(i18nKeys.lockException.confirmDeleteMessage),
                 action: i18n.t(i18nKeys.lockException.confirmButton),
-                onActionClick: () => {
-                    const api = this.context.d2.Api.getApi()
-                    let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${
-                        le.dataSetId
-                    }`
-
-                    if (le.organisationUnitId) {
-                        deleteUrl += `&ou=${le.organisationUnitId}`
-                    }
-
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: LOADING,
-                            message: i18n.t(
-                                i18nKeys.lockException.loadingMessage
-                            ),
-                        },
-                        pageState: {
-                            ...this.state,
-                            loading: true,
-                        },
-                    })
-
-                    api.delete(deleteUrl)
-                        .then(() => {
-                            if (this.isPageMounted()) {
-                                const newPageState = {
-                                    ...this.state,
-                                    loading: false,
-                                }
-
-                                if (this.state.atBatchDeletionPage) {
-                                    newPageState.lockExceptions = this.state.lockExceptions.filter(
-                                        existingLockException =>
-                                            existingLockException.periodId !==
-                                                le.periodId ||
-                                            existingLockException.dataSetId !==
-                                                le.dataSetId
-                                    )
-
-                                    this.context.updateAppState({
-                                        showSnackbar: true,
-                                        snackbarConf: {
-                                            type: SUCCESS,
-                                            message: i18n.t(
-                                                i18nKeys.lockException
-                                                    .removedMessage
-                                            ),
-                                        },
-                                        pageState: newPageState,
-                                    })
-                                } else {
-                                    this.state.deleteInProgress = true
-                                    this.context.updateAppState({
-                                        pageState: newPageState,
-                                    })
-                                    this.loadLockExceptionsForPager(
-                                        LockException.initialPager,
-                                        false
-                                    )
-                                }
-                            }
-                        })
-                        .catch(error => {
-                            if (this.isPageMounted()) {
-                                const messageError =
-                                    error && error.message
-                                        ? error.message
-                                        : i18n.t(
-                                              i18nKeys.messages.unexpectedError
-                                          )
-
-                                this.context.updateAppState({
-                                    showSnackbar: true,
-                                    snackbarConf: {
-                                        type: ERROR,
-                                        message: messageError,
-                                    },
-                                    pageState: {
-                                        ...this.state,
-                                        loading: false,
-                                    },
-                                })
-                            }
-                        })
-                },
+                onActionClick: handleActionClick,
             },
         })
     }
@@ -601,7 +612,7 @@ class LockException extends Page {
                                 message: messageError,
                             },
                             pageState: {
-                                ...this.state,
+                                ...this.props,
                                 loading: false,
                             },
                         })
@@ -656,7 +667,7 @@ class LockException extends Page {
                                 loading: false,
                             },
                         })
-                        this.state.addInProgress = true
+                        this.props.addInProgress = true
                         this.loadLockExceptionsForPager(
                             LockException.initialPager,
                             false
@@ -677,7 +688,7 @@ class LockException extends Page {
                                 message: messageError,
                             },
                             pageState: {
-                                ...this.state,
+                                ...this.props,
                                 loading: false,
                             },
                         })
@@ -687,26 +698,23 @@ class LockException extends Page {
     }
 
     render() {
-        const currentlyShown = calculatePageValue(this.state.pager)
         const paginationProps = {
-            hasNextPage: () =>
-                this.state.pager.page < this.state.pager.pageCount,
-            hasPreviousPage: () => this.state.pager.page > 1,
-            onNextPageClick: this.onNextPageClick,
-            onPreviousPageClick: this.onPreviousPageClick,
-            total: this.state.pager.total,
-            currentlyShown,
+            ...this.props.pager,
+            onPageSizeChange: this.handlePageSizeChange,
+            onPageChange: this.handlePageChange,
         }
 
         const addLockException = [
             <FlatButton
+                key="cancel-button"
                 className={styles.actionButton}
                 label={i18n.t(i18nKeys.lockException.cancelButton)}
                 onClick={this.closeLockExceptionFormDialog}
             />,
             <RaisedButton
+                key="add-button"
                 className={styles.actionButton}
-                primary={Boolean(true)}
+                primary={true}
                 label={i18n.t(i18nKeys.lockException.addButton)}
                 onClick={this.addLockException}
                 disabled={!this.addLockExceptionEnabled()}
@@ -716,25 +724,22 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 {this.header()}
-                {this.state.lockExceptions &&
-                this.state.lockExceptions.length ? (
+                {this.props.lockExceptions &&
+                this.props.lockExceptions.length ? (
                     <div>
                         {!this.areActionsDisabled() &&
-                            !this.state.atBatchDeletionPage && (
+                            !this.props.atBatchDeletionPage && (
                                 <div className={styles.pagination}>
                                     <Pagination {...paginationProps} />
                                 </div>
                             )}
-                        <DataTable
+                        <LockExceptionsTable
                             columns={this.dataTableColumns()}
-                            rows={this.state.lockExceptions}
-                            contextMenuActions={{
-                                remove: this.removeLockException,
-                            }}
-                            contextMenuIcons={{ remove: 'delete' }}
+                            rows={this.props.lockExceptions}
+                            onRemoveLockException={this.removeLockException}
                         />
                         {!this.areActionsDisabled() &&
-                            !this.state.atBatchDeletionPage && (
+                            !this.props.atBatchDeletionPage && (
                                 <div
                                     className={classNames(
                                         styles.pagination,
@@ -748,7 +753,7 @@ class LockException extends Page {
                 ) : (
                     <Card
                         style={{
-                            display: !this.state.loading ? 'block' : 'none',
+                            display: !this.props.loading ? 'block' : 'none',
                         }}
                     >
                         <CardText>
@@ -785,7 +790,7 @@ class LockException extends Page {
                             />
                         </Dialog>
                     )}
-                {!this.state.atBatchDeletionPage && !this.areActionsDisabled() && (
+                {!this.props.atBatchDeletionPage && !this.areActionsDisabled() && (
                     <FloatingActionButton
                         id={'addExceptionButtonId'}
                         style={jsStyles.addButton}

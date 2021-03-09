@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Card, CardText } from 'material-ui/Card'
+import classNames from 'classnames'
 import {
     LOADING,
     ERROR,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import classNames from 'classnames'
-import Page from '../Page'
-import DataStatisticsTable from './DataStatisticsTable'
+import { Card, CardText } from 'material-ui/Card'
+import PropTypes from 'prop-types'
+import React from 'react'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
-import i18n from '../../locales'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
+import Page from '../Page'
+import { getDocsKeyForSection } from '../sections.conf'
 import styles from './DataStatistics.module.css'
+import DataStatisticsTable from './DataStatisticsTable'
 
 export const OBJECT_COUNTS_KEY = 'objectCounts'
 export const ACTIVE_USERS_KEY = 'activeUsers'
@@ -30,23 +30,11 @@ export const TableCard = ({ label, elements }) => (
 )
 
 TableCard.propTypes = {
-    label: PropTypes.string.isRequired,
     elements: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
 }
 
 class DataStatistics extends Page {
-    static STATE_PROPERTIES = ['tables', 'loaded', 'loading']
-
-    constructor() {
-        super()
-
-        this.state = {
-            tables: {},
-            loaded: false,
-            loading: false,
-        }
-    }
-
     // auxiliar functions
     static objectCountsTableObjectToShowFromServerResponse = objectCountsResponse => {
         if (objectCountsResponse) {
@@ -115,7 +103,8 @@ class DataStatistics extends Page {
             }
 
             if (
-                userInvitationsResponse.hasOwnProperty(
+                Object.hasOwnProperty.call(
+                    userInvitationsResponse,
                     PENDING_INVITATION_ALL_KEY
                 )
             ) {
@@ -126,7 +115,10 @@ class DataStatistics extends Page {
             }
 
             if (
-                userInvitationsResponse.hasOwnProperty(EXPIRED_INVITATION_KEY)
+                Object.hasOwnProperty.call(
+                    userInvitationsResponse,
+                    EXPIRED_INVITATION_KEY
+                )
             ) {
                 userInvitationsTable.elements.push({
                     label: i18n.t(i18nKeys.dataStatistics.expiredInvitations),
@@ -189,111 +181,88 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
-        const api = this.context.d2.Api.getApi()
-
-        // request to GET statistics
-        if (!this.state.loading && !this.state.loaded) {
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                    message: i18n.t(i18nKeys.dataStatistics.loadingMessage),
-                },
-                pageState: {
-                    loaded: false,
-                    tables: {},
-                    loading: true,
-                },
-            })
-
-            if (api) {
-                api.get('dataSummary')
-                    .then(response => {
-                        if (this.isPageMounted()) {
-                            const tables = {}
-                            tables[
-                                OBJECT_COUNTS_KEY
-                            ] = DataStatistics.objectCountsTableObjectToShowFromServerResponse(
-                                response[OBJECT_COUNTS_KEY]
-                            )
-                            tables[
-                                ACTIVE_USERS_KEY
-                            ] = DataStatistics.activeUsersTableObjectToShowFromServerResponse(
-                                response[ACTIVE_USERS_KEY]
-                            )
-                            tables[
-                                USER_INVITATIONS_KEY
-                            ] = DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
-                                response[USER_INVITATIONS_KEY]
-                            )
-                            tables[
-                                DATA_VALUE_COUNT_KEY
-                            ] = DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
-                                response[DATA_VALUE_COUNT_KEY]
-                            )
-                            tables[
-                                EVENT_COUNT_KEY
-                            ] = DataStatistics.eventCountsTableObjectToShowFromServerResponse(
-                                response[EVENT_COUNT_KEY]
-                            )
-
-                            this.context.updateAppState({
-                                showSnackbar: false,
-                                pageState: {
-                                    loaded: true,
-                                    tables,
-                                    loading: false,
-                                },
-                            })
-                        }
-                    })
-                    .catch(() => {
-                        if (this.isPageMounted()) {
-                            this.context.updateAppState({
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: ERROR,
-                                    message: i18n.t(
-                                        i18nKeys.dataStatistics.errorMessage
-                                    ),
-                                },
-                                pageState: {
-                                    loaded: true,
-                                    tables: {},
-                                    loading: false,
-                                },
-                            })
-                        }
-                    })
-            }
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                DataStatistics.STATE_PROPERTIES.includes(property)
-            ) {
-                nextState[property] = nextProps[property]
-            }
+        this.context.updateAppState({
+            showSnackbar: true,
+            snackbarConf: {
+                type: LOADING,
+                message: i18n.t(i18nKeys.dataStatistics.loadingMessage),
+            },
+            pageState: {
+                loaded: false,
+                tables: {},
+                loading: true,
+            },
         })
 
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
+        const api = this.context.d2.Api.getApi()
+        api.get('dataSummary')
+            .then(response => {
+                if (this.isPageMounted()) {
+                    const tables = {}
+                    tables[
+                        OBJECT_COUNTS_KEY
+                    ] = DataStatistics.objectCountsTableObjectToShowFromServerResponse(
+                        response[OBJECT_COUNTS_KEY]
+                    )
+                    tables[
+                        ACTIVE_USERS_KEY
+                    ] = DataStatistics.activeUsersTableObjectToShowFromServerResponse(
+                        response[ACTIVE_USERS_KEY]
+                    )
+                    tables[
+                        USER_INVITATIONS_KEY
+                    ] = DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
+                        response[USER_INVITATIONS_KEY]
+                    )
+                    tables[
+                        DATA_VALUE_COUNT_KEY
+                    ] = DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
+                        response[DATA_VALUE_COUNT_KEY]
+                    )
+                    tables[
+                        EVENT_COUNT_KEY
+                    ] = DataStatistics.eventCountsTableObjectToShowFromServerResponse(
+                        response[EVENT_COUNT_KEY]
+                    )
+
+                    this.context.updateAppState({
+                        showSnackbar: false,
+                        pageState: {
+                            loaded: true,
+                            tables,
+                            loading: false,
+                        },
+                    })
+                }
+            })
+            .catch(() => {
+                if (this.isPageMounted()) {
+                    this.context.updateAppState({
+                        showSnackbar: true,
+                        snackbarConf: {
+                            type: ERROR,
+                            message: i18n.t(
+                                i18nKeys.dataStatistics.errorMessage
+                            ),
+                        },
+                        pageState: {
+                            loaded: true,
+                            tables: {},
+                            loading: false,
+                        },
+                    })
+                }
+            })
     }
 
     hasTables = () =>
-        this.state.tables &&
-        this.state.tables.constructor === Object &&
-        Object.keys(this.state.tables).length > 0
+        this.props.tables &&
+        this.props.tables.constructor === Object &&
+        Object.keys(this.props.tables).length > 0
 
     render() {
         const noContent = (
-            <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+            <Card style={{ display: !this.props.loading ? 'block' : 'none' }}>
                 <CardText>
                     {i18n.t(i18nKeys.dataStatistics.noDataMessage)}
                 </CardText>
@@ -313,63 +282,63 @@ class DataStatistics extends Page {
                 {this.hasTables() ? (
                     <div className="row">
                         <div className="col-md-6">
-                            {this.state.tables[OBJECT_COUNTS_KEY] && (
+                            {this.props.tables[OBJECT_COUNTS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[OBJECT_COUNTS_KEY]
+                                        this.props.tables[OBJECT_COUNTS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[OBJECT_COUNTS_KEY]
+                                        this.props.tables[OBJECT_COUNTS_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[ACTIVE_USERS_KEY] && (
+                            {this.props.tables[ACTIVE_USERS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[ACTIVE_USERS_KEY]
+                                        this.props.tables[ACTIVE_USERS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[ACTIVE_USERS_KEY]
+                                        this.props.tables[ACTIVE_USERS_KEY]
                                             .elements
                                     }
                                 />
                             )}
                         </div>
                         <div className="col-md-6">
-                            {this.state.tables[USER_INVITATIONS_KEY] && (
+                            {this.props.tables[USER_INVITATIONS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[USER_INVITATIONS_KEY]
+                                        this.props.tables[USER_INVITATIONS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[USER_INVITATIONS_KEY]
+                                        this.props.tables[USER_INVITATIONS_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[DATA_VALUE_COUNT_KEY] && (
+                            {this.props.tables[DATA_VALUE_COUNT_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[DATA_VALUE_COUNT_KEY]
+                                        this.props.tables[DATA_VALUE_COUNT_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[DATA_VALUE_COUNT_KEY]
+                                        this.props.tables[DATA_VALUE_COUNT_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[EVENT_COUNT_KEY] && (
+                            {this.props.tables[EVENT_COUNT_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[EVENT_COUNT_KEY].label
+                                        this.props.tables[EVENT_COUNT_KEY].label
                                     }
                                     elements={
-                                        this.state.tables[EVENT_COUNT_KEY]
+                                        this.props.tables[EVENT_COUNT_KEY]
                                             .elements
                                     }
                                 />
