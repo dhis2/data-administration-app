@@ -20,32 +20,16 @@ import { getDocsKeyForSection } from '../sections.conf'
 import styles from './ResourceTables.module.css'
 
 class ResourceTable extends Page {
-    static STATE_PROPERTIES = ['loading', 'notifications', 'intervalId']
-
     constructor() {
         super()
 
         this.state = {
-            loading: false,
-            notifications: [],
             intervalId: null,
         }
 
         this.initResourceTablesGeneration = this.initResourceTablesGeneration.bind(
             this
         )
-    }
-
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (ResourceTable.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
     }
 
     componentDidMount() {
@@ -127,8 +111,14 @@ class ResourceTable extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
+        const taskSummary = []
+        if (taskSummaryResponse) {
+            for (const notifications of Object.values(taskSummaryResponse)) {
+                taskSummary.concat(notifications)
+            }
+        }
         // reverse to sort oldest-newest
-        const notifications = (taskSummaryResponse || []).reverse()
+        const notifications = taskSummary.reverse()
         const completed = !this.isJobInProgress(notifications)
 
         if (completed) {
@@ -326,15 +316,15 @@ class ResourceTable extends Page {
                             primary
                             label={i18n.t(i18nKeys.resourceTables.actionButton)}
                             onClick={this.initResourceTablesGeneration}
-                            disabled={this.state.loading}
+                            disabled={this.props.loading}
                         />
                     </CardText>
                 </Card>
-                {this.state.notifications.length > 0 && (
+                {(this.props.notifications || []).length > 0 && (
                     <Card className={pageStyles.cardContainer}>
                         <CardText>
                             <NotificationsTable
-                                notifications={this.state.notifications}
+                                notifications={this.props.notifications}
                                 animateIncomplete
                             />
                         </CardText>
