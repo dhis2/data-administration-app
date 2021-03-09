@@ -1,17 +1,17 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { IconButton } from 'material-ui'
-import i18n from '../../locales'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import {
     getDocsVersion,
     DOCS_LINK,
     DOCS_TOOLTIP_LABEL,
 } from '../../helpers/docs'
+import i18n from '../../locales'
 
 class PageHelper extends PureComponent {
     static propTypes = {
-        lng: PropTypes.string,
         sectionDocsKey: PropTypes.string.isRequired,
+        lng: PropTypes.string,
     }
 
     static defaultProps = {
