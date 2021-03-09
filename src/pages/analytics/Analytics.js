@@ -31,14 +31,6 @@ import styles from '../Page.module.css'
 import { getDocsKeyForSection } from '../sections.conf'
 
 class Analytics extends Page {
-    static STATE_PROPERTIES = [
-        'checkboxes',
-        'loading',
-        'lastYears',
-        'notifications',
-        'intervalId',
-    ]
-
     constructor() {
         super()
 
@@ -50,9 +42,7 @@ class Analytics extends Page {
 
         this.state = {
             checkboxes,
-            loading: false,
             lastYears: DEFAULT_LAST_YEARS,
-            notifications: [],
             intervalId: null,
         }
 
@@ -64,18 +54,6 @@ class Analytics extends Page {
 
     componentDidMount() {
         this.requestTaskSummary()
-    }
-
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (Analytics.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
     }
 
     componentWillUnmount() {
@@ -120,7 +98,7 @@ class Analytics extends Page {
     }
 
     areActionsDisabled() {
-        return this.state.loading
+        return this.props.loading
     }
 
     buildFormData() {
@@ -174,7 +152,12 @@ class Analytics extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const taskSummary = taskSummaryResponse || []
+        const taskSummary = []
+        if (taskSummaryResponse) {
+            for (const notifications of Object.values(taskSummaryResponse)) {
+                taskSummary.concat(notifications)
+            }
+        }
         const completed = !this.isJobInProgress(taskSummary)
 
         if (completed) {
@@ -192,8 +175,8 @@ class Analytics extends Page {
 
     getUpdatedNotifications(taskSummary = []) {
         // Notification table needs to be updated when new tasks are added
-        if (taskSummary.length <= this.state.notifications.length) {
-            return this.state.notifications
+        if (taskSummary.length <= this.props.notifications.length) {
+            return this.props.notifications
         }
 
         const lastIndex = taskSummary.length - 1
@@ -343,11 +326,11 @@ class Analytics extends Page {
                         />
                     </CardText>
                 </Card>
-                {this.state.notifications.length > 0 && (
+                {(this.props.notifications || []).length > 0 && (
                     <Card className={styles.cardContainer}>
                         <CardText>
                             <NotificationsTable
-                                notifications={this.state.notifications}
+                                notifications={this.props.notifications}
                                 animateIncomplete
                             />
                         </CardText>
