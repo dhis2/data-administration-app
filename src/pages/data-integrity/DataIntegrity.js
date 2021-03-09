@@ -14,40 +14,15 @@ import * as conf from './data.integrity.conf'
 import styles from './DataIntegrity.module.css'
 
 class DataIntegrity extends Page {
-    static STATE_PROPERTIES = ['cards', 'loaded', 'loading']
-
-    constructor() {
-        super()
-
-        this.state = {
-            cards: null,
-            intervalId: null,
-            loaded: false,
-            loading: false,
-        }
-
-        this.initDataIntegrityCheck = this.initDataIntegrityCheck.bind(this)
-    }
-
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (DataIntegrity.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
-    }
-
     componentWillUnmount() {
         super.componentWillUnmount()
         this.cancelPullingRequests()
     }
 
     cancelPullingRequests() {
-        clearInterval(this.state.intervalId)
+        if (this.intervalId) {
+            clearInterval(this.intervalId)
+        }
     }
 
     setLoadingPageState() {
@@ -85,15 +60,15 @@ class DataIntegrity extends Page {
         })
     }
 
-    initDataIntegrityCheck() {
+    initDataIntegrityCheck = () => {
         const api = this.context.d2.Api.getApi()
         this.setLoadingPageState()
         api.post(conf.INIT_ENDPOINT)
             .then(response => {
                 if (this.isPageMounted() && response) {
-                    this.state.jobId = response.response.id
-                    this.state.intervalId = setInterval(() => {
-                        this.requestTaskSummary()
+                    const jobId = response.response.id
+                    this.intervalId = setInterval(() => {
+                        this.requestTaskSummary(jobId)
                     }, conf.PULL_INTERVAL)
                 }
             })
@@ -104,9 +79,9 @@ class DataIntegrity extends Page {
             })
     }
 
-    requestTaskSummary() {
+    requestTaskSummary(jobId) {
         const api = this.context.d2.Api.getApi()
-        const url = `${conf.DATA_ENDPOINT}/${this.state.jobId}`
+        const url = `${conf.DATA_ENDPOINT}/${jobId}`
         api.get(url)
             .then(response => {
                 if (this.isPageMounted()) {
@@ -138,12 +113,12 @@ class DataIntegrity extends Page {
                 label={i18n.t(i18nKeys.dataIntegrity.actionButton)}
                 onClick={this.initDataIntegrityCheck}
                 primary
-                disabled={this.state.loading}
+                disabled={this.props.loading}
             />
         )
         let cardsToShow = []
-        if (this.state.cards) {
-            const errorElementskeys = Object.keys(this.state.cards)
+        if (this.props.cards) {
+            const errorElementskeys = Object.keys(this.props.cards)
             cardsToShow = errorElementskeys.map(element => {
                 const control = conf.dataIntegrityControls.find(
                     control => control.key === element
@@ -156,11 +131,11 @@ class DataIntegrity extends Page {
                         cardId={`errorElement-${element}`}
                         key={element}
                         title={control.label}
-                        content={this.state.cards[element]}
+                        content={this.props.cards[element]}
                     />
                 )
             })
-            if (this.state.loaded) {
+            if (this.props.loaded) {
                 const noErrors = conf.dataIntegrityControls
                     .filter(
                         element => errorElementskeys.indexOf(element.key) < 0

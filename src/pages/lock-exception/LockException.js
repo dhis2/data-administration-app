@@ -92,21 +92,6 @@ LockExceptionsTable.propTypes = {
 }
 
 class LockException extends Page {
-    static STATE_PROPERTIES = [
-        'lockExceptions',
-        'showAddDialogOpen',
-        'selectedLockException',
-        'levels',
-        'groups',
-        'dataSets',
-        'selectedOrgUnits',
-        'selectedDataSetId',
-        'selectedPeriodId',
-        'pager',
-        'loading',
-        'atBatchDeletionPage',
-    ]
-
     static initialPager = {
         pageSize: 20,
         page: 1,
@@ -118,19 +103,13 @@ class LockException extends Page {
         super(props, context)
 
         this.state = {
-            lockExceptions: [],
-            showAddDialogOpen: false,
-            selectedLockException: null,
-            levels: null,
-            groups: null,
-            dataSets: [],
             selectedOrgUnits: [],
             selectedDataSetId: null,
             selectedPeriodId: null,
-            pager: LockException.initialPager,
-            loading: false,
-            loaded: false,
-            atBatchDeletionPage: false,
+            showAddDialogOpen: false,
+            levels: null,
+            groups: null,
+            dataSets: [],
         }
 
         this.updateSelectedOrgUnits = this.updateSelectedOrgUnits.bind(this)
@@ -206,7 +185,7 @@ class LockException extends Page {
     prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
         return lockExceptionResponse.map(le => {
             const row = {}
-            if (!this.state.atBatchDeletionPage) {
+            if (!this.props.atBatchDeletionPage) {
                 row.organisationUnit = le.organisationUnit.displayName
                 row.organisationUnitId = le.organisationUnit.id
             }
@@ -219,14 +198,14 @@ class LockException extends Page {
     }
 
     dataTableColumns() {
-        if (this.state.atBatchDeletionPage) {
+        if (this.props.atBatchDeletionPage) {
             return ['dataSet', 'period']
         }
         return ['organisationUnit', 'dataSet', 'period']
     }
 
     header() {
-        if (this.state.atBatchDeletionPage) {
+        if (this.props.atBatchDeletionPage) {
             return (
                 <div className={styles.headerContainer}>
                     <h1 className={styles.header}>
@@ -279,7 +258,7 @@ class LockException extends Page {
     }
 
     areActionsDisabled() {
-        return this.state.loading
+        return this.props.loading
     }
 
     addLockExceptionEnabled() {
@@ -291,19 +270,7 @@ class LockException extends Page {
     }
 
     componentDidMount() {
-        this.loadLockExceptionsForPager(this.state.pager)
-    }
-
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (LockException.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
+        this.loadLockExceptionsForPager(LockException.initialPager)
     }
 
     loadLockExceptionsForPager(pager, userAction) {
@@ -317,10 +284,10 @@ class LockException extends Page {
             '&order=name:asc'
 
         // request to GET lock exceptions
-        if (userAction || (!this.state.loading && !this.state.loaded)) {
+        if (userAction || (!this.props.loading && !this.props.loaded)) {
             // Keep the previous message visible (p.e. deleting lock exception || add lock exception)
             this.context.updateAppState(
-                this.state.deleteInProgress || this.state.addInProgress
+                this.props.deleteInProgress || this.props.addInProgress
                     ? {
                           atBatchDeletionPage: false,
                           loaded: false,
@@ -346,7 +313,7 @@ class LockException extends Page {
                         let loadedState
 
                         // If deleting a lock exception, show a success message instead of hiding the loading
-                        if (this.state.deleteInProgress) {
+                        if (this.props.deleteInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -356,9 +323,9 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.state.deleteInProgress = false
+                            this.props.deleteInProgress = false
                             // If adding a lock exception, show a success message instead of hiding the loading
-                        } else if (this.state.addInProgress) {
+                        } else if (this.props.addInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -368,7 +335,7 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.state.addInProgress = false
+                            this.props.addInProgress = false
                         } else {
                             loadedState = {
                                 showSnackbar: false,
@@ -482,7 +449,7 @@ class LockException extends Page {
 
     handlePageChange = page => {
         const pager = {
-            ...this.state.pager,
+            ...this.props.pager,
             page,
         }
         this.loadLockExceptionsForPager(pager, true)
@@ -490,14 +457,14 @@ class LockException extends Page {
 
     handlePageSizeChange = pageSize => {
         const pager = {
-            ...this.state.pager,
+            ...this.props.pager,
             pageSize,
         }
         this.loadLockExceptionsForPager(pager, true)
     }
 
     backToLockExceptions() {
-        this.loadLockExceptionsForPager(this.state.pager, true)
+        this.loadLockExceptionsForPager(this.props.pager, true)
     }
 
     goToBatchDeletionPage() {
@@ -519,7 +486,7 @@ class LockException extends Page {
                     message: i18n.t(i18nKeys.lockException.loadingMessage),
                 },
                 pageState: {
-                    ...this.state,
+                    ...this.props,
                     loading: true,
                 },
             })
@@ -529,12 +496,12 @@ class LockException extends Page {
                 .then(() => {
                     if (this.isPageMounted()) {
                         const newPageState = {
-                            ...this.state,
+                            ...this.props,
                             loading: false,
                         }
 
-                        if (this.state.atBatchDeletionPage) {
-                            newPageState.lockExceptions = this.state.lockExceptions.filter(
+                        if (this.props.atBatchDeletionPage) {
+                            newPageState.lockExceptions = this.props.lockExceptions.filter(
                                 existingLockException =>
                                     existingLockException.periodId !==
                                         le.periodId ||
@@ -553,7 +520,7 @@ class LockException extends Page {
                                 pageState: newPageState,
                             })
                         } else {
-                            this.state.deleteInProgress = true
+                            this.props.deleteInProgress = true
                             this.context.updateAppState({
                                 pageState: newPageState,
                             })
@@ -578,7 +545,7 @@ class LockException extends Page {
                                 message: messageError,
                             },
                             pageState: {
-                                ...this.state,
+                                ...this.props,
                                 loading: false,
                             },
                         })
@@ -645,7 +612,7 @@ class LockException extends Page {
                                 message: messageError,
                             },
                             pageState: {
-                                ...this.state,
+                                ...this.props,
                                 loading: false,
                             },
                         })
@@ -700,7 +667,7 @@ class LockException extends Page {
                                 loading: false,
                             },
                         })
-                        this.state.addInProgress = true
+                        this.props.addInProgress = true
                         this.loadLockExceptionsForPager(
                             LockException.initialPager,
                             false
@@ -721,7 +688,7 @@ class LockException extends Page {
                                 message: messageError,
                             },
                             pageState: {
-                                ...this.state,
+                                ...this.props,
                                 loading: false,
                             },
                         })
@@ -732,7 +699,7 @@ class LockException extends Page {
 
     render() {
         const paginationProps = {
-            ...this.state.pager,
+            ...this.props.pager,
             onPageSizeChange: this.handlePageSizeChange,
             onPageChange: this.handlePageChange,
         }
@@ -757,22 +724,22 @@ class LockException extends Page {
         return (
             <div className={styles.lockExceptionsTable}>
                 {this.header()}
-                {this.state.lockExceptions &&
-                this.state.lockExceptions.length ? (
+                {this.props.lockExceptions &&
+                this.props.lockExceptions.length ? (
                     <div>
                         {!this.areActionsDisabled() &&
-                            !this.state.atBatchDeletionPage && (
+                            !this.props.atBatchDeletionPage && (
                                 <div className={styles.pagination}>
                                     <Pagination {...paginationProps} />
                                 </div>
                             )}
                         <LockExceptionsTable
                             columns={this.dataTableColumns()}
-                            rows={this.state.lockExceptions}
+                            rows={this.props.lockExceptions}
                             onRemoveLockException={this.removeLockException}
                         />
                         {!this.areActionsDisabled() &&
-                            !this.state.atBatchDeletionPage && (
+                            !this.props.atBatchDeletionPage && (
                                 <div
                                     className={classNames(
                                         styles.pagination,
@@ -786,7 +753,7 @@ class LockException extends Page {
                 ) : (
                     <Card
                         style={{
-                            display: !this.state.loading ? 'block' : 'none',
+                            display: !this.props.loading ? 'block' : 'none',
                         }}
                     >
                         <CardText>
@@ -823,7 +790,7 @@ class LockException extends Page {
                             />
                         </Dialog>
                     )}
-                {!this.state.atBatchDeletionPage && !this.areActionsDisabled() && (
+                {!this.props.atBatchDeletionPage && !this.areActionsDisabled() && (
                     <FloatingActionButton
                         id={'addExceptionButtonId'}
                         style={jsStyles.addButton}

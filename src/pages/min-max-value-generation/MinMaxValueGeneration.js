@@ -21,14 +21,6 @@ const orgIdFromPath = path => {
 }
 
 class MinMaxValueGeneration extends Page {
-    static STATE_PROPERTIES = [
-        'selected',
-        'dataSets',
-        'roots',
-        'loading',
-        'dataSetsSelectedCount',
-    ]
-
     constructor() {
         super()
 
@@ -36,7 +28,6 @@ class MinMaxValueGeneration extends Page {
             selected: [],
             dataSets: null,
             roots: null,
-            loading: false,
             dataSetsSelectedCount: 0,
         }
     }
@@ -45,21 +36,9 @@ class MinMaxValueGeneration extends Page {
         this.loadData()
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (MinMaxValueGeneration.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
-    }
-
     isUserInteractionDisabled() {
         return (
-            this.state.loading ||
+            this.props.loading ||
             this.state.dataSets == null ||
             this.state.roots === null
         )
@@ -106,7 +85,6 @@ class MinMaxValueGeneration extends Page {
                                 ),
                             },
                             pageState: {
-                                ...this.state,
                                 loading: false,
                             },
                         })
@@ -148,7 +126,6 @@ class MinMaxValueGeneration extends Page {
                 ),
             },
             pageState: {
-                ...this.state,
                 loading: true,
             },
         })
@@ -170,7 +147,6 @@ class MinMaxValueGeneration extends Page {
                             ),
                         },
                         pageState: {
-                            ...this.state,
                             loading: false,
                         },
                     })
@@ -185,7 +161,6 @@ class MinMaxValueGeneration extends Page {
                             message: i18n.t(i18nKeys.messages.unexpectedError),
                         },
                         pageState: {
-                            ...this.state,
                             loading: false,
                         },
                     })
@@ -206,7 +181,6 @@ class MinMaxValueGeneration extends Page {
                 message: i18n.t(i18nKeys.minMaxValueGeneration.removingMessage),
             },
             pageState: {
-                ...this.state,
                 loading: true,
             },
         })
@@ -226,7 +200,6 @@ class MinMaxValueGeneration extends Page {
                             ),
                         },
                         pageState: {
-                            ...this.state,
                             loading: false,
                         },
                     })
@@ -241,7 +214,6 @@ class MinMaxValueGeneration extends Page {
                             message: i18n.t(i18nKeys.messages.unexpectedError),
                         },
                         pageState: {
-                            ...this.state,
                             loading: false,
                         },
                     })

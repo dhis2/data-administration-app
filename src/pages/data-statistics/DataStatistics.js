@@ -35,18 +35,6 @@ TableCard.propTypes = {
 }
 
 class DataStatistics extends Page {
-    static STATE_PROPERTIES = ['tables', 'loaded', 'loading']
-
-    constructor() {
-        super()
-
-        this.state = {
-            tables: {},
-            loaded: false,
-            loading: false,
-        }
-    }
-
     // auxiliar functions
     static objectCountsTableObjectToShowFromServerResponse = objectCountsResponse => {
         if (objectCountsResponse) {
@@ -193,10 +181,6 @@ class DataStatistics extends Page {
     }
 
     componentDidMount() {
-        if (this.state.loading || this.state.loaded) {
-            return
-        }
-
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -271,26 +255,14 @@ class DataStatistics extends Page {
             })
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (DataStatistics.STATE_PROPERTIES.includes(property)) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        this.setState(nextState)
-    }
-
     hasTables = () =>
-        this.state.tables &&
-        this.state.tables.constructor === Object &&
-        Object.keys(this.state.tables).length > 0
+        this.props.tables &&
+        this.props.tables.constructor === Object &&
+        Object.keys(this.props.tables).length > 0
 
     render() {
         const noContent = (
-            <Card style={{ display: !this.state.loading ? 'block' : 'none' }}>
+            <Card style={{ display: !this.props.loading ? 'block' : 'none' }}>
                 <CardText>
                     {i18n.t(i18nKeys.dataStatistics.noDataMessage)}
                 </CardText>
@@ -310,63 +282,63 @@ class DataStatistics extends Page {
                 {this.hasTables() ? (
                     <div className="row">
                         <div className="col-md-6">
-                            {this.state.tables[OBJECT_COUNTS_KEY] && (
+                            {this.props.tables[OBJECT_COUNTS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[OBJECT_COUNTS_KEY]
+                                        this.props.tables[OBJECT_COUNTS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[OBJECT_COUNTS_KEY]
+                                        this.props.tables[OBJECT_COUNTS_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[ACTIVE_USERS_KEY] && (
+                            {this.props.tables[ACTIVE_USERS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[ACTIVE_USERS_KEY]
+                                        this.props.tables[ACTIVE_USERS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[ACTIVE_USERS_KEY]
+                                        this.props.tables[ACTIVE_USERS_KEY]
                                             .elements
                                     }
                                 />
                             )}
                         </div>
                         <div className="col-md-6">
-                            {this.state.tables[USER_INVITATIONS_KEY] && (
+                            {this.props.tables[USER_INVITATIONS_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[USER_INVITATIONS_KEY]
+                                        this.props.tables[USER_INVITATIONS_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[USER_INVITATIONS_KEY]
+                                        this.props.tables[USER_INVITATIONS_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[DATA_VALUE_COUNT_KEY] && (
+                            {this.props.tables[DATA_VALUE_COUNT_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[DATA_VALUE_COUNT_KEY]
+                                        this.props.tables[DATA_VALUE_COUNT_KEY]
                                             .label
                                     }
                                     elements={
-                                        this.state.tables[DATA_VALUE_COUNT_KEY]
+                                        this.props.tables[DATA_VALUE_COUNT_KEY]
                                             .elements
                                     }
                                 />
                             )}
-                            {this.state.tables[EVENT_COUNT_KEY] && (
+                            {this.props.tables[EVENT_COUNT_KEY] && (
                                 <TableCard
                                     label={
-                                        this.state.tables[EVENT_COUNT_KEY].label
+                                        this.props.tables[EVENT_COUNT_KEY].label
                                     }
                                     elements={
-                                        this.state.tables[EVENT_COUNT_KEY]
+                                        this.props.tables[EVENT_COUNT_KEY]
                                             .elements
                                     }
                                 />
