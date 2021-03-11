@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Card, CardText, CardHeader } from 'material-ui/Card'
 import { FontIcon } from 'material-ui'
+import { Card, CardText, CardHeader } from 'material-ui/Card'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 import i18n from '../../../locales'
 import styles from './DataIntegrityCard.module.css'
 

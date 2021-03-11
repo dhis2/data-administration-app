@@ -1,62 +1,37 @@
-import React from 'react'
-import { GridTile } from 'material-ui/GridList'
-import { Card, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
-import Checkbox from 'material-ui/Checkbox'
 import classNames from 'classnames'
 import {
     LOADING,
     SUCCESS,
     ERROR,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import i18n from '../../locales'
+import { Card, CardText } from 'material-ui/Card'
+import Checkbox from 'material-ui/Checkbox'
+import { GridTile } from 'material-ui/GridList'
+import RaisedButton from 'material-ui/RaisedButton'
+import React from 'react'
+import PageHelper from '../../components/page-helper/PageHelper'
 import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
 import Page from '../Page'
+import styles from '../Page.module.css'
+import { getDocsKeyForSection } from '../sections.conf'
 import {
     maintenanceCheckboxes,
     PAGE_TITLE,
     MAINTENANCE_ENDPOINT,
 } from './maintenance.conf'
-import { getDocsKeyForSection } from '../sections.conf'
-import PageHelper from '../../components/page-helper/PageHelper'
-import styles from '../Page.module.css'
 
 class Maintenance extends Page {
-    static STATE_PROPERTIES = ['checkboxes', 'loading']
-
     constructor() {
         super()
 
         const checkboxes = {}
-
-        for (let i = 0; i < maintenanceCheckboxes.length; i++) {
-            const checkbox = maintenanceCheckboxes[i]
+        for (const checkbox of Object.values(maintenanceCheckboxes)) {
             checkboxes[checkbox.key] = { checked: false }
         }
 
         this.state = {
-            intervalId: null,
             checkboxes,
-            loading: false,
-        }
-
-        this.performMaintenance = this.performMaintenance.bind(this)
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                Maintenance.STATE_PROPERTIES.includes(property)
-            ) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        if (nextState !== {}) {
-            this.setState(nextState)
         }
     }
 
@@ -104,7 +79,7 @@ class Maintenance extends Page {
     }
 
     areActionsDisabled() {
-        return this.state.loading
+        return this.props.loading
     }
 
     buildFormData() {
@@ -120,7 +95,7 @@ class Maintenance extends Page {
         return formData
     }
 
-    performMaintenance() {
+    performMaintenance = () => {
         const api = this.context.d2.Api.getApi()
         const formData = this.buildFormData()
 

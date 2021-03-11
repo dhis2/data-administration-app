@@ -1,5 +1,5 @@
-import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Component } from 'react'
 
 class Page extends Component {
     static propTypes = {
@@ -13,7 +13,7 @@ class Page extends Component {
         updateAppState: PropTypes.func,
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.pageMounted = true
 
         // update section on side bar

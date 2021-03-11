@@ -1,4 +1,8 @@
-import React from 'react'
+import classNames from 'classnames'
+import {
+    ERROR,
+    LOADING,
+} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import {
     Card,
     CardText,
@@ -8,15 +12,11 @@ import {
     MenuItem,
     RaisedButton,
 } from 'material-ui'
-import classNames from 'classnames'
-import {
-    ERROR,
-    LOADING,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import Page from '../Page'
+import React from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
 import PageHelper from '../../components/page-helper/PageHelper'
-import { getDocsKeyForSection } from '../sections.conf'
+import { i18nKeys } from '../../i18n'
+import i18n from '../../locales'
 import {
     PULL_INTERVAL,
     ANALYTICS_TABLES_ENDPOINT,
@@ -26,19 +26,11 @@ import {
     analyticsCheckboxes,
     lastYearElements,
 } from '../analytics/analytics.conf'
-import i18n from '../../locales'
-import { i18nKeys } from '../../i18n'
+import Page from '../Page'
 import styles from '../Page.module.css'
+import { getDocsKeyForSection } from '../sections.conf'
 
 class Analytics extends Page {
-    static STATE_PROPERTIES = [
-        'checkboxes',
-        'loading',
-        'lastYears',
-        'notifications',
-        'intervalId',
-    ]
-
     constructor() {
         super()
 
@@ -50,9 +42,7 @@ class Analytics extends Page {
 
         this.state = {
             checkboxes,
-            loading: false,
             lastYears: DEFAULT_LAST_YEARS,
-            notifications: [],
             intervalId: null,
         }
 
@@ -64,23 +54,6 @@ class Analytics extends Page {
 
     componentDidMount() {
         this.requestTaskSummary()
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const nextState = {}
-
-        Object.keys(nextProps).forEach(property => {
-            if (
-                nextProps.hasOwnProperty(property) &&
-                Analytics.STATE_PROPERTIES.includes(property)
-            ) {
-                nextState[property] = nextProps[property]
-            }
-        })
-
-        if (nextState !== {}) {
-            this.setState(nextState)
-        }
     }
 
     componentWillUnmount() {
@@ -125,7 +98,7 @@ class Analytics extends Page {
     }
 
     areActionsDisabled() {
-        return this.state.loading
+        return this.props.loading
     }
 
     buildFormData() {
@@ -179,7 +152,12 @@ class Analytics extends Page {
     }
 
     updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const taskSummary = taskSummaryResponse || []
+        const taskSummary = []
+        if (taskSummaryResponse) {
+            for (const notifications of Object.values(taskSummaryResponse)) {
+                taskSummary.concat(notifications)
+            }
+        }
         const completed = !this.isJobInProgress(taskSummary)
 
         if (completed) {
@@ -197,8 +175,8 @@ class Analytics extends Page {
 
     getUpdatedNotifications(taskSummary = []) {
         // Notification table needs to be updated when new tasks are added
-        if (taskSummary.length <= this.state.notifications.length) {
-            return this.state.notifications
+        if (taskSummary.length <= this.props.notifications.length) {
+            return this.props.notifications
         }
 
         const lastIndex = taskSummary.length - 1
@@ -348,11 +326,11 @@ class Analytics extends Page {
                         />
                     </CardText>
                 </Card>
-                {this.state.notifications.length > 0 && (
+                {(this.props.notifications || []).length > 0 && (
                     <Card className={styles.cardContainer}>
                         <CardText>
                             <NotificationsTable
-                                notifications={this.state.notifications}
+                                notifications={this.props.notifications}
                                 animateIncomplete
                             />
                         </CardText>

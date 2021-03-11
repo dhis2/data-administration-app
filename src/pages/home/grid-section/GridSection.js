@@ -1,23 +1,23 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import { GridTile } from 'material-ui/GridList'
-import FontIcon from 'material-ui/FontIcon'
 import classNames from 'classnames'
+import FontIcon from 'material-ui/FontIcon'
+import { GridTile } from 'material-ui/GridList'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
+import { Link } from 'react-router-dom'
 import i18n from '../../../locales'
 import styles from './GridSection.module.css'
 
 class GridSection extends PureComponent {
     static propTypes = {
         section: PropTypes.shape({
-            key: PropTypes.string,
-            path: PropTypes.string,
             info: PropTypes.shape({
-                label: PropTypes.string,
+                actionText: PropTypes.string,
                 description: PropTypes.string,
                 icon: PropTypes.string,
-                actionText: PropTypes.string,
+                label: PropTypes.string,
             }),
+            key: PropTypes.string,
+            path: PropTypes.string,
         }).isRequired,
     }
 
