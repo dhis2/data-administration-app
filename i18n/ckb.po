@@ -1,13 +1,9 @@
 # 
-# Translators:
-# phil_dhis2, 2021
-# 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-12-11T10:34:51.179Z\n"
+"POT-Creation-Date: 2021-03-05T15:17:58.664Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,5 +11,11 @@ msgstr ""
 "Language: ckb\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Data Administration"
-msgstr "بةريوةبردني داتا"
+msgid "Data set"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+msgid "Organisation unit"
+msgstr ""
