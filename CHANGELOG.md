@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/dhis2/data-administration-app/compare/v1.0.2...v1.1.0) (2021-03-16)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([fbac247](https://github.com/dhis2/data-administration-app/commit/fbac247b59a16a755c5125ac200fa8429cef749c))
+* **translations:** sync translations from transifex (master) ([98e9f01](https://github.com/dhis2/data-administration-app/commit/98e9f017fe28cace95081ac48cb9c8de3e00516b))
+
+
+### Features
+
+* port to app platform ([#580](https://github.com/dhis2/data-administration-app/issues/580)) ([9b581bb](https://github.com/dhis2/data-administration-app/commit/9b581bb04e0a5ed23a4ff63258c4d005056e2657))
+* upgrade to @dhis2/ui v6 and bump other dependency versions ([#585](https://github.com/dhis2/data-administration-app/issues/585)) ([318a595](https://github.com/dhis2/data-administration-app/commit/318a59554365495d986a202374c3ff9dcd174dcd))
+
 ## [1.0.2](https://github.com/dhis2/data-administration-app/compare/v1.0.1...v1.0.2) (2021-02-15)
 
 
