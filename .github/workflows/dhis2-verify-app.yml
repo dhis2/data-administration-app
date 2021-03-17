@@ -11,6 +11,7 @@ env:
     GIT_COMMITTER_EMAIL: 'apps@dhis2.org'
     GH_TOKEN: ${{secrets.DHIS2_BOT_GITHUB_TOKEN}}
     CI: true
+    D2_VERBOSE: true
 
 jobs:
     install:
@@ -101,9 +102,7 @@ jobs:
 
             - uses: dhis2/deploy-build@master
               with:
-                  # uncomment following line for monorepo apps:
-                  #cwd: ./packages/app
-                  build-dir: build
+                  build-dir: build/app
                   github-token: ${{ env.GH_TOKEN }}
 
     release:
