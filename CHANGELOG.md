@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/dhis2/data-administration-app/compare/v1.1.0...v1.1.1) (2021-03-25)
+
+
+### Bug Fixes
+
+* restore log UI for analytics and resource table generation (DHIS2-7726) ([#593](https://github.com/dhis2/data-administration-app/issues/593)) ([a3fbe19](https://github.com/dhis2/data-administration-app/commit/a3fbe19ccdc8ce4772930ff3173ccd2472ba9eb9))
+
 # [1.1.0](https://github.com/dhis2/data-administration-app/compare/v1.0.2...v1.1.0) (2021-03-16)
 
 
