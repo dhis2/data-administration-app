@@ -24,12 +24,9 @@ class ResourceTable extends Page {
         super()
 
         this.state = {
-            intervalId: null,
+            taskId: null,
+            notifications: [],
         }
-
-        this.initResourceTablesGeneration = this.initResourceTablesGeneration.bind(
-            this
-        )
     }
 
     componentDidMount() {
@@ -39,14 +36,28 @@ class ResourceTable extends Page {
     componentWillUnmount() {
         super.componentWillUnmount()
 
-        this.cancelPoollingRequests()
+        this.stopTaskProgressPolling()
     }
 
-    cancelPoollingRequests() {
-        clearInterval(this.state.intervalId)
+    /*
+     * Polling
+     */
+    startTaskProgressPolling = () => {
+        this.intervalId = setInterval(() => {
+            this.requestTaskProgress()
+        }, PULL_INTERVAL)
     }
 
+    stopTaskProgressPolling() {
+        clearInterval(this.intervalId)
+        this.intervalId = null
+    }
+
+    /*
+     * State utilities
+     */
     setLoadingPageState() {
+        this.setState({ notifications: [] })
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -54,17 +65,29 @@ class ResourceTable extends Page {
             },
             pageState: {
                 loading: true,
-                notifications: [],
+            },
+        })
+    }
+
+    unsetLoadingPageState() {
+        this.context.updateAppState({
+            showSnackbar: false,
+            snackbarConf: {
+                type: LOADING,
+            },
+            pageState: {
+                loading: false,
             },
         })
     }
 
     setLoadedPageWithErrorState(error) {
+        console.error(error)
         const messageError =
             error && error.message
                 ? error.message
-                : i18n.t(i18nKeys.resourceTables.unexpectedError)
-        this.cancelPoollingRequests()
+                : i18n.t(i18nKeys.resourcetables.unexpectedError)
+        this.stopTaskProgressPolling()
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -72,7 +95,6 @@ class ResourceTable extends Page {
                 message: messageError,
             },
             pageState: {
-                loaded: true,
                 loading: false,
             },
         })
@@ -88,19 +110,21 @@ class ResourceTable extends Page {
     isJobInProgress = jobNotifications =>
         jobNotifications.every(notification => !notification.completed)
 
-    initResourceTablesGeneration() {
+    /*
+     * API requests
+     */
+    initResourceTablesGeneration = () => {
         const api = this.context.d2.Api.getApi()
-        this.setLoadingPageState()
-        api.post(RESOURCE_TABLES_ENDPOINT)
-            .then(response => {
-                if (this.isPageMounted() && response) {
-                    const intervalId = setInterval(() => {
-                        this.requestTaskSummary()
-                    }, PULL_INTERVAL)
 
-                    this.setState({
-                        intervalId,
-                    })
+        this.setLoadingPageState()
+
+        api.post(RESOURCE_TABLES_ENDPOINT)
+            .then(({ response }) => {
+                if (this.isPageMounted() && response) {
+                    this.setState(
+                        { taskId: response.id },
+                        this.startTaskProgressPolling
+                    )
                 }
             })
             .catch(e => {
@@ -108,59 +132,6 @@ class ResourceTable extends Page {
                     this.setLoadedPageWithErrorState(e)
                 }
             })
-    }
-
-    updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const taskSummary = []
-        if (taskSummaryResponse) {
-            for (const notifications of Object.values(taskSummaryResponse)) {
-                taskSummary.concat(notifications)
-            }
-        }
-        // reverse to sort oldest-newest
-        const notifications = taskSummary.reverse()
-        const completed = !this.isJobInProgress(notifications)
-
-        if (completed) {
-            this.cancelPoollingRequests()
-        }
-
-        this.context.updateAppState({
-            showSnackbar: !completed,
-            pageState: {
-                // This process only has 2 steps. When the first comes in
-                // it is effectively the in-progress task
-                // When the process is completed we mark both steps as completed
-                notifications: !completed
-                    ? notifications
-                    : notifications.map(x => ({ ...x, completed: true })),
-                loading: !completed,
-            },
-        })
-    }
-
-    verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
-        const taskSummary = taskSummaryResponse || []
-        if (
-            taskSummaryResponse &&
-            taskSummaryResponse.length &&
-            this.isJobInProgress(taskSummary)
-        ) {
-            const intervalId = this.startsPooling()
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                },
-                pageState: {
-                    // reverse to sort oldest-newest
-                    notifications: taskSummary.reverse(),
-                    loading: true,
-                    intervalId,
-                },
-            })
-        }
     }
 
     requestTaskSummary() {
@@ -173,15 +144,20 @@ class ResourceTable extends Page {
                     return
                 }
 
-                // showing current job
-                if (this.isAnalyzingTables()) {
-                    this.updateStateForInProgressJobAccordingTaskSummaryResponse(
-                        taskSummaryResponse
-                    )
-                    // so far no jobs is being processed, lets check if server is has any in progress job
-                } else {
-                    this.verifyInProgressJobsForTaskSummaryResponseAndUpdateState(
-                        taskSummaryResponse
+                const taskId = this.getActiveTaskIdFromSummary(
+                    taskSummaryResponse
+                )
+
+                if (taskId) {
+                    this.setLoadingPageState()
+                    this.setState(
+                        {
+                            taskId,
+                            notifications: this.getUpdatedNotifications(
+                                taskSummaryResponse[taskId]
+                            ),
+                        },
+                        this.startTaskProgressPolling
                     )
                 }
             })
@@ -190,6 +166,84 @@ class ResourceTable extends Page {
                     this.setLoadedPageWithErrorState(e)
                 }
             })
+    }
+
+    requestTaskProgress = () => {
+        const api = this.context.d2.Api.getApi()
+
+        api.get(`${RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`)
+            .then(taskNotifications => {
+                const completed = this.isTaskCompleted(taskNotifications)
+
+                if (completed) {
+                    this.stopTaskProgressPolling()
+                    this.unsetLoadingPageState()
+                }
+
+                this.setState({
+                    notifications: this.getUpdatedNotifications(
+                        taskNotifications
+                    ),
+                })
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
+    }
+
+    /*
+     * Task notification helpers
+     */
+    getUpdatedNotifications(taskNotifications = []) {
+        // Notification table needs to be updated when new tasks are added
+        if (taskNotifications.length <= this.state.notifications.length) {
+            return this.state.notifications
+        }
+
+        const lastIndex = taskNotifications.length - 1
+
+        // Reverse to sort oldest-newest
+        // Assumption: all tasks are completed, apart from the last one,
+        // which is the in-progress task.
+        // Exception is when the most recent task comes back as completed
+        // this indicates the entire process is done, so we respect that completed status.
+        return taskNotifications.reverse().map((x, i) => ({
+            ...x,
+            completed: x.completed || i < lastIndex,
+        }))
+    }
+
+    getActiveTaskIdFromSummary(taskSummaryResponse) {
+        const { taskId } = Object.entries(taskSummaryResponse).reduce(
+            (currLatestTask, [taskId, taskNotifications]) => {
+                // First notification is last array item, so it's timestamp represents the task start
+                const firstTaskNotification =
+                    taskNotifications[taskNotifications.length - 1]
+                const time = new Date(firstTaskNotification.time)
+
+                if (
+                    !this.isTaskCompleted(taskNotifications) &&
+                    time > currLatestTask.time
+                ) {
+                    return { taskId, time }
+                }
+
+                return currLatestTask
+            },
+            {
+                taskId: null,
+                time: new Date(0),
+            }
+        )
+
+        return taskId
+    }
+
+    isTaskCompleted(taskNotifications) {
+        // First array item is most recent notification, which can be used to read the completed prop for the entire task
+        return taskNotifications[0].completed
     }
 
     render() {
@@ -320,11 +374,11 @@ class ResourceTable extends Page {
                         />
                     </CardText>
                 </Card>
-                {(this.props.notifications || []).length > 0 && (
+                {(this.state.notifications || []).length > 0 && (
                     <Card className={pageStyles.cardContainer}>
                         <CardText>
                             <NotificationsTable
-                                notifications={this.props.notifications}
+                                notifications={this.state.notifications}
                                 animateIncomplete
                             />
                         </CardText>
