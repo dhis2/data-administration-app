@@ -229,7 +229,7 @@ class Analytics extends Page {
     getActiveTaskIdFromSummary(taskSummaryResponse) {
         const { taskId } = Object.entries(taskSummaryResponse).reduce(
             (currLatestTask, [taskId, taskNotifications]) => {
-                // First notification is last array item, so it's timestamp represents the task start
+                // First notification is last array item, so its timestamp represents the task start
                 const firstTaskNotification =
                     taskNotifications[taskNotifications.length - 1]
                 const time = new Date(firstTaskNotification.time)
