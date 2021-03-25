@@ -43,13 +43,10 @@ class Analytics extends Page {
         this.state = {
             checkboxes,
             lastYears: DEFAULT_LAST_YEARS,
-            intervalId: null,
+            taskId: null,
+            notifications: [],
         }
-
-        this.initAnalyticsTablesGeneration = this.initAnalyticsTablesGeneration.bind(
-            this
-        )
-        this.onChangeLastYears = this.onChangeLastYears.bind(this)
+        this.intervalId = null
     }
 
     componentDidMount() {
@@ -59,14 +56,28 @@ class Analytics extends Page {
     componentWillUnmount() {
         super.componentWillUnmount()
 
-        this.cancelPoollingRequests()
+        this.stopTaskProgressPolling()
     }
 
-    cancelPoollingRequests() {
-        clearInterval(this.state.intervalId)
+    /*
+     * Polling
+     */
+    startTaskProgressPolling = () => {
+        this.intervalId = setInterval(() => {
+            this.requestTaskProgress()
+        }, PULL_INTERVAL)
     }
 
+    stopTaskProgressPolling() {
+        clearInterval(this.intervalId)
+        this.intervalId = null
+    }
+
+    /*
+     * State utilities
+     */
     setLoadingPageState() {
+        this.setState({ notifications: [] })
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -74,17 +85,29 @@ class Analytics extends Page {
             },
             pageState: {
                 loading: true,
-                notifications: [],
+            },
+        })
+    }
+
+    unsetLoadingPageState() {
+        this.context.updateAppState({
+            showSnackbar: false,
+            snackbarConf: {
+                type: LOADING,
+            },
+            pageState: {
+                loading: false,
             },
         })
     }
 
     setLoadedPageWithErrorState(error) {
+        console.error(error)
         const messageError =
             error && error.message
                 ? error.message
                 : i18n.t(i18nKeys.analytics.unexpectedError)
-        this.cancelPoollingRequests()
+        this.stopTaskProgressPolling()
         this.context.updateAppState({
             showSnackbar: true,
             snackbarConf: {
@@ -97,6 +120,146 @@ class Analytics extends Page {
         })
     }
 
+    /*
+     * API requests
+     */
+    initAnalyticsTablesGeneration = () => {
+        const api = this.context.d2.Api.getApi()
+        const formData = this.buildFormData()
+
+        this.setLoadingPageState()
+
+        api.post(ANALYTICS_TABLES_ENDPOINT, formData)
+            .then(({ response }) => {
+                if (this.isPageMounted() && response) {
+                    this.setState(
+                        { taskId: response.id },
+                        this.startTaskProgressPolling
+                    )
+                }
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
+    }
+
+    requestTaskSummary() {
+        const api = this.context.d2.Api.getApi()
+
+        api.get(ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT)
+            .then(taskSummaryResponse => {
+                /* not mounted finishes */
+                if (!this.isPageMounted()) {
+                    return
+                }
+
+                const taskId = this.getActiveTaskIdFromSummary(
+                    taskSummaryResponse
+                )
+
+                if (taskId) {
+                    this.setLoadingPageState()
+                    this.setState(
+                        {
+                            taskId,
+                            notifications: this.getUpdatedNotifications(
+                                taskSummaryResponse[taskId]
+                            ),
+                        },
+                        this.startTaskProgressPolling
+                    )
+                }
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
+    }
+
+    requestTaskProgress = () => {
+        const api = this.context.d2.Api.getApi()
+
+        api.get(`${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`)
+            .then(taskNotifications => {
+                const completed = this.isTaskCompleted(taskNotifications)
+
+                if (completed) {
+                    this.stopTaskProgressPolling()
+                    this.unsetLoadingPageState()
+                }
+
+                this.setState({
+                    notifications: this.getUpdatedNotifications(
+                        taskNotifications
+                    ),
+                })
+            })
+            .catch(e => {
+                if (this.isPageMounted()) {
+                    this.setLoadedPageWithErrorState(e)
+                }
+            })
+    }
+
+    /*
+     * Task notification helpers
+     */
+    getUpdatedNotifications(taskNotifications = []) {
+        // Notification table needs to be updated when new tasks are added
+        if (taskNotifications.length <= this.state.notifications.length) {
+            return this.state.notifications
+        }
+
+        const lastIndex = taskNotifications.length - 1
+
+        // Reverse to sort oldest-newest
+        // Assumption: all tasks are completed, apart from the last one,
+        // which is the in-progress task.
+        // Exception is when the most recent task comes back as completed
+        // this indicates the entire process is done, so we respect that completed status.
+        return taskNotifications.reverse().map((x, i) => ({
+            ...x,
+            completed: x.completed || i < lastIndex,
+        }))
+    }
+
+    getActiveTaskIdFromSummary(taskSummaryResponse) {
+        const { taskId } = Object.entries(taskSummaryResponse).reduce(
+            (currLatestTask, [taskId, taskNotifications]) => {
+                // First notification is last array item, so its timestamp represents the task start
+                const firstTaskNotification =
+                    taskNotifications[taskNotifications.length - 1]
+                const time = new Date(firstTaskNotification.time)
+
+                if (
+                    !this.isTaskCompleted(taskNotifications) &&
+                    time > currLatestTask.time
+                ) {
+                    return { taskId, time }
+                }
+
+                return currLatestTask
+            },
+            {
+                taskId: null,
+                time: new Date(0),
+            }
+        )
+
+        return taskId
+    }
+
+    isTaskCompleted(taskNotifications) {
+        // First array item is most recent notification, which can be used to read the completed prop for the entire task
+        return taskNotifications[0].completed
+    }
+
+    /*
+     * Form
+     */
     areActionsDisabled() {
         return this.props.loading
     }
@@ -118,134 +281,7 @@ class Analytics extends Page {
         return formData
     }
 
-    isAnalyzingTables = () => !!this.state.intervalId
-
-    startsPooling = () =>
-        setInterval(() => {
-            this.requestTaskSummary()
-        }, PULL_INTERVAL)
-
-    isJobInProgress = jobNotifications =>
-        // When the most recent job comes back as completed the whole process is done
-        jobNotifications.every(notification => !notification.completed)
-
-    initAnalyticsTablesGeneration() {
-        const api = this.context.d2.Api.getApi()
-        const formData = this.buildFormData()
-
-        this.setLoadingPageState()
-        api.post(ANALYTICS_TABLES_ENDPOINT, formData)
-            .then(response => {
-                if (this.isPageMounted() && response) {
-                    const intervalId = this.startsPooling()
-
-                    this.setState({
-                        intervalId,
-                    })
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }
-
-    updateStateForInProgressJobAccordingTaskSummaryResponse = taskSummaryResponse => {
-        const taskSummary = []
-        if (taskSummaryResponse) {
-            for (const notifications of Object.values(taskSummaryResponse)) {
-                taskSummary.concat(notifications)
-            }
-        }
-        const completed = !this.isJobInProgress(taskSummary)
-
-        if (completed) {
-            this.cancelPoollingRequests()
-        }
-
-        this.context.updateAppState({
-            showSnackbar: !completed,
-            pageState: {
-                notifications: this.getUpdatedNotifications(taskSummary),
-                loading: !completed,
-            },
-        })
-    }
-
-    getUpdatedNotifications(taskSummary = []) {
-        // Notification table needs to be updated when new tasks are added
-        if (taskSummary.length <= this.props.notifications.length) {
-            return this.props.notifications
-        }
-
-        const lastIndex = taskSummary.length - 1
-
-        // Reverse to sort oldest-newest
-        // Assumption: all tasks are completed, apart from the last one,
-        // which is the in-progress task.
-        // Exception is when the most recent task comes back as completed
-        // this indicates the entire process is done, so we respect that completed status.
-        return taskSummary.reverse().map((x, i) => ({
-            ...x,
-            completed: x.completed || i < lastIndex,
-        }))
-    }
-
-    verifyInProgressJobsForTaskSummaryResponseAndUpdateState = taskSummaryResponse => {
-        if (
-            taskSummaryResponse &&
-            taskSummaryResponse.length &&
-            this.isJobInProgress(taskSummaryResponse)
-        ) {
-            const intervalId = this.startsPooling()
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                },
-                pageState: {
-                    notifications: this.getUpdatedNotifications(
-                        taskSummaryResponse
-                    ),
-                    loading: true,
-                    intervalId,
-                },
-            })
-        }
-    }
-
-    requestTaskSummary() {
-        const api = this.context.d2.Api.getApi()
-
-        api.get(ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT)
-            .then(taskSummaryResponse => {
-                /* not mounted finishes */
-                if (!this.isPageMounted()) {
-                    return
-                }
-
-                // showing current job
-                if (this.isAnalyzingTables()) {
-                    this.updateStateForInProgressJobAccordingTaskSummaryResponse(
-                        taskSummaryResponse
-                    )
-                    // so far no jobs is being processed, lets check if server is has any in progress job
-                } else {
-                    this.verifyInProgressJobsForTaskSummaryResponseAndUpdateState(
-                        taskSummaryResponse
-                    )
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }
-
-    onChangeLastYears(event, index, value) {
+    onChangeLastYears = (event, index, value) => {
         this.setState({
             lastYears: value,
         })
@@ -326,11 +362,11 @@ class Analytics extends Page {
                         />
                     </CardText>
                 </Card>
-                {(this.props.notifications || []).length > 0 && (
+                {(this.state.notifications || []).length > 0 && (
                     <Card className={styles.cardContainer}>
                         <CardText>
                             <NotificationsTable
-                                notifications={this.props.notifications}
+                                notifications={this.state.notifications}
                                 animateIncomplete
                             />
                         </CardText>
