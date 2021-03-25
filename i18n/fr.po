@@ -5,13 +5,15 @@
 # Karoline Tufte Lien <karoline@dhis2.org>, 2020
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2020
 # Edem Kossi <ekossi@hispwca.org>, 2020
+# Yayra Gomado <ygomado@hispwca.org>, 2021
+# Yao Selom SAKA <saka.yao@yahoo.fr>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Edem Kossi <ekossi@hispwca.org>, 2020\n"
+"Last-Translator: Yao Selom SAKA <saka.yao@yahoo.fr>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -444,19 +446,19 @@ msgid "of"
 msgstr "de"
 
 msgid "week"
-msgstr ""
+msgstr "semaine"
 
 msgid "month"
 msgstr "mois"
 
 msgid "year"
-msgstr ""
+msgstr "année"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "bimensuel"
 
 msgid "day"
-msgstr ""
+msgstr "jour"
 
 msgid "jan"
 msgstr ""
@@ -577,7 +579,7 @@ msgid "Min Max removal done"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Chargement d'ensemble de données"
 
 msgid "Organisation Unit Selection"
 msgstr "Sélection de l'unité d'Organisation"
