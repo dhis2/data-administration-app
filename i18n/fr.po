@@ -392,13 +392,13 @@ msgid "Are you sure?"
 msgstr "Etes-vous sûre ?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "CONFIRMER"
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Arborescence des Unités d'organisation..."
 
 msgid "For organisation units within"
 msgstr "Pour les unités d'organisation dans"
@@ -515,7 +515,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "Trimestre"
 
 msgid "Q1"
 msgstr ""
@@ -530,7 +530,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr ""
+msgstr "Semestriel"
 
 msgid "jan-jun"
 msgstr ""
