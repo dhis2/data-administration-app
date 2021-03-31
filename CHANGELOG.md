@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/dhis2/data-administration-app/compare/v1.1.1...v1.1.2) (2021-03-31)
+
+
+### Bug Fixes
+
+* restore grid layout ([#598](https://github.com/dhis2/data-administration-app/issues/598)) ([c0e8ce9](https://github.com/dhis2/data-administration-app/commit/c0e8ce94fbaffbb305545d48a4bfc5625e391c8a))
+
 ## [1.1.1](https://github.com/dhis2/data-administration-app/compare/v1.1.0...v1.1.1) (2021-03-25)
 
 
