@@ -73,7 +73,11 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
                         <TableCell key={column}>{row[column]}</TableCell>
                     ))}
                     <TableCell>
-                        <Button small secondary onClick={onRemoveLockException}>
+                        <Button
+                            small
+                            secondary
+                            onClick={onRemoveLockException.bind(null, row)}
+                        >
                             <FontIcon className="material-icons">
                                 delete
                             </FontIcon>
@@ -287,7 +291,7 @@ class LockException extends Page {
         if (userAction || (!this.props.loading && !this.props.loaded)) {
             // Keep the previous message visible (p.e. deleting lock exception || add lock exception)
             this.context.updateAppState(
-                this.props.deleteInProgress || this.props.addInProgress
+                this.deleteInProgress || this.addInProgress
                     ? {
                           atBatchDeletionPage: false,
                           loaded: false,
@@ -313,7 +317,7 @@ class LockException extends Page {
                         let loadedState
 
                         // If deleting a lock exception, show a success message instead of hiding the loading
-                        if (this.props.deleteInProgress) {
+                        if (this.deleteInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -323,9 +327,9 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.props.deleteInProgress = false
+                            this.deleteInProgress = false
                             // If adding a lock exception, show a success message instead of hiding the loading
-                        } else if (this.props.addInProgress) {
+                        } else if (this.addInProgress) {
                             loadedState = {
                                 showSnackbar: true,
                                 snackbarConf: {
@@ -335,7 +339,7 @@ class LockException extends Page {
                                     ),
                                 },
                             }
-                            this.props.addInProgress = false
+                            this.addInProgress = false
                         } else {
                             loadedState = {
                                 showSnackbar: false,
@@ -521,18 +525,16 @@ class LockException extends Page {
                                 pageState: newPageState,
                             })
                         } else {
-                            this.props.deleteInProgress = true
-                            this.context.updateAppState({
-                                pageState: newPageState,
-                            })
+                            this.deleteInProgress = true
                             this.loadLockExceptionsForPager(
                                 LockException.initialPager,
-                                false
+                                true
                             )
                         }
                     }
                 })
                 .catch(error => {
+                    console.error(error)
                     if (this.isPageMounted()) {
                         const messageError =
                             error && error.message
@@ -668,7 +670,7 @@ class LockException extends Page {
                                 loading: false,
                             },
                         })
-                        this.props.addInProgress = true
+                        this.addInProgress = true
                         this.loadLockExceptionsForPager(
                             LockException.initialPager,
                             false
