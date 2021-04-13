@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/dhis2/data-administration-app/compare/v1.1.2...v1.1.3) (2021-04-13)
+
+
+### Bug Fixes
+
+* **lock-exception:** address item removal bugs ([#606](https://github.com/dhis2/data-administration-app/issues/606)) ([e188eeb](https://github.com/dhis2/data-administration-app/commit/e188eeb8586db6f4f0b37f87e2e72af5d4dc420d))
+* **lock-exception:** ensure atBatchDeletionPage stays true when showing ([#603](https://github.com/dhis2/data-administration-app/issues/603)) ([565354a](https://github.com/dhis2/data-administration-app/commit/565354aa2c53ddab158b232cda04d3f03ba0c97b))
+
 ## [1.1.2](https://github.com/dhis2/data-administration-app/compare/v1.1.1...v1.1.2) (2021-03-31)
 
 
