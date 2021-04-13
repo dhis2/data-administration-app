@@ -525,10 +525,6 @@ class LockException extends Page {
                             })
                         } else {
                             this.deleteInProgress = true
-                            this.context.updateAppState({
-                                loading: true,
-                                loaded: false,
-                            })
                             this.loadLockExceptionsForPager(
                                 LockException.initialPager,
                                 true
