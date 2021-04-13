@@ -405,6 +405,7 @@ class LockException extends Page {
                         showSnackbar: false,
                         pageState: {
                             loaded: true,
+                            atBatchDeletionPage: true,
                             lockExceptions: this.prepareLockExceptionsResponseToDataTable(
                                 response.lockExceptions
                             ),
