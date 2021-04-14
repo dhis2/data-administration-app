@@ -653,10 +653,6 @@ class LockException extends Page {
                     message: i18n.t(i18nKeys.lockException.addingMessage),
                 },
                 pageState: {
-                    showAddDialogOpen: false,
-                    selectedOrgUnits: [],
-                    selectedDataSetId: null,
-                    selectedPeriodId: null,
                     loading: true,
                 },
             })
@@ -675,6 +671,7 @@ class LockException extends Page {
                             LockException.initialPager,
                             false
                         )
+                        this.closeLockExceptionFormDialog()
                     }
                 })
                 .catch(error => {
