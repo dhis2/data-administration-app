@@ -675,6 +675,7 @@ class LockException extends Page {
                             LockException.initialPager,
                             false
                         )
+                        this.closeLockExceptionFormDialog()
                     }
                 })
                 .catch(error => {
