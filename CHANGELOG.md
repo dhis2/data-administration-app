@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/dhis2/data-administration-app/compare/v1.1.3...v1.1.4) (2021-04-14)
+
+
+### Bug Fixes
+
+* close add lock exception dialog after successful API call  ([#610](https://github.com/dhis2/data-administration-app/issues/610)) ([44277bd](https://github.com/dhis2/data-administration-app/commit/44277bd478bfaae4de48809e846a36f9fc1a6988))
+
 ## [1.1.3](https://github.com/dhis2/data-administration-app/compare/v1.1.2...v1.1.3) (2021-04-13)
 
 
