@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/dhis2/data-administration-app/compare/v1.1.4...v1.1.5) (2021-04-16)
+
+
+### Bug Fixes
+
+* **lock exception:** keep pager in state when navigating to batch delete ([#612](https://github.com/dhis2/data-administration-app/issues/612)) ([af11f57](https://github.com/dhis2/data-administration-app/commit/af11f5725497fe8efecc80271b4d8c443712285e))
+
 ## [1.1.4](https://github.com/dhis2/data-administration-app/compare/v1.1.3...v1.1.4) (2021-04-14)
 
 
