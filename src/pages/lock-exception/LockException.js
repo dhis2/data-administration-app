@@ -387,6 +387,7 @@ class LockException extends Page {
         const api = this.context.d2.Api.getApi()
         const url =
             'lockExceptions/combinations?fields=name, period[id,displayName], dataSet[id,displayName]'
+        const pager = this.props.pager
 
         // request to GET lock exception combinations
         this.context.updateAppState({
@@ -399,6 +400,7 @@ class LockException extends Page {
                 atBatchDeletionPage: true,
                 loaded: false,
                 loading: true,
+                pager,
             },
         })
 
@@ -414,6 +416,7 @@ class LockException extends Page {
                                 response.lockExceptions
                             ),
                             loading: false,
+                            pager,
                         },
                     })
                 }
