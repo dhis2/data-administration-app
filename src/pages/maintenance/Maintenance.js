@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import {
     LOADING,
     SUCCESS,
@@ -135,13 +134,7 @@ class Maintenance extends Page {
                 this.setState({ checkboxes })
             }
             return (
-                <GridTile
-                    key={checkbox.key}
-                    className={classNames(
-                        'col-xs-12 col-md-6 col-lg-4',
-                        styles.formControl
-                    )}
-                >
+                <GridTile key={checkbox.key} className={styles.formControl}>
                     <Checkbox
                         label={i18n.t(checkbox.label)}
                         checked={checkboxState}
@@ -166,11 +159,7 @@ class Maintenance extends Page {
                 </h1>
                 <Card id={'maintenanceContentContainerId'}>
                     <CardText>
-                        <div
-                            className={classNames(styles.gridContainer, 'row')}
-                        >
-                            {gridElements}
-                        </div>
+                        <div>{gridElements}</div>
                         <RaisedButton
                             id={'performMaintenanceBtnId'}
                             label={i18n.t(i18nKeys.maintenance.actionButton)}
