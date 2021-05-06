@@ -7,17 +7,9 @@ import Maintenance from './maintenance/Maintenance'
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
 import ResourceTables from './resource-tables/ResourceTables'
 
-export const DATA_INTEGRITY_SECTION_KEY = 'dataIntegrity'
-export const MAINTENANCE_SECTION_KEY = 'maintenance'
-export const RESOURCE_TABLES_SECTION_KEY = 'resourceTables'
-export const DATA_STATISTICS_SECTION_KEY = 'statistics'
-export const LOCK_EXCEPTION_SECTION_KEY = 'lock'
-export const MIN_MAX_VALUE_GENERATION_SECTION_KEY = 'minMax'
-export const ANALYTICS_SECTION_KEY = 'analytics'
-
 export const sections = [
     {
-        key: DATA_INTEGRITY_SECTION_KEY,
+        key: 'dataIntegrity',
         path: '/data-integrity',
         component: DataIntegrity,
         info: {
@@ -29,7 +21,7 @@ export const sections = [
         },
     },
     {
-        key: MAINTENANCE_SECTION_KEY,
+        key: 'maintenance',
         path: '/maintenance',
         component: Maintenance,
         info: {
@@ -41,7 +33,7 @@ export const sections = [
         },
     },
     {
-        key: RESOURCE_TABLES_SECTION_KEY,
+        key: 'resourceTables',
         path: '/resourceTables',
         component: ResourceTables,
         info: {
@@ -53,7 +45,7 @@ export const sections = [
         },
     },
     {
-        key: ANALYTICS_SECTION_KEY,
+        key: 'analytics',
         path: '/analytics',
         component: Analytics,
         info: {
@@ -65,7 +57,7 @@ export const sections = [
         },
     },
     {
-        key: DATA_STATISTICS_SECTION_KEY,
+        key: 'statistics',
         path: '/data-statistics',
         component: DataStatistics,
         info: {
@@ -77,7 +69,7 @@ export const sections = [
         },
     },
     {
-        key: LOCK_EXCEPTION_SECTION_KEY,
+        key: 'lock',
         path: '/lock-exception',
         component: LockException,
         info: {
@@ -89,7 +81,7 @@ export const sections = [
         },
     },
     {
-        key: MIN_MAX_VALUE_GENERATION_SECTION_KEY,
+        key: 'minMax',
         path: '/min-max-value-generation',
         component: MinMaxValueGeneration,
         info: {
@@ -102,13 +94,5 @@ export const sections = [
     },
 ]
 
-export const getDocsKeyForSection = sectionKey => {
-    for (let i = 0; i < sections.length; i++) {
-        const section = sections[i]
-        if (section.key === sectionKey) {
-            return section.info.docs
-        }
-    }
-
-    return ''
-}
+export const getDocsKeyForSection = sectionKey =>
+    sections.find(section => section.key === sectionKey)?.info.docs || ''
