@@ -10,7 +10,9 @@ const Routes = () => (
             <Route
                 key={section.key}
                 path={section.path}
-                component={section.component}
+                component={props => (
+                    <section.component sectionKey={section.key} {...props} />
+                )}
             />
         ))}
         <Redirect from="*" to="/" />

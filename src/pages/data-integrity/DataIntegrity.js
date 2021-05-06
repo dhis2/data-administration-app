@@ -3,18 +3,17 @@ import {
     LOADING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
 import { RaisedButton } from 'material-ui'
-import React from 'react'
-import PageHelper from '../../components/page-helper/PageHelper'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import DocsLink from '../../components/DocsLink/DocsLink'
 import { i18nKeys } from '../../i18n'
 import i18n from '../../locales'
-import Page from '../Page'
-import { getDocsKeyForSection } from '../sections.conf'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
 import * as conf from './data.integrity.conf'
 import styles from './DataIntegrity.module.css'
 
-class DataIntegrity extends Page {
-    componentWillUnmount() {
+class DataIntegrity extends Component {
+    /*componentWillUnmount() {
         super.componentWillUnmount()
         this.cancelPullingRequests()
     }
@@ -104,7 +103,7 @@ class DataIntegrity extends Page {
                     this.setLoadedPageWithErrorState(e)
                 }
             })
-    }
+    }*/
 
     render() {
         const runButton = (
@@ -155,18 +154,16 @@ class DataIntegrity extends Page {
             <div>
                 <h1 className={styles.header}>
                     {i18n.t(conf.PAGE_TITLE)}
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
+                    <DocsLink sectionKey={this.props.sectionKey} />
                 </h1>
-                {cardsToShow && cardsToShow.length > 0
-                    ? cardsToShow
-                    : runButton}
+                {cardsToShow?.length > 0 ? cardsToShow : runButton}
             </div>
         )
     }
+}
+
+DataIntegrity.propTypes = {
+    sectionKey: PropTypes.string.isRequired,
 }
 
 export default DataIntegrity
