@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import {
     ERROR,
     LOADING,
@@ -6,8 +7,7 @@ import { RaisedButton } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import DocsLink from '../../components/DocsLink/DocsLink'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
+import { i18nKeys } from '../../i18n-keys'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
 import * as conf from './data.integrity.conf'
 import styles from './DataIntegrity.module.css'

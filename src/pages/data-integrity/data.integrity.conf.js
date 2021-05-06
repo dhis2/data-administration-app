@@ -1,4 +1,4 @@
-import { i18nKeys } from '../../i18n'
+import { i18nKeys } from '../../i18n-keys'
 
 export const INIT_ENDPOINT = 'dataIntegrity'
 export const PULL_INTERVAL = 5000

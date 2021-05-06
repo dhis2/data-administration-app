@@ -1,4 +1,4 @@
-import { i18nKeys } from '../i18n'
+import { i18nKeys } from '../i18n-keys'
 import DataIntegrity from './data-integrity/DataIntegrity'
 /*import Analytics from './analytics/Analytics'
 import DataStatistics from './data-statistics/DataStatistics'
