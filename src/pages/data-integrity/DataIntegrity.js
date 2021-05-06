@@ -3,7 +3,7 @@ import {
     ERROR,
     LOADING,
 } from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { RaisedButton } from 'material-ui'
+import { Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import DocsLink from '../../components/DocsLink/DocsLink'
@@ -107,13 +107,13 @@ class DataIntegrity extends Component {
 
     render() {
         const runButton = (
-            <RaisedButton
-                id={'runDataIntegrityChecksBtnId'}
-                label={i18n.t(i18nKeys.dataIntegrity.actionButton)}
-                onClick={this.initDataIntegrityCheck}
+            <Button
                 primary
                 disabled={this.props.loading}
-            />
+                onClick={this.initDataIntegrityCheck}
+            >
+                {i18n.t(i18nKeys.dataIntegrity.actionButton)}
+            </Button>
         )
         let cardsToShow = []
         if (this.props.cards) {
@@ -151,13 +151,13 @@ class DataIntegrity extends Component {
             }
         }
         return (
-            <div>
+            <>
                 <h1 className={styles.header}>
                     {i18n.t(conf.PAGE_TITLE)}
                     <DocsLink sectionKey={this.props.sectionKey} />
                 </h1>
                 {cardsToShow?.length > 0 ? cardsToShow : runButton}
-            </div>
+            </>
         )
     }
 }
