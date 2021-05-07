@@ -1,4 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
+import { colors } from '@dhis2/ui'
 import { FontIcon } from 'material-ui'
 import { Card, CardText, CardHeader } from 'material-ui/Card'
 import PropTypes from 'prop-types'
@@ -6,10 +7,10 @@ import React, { PureComponent } from 'react'
 import styles from './DataIntegrityCard.module.css'
 
 const jsStyles = {
-    errorColor: '#ff5722',
-    noErrorColor: '#1c9d17',
+    errorColor: colors.red600,
+    noErrorColor: colors.green600,
     titleStyle: {
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: 'normal',
     },
     iconStyle: {
@@ -33,6 +34,10 @@ class DataIntegrityCard extends PureComponent {
     }
 
     render() {
+        const { content } = this.props
+        const elementsCount = Array.isArray(content)
+            ? content.length
+            : Object.keys(content).length
         const showIcon = true
         let expandable = true
         let titleColor = jsStyles.errorColor
@@ -40,24 +45,12 @@ class DataIntegrityCard extends PureComponent {
         let openIcon = 'keyboard_arrow_up'
         let cardText = null
 
-        if (!Array.isArray(this.props.content)) {
-            cardText = (
-                <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
-                    <div id={'elementDescription'}>
-                        {Object.keys(this.props.content).map(element => (
-                            <span key={element}>
-                                <h4>{element}</h4>
-                                <p>
-                                    {Array.isArray(this.props.content[element])
-                                        ? this.props.content[element].join(', ')
-                                        : this.props.content[element]}
-                                </p>
-                            </span>
-                        ))}
-                    </div>
-                </CardText>
-            )
-        } else if (this.props.content.length) {
+        if (elementsCount === 0) {
+            expandable = false
+            titleColor = jsStyles.noErrorColor
+            closeIcon = 'done'
+            openIcon = 'done'
+        } else if (Array.isArray(content)) {
             cardText = (
                 <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
                     <div id={'elementDescription'}>
@@ -72,10 +65,22 @@ class DataIntegrityCard extends PureComponent {
                 </CardText>
             )
         } else {
-            expandable = false
-            titleColor = jsStyles.noErrorColor
-            closeIcon = 'done'
-            openIcon = 'done'
+            cardText = (
+                <CardText style={jsStyles.noPaddingTop} expandable={expandable}>
+                    <div id={'elementDescription'}>
+                        {Object.entries(content).map(([element, value]) => (
+                            <span key={element}>
+                                <h4>{element}</h4>
+                                <p>
+                                    {Array.isArray(value)
+                                        ? value.join(', ')
+                                        : value}
+                                </p>
+                            </span>
+                        ))}
+                    </div>
+                </CardText>
+            )
         }
 
         const closeFontIcon = (
@@ -88,7 +93,10 @@ class DataIntegrityCard extends PureComponent {
         return (
             <Card id={this.props.cardId} className={styles.card}>
                 <CardHeader
-                    title={i18n.t(this.props.title)}
+                    title={
+                        i18n.t(this.props.title) +
+                        (elementsCount > 0 ? ` (${elementsCount})` : '')
+                    }
                     titleColor={titleColor}
                     titleStyle={jsStyles.titleStyle}
                     actAsExpander={expandable}
