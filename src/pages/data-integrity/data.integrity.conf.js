@@ -1,9 +1,6 @@
 import { i18nKeys } from '../../i18n-keys'
 
-export const INIT_ENDPOINT = 'dataIntegrity'
 export const PULL_INTERVAL = 5000
-export const DATA_ENDPOINT = 'system/taskSummaries/DATA_INTEGRITY'
-export const PAGE_TITLE = i18nKeys.dataIntegrity.title
 
 export const dataIntegrityControls = [
     {

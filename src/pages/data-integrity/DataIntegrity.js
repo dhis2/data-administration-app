@@ -1,165 +1,145 @@
+import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import {
-    ERROR,
-    LOADING,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { Button } from '@dhis2/ui'
+import { Button, CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import DocsLink from '../../components/DocsLink/DocsLink'
 import { i18nKeys } from '../../i18n-keys'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
 import * as conf from './data.integrity.conf'
 import styles from './DataIntegrity.module.css'
 
-class DataIntegrity extends Component {
-    /*componentWillUnmount() {
-        super.componentWillUnmount()
-        this.cancelPullingRequests()
-    }
-
-    cancelPullingRequests() {
-        if (this.intervalId) {
-            clearInterval(this.intervalId)
-        }
-    }
-
-    setLoadingPageState() {
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-                message: i18n.t(i18nKeys.dataIntegrity.performing),
-            },
-            currentSection: this.props.sectionKey,
-            pageState: {
-                loaded: false,
-                loading: true,
-            },
-        })
-    }
-
-    setLoadedPageWithErrorState(error) {
-        const messageError =
-            error && error.message
-                ? error.message
-                : i18n.t(i18nKeys.dataIntegrity.unexpectedError)
-        this.cancelPullingRequests()
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: ERROR,
-                message: messageError,
-            },
-            currentSection: this.props.sectionKey,
-            pageState: {
-                loaded: true,
-                loading: false,
-            },
-        })
-    }
-
-    initDataIntegrityCheck = () => {
-        const api = this.context.d2.Api.getApi()
-        this.setLoadingPageState()
-        api.post(conf.INIT_ENDPOINT)
-            .then(response => {
-                if (this.isPageMounted() && response) {
-                    const jobId = response.response.id
-                    this.intervalId = setInterval(() => {
-                        this.requestTaskSummary(jobId)
-                    }, conf.PULL_INTERVAL)
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }
-
-    requestTaskSummary(jobId) {
-        const api = this.context.d2.Api.getApi()
-        const url = `${conf.DATA_ENDPOINT}/${jobId}`
-        api.get(url)
-            .then(response => {
-                if (this.isPageMounted()) {
-                    if (response) {
-                        this.cancelPullingRequests()
-                        this.context.updateAppState({
-                            showSnackbar: false,
-                            currentSection: this.props.sectionKey,
-                            pageState: {
-                                loaded: true,
-                                cards: response,
-                                loading: false,
-                            },
-                        })
-                    }
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }*/
-
-    render() {
-        const runButton = (
-            <Button
-                primary
-                disabled={this.props.loading}
-                onClick={this.initDataIntegrityCheck}
-            >
-                {i18n.t(i18nKeys.dataIntegrity.actionButton)}
-            </Button>
+const Cards = ({ cards }) => {
+    const errorElementskeys = Object.keys(cards)
+    const cardsToShow = errorElementskeys.map(element => {
+        const control = conf.dataIntegrityControls.find(
+            control => control.key === element
         )
-        let cardsToShow = []
-        if (this.props.cards) {
-            const errorElementskeys = Object.keys(this.props.cards)
-            cardsToShow = errorElementskeys.map(element => {
-                const control = conf.dataIntegrityControls.find(
-                    control => control.key === element
-                )
-                if (!control) {
-                    return null
-                }
-                return (
-                    <DataIntegrityCard
-                        cardId={`errorElement-${element}`}
-                        key={element}
-                        title={control.label}
-                        content={this.props.cards[element]}
-                    />
-                )
-            })
-            if (this.props.loaded) {
-                const noErrors = conf.dataIntegrityControls
-                    .filter(
-                        element => errorElementskeys.indexOf(element.key) < 0
-                    )
-                    .map(resultNoErrorElement => (
-                        <DataIntegrityCard
-                            cardId={`noErrorElement-${resultNoErrorElement.key}`}
-                            key={resultNoErrorElement.key}
-                            title={resultNoErrorElement.label}
-                            content={[]}
-                        />
-                    ))
-                cardsToShow.push(noErrors)
-            }
+        if (!control) {
+            return null
         }
         return (
-            <>
-                <h1 className={styles.header}>
-                    {i18n.t(conf.PAGE_TITLE)}
-                    <DocsLink sectionKey={this.props.sectionKey} />
-                </h1>
-                {cardsToShow?.length > 0 ? cardsToShow : runButton}
-            </>
+            <DataIntegrityCard
+                key={element}
+                cardId={`errorElement-${element}`}
+                title={control.label}
+                content={cards[element]}
+            />
         )
+    })
+    const noErrors = conf.dataIntegrityControls
+        .filter(element => errorElementskeys.indexOf(element.key) < 0)
+        .map(resultNoErrorElement => (
+            <DataIntegrityCard
+                key={resultNoErrorElement.key}
+                cardId={`noErrorElement-${resultNoErrorElement.key}`}
+                title={resultNoErrorElement.label}
+                content={[]}
+            />
+        ))
+    cardsToShow.push(noErrors)
+
+    return cardsToShow
+}
+
+const startDataIntegrityCheckMutation = {
+    resource: 'dataIntegrity',
+    type: 'create',
+}
+
+const pollQuery = {
+    poll: {
+        resource: 'system/taskSummaries/DATA_INTEGRITY',
+        id: ({ jobId }) => jobId,
+    },
+}
+
+const usePoll = (fn, pollInterval) => {
+    const intervalId = useRef(null)
+
+    const start = (...args) => {
+        intervalId.current = setInterval(() => fn(...args), pollInterval)
     }
+    const cancel = () => {
+        if (intervalId.current) {
+            clearInterval(intervalId.current)
+        }
+    }
+
+    useEffect(() => {
+        return cancel
+    }, [])
+
+    return { start, cancel }
+}
+
+const useDataIntegrityPoll = () => {
+    const { refetch, error, data } = useDataQuery(pollQuery, { lazy: true })
+    const poll = usePoll(jobId => {
+        refetch({ jobId })
+    }, conf.PULL_INTERVAL)
+
+    useEffect(() => {
+        if (data?.poll) {
+            poll.cancel()
+        }
+    }, [data])
+
+    return {
+        ...poll,
+        error,
+        data: data?.poll,
+    }
+}
+
+const DataIntegrity = ({ sectionKey }) => {
+    const [
+        handleStartDataIntegrityCheck,
+        { loading, error, data },
+    ] = useDataMutation(startDataIntegrityCheckMutation)
+    const poll = useDataIntegrityPoll()
+    const isPolling = data && !poll.data
+
+    useEffect(() => {
+        if (loading || !data) {
+            return
+        }
+
+        const { id: jobId } = data.response
+        poll.start(jobId)
+    }, [loading, data])
+
+    return (
+        <>
+            <h1 className={styles.header}>
+                {i18n.t(i18nKeys.dataIntegrity.title)}
+                <DocsLink sectionKey={sectionKey} />
+            </h1>
+            {(error || poll.error) && (
+                <NoticeBox error>{error || poll.error}</NoticeBox>
+            )}
+            {isPolling && (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            )}
+            {poll.data && <Cards cards={poll.data} />}
+            <Button
+                primary
+                disabled={loading}
+                onClick={handleStartDataIntegrityCheck}
+            >
+                {loading ? (
+                    <>
+                        {i18n.t('Checking data integrity...')}
+                        <CircularLoader small />
+                    </>
+                ) : (
+                    i18n.t(i18nKeys.dataIntegrity.actionButton)
+                )}
+            </Button>
+        </>
+    )
 }
 
 DataIntegrity.propTypes = {
