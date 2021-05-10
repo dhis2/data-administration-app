@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dhis2/data-administration-app/compare/v1.1.5...v1.1.6) (2021-04-23)
+
+
+### Bug Fixes
+
+* use vertical layout for maintenance section ([#619](https://github.com/dhis2/data-administration-app/issues/619)) ([efb7607](https://github.com/dhis2/data-administration-app/commit/efb7607f80353a2a373b5fe803bbde5d1ac3f479))
+
 ## [1.1.5](https://github.com/dhis2/data-administration-app/compare/v1.1.4...v1.1.5) (2021-04-16)
 
 
