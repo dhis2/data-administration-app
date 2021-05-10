@@ -1,30 +1,77 @@
-import classNames from 'classnames'
-import {
-    LOADING,
-    SUCCESS,
-    ERROR,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { Card, CardText } from 'material-ui/Card'
-import Checkbox from 'material-ui/Checkbox'
-import { GridTile } from 'material-ui/GridList'
-import RaisedButton from 'material-ui/RaisedButton'
-import React from 'react'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
-import Page from '../Page'
-import styles from '../Page.module.css'
-import { getDocsKeyForSection } from '../sections.conf'
-import {
-    maintenanceCheckboxes,
-    PAGE_TITLE,
-    MAINTENANCE_ENDPOINT,
-} from './maintenance.conf'
+import i18n from '@dhis2/d2-i18n'
+import { Card, Button, CircularLoader, Checkbox } from '@dhis2/ui'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import PageHeader from '../../components/PageHeader/PageHeader'
+import { i18nKeys } from '../../i18n-keys'
+import { maintenanceCheckboxes } from './maintenance.conf'
+import styles from './Maintenance.module.css'
 
-class Maintenance extends Page {
+const Maintenance = ({ sectionKey }) => {
+    const loading = false
+    const [checkboxes, setCheckboxes] = useState(() => {
+        const checkboxes = {}
+        for (const checkbox of Object.values(maintenanceCheckboxes)) {
+            checkboxes[checkbox.key] = false
+        }
+        return checkboxes
+    })
+    const handlePerformMaintenance = () => {
+        // TODO
+    }
+
+    return (
+        <div>
+            <PageHeader
+                sectionKey={sectionKey}
+                title={i18n.t(i18nKeys.maintenance.title)}
+            />
+            <Card className={styles.card}>
+                <div className={styles.checkboxes}>
+                    {maintenanceCheckboxes.map(checkbox => {
+                        const checkboxState = checkboxes[checkbox.key]
+                        const toggleCheckbox = () => {
+                            setCheckboxes({
+                                ...checkboxes,
+                                [checkbox.key]: !checkboxState,
+                            })
+                        }
+                        return (
+                            <Checkbox
+                                key={checkbox.key}
+                                className={styles.checkbox}
+                                label={i18n.t(checkbox.label)}
+                                checked={checkboxState}
+                                onChange={toggleCheckbox}
+                                disabled={loading}
+                            />
+                        )
+                    })}
+                </div>
+                <Button
+                    primary
+                    disabled={
+                        loading ||
+                        !Object.values(checkboxes).some(checked => checked)
+                    }
+                    onClick={handlePerformMaintenance}
+                >
+                    {loading ? (
+                        <>
+                            {i18n.t('Performing maintenance...')}
+                            <CircularLoader small />
+                        </>
+                    ) : (
+                        i18n.t(i18nKeys.maintenance.actionButton)
+                    )}
+                </Button>
+            </Card>
+        </div>
+    )
+}
+
+/*class MaintenanceX {
     constructor() {
-        super()
-
         const checkboxes = {}
         for (const checkbox of Object.values(maintenanceCheckboxes)) {
             checkboxes[checkbox.key] = { checked: false }
@@ -137,10 +184,7 @@ class Maintenance extends Page {
             return (
                 <GridTile
                     key={checkbox.key}
-                    className={classNames(
-                        'col-xs-12 col-md-6 col-lg-4',
-                        styles.formControl
-                    )}
+                    className={'col-xs-12 col-md-6 col-lg-4'}
                 >
                     <Checkbox
                         label={i18n.t(checkbox.label)}
@@ -148,7 +192,6 @@ class Maintenance extends Page {
                         onCheck={toggleCheckbox}
                         labelStyle={{ color: '#000000' }}
                         iconStyle={{ fill: '#000000' }}
-                        disabled={this.areActionsDisabled()}
                     />
                 </GridTile>
             )
@@ -166,11 +209,7 @@ class Maintenance extends Page {
                 </h1>
                 <Card id={'maintenanceContentContainerId'}>
                     <CardText>
-                        <div
-                            className={classNames(styles.gridContainer, 'row')}
-                        >
-                            {gridElements}
-                        </div>
+                        <div className={'row'}>{gridElements}</div>
                         <RaisedButton
                             id={'performMaintenanceBtnId'}
                             label={i18n.t(i18nKeys.maintenance.actionButton)}
@@ -186,6 +225,10 @@ class Maintenance extends Page {
             </div>
         )
     }
+}*/
+
+Maintenance.propTypes = {
+    sectionKey: PropTypes.string.isRequired,
 }
 
 export default Maintenance

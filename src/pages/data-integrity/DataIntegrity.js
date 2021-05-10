@@ -3,11 +3,10 @@ import i18n from '@dhis2/d2-i18n'
 import { Button, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
-import DocsLink from '../../components/DocsLink/DocsLink'
+import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
 import * as conf from './data.integrity.conf'
-import styles from './DataIntegrity.module.css'
 
 const Cards = ({ cards }) => {
     const errorElementskeys = Object.keys(cards)
@@ -111,25 +110,20 @@ const DataIntegrity = ({ sectionKey }) => {
 
     return (
         <>
-            <h1 className={styles.header}>
-                {i18n.t(i18nKeys.dataIntegrity.title)}
-                <DocsLink sectionKey={sectionKey} />
-            </h1>
+            <PageHeader
+                sectionKey={sectionKey}
+                title={i18n.t(i18nKeys.dataIntegrity.title)}
+            />
             {(error || poll.error) && (
                 <NoticeBox error>{error || poll.error}</NoticeBox>
-            )}
-            {isPolling && (
-                <div>
-                    <CircularLoader />
-                </div>
             )}
             {poll.data && <Cards cards={poll.data} />}
             <Button
                 primary
-                disabled={loading}
+                disabled={loading || isPolling}
                 onClick={handleStartDataIntegrityCheck}
             >
-                {loading ? (
+                {loading || isPolling ? (
                     <>
                         {i18n.t('Checking data integrity...')}
                         <CircularLoader small />

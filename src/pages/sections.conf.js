@@ -1,9 +1,9 @@
 import { i18nKeys } from '../i18n-keys'
 import DataIntegrity from './data-integrity/DataIntegrity'
+import Maintenance from './maintenance/Maintenance'
 /*import Analytics from './analytics/Analytics'
 import DataStatistics from './data-statistics/DataStatistics'
 import LockException from './lock-exception/LockException'
-import Maintenance from './maintenance/Maintenance'
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
 import ResourceTables from './resource-tables/ResourceTables'*/
 
@@ -20,7 +20,7 @@ export const sections = [
             docs: 'dataAdmin_dataIntegrity',
         },
     },
-    /*{
+    {
         key: 'maintenance',
         path: '/maintenance',
         component: Maintenance,
@@ -31,7 +31,7 @@ export const sections = [
             actionText: i18nKeys.maintenance.actionText,
             docs: 'data_admin_maintenance',
         },
-    },
+    } /*,
     {
         key: 'resourceTables',
         path: '/resourceTables',
@@ -91,7 +91,7 @@ export const sections = [
             actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',
         },
-    },*/
+    },*/,
 ]
 
 export const getDocsKeyForSection = sectionKey =>

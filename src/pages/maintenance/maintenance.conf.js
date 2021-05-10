@@ -1,7 +1,6 @@
-import { i18nKeys } from '../../i18n'
+import { i18nKeys } from '../../i18n-keys'
 
 export const MAINTENANCE_ENDPOINT = 'maintenance'
-export const PAGE_TITLE = i18nKeys.maintenance.title
 
 export const maintenanceCheckboxes = [
     {

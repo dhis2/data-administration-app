@@ -33,7 +33,9 @@ const App = () => {
                     </div>
 
                     <main className={styles.content}>
-                        <Routes />
+                        <div className={styles.contentWrapper}>
+                            <Routes />
+                        </div>
                     </main>
                 </div>
             </MuiThemeProvider>

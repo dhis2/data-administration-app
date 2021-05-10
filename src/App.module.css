@@ -20,3 +20,7 @@
     padding: var(--spacers-dp16);
     background: var(--colors-grey100);
 }
+
+.contentWrapper {
+    max-width: 960px;
+}
