@@ -1,7 +1,5 @@
 import { i18nKeys } from '../../i18n-keys'
 
-export const MAINTENANCE_ENDPOINT = 'maintenance'
-
 export const maintenanceCheckboxes = [
     {
         key: 'analyticsTableClear',

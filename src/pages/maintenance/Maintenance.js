@@ -1,3 +1,5 @@
+import { useAlert } from '@dhis2/app-runtime'
+import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import { Card, Button, CircularLoader, Checkbox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -7,8 +9,7 @@ import { i18nKeys } from '../../i18n-keys'
 import { maintenanceCheckboxes } from './maintenance.conf'
 import styles from './Maintenance.module.css'
 
-const Maintenance = ({ sectionKey }) => {
-    const loading = false
+const useCheckboxes = () => {
     const [checkboxes, setCheckboxes] = useState(() => {
         const checkboxes = {}
         for (const checkbox of Object.values(maintenanceCheckboxes)) {
@@ -16,8 +17,76 @@ const Maintenance = ({ sectionKey }) => {
         }
         return checkboxes
     })
-    const handlePerformMaintenance = () => {
-        // TODO
+    const toggleCheckbox = key => {
+        setCheckboxes({
+            ...checkboxes,
+            [key]: !checkboxes[key],
+        })
+    }
+    const toFormData = () => {
+        const formData = new FormData()
+        Object.entries(checkboxes).forEach(([key, checked]) => {
+            formData.append(key, checked)
+        })
+        return formData
+    }
+
+    return {
+        checkboxes,
+        toggleCheckbox,
+        toFormData,
+    }
+}
+
+const Checkboxes = ({ checkboxes, toggleCheckbox, disabled }) => (
+    <div className={styles.checkboxes}>
+        {maintenanceCheckboxes.map(checkbox => (
+            <Checkbox
+                key={checkbox.key}
+                className={styles.checkbox}
+                label={i18n.t(checkbox.label)}
+                checked={checkboxes[checkbox.key]}
+                onChange={() => toggleCheckbox(checkbox.key)}
+                disabled={disabled}
+            />
+        ))}
+    </div>
+)
+
+Checkboxes.propTypes = {
+    checkboxes: PropTypes.object.isRequired,
+    disabled: PropTypes.bool.isRequired,
+    toggleCheckbox: PropTypes.func.isRequired,
+}
+
+const Maintenance = ({ sectionKey }) => {
+    const {
+        checkboxes,
+        toggleCheckbox,
+        toFormData: checkboxesToFormData,
+    } = useCheckboxes()
+    const successAlert = useAlert(
+        i18n.t(i18nKeys.maintenance.actionPerformed),
+        { success: true }
+    )
+    const errorAlert = useAlert(({ message }) => message, { critical: true })
+    const { d2 } = useD2()
+    const [isLoading, setIsLoading] = useState(false)
+    const handlePerformMaintenance = async () => {
+        const api = d2.Api.getApi()
+        const formData = checkboxesToFormData()
+        setIsLoading(true)
+        try {
+            await api.post('maintenance', formData)
+            successAlert.show()
+        } catch (error) {
+            errorAlert.show({
+                message:
+                    error.message ||
+                    i18n.t(i18nKeys.maintenance.unexpectedError),
+            })
+        }
+        setIsLoading(false)
     }
 
     return (
@@ -27,36 +96,20 @@ const Maintenance = ({ sectionKey }) => {
                 title={i18n.t(i18nKeys.maintenance.title)}
             />
             <Card className={styles.card}>
-                <div className={styles.checkboxes}>
-                    {maintenanceCheckboxes.map(checkbox => {
-                        const checkboxState = checkboxes[checkbox.key]
-                        const toggleCheckbox = () => {
-                            setCheckboxes({
-                                ...checkboxes,
-                                [checkbox.key]: !checkboxState,
-                            })
-                        }
-                        return (
-                            <Checkbox
-                                key={checkbox.key}
-                                className={styles.checkbox}
-                                label={i18n.t(checkbox.label)}
-                                checked={checkboxState}
-                                onChange={toggleCheckbox}
-                                disabled={loading}
-                            />
-                        )
-                    })}
-                </div>
+                <Checkboxes
+                    checkboxes={checkboxes}
+                    toggleCheckbox={toggleCheckbox}
+                    disabled={isLoading}
+                />
                 <Button
                     primary
                     disabled={
-                        loading ||
+                        isLoading ||
                         !Object.values(checkboxes).some(checked => checked)
                     }
                     onClick={handlePerformMaintenance}
                 >
-                    {loading ? (
+                    {isLoading ? (
                         <>
                             {i18n.t('Performing maintenance...')}
                             <CircularLoader small />
@@ -69,163 +122,6 @@ const Maintenance = ({ sectionKey }) => {
         </div>
     )
 }
-
-/*class MaintenanceX {
-    constructor() {
-        const checkboxes = {}
-        for (const checkbox of Object.values(maintenanceCheckboxes)) {
-            checkboxes[checkbox.key] = { checked: false }
-        }
-
-        this.state = {
-            checkboxes,
-        }
-    }
-
-    setLoadingPageState() {
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-                message: i18n.t(i18nKeys.maintenance.performing),
-            },
-            pageState: {
-                loading: true,
-            },
-        })
-    }
-
-    setLoadedPageWithErrorState(error) {
-        const messageError =
-            error && error.message
-                ? error.message
-                : i18n.t(i18nKeys.maintenance.unexpectedError)
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: ERROR,
-                message: messageError,
-            },
-            pageState: {
-                loading: false,
-            },
-        })
-    }
-
-    selectedCheckboxesCount() {
-        let selectedCheckboxes = 0
-        const checkboxKeys = Object.keys(this.state.checkboxes)
-        for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i]
-            const checked = this.state.checkboxes[key].checked
-            if (checked) {
-                selectedCheckboxes += 1
-            }
-        }
-        return selectedCheckboxes
-    }
-
-    areActionsDisabled() {
-        return this.props.loading
-    }
-
-    buildFormData() {
-        let formData = null
-        const checkboxKeys = Object.keys(this.state.checkboxes)
-        for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i]
-            const checked = this.state.checkboxes[key].checked
-            formData = formData || new FormData()
-            formData.append(key, checked)
-        }
-
-        return formData
-    }
-
-    performMaintenance = () => {
-        const api = this.context.d2.Api.getApi()
-        const formData = this.buildFormData()
-
-        if (formData) {
-            this.setLoadingPageState()
-            api.post(MAINTENANCE_ENDPOINT, formData)
-                .then(() => {
-                    if (this.isPageMounted()) {
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: SUCCESS,
-                                message: i18n.t(
-                                    i18nKeys.maintenance.actionPerformed
-                                ),
-                            },
-                            pageState: {
-                                loading: false,
-                            },
-                        })
-                    }
-                })
-                .catch(error => {
-                    if (this.isPageMounted()) {
-                        this.setLoadedPageWithErrorState(error)
-                    }
-                })
-        }
-    }
-
-    render() {
-        const checkboxes = Object.assign({}, this.state.checkboxes)
-        const gridElements = maintenanceCheckboxes.map(checkbox => {
-            const checkboxState = checkboxes[checkbox.key].checked
-            const toggleCheckbox = () => {
-                checkboxes[checkbox.key].checked = !checkboxState
-                this.setState({ checkboxes })
-            }
-            return (
-                <GridTile
-                    key={checkbox.key}
-                    className={'col-xs-12 col-md-6 col-lg-4'}
-                >
-                    <Checkbox
-                        label={i18n.t(checkbox.label)}
-                        checked={checkboxState}
-                        onCheck={toggleCheckbox}
-                        labelStyle={{ color: '#000000' }}
-                        iconStyle={{ fill: '#000000' }}
-                    />
-                </GridTile>
-            )
-        })
-
-        return (
-            <div>
-                <h1>
-                    {i18n.t(PAGE_TITLE)}
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </h1>
-                <Card id={'maintenanceContentContainerId'}>
-                    <CardText>
-                        <div className={'row'}>{gridElements}</div>
-                        <RaisedButton
-                            id={'performMaintenanceBtnId'}
-                            label={i18n.t(i18nKeys.maintenance.actionButton)}
-                            onClick={this.performMaintenance}
-                            primary
-                            disabled={
-                                this.areActionsDisabled() ||
-                                this.selectedCheckboxesCount() === 0
-                            }
-                        />
-                    </CardText>
-                </Card>
-            </div>
-        )
-    }
-}*/
 
 Maintenance.propTypes = {
     sectionKey: PropTypes.string.isRequired,
