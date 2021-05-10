@@ -6,14 +6,13 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
-import { maintenanceCheckboxes } from './maintenance.conf'
 import styles from './Maintenance.module.css'
 
 const useCheckboxes = () => {
     const [checkboxes, setCheckboxes] = useState(() => {
         const checkboxes = {}
-        for (const checkbox of Object.values(maintenanceCheckboxes)) {
-            checkboxes[checkbox.key] = false
+        for (const key of Object.keys(i18nKeys.maintenance.checkboxes)) {
+            checkboxes[key] = false
         }
         return checkboxes
     })
@@ -40,13 +39,13 @@ const useCheckboxes = () => {
 
 const Checkboxes = ({ checkboxes, toggleCheckbox, disabled }) => (
     <div className={styles.checkboxes}>
-        {maintenanceCheckboxes.map(checkbox => (
+        {Object.entries(checkboxes).map(([key, checked]) => (
             <Checkbox
-                key={checkbox.key}
+                key={key}
                 className={styles.checkbox}
-                label={i18n.t(checkbox.label)}
-                checked={checkboxes[checkbox.key]}
-                onChange={() => toggleCheckbox(checkbox.key)}
+                label={i18nKeys.maintenance.checkboxes[key]}
+                checked={checked}
+                onChange={() => toggleCheckbox(key)}
                 disabled={disabled}
             />
         ))}
@@ -65,10 +64,7 @@ const Maintenance = ({ sectionKey }) => {
         toggleCheckbox,
         toFormData: checkboxesToFormData,
     } = useCheckboxes()
-    const successAlert = useAlert(
-        i18n.t(i18nKeys.maintenance.actionPerformed),
-        { success: true }
-    )
+    const successAlert = useAlert(i18n.t('Maintenance done'), { success: true })
     const errorAlert = useAlert(({ message }) => message, { critical: true })
     const { d2 } = useD2()
     const [isLoading, setIsLoading] = useState(false)
@@ -83,7 +79,7 @@ const Maintenance = ({ sectionKey }) => {
             errorAlert.show({
                 message:
                     error.message ||
-                    i18n.t(i18nKeys.maintenance.unexpectedError),
+                    i18n.t('An unexpected error happened during maintenance'),
             })
         }
         setIsLoading(false)
@@ -93,7 +89,7 @@ const Maintenance = ({ sectionKey }) => {
         <div>
             <PageHeader
                 sectionKey={sectionKey}
-                title={i18n.t(i18nKeys.maintenance.title)}
+                title={i18nKeys.maintenance.title}
             />
             <Card className={styles.card}>
                 <Checkboxes
@@ -115,7 +111,7 @@ const Maintenance = ({ sectionKey }) => {
                             <CircularLoader small />
                         </>
                     ) : (
-                        i18n.t(i18nKeys.maintenance.actionButton)
+                        i18n.t('Perform maintenance')
                     )}
                 </Button>
             </Card>

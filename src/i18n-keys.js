@@ -1,147 +1,51 @@
+import i18n from '@dhis2/d2-i18n'
+
 export const i18nKeys = {
     dataIntegrity: {
-        title: 'Data Integrity',
-        label: 'Data Integrity',
-        description:
-            'Run data integrity checks and unveil anomalies and problems in the meta data setup.',
-        actionText: 'Check Data Integrity',
-        performing: 'Performing data integrity checks...',
-        unexpectedError:
-            'An unexpected error happened during data integrity checks',
-        actionButton: 'RUN INTEGRITY CHECKS',
-        controls: {
-            dataElementsWithoutDataSet: {
-                label: 'Data elements without data set',
-            },
-            dataElementsWithoutGroups: {
-                label: 'Data elements without groups',
-            },
-            dataElementsViolatingExclusiveGroupSets: {
-                label: 'Data elements violating exclusive group sets',
-            },
-            dataElementsAssignedToDataSetsWithDifferentPeriodTypes: {
-                label:
-                    'Data elements assigned to data sets with different period types',
-            },
-            dataSetsNotAssignedToOrganisationUnits: {
-                label: 'Data sets not assigned to organisation units',
-            },
-            indicatorsWithIdenticalFormulas: {
-                label: 'Indicators with identical formulas',
-            },
-            indicatorsWithoutGroups: {
-                label: 'Indicators without groups',
-            },
-            invalidIndicatorNumerators: {
-                label: 'Invalid indicator numerators',
-            },
-            invalidIndicatorDenominators: {
-                label: 'Invalid indicator denominators',
-            },
-            indicatorsViolatingExclusiveGroupSets: {
-                label: 'Indicators violating exclusive group sets',
-            },
-            organisationUnitsWithCyclicReferences: {
-                label: 'Organisation units with cyclic references',
-            },
-            orphanedOrganisationUnits: {
-                label: 'Orphaned organisation units',
-            },
-            organisationUnitsWithoutGroups: {
-                label: 'Organisation units without groups',
-            },
-            organisationUnitsViolatingExclusiveGroupSets: {
-                label: 'Organisation units violating exclusive group sets',
-            },
-            organisationUnitGroupsWithoutGroupSets: {
-                label: 'Organisation unit groups without group sets',
-            },
-            validationRulesWithoutGroups: {
-                label: 'Validation rules without groups',
-            },
-            invalidValidationRuleLeftSideExpressions: {
-                label: 'Invalid validation rule left side expressions',
-            },
-            invalidValidationRuleRightSideExpressions: {
-                label: 'Invalid validation rule right side expressions',
-            },
-            invalidProgramIndicatorExpressions: {
-                label: 'Invalid program indicator expressions',
-            },
-            invalidProgramIndicatorFilters: {
-                label: 'Invalid program indicator filters',
-            },
-            dataElementsInDataSetNotInForm: {
-                label:
-                    'There are data elements in the form, but not in the form or sections',
-            },
-            invalidCategoryCombos: {
-                label: 'Invalid category combinations',
-            },
-            duplicatePeriods: {
-                label: 'Duplicate periods',
-            },
-            programRulesWithNoCondition: {
-                label: 'Program rules with no condition',
-            },
-            programRulesWithNoAction: {
-                label: 'Program rules with no action',
-            },
-            programRulesWithNoPriority: {
-                label: 'Program rules with no priority',
-            },
-            programRuleVariablesWithNoDataElement: {
-                label: 'Program rule variables with no data element',
-            },
-            programRuleVariablesWithNoAttribute: {
-                label: 'Program rule variables with no attribute',
-            },
-            programRuleActionsWithNoDataObject: {
-                label: 'Program rule actions with no data object',
-            },
-            programRuleActionsWithNoNotification: {
-                label: 'Program rule actions with no notification',
-            },
-            programRuleActionsWithNoSectionId: {
-                label: 'Program rule actions with no section id',
-            },
-            programRuleActionsWithNoStageId: {
-                label: 'Program rule actions with no stage id',
-            },
-            programIndicatorsWithNoExpression: {
-                label: 'Program indicators wit no expression',
-            },
-        },
+        title: i18n.t('Data Integrity'),
+        label: i18n.t('Data Integrity'),
+        description: i18n.t(
+            'Run data integrity checks and unveil anomalies and problems in the metadata setup.'
+        ),
+        actionText: i18n.t('Check data integrity'),
+        unexpectedError: i18n.t(
+            'An unexpected error happened during data integrity checks'
+        ),
     },
     maintenance: {
-        title: 'Maintenance',
-        label: 'Maintenance',
-        description:
-            'Perform maintenance tasks and generate resource database tables for the organisation unit' +
-            ' hierarchy and group set structure.',
-        actionText: 'Perform Maintenance',
-        actionButton: 'PERFORM MAINTENANCE',
-        performing: 'Performing Maintenance...',
-        actionPerformed: 'Maintenance done',
-        unexpectedError: 'An unexpected error happened during maintenance',
-        analyticsTableClear: 'Clear analytics tables',
-        analyticsTableAnalyze: 'Analyze analytics tables',
-        zeroDataValueRemoval: 'Remove zero data values',
-        softDeletedDataValueRemoval:
-            'Permanently remove soft deleted data values',
-        softDeletedEventRemoval: 'Permanently remove soft deleted events',
-        softDeletedEnrollmentRemoval:
-            'Permanently remove soft deleted enrollments',
-        softDeletedTrackedEntityInstanceRemoval:
-            'Permanently remove soft deleted tracked entity instances',
-        periodPruning: 'Prune periods',
-        expiredInvitationsClear: 'Remove expired invitations',
-        sqlViewsDrop: 'Drop SQL views',
-        sqlViewsCreate: 'Create SQL views',
-        categoryOptionComboUpdate: 'Update category option combinations',
-        ouPathsUpdate: 'Update organisation unit paths',
-        cacheClear: 'Clear application cache',
-        appReload: 'Reload apps',
+        title: i18n.t('Maintenance'),
+        label: i18n.t('Maintenance'),
+        description: i18n.t(
+            'Perform maintenance tasks and generate resource database tables for the organisation unit hierarchy and group set structure.'
+        ),
+        actionText: i18n.t('Perform maintenance'),
+        checkboxes: {
+            analyticsTableClear: i18n.t('Clear analytics tables'),
+            analyticsTableAnalyze: i18n.t('Analyze analytics tables'),
+            zeroDataValueRemoval: i18n.t('Remove zero data values'),
+            softDeletedDataValueRemoval: i18n.t(
+                'Permanently remove soft deleted data values'
+            ),
+            softDeletedEventRemoval: i18n.t(
+                'Permanently remove soft deleted events'
+            ),
+            softDeletedEnrollmentRemoval: i18n.t(
+                'Permanently remove soft deleted enrollments'
+            ),
+            softDeletedTrackedEntityInstanceRemoval: i18n.t(
+                'Permanently remove soft deleted tracked entity instances'
+            ),
+            periodPruning: i18n.t('Prune periods'),
+            expiredInvitationsClear: i18n.t('Remove expired invitations'),
+            sqlViewsDrop: i18n.t('Drop SQL views'),
+            sqlViewsCreate: i18n.t('Create SQL views'),
+            categoryOptionComboUpdate: i18n.t(
+                'Update category option combinations'
+            ),
+            ouPathsUpdate: i18n.t('Update organisation unit paths'),
+            cacheClear: i18n.t('Clear application cache'),
+            appReload: i18n.t('Reload apps'),
+        },
     },
     resourceTables: {
         title: 'Resource Tables',
@@ -323,19 +227,6 @@ export const i18nKeys = {
     },
     messages: {
         unexpectedError: 'An unexpected error happened during operation',
-    },
-    d2UiComponents: {
-        settings: 'Settings',
-        app_search_placeholder: 'Search apps',
-        profile: 'Profile',
-        account: 'Account',
-        help: 'Help',
-        log_out: 'Log out',
-        about_dhis2: 'About DHIS 2',
-        manage_my_apps: 'Manage my apps',
-        no_results_found: 'No results found',
-        interpretations: 'Interpretations',
-        messages: 'Messages',
     },
 }
 

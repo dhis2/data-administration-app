@@ -1,4 +1,3 @@
-import i18n from '@dhis2/d2-i18n'
 import { colors } from '@dhis2/ui'
 import { FontIcon } from 'material-ui'
 import { Card, CardText, CardHeader } from 'material-ui/Card'
@@ -6,15 +5,44 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './IssueCard.module.css'
 
+const Content = ({ content }) => {
+    const renderValue = value =>
+        Array.isArray(value) ? value.join(', ') : value
+
+    if (Array.isArray(content)) {
+        return content.map(element => (
+            <p key={element}>{renderValue(element)}</p>
+        ))
+    } else {
+        return Object.entries(content).map(([element, value]) => (
+            <div key={element}>
+                <h4>{element}</h4>
+                <p>{renderValue(value)}</p>
+            </div>
+        ))
+    }
+}
+
 const jsStyles = {
-    errorColor: colors.red600,
-    noErrorColor: colors.green600,
     titleStyle: {
         fontSize: 16,
         fontWeight: 'normal',
     },
+}
+
+const errorStyles = {
+    titleColor: colors.red600,
+    openIcon: 'keyboard_arrow_up',
+    closeIcon: 'keyboard_arrow_down',
+    iconStyle: {},
+}
+
+const noErrorStyles = {
+    titleColor: colors.green600,
+    openIcon: 'done',
+    closeIcon: 'done',
     iconStyle: {
-        color: '#1c9d17',
+        color: colors.green600,
         cursor: 'auto',
     },
 }
@@ -23,53 +51,22 @@ const IssueCard = ({ title, content }) => {
     const elementsCount = Array.isArray(content)
         ? content.length
         : Object.keys(content).length
-    let expandable = true
-    let titleColor = jsStyles.errorColor
-    let closeIcon = 'keyboard_arrow_down'
-    let openIcon = 'keyboard_arrow_up'
-    let cardText = null
+    const expandable = elementsCount > 0
+    const { titleColor, openIcon, closeIcon, iconStyle } =
+        elementsCount > 0 ? errorStyles : noErrorStyles
 
-    if (elementsCount === 0) {
-        expandable = false
-        titleColor = jsStyles.noErrorColor
-        closeIcon = 'done'
-        openIcon = 'done'
-    } else if (Array.isArray(content)) {
-        cardText = (
-            <CardText className={styles.cardText} expandable={expandable}>
-                {content.map(element => (
-                    <p key={element}>
-                        {Array.isArray(element) ? element.join(', ') : element}
-                    </p>
-                ))}
-            </CardText>
-        )
-    } else {
-        cardText = (
-            <CardText className={styles.cardText} expandable={expandable}>
-                {Object.entries(content).map(([element, value]) => (
-                    <span key={element}>
-                        <h4>{element}</h4>
-                        <p>{Array.isArray(value) ? value.join(', ') : value}</p>
-                    </span>
-                ))}
-            </CardText>
-        )
-    }
-
-    const closeFontIcon = (
-        <FontIcon className={'material-icons'}>{closeIcon}</FontIcon>
-    )
     const openFontIcon = (
-        <FontIcon className={'material-icons'}>{openIcon}</FontIcon>
+        <FontIcon className="material-icons">{openIcon}</FontIcon>
+    )
+    const closeFontIcon = (
+        <FontIcon className="material-icons">{closeIcon}</FontIcon>
     )
 
     return (
         <Card className={styles.card}>
             <CardHeader
                 title={
-                    i18n.t(title) +
-                    (elementsCount > 0 ? ` (${elementsCount})` : '')
+                    elementsCount > 0 ? `${title} (${elementsCount})` : title
                 }
                 titleColor={titleColor}
                 titleStyle={jsStyles.titleStyle}
@@ -77,9 +74,13 @@ const IssueCard = ({ title, content }) => {
                 showExpandableButton={true}
                 closeIcon={closeFontIcon}
                 openIcon={openFontIcon}
-                iconStyle={!expandable ? jsStyles.iconStyle : {}}
+                iconStyle={iconStyle}
             />
-            {cardText}
+            {elementsCount > 0 && (
+                <CardText className={styles.cardText} expandable={expandable}>
+                    <Content content={content} />
+                </CardText>
+            )}
         </Card>
     )
 }

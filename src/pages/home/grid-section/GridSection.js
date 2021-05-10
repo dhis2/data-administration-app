@@ -4,7 +4,6 @@ import { GridTile } from 'material-ui/GridList'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
-import i18n from '../../../locales'
 import styles from './GridSection.module.css'
 
 class GridSection extends PureComponent {
@@ -54,7 +53,7 @@ class GridSection extends PureComponent {
                             styles.gridDescription
                         )}
                     >
-                        {i18n.t(this.props.section.info.description)}
+                        {this.props.section.info.description}
                     </span>
                     <span
                         className={classNames(
@@ -63,7 +62,7 @@ class GridSection extends PureComponent {
                             styles.gridActionText
                         )}
                     >
-                        {i18n.t(this.props.section.info.actionText)}
+                        {this.props.section.info.actionText}
                     </span>
                 </GridTile>
             </Link>

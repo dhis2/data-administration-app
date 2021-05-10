@@ -5,13 +5,185 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-10T11:54:45.741Z\n"
-"PO-Revision-Date: 2021-05-10T11:54:45.741Z\n"
+"POT-Creation-Date: 2021-05-10T15:31:36.603Z\n"
+"PO-Revision-Date: 2021-05-10T15:31:36.603Z\n"
 
 msgid "Open user guide"
 msgstr ""
 
+msgid "Data Integrity"
+msgstr ""
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the metadata "
+"setup."
+msgstr ""
+
+msgid "Check data integrity"
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "Maintenance"
+msgstr ""
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr ""
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr ""
+
+msgid "Remove expired invitations"
+msgstr ""
+
+msgid "Drop SQL views"
+msgstr ""
+
+msgid "Create SQL views"
+msgstr ""
+
+msgid "Update category option combinations"
+msgstr ""
+
+msgid "Update organisation unit paths"
+msgstr ""
+
+msgid "Clear application cache"
+msgstr ""
+
+msgid "Reload apps"
+msgstr ""
+
 msgid "Checking data integrity..."
+msgstr ""
+
+msgid "Run integrity checks"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr ""
+
+msgid "Data elements violating exclusive group sets"
+msgstr ""
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr ""
+
+msgid "Data sets not assigned to organisation units"
+msgstr ""
+
+msgid "Indicators with identical formulas"
+msgstr ""
+
+msgid "Indicators without groups"
+msgstr ""
+
+msgid "Invalid indicator numerators"
+msgstr ""
+
+msgid "Invalid indicator denominators"
+msgstr ""
+
+msgid "Indicators violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation units with cyclic references"
+msgstr ""
+
+msgid "Orphaned organisation units"
+msgstr ""
+
+msgid "Organisation units without groups"
+msgstr ""
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr ""
+
+msgid "Validation rules without groups"
+msgstr ""
+
+msgid "Invalid validation rule left side expressions"
+msgstr ""
+
+msgid "Invalid validation rule right side expressions"
+msgstr ""
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr ""
+
+msgid "Duplicate periods"
+msgstr ""
+
+msgid "Program rules with no condition"
+msgstr ""
+
+msgid "Program rules with no action"
+msgstr ""
+
+msgid "Program rules with no priority"
+msgstr ""
+
+msgid "Program rule variables with no data element"
+msgstr ""
+
+msgid "Program rule variables with no attribute"
+msgstr ""
+
+msgid "Program rule actions with no data object"
+msgstr ""
+
+msgid "Program rule actions with no notification"
+msgstr ""
+
+msgid "Program rule actions with no section id"
+msgstr ""
+
+msgid "Program rule actions with no stage id"
+msgstr ""
+
+msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Data set"
@@ -23,5 +195,14 @@ msgstr ""
 msgid "Organisation unit"
 msgstr ""
 
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
 msgid "Performing maintenance..."
+msgstr ""
+
+msgid "Perform maintenance"
 msgstr ""

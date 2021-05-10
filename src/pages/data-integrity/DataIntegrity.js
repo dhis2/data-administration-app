@@ -79,7 +79,7 @@ const DataIntegrity = ({ sectionKey }) => {
         <>
             <PageHeader
                 sectionKey={sectionKey}
-                title={i18n.t(i18nKeys.dataIntegrity.title)}
+                title={i18nKeys.dataIntegrity.title}
             />
             {(error || poll.error) && (
                 <NoticeBox error>
@@ -98,7 +98,7 @@ const DataIntegrity = ({ sectionKey }) => {
                         <CircularLoader small />
                     </>
                 ) : (
-                    i18n.t(i18nKeys.dataIntegrity.actionButton)
+                    i18n.t('Run integrity checks')
                 )}
             </Button>
         </>
