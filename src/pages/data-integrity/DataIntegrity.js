@@ -5,41 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
-import DataIntegrityCard from './data-integrity-card/DataIntegrityCard'
-import * as conf from './data.integrity.conf'
-
-const Cards = ({ cards }) => {
-    const errorElementskeys = Object.keys(cards)
-    const cardsToShow = errorElementskeys.map(element => {
-        const control = conf.dataIntegrityControls.find(
-            control => control.key === element
-        )
-        if (!control) {
-            return null
-        }
-        return (
-            <DataIntegrityCard
-                key={element}
-                cardId={`errorElement-${element}`}
-                title={control.label}
-                content={cards[element]}
-            />
-        )
-    })
-    const noErrors = conf.dataIntegrityControls
-        .filter(element => errorElementskeys.indexOf(element.key) < 0)
-        .map(resultNoErrorElement => (
-            <DataIntegrityCard
-                key={resultNoErrorElement.key}
-                cardId={`noErrorElement-${resultNoErrorElement.key}`}
-                title={resultNoErrorElement.label}
-                content={[]}
-            />
-        ))
-    cardsToShow.push(noErrors)
-
-    return cardsToShow
-}
+import Issues from './Issues/Issues'
 
 const startDataIntegrityCheckMutation = {
     resource: 'dataIntegrity',
@@ -74,9 +40,10 @@ const usePoll = (fn, pollInterval) => {
 
 const useDataIntegrityPoll = () => {
     const { refetch, error, data } = useDataQuery(pollQuery, { lazy: true })
+    const PULL_INTERVAL = 3000
     const poll = usePoll(jobId => {
         refetch({ jobId })
-    }, conf.PULL_INTERVAL)
+    }, PULL_INTERVAL)
 
     useEffect(() => {
         if (data?.poll) {
@@ -119,7 +86,7 @@ const DataIntegrity = ({ sectionKey }) => {
                     {error?.message || poll.error?.message}
                 </NoticeBox>
             )}
-            {poll.data && <Cards cards={poll.data} />}
+            {poll.data && <Issues issues={poll.data} />}
             <Button
                 primary
                 disabled={loading || isPolling}

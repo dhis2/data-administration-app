@@ -9,106 +9,108 @@ export const i18nKeys = {
         unexpectedError:
             'An unexpected error happened during data integrity checks',
         actionButton: 'RUN INTEGRITY CHECKS',
-        dataElementsWithoutDataSet: {
-            label: 'Data elements without data set',
-        },
-        dataElementsWithoutGroups: {
-            label: 'Data elements without groups',
-        },
-        dataElementsViolatingExclusiveGroupSets: {
-            label: 'Data elements violating exclusive group sets',
-        },
-        dataElementsAssignedToDataSetsWithDifferentPeriodTypes: {
-            label:
-                'Data elements assigned to data sets with different period types',
-        },
-        dataSetsNotAssignedToOrganisationUnits: {
-            label: 'Data sets not assigned to organisation units',
-        },
-        indicatorsWithIdenticalFormulas: {
-            label: 'Indicators with identical formulas',
-        },
-        indicatorsWithoutGroups: {
-            label: 'Indicators without groups',
-        },
-        invalidIndicatorNumerators: {
-            label: 'Invalid indicator numerators',
-        },
-        invalidIndicatorDenominators: {
-            label: 'Invalid indicator denominators',
-        },
-        indicatorsViolatingExclusiveGroupSets: {
-            label: 'Indicators violating exclusive group sets',
-        },
-        organisationUnitsWithCyclicReferences: {
-            label: 'Organisation units with cyclic references',
-        },
-        orphanedOrganisationUnits: {
-            label: 'Orphaned organisation units',
-        },
-        organisationUnitsWithoutGroups: {
-            label: 'Organisation units without groups',
-        },
-        organisationUnitsViolatingExclusiveGroupSets: {
-            label: 'Organisation units violating exclusive group sets',
-        },
-        organisationUnitGroupsWithoutGroupSets: {
-            label: 'Organisation unit groups without group sets',
-        },
-        validationRulesWithoutGroups: {
-            label: 'Validation rules without groups',
-        },
-        invalidValidationRuleLeftSideExpressions: {
-            label: 'Invalid validation rule left side expressions',
-        },
-        invalidValidationRuleRightSideExpressions: {
-            label: 'Invalid validation rule right side expressions',
-        },
-        invalidProgramIndicatorExpressions: {
-            label: 'Invalid program indicator expressions',
-        },
-        invalidProgramIndicatorFilters: {
-            label: 'Invalid program indicator filters',
-        },
-        dataElementsInDataSetNotInForm: {
-            label:
-                'There are data elements in the form, but not in the form or sections',
-        },
-        invalidCategoryCombos: {
-            label: 'Invalid category combinations',
-        },
-        duplicatePeriods: {
-            label: 'Duplicate periods',
-        },
-        programRulesWithNoCondition: {
-            label: 'Program rules with no condition',
-        },
-        programRulesWithNoAction: {
-            label: 'Program rules with no action',
-        },
-        programRulesWithNoPriority: {
-            label: 'Program rules with no priority',
-        },
-        programRuleVariablesWithNoDataElement: {
-            label: 'Program rule variables with no data element',
-        },
-        programRuleVariablesWithNoAttribute: {
-            label: 'Program rule variables with no attribute',
-        },
-        programRuleActionsWithNoDataObject: {
-            label: 'Program rule actions with no data object',
-        },
-        programRuleActionsWithNoNotification: {
-            label: 'Program rule actions with no notification',
-        },
-        programRuleActionsWithNoSectionId: {
-            label: 'Program rule actions with no section id',
-        },
-        programRuleActionsWithNoStageId: {
-            label: 'Program rule actions with no stage id',
-        },
-        programIndicatorsWithNoExpression: {
-            label: 'Program indicators wit no expression',
+        controls: {
+            dataElementsWithoutDataSet: {
+                label: 'Data elements without data set',
+            },
+            dataElementsWithoutGroups: {
+                label: 'Data elements without groups',
+            },
+            dataElementsViolatingExclusiveGroupSets: {
+                label: 'Data elements violating exclusive group sets',
+            },
+            dataElementsAssignedToDataSetsWithDifferentPeriodTypes: {
+                label:
+                    'Data elements assigned to data sets with different period types',
+            },
+            dataSetsNotAssignedToOrganisationUnits: {
+                label: 'Data sets not assigned to organisation units',
+            },
+            indicatorsWithIdenticalFormulas: {
+                label: 'Indicators with identical formulas',
+            },
+            indicatorsWithoutGroups: {
+                label: 'Indicators without groups',
+            },
+            invalidIndicatorNumerators: {
+                label: 'Invalid indicator numerators',
+            },
+            invalidIndicatorDenominators: {
+                label: 'Invalid indicator denominators',
+            },
+            indicatorsViolatingExclusiveGroupSets: {
+                label: 'Indicators violating exclusive group sets',
+            },
+            organisationUnitsWithCyclicReferences: {
+                label: 'Organisation units with cyclic references',
+            },
+            orphanedOrganisationUnits: {
+                label: 'Orphaned organisation units',
+            },
+            organisationUnitsWithoutGroups: {
+                label: 'Organisation units without groups',
+            },
+            organisationUnitsViolatingExclusiveGroupSets: {
+                label: 'Organisation units violating exclusive group sets',
+            },
+            organisationUnitGroupsWithoutGroupSets: {
+                label: 'Organisation unit groups without group sets',
+            },
+            validationRulesWithoutGroups: {
+                label: 'Validation rules without groups',
+            },
+            invalidValidationRuleLeftSideExpressions: {
+                label: 'Invalid validation rule left side expressions',
+            },
+            invalidValidationRuleRightSideExpressions: {
+                label: 'Invalid validation rule right side expressions',
+            },
+            invalidProgramIndicatorExpressions: {
+                label: 'Invalid program indicator expressions',
+            },
+            invalidProgramIndicatorFilters: {
+                label: 'Invalid program indicator filters',
+            },
+            dataElementsInDataSetNotInForm: {
+                label:
+                    'There are data elements in the form, but not in the form or sections',
+            },
+            invalidCategoryCombos: {
+                label: 'Invalid category combinations',
+            },
+            duplicatePeriods: {
+                label: 'Duplicate periods',
+            },
+            programRulesWithNoCondition: {
+                label: 'Program rules with no condition',
+            },
+            programRulesWithNoAction: {
+                label: 'Program rules with no action',
+            },
+            programRulesWithNoPriority: {
+                label: 'Program rules with no priority',
+            },
+            programRuleVariablesWithNoDataElement: {
+                label: 'Program rule variables with no data element',
+            },
+            programRuleVariablesWithNoAttribute: {
+                label: 'Program rule variables with no attribute',
+            },
+            programRuleActionsWithNoDataObject: {
+                label: 'Program rule actions with no data object',
+            },
+            programRuleActionsWithNoNotification: {
+                label: 'Program rule actions with no notification',
+            },
+            programRuleActionsWithNoSectionId: {
+                label: 'Program rule actions with no section id',
+            },
+            programRuleActionsWithNoStageId: {
+                label: 'Program rule actions with no stage id',
+            },
+            programIndicatorsWithNoExpression: {
+                label: 'Program indicators wit no expression',
+            },
         },
     },
     maintenance: {
