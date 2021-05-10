@@ -115,7 +115,9 @@ const DataIntegrity = ({ sectionKey }) => {
                 title={i18n.t(i18nKeys.dataIntegrity.title)}
             />
             {(error || poll.error) && (
-                <NoticeBox error>{error || poll.error}</NoticeBox>
+                <NoticeBox error>
+                    {error?.message || poll.error?.message}
+                </NoticeBox>
             )}
             {poll.data && <Cards cards={poll.data} />}
             <Button
