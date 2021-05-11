@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-10T16:58:02.511Z\n"
-"PO-Revision-Date: 2021-05-10T16:58:02.511Z\n"
+"POT-Creation-Date: 2021-05-11T09:48:53.423Z\n"
+"PO-Revision-Date: 2021-05-11T09:48:53.423Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -92,9 +92,6 @@ msgstr ""
 msgid "Generate Resource Tables"
 msgstr ""
 
-msgid "Resource tables generated"
-msgstr ""
-
 msgid "An unexpected error happened during operation"
 msgstr ""
 
@@ -132,6 +129,44 @@ msgid "Date period structure"
 msgstr ""
 
 msgid "Data element category option combinations"
+msgstr ""
+
+msgid "Analytics tables management"
+msgstr ""
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from."
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
+msgstr ""
+
+msgid "Skip generation of event data"
+msgstr ""
+
+msgid "Skip generation of enrollment data"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "Start export"
+msgstr ""
+
+msgid "[ All ]"
 msgstr ""
 
 msgid "Checking data integrity..."
@@ -249,9 +284,6 @@ msgid "Organisation unit"
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
-
-msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Performing maintenance..."

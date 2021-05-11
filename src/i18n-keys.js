@@ -54,7 +54,6 @@ export const i18nKeys = {
             'Generate resource database tables for the organisation unit hierarchy and group set structure among others.'
         ),
         actionText: i18n.t('Generate Resource Tables'),
-        actionPerformed: i18n.t('Resource tables generated'),
         unexpectedError: i18n.t(
             'An unexpected error happened during operation'
         ),
@@ -83,6 +82,25 @@ export const i18nKeys = {
             dataElementCategoryOptionCombinations: i18n.t(
                 'Data element category option combinations'
             ),
+        },
+    },
+    analytics: {
+        title: i18n.t('Analytics tables management'),
+        label: i18n.t('Analytics Tables'),
+        description: i18n.t(
+            'The data mart is a set of tables in the DHIS database which is used by all reporting and analysis tools to retrieve data from.'
+        ),
+        actionText: i18n.t('Analytics tables update'),
+        unexpectedError: i18n.t(
+            'An unexpected error happened during maintenance'
+        ),
+        checkboxes: {
+            skipAggregate: i18n.t(
+                'Skip generation of aggregate data and completeness data'
+            ),
+            skipResourceTables: i18n.t('Skip generation of resource tables'),
+            skipEvents: i18n.t('Skip generation of event data'),
+            skipEnrollment: i18n.t('Skip generation of enrollment data'),
         },
     },
     dataStatistics: {
@@ -215,24 +233,6 @@ export const i18nKeys = {
         updatingTree: 'Updating Organisation Units Tree...',
         actionButton: 'Generate',
         removeButton: 'Remove',
-    },
-    analytics: {
-        title: 'Analytics tables management',
-        label: 'Analytics Tables',
-        description:
-            'The data mart is a set of tables in the DHIS database which is used by all reporting and ' +
-            'analysis tools to retrieve data from. ',
-        actionText: 'Analytics tables update',
-        actionButton: 'Start export',
-        skipAggregate:
-            'Skip generation of aggregate data and completeness data',
-        skipResourceTables: 'Skip generation of resource tables',
-        skipEvents: 'Skip generation of event data',
-        skipEnrollment: 'Skip generation of enrollment data',
-        analyticsTablesUpdateHeader: 'Analytics Tables Update',
-        lastYearsLabel: 'Number of last years of data to include',
-        allLastYears: '[ All ]',
-        unexpectedError: 'An unexpected error happened during maintenance',
     },
     messages: {
         unexpectedError: 'An unexpected error happened during operation',

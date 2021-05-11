@@ -1,22 +1,12 @@
-import classNames from 'classnames'
-import {
-    ERROR,
-    LOADING,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import {
-    Card,
-    CardText,
-    GridTile,
-    Checkbox,
-    SelectField,
-    MenuItem,
-    RaisedButton,
-} from 'material-ui'
-import React from 'react'
+import i18n from '@dhis2/d2-i18n'
+import { Button, Card, Checkbox, NoticeBox } from '@dhis2/ui'
+import { getInstance as getD2Instance } from 'd2'
+import { SelectField, MenuItem } from 'material-ui'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
+import PageHeader from '../../components/PageHeader/PageHeader'
+import { i18nKeys } from '../../i18n-keys'
 import {
     PULL_INTERVAL,
     ANALYTICS_TABLES_ENDPOINT,
@@ -26,21 +16,25 @@ import {
     analyticsCheckboxes,
     lastYearElements,
 } from '../analytics/analytics.conf'
-import Page from '../Page'
-import styles from '../Page.module.css'
-import { getDocsKeyForSection } from '../sections.conf'
+import styles from './Analytics.module.css'
 
-class Analytics extends Page {
+class Analytics extends Component {
+    static propTypes = {
+        sectionKey: PropTypes.string.isRequired,
+    }
+
     constructor() {
         super()
 
         const checkboxes = {}
         for (let i = 0; i < analyticsCheckboxes.length; i++) {
             const checkbox = analyticsCheckboxes[i]
-            checkboxes[checkbox.key] = { checked: false }
+            checkboxes[checkbox.key] = false
         }
 
         this.state = {
+            loading: false,
+            error: null,
             checkboxes,
             lastYears: DEFAULT_LAST_YEARS,
             taskId: null,
@@ -54,8 +48,6 @@ class Analytics extends Page {
     }
 
     componentWillUnmount() {
-        super.componentWillUnmount()
-
         this.stopTaskProgressPolling()
     }
 
@@ -77,28 +69,11 @@ class Analytics extends Page {
      * State utilities
      */
     setLoadingPageState() {
-        this.setState({ notifications: [] })
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-            },
-            pageState: {
-                loading: true,
-            },
-        })
+        this.setState({ loading: true, error: null, notifications: [] })
     }
 
     unsetLoadingPageState() {
-        this.context.updateAppState({
-            showSnackbar: false,
-            snackbarConf: {
-                type: LOADING,
-            },
-            pageState: {
-                loading: false,
-            },
-        })
+        this.setState({ loading: false })
     }
 
     setLoadedPageWithErrorState(error) {
@@ -106,102 +81,84 @@ class Analytics extends Page {
         const messageError =
             error && error.message
                 ? error.message
-                : i18n.t(i18nKeys.analytics.unexpectedError)
+                : i18nKeys.analytics.unexpectedError
         this.stopTaskProgressPolling()
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: ERROR,
-                message: messageError,
-            },
-            pageState: {
-                loading: false,
-            },
-        })
+        this.setState({ error: messageError, loading: false })
     }
 
     /*
      * API requests
      */
-    initAnalyticsTablesGeneration = () => {
-        const api = this.context.d2.Api.getApi()
+    initAnalyticsTablesGeneration = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
         const formData = this.buildFormData()
 
         this.setLoadingPageState()
 
-        api.post(ANALYTICS_TABLES_ENDPOINT, formData)
-            .then(({ response }) => {
-                if (this.isPageMounted() && response) {
-                    this.setState(
-                        { taskId: response.id },
-                        this.startTaskProgressPolling
-                    )
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }
-
-    requestTaskSummary() {
-        const api = this.context.d2.Api.getApi()
-
-        api.get(ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT)
-            .then(taskSummaryResponse => {
-                /* not mounted finishes */
-                if (!this.isPageMounted()) {
-                    return
-                }
-
-                const taskId = this.getActiveTaskIdFromSummary(
-                    taskSummaryResponse
+        try {
+            const { response } = await api.post(
+                ANALYTICS_TABLES_ENDPOINT,
+                formData
+            )
+            if (response) {
+                this.setState(
+                    { taskId: response.id },
+                    this.startTaskProgressPolling
                 )
-
-                if (taskId) {
-                    this.setLoadingPageState()
-                    this.setState(
-                        {
-                            taskId,
-                            notifications: this.getUpdatedNotifications(
-                                taskSummaryResponse[taskId]
-                            ),
-                        },
-                        this.startTaskProgressPolling
-                    )
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
+            }
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
     }
 
-    requestTaskProgress = () => {
-        const api = this.context.d2.Api.getApi()
+    requestTaskSummary = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
 
-        api.get(`${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`)
-            .then(taskNotifications => {
-                const completed = this.isTaskCompleted(taskNotifications)
+        try {
+            const taskSummaryResponse = await api.get(
+                ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT
+            )
+            const taskId = this.getActiveTaskIdFromSummary(taskSummaryResponse)
+            if (taskId) {
+                this.setLoadingPageState()
+                this.setState(
+                    {
+                        taskId,
+                        notifications: this.getUpdatedNotifications(
+                            taskSummaryResponse[taskId]
+                        ),
+                    },
+                    this.startTaskProgressPolling
+                )
+            }
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
+    }
 
-                if (completed) {
-                    this.stopTaskProgressPolling()
-                    this.unsetLoadingPageState()
-                }
+    requestTaskProgress = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
 
-                this.setState({
-                    notifications: this.getUpdatedNotifications(
-                        taskNotifications
-                    ),
-                })
+        try {
+            const taskNotifications = await api.get(
+                `${ANALYTIC_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`
+            )
+            const completed = this.isTaskCompleted(taskNotifications)
+
+            if (completed) {
+                this.stopTaskProgressPolling()
+                this.unsetLoadingPageState()
+            }
+
+            this.setState({
+                notifications: this.getUpdatedNotifications(taskNotifications),
             })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
     }
 
     /*
@@ -257,20 +214,9 @@ class Analytics extends Page {
         return taskNotifications[0].completed
     }
 
-    /*
-     * Form
-     */
-    areActionsDisabled() {
-        return this.props.loading
-    }
-
     buildFormData() {
-        let formData = null
-        const checkboxKeys = Object.keys(this.state.checkboxes)
-        for (let i = 0; i < checkboxKeys.length; i++) {
-            const key = checkboxKeys[i]
-            const checked = this.state.checkboxes[key].checked
-            formData = formData || new FormData()
+        const formData = new FormData()
+        for (const [key, checked] of Object.entries(this.state.checkboxes)) {
             formData.append(key, checked)
         }
 
@@ -287,89 +233,74 @@ class Analytics extends Page {
         })
     }
 
-    toggleCheckbox = (initialCheckboxes, key) => () => {
-        const checkboxes = Object.assign({}, initialCheckboxes)
-        const checkboxState = checkboxes[key].checked
-        checkboxes[key].checked = !checkboxState
-        this.setState({ checkboxes })
+    toggleCheckbox = key => {
+        this.setState({
+            checkboxes: {
+                ...this.state.checkboxes,
+                [key]: !this.state.checkboxes[key],
+            },
+        })
     }
 
-    renderCheckbox = checkbox => (
-        <GridTile
-            key={checkbox.key}
-            className={classNames('col-xs-12 col-md-6', styles.formControl)}
-        >
-            <Checkbox
-                label={i18n.t(checkbox.label)}
-                checked={this.state.checkboxes[checkbox.key].checked}
-                onCheck={this.toggleCheckbox(
-                    this.state.checkboxes,
-                    checkbox.key
-                )}
-                labelStyle={{ color: '#000000' }}
-                iconStyle={{ fill: '#000000' }}
-                disabled={this.areActionsDisabled()}
-            />
-        </GridTile>
-    )
-
     render() {
-        const gridElements = analyticsCheckboxes.map(this.renderCheckbox)
         return (
             <div>
-                <h1>
-                    {i18n.t(i18nKeys.analytics.title)}
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </h1>
-                <Card className={styles.cardContainer}>
-                    <CardText>
-                        <h4 className={styles.uppercase}>
-                            {i18nKeys.analytics.analyticsTablesUpdateHeader}
-                        </h4>
-                        <div
-                            className={classNames(styles.gridContainer, 'row')}
+                <PageHeader
+                    sectionKey={this.props.sectionKey}
+                    title={i18nKeys.analytics.title}
+                />
+                <Card className={styles.card}>
+                    {this.state.error && (
+                        <NoticeBox className={styles.noticeBox} error>
+                            {this.state.error}
+                        </NoticeBox>
+                    )}
+                    <div className={styles.checkboxes}>
+                        {analyticsCheckboxes.map(checkbox => (
+                            <Checkbox
+                                key={checkbox.key}
+                                className={styles.checkbox}
+                                label={checkbox.label}
+                                checked={this.state.checkboxes[checkbox.key]}
+                                onChange={() =>
+                                    this.toggleCheckbox(checkbox.key)
+                                }
+                                disabled={this.state.loading}
+                            />
+                        ))}
+                        <SelectField
+                            disabled={this.state.loading}
+                            className="col-xs-12 col-md-6"
+                            floatingLabelText={i18n.t(
+                                'Number of last years of data to include'
+                            )}
+                            onChange={this.onChangeLastYears}
+                            value={this.state.lastYears}
+                            fullWidth
                         >
-                            {gridElements}
-                            <SelectField
-                                disabled={this.areActionsDisabled()}
-                                className="col-xs-12 col-md-6"
-                                floatingLabelText={i18n.t(
-                                    i18nKeys.analytics.lastYearsLabel
-                                )}
-                                onChange={this.onChangeLastYears}
-                                value={this.state.lastYears}
-                                fullWidth
-                            >
-                                {lastYearElements.map(item => (
-                                    <MenuItem
-                                        key={item.key}
-                                        value={item.value}
-                                        primaryText={i18n.t(item.displayName)}
-                                    />
-                                ))}
-                            </SelectField>
-                        </div>
-                        <RaisedButton
-                            id={'startExportBtnId'}
-                            primary
-                            label={i18n.t(i18nKeys.analytics.actionButton)}
-                            onClick={this.initAnalyticsTablesGeneration}
-                            disabled={this.areActionsDisabled()}
-                        />
-                    </CardText>
+                            {lastYearElements.map(item => (
+                                <MenuItem
+                                    key={item.key}
+                                    value={item.value}
+                                    primaryText={item.displayName}
+                                />
+                            ))}
+                        </SelectField>
+                    </div>
+                    <Button
+                        primary
+                        onClick={this.initAnalyticsTablesGeneration}
+                        disabled={this.state.loading}
+                    >
+                        {i18n.t('Start export')}
+                    </Button>
                 </Card>
                 {(this.state.notifications || []).length > 0 && (
-                    <Card className={styles.cardContainer}>
-                        <CardText>
-                            <NotificationsTable
-                                notifications={this.state.notifications}
-                                animateIncomplete
-                            />
-                        </CardText>
+                    <Card className={styles.card}>
+                        <NotificationsTable
+                            notifications={this.state.notifications}
+                            animateIncomplete
+                        />
                     </Card>
                 )}
             </div>

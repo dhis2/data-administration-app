@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { Card, Button, NoticeBox } from '@dhis2/ui'
-import { getInstance } from 'd2'
+import { getInstance as getD2Instance } from 'd2'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
@@ -129,7 +129,7 @@ class ResourceTable extends Component {
      * API requests
      */
     initResourceTablesGeneration = async () => {
-        const d2 = await getInstance()
+        const d2 = await getD2Instance()
         const api = d2.Api.getApi()
 
         this.setLoadingPageState()
@@ -148,7 +148,7 @@ class ResourceTable extends Component {
     }
 
     requestTaskSummary = async () => {
-        const d2 = await getInstance()
+        const d2 = await getD2Instance()
         const api = d2.Api.getApi()
 
         try {
@@ -174,7 +174,7 @@ class ResourceTable extends Component {
     }
 
     requestTaskProgress = async () => {
-        const d2 = await getInstance()
+        const d2 = await getD2Instance()
         const api = d2.Api.getApi()
 
         try {

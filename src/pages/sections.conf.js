@@ -1,11 +1,13 @@
 import { i18nKeys } from '../i18n-keys'
+import Analytics from './analytics/Analytics'
 import DataIntegrity from './data-integrity/DataIntegrity'
 import Maintenance from './maintenance/Maintenance'
 import ResourceTables from './resource-tables/ResourceTables'
-/*import Analytics from './analytics/Analytics'
+/*
 import DataStatistics from './data-statistics/DataStatistics'
 import LockException from './lock-exception/LockException'
-import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'*/
+import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
+*/
 
 export const sections = [
     {
@@ -43,7 +45,7 @@ export const sections = [
             actionText: i18nKeys.resourceTables.actionText,
             docs: 'dataAdmin_resourceTables',
         },
-    } /*,
+    },
     {
         key: 'analytics',
         path: '/analytics',
@@ -55,7 +57,7 @@ export const sections = [
             actionText: i18nKeys.analytics.actionText,
             docs: 'generate_analytics_tables',
         },
-    },
+    } /*,
     {
         key: 'statistics',
         path: '/data-statistics',
