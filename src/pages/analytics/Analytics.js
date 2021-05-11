@@ -1,7 +1,13 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button, Card, Checkbox, NoticeBox } from '@dhis2/ui'
+import {
+    Button,
+    Card,
+    Checkbox,
+    SingleSelectField,
+    SingleSelectOption,
+    NoticeBox,
+} from '@dhis2/ui'
 import { getInstance as getD2Instance } from 'd2'
-import { SelectField, MenuItem } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
@@ -227,10 +233,8 @@ class Analytics extends Component {
         return formData
     }
 
-    onChangeLastYears = (event, index, value) => {
-        this.setState({
-            lastYears: value,
-        })
+    handleLastYearsChange = lastYears => {
+        this.setState({ lastYears })
     }
 
     toggleCheckbox = key => {
@@ -255,37 +259,42 @@ class Analytics extends Component {
                             {this.state.error}
                         </NoticeBox>
                     )}
-                    <div className={styles.checkboxes}>
-                        {analyticsCheckboxes.map(checkbox => (
-                            <Checkbox
-                                key={checkbox.key}
-                                className={styles.checkbox}
-                                label={checkbox.label}
-                                checked={this.state.checkboxes[checkbox.key]}
-                                onChange={() =>
-                                    this.toggleCheckbox(checkbox.key)
-                                }
-                                disabled={this.state.loading}
-                            />
-                        ))}
-                        <SelectField
-                            disabled={this.state.loading}
-                            className="col-xs-12 col-md-6"
-                            floatingLabelText={i18n.t(
-                                'Number of last years of data to include'
-                            )}
-                            onChange={this.onChangeLastYears}
-                            value={this.state.lastYears}
-                            fullWidth
-                        >
-                            {lastYearElements.map(item => (
-                                <MenuItem
-                                    key={item.key}
-                                    value={item.value}
-                                    primaryText={item.displayName}
+                    <div className={styles.form}>
+                        <div className={styles.checkboxes}>
+                            {analyticsCheckboxes.map(checkbox => (
+                                <Checkbox
+                                    key={checkbox.key}
+                                    className={styles.checkbox}
+                                    label={checkbox.label}
+                                    checked={
+                                        this.state.checkboxes[checkbox.key]
+                                    }
+                                    onChange={() =>
+                                        this.toggleCheckbox(checkbox.key)
+                                    }
+                                    disabled={this.state.loading}
                                 />
                             ))}
-                        </SelectField>
+                        </div>
+                        <SingleSelectField
+                            className={styles.lastYearsSelect}
+                            label={i18n.t(
+                                'Number of last years of data to include'
+                            )}
+                            selected={this.state.lastYears}
+                            onChange={({ selected }) =>
+                                this.handleLastYearsChange(selected)
+                            }
+                            disabled={this.state.loading}
+                        >
+                            {lastYearElements.map(item => (
+                                <SingleSelectOption
+                                    key={item.key}
+                                    label={item.displayName}
+                                    value={item.value}
+                                />
+                            ))}
+                        </SingleSelectField>
                     </div>
                     <Button
                         primary
