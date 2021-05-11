@@ -1,31 +1,81 @@
-import {
-    ERROR,
-    LOADING,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { RaisedButton } from 'material-ui'
-import { Card, CardText } from 'material-ui/Card'
-import React from 'react'
+import i18n from '@dhis2/d2-i18n'
+import { Card, Button, NoticeBox } from '@dhis2/ui'
+import { getInstance } from 'd2'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
-import Page from '../Page'
-import pageStyles from '../Page.module.css'
+import PageHeader from '../../components/PageHeader/PageHeader'
+import { i18nKeys } from '../../i18n-keys'
 import {
     PULL_INTERVAL,
     RESOURCE_TABLES_ENDPOINT,
     RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT,
 } from '../resource-tables/resource-tables.conf'
-import { getDocsKeyForSection } from '../sections.conf'
 import styles from './ResourceTables.module.css'
 
-class ResourceTable extends Page {
+const tables = [
+    {
+        key: 'organisationUnitStructure',
+        name: '_orgunitstructure',
+    },
+    {
+        key: 'organistionUnitCategoryOptionCombo',
+        name: '_orgunitstructure',
+    },
+    {
+        key: 'categoryOptionGroupSetStructure',
+        name: '_categoryoptiongroupsetstructure',
+    },
+    {
+        key: 'dataElementGroupSetStructure',
+        name: '_dataelementgroupsetstructure',
+    },
+    {
+        key: 'indicatorGroupSetStructure',
+        name: '_indicatorgroupsetstructure',
+    },
+    {
+        key: 'organisationUnitGroupSetStructure',
+        name: '_organisationunitgroupsetstructure',
+    },
+    {
+        key: 'categoryStructure',
+        name: '_categorystructure',
+    },
+    {
+        key: 'dataElementCategoryOptionComboName',
+        name: '_categoryoptioncomboname',
+    },
+    {
+        key: 'dataElementStructure',
+        name: '_dataelementstructure',
+    },
+    {
+        key: 'periodStructure',
+        name: '_periodstructure',
+    },
+    {
+        key: 'dataPeriodStructure',
+        name: '_dateperiodstructure',
+    },
+    {
+        key: 'dataElementCategoryOptionCombinations',
+        name: '_dataelementcategoryoptioncombo',
+    },
+]
+
+class ResourceTable extends Component {
+    static propTypes = {
+        sectionKey: PropTypes.string.isRequired,
+    }
+
     constructor() {
         super()
-
         this.state = {
             taskId: null,
             notifications: [],
+            loading: false,
+            error: null,
         }
     }
 
@@ -34,8 +84,6 @@ class ResourceTable extends Page {
     }
 
     componentWillUnmount() {
-        super.componentWillUnmount()
-
         this.stopTaskProgressPolling()
     }
 
@@ -57,140 +105,95 @@ class ResourceTable extends Page {
      * State utilities
      */
     setLoadingPageState() {
-        this.setState({ notifications: [] })
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-            },
-            pageState: {
-                loading: true,
-            },
+        this.setState({
+            loading: true,
+            error: null,
+            notifications: [],
         })
     }
 
     unsetLoadingPageState() {
-        this.context.updateAppState({
-            showSnackbar: false,
-            snackbarConf: {
-                type: LOADING,
-            },
-            pageState: {
-                loading: false,
-            },
-        })
+        this.setState({ loading: false })
     }
 
     setLoadedPageWithErrorState(error) {
         console.error(error)
-        const messageError =
-            error && error.message
-                ? error.message
-                : i18n.t(i18nKeys.resourcetables.unexpectedError)
+        const messageError = error?.message
+            ? error.message
+            : i18nKeys.resourcetables.unexpectedError
         this.stopTaskProgressPolling()
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: ERROR,
-                message: messageError,
-            },
-            pageState: {
-                loading: false,
-            },
-        })
+        this.setState({ error: messageError, loading: false })
     }
-
-    isAnalyzingTables = () => this.state.intervalId
-
-    startsPooling = () =>
-        setInterval(() => {
-            this.requestTaskSummary()
-        }, PULL_INTERVAL)
-
-    isJobInProgress = jobNotifications =>
-        jobNotifications.every(notification => !notification.completed)
 
     /*
      * API requests
      */
-    initResourceTablesGeneration = () => {
-        const api = this.context.d2.Api.getApi()
+    initResourceTablesGeneration = async () => {
+        const d2 = await getInstance()
+        const api = d2.Api.getApi()
 
         this.setLoadingPageState()
 
-        api.post(RESOURCE_TABLES_ENDPOINT)
-            .then(({ response }) => {
-                if (this.isPageMounted() && response) {
-                    this.setState(
-                        { taskId: response.id },
-                        this.startTaskProgressPolling
-                    )
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
-    }
-
-    requestTaskSummary() {
-        const api = this.context.d2.Api.getApi()
-
-        api.get(RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT)
-            .then(taskSummaryResponse => {
-                /* not mounted finishes */
-                if (!this.isPageMounted()) {
-                    return
-                }
-
-                const taskId = this.getActiveTaskIdFromSummary(
-                    taskSummaryResponse
+        try {
+            const { response } = await api.post(RESOURCE_TABLES_ENDPOINT)
+            if (response) {
+                this.setState(
+                    { taskId: response.id },
+                    this.startTaskProgressPolling
                 )
-
-                if (taskId) {
-                    this.setLoadingPageState()
-                    this.setState(
-                        {
-                            taskId,
-                            notifications: this.getUpdatedNotifications(
-                                taskSummaryResponse[taskId]
-                            ),
-                        },
-                        this.startTaskProgressPolling
-                    )
-                }
-            })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
+            }
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
     }
 
-    requestTaskProgress = () => {
-        const api = this.context.d2.Api.getApi()
+    requestTaskSummary = async () => {
+        const d2 = await getInstance()
+        const api = d2.Api.getApi()
 
-        api.get(`${RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`)
-            .then(taskNotifications => {
-                const completed = this.isTaskCompleted(taskNotifications)
+        try {
+            const taskSummaryResponse = await api.get(
+                RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT
+            )
+            const taskId = this.getActiveTaskIdFromSummary(taskSummaryResponse)
+            if (taskId) {
+                this.setLoadingPageState()
+                this.setState(
+                    {
+                        taskId,
+                        notifications: this.getUpdatedNotifications(
+                            taskSummaryResponse[taskId]
+                        ),
+                    },
+                    this.startTaskProgressPolling
+                )
+            }
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
+    }
 
-                if (completed) {
-                    this.stopTaskProgressPolling()
-                    this.unsetLoadingPageState()
-                }
+    requestTaskProgress = async () => {
+        const d2 = await getInstance()
+        const api = d2.Api.getApi()
 
-                this.setState({
-                    notifications: this.getUpdatedNotifications(
-                        taskNotifications
-                    ),
-                })
+        try {
+            const taskNotifications = await api.get(
+                `${RESOURCE_TABLES_TASK_SUMMARY_ENDPOINT}/${this.state.taskId}`
+            )
+            const completed = this.isTaskCompleted(taskNotifications)
+
+            if (completed) {
+                this.stopTaskProgressPolling()
+                this.unsetLoadingPageState()
+            }
+
+            this.setState({
+                notifications: this.getUpdatedNotifications(taskNotifications),
             })
-            .catch(e => {
-                if (this.isPageMounted()) {
-                    this.setLoadedPageWithErrorState(e)
-                }
-            })
+        } catch (error) {
+            this.setLoadedPageWithErrorState(error)
+        }
     }
 
     /*
@@ -242,146 +245,51 @@ class ResourceTable extends Page {
     }
 
     isTaskCompleted(taskNotifications) {
-        // First array item is most recent notification, which can be used to read the completed prop for the entire task
+        // First array item is most recent notification, which can be used to
+        // read the completed prop for the entire task
         return taskNotifications[0].completed
     }
 
     render() {
         return (
             <div>
-                <h1>
-                    {i18n.t(i18nKeys.resourceTables.title)}
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </h1>
-                <Card className={pageStyles.cardContainer}>
-                    <CardText>
-                        <div className={styles.description}>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .organisationUnitStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_orgunitstructure)
+                <PageHeader
+                    title={i18nKeys.resourceTables.title}
+                    sectionKey={this.props.sectionKey}
+                />
+                <Card className={styles.card}>
+                    {this.state.error && (
+                        <NoticeBox className={styles.noticeBox} error>
+                            {this.state.error}
+                        </NoticeBox>
+                    )}
+                    <div className={styles.description}>
+                        {tables.map(table => (
+                            <div key={table.key}>
+                                {i18nKeys.resourceTables.tables[table.key]}
+                                <span
+                                    title="Table name"
+                                    className={styles.tableName}
+                                >
+                                    ({table.name})
                                 </span>
                             </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .organistionUnitCategoryOptionCombo
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_orgunitstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .categoryOptionGroupSetStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_categoryoptiongroupsetstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .dataElementGroupSetStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_dataelementgroupsetstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .indicatorGroupSetStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_indicatorgroupsetstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .organisationUnitGroupSetStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_organisationunitgroupsetstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables.categoryStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_categorystructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .dataElementCategoryOptionComboName
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_categoryoptioncomboname)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables.dataElementStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_dataelementstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables.periodStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_periodstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables.dataPeriodStructure
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_dateperiodstructure)
-                                </span>
-                            </div>
-                            <div>
-                                {i18n.t(
-                                    i18nKeys.resourceTables
-                                        .dataElementCategoryOptionCombinations
-                                )}{' '}
-                                <span className={styles.tableName}>
-                                    (_dataelementcategoryoptioncombo)
-                                </span>
-                            </div>
-                        </div>
-                        <RaisedButton
-                            id={'generateTablesBtnId'}
-                            primary
-                            label={i18n.t(i18nKeys.resourceTables.actionButton)}
-                            onClick={this.initResourceTablesGeneration}
-                            disabled={this.props.loading}
-                        />
-                    </CardText>
+                        ))}
+                    </div>
+                    <Button
+                        primary
+                        onClick={this.initResourceTablesGeneration}
+                        disabled={this.state.loading}
+                    >
+                        {i18n.t('Generate tables')}
+                    </Button>
                 </Card>
-                {(this.state.notifications || []).length > 0 && (
-                    <Card className={pageStyles.cardContainer}>
-                        <CardText>
-                            <NotificationsTable
-                                notifications={this.state.notifications}
-                                animateIncomplete
-                            />
-                        </CardText>
+                {this.state.notifications?.length > 0 && (
+                    <Card className={styles.card}>
+                        <NotificationsTable
+                            notifications={this.state.notifications}
+                            animateIncomplete
+                        />
                     </Card>
                 )}
             </div>
