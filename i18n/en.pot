@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-11T15:28:05.798Z\n"
-"PO-Revision-Date: 2021-05-11T15:28:05.798Z\n"
+"POT-Creation-Date: 2021-05-11T16:42:23.909Z\n"
+"PO-Revision-Date: 2021-05-11T16:42:23.909Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -160,6 +160,23 @@ msgstr ""
 msgid "Skip generation of enrollment data"
 msgstr ""
 
+msgid "Data Statistics"
+msgstr ""
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Data values"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
 msgid "Number of last years of data to include"
 msgstr ""
 
@@ -275,6 +292,90 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Program indicators with no expression"
+msgstr ""
+
+msgid "Indicators"
+msgstr ""
+
+msgid "Periods"
+msgstr ""
+
+msgid "Organisation units"
+msgstr ""
+
+msgid "Validation rules"
+msgstr ""
+
+msgid "Programs"
+msgstr ""
+
+msgid "Data elements"
+msgstr ""
+
+msgid "Organisation unit groups"
+msgstr ""
+
+msgid "Pivot tables"
+msgstr ""
+
+msgid "Indicator types"
+msgstr ""
+
+msgid "Data sets"
+msgstr ""
+
+msgid "User groups"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Maps"
+msgstr ""
+
+msgid "Indicator groups"
+msgstr ""
+
+msgid "Charts"
+msgstr ""
+
+msgid "Data element groups"
+msgstr ""
+
+msgid "Dashboards"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Last {{days}} days"
+msgstr ""
+
+msgid "Last hour"
+msgstr ""
+
+msgid "Object type"
+msgstr ""
+
+msgid "Users logged in"
+msgstr ""
+
+msgid "User account invitations"
+msgstr ""
+
+msgid "Pending invitations"
+msgstr ""
+
+msgid "Expired invitations"
+msgstr ""
+
+msgid "Error loading data statistics"
+msgstr ""
+
+msgid "Loading data statistics..."
+msgstr ""
+
+msgid "No data to show."
 msgstr ""
 
 msgid "Data set"

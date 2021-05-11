@@ -1,30 +1,48 @@
-import classNames from 'classnames'
-import {
-    LOADING,
-    ERROR,
-} from 'd2-ui/lib/feedback-snackbar/FeedbackSnackbarTypes'
-import { Card, CardText } from 'material-ui/Card'
+import i18n from '@dhis2/d2-i18n'
+import { Card, CircularLoader, CenteredContent } from '@dhis2/ui'
+import { getInstance as getD2Instance } from 'd2'
 import PropTypes from 'prop-types'
-import React from 'react'
-import PageHelper from '../../components/page-helper/PageHelper'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
-import Page from '../Page'
-import { getDocsKeyForSection } from '../sections.conf'
+import React, { Component } from 'react'
+import PageHeader from '../../components/PageHeader/PageHeader'
+import { i18nKeys } from '../../i18n-keys'
 import styles from './DataStatistics.module.css'
 import DataStatisticsTable from './DataStatisticsTable'
 
-export const OBJECT_COUNTS_KEY = 'objectCounts'
-export const ACTIVE_USERS_KEY = 'activeUsers'
-export const USER_INVITATIONS_KEY = 'userInvitations'
-export const DATA_VALUE_COUNT_KEY = 'dataValueCount'
-export const EVENT_COUNT_KEY = 'eventCount'
-
+const OBJECT_COUNTS_KEY = 'objectCounts'
+const ACTIVE_USERS_KEY = 'activeUsers'
+const USER_INVITATIONS_KEY = 'userInvitations'
+const DATA_VALUE_COUNT_KEY = 'dataValueCount'
+const EVENT_COUNT_KEY = 'eventCount'
 const PENDING_INVITATION_ALL_KEY = 'all'
 const EXPIRED_INVITATION_KEY = 'expired'
 
-export const TableCard = ({ label, elements }) => (
-    <Card className={classNames(styles.card, 'data-statistics-table')}>
+const objectLabels = {
+    indicator: i18n.t('Indicators'),
+    period: i18n.t('Periods'),
+    visualization: i18n.t('Visualization'),
+    programStageInstance: i18n.t('Events'),
+    organisationUnit: i18n.t('Organisation units'),
+    validationRule: i18n.t('Validation rules'),
+    dataValue: i18n.t('Data values'),
+    program: i18n.t('Programs'),
+    dataElement: i18n.t('Data elements'),
+    organisationUnitGroup: i18n.t('Organisation unit groups'),
+    trackedEntityInstance: i18n.t('Tracked entity instances'),
+    reportTable: i18n.t('Pivot tables'),
+    programInstance: i18n.t('Program instances'),
+    indicatorType: i18n.t('Indicator types'),
+    dataSet: i18n.t('Data sets'),
+    userGroup: i18n.t('User groups'),
+    user: i18n.t('Users'),
+    map: i18n.t('Maps'),
+    indicatorGroup: i18n.t('Indicator groups'),
+    chart: i18n.t('Charts'),
+    dataElementGroup: i18n.t('Data element groups'),
+    dashboard: i18n.t('Dashboards'),
+}
+
+const TableCard = ({ label, elements }) => (
+    <Card className={styles.card}>
         <DataStatisticsTable label={label} elements={elements} />
     </Card>
 )
@@ -34,319 +52,207 @@ TableCard.propTypes = {
     label: PropTypes.string.isRequired,
 }
 
-class DataStatistics extends Page {
-    // auxiliar functions
-    static objectCountsTableObjectToShowFromServerResponse = objectCountsResponse => {
-        if (objectCountsResponse) {
-            const objectCountsKeys = Object.keys(objectCountsResponse)
-            const objectCountsTable = {
-                label: i18n.t(i18nKeys.dataStatistics.objectType),
-                elements: [],
-            }
+const translatedTimeLabelFromIntProperty = key => {
+    const intProperty = parseInt(key, 10)
+    if (intProperty === 1) {
+        return i18n.t('Today')
+    } else if (intProperty > 0) {
+        return i18n.t('Last {{days}} days', {
+            days: intProperty,
+        })
+    } else {
+        return i18n.t('Last hour')
+    }
+}
 
-            for (let i = 0; i < objectCountsKeys.length; i++) {
-                const key = objectCountsKeys[i]
-                objectCountsTable.elements.push({
-                    label: i18n.t(i18nKeys.dataStatistics.objects[key]),
-                    count: objectCountsResponse[key],
-                })
-            }
-
-            return objectCountsTable
-        }
-
-        return {}
+const objectCountsTableFromResponse = objectCountsResponse => {
+    if (!objectCountsResponse) {
+        return null
     }
 
-    static translatedTimeLabelFromIntProperty = intProperty => {
-        let label = i18n.t(i18nKeys.dataStatistics.lastHour)
-        if (intProperty === 1) {
-            label = i18n.t(i18nKeys.dataStatistics.today)
-        } else if (intProperty > 0) {
-            const lastLabel = i18n.t(i18nKeys.dataStatistics.last)
-            const daysLabel = i18n.t(i18nKeys.dataStatistics.days)
-            label = `${lastLabel} ${intProperty} ${daysLabel}`
-        }
+    return {
+        label: i18n.t('Object type'),
+        elements: Object.entries(objectCountsResponse).map(([key, count]) => ({
+            label: objectLabels[key] || key,
+            count,
+        })),
+    }
+}
 
-        return label
+const activeUsersTableFromResponse = activeUsersResponse => {
+    if (!activeUsersResponse) {
+        return null
     }
 
-    static activeUsersTableObjectToShowFromServerResponse = activeUsersResponse => {
-        if (activeUsersResponse) {
-            const activeUsersKeys = Object.keys(activeUsersResponse)
-            const activeUsersTable = {
-                label: i18n.t(i18nKeys.dataStatistics.usersLoggedIn),
-                elements: [],
-            }
+    return {
+        label: i18n.t('Users logged in'),
+        elements: Object.entries(activeUsersResponse).map(([key, count]) => ({
+            label: translatedTimeLabelFromIntProperty(key),
+            count,
+        })),
+    }
+}
 
-            for (let i = 0; i < activeUsersKeys.length; i++) {
-                const key = activeUsersKeys[i]
-                activeUsersTable.elements.push({
-                    label: DataStatistics.translatedTimeLabelFromIntProperty(
-                        parseInt(key, 10)
-                    ),
-                    count: activeUsersResponse[key],
-                })
-            }
-
-            return activeUsersTable
-        }
-
-        return {}
+const userInvitationsTableFromResponse = userInvitationsResponse => {
+    if (!userInvitationsResponse) {
+        return null
     }
 
-    static userInvitationsTableObjectToShowFromServerResponse = userInvitationsResponse => {
-        if (userInvitationsResponse) {
-            const userInvitationsTable = {
-                label: i18n.t(i18nKeys.dataStatistics.userAccountInvitations),
-                elements: [],
-            }
-
-            if (
-                Object.hasOwnProperty.call(
-                    userInvitationsResponse,
-                    PENDING_INVITATION_ALL_KEY
-                )
-            ) {
-                userInvitationsTable.elements.push({
-                    label: i18n.t(i18nKeys.dataStatistics.pedingInvitations),
-                    count: userInvitationsResponse[PENDING_INVITATION_ALL_KEY],
-                })
-            }
-
-            if (
-                Object.hasOwnProperty.call(
-                    userInvitationsResponse,
-                    EXPIRED_INVITATION_KEY
-                )
-            ) {
-                userInvitationsTable.elements.push({
-                    label: i18n.t(i18nKeys.dataStatistics.expiredInvitations),
-                    count: userInvitationsResponse[EXPIRED_INVITATION_KEY],
-                })
-            }
-
-            return userInvitationsTable
-        }
-
-        return {}
+    const userInvitationsTable = {
+        label: i18n.t('User account invitations'),
+        elements: [],
     }
 
-    static dataValueCountsTableObjectToShowFromServerResponse = dataValueCountsResponse => {
-        if (dataValueCountsResponse) {
-            const dataValueCountsKeys = Object.keys(dataValueCountsResponse)
-            const dataValueCountsTable = {
-                label: i18n.t(i18nKeys.dataStatistics.dataValues),
-                elements: [],
-            }
-
-            for (let i = 0; i < dataValueCountsKeys.length; i++) {
-                const key = dataValueCountsKeys[i]
-                dataValueCountsTable.elements.push({
-                    label: DataStatistics.translatedTimeLabelFromIntProperty(
-                        parseInt(key, 10)
-                    ),
-                    count: dataValueCountsResponse[key],
-                })
-            }
-
-            return dataValueCountsTable
-        }
-
-        return {}
+    if (
+        Object.hasOwnProperty.call(
+            userInvitationsResponse,
+            PENDING_INVITATION_ALL_KEY
+        )
+    ) {
+        userInvitationsTable.elements.push({
+            label: i18n.t('Pending invitations'),
+            count: userInvitationsResponse[PENDING_INVITATION_ALL_KEY],
+        })
     }
 
-    static eventCountsTableObjectToShowFromServerResponse = eventCountsResponse => {
-        if (eventCountsResponse) {
-            const eventCountsKeys = Object.keys(eventCountsResponse)
-            const eventCountsTable = {
-                label: i18n.t(i18nKeys.dataStatistics.events),
-                elements: [],
-            }
+    if (
+        Object.hasOwnProperty.call(
+            userInvitationsResponse,
+            EXPIRED_INVITATION_KEY
+        )
+    ) {
+        userInvitationsTable.elements.push({
+            label: i18n.t('Expired invitations'),
+            count: userInvitationsResponse[EXPIRED_INVITATION_KEY],
+        })
+    }
 
-            for (let i = 0; i < eventCountsKeys.length; i++) {
-                const key = eventCountsKeys[i]
-                eventCountsTable.elements.push({
-                    label: DataStatistics.translatedTimeLabelFromIntProperty(
-                        parseInt(key, 10)
-                    ),
-                    count: eventCountsResponse[key],
-                })
-            }
+    return userInvitationsTable
+}
 
-            return eventCountsTable
+const dataValueCountsTableFromResponse = dataValueCountsResponse => {
+    if (!dataValueCountsResponse) {
+        return null
+    }
+
+    return {
+        label: i18n.t('Data values'),
+        elements: Object.entries(dataValueCountsResponse).map(
+            ([key, count]) => ({
+                label: translatedTimeLabelFromIntProperty(key),
+                count,
+            })
+        ),
+    }
+}
+
+const eventCountsTableFromResponse = eventCountsResponse => {
+    if (!eventCountsResponse) {
+        return null
+    }
+
+    return {
+        label: i18n.t('Events'),
+        elements: Object.entries(eventCountsResponse).map(([key, count]) => ({
+            label: translatedTimeLabelFromIntProperty(key),
+            count,
+        })),
+    }
+}
+
+class DataStatistics extends Component {
+    static propTypes = {
+        sectionKey: PropTypes.string.isRequired,
+    }
+
+    constructor() {
+        super()
+        this.state = {
+            loading: true,
+            error: null,
+            tables: null,
         }
+    }
 
-        return {}
+    loadDataStatistics = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
+        try {
+            const response = await api.get('dataSummary')
+            const tables = {
+                [OBJECT_COUNTS_KEY]: objectCountsTableFromResponse(
+                    response[OBJECT_COUNTS_KEY]
+                ),
+                [ACTIVE_USERS_KEY]: activeUsersTableFromResponse(
+                    response[ACTIVE_USERS_KEY]
+                ),
+                [USER_INVITATIONS_KEY]: userInvitationsTableFromResponse(
+                    response[USER_INVITATIONS_KEY]
+                ),
+                [DATA_VALUE_COUNT_KEY]: dataValueCountsTableFromResponse(
+                    response[DATA_VALUE_COUNT_KEY]
+                ),
+                [EVENT_COUNT_KEY]: eventCountsTableFromResponse(
+                    response[EVENT_COUNT_KEY]
+                ),
+            }
+            this.setState({
+                loading: false,
+                tables,
+            })
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error: error.message || i18n.t('Error loading data statistics'),
+            })
+        }
     }
 
     componentDidMount() {
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-                message: i18n.t(i18nKeys.dataStatistics.loadingMessage),
-            },
-            pageState: {
-                loaded: false,
-                tables: {},
-                loading: true,
-            },
-        })
-
-        const api = this.context.d2.Api.getApi()
-        api.get('dataSummary')
-            .then(response => {
-                if (this.isPageMounted()) {
-                    const tables = {}
-                    tables[
-                        OBJECT_COUNTS_KEY
-                    ] = DataStatistics.objectCountsTableObjectToShowFromServerResponse(
-                        response[OBJECT_COUNTS_KEY]
-                    )
-                    tables[
-                        ACTIVE_USERS_KEY
-                    ] = DataStatistics.activeUsersTableObjectToShowFromServerResponse(
-                        response[ACTIVE_USERS_KEY]
-                    )
-                    tables[
-                        USER_INVITATIONS_KEY
-                    ] = DataStatistics.userInvitationsTableObjectToShowFromServerResponse(
-                        response[USER_INVITATIONS_KEY]
-                    )
-                    tables[
-                        DATA_VALUE_COUNT_KEY
-                    ] = DataStatistics.dataValueCountsTableObjectToShowFromServerResponse(
-                        response[DATA_VALUE_COUNT_KEY]
-                    )
-                    tables[
-                        EVENT_COUNT_KEY
-                    ] = DataStatistics.eventCountsTableObjectToShowFromServerResponse(
-                        response[EVENT_COUNT_KEY]
-                    )
-
-                    this.context.updateAppState({
-                        showSnackbar: false,
-                        pageState: {
-                            loaded: true,
-                            tables,
-                            loading: false,
-                        },
-                    })
-                }
-            })
-            .catch(() => {
-                if (this.isPageMounted()) {
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: i18n.t(
-                                i18nKeys.dataStatistics.errorMessage
-                            ),
-                        },
-                        pageState: {
-                            loaded: true,
-                            tables: {},
-                            loading: false,
-                        },
-                    })
-                }
-            })
+        this.loadDataStatistics()
     }
 
-    hasTables = () =>
-        this.props.tables &&
-        this.props.tables.constructor === Object &&
-        Object.keys(this.props.tables).length > 0
-
     render() {
-        const noContent = (
-            <Card style={{ display: !this.props.loading ? 'block' : 'none' }}>
-                <CardText>
-                    {i18n.t(i18nKeys.dataStatistics.noDataMessage)}
-                </CardText>
-            </Card>
-        )
+        const renderTable = key => {
+            if (!this.state.tables[key]) {
+                return null
+            }
+
+            return (
+                <TableCard
+                    key={key}
+                    label={this.state.tables[key].label}
+                    elements={this.state.tables[key].elements}
+                />
+            )
+        }
 
         return (
             <div>
-                <h1 className={styles.header}>
-                    {i18n.t(i18nKeys.dataStatistics.title)}
-                    <PageHelper
-                        sectionDocsKey={getDocsKeyForSection(
-                            this.props.sectionKey
-                        )}
-                    />
-                </h1>
-                {this.hasTables() ? (
+                <PageHeader
+                    sectionKey={this.props.sectionKey}
+                    title={i18nKeys.dataStatistics.title}
+                />
+                {this.state.loading && (
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                )}
+                {this.state.tables &&
+                Object.keys(this.state.tables).length > 0 ? (
                     <div className="row">
                         <div className="col-md-6">
-                            {this.props.tables[OBJECT_COUNTS_KEY] && (
-                                <TableCard
-                                    label={
-                                        this.props.tables[OBJECT_COUNTS_KEY]
-                                            .label
-                                    }
-                                    elements={
-                                        this.props.tables[OBJECT_COUNTS_KEY]
-                                            .elements
-                                    }
-                                />
-                            )}
-                            {this.props.tables[ACTIVE_USERS_KEY] && (
-                                <TableCard
-                                    label={
-                                        this.props.tables[ACTIVE_USERS_KEY]
-                                            .label
-                                    }
-                                    elements={
-                                        this.props.tables[ACTIVE_USERS_KEY]
-                                            .elements
-                                    }
-                                />
-                            )}
+                            {renderTable(OBJECT_COUNTS_KEY)}
                         </div>
                         <div className="col-md-6">
-                            {this.props.tables[USER_INVITATIONS_KEY] && (
-                                <TableCard
-                                    label={
-                                        this.props.tables[USER_INVITATIONS_KEY]
-                                            .label
-                                    }
-                                    elements={
-                                        this.props.tables[USER_INVITATIONS_KEY]
-                                            .elements
-                                    }
-                                />
-                            )}
-                            {this.props.tables[DATA_VALUE_COUNT_KEY] && (
-                                <TableCard
-                                    label={
-                                        this.props.tables[DATA_VALUE_COUNT_KEY]
-                                            .label
-                                    }
-                                    elements={
-                                        this.props.tables[DATA_VALUE_COUNT_KEY]
-                                            .elements
-                                    }
-                                />
-                            )}
-                            {this.props.tables[EVENT_COUNT_KEY] && (
-                                <TableCard
-                                    label={
-                                        this.props.tables[EVENT_COUNT_KEY].label
-                                    }
-                                    elements={
-                                        this.props.tables[EVENT_COUNT_KEY]
-                                            .elements
-                                    }
-                                />
-                            )}
+                            {renderTable(USER_INVITATIONS_KEY)}
+                            {renderTable(DATA_VALUE_COUNT_KEY)}
+                            {renderTable(EVENT_COUNT_KEY)}
+                            {renderTable(ACTIVE_USERS_KEY)}
                         </div>
                     </div>
                 ) : (
-                    noContent
+                    !this.state.loading && <em>{i18n.t('No data to show.')}</em>
                 )}
             </div>
         )

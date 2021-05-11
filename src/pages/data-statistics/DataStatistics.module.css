@@ -4,7 +4,9 @@
 }
 
 .card {
+    display: block !important;
     margin-bottom: 24px;
+    height: unset !important;
 }
 
 .maxWith {
@@ -12,15 +14,16 @@
 }
 
 .statisticsTable th {
-    color: #757575 !important;
-    border-bottom: 2px solid #e0e0e0 !important;
+    color: var(--colors-grey700) !important;
+    font-weight: 500 !important;
     font-size: 16px !important;
+    border-bottom: 2px solid var(--colors-grey400) !important;
     height: 48px !important;
 }
 
 .statisticsTable tr {
-    color: #000000 !important;
-    border-bottom: 1px solid #e0e0e0 !important;
+    color: var(--colors-grey900) !important;
+    border-bottom: 1px solid var(--colors-grey400) !important;
 }
 
 .statisticsTable tr td {
