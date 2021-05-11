@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import { colors } from '@dhis2/ui'
 import { FontIcon } from 'material-ui'
 import { Card, CardText, CardHeader } from 'material-ui/Card'
@@ -66,7 +67,12 @@ const IssueCard = ({ title, content }) => {
         <Card className={styles.card}>
             <CardHeader
                 title={
-                    elementsCount > 0 ? `${title} (${elementsCount})` : title
+                    elementsCount > 0
+                        ? i18n.t('{{issueTitle}} ({{issueElementsCount}})', {
+                              issueTitle: title,
+                              issueElementsCount: elementsCount,
+                          })
+                        : title
                 }
                 titleColor={titleColor}
                 titleStyle={jsStyles.titleStyle}
