@@ -2,10 +2,10 @@ import { i18nKeys } from '../i18n-keys'
 import Analytics from './analytics/Analytics'
 import DataIntegrity from './data-integrity/DataIntegrity'
 import DataStatistics from './data-statistics/DataStatistics'
+import LockException from './lock-exception/LockException'
 import Maintenance from './maintenance/Maintenance'
 import ResourceTables from './resource-tables/ResourceTables'
 /*
-import LockException from './lock-exception/LockException'
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
 */
 
@@ -69,7 +69,7 @@ export const sections = [
             actionText: i18nKeys.dataStatistics.actionText,
             docs: 'dataAdmin_dataStatistics',
         },
-    } /*,
+    },
     {
         key: 'lock',
         path: '/lock-exception',
@@ -81,7 +81,7 @@ export const sections = [
             actionText: i18nKeys.lockException.actionText,
             docs: 'dataAdmin_lockException',
         },
-    },
+    } /*,
     {
         key: 'minMax',
         path: '/min-max-value-generation',

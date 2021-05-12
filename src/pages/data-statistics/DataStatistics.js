@@ -252,7 +252,7 @@ class DataStatistics extends Component {
                         </div>
                     </div>
                 ) : (
-                    !this.state.loading && <em>{i18n.t('No data to show.')}</em>
+                    !this.state.loading && <em>{i18n.t('No data statistics to show.')}</em>
                 )}
             </div>
         )

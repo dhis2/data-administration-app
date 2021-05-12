@@ -1,3 +1,5 @@
+import i18n from '@dhis2/d2-i18n'
+import { getInstance as getD2Instance } from 'd2'
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
@@ -6,8 +8,6 @@ import Card from 'material-ui/Card/Card'
 import CardText from 'material-ui/Card/CardText'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { i18nKeys } from '../../i18n'
-import i18n from '../../locales'
 import styles from './AddLockExceptionForm.module.css'
 import OrgUnitTree from './OrgUnitTree'
 import PeriodPicker from './PeriodPicker'
@@ -29,10 +29,6 @@ class AddLockExceptionForm extends Component {
         updateSeletedDataSetId: PropTypes.func.isRequired,
     }
 
-    static contextTypes = {
-        d2: PropTypes.object,
-    }
-
     constructor() {
         super()
 
@@ -41,33 +37,27 @@ class AddLockExceptionForm extends Component {
             dataSet: null,
             orgUnitPaths: null,
         }
-
-        this.onDataSetChange = this.onDataSetChange.bind(this)
-
-        this.onPeriodChange = this.onPeriodChange.bind(this)
-
-        this.handleSelectionUpdate = this.handleSelectionUpdate.bind(this)
-        this.handleOrgUnitClick = this.handleOrgUnitClick.bind(this)
-        this.changeRoot = this.changeRoot.bind(this)
     }
 
-    onDataSetChange(dataSet) {
-        const d2 = this.context.d2
+    handleDataSetChange = async dataSet => {
         const dataSetId = dataSet.id
-
         if (
-            this.state.dataSet === null ||
-            dataSetId !== this.state.dataSet.id
+            this.state.dataset !== null &&
+            dataSetId === this.state.dataSet.id
         ) {
-            this.props.updateSeletedDataSetId(dataSetId)
+            return
+        }
 
-            this.setState({
-                rootWithMembers: null,
-                selected: [],
-                dataSet,
-            })
+        this.props.updateSeletedDataSetId(dataSetId)
+        this.setState({
+            rootWithMembers: null,
+            selected: [],
+            dataSet,
+        })
 
-            Promise.all([
+        const d2 = await getD2Instance()
+        try {
+            const [rootWithDataSetMembers, dataSetMembers] = await Promise.all([
                 d2.models.organisationUnits.list({
                     paging: false,
                     level: 1,
@@ -81,32 +71,31 @@ class AddLockExceptionForm extends Component {
                     fields: 'organisationUnits[id,path]',
                 }),
             ])
-                .then(([rootWithDataSetMembers, dataSetMembers]) => {
-                    const rootWithMembers = rootWithDataSetMembers.toArray()[0]
-                    this.setState({
-                        rootWithMembers,
-                        selected: [],
-                        orgUnitPaths: dataSetMembers.organisationUnits
-                            .toArray()
-                            .map(ou => ou.path),
-                    })
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+
+            const rootWithMembers = rootWithDataSetMembers.toArray()[0]
+            this.setState({
+                rootWithMembers,
+                selected: [],
+                orgUnitPaths: dataSetMembers.organisationUnits
+                    .toArray()
+                    .map(ou => ou.path),
+            })
+        } catch (error) {
+            // TODO: Show error to user
+            console.error(error)
         }
     }
 
-    onPeriodChange(periodId) {
+    handlePeriodChange = periodId => {
         this.props.updateSelectedPeriodId(periodId)
     }
 
-    handleSelectionUpdate(newSelection) {
+    handleSelectionUpdate = newSelection => {
         this.setState({ selected: newSelection })
         this.props.updateSelectedOrgUnits(this.state.selected)
     }
 
-    handleOrgUnitClick(event, orgUnit) {
+    handleOrgUnitClick = (event, orgUnit) => {
         if (this.state.selected.includes(orgUnit.path)) {
             const selected = this.state.selected
             selected.splice(selected.indexOf(orgUnit.path), 1)
@@ -119,7 +108,7 @@ class AddLockExceptionForm extends Component {
         this.props.updateSelectedOrgUnits(this.state.selected)
     }
 
-    changeRoot(currentRoot) {
+    handleChangeRoot = currentRoot => {
         this.setState({ currentRoot })
     }
 
@@ -130,33 +119,33 @@ class AddLockExceptionForm extends Component {
             periodType: dataSet.periodType,
         }))
 
-        let dataSetSelectLabel = i18n.t(i18nKeys.lockException.selectADataSet)
+        let dataSetSelectLabel = i18n.t('Select a data set')
         let dataSetSelectValue = null
         if (this.state.dataSet) {
-            dataSetSelectLabel = i18n.t(i18nKeys.lockException.dataSet)
+            dataSetSelectLabel = i18n.t('Data set')
             dataSetSelectValue = this.state.dataSet.id
         }
 
         return (
-            <div id={'addLockExceptionFormId'}>
+            <div>
                 <div className={styles.selectsContainer}>
                     <SelectField
                         style={d2UiSelectStyleOverride}
                         label={dataSetSelectLabel}
                         items={dataSetItems}
-                        onChange={this.onDataSetChange}
+                        onChange={this.handleDataSetChange}
                         value={dataSetSelectValue}
                     />
                     {this.state.dataSet && (
-                        <span id={'idPeriodPicker'}>
+                        <span>
                             <PeriodPicker
                                 periodType={this.state.dataSet.periodType}
-                                onPickPeriod={this.onPeriodChange}
+                                onPickPeriod={this.handlePeriodChange}
                             />
                         </span>
                     )}
                 </div>
-                {this.state.dataSet ? (
+                {this.state.dataSet && (
                     <Card className={styles.organisationUnitTreeCard}>
                         <CardText
                             className={styles.organisationUnitTreeContainer}
@@ -173,7 +162,9 @@ class AddLockExceptionForm extends Component {
                                         memberCollection="dataSets"
                                         memberObject={this.state.dataSet.id}
                                         onSelectClick={this.handleOrgUnitClick}
-                                        onChangeCurrentRoot={this.changeRoot}
+                                        onChangeCurrentRoot={
+                                            this.handleChangeRoot
+                                        }
                                         orgUnitsPathsToInclude={
                                             this.state.orgUnitPaths
                                         }
@@ -181,7 +172,7 @@ class AddLockExceptionForm extends Component {
                                 ) : (
                                     <span>
                                         {i18n.t(
-                                            i18nKeys.lockException.updatingTree
+                                            'Updating organisation units tree...'
                                         )}
                                     </span>
                                 )}
@@ -191,22 +182,18 @@ class AddLockExceptionForm extends Component {
                                     {this.state.currentRoot ? (
                                         <div>
                                             {i18n.t(
-                                                i18nKeys.lockException
-                                                    .organisationUnitsWithin
-                                            )}{' '}
-                                            <span className={styles.ouLabel}>
+                                                'For organisation units within {{organisationUnitName}}:',
                                                 {
-                                                    this.state.currentRoot
-                                                        .displayName
+                                                    organisationUnitName: this
+                                                        .state.currentRoot
+                                                        .displayName,
                                                 }
-                                            </span>
-                                            :
+                                            )}
                                         </div>
                                     ) : (
                                         <div>
                                             {i18n.t(
-                                                i18nKeys.lockException
-                                                    .selectOrganisationUnits
+                                                'For all organisation units:'
                                             )}
                                         </div>
                                     )}
@@ -237,7 +224,7 @@ class AddLockExceptionForm extends Component {
                             </div>
                         </CardText>
                     </Card>
-                ) : null}
+                )}
             </div>
         )
     }
