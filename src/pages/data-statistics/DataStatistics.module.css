@@ -1,35 +1,5 @@
-.header {
-    display: flex;
-    align-items: center;
-}
-
 .card {
     display: block !important;
     margin-bottom: 24px;
     height: unset !important;
-}
-
-.maxWith {
-    max-width: 500px;
-}
-
-.statisticsTable th {
-    color: var(--colors-grey700) !important;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    border-bottom: 2px solid var(--colors-grey400) !important;
-    height: 48px !important;
-}
-
-.statisticsTable tr {
-    color: var(--colors-grey900) !important;
-    border-bottom: 1px solid var(--colors-grey400) !important;
-}
-
-.statisticsTable tr td {
-    font-size: 14px !important;
-}
-
-.statisticsTable td:nth-child(2) {
-    text-align: right !important;
 }

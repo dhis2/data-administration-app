@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-11T16:42:23.909Z\n"
-"PO-Revision-Date: 2021-05-11T16:42:23.909Z\n"
+"POT-Creation-Date: 2021-05-12T08:52:10.009Z\n"
+"PO-Revision-Date: 2021-05-12T08:52:10.009Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -171,12 +171,6 @@ msgstr ""
 msgid "Overview Data Statistics"
 msgstr ""
 
-msgid "Data values"
-msgstr ""
-
-msgid "Events"
-msgstr ""
-
 msgid "Number of last years of data to include"
 msgstr ""
 
@@ -300,10 +294,19 @@ msgstr ""
 msgid "Periods"
 msgstr ""
 
+msgid "Visualization"
+msgstr ""
+
+msgid "Events"
+msgstr ""
+
 msgid "Organisation units"
 msgstr ""
 
 msgid "Validation rules"
+msgstr ""
+
+msgid "Data values"
 msgstr ""
 
 msgid "Programs"
@@ -315,7 +318,13 @@ msgstr ""
 msgid "Organisation unit groups"
 msgstr ""
 
+msgid "Tracked entity instances"
+msgstr ""
+
 msgid "Pivot tables"
+msgstr ""
+
+msgid "Program instances"
 msgstr ""
 
 msgid "Indicator types"
@@ -370,9 +379,6 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Error loading data statistics"
-msgstr ""
-
-msgid "Loading data statistics..."
 msgstr ""
 
 msgid "No data to show."
