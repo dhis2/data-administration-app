@@ -11,8 +11,6 @@ class TreeView extends React.Component {
             collapsed: !props.initiallyExpanded,
             hasBeenExpanded: props.initiallyExpanded,
         }
-
-        this.handleClick = this.handleClick.bind(this)
     }
 
     toggleCollapsed() {
@@ -39,7 +37,7 @@ class TreeView extends React.Component {
         }
     }
 
-    handleClick(e) {
+    handleClick = e => {
         if (this.props.onClick) {
             this.props.onClick(e)
         }
@@ -128,9 +126,8 @@ class TreeView extends React.Component {
     }
 }
 
-// TODO: Documentation
 TreeView.propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.node,
     children: PropTypes.node,
     persistent: PropTypes.bool,
     initiallyExpanded: PropTypes.bool,

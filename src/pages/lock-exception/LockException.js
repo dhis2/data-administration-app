@@ -1,10 +1,12 @@
+import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
     CircularLoader,
+    NoticeBox,
     Button,
     Pagination,
-    Card,
+    ButtonStrip,
 } from '@dhis2/ui'
 import classNames from 'classnames'
 import { getInstance as getD2Instance } from 'd2'
@@ -30,70 +32,19 @@ class LockException extends Component {
     }
 
     static propTypes = {
+        alert: PropTypes.object.isRequired,
         sectionKey: PropTypes.string.isRequired,
-    }
-
-    fixD2Translations = async () => {
-        // FIXME Hack in some translations
-        const d2 = await getD2Instance()
-        Object.assign(d2.i18n.translations, {
-            period: i18n.t('Period'),
-            data_set: i18n.t('Data set'),
-            organisation_unit: i18n.t('Organisation unit'),
-            organisation_unit_group: i18n.t('Organisation unit group'),
-            organisation_unit_level: i18n.t('Organisation unit level'),
-            select: i18n.t('Select'),
-            deselect: i18n.t('Deselect'),
-            select_all: i18n.t('Select All Org Units'),
-            deselect_all: i18n.t('Deselect All Org Units'),
-            name: i18n.t('Name'),
-            show: i18n.t('Show details'),
-            remove: i18n.t('Remove'),
-            actions: i18n.t('Actions'),
-            week: i18n.t('week'),
-            month: i18n.t('mont'),
-            year: i18n.t('year'),
-            biMonth: i18n.t('bi monthly'),
-            day: i18n.t('day'),
-            jan: i18n.t('jan'),
-            feb: i18n.t('feb'),
-            mar: i18n.t('mar'),
-            apr: i18n.t('apr'),
-            may: i18n.t('may'),
-            jun: i18n.t('jun'),
-            jul: i18n.t('jul'),
-            aug: i18n.t('aug'),
-            sep: i18n.t('sep'),
-            oct: i18n.t('oct'),
-            nov: i18n.t('nov'),
-            dec: i18n.t('dec'),
-            'jan-feb': i18n.t('jan-feb'),
-            'mar-apr': i18n.t('mar-apr'),
-            'may-jun': i18n.t('may-jun'),
-            'jul-aug': i18n.t('jul-aug'),
-            'sep-oct': i18n.t('sep-oct'),
-            'nov-dec': i18n.t('nov-dec'),
-            quarter: i18n.t('quarter'),
-            Q1: i18n.t('Q1'),
-            Q2: i18n.t('Q2'),
-            Q3: i18n.t('Q3'),
-            Q4: i18n.t('Q4'),
-            sixMonth: i18n.t('six monthly'),
-            'jan-jun': i18n.t('jan-jun'),
-            'jul-dec': i18n.t('jul-dec'),
-            'apr-sep': i18n.t('apr-sep'),
-            'oct-mar': i18n.t('oct-mar'),
-        })
     }
 
     constructor() {
         super()
 
         this.state = {
-            loading: true,
+            loading: false,
             loaded: false,
             error: null,
             pager: LockException.initialPager,
+            atBatchDeletionPage: false,
             selectedOrgUnits: [],
             selectedDataSetId: null,
             selectedPeriodId: null,
@@ -103,7 +54,9 @@ class LockException extends Component {
             dataSets: [],
         }
 
-        this.fixD2Translations()
+        getD2Instance().then(d2 => {
+            this.d2 = d2
+        })
     }
 
     prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
@@ -115,7 +68,7 @@ class LockException extends Component {
                     dataSet: dataSet.displayName,
                     dataSetId: dataSet.id,
                 }
-                if (!this.props.atBatchDeletionPage) {
+                if (!this.state.atBatchDeletionPage) {
                     row.organisationUnit = organisationUnit.displayName
                     row.organisationUnitId = organisationUnit.id
                 }
@@ -125,14 +78,14 @@ class LockException extends Component {
     }
 
     dataTableColumns() {
-        if (this.props.atBatchDeletionPage) {
+        if (this.state.atBatchDeletionPage) {
             return ['dataSet', 'period']
         }
         return ['organisationUnit', 'dataSet', 'period']
     }
 
     renderHeader() {
-        if (this.props.atBatchDeletionPage) {
+        if (this.state.atBatchDeletionPage) {
             return (
                 <div className={styles.headerContainer}>
                     <h1 className={styles.header}>
@@ -162,7 +115,7 @@ class LockException extends Component {
                     sectionKey={this.props.sectionKey}
                     title={i18nKeys.lockException.title}
                 />
-                <div>
+                <ButtonStrip>
                     <Button
                         primary
                         onClick={this.showLockExceptionFormDialog}
@@ -171,13 +124,12 @@ class LockException extends Component {
                         {i18n.t('Add lock exception')}
                     </Button>
                     <Button
-                        secondary
                         onClick={this.goToBatchDeletionPage}
                         disabled={this.areActionsDisabled()}
                     >
                         {i18n.t('Batch deletion')}
                     </Button>
-                </div>
+                </ButtonStrip>
             </div>
         )
     }
@@ -189,179 +141,99 @@ class LockException extends Component {
     addLockExceptionEnabled() {
         return (
             this.state.selectedOrgUnits.length > 0 &&
-                this.state.selectedDataSetId &&
-                this.state.selectedPeriodId
+            this.state.selectedDataSetId &&
+            this.state.selectedPeriodId
         )
     }
 
     componentDidMount() {
-        this.loadLockExceptionsForPager(LockException.initialPager, { userAction: false })
+        this.loadLockExceptionsForPager(LockException.initialPager, {
+            userAction: false,
+        })
     }
 
-    loadLockExceptionsForPager(pager, { userAction }) {
-        const api = this.context.d2.Api.getApi()
+    loadLockExceptionsForPager = async (pager, { userAction }) => {
+        if (!userAction && (this.state.loading || this.state.loaded)) {
+            return
+        }
+
+        this.setState({
+            atBatchDeletionPage: false,
+            loaded: false,
+            loading: true,
+            error: null,
+        })
+
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
         const url =
-              `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
-              '&fields=name,' +
-              'period[id,displayName],' +
-              'organisationUnit[id,displayName],' +
-              'dataSet[id,displayName]' +
-              '&order=name:asc'
+            `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
+            '&fields=name,' +
+            'period[id,displayName],' +
+            'organisationUnit[id,displayName],' +
+            'dataSet[id,displayName]' +
+            '&order=name:asc'
 
-        // request to GET lock exceptions
-        if (userAction || (!this.state.loading && !this.state.loaded)) {
-            // Keep the previous message visible (p.e. deleting lock exception || add lock exception)
-            this.context.updateAppState(
-                this.deleteInProgress || this.addInProgress
-                    ? {
-                        atBatchDeletionPage: false,
-                        loaded: false,
-                        loading: true,
-                    }
-                : {
-                    showSnackbar: true,
-                    snackbarConf: {
-                        type: LOADING,
-                        message: i18n.t('Loading Lock Exceptions...'),
-                    },
-                    pageState: {
-                        atBatchDeletionPage: false,
-                        loaded: false,
-                        loading: true,
-                    },
-                }
-            )
+        try {
+            const response = await api.get(url)
 
-            api.get(url)
-                .then(response => {
-                    if (this.isPageMounted()) {
-                        let loadedState
-
-                        // If deleting a lock exception, show a success message instead of hiding the loading
-                        if (this.deleteInProgress) {
-                            loadedState = {
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: SUCCESS,
-                                    message: i18n.t('Lock Exception removed'),
-                                },
-                            }
-                            this.deleteInProgress = false
-                            // If adding a lock exception, show a success message instead of hiding the loading
-                        } else if (this.addInProgress) {
-                            loadedState = {
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: SUCCESS,
-                                    message: i18n.t('Lock Exception Added'),
-                                },
-                            }
-                            this.addInProgress = false
-                        } else {
-                            loadedState = {
-                                showSnackbar: false,
-                            }
-                        }
-
-                        this.context.updateAppState({
-                            ...loadedState,
-                            pageState: {
-                                loaded: true,
-                                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
-                                    response.lockExceptions
-                                ),
-                                pager: response.pager,
-                                loading: false,
-                            },
-                        })
-                    }
-                })
-                .catch(error => {
-                    if (this.isPageMounted()) {
-                        const messageError =
-                              error && error.message
-                              ? error.message
-                              : i18n.t(
-                                  'An unexpected error happened during operation'
-                              )
-
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: {
-                                loaded: true,
-                                loading: false,
-                            },
-                        })
-                    }
-                })
+            this.setState({
+                loaded: true,
+                loading: false,
+                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
+                    response.lockExceptions
+                ),
+                pager: response.pager,
+            })
+        } catch (error) {
+            const messageError =
+                error && error.message
+                    ? error.message
+                    : i18n.t('An unexpected error happened during operation')
+            this.setState({
+                loaded: true,
+                loading: false,
+                error: messageError,
+            })
         }
     }
 
     // Get information for Batch Deletion Page
-    loadLockExceptionCombinations() {
-        const api = this.context.d2.Api.getApi()
+    loadLockExceptionCombinations = async () => {
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
         const url =
-              'lockExceptions/combinations?fields=name, period[id,displayName], dataSet[id,displayName]'
-        const pager = this.props.pager
+            'lockExceptions/combinations?fields=name,period[id,displayName],dataSet[id,displayName]'
 
-        // request to GET lock exception combinations
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-                message: i18n.t('Loading Lock Exceptions...'),
-            },
-            pageState: {
-                atBatchDeletionPage: true,
-                loaded: false,
-                loading: true,
-                pager,
-            },
+        this.setState({
+            atBatchDeletionPage: true,
+            loaded: false,
+            loading: true,
         })
 
-        api.get(url)
-            .then(response => {
-                if (this.isPageMounted()) {
-                    this.context.updateAppState({
-                        showSnackbar: false,
-                        pageState: {
-                            loaded: true,
-                            atBatchDeletionPage: true,
-                            lockExceptions: this.prepareLockExceptionsResponseToDataTable(
-                                response.lockExceptions
-                            ),
-                            loading: false,
-                            pager,
-                        },
-                    })
-                }
-            })
-            .catch(error => {
-                if (this.isPageMounted()) {
-                    const messageError =
-                          error && error.message
-                          ? error.message
-                          : i18n.t(
-                              'An unexpected error happened during operation'
-                          )
+        try {
+            const response = await api.get(url)
 
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: messageError,
-                        },
-                        pageState: {
-                            loaded: true,
-                            loading: false,
-                        },
-                    })
-                }
+            this.setState({
+                loaded: true,
+                loading: false,
+                atBatchDeletionPage: true,
+                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
+                    response.lockExceptions
+                ),
             })
+        } catch (error) {
+            const messageError =
+                error && error.message
+                    ? error.message
+                    : i18n.t('An unexpected error happened during operation')
+
+            this.setState({
+                loaded: true,
+                loading: false,
+                error: messageError,
+            })
+        }
     }
 
     updateSelectedOrgUnits = selectedOrgUnits => {
@@ -378,7 +250,7 @@ class LockException extends Component {
 
     handlePageChange = page => {
         const pager = {
-            ...this.props.pager,
+            ...this.state.pager,
             page,
         }
         this.loadLockExceptionsForPager(pager, { userAction: true })
@@ -386,121 +258,95 @@ class LockException extends Component {
 
     handlePageSizeChange = pageSize => {
         const pager = {
-            ...this.props.pager,
+            ...this.state.pager,
             pageSize,
         }
         this.loadLockExceptionsForPager(pager, { userAction: true })
     }
 
     backToLockExceptions = () => {
-        this.loadLockExceptionsForPager(this.props.pager, { userAction: true })
+        this.loadLockExceptionsForPager(this.state.pager, { userAction: true })
     }
 
     goToBatchDeletionPage = () => {
         this.loadLockExceptionCombinations()
     }
 
-    removeLockException = le => {
-        const handleActionClick = () => {
-            let deleteUrl = `lockExceptions?pe=${le.periodId}&ds=${le.dataSetId}`
-
-            if (le.organisationUnitId) {
-                deleteUrl += `&ou=${le.organisationUnitId}`
-            }
-
-            this.context.updateAppState({
-                showSnackbar: true,
-                snackbarConf: {
-                    type: LOADING,
-                    message: i18n.t('Loading Lock Exceptions...'),
-                },
-                pageState: {
-                    ...this.props,
-                    loading: true,
-                },
+    removeLockException = lockException => {
+        const handleActionClick = async () => {
+            this.setState({
+                loading: true,
             })
 
-            const api = this.context.d2.Api.getApi()
-            api.delete(deleteUrl)
-                .then(() => {
-                    if (this.isPageMounted()) {
-                        const newPageState = {
-                            ...this.props,
-                            loading: false,
-                        }
+            let deleteUrl = `lockExceptions?pe=${lockException.periodId}&ds=${lockException.dataSetId}`
+            if (lockException.organisationUnitId) {
+                deleteUrl += `&ou=${lockException.organisationUnitId}`
+            }
 
-                        if (this.props.atBatchDeletionPage) {
-                            newPageState.lockExceptions = this.props.lockExceptions.filter(
-                                existingLockException =>
-                                existingLockException.periodId !==
-                                    le.periodId ||
-                                    existingLockException.dataSetId !==
-                                    le.dataSetId
-                            )
+            const d2 = await getD2Instance()
+            const api = d2.Api.getApi()
 
-                            this.context.updateAppState({
-                                showSnackbar: true,
-                                snackbarConf: {
-                                    type: SUCCESS,
-                                    message: i18n.t('Lock Exception removed'),
-                                },
-                                pageState: newPageState,
-                            })
-                        } else {
-                            this.deleteInProgress = true
-                            this.loadLockExceptionsForPager(
-                                LockException.initialPager,
-                                { userAction: true }
-                            )
-                        }
-                    }
+            try {
+                await api.delete(deleteUrl)
+
+                this.props.alert.show({
+                    message: i18n.t('Lock exception removed'),
+                    success: true,
                 })
-                .catch(error => {
-                    console.error(error)
-                    if (this.isPageMounted()) {
-                        const messageError =
-                              error && error.message
-                              ? error.message
-                              : i18n.t(
-                                  'An unexpected error happened during operation'
-                              )
 
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: {
-                                ...this.props,
-                                loading: false,
-                            },
-                        })
-                    }
+                if (this.state.atBatchDeletionPage) {
+                    this.setState({
+                        loading: false,
+                        lockExceptions: this.state.lockExceptions.filter(
+                            le =>
+                                le.periodId !== lockException.periodId ||
+                                le.dataSetId !== lockException.dataSetId
+                        ),
+                    })
+                } else {
+                    this.loadLockExceptionsForPager(
+                        LockException.initialPager,
+                        { userAction: true }
+                    )
+                }
+            } catch (error) {
+                const messageError =
+                    error && error.message
+                        ? error.message
+                        : i18n.t(
+                              'An unexpected error happened during operation'
+                          )
+
+                this.setState({
+                    loading: false,
+                    error: messageError,
                 })
+            }
         }
 
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: ACTION_MESSAGE,
-                message: i18n.t('Are you sure?'),
-                action: i18n.t('Confirm'),
-                onActionClick: handleActionClick,
-            },
-        })
+        // TODO: Replace with modal
+        if (
+            window.confirm(
+                i18n.t('Are you sure you want to delete this lock exception?')
+            )
+        ) {
+            handleActionClick()
+        }
     }
 
-    showLockExceptionFormDialog = () => {
-        const d2 = this.context.d2
+    showLockExceptionFormDialog = async () => {
         if (
             this.state.levels &&
-                this.state.groups &&
-                this.state.dataSets.length > 0
+            this.state.groups &&
+            this.state.dataSets.length > 0
         ) {
             this.setState({ showAddDialogOpen: true })
-        } else {
-            Promise.all([
+            return
+        }
+
+        const d2 = await getD2Instance()
+        try {
+            const [levels, groups, dataSets] = await Promise.all([
                 d2.models.organisationUnitLevel.list({
                     paging: false,
                     fields: 'id,level,displayName',
@@ -515,38 +361,23 @@ class LockException extends Component {
                     fields: 'id,displayName,periodType',
                 }),
             ])
-                .then(([levels, groups, dataSets]) => {
-                    if (this.isPageMounted()) {
-                        this.setState({
-                            showAddDialogOpen: true,
-                            levels,
-                            groups,
-                            dataSets: dataSets.toArray(),
-                        })
-                    }
-                })
-                .catch(error => {
-                    if (this.isPageMounted()) {
-                        const messageError =
-                              error && error.message
-                              ? error.message
-                              : i18n.t(
-                                  'An unexpected error happened during operation'
-                              )
 
-                        this.context.updateAppState({
-                            showSnackbar: true,
-                            snackbarConf: {
-                                type: ERROR,
-                                message: messageError,
-                            },
-                            pageState: {
-                                ...this.props,
-                                loading: false,
-                            },
-                        })
-                    }
-                })
+            this.setState({
+                showAddDialogOpen: true,
+                levels,
+                groups,
+                dataSets: dataSets.toArray(),
+            })
+        } catch (error) {
+            const messageError =
+                error && error.message
+                    ? error.message
+                    : i18n.t('An unexpected error happened during operation')
+
+            this.setState({
+                loading: false,
+                error: messageError,
+            })
         }
     }
 
@@ -560,11 +391,9 @@ class LockException extends Component {
     }
 
     addLockException = async () => {
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
         const orgUnitIds = this.state.selectedOrgUnits.map(orgUnitPath => {
-            const orgUnitPathSplitted = orgUnitPath.split('/')
-            return orgUnitPathSplitted[orgUnitPathSplitted.length - 1]
+            const splitOrgUnitPath = orgUnitPath.split('/')
+            return splitOrgUnitPath[splitOrgUnitPath.length - 1]
         })
 
         const formData = new FormData()
@@ -572,54 +401,40 @@ class LockException extends Component {
         formData.append('pe', this.state.selectedPeriodId)
         formData.append('ds', this.state.selectedDataSetId)
 
-        this.context.updateAppState({
-            showSnackbar: true,
-            snackbarConf: {
-                type: LOADING,
-                message: i18n.t('Adding Lock Exception...'),
-            },
-            pageState: {
-                loading: true,
-            },
+        this.setState({
+            loading: true,
         })
 
-        api.post('lockExceptions', formData)
-            .then(() => {
-                if (this.isPageMounted()) {
-                    this.context.updateAppState({
-                        pageState: {
-                            loaded: false,
-                            loading: false,
-                        },
-                    })
-                    this.addInProgress = true
-                    this.loadLockExceptionsForPager(
-                        LockException.initialPager,
-                        { userAction: false }
-                    )
-                    this.closeLockExceptionFormDialog()
-                }
-            })
-            .catch(error => {
-                if (this.isPageMounted()) {
-                    const messageError =
-                          error && error.message
-                          ? error.message
-                          : i18n.t(i18nKeys.messages.unexpectedError)
+        const d2 = await getD2Instance()
+        const api = d2.Api.getApi()
 
-                    this.context.updateAppState({
-                        showSnackbar: true,
-                        snackbarConf: {
-                            type: ERROR,
-                            message: messageError,
-                        },
-                        pageState: {
-                            ...this.props,
-                            loading: false,
-                        },
-                    })
-                }
+        try {
+            await api.post('lockExceptions', formData)
+
+            this.props.alert.show({
+                message: i18n.t('Lock exception added'),
+                success: true,
             })
+
+            this.setState({
+                loaded: false,
+                loading: false,
+            })
+            this.loadLockExceptionsForPager(LockException.initialPager, {
+                userAction: false,
+            })
+            this.closeLockExceptionFormDialog()
+        } catch (error) {
+            const messageError =
+                error && error.message
+                    ? error.message
+                    : i18n.t(i18nKeys.messages.unexpectedError)
+
+            this.setState({
+                loading: false,
+                error: messageError,
+            })
+        }
     }
 
     renderPagination() {
@@ -628,7 +443,7 @@ class LockException extends Component {
         }
 
         const paginationProps = {
-            ...this.props.pager,
+            ...this.state.pager,
             onPageSizeChange: this.handlePageSizeChange,
             onPageChange: this.handlePageChange,
         }
@@ -640,12 +455,12 @@ class LockException extends Component {
     }
 
     renderTable() {
-        return this.props.lockExceptions && this.props.lockExceptions.length ? (
+        return this.state.lockExceptions?.length > 0 ? (
             <div>
                 {this.renderPagination()}
                 <LockExceptionsTable
                     columns={this.dataTableColumns()}
-                    rows={this.props.lockExceptions}
+                    rows={this.state.lockExceptions}
                     onRemoveLockException={this.removeLockException}
                 />
                 {this.renderPagination()}
@@ -683,6 +498,7 @@ class LockException extends Component {
                 onRequestClose={this.closeLockExceptionFormDialog}
             >
                 <AddLockExceptionForm
+                    d2={this.d2}
                     levels={this.state.levels}
                     groups={this.state.groups}
                     dataSets={this.state.dataSets}
@@ -698,6 +514,9 @@ class LockException extends Component {
         return (
             <div className={styles.lockExceptionsTable}>
                 {this.renderHeader()}
+                {this.state.error && (
+                    <NoticeBox error>{this.state.error}</NoticeBox>
+                )}
                 {this.state.loading && (
                     <CenteredContent>
                         <CircularLoader />
@@ -705,12 +524,23 @@ class LockException extends Component {
                 )}
                 {!this.state.loading && this.renderTable()}
                 {this.state.levels &&
-                 this.state.groups &&
-                 this.state.dataSets.length > 0 &&
-                 this.renderModal()}
+                    this.state.groups &&
+                    this.state.dataSets.length > 0 &&
+                    this.d2 &&
+                    this.renderModal()}
             </div>
         )
     }
 }
 
-export default LockException
+const withAlerts = Component => {
+    return function ComponentWithAlerts(props) {
+        const alert = useAlert(
+            ({ message }) => message,
+            options => options
+        )
+        return <Component {...props} alert={alert} />
+    }
+}
+
+export default withAlerts(LockException)

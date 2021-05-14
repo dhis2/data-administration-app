@@ -348,7 +348,7 @@ OrgUnitTree.propTypes = {
      * `false` or an empty array. If the children property is undefined, the children will be fetched from
      * the server when the tree is expanded.
      */
-    root: PropTypes.array.isRequired,
+    root: PropTypes.object.isRequired,
 
     /**
      * An array of paths of selected OUs

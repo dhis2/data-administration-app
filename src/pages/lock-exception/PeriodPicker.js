@@ -47,9 +47,10 @@ class PeriodPicker extends React.Component {
         super(props, context)
 
         this.state = {}
+    }
 
-        const i18n = context.d2.i18n
-        this.getTranslation = i18n.getTranslation.bind(i18n)
+    getTranslation(key) {
+        return this.props.d2.i18n.getTranslation(key)
     }
 
     componentDidUpdate(prevProps) {
@@ -392,6 +393,7 @@ class PeriodPicker extends React.Component {
     }
 }
 PeriodPicker.propTypes = {
+    d2: PropTypes.object.isRequired,
     periodType: PropTypes.oneOf([
         'Daily',
         'Weekly',
@@ -414,6 +416,5 @@ PeriodPicker.propTypes = {
 
     onPickPeriod: PropTypes.func.isRequired,
 }
-PeriodPicker.contextTypes = { d2: PropTypes.object.isRequired }
 
 export default PeriodPicker

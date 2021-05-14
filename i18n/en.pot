@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-12T08:52:10.009Z\n"
-"PO-Revision-Date: 2021-05-12T08:52:10.009Z\n"
+"POT-Creation-Date: 2021-05-14T14:54:11.265Z\n"
+"PO-Revision-Date: 2021-05-14T14:54:11.265Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -169,6 +169,17 @@ msgid ""
 msgstr ""
 
 msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Lock Exception Management"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data "
+"entry forms."
 msgstr ""
 
 msgid "Number of last years of data to include"
@@ -381,16 +392,181 @@ msgstr ""
 msgid "Error loading data statistics"
 msgstr ""
 
-msgid "No data to show."
-msgstr ""
-
-msgid "Data set"
+msgid "No data statistics to show."
 msgstr ""
 
 msgid "Period"
 msgstr ""
 
+msgid "Data set"
+msgstr ""
+
 msgid "Organisation unit"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Show details"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating organisation units tree..."
+msgstr ""
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Batch deletion"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Are you sure you want to delete this lock exception?"
+msgstr ""
+
+msgid "Lock exception added"
+msgstr ""
+
+msgid "No lock exceptions to show."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add new lock exception"
 msgstr ""
 
 msgid "Maintenance done"
