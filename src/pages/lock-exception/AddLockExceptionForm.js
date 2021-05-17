@@ -24,9 +24,9 @@ class AddLockExceptionForm extends Component {
             .isRequired,
         levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
             .isRequired,
+        updateSelectedDataSetId: PropTypes.func.isRequired,
         updateSelectedOrgUnits: PropTypes.func.isRequired,
         updateSelectedPeriodId: PropTypes.func.isRequired,
-        updateSeletedDataSetId: PropTypes.func.isRequired,
     }
 
     constructor(props) {
@@ -111,7 +111,7 @@ class AddLockExceptionForm extends Component {
             return
         }
 
-        this.props.updateSeletedDataSetId(dataSetId)
+        this.props.updateSelectedDataSetId(dataSetId)
         this.setState({
             rootWithMembers: null,
             selected: [],
