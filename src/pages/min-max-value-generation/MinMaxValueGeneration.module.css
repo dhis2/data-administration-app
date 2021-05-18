@@ -9,7 +9,6 @@
 
 .container {
     display: flex;
-    margin-top: var(--spacers-dp16);
     margin-bottom: var(--spacers-dp32);
 }
 

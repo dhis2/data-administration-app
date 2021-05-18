@@ -165,13 +165,10 @@ class DataStatistics extends Component {
         sectionKey: PropTypes.string.isRequired,
     }
 
-    constructor() {
-        super()
-        this.state = {
-            loading: true,
-            error: null,
-            tables: null,
-        }
+    state = {
+        loading: true,
+        error: null,
+        tables: null,
     }
 
     loadDataStatistics = async () => {

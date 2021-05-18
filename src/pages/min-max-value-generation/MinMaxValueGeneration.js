@@ -170,7 +170,7 @@ class MinMaxValueGeneration extends Component {
 
     renderForm() {
         return (
-            <>
+            <Card className={styles.card}>
                 <div className={styles.container}>
                     <div className={styles.left}>
                         <div className={styles.label}>{i18n.t('Data set')}</div>
@@ -229,7 +229,7 @@ class MinMaxValueGeneration extends Component {
                         {i18n.t('Remove min-max values')}
                     </Button>
                 </ButtonStrip>
-            </>
+            </Card>
         )
     }
 
@@ -240,17 +240,15 @@ class MinMaxValueGeneration extends Component {
                     sectionKey={this.props.sectionKey}
                     title={i18nKeys.minMaxValueGeneration.title}
                 />
-                <Card className={styles.card}>
-                    {this.state.error ? (
-                        <NoticeBox error>{this.state.error}</NoticeBox>
-                    ) : this.state.loading ? (
-                        <CenteredContent>
-                            <CircularLoader />
-                        </CenteredContent>
-                    ) : (
-                        this.renderForm()
-                    )}
-                </Card>
+                {this.state.error ? (
+                    <NoticeBox error>{this.state.error}</NoticeBox>
+                ) : this.state.loading ? (
+                    <CenteredContent>
+                        <CircularLoader />
+                    </CenteredContent>
+                ) : (
+                    this.renderForm()
+                )}
             </div>
         )
     }

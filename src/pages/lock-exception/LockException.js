@@ -32,26 +32,22 @@ class LockException extends Component {
         sectionKey: PropTypes.string.isRequired,
     }
 
-    constructor() {
-        super()
-
-        this.state = {
-            loading: false,
-            loaded: false,
-            error: null,
-            pager: LockException.initialPager,
-            atBatchDeletionPage: false,
-            levels: null,
-            groups: null,
-            dataSets: [],
-            addLockExceptionModal: {
-                isVisible: false,
-            },
-            removeLockExceptionModal: {
-                isVisible: false,
-                lockException: null,
-            },
-        }
+    state = {
+        loading: false,
+        loaded: false,
+        error: null,
+        pager: LockException.initialPager,
+        atBatchDeletionPage: false,
+        levels: null,
+        groups: null,
+        dataSets: [],
+        addLockExceptionModal: {
+            isVisible: false,
+        },
+        removeLockExceptionModal: {
+            isVisible: false,
+            lockException: null,
+        },
     }
 
     prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
@@ -176,7 +172,7 @@ class LockException extends Component {
             const messageError =
                 error && error.message
                     ? error.message
-                    : i18n.t('An unexpected error happened during operation')
+                    : i18n.t('Error loading lock exceptions')
             this.setState({
                 loaded: true,
                 loading: false,
