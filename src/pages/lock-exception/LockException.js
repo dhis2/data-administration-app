@@ -1,4 +1,3 @@
-import { useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -30,7 +29,6 @@ class LockException extends Component {
     }
 
     static propTypes = {
-        alert: PropTypes.object.isRequired,
         sectionKey: PropTypes.string.isRequired,
     }
 
@@ -444,10 +442,9 @@ class LockException extends Component {
         return (
             <div className={styles.lockExceptionsTable}>
                 {this.renderHeader()}
-                {this.state.error && (
+                {this.state.error ? (
                     <NoticeBox error>{this.state.error}</NoticeBox>
-                )}
-                {this.state.loading ? (
+                ) : this.state.loading ? (
                     <CenteredContent>
                         <CircularLoader />
                     </CenteredContent>
@@ -461,14 +458,4 @@ class LockException extends Component {
     }
 }
 
-const withAlerts = Component => {
-    return function ComponentWithAlerts(props) {
-        const alert = useAlert(
-            ({ message }) => message,
-            options => options
-        )
-        return <Component {...props} alert={alert} />
-    }
-}
-
-export default withAlerts(LockException)
+export default LockException

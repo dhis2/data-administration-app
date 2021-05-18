@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { Card, CircularLoader, CenteredContent } from '@dhis2/ui'
+import { Card, NoticeBox, CircularLoader, CenteredContent } from '@dhis2/ui'
 import { getInstance as getD2Instance } from 'd2'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -212,47 +212,55 @@ class DataStatistics extends Component {
         this.loadDataStatistics()
     }
 
-    render() {
-        const renderTable = key => {
-            if (!this.state.tables[key]) {
-                return null
-            }
-
-            return (
-                <TableCard
-                    key={key}
-                    label={this.state.tables[key].label}
-                    elements={this.state.tables[key].elements}
-                />
-            )
+    renderTable(key) {
+        if (!this.state.tables[key]) {
+            return null
         }
 
+        return (
+            <TableCard
+                key={key}
+                label={this.state.tables[key].label}
+                elements={this.state.tables[key].elements}
+            />
+        )
+    }
+
+    renderTables() {
+        if (Object.keys(this.state.tables).length === 0) {
+            return <em>{i18n.t('No data statistics to show.')}</em>
+        }
+
+        return (
+            <div className="row">
+                <div className="col-md-6">
+                    {this.renderTable(OBJECT_COUNTS_KEY)}
+                </div>
+                <div className="col-md-6">
+                    {this.renderTable(USER_INVITATIONS_KEY)}
+                    {this.renderTable(DATA_VALUE_COUNT_KEY)}
+                    {this.renderTable(EVENT_COUNT_KEY)}
+                    {this.renderTable(ACTIVE_USERS_KEY)}
+                </div>
+            </div>
+        )
+    }
+
+    render() {
         return (
             <div>
                 <PageHeader
                     sectionKey={this.props.sectionKey}
                     title={i18nKeys.dataStatistics.title}
                 />
-                {this.state.loading && (
+                {this.state.error ? (
+                    <NoticeBox error>{this.state.error}</NoticeBox>
+                ) : this.state.loading ? (
                     <CenteredContent>
                         <CircularLoader />
                     </CenteredContent>
-                )}
-                {this.state.tables &&
-                Object.keys(this.state.tables).length > 0 ? (
-                    <div className="row">
-                        <div className="col-md-6">
-                            {renderTable(OBJECT_COUNTS_KEY)}
-                        </div>
-                        <div className="col-md-6">
-                            {renderTable(USER_INVITATIONS_KEY)}
-                            {renderTable(DATA_VALUE_COUNT_KEY)}
-                            {renderTable(EVENT_COUNT_KEY)}
-                            {renderTable(ACTIVE_USERS_KEY)}
-                        </div>
-                    </div>
                 ) : (
-                    !this.state.loading && <em>{i18n.t('No data statistics to show.')}</em>
+                    this.renderTables()
                 )}
             </div>
         )

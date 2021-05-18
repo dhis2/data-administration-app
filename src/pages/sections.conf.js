@@ -4,10 +4,8 @@ import DataIntegrity from './data-integrity/DataIntegrity'
 import DataStatistics from './data-statistics/DataStatistics'
 import LockException from './lock-exception/LockException'
 import Maintenance from './maintenance/Maintenance'
-import ResourceTables from './resource-tables/ResourceTables'
-/*
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
-*/
+import ResourceTables from './resource-tables/ResourceTables'
 
 export const sections = [
     {
@@ -81,7 +79,7 @@ export const sections = [
             actionText: i18nKeys.lockException.actionText,
             docs: 'dataAdmin_lockException',
         },
-    } /*,
+    },
     {
         key: 'minMax',
         path: '/min-max-value-generation',
@@ -93,7 +91,7 @@ export const sections = [
             actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',
         },
-    },*/,
+    },
 ]
 
 export const getDocsKeyForSection = sectionKey =>

@@ -120,25 +120,12 @@ export const i18nKeys = {
         actionText: i18n.t('Lock Exception Management'),
     },
     minMaxValueGeneration: {
-        title: 'Min-Max Value Generation',
-        label: 'Min-Max Value Generation',
-        description:
-            'Generate min-max values which can be used for data validation during data entry and validation processes.',
-        actionText: 'Generate Min-Max Value',
-        notPossibleToLoadMessage: 'It was not possible to load data',
-        performingMessage: 'Doing Min Max generation...',
-        removingMessage: 'Removing Min Max generation...',
-        minMaxGenerationDone: 'Min Max generation done',
-        minMaxRemovalDone: 'Min Max removal done',
-        dataSet: 'Data Set',
-        loadingDataSetsMessage: 'Loading data sets',
-        organisationUnitSelect: 'Organisation Unit Selection',
-        updatingTree: 'Updating Organisation Units Tree...',
-        actionButton: 'Generate',
-        removeButton: 'Remove',
-    },
-    messages: {
-        unexpectedError: 'An unexpected error happened during operation',
+        title: i18n.t('Min-Max Value Generation'),
+        label: i18n.t('Min-Max Value Generation'),
+        description: i18n.t(
+            'Generate min-max values which can be used for data validation during data entry and validation processes.'
+        ),
+        actionText: i18n.t('Generate Min-Max Values'),
     },
 }
 
