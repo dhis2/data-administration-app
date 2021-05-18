@@ -1,15 +1,8 @@
 import { useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import {
-    Modal,
-    ModalTitle,
-    ModalContent,
-    ModalActions,
-    ButtonStrip,
-    Button,
-    CircularLoader,
-} from '@dhis2/ui'
+import { ButtonStrip, Button, CircularLoader } from '@dhis2/ui'
+import Dialog from 'material-ui/Dialog'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import AddLockExceptionForm from './AddLockExceptionForm'
@@ -56,22 +49,15 @@ const AddLockExceptionModal = ({
         isLoading ||
         !(selectedOrgUnits.length > 0 && selectedDataSetId && selectedPeriodId)
 
+    // TODO: Need to use material UI Dialog component instead of @dhis2/ui Modal
+    // component due to z-index issues - z-index of select fields used by d2-ui
+    // organisation selection components is less than that of @dhis2/ui modal
+    // and so appear behind
     return (
-        <Modal onClose={onClose}>
-            <ModalTitle>{i18n.t('Add lock exception')}</ModalTitle>
-            <ModalContent>
-                <AddLockExceptionForm
-                    d2={d2}
-                    levels={levels}
-                    groups={groups}
-                    dataSets={dataSets}
-                    updateSelectedOrgUnits={setSelectedOrgUnits}
-                    updateSelectedDataSetId={setSelectedDataSetId}
-                    updateSelectedPeriodId={setSelectedPeriodId}
-                />
-            </ModalContent>
-            <ModalActions>
-                <ButtonStrip>
+        <Dialog
+            title={i18n.t('Add lock exception')}
+            actions={
+                <ButtonStrip end>
                     <Button disabled={isLoading} onClick={onClose}>
                         {i18n.t('Cancel')}
                     </Button>
@@ -90,8 +76,21 @@ const AddLockExceptionModal = ({
                         )}
                     </Button>
                 </ButtonStrip>
-            </ModalActions>
-        </Modal>
+            }
+            open={true}
+            contentStyle={{ maxWidth: '80%' }}
+            onRequestClose={onClose}
+        >
+            <AddLockExceptionForm
+                d2={d2}
+                levels={levels}
+                groups={groups}
+                dataSets={dataSets}
+                updateSelectedOrgUnits={setSelectedOrgUnits}
+                updateSelectedDataSetId={setSelectedDataSetId}
+                updateSelectedPeriodId={setSelectedPeriodId}
+            />
+        </Dialog>
     )
 }
 
