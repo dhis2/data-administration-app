@@ -40,15 +40,16 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
                         <TableCell key={column}>{row[column]}</TableCell>
                     ))}
                     <TableCell>
-                        {/* TODO: Add accessible label to button */}
                         <Button
                             small
                             secondary
                             onClick={onRemoveLockException.bind(null, row)}
                         >
-                            <FontIcon className="material-icons">
-                                delete
-                            </FontIcon>
+                            <span title={i18n.t('Remove lock exception')}>
+                                <FontIcon className="material-icons">
+                                    delete
+                                </FontIcon>
+                            </span>
                         </Button>
                     </TableCell>
                 </TableRow>
