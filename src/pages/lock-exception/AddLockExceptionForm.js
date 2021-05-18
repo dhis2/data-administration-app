@@ -1,10 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
+import { NoticeBox } from '@dhis2/ui'
 import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
 import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
 import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
 import SelectField from 'd2-ui/lib/select-field/SelectField'
-import Card from 'material-ui/Card/Card'
-import CardText from 'material-ui/Card/CardText'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import styles from './AddLockExceptionForm.module.css'
@@ -36,6 +35,7 @@ class AddLockExceptionForm extends Component {
             selected: [],
             dataSet: null,
             orgUnitPaths: null,
+            error: null,
         }
 
         this.fixD2Translations()
@@ -144,8 +144,9 @@ class AddLockExceptionForm extends Component {
                     .map(ou => ou.path),
             })
         } catch (error) {
-            // TODO: Show error to user
-            console.error(error)
+            this.setState({
+                error: i18n.t('Error loading data for data set'),
+            })
         }
     }
 
@@ -175,6 +176,64 @@ class AddLockExceptionForm extends Component {
         this.setState({ currentRoot })
     }
 
+    renderOrganisationUnitSelectionCard() {
+        return (
+            <div className={styles.organisationUnitSelectionCard}>
+                <div className={styles.organisationUnitTree}>
+                    {this.state.rootWithMembers ? (
+                        <OrgUnitTree
+                            root={this.state.rootWithMembers}
+                            selected={this.state.selected}
+                            currentRoot={this.state.currentRoot}
+                            initiallyExpanded={[
+                                `/${this.state.rootWithMembers.id}`,
+                            ]}
+                            memberCollection="dataSets"
+                            memberObject={this.state.dataSet.id}
+                            onSelectClick={this.handleOrgUnitClick}
+                            onChangeCurrentRoot={this.handleChangeRoot}
+                            orgUnitsPathsToInclude={this.state.orgUnitPaths}
+                        />
+                    ) : (
+                        i18n.t('Loading organisation units tree...')
+                    )}
+                </div>
+                <div className={styles.right}>
+                    <div>
+                        <div>
+                            {this.state.currentRoot
+                                ? i18n.t(
+                                      'For organisation units within {{organisationUnitName}}:',
+                                      {
+                                          organisationUnitName: this.state
+                                              .currentRoot.displayName,
+                                      }
+                                  )
+                                : i18n.t('For all organisation units:')}
+                        </div>
+                        <OrgUnitSelectByLevel
+                            levels={this.props.levels}
+                            selected={this.state.selected}
+                            currentRoot={this.state.currentRoot}
+                            onUpdateSelection={this.handleSelectionUpdate}
+                        />
+                        <OrgUnitSelectByGroup
+                            groups={this.props.groups}
+                            selected={this.state.selected}
+                            currentRoot={this.state.currentRoot}
+                            onUpdateSelection={this.handleSelectionUpdate}
+                        />
+                        <OrgUnitSelectAll
+                            selected={this.state.selected}
+                            currentRoot={this.state.currentRoot}
+                            onUpdateSelection={this.handleSelectionUpdate}
+                        />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     render() {
         const dataSetItems = this.props.dataSets.map(dataSet => ({
             id: dataSet.id,
@@ -200,95 +259,21 @@ class AddLockExceptionForm extends Component {
                         value={dataSetSelectValue}
                     />
                     {this.state.dataSet && (
-                        <span>
+                        <div>
                             <PeriodPicker
                                 d2={this.props.d2}
                                 periodType={this.state.dataSet.periodType}
                                 onPickPeriod={this.handlePeriodChange}
                             />
-                        </span>
+                        </div>
                     )}
                 </div>
-                {this.state.dataSet && (
-                    <Card className={styles.organisationUnitTreeCard}>
-                        <CardText
-                            className={styles.organisationUnitTreeContainer}
-                        >
-                            <div className={styles.left}>
-                                {this.state.rootWithMembers ? (
-                                    <OrgUnitTree
-                                        root={this.state.rootWithMembers}
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        initiallyExpanded={[
-                                            `/${this.state.rootWithMembers.id}`,
-                                        ]}
-                                        memberCollection="dataSets"
-                                        memberObject={this.state.dataSet.id}
-                                        onSelectClick={this.handleOrgUnitClick}
-                                        onChangeCurrentRoot={
-                                            this.handleChangeRoot
-                                        }
-                                        orgUnitsPathsToInclude={
-                                            this.state.orgUnitPaths
-                                        }
-                                    />
-                                ) : (
-                                    <span>
-                                        {i18n.t(
-                                            'Updating organisation units tree...'
-                                        )}
-                                    </span>
-                                )}
-                            </div>
-                            <div className={styles.right}>
-                                <div>
-                                    {this.state.currentRoot ? (
-                                        <div>
-                                            {i18n.t(
-                                                'For organisation units within {{organisationUnitName}}:',
-                                                {
-                                                    organisationUnitName: this
-                                                        .state.currentRoot
-                                                        .displayName,
-                                                }
-                                            )}
-                                        </div>
-                                    ) : (
-                                        <div>
-                                            {i18n.t(
-                                                'For all organisation units:'
-                                            )}
-                                        </div>
-                                    )}
-                                    <OrgUnitSelectByLevel
-                                        levels={this.props.levels}
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={
-                                            this.handleSelectionUpdate
-                                        }
-                                    />
-                                    <OrgUnitSelectByGroup
-                                        groups={this.props.groups}
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={
-                                            this.handleSelectionUpdate
-                                        }
-                                    />
-                                    <OrgUnitSelectAll
-                                        selected={this.state.selected}
-                                        currentRoot={this.state.currentRoot}
-                                        onUpdateSelection={
-                                            this.handleSelectionUpdate
-                                        }
-                                    />
-                                </div>
-                            </div>
-                        </CardText>
-                    </Card>
-                )}
+                {this.state.dataSet &&
+                    (this.state.error ? (
+                        <NoticeBox error>{this.state.error}</NoticeBox>
+                    ) : (
+                        this.renderOrganisationUnitSelectionCard()
+                    ))}
             </div>
         )
     }

@@ -79,6 +79,7 @@ const AddLockExceptionModal = ({
             }
             open={true}
             contentStyle={{ maxWidth: '80%' }}
+            bodyStyle={{ overflowY: 'scroll' }}
             onRequestClose={onClose}
         >
             <AddLockExceptionForm
