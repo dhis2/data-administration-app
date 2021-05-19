@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-18T14:28:49.434Z\n"
-"PO-Revision-Date: 2021-05-18T14:28:49.434Z\n"
+"POT-Creation-Date: 2021-05-19T14:10:43.058Z\n"
+"PO-Revision-Date: 2021-05-19T14:10:43.058Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -544,10 +544,13 @@ msgstr ""
 msgid "oct-mar"
 msgstr ""
 
-msgid "Select a data set"
+msgid "Error loading data for data set"
 msgstr ""
 
-msgid "Updating organisation units tree..."
+msgid "Loading organisation units tree..."
+msgstr ""
+
+msgid "Select a data set"
 msgstr ""
 
 msgid "Lock exception added"
@@ -577,13 +580,13 @@ msgstr ""
 msgid "No lock exceptions to show."
 msgstr ""
 
+msgid "Remove lock exception"
+msgstr ""
+
 msgid "Lock exception removed"
 msgstr ""
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Remove lock exception"
 msgstr ""
 
 msgid "Are you sure you want to remove this lock exception?"
