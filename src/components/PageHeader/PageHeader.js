@@ -4,10 +4,10 @@ import DocsLink from '../DocsLink/DocsLink'
 import styles from './PageHeader.module.css'
 
 const PageHeader = ({ title, sectionKey }) => (
-    <h1 className={styles.header}>
-        {title}
+    <header className={styles.header}>
+        <h1 className={styles.headerTitle}>{title}</h1>
         <DocsLink sectionKey={sectionKey} />
-    </h1>
+    </header>
 )
 
 PageHeader.propTypes = {

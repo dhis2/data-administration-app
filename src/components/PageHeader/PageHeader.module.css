@@ -1,7 +1,10 @@
 .header {
     display: flex;
     align-items: center;
-    margin-top: 0;
     margin-bottom: var(--spacers-dp16);
+}
+
+.headerTitle {
     font-weight: 500;
+    margin: 0;
 }
