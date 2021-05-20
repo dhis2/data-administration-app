@@ -3,7 +3,6 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 Before(() => {
     cy.intercept({ pathname: /maintenance$/, method: 'POST' }, req => {
         const formData = new TextDecoder().decode(req.body)
-        console.log(formData)
         const expectFieldValue = (field, value) => {
             expect(formData.includes(`name="${field}"\r\n\r\n${value}`)).to.be
                 .true

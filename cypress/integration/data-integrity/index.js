@@ -3,6 +3,8 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 const JOB_ID = 'JOB_ID'
 
 Before(() => {
+    cy.clock()
+
     cy.intercept({ pathname: /dataIntegrity$/, method: 'POST' }, req => {
         req.reply(200, {
             response: {
@@ -27,7 +29,6 @@ Before(() => {
 })
 
 Given('the user navigated to the data integrity page', () => {
-    cy.clock()
     cy.visit('/#/data-integrity')
     cy.findByRole('heading', { name: 'Data Integrity' }).should('exist')
 })

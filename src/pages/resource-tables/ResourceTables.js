@@ -79,10 +79,6 @@ class ResourceTable extends Component {
         }
     }
 
-    componentDidMount() {
-        this.requestTaskSummary()
-    }
-
     componentWillUnmount() {
         this.stopTaskProgressPolling()
     }
@@ -117,7 +113,6 @@ class ResourceTable extends Component {
     }
 
     setLoadedPageWithErrorState(error) {
-        console.error(error)
         const messageError = error?.message
             ? error.message
             : i18nKeys.resourcetables.unexpectedError
