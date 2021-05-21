@@ -33,10 +33,9 @@ class Analytics extends Component {
         super()
 
         const checkboxes = {}
-        for (let i = 0; i < analyticsCheckboxes.length; i++) {
-            const checkbox = analyticsCheckboxes[i]
+        analyticsCheckboxes.forEach(checkbox => {
             checkboxes[checkbox.key] = false
-        }
+        })
 
         this.state = {
             loading: false,
@@ -47,10 +46,6 @@ class Analytics extends Component {
             notifications: [],
         }
         this.intervalId = null
-    }
-
-    componentDidMount() {
-        this.requestTaskSummary()
     }
 
     componentWillUnmount() {
@@ -192,7 +187,8 @@ class Analytics extends Component {
     getActiveTaskIdFromSummary(taskSummaryResponse) {
         const { taskId } = Object.entries(taskSummaryResponse).reduce(
             (currLatestTask, [taskId, taskNotifications]) => {
-                // First notification is last array item, so its timestamp represents the task start
+                // First notification is last array item, so its timestamp
+                // represents the task start
                 const firstTaskNotification =
                     taskNotifications[taskNotifications.length - 1]
                 const time = new Date(firstTaskNotification.time)
@@ -216,7 +212,8 @@ class Analytics extends Component {
     }
 
     isTaskCompleted(taskNotifications) {
-        // First array item is most recent notification, which can be used to read the completed prop for the entire task
+        // First array item is most recent notification, which can be used to
+        // read the completed prop for the entire task
         return taskNotifications[0].completed
     }
 

@@ -36,10 +36,10 @@ Given('the user navigated to the resource tables page', () => {
 
 When(`the user clicks on the 'Generate tables' button`, () => {
     cy.findByRole('button', { name: 'Generate tables' }).click()
-    cy.wait('@startResourceTableGenerationTask')
 })
 
 Then('the resource tables are generated', () => {
+    cy.wait('@startResourceTableGenerationTask')
     cy.tick(5000)
     cy.wait('@pollResourceTableGeneration')
 })
