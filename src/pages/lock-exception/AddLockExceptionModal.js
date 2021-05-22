@@ -57,40 +57,44 @@ const AddLockExceptionModal = ({
         <Dialog
             title={i18n.t('Add lock exception')}
             actions={
-                <ButtonStrip end>
-                    <Button disabled={isLoading} onClick={onClose}>
-                        {i18n.t('Cancel')}
-                    </Button>
-                    <Button
-                        primary
-                        disabled={isAddActionDisabled}
-                        onClick={handleAdd}
-                    >
-                        {isLoading ? (
-                            <>
-                                {i18n.t('Adding lock exception...')}
-                                <CircularLoader small />
-                            </>
-                        ) : (
-                            i18n.t('Add lock exception')
-                        )}
-                    </Button>
-                </ButtonStrip>
+                <div data-test="add-lock-exception-modal-actions">
+                    <ButtonStrip end>
+                        <Button disabled={isLoading} onClick={onClose}>
+                            {i18n.t('Cancel')}
+                        </Button>
+                        <Button
+                            primary
+                            disabled={isAddActionDisabled}
+                            onClick={handleAdd}
+                        >
+                            {isLoading ? (
+                                <>
+                                    {i18n.t('Adding lock exception...')}
+                                    <CircularLoader small />
+                                </>
+                            ) : (
+                                i18n.t('Add lock exception')
+                            )}
+                        </Button>
+                    </ButtonStrip>
+                </div>
             }
             open={true}
             contentStyle={{ maxWidth: '80%' }}
             bodyStyle={{ overflowY: 'scroll' }}
             onRequestClose={onClose}
         >
-            <AddLockExceptionForm
-                d2={d2}
-                levels={levels}
-                groups={groups}
-                dataSets={dataSets}
-                updateSelectedOrgUnits={setSelectedOrgUnits}
-                updateSelectedDataSetId={setSelectedDataSetId}
-                updateSelectedPeriodId={setSelectedPeriodId}
-            />
+            <div data-test="add-lock-exception-modal">
+                <AddLockExceptionForm
+                    d2={d2}
+                    levels={levels}
+                    groups={groups}
+                    dataSets={dataSets}
+                    updateSelectedOrgUnits={setSelectedOrgUnits}
+                    updateSelectedDataSetId={setSelectedDataSetId}
+                    updateSelectedPeriodId={setSelectedPeriodId}
+                />
+            </div>
         </Dialog>
     )
 }

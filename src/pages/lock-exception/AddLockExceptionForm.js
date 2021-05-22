@@ -179,7 +179,10 @@ class AddLockExceptionForm extends Component {
     renderOrganisationUnitSelectionCard() {
         return (
             <div className={styles.organisationUnitSelectionCard}>
-                <div className={styles.organisationUnitTree}>
+                <div
+                    className={styles.organisationUnitTree}
+                    data-test="add-lock-exception-modal-org-unit-tree"
+                >
                     {this.state.rootWithMembers ? (
                         <OrgUnitTree
                             root={this.state.rootWithMembers}
@@ -251,13 +254,15 @@ class AddLockExceptionForm extends Component {
         return (
             <div>
                 <div className={styles.selectsContainer}>
-                    <SelectField
-                        style={d2UiSelectStyleOverride}
-                        label={dataSetSelectLabel}
-                        items={dataSetItems}
-                        onChange={this.handleDataSetChange}
-                        value={dataSetSelectValue}
-                    />
+                    <div data-test="add-lock-exception-modal-select-data-set">
+                        <SelectField
+                            style={d2UiSelectStyleOverride}
+                            label={dataSetSelectLabel}
+                            items={dataSetItems}
+                            onChange={this.handleDataSetChange}
+                            value={dataSetSelectValue}
+                        />
+                    </div>
                     {this.state.dataSet && (
                         <div>
                             <PeriodPicker

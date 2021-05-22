@@ -1,0 +1,176 @@
+{
+    "pager": { "page": 1, "pageCount": 1, "total": 16, "pageSize": 20 },
+    "lockExceptions": [
+        {
+            "name": "Child Health (Bandasuma Fiama MCHP, December 2021)",
+            "period": { "id": "202112", "displayName": "December 2021" },
+            "organisationUnit": {
+                "id": "aF6iPGbrcRk",
+                "displayName": "Bandasuma Fiama MCHP"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Child Health (Bombordu MCHP, December 2021)",
+            "period": { "id": "202112", "displayName": "December 2021" },
+            "organisationUnit": {
+                "id": "YQYgz8exK9S",
+                "displayName": "Bombordu MCHP"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Child Health (Gbetema MCHP (Fiama), December 2021)",
+            "period": { "id": "202112", "displayName": "December 2021" },
+            "organisationUnit": {
+                "id": "as1dnmlXLzG",
+                "displayName": "Gbetema MCHP (Fiama)"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Child Health (Njagbwema Fiama CHC, December 2021)",
+            "period": { "id": "202112", "displayName": "December 2021" },
+            "organisationUnit": {
+                "id": "sLKHXoBIqSs",
+                "displayName": "Njagbwema Fiama CHC"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Child Health (Yekior MCHP, December 2021)",
+            "period": { "id": "202112", "displayName": "December 2021" },
+            "organisationUnit": {
+                "id": "dBD9OHJFN8u",
+                "displayName": "Yekior MCHP"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Reproductive Health (Bandasuma CHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "uPshwz3B3Uu",
+                "displayName": "Bandasuma CHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Konia MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "yJ1xkKha5oE",
+                "displayName": "Konia MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Njaluahun CHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "kvzdkXBxHoN",
+                "displayName": "Njaluahun CHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Potoru CHC, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "k6lOze3vTzP",
+                "displayName": "Potoru CHC"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Saahun (barri) MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "InQWjSe6k2f",
+                "displayName": "Saahun (barri) MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Tambeyama MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "dU3vTbLRLHy",
+                "displayName": "Tambeyama MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Taninahun MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "Fhko00f3hXT",
+                "displayName": "Taninahun MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Vaama MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "GjJjES51GvK",
+                "displayName": "Vaama MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Reproductive Health (Waiima MCHP, November 2021)",
+            "period": { "id": "202111", "displayName": "November 2021" },
+            "organisationUnit": {
+                "id": "YPSCWmJ3TyN",
+                "displayName": "Waiima MCHP"
+            },
+            "dataSet": {
+                "id": "QX4ZTUbOt3a",
+                "displayName": "Reproductive Health"
+            }
+        },
+        {
+            "name": "Child Health (Sierra Leone, June 2021)",
+            "period": { "id": "202106", "displayName": "June 2021" },
+            "organisationUnit": {
+                "id": "ImspTQPwCqd",
+                "displayName": "Sierra Leone"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        },
+        {
+            "name": "Child Health (Sierra Leone, July 2021)",
+            "period": { "id": "202107", "displayName": "July 2021" },
+            "organisationUnit": {
+                "id": "ImspTQPwCqd",
+                "displayName": "Sierra Leone"
+            },
+            "dataSet": { "id": "BfMAe6Itzgt", "displayName": "Child Health" }
+        }
+    ]
+}

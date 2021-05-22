@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-19T14:10:43.058Z\n"
-"PO-Revision-Date: 2021-05-19T14:10:43.058Z\n"
+"POT-Creation-Date: 2021-05-22T18:34:28.983Z\n"
+"PO-Revision-Date: 2021-05-22T18:34:28.983Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -568,6 +568,9 @@ msgstr ""
 msgid "Adding lock exception..."
 msgstr ""
 
+msgid "Go back to all lock exceptions"
+msgstr ""
+
 msgid "Batch Deletion"
 msgstr ""
 
@@ -578,6 +581,9 @@ msgid "Error loading lock exceptions"
 msgstr ""
 
 msgid "No lock exceptions to show."
+msgstr ""
+
+msgid "Batch delete lock exceptions"
 msgstr ""
 
 msgid "Remove lock exception"

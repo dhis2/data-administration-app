@@ -1,0 +1,134 @@
+{
+    "dataSets": [
+        {
+            "id": "lyLU2wR22tC",
+            "displayName": "ART monthly summary",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "BfMAe6Itzgt",
+            "displayName": "Child Health",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "VTdjfLXXmoi",
+            "displayName": "Clinical Monitoring Checklist",
+            "periodType": { "name": "SixMonthly" }
+        },
+        {
+            "id": "Lpw6GcnTrmS",
+            "displayName": "Emergency Response",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "TuL8IOPzpHh",
+            "displayName": "EPI Stock",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "rsyjyJmYD4J",
+            "displayName": "Expenditures",
+            "periodType": { "name": "FinancialApril" }
+        },
+        {
+            "id": "V8MHeZHIrcP",
+            "displayName": "Facility Assessment",
+            "periodType": { "name": "Yearly" }
+        },
+        {
+            "id": "vc6nF5yZsPR",
+            "displayName": "HIV Care Monthly",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "EDzMBk0RRji",
+            "displayName": "HIV Peadiatric monthly summary",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "Nyh6laLdBEJ",
+            "displayName": "IDSR Weekly",
+            "periodType": { "name": "Weekly" }
+        },
+        {
+            "id": "j38YW1Am7he",
+            "displayName": "IDSR Weekly (Start Wednesday)",
+            "periodType": { "name": "WeeklyWednesday" }
+        },
+        {
+            "id": "PLq9sJluXvc",
+            "displayName": "Inpatient Morbidity/Mortality Summary",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "ULowA8V3ucd",
+            "displayName": "Life-Saving Commodities",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "EKWVBc5C0ms",
+            "displayName": "MNCH Quarterly Report",
+            "periodType": { "name": "Quarterly" }
+        },
+        {
+            "id": "eZDhcZi6FLP",
+            "displayName": "Morbidity",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "pBOMPrpg1QX",
+            "displayName": "Mortality < 5 years",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "ce7DSxx5H2I",
+            "displayName": "Mortality < 5 years by age group",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "YFTk3VdO9av",
+            "displayName": "Mortality < 5 years by gender",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "YZhd4nu3mzY",
+            "displayName": "Mortality < 5 years Narratives",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "Rl58JxmKJo2",
+            "displayName": "PMTCT monthly summary",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "aLpVgfXiz0f",
+            "displayName": "Population",
+            "periodType": { "name": "Yearly" }
+        },
+        {
+            "id": "Y8gAn9DfAGU",
+            "displayName": "Project Management",
+            "periodType": { "name": "Quarterly" }
+        },
+        {
+            "id": "QX4ZTUbOt3a",
+            "displayName": "Reproductive Health",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "N4fIX1HL3TQ",
+            "displayName": "Staffing",
+            "periodType": { "name": "SixMonthly" }
+        },
+        {
+            "id": "SF8FDSqw30D",
+            "displayName": "TB Facility Reporting Form",
+            "periodType": { "name": "Monthly" }
+        },
+        {
+            "id": "OsPTWNqq26W",
+            "displayName": "TB/HIV (VCCT) monthly summary",
+            "periodType": { "name": "Monthly" }
+        }
+    ]
+}

@@ -203,28 +203,33 @@ class PeriodPicker extends React.Component {
             (name === 'biWeek' && this.state.invalidBiWeek)
 
         return (
-            <SelectField
-                value={this.state[name]}
-                onChange={changeState}
-                style={styles[name]}
-                floatingLabelText={this.getTranslation(name)}
-                floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+            <div
+                style={{ display: 'inline-block' }}
+                data-test={`period-picker-option-${name}`}
             >
-                {Object.keys(options)
-                    .sort()
-                    .map(value => (
-                        <MenuItem
-                            key={value}
-                            value={value}
-                            primaryText={
-                                /[^0-9]/.test(options[value]) &&
-                                name !== 'biWeek'
-                                    ? this.getTranslation(options[value])
-                                    : options[value]
-                            }
-                        />
-                    ))}
-            </SelectField>
+                <SelectField
+                    value={this.state[name]}
+                    onChange={changeState}
+                    style={styles[name]}
+                    floatingLabelText={this.getTranslation(name)}
+                    floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+                >
+                    {Object.keys(options)
+                        .sort()
+                        .map(value => (
+                            <MenuItem
+                                key={value}
+                                value={value}
+                                primaryText={
+                                    /[^0-9]/.test(options[value]) &&
+                                    name !== 'biWeek'
+                                        ? this.getTranslation(options[value])
+                                        : options[value]
+                                }
+                            />
+                        ))}
+                </SelectField>
+            </div>
         )
     }
 

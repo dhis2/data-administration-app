@@ -7,7 +7,7 @@ import {
     Pagination,
     ButtonStrip,
 } from '@dhis2/ui'
-import classNames from 'classnames'
+import classnames from 'classnames'
 import { getInstance as getD2Instance } from 'd2'
 import FontIcon from 'material-ui/FontIcon'
 import IconButton from 'material-ui/IconButton'
@@ -79,17 +79,19 @@ class LockException extends Component {
         if (this.state.atBatchDeletionPage) {
             return (
                 <div className={styles.headerContainer}>
-                    <h1 className={styles.header}>
-                        <IconButton onClick={this.backToLockExceptions}>
+                    <IconButton onClick={this.backToLockExceptions}>
+                        <span title={i18n.t('Go back to all lock exceptions')}>
                             <FontIcon
-                                className={classNames(
+                                className={classnames(
                                     'material-icons',
                                     styles.backArrowIcon
                                 )}
                             >
                                 arrow_back
                             </FontIcon>
-                        </IconButton>
+                        </span>
+                    </IconButton>
+                    <h1 className={styles.header}>
                         <span>{i18n.t('Lock Exception')}</span>
                         <span className={styles.headerDivider}> | </span>
                         <span className={styles.subHeader}>
@@ -101,7 +103,12 @@ class LockException extends Component {
         }
 
         return (
-            <div className={styles.headerContainer}>
+            <div
+                className={classnames(
+                    styles.headerContainer,
+                    styles.flexSpaceBetween
+                )}
+            >
                 <PageHeader
                     sectionKey={this.props.sectionKey}
                     title={i18nKeys.lockException.title}
@@ -397,6 +404,7 @@ class LockException extends Component {
                     onRemoveLockException={
                         this.handleShowRemoveLockExceptionModal
                     }
+                    atBatchDeletionPage={this.state.atBatchDeletionPage}
                 />
                 {this.renderPagination()}
             </div>
@@ -436,7 +444,7 @@ class LockException extends Component {
 
     render() {
         return (
-            <div className={styles.lockExceptionsTable}>
+            <div className={styles.lockExceptions}>
                 {this.renderHeader()}
                 {this.state.error ? (
                     <NoticeBox error>{this.state.error}</NoticeBox>

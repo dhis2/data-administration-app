@@ -19,7 +19,12 @@ const columnLabels = {
     organisationUnit: i18n.t('Organisation unit'),
 }
 
-const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
+const LockExceptionsTable = ({
+    columns,
+    rows,
+    atBatchDeletionPage,
+    onRemoveLockException,
+}) => (
     <Table>
         <TableHead>
             <TableRowHead>
@@ -43,9 +48,15 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
                         <Button
                             small
                             secondary
-                            onClick={onRemoveLockException.bind(null, row)}
+                            onClick={() => onRemoveLockException(row)}
                         >
-                            <span title={i18n.t('Remove lock exception')}>
+                            <span
+                                title={
+                                    atBatchDeletionPage
+                                        ? i18n.t('Batch delete lock exceptions')
+                                        : i18n.t('Remove lock exception')
+                                }
+                            >
                                 <FontIcon className="material-icons">
                                     delete
                                 </FontIcon>
@@ -59,9 +70,10 @@ const LockExceptionsTable = ({ columns, rows, onRemoveLockException }) => (
 )
 
 LockExceptionsTable.propTypes = {
+    atBatchDeletionPage: PropTypes.bool.isRequired,
+    columns: PropTypes.array.isRequired,
+    rows: PropTypes.array.isRequired,
     onRemoveLockException: PropTypes.func.isRequired,
-    columns: PropTypes.array,
-    rows: PropTypes.array,
 }
 
 export default LockExceptionsTable
