@@ -6,6 +6,7 @@ import {
     SingleSelectField,
     SingleSelectOption,
     NoticeBox,
+    CircularLoader,
 } from '@dhis2/ui'
 import { getInstance as getD2Instance } from 'd2'
 import PropTypes from 'prop-types'
@@ -298,7 +299,14 @@ class Analytics extends Component {
                         onClick={this.initAnalyticsTablesGeneration}
                         disabled={this.state.loading}
                     >
-                        {i18n.t('Start export')}
+                        {this.state.loading ? (
+                            <>
+                                {i18n.t('Exporting...')}
+                                <CircularLoader small />
+                            </>
+                        ) : (
+                            i18n.t('Start export')
+                        )}
                     </Button>
                 </Card>
                 {(this.state.notifications || []).length > 0 && (
