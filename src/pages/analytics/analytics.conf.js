@@ -22,7 +22,7 @@ const lastYearValues = [
 /* Last years dropdown options */
 for (let i = FIRST_YEAR; i <= LAST_YEAR; i++) {
     lastYearValues.push({
-        key: i,
+        key: String(i),
         value: String(i),
         displayName: String(i),
     })
