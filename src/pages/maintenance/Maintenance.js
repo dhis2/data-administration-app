@@ -1,62 +1,14 @@
 import { useAlert } from '@dhis2/app-runtime'
 import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { Card, Button, CircularLoader, Checkbox } from '@dhis2/ui'
+import { Card, Button, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
+import Checkboxes from './Checkboxes'
 import styles from './Maintenance.module.css'
-
-const useCheckboxes = () => {
-    const [checkboxes, setCheckboxes] = useState(() => {
-        const checkboxes = {}
-        for (const key of Object.keys(i18nKeys.maintenance.checkboxes)) {
-            checkboxes[key] = false
-        }
-        return checkboxes
-    })
-    const toggleCheckbox = key => {
-        setCheckboxes({
-            ...checkboxes,
-            [key]: !checkboxes[key],
-        })
-    }
-    const toFormData = () => {
-        const formData = new FormData()
-        Object.entries(checkboxes).forEach(([key, checked]) => {
-            formData.append(key, checked)
-        })
-        return formData
-    }
-
-    return {
-        checkboxes,
-        toggleCheckbox,
-        toFormData,
-    }
-}
-
-const Checkboxes = ({ checkboxes, toggleCheckbox, disabled }) => (
-    <div className={styles.checkboxes}>
-        {Object.entries(checkboxes).map(([key, checked]) => (
-            <Checkbox
-                key={key}
-                className={styles.checkbox}
-                label={i18nKeys.maintenance.checkboxes[key]}
-                checked={checked}
-                onChange={() => toggleCheckbox(key)}
-                disabled={disabled}
-            />
-        ))}
-    </div>
-)
-
-Checkboxes.propTypes = {
-    checkboxes: PropTypes.object.isRequired,
-    disabled: PropTypes.bool.isRequired,
-    toggleCheckbox: PropTypes.func.isRequired,
-}
+import { useCheckboxes } from './use-checkboxes'
 
 const Maintenance = ({ sectionKey }) => {
     const {
