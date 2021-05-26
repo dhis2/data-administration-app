@@ -38,6 +38,7 @@ When(`the user clicks on the 'Run integrity checks' button`, () => {
 })
 
 Then('a data integrity check is requested', () => {
+    // Speed up clock due to timeout used for polling
     cy.tick(5000)
     cy.wait('@pollDataIntegrityCheck')
 })

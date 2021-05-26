@@ -45,6 +45,7 @@ When(`the user clicks on the 'Start export' button`, () => {
 
 Then('the tables are exported', () => {
     cy.wait('@startAnalyticsTablesExportTask')
+    // Speed up clock due to timeout used for polling
     cy.tick(5000)
     cy.wait('@pollAnalyticsTablesExport')
 })

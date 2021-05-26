@@ -40,6 +40,7 @@ When(`the user clicks on the 'Generate tables' button`, () => {
 
 Then('the resource tables are generated', () => {
     cy.wait('@startResourceTableGenerationTask')
+    // Speed up clock due to timeout used for polling
     cy.tick(5000)
     cy.wait('@pollResourceTableGeneration')
 })
