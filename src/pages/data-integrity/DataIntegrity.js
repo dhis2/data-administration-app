@@ -1,61 +1,16 @@
-import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
+import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import Issues from './Issues/Issues'
+import { useDataIntegrityPoll } from './use-data-integrity-poll'
 
 const startDataIntegrityCheckMutation = {
     resource: 'dataIntegrity',
     type: 'create',
-}
-
-const pollQuery = {
-    poll: {
-        resource: 'system/taskSummaries/DATA_INTEGRITY',
-        id: ({ jobId }) => jobId,
-    },
-}
-
-const usePoll = (fn, pollInterval) => {
-    const intervalId = useRef(null)
-
-    const start = (...args) => {
-        intervalId.current = setInterval(() => fn(...args), pollInterval)
-    }
-    const cancel = () => {
-        if (intervalId.current) {
-            clearInterval(intervalId.current)
-        }
-    }
-
-    useEffect(() => {
-        return cancel
-    }, [])
-
-    return { start, cancel }
-}
-
-const useDataIntegrityPoll = () => {
-    const { refetch, error, data } = useDataQuery(pollQuery, { lazy: true })
-    const PULL_INTERVAL = 3000
-    const poll = usePoll(jobId => {
-        refetch({ jobId })
-    }, PULL_INTERVAL)
-
-    useEffect(() => {
-        if (data?.poll) {
-            poll.cancel()
-        }
-    }, [data])
-
-    return {
-        ...poll,
-        error,
-        data: data?.poll,
-    }
 }
 
 const DataIntegrity = ({ sectionKey }) => {
