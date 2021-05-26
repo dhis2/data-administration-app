@@ -48,10 +48,23 @@ const noErrorStyles = {
     },
 }
 
+const countElements = content => {
+    const sum = arr =>
+        arr.reduce((acc, element) => {
+            return acc + countElements(element)
+        }, 0)
+
+    if (Array.isArray(content)) {
+        return sum(content)
+    } else if (typeof content === 'object') {
+        return sum(Object.values(content))
+    } else {
+        return 1
+    }
+}
+
 const IssueCard = ({ title, content }) => {
-    const elementsCount = Array.isArray(content)
-        ? content.length
-        : Object.keys(content).length
+    const elementsCount = countElements(content)
     const expandable = elementsCount > 0
     const { titleColor, openIcon, closeIcon, iconStyle } =
         elementsCount > 0 ? errorStyles : noErrorStyles
@@ -67,12 +80,17 @@ const IssueCard = ({ title, content }) => {
         <Card className={styles.card}>
             <CardHeader
                 title={
-                    elementsCount > 0
-                        ? i18n.t('{{issueTitle}} ({{issueElementsCount}})', {
-                              issueTitle: title,
-                              issueElementsCount: elementsCount,
-                          })
-                        : title
+                    <div data-test="issue-card-title">
+                        {elementsCount > 0
+                            ? i18n.t(
+                                  '{{issueTitle}} ({{issueElementsCount}})',
+                                  {
+                                      issueTitle: title,
+                                      issueElementsCount: elementsCount,
+                                  }
+                              )
+                            : title}
+                    </div>
                 }
                 titleColor={titleColor}
                 titleStyle={jsStyles.titleStyle}

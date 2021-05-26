@@ -18,11 +18,15 @@ Before(() => {
         req => {
             expect(req.url.endsWith(JOB_ID)).to.be.true
             req.reply(200, {
-                errors: ['Element 1', 'Element 2', 'Element 3'],
-                errorsWithSubheaders: {
+                dataElementsWithoutDataSet: [
+                    'Element 1',
+                    'Element 2',
+                    'Element 3',
+                ],
+                indicatorsWithoutGroups: {
                     subheader: ['Value 1', 'Value 2'],
                 },
-                passed: {},
+                validationRulesWithoutGroups: {},
             })
         }
     ).as('pollDataIntegrityCheck')
@@ -44,5 +48,14 @@ Then('a data integrity check is requested', () => {
 })
 
 Then('the user is shown the results of the check', () => {
-    // TODO
+    const expectedCardTitles = [
+        'Data elements without data set (3)',
+        'Indicators without groups (2)',
+        'Validation rules without groups',
+    ]
+    cy.getWithDataTest('{issue-card-title}').each(($ct, index) => {
+        if (index < expectedCardTitles.length) {
+            expect($ct.text()).to.equal(expectedCardTitles[index])
+        }
+    })
 })

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-22T18:34:28.983Z\n"
-"PO-Revision-Date: 2021-05-22T18:34:28.983Z\n"
+"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"PO-Revision-Date: 2021-05-26T16:18:29.578Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -194,6 +194,9 @@ msgid "Generate Min-Max Values"
 msgstr ""
 
 msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "Exporting..."
 msgstr ""
 
 msgid "Start export"
