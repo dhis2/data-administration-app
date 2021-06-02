@@ -1,55 +1,40 @@
 import {
     Table,
     TableBody,
-    TableHeader,
-    TableHeaderColumn,
+    TableCell,
+    TableCellHead,
+    TableHead,
     TableRow,
-    TableRowColumn,
-} from 'material-ui/Table'
+    TableRowHead,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
-import FormattedNumber from '../../components/formatters/FormattedNumber'
-import styles from './DataStatistics.module.css'
+import React from 'react'
+import FormattedNumber from '../../components/FormattedNumber/FormattedNumber'
 
-class DataStatisticsTable extends PureComponent {
-    static propTypes = {
-        elements: PropTypes.array.isRequired,
-        label: PropTypes.string.isRequired,
-    }
+const DataStatisticsTable = ({ elements, label }) => (
+    <Table suppressZebraStriping>
+        <TableHead>
+            <TableRowHead>
+                <TableCellHead>{label}</TableCellHead>
+                <TableCellHead></TableCellHead>
+            </TableRowHead>
+        </TableHead>
+        <TableBody>
+            {elements.map(element => (
+                <TableRow key={element.label}>
+                    <TableCell>{element.label}</TableCell>
+                    <TableCell>
+                        <FormattedNumber value={element.count} />
+                    </TableCell>
+                </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+)
 
-    render() {
-        const rows = this.props.elements.map(element => (
-            <TableRow
-                key={element.label}
-                className={'data-statistics-table-row'}
-            >
-                <TableRowColumn>{element.label}</TableRowColumn>
-                <TableRowColumn>
-                    <FormattedNumber value={element.count} />
-                </TableRowColumn>
-            </TableRow>
-        ))
-
-        return (
-            <Table selectable={false} className={styles.statisticsTable}>
-                <TableHeader
-                    className={'data-statistics-table-header'}
-                    displaySelectAll={false}
-                    adjustForCheckbox={false}
-                    enableSelectAll={false}
-                >
-                    <TableRow>
-                        <TableHeaderColumn>
-                            {this.props.label}
-                        </TableHeaderColumn>
-                    </TableRow>
-                </TableHeader>
-                <TableBody displayRowCheckbox={false} stripedRows={false}>
-                    {rows}
-                </TableBody>
-            </Table>
-        )
-    }
+DataStatisticsTable.propTypes = {
+    elements: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
 }
 
 export default DataStatisticsTable

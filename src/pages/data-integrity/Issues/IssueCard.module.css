@@ -1,0 +1,17 @@
+.card {
+    margin-bottom: 10px;
+}
+
+.cardText {
+    padding-top: 0 !important;
+}
+
+.card h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}

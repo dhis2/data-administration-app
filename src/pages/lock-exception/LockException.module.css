@@ -2,50 +2,45 @@
     margin: var(--spacers-dp16) 0;
 }
 
+.headerContainer {
+    display: flex;
+    align-items: center;
+}
+
 .header {
     display: flex;
     align-items: center;
 }
 
-.lockExceptionsTable {
+.flexSpaceBetween {
+    justify-content: space-between;
+}
+
+.lockExceptions {
     margin-bottom: 16px;
 }
 
-.lockExceptionsTable .headerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.lockExceptionsTable tr th {
+.lockExceptions tr th {
     font-size: 14px !important;
     letter-spacing: 0.7px !important;
 }
 
-.lockExceptionsTable tr {
+.lockExceptions tr {
     color: #757575 !important;
 }
 
-.lockExceptionsTable tr {
+.lockExceptions tr {
     color: #000000 !important;
 }
 
-.lockExceptionsTableHeader tr th {
+.lockExceptionsHeader tr th {
     font-size: 24px !important;
     letter-spacing: 1.2px !important;
     color: #000000 !important;
 }
 
-.lockExceptionsTableHeader tr {
+.lockExceptionsHeader tr {
     height: 78px !important;
-}
-
-.lockExceptionsTable tr:nth-child(even) {
-    background-color: #fafafa;
-}
-
-.lockExceptionsTable tr:nth-child(odd) {
-    background-color: #ffffff;
 }
 
 .lockExceptionDialog h3 {
@@ -60,10 +55,6 @@
     font-family: Roboto;
     font-size: 14px;
     color: #000000;
-}
-
-.actionButton {
-    margin-left: 10px !important;
 }
 
 .marginForAddButton {

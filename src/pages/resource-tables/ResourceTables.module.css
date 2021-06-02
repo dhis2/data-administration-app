@@ -1,12 +1,20 @@
+.card {
+    padding: var(--spacers-dp16);
+}
+
 .description {
-    padding-top: 16px;
-    margin-bottom: 32px;
+    margin-bottom: var(--spacers-dp16);
 }
 
 .description > div {
-    margin-bottom: 10px;
+    margin-bottom: var(--spacers-dp12);
 }
 
 .tableName {
-    color: #757575;
+    color: var(--colors-grey600);
+    margin-left: var(--spacers-dp4);
+}
+
+.noticeBox {
+    margin-bottom: var(--spacers-dp16);
 }

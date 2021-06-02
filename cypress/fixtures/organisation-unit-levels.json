@@ -1,0 +1,8 @@
+{
+    "organisationUnitLevels": [
+        { "level": 1, "id": "H1KlN4QIauv", "displayName": "National" },
+        { "level": 2, "id": "wjP19dkFeIk", "displayName": "District" },
+        { "level": 3, "id": "tTUf91fCytl", "displayName": "Chiefdom" },
+        { "level": 4, "id": "m9lBJogzE95", "displayName": "Facility" }
+    ]
+}

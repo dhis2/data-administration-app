@@ -1,32 +1,5 @@
-.header {
-    display: flex;
-    align-items: center;
-}
-
 .card {
+    display: block !important;
     margin-bottom: 24px;
-}
-
-.maxWith {
-    max-width: 500px;
-}
-
-.statisticsTable th {
-    color: #757575 !important;
-    border-bottom: 2px solid #e0e0e0 !important;
-    font-size: 16px !important;
-    height: 48px !important;
-}
-
-.statisticsTable tr {
-    color: #000000 !important;
-    border-bottom: 1px solid #e0e0e0 !important;
-}
-
-.statisticsTable tr td {
-    font-size: 14px !important;
-}
-
-.statisticsTable td:nth-child(2) {
-    text-align: right !important;
+    height: unset !important;
 }

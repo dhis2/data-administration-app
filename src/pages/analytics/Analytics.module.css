@@ -1,0 +1,19 @@
+.card {
+    padding: var(--spacers-dp16);
+}
+
+.form {
+    margin-bottom: var(--spacers-dp24);
+}
+
+.checkboxes, .noticeBox {
+    margin-bottom: var(--spacers-dp16);
+}
+
+.checkbox {
+    margin-bottom: var(--spacers-dp4);
+}
+
+.lastYearsSelect {
+    max-width: 300px;
+}

@@ -47,9 +47,10 @@ class PeriodPicker extends React.Component {
         super(props, context)
 
         this.state = {}
+    }
 
-        const i18n = context.d2.i18n
-        this.getTranslation = i18n.getTranslation.bind(i18n)
+    getTranslation(key) {
+        return this.props.d2.i18n.getTranslation(key)
     }
 
     componentDidUpdate(prevProps) {
@@ -202,28 +203,33 @@ class PeriodPicker extends React.Component {
             (name === 'biWeek' && this.state.invalidBiWeek)
 
         return (
-            <SelectField
-                value={this.state[name]}
-                onChange={changeState}
-                style={styles[name]}
-                floatingLabelText={this.getTranslation(name)}
-                floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+            <div
+                style={{ display: 'inline-block' }}
+                data-test={`period-picker-option-${name}`}
             >
-                {Object.keys(options)
-                    .sort()
-                    .map(value => (
-                        <MenuItem
-                            key={value}
-                            value={value}
-                            primaryText={
-                                /[^0-9]/.test(options[value]) &&
-                                name !== 'biWeek'
-                                    ? this.getTranslation(options[value])
-                                    : options[value]
-                            }
-                        />
-                    ))}
-            </SelectField>
+                <SelectField
+                    value={this.state[name]}
+                    onChange={changeState}
+                    style={styles[name]}
+                    floatingLabelText={this.getTranslation(name)}
+                    floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+                >
+                    {Object.keys(options)
+                        .sort()
+                        .map(value => (
+                            <MenuItem
+                                key={value}
+                                value={value}
+                                primaryText={
+                                    /[^0-9]/.test(options[value]) &&
+                                    name !== 'biWeek'
+                                        ? this.getTranslation(options[value])
+                                        : options[value]
+                                }
+                            />
+                        ))}
+                </SelectField>
+            </div>
         )
     }
 
@@ -392,6 +398,7 @@ class PeriodPicker extends React.Component {
     }
 }
 PeriodPicker.propTypes = {
+    d2: PropTypes.object.isRequired,
     periodType: PropTypes.oneOf([
         'Daily',
         'Weekly',
@@ -414,6 +421,5 @@ PeriodPicker.propTypes = {
 
     onPickPeriod: PropTypes.func.isRequired,
 }
-PeriodPicker.contextTypes = { d2: PropTypes.object.isRequired }
 
 export default PeriodPicker
