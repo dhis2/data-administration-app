@@ -33,7 +33,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Maintenance"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -210,7 +210,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "All"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -321,7 +321,7 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicators"
 
 msgid "Periods"
 msgstr ""
@@ -330,31 +330,31 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Events"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisation units"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Validation rules"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Programs"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Data elements"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Organisation unit groups"
 
 msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Pivot tables"
 
 msgid "Program instances"
 msgstr ""
@@ -363,28 +363,28 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Data sets"
 
 msgid "User groups"
-msgstr ""
+msgstr "User groups"
 
 msgid "Users"
-msgstr ""
+msgstr "Users"
 
 msgid "Maps"
-msgstr ""
+msgstr "Maps"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Indicator groups"
 
 msgid "Charts"
-msgstr ""
+msgstr "Charts"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Data element groups"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dashboards"
 
 msgid "Today"
 msgstr ""
@@ -426,10 +426,10 @@ msgid "Organisation unit"
 msgstr "Organisation unit"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "Organisation unit group"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Organisation unit level"
 
 msgid "Select"
 msgstr ""
@@ -444,13 +444,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Show details"
-msgstr ""
+msgstr "Show details"
 
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 msgid "Actions"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Adding lock exception..."
 msgstr ""

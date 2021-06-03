@@ -210,7 +210,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "الجميع"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -321,10 +321,10 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "المؤشرات"
 
 msgid "Periods"
-msgstr ""
+msgstr "الفترات الزمنية"
 
 msgid "Visualization"
 msgstr ""
@@ -333,7 +333,7 @@ msgid "Events"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "الوحدات التنظيمية"
 
 msgid "Validation rules"
 msgstr ""
@@ -345,7 +345,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "عناصر البيانات"
 
 msgid "Organisation unit groups"
 msgstr ""
@@ -354,7 +354,7 @@ msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "الجداول المحورية"
 
 msgid "Program instances"
 msgstr ""
@@ -363,22 +363,22 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "حزم البيانات"
 
 msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "المستخدمون"
 
 msgid "Maps"
-msgstr ""
+msgstr "الخرائط"
 
 msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "المخططات البيانية"
 
 msgid "Data element groups"
 msgstr ""
@@ -387,7 +387,7 @@ msgid "Dashboards"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "اليوم"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -432,7 +432,7 @@ msgid "Organisation unit level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "تحديد"
 
 msgid "Deselect"
 msgstr ""
@@ -444,13 +444,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 msgid "Show details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "إزالة"
 
 msgid "Actions"
 msgstr ""
@@ -573,7 +573,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "Adding lock exception..."
 msgstr ""

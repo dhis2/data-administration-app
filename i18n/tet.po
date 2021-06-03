@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Manutensaun"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -211,7 +211,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Hotu"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -322,10 +322,10 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikadores"
 
 msgid "Periods"
-msgstr ""
+msgstr "Períodus"
 
 msgid "Visualization"
 msgstr ""
@@ -334,10 +334,10 @@ msgid "Events"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unidade organizasional"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Regras validasaun"
 
 msgid "Data values"
 msgstr ""
@@ -346,10 +346,10 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elementus dadus"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grupus unidade organizasional"
 
 msgid "Tracked entity instances"
 msgstr ""
@@ -364,25 +364,25 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Pakote dadus"
 
 msgid "User groups"
-msgstr ""
+msgstr "Grupus utilizador"
 
 msgid "Users"
-msgstr ""
+msgstr "Utilizadores"
 
 msgid "Maps"
 msgstr ""
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Grupus indikadores"
 
 msgid "Charts"
 msgstr ""
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Grupus elementus dadus"
 
 msgid "Dashboards"
 msgstr ""
@@ -433,7 +433,7 @@ msgid "Organisation unit level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Selesiona"
 
 msgid "Deselect"
 msgstr ""
@@ -445,13 +445,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Naran"
 
 msgid "Show details"
-msgstr ""
+msgstr "Hatudu detalles"
 
 msgid "Remove"
-msgstr ""
+msgstr "Hasai"
 
 msgid "Actions"
 msgstr ""
@@ -574,7 +574,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Kansela"
 
 msgid "Adding lock exception..."
 msgstr ""

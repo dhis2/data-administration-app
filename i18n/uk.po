@@ -1,5 +1,6 @@
 # 
 # Translators:
+# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
 # 
 msgid ""
@@ -33,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Підтримка"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -210,7 +211,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Всі"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -321,40 +322,40 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Показники"
 
 msgid "Periods"
-msgstr ""
+msgstr "Періоди"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Події"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Організаційні підрозділи"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Правила перевірки"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Програми"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Елементи даних"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Групи організаційних підрозділів"
 
 msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Зведені таблиці"
 
 msgid "Program instances"
 msgstr ""
@@ -363,31 +364,31 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Набори даних"
 
 msgid "User groups"
-msgstr ""
+msgstr "Групи користувачів"
 
 msgid "Users"
-msgstr ""
+msgstr "Користувачі"
 
 msgid "Maps"
-msgstr ""
+msgstr "Мапи"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Групи індикаторів"
 
 msgid "Charts"
-msgstr ""
+msgstr "Діаграми"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Групи елементів даних"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Інформаційні панелі (дашборди)"
 
 msgid "Today"
-msgstr ""
+msgstr "Сьогодні"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -426,13 +427,13 @@ msgid "Organisation unit"
 msgstr "Організаційний підрозділ"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "Група організаційних підрозділів"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Рівень організаційного підрозділу"
 
 msgid "Select"
-msgstr ""
+msgstr "Обрати"
 
 msgid "Deselect"
 msgstr ""
@@ -444,13 +445,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 msgid "Show details"
-msgstr ""
+msgstr "Показати деталі"
 
 msgid "Remove"
-msgstr ""
+msgstr "Прибрати"
 
 msgid "Actions"
 msgstr ""
@@ -573,7 +574,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Скасувати"
 
 msgid "Adding lock exception..."
 msgstr ""

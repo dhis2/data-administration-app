@@ -1,5 +1,6 @@
 # 
 # Translators:
+# Viktor Varland <viktor@dhis2.org>, 2021
 # phil_dhis2, 2021
 # 
 msgid ""
@@ -19,7 +20,7 @@ msgid "Open user guide"
 msgstr ""
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "data Integrity"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
@@ -33,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "ထိမ်းသိမ်းခြင်း"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -210,7 +211,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "အားလုံး"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -225,7 +226,7 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "group များမပါ၀င်သော data element များ"
 
 msgid "Data elements violating exclusive group sets"
 msgstr ""
@@ -321,40 +322,40 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "အညွှန်းများ"
 
 msgid "Periods"
-msgstr ""
+msgstr "အချိန်ကာလများ"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Events"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisation units"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "မှန်ကန်ခြင်းစစ်ဆေးရန်စည်းမျဉ်းများ"
 
 msgid "Data values"
-msgstr ""
+msgstr "data တန်ဖိုးများ"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programs"
 
 msgid "Data elements"
-msgstr ""
+msgstr "အချက်အလတ်အစိတ်အပိုင်းများ"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "အဖွဲ့အစည်းအုပ်စု"
 
 msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "ကိန်းဂဏန်းပြဇယားကွက်"
 
 msgid "Program instances"
 msgstr ""
@@ -363,28 +364,28 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "စီမံချက်"
 
 msgid "User groups"
-msgstr ""
+msgstr "အသုံးပြုသူအုပ်စုများ"
 
 msgid "Users"
-msgstr ""
+msgstr "အသုံးပြုသူများ"
 
 msgid "Maps"
-msgstr ""
+msgstr "Maps"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "အညွှန်းကိန်းအုပ်စု"
 
 msgid "Charts"
-msgstr ""
+msgstr "ဂရပ် ပုံစံများ"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "စာတိုင်အုပ်စု"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dashboards"
 
 msgid "Today"
 msgstr ""
@@ -426,13 +427,13 @@ msgid "Organisation unit"
 msgstr "Organisation unit"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "Organisation unit group"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Organisation unit level"
 
 msgid "Select"
-msgstr ""
+msgstr "ရွေးချယ်ပါ။"
 
 msgid "Deselect"
 msgstr ""
@@ -444,13 +445,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "အမည်"
 
 msgid "Show details"
-msgstr ""
+msgstr "အတိအကျပြသပါ"
 
 msgid "Remove"
-msgstr ""
+msgstr "ဖယ်ရှားခြင်း"
 
 msgid "Actions"
 msgstr ""
@@ -573,7 +574,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "ပယ်ဖျက်သည်"
 
 msgid "Adding lock exception..."
 msgstr ""
@@ -645,7 +646,7 @@ msgid "Error removing min-max values"
 msgstr ""
 
 msgid "Generate min-max values"
-msgstr ""
+msgstr "အနည်းဆုံး/အများဆုံးတန်ဖိုးများကို ထုတ်ပြပါ။"
 
 msgid "Remove min-max values"
 msgstr ""
