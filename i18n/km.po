@@ -34,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "តំ​ហែ​ទាំ​ប្រព័ន្ធ"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -211,7 +211,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "ទាំងអស់"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -322,19 +322,19 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicators"
 
 msgid "Periods"
-msgstr ""
+msgstr "Periods"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "ព្រឹត្តិការណ៏"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisation units"
 
 msgid "Validation rules"
 msgstr ""
@@ -346,7 +346,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Data elements"
 
 msgid "Organisation unit groups"
 msgstr ""
@@ -367,10 +367,10 @@ msgid "Data sets"
 msgstr ""
 
 msgid "User groups"
-msgstr ""
+msgstr "ក្រុម​អ្នក​ប្រើប្រាស់"
 
 msgid "Users"
-msgstr ""
+msgstr "គណនីប្រើប្រាស់"
 
 msgid "Maps"
 msgstr ""
@@ -430,10 +430,10 @@ msgid "Organisation unit group"
 msgstr ""
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Organisation unit level"
 
 msgid "Select"
-msgstr ""
+msgstr "ជ្រើស​រើស"
 
 msgid "Deselect"
 msgstr ""
@@ -445,13 +445,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "ឈ្មោះ"
 
 msgid "Show details"
-msgstr ""
+msgstr "បង្ហាញ​សេចក្ដី​លម្អិត"
 
 msgid "Remove"
-msgstr ""
+msgstr "យកចេញ"
 
 msgid "Actions"
 msgstr ""
@@ -574,7 +574,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "បោះបង់"
 
 msgid "Adding lock exception..."
 msgstr ""

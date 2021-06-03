@@ -34,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "څارنه"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -140,7 +140,7 @@ msgid "Data element category option combinations"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "د تحلیلي جدولونو مدیریت"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -151,22 +151,22 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "د تحلیلي جدولونو تجدیدول"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Skip generation of aggregate data and completeness data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Skip generation of resource tables"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Skip generation of event data"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Skip generation of enrollment data"
 
 msgid "Data Statistics"
 msgstr ""
@@ -202,16 +202,16 @@ msgid "Generate Min-Max Values"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Number of last years of data to include"
 
 msgid "Exporting..."
 msgstr ""
 
 msgid "Start export"
-msgstr ""
+msgstr "د صادرولو پیل"
 
 msgid "All"
-msgstr ""
+msgstr "ټول"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -322,40 +322,40 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "شاخصونه"
 
 msgid "Periods"
-msgstr ""
+msgstr "دورې یا مودې"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "پېښې"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "د سازمان واحدونه"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "د تصدیق یا اعتبار قواعد"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "پروګرامونه"
 
 msgid "Data elements"
-msgstr ""
+msgstr "د مالوماتو (ډاټا) برخې"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "د سازمان د واحد ګروپونه"
 
 msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "محوري جدولونه"
 
 msgid "Program instances"
 msgstr ""
@@ -364,31 +364,31 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "د مالوماتو یا ډاټا ټولګې"
 
 msgid "User groups"
-msgstr ""
+msgstr "ګروپي کاروونکی"
 
 msgid "Users"
-msgstr ""
+msgstr "کاروونکي [ کاروونکي ]"
 
 msgid "Maps"
-msgstr ""
+msgstr "نخشې"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "د ګروپونو شاخص"
 
 msgid "Charts"
-msgstr ""
+msgstr "چارټونه"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "د مالوماتو د برخې ګروپونه"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "ډېشبورډونه"
 
 msgid "Today"
-msgstr ""
+msgstr "نن ورځ"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -427,13 +427,13 @@ msgid "Organisation unit"
 msgstr "د سازمان واحد"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "د سازمان د ګروپ واحد"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "د سازمان د واحد سطحه"
 
 msgid "Select"
-msgstr ""
+msgstr "غوره یې کړئ"
 
 msgid "Deselect"
 msgstr ""
@@ -445,16 +445,16 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "نوم"
 
 msgid "Show details"
-msgstr ""
+msgstr "توضیحات څرګند کړئ"
 
 msgid "Remove"
-msgstr ""
+msgstr "لرې کول"
 
 msgid "Actions"
-msgstr ""
+msgstr "فعالیتونه"
 
 msgid "week"
 msgstr ""
@@ -574,7 +574,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "رد یې کړئ [ ژباړه ـ ردول ]"
 
 msgid "Adding lock exception..."
 msgstr ""
@@ -646,7 +646,7 @@ msgid "Error removing min-max values"
 msgstr ""
 
 msgid "Generate min-max values"
-msgstr ""
+msgstr "د حداقل - حداعظم ارقامو جوړول"
 
 msgid "Remove min-max values"
 msgstr ""

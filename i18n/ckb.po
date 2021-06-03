@@ -1,5 +1,8 @@
 # 
 # Translators:
+# Asos <aso.rezaiy@gmail.com>, 2021
+# phil_dhis2, 2021
+# KRG HIS <antonia.bezenchek@informa.pro>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -33,7 +36,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "سةرةكي"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -321,19 +324,19 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "نیشاندەر"
 
 msgid "Periods"
-msgstr ""
+msgstr "ماوةكان"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "ڕووداوەکان"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "يةكةي ريكخراو"
 
 msgid "Validation rules"
 msgstr ""
@@ -342,7 +345,7 @@ msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "بةرنامةكان"
 
 msgid "Data elements"
 msgstr ""
@@ -369,7 +372,7 @@ msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "بةكارهينةرةكان"
 
 msgid "Maps"
 msgstr ""
@@ -387,7 +390,7 @@ msgid "Dashboards"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ئەمڕۆ"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -432,7 +435,7 @@ msgid "Organisation unit level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "هەڵبژاردن"
 
 msgid "Deselect"
 msgstr ""
@@ -447,10 +450,10 @@ msgid "Name"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "بيشانداني دريزةكان"
 
 msgid "Remove"
-msgstr ""
+msgstr "لابردن"
 
 msgid "Actions"
 msgstr ""
@@ -573,7 +576,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "لابردن"
 
 msgid "Adding lock exception..."
 msgstr ""

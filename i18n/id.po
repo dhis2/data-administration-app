@@ -2,6 +2,9 @@
 # Translators:
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # phil_dhis2, 2021
+# Farida Sibuea <farida_sibuea@yahoo.com>, 2021
+# Carwoto Sa'an <carwoto@gmail.com>, 2021
+# Guardian Sanjaya <gysanjaya@ugm.ac.id>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
@@ -21,7 +24,7 @@ msgid "Open user guide"
 msgstr ""
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Integritas data"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
@@ -46,7 +49,7 @@ msgid "Perform maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Hapus tabel analitik"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -67,10 +70,10 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Pangkas periode"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Hapus undangan yang sudah tidak berlaku"
 
 msgid "Drop SQL views"
 msgstr ""
@@ -82,7 +85,7 @@ msgid "Update category option combinations"
 msgstr ""
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Update jalur unit organisasi"
 
 msgid "Clear application cache"
 msgstr ""
@@ -97,6 +100,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Buat sumber tabel database untuk hierarki unit organisasi dan struktur set "
+"grup diantara yang lain."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -105,37 +110,37 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Struktur unit organisasi"
 
 msgid "Organisation unit category option combo"
 msgstr ""
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Struktur grup set Category option"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Struktur set grup elemen data"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Struktur set grup indikator"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Struktur set grup unit organisasi"
 
 msgid "Category structure"
 msgstr ""
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Nama elemen data category option combo"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Struktur elemen data"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Struktur periode"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Struktur tanggal periode"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -170,18 +175,20 @@ msgid "Skip generation of enrollment data"
 msgstr ""
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Statistik data"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Browse jumlah obyek di database, seperti elemen data, indikator, data set "
+"dan nilai data."
 
 msgid "Overview Data Statistics"
 msgstr ""
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Manajemen Lock Exception"
 
 msgid "Lock Exception"
 msgstr ""
@@ -190,14 +197,18 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Tambah atau hapus pengecualian aturan standar untuk mengunci formulir entri "
+"data"
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Pembuatan Nilai Min-Maks"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Buat nilai min-maks yang dapat digunakan untuk validasi entri data dan "
+"validasi proses."
 
 msgid "Generate Min-Max Values"
 msgstr ""
@@ -212,7 +223,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Semua"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -227,22 +238,22 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Elemen data tanpa grup"
 
 msgid "Data elements violating exclusive group sets"
 msgstr ""
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr ""
+msgstr "Elemen data ditetapkan set data dengan tipe periode yang berbeda"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Set data yang tidak tetapkan unit organisasi"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indikator dengan rumus yang identik"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indikator tanpa grup"
 
 msgid "Invalid indicator numerators"
 msgstr ""
@@ -254,22 +265,22 @@ msgid "Indicators violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Unit organisasi dengan cyclic references"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Unit organisasi tidak berinduk"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Unit organisasi tanpa grup"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Grup unit organisasi tanpa set grup"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Validation rules tanpa grup"
 
 msgid "Invalid validation rule left side expressions"
 msgstr ""
@@ -290,7 +301,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplikatkan periode"
 
 msgid "Program rules with no condition"
 msgstr ""
@@ -323,94 +334,94 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikator"
 
 msgid "Periods"
-msgstr ""
+msgstr "Periode"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Even"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unit organisasi"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Aturan validasi"
 
 msgid "Data values"
-msgstr ""
+msgstr "Nilai data"
 
 msgid "Programs"
-msgstr ""
+msgstr "Program-program"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Data elemen"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grup unit organisasi"
 
 msgid "Tracked entity instances"
-msgstr ""
+msgstr "Tracked entity instances"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Tabel pivot"
 
 msgid "Program instances"
 msgstr ""
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Tipe indikator"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Set data"
 
 msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "User"
 
 msgid "Maps"
-msgstr ""
+msgstr "Peta"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Grup indikator"
 
 msgid "Charts"
-msgstr ""
+msgstr "Grafik"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Grup data elemen"
 
 msgid "Dashboards"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "Hari ini"
 
 msgid "Last {{days}} days"
 msgstr ""
 
 msgid "Last hour"
-msgstr ""
+msgstr "1 jam terakhir"
 
 msgid "Object type"
-msgstr ""
+msgstr "Tipe Obyek"
 
 msgid "Users logged in"
-msgstr ""
+msgstr "User sedang log in"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Undangan akun user"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Undangan yang tertunda"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Undangan sudah tidak berlaku"
 
 msgid "Error loading data statistics"
 msgstr ""
@@ -428,13 +439,13 @@ msgid "Organisation unit"
 msgstr "Unit organisasi"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "Grup unit organisasi"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Level unit organisasi"
 
 msgid "Select"
-msgstr ""
+msgstr "Pilih"
 
 msgid "Deselect"
 msgstr ""
@@ -446,13 +457,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 msgid "Show details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Hapus"
 
 msgid "Actions"
 msgstr ""
@@ -575,7 +586,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 msgid "Adding lock exception..."
 msgstr ""
@@ -587,7 +598,7 @@ msgid "Batch Deletion"
 msgstr ""
 
 msgid "Batch deletion"
-msgstr ""
+msgstr "Penghapusan batch"
 
 msgid "Error loading lock exceptions"
 msgstr ""
@@ -611,7 +622,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "tidak, batalkan"
 
 msgid "Removing lock exception..."
 msgstr ""
@@ -653,4 +664,4 @@ msgid "Remove min-max values"
 msgstr ""
 
 msgid "Generate tables"
-msgstr ""
+msgstr "Buat tabel"

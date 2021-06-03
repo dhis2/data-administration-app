@@ -1,14 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Jason Pickering <jason@dhis2.org>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Underhåll"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -211,7 +212,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -322,7 +323,7 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "indikatorer"
 
 msgid "Periods"
 msgstr ""
@@ -331,31 +332,31 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Händelser"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisation enheter"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "valideringsregler"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "program"
 
 msgid "Data elements"
-msgstr ""
+msgstr "dataelement"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Organisation enhetsgrupper"
 
 msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "pivottabeller"
 
 msgid "Program instances"
 msgstr ""
@@ -364,28 +365,28 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "dataset"
 
 msgid "User groups"
-msgstr ""
+msgstr "Användargrupper grupper~~POS\\=HEADCOMP"
 
 msgid "Users"
-msgstr ""
+msgstr "användare"
 
 msgid "Maps"
-msgstr ""
+msgstr "Kartor"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "indikatorgrupper"
 
 msgid "Charts"
-msgstr ""
+msgstr "diagram"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Dataelementgrupper"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "instrumentpaneler"
 
 msgid "Today"
 msgstr ""
@@ -397,7 +398,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Objekttyp"
 
 msgid "Users logged in"
 msgstr ""
@@ -409,7 +410,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Förfallna inbjudningar"
 
 msgid "Error loading data statistics"
 msgstr ""
@@ -433,7 +434,7 @@ msgid "Organisation unit level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Markera"
 
 msgid "Deselect"
 msgstr ""
@@ -445,13 +446,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 msgid "Show details"
-msgstr ""
+msgstr "Visa detaljer"
 
 msgid "Remove"
-msgstr ""
+msgstr "Avlägsna"
 
 msgid "Actions"
 msgstr ""
@@ -460,7 +461,7 @@ msgid "week"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "månad"
 
 msgid "year"
 msgstr ""
@@ -574,7 +575,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 msgid "Adding lock exception..."
 msgstr ""

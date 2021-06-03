@@ -20,7 +20,7 @@ msgid "Open user guide"
 msgstr ""
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Якпорчагии иттилоот"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
@@ -34,7 +34,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Таъмир"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -42,10 +42,10 @@ msgid ""
 msgstr ""
 
 msgid "Perform maintenance"
-msgstr ""
+msgstr "Гузаронидани таъмир"
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Ҷадвалҳои таҳлилии тоза"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -66,7 +66,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Давраҳои буриш"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -78,7 +78,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Навсозии ҷуфтҳои имкони категория"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -96,6 +96,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Ҷадвалҳои захиравии пойгоҳи иттилоотиро барои воҳиди сохторӣ ва сохтори "
+"маҷмӯи гурӯҳҳо ва ғайра таҳия кунед."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -104,7 +106,7 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Сохтори воҳиди сохторӣ"
 
 msgid "Organisation unit category option combo"
 msgstr ""
@@ -113,31 +115,31 @@ msgid "Category option group set structure"
 msgstr ""
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Сохтори маҷмӯи гурӯҳи унсурҳои иттилоот"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Сохтори маҷмӯи гурӯҳи индикатор"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Сохтори маҷмӯи гурӯҳи воҳидҳои сохторӣ"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Сохтори категория"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Номи комбои имкони категорияи унсури иттилоот"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Сохтори унсури иттилоот"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Сохтори давра"
 
 msgid "Date period structure"
 msgstr ""
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Ҷуфтҳои имконти категорияҳои унсури иттилоот"
 
 msgid "Analytics tables management"
 msgstr ""
@@ -151,7 +153,7 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Навсозии ҷадвалҳои таҳлилӣ"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -169,34 +171,40 @@ msgid "Skip generation of enrollment data"
 msgstr ""
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Омори иттилоот"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Шумораи объектҳои дар пойгоҳи иттилоотӣ бударо, аз қабили унсурҳои иттилоот,"
+" индикаторҳо, маҷмӯъҳои иттилоот ва қиматҳои иттилоот, паймоиш кунед."
 
 msgid "Overview Data Statistics"
 msgstr ""
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Идоракунии истиснои банд"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Истинои банд"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Истисноҳо ба қоидаҳои стандартии санҷиши эътиборро барои бастани шаклҳои "
+"вуруди иттиллот илова ва тоза кунед."
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Таҳияи қиматҳои мин-макс"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Қиматҳои мин-макс-ро, ки метавонанд барои санҷиши эътибори иттилоот ҳангоми "
+"вуруди иттилоот ва раванди санҷиши эътибор истифода шаванд, таҳия кунед."
 
 msgid "Generate Min-Max Values"
 msgstr ""
@@ -208,10 +216,10 @@ msgid "Exporting..."
 msgstr ""
 
 msgid "Start export"
-msgstr ""
+msgstr "Оӯози воридот"
 
 msgid "All"
-msgstr ""
+msgstr "Ҳама"
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -226,55 +234,57 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Унсурҳои иттилооти бе гурӯҳҳо"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Унсурҳои иттилоот, ки маҷмӯъҳои гурӯҳии истисноиро вайрон мекунанд"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"Унсурҳои иттилооте, ки бо давраҳои гуногун ба маҷмӯъҳои иттилоот таъин карда"
+" шудаанд"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Маҷмӯъҳои иттилооти ба воҳидҳои сохторӣ таъиннашуда"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Индикаторҳо бо формулаҳои якхела"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Индикаторҳои бе гурӯҳ"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Суратҳои нодурусти индикатор"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Махраҷҳои нодурусти индикатор"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Индикаторҳое, ки маҷмӯъҳои гурӯҳии истисноиро вайрон мекунанд"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Воҳидҳои сохторӣ бо истинодҳои мудаввар"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Воҳидҳои сохтории \"ятим\""
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Воҳидҳои сохторӣ бе гурӯҳҳо"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Воҳидҳои сохторӣ бе маҷмӯи гурӯҳҳо"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Қоидаҳои санҷиши эътибор бе гурӯҳҳо"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Ифодаҳои тарафи чапи қоидаи санҷиши эътибор"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Ифодаҳои тарафи рости қоидаи санҷиши эътибор"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -322,34 +332,34 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Индикаторҳо"
 
 msgid "Periods"
-msgstr ""
+msgstr "Давраҳо"
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Рӯйдодҳо"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "воҳидҳои сохторӣ"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Қоидаҳои санҷиши эътибор"
 
 msgid "Data values"
-msgstr ""
+msgstr "Қиматҳои иттлоот"
 
 msgid "Programs"
-msgstr ""
+msgstr "Барномаҳо"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Унсурҳои иттилоот"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Гурӯҳҳои воҳидҳои сохторӣ"
 
 msgid "Tracked entity instances"
 msgstr ""
@@ -361,34 +371,34 @@ msgid "Program instances"
 msgstr ""
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Навъҳои индикатор"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Маҷмӯъҳои иттилоот"
 
 msgid "User groups"
-msgstr ""
+msgstr "Гурӯҳҳои корбарон"
 
 msgid "Users"
-msgstr ""
+msgstr "Корбарон"
 
 msgid "Maps"
 msgstr ""
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Гурӯҳҳои индикаторҳо"
 
 msgid "Charts"
 msgstr ""
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Гурӯҳҳои унсурҳои иттилоот"
 
 msgid "Dashboards"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "Имрӯз"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -397,10 +407,10 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Навъи объект"
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Корбар ворид шудааст"
 
 msgid "User account invitations"
 msgstr ""
@@ -427,13 +437,13 @@ msgid "Organisation unit"
 msgstr "Воҳиди сохторӣ"
 
 msgid "Organisation unit group"
-msgstr ""
+msgstr "Гурӯҳи воҳидҳои сохторӣ"
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Саттҳи воҳиди сохторӣ"
 
 msgid "Select"
-msgstr ""
+msgstr "Интихоб кунед"
 
 msgid "Deselect"
 msgstr ""
@@ -445,13 +455,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Ном"
 
 msgid "Show details"
-msgstr ""
+msgstr "Нишон додани маълумоти муфассал"
 
 msgid "Remove"
-msgstr ""
+msgstr "Тоза кардан"
 
 msgid "Actions"
 msgstr ""
@@ -574,7 +584,7 @@ msgid "Add lock exception"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Бекор кардан"
 
 msgid "Adding lock exception..."
 msgstr ""
@@ -586,7 +596,7 @@ msgid "Batch Deletion"
 msgstr ""
 
 msgid "Batch deletion"
-msgstr ""
+msgstr "Несткунии баста"
 
 msgid "Error loading lock exceptions"
 msgstr ""
@@ -646,10 +656,10 @@ msgid "Error removing min-max values"
 msgstr ""
 
 msgid "Generate min-max values"
-msgstr ""
+msgstr "Таҳияи қиматҳои мин/макс"
 
 msgid "Remove min-max values"
 msgstr ""
 
 msgid "Generate tables"
-msgstr ""
+msgstr "Ҷадвалҳои умумӣ"
