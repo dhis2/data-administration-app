@@ -25,9 +25,11 @@ msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
 msgstr ""
+"Spusťte kontroly integrity dat a odhalte anomálie a problémy v nastavení "
+"metadat."
 
 msgid "Check data integrity"
-msgstr ""
+msgstr "Kontrola integrity dat"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr "Během kontrol integrity dat došlo k neočekávané chybě"
@@ -152,6 +154,8 @@ msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
 msgstr ""
+"Data mart je soubor tabulek v databázi DHIS, z něhož získávají data všechny "
+"nástroje pro podávání zpráv a analýzu."
 
 msgid "Analytics tables update"
 msgstr "Aktualizace tabulek Analýzy"
@@ -208,13 +212,13 @@ msgstr ""
 "zadávání a ověřování dat."
 
 msgid "Generate Min-Max Values"
-msgstr ""
+msgstr "Generovat minimální a maximální hodnoty"
 
 msgid "Number of last years of data to include"
 msgstr "Počet posledních let údajů, které mají být zahrnuty"
 
 msgid "Exporting..."
-msgstr ""
+msgstr "Export ..."
 
 msgid "Start export"
 msgstr "Zahájit export"
@@ -223,13 +227,13 @@ msgid "All"
 msgstr "Vše"
 
 msgid "Checking data integrity..."
-msgstr ""
+msgstr "Kontrola integrity dat ..."
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "Spustit kontroly integrity"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data elements without data set"
 msgstr "Datové prvky bez datové sady"
@@ -301,34 +305,34 @@ msgid "Duplicate periods"
 msgstr "Duplicitní období"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "Pravidla programu bez podmínky"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "Pravidla programu bez akce"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "Pravidla programu bez priority"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "Proměnné pravidel programu bez datového prvku"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "Proměnné pravidla programu bez atributu"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "Program akce pravidel bez datového objektu"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "Akce pravidel programu bez oznámení"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "Akce pravidel programu bez ID sekce"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "Akce pravidel programu bez id fáze"
 
 msgid "Program indicators with no expression"
-msgstr ""
+msgstr "Ukazatele programu bez výrazu"
 
 msgid "Indicators"
 msgstr "Indikátory"
@@ -367,7 +371,7 @@ msgid "Pivot tables"
 msgstr "Kontingenční tabulky"
 
 msgid "Program instances"
-msgstr ""
+msgstr "Instance programu"
 
 msgid "Indicator types"
 msgstr "Typy indikátorů"
@@ -400,7 +404,7 @@ msgid "Today"
 msgstr "Dnes"
 
 msgid "Last {{days}} days"
-msgstr ""
+msgstr "Poslední {{days}} dny"
 
 msgid "Last hour"
 msgstr "Poslední hodina"
@@ -421,10 +425,10 @@ msgid "Expired invitations"
 msgstr "Vypršené Pozvánky"
 
 msgid "Error loading data statistics"
-msgstr ""
+msgstr "Chyba při načítání statistik dat"
 
 msgid "No data statistics to show."
-msgstr ""
+msgstr "Žádné statistiky dat k zobrazení."
 
 msgid "Period"
 msgstr "Období"
@@ -565,31 +569,31 @@ msgid "oct-mar"
 msgstr "říj-bře"
 
 msgid "Error loading data for data set"
-msgstr ""
+msgstr "Chyba při načítání dat pro datovou sadu"
 
 msgid "Loading organisation units tree..."
-msgstr ""
+msgstr "Načítání stromu organizačních jednotek ..."
 
 msgid "Select a data set"
-msgstr ""
+msgstr "Vybrat datovou sadu"
 
 msgid "Lock exception added"
-msgstr ""
+msgstr "Přidána výjimka zámku"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
+msgstr "Chyba při přidávání výjimky zámku: {{error}}"
 
 msgid "Add lock exception"
-msgstr ""
+msgstr "Přidat výjimku zámku"
 
 msgid "Cancel"
 msgstr "Zrušit"
 
 msgid "Adding lock exception..."
-msgstr ""
+msgstr "Přidávání výjimky zámku ..."
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "Vraťte se ke všem výjimkám zámku"
 
 msgid "Batch Deletion"
 msgstr "Dávkové mazání"
@@ -598,67 +602,67 @@ msgid "Batch deletion"
 msgstr "Dávkové mazání"
 
 msgid "Error loading lock exceptions"
-msgstr ""
+msgstr "Chyba při načítání výjimek zámku"
 
 msgid "No lock exceptions to show."
-msgstr ""
+msgstr "Žádné výjimky zámku k zobrazení."
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "Výjimky zámku pro dávkové mazání"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "Odebrat výjimku zámku"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "Výjimka zámku byla odstraněna"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "Chyba při odstraňování výjimky zámku: {{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "Opravdu chcete tuto výjimku zámku odebrat?"
 
 msgid "No, cancel"
 msgstr "Ne, zrušit"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "Odebírání výjimky zámku ..."
 
 msgid "Yes, remove lock exception"
-msgstr ""
+msgstr "Ano, odstranit výjimku zámku"
 
 msgid "Maintenance done"
 msgstr "Údržba hotová"
 
 msgid "Performing maintenance..."
-msgstr ""
+msgstr "Provádění údržby ..."
 
 msgid "Error loading data"
-msgstr ""
+msgstr "Chyba při načítání dat"
 
 msgid "Generating min-max values..."
-msgstr ""
+msgstr "Generování minimálních a maximálních hodnot ..."
 
 msgid "Min-max values generated"
-msgstr ""
+msgstr "Vygenerovány minimální a maximální hodnoty"
 
 msgid "Error generating min-max values"
-msgstr ""
+msgstr "Chyba při generování minimálních a maximálních hodnot"
 
 msgid "Removing min-max values..."
-msgstr ""
+msgstr "Odebírání min-max hodnot ..."
 
 msgid "Min-max values removed"
-msgstr ""
+msgstr "Minimální a maximální hodnoty byly odstraněny"
 
 msgid "Error removing min-max values"
-msgstr ""
+msgstr "Chyba při odstraňování minimálních a maximálních hodnot"
 
 msgid "Generate min-max values"
 msgstr "Generovat hodnoty min-max"
 
 msgid "Remove min-max values"
-msgstr ""
+msgstr "Odebrat minimální a maximální hodnoty"
 
 msgid "Generate tables"
 msgstr "Generovat tabulky"
