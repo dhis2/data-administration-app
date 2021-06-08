@@ -15,6 +15,7 @@ import {
 import './style.css'
 
 const NotificationsTable = ({ notifications, animateIncomplete }) => {
+    const done = notifications.some(n => n.completed)
     const renderNotificationIcon = notification => {
         const notificationIconInfo = notificationStylesInfo[notification.level]
         if (
@@ -31,7 +32,7 @@ const NotificationsTable = ({ notifications, animateIncomplete }) => {
                     {notificationIconInfo.icon}
                 </FontIcon>
             )
-        } else if (animateIncomplete && !notification.completed) {
+        } else if (animateIncomplete && !notification.completed && !done) {
             return <span className="notification-icon-busy">...</span>
         }
 

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
-"PO-Revision-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-08T14:29:03.165Z\n"
+"PO-Revision-Date: 2021-06-08T14:29:03.165Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -641,6 +641,9 @@ msgid "Generate min-max values"
 msgstr ""
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
