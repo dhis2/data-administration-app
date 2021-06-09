@@ -241,7 +241,7 @@ class AddLockExceptionForm extends Component {
         const dataSetItems = this.props.dataSets.map(dataSet => ({
             id: dataSet.id,
             name: dataSet.displayName,
-            periodType: dataSet.periodType.name,
+            periodType: dataSet.periodType,
         }))
 
         let dataSetSelectLabel = i18n.t('Select a data set')
