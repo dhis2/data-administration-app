@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-08T14:29:03.165Z\n"
-"PO-Revision-Date: 2021-06-08T14:29:03.165Z\n"
+"POT-Creation-Date: 2021-06-08T16:26:39.584Z\n"
+"PO-Revision-Date: 2021-06-08T16:26:39.584Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -616,25 +616,16 @@ msgstr ""
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
