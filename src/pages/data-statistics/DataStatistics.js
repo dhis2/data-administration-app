@@ -1,8 +1,8 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card, NoticeBox, CircularLoader, CenteredContent } from '@dhis2/ui'
-import { getInstance as getD2Instance } from 'd2'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './DataStatistics.module.css'
@@ -160,108 +160,84 @@ const eventCountsTableFromResponse = eventCountsResponse => {
     }
 }
 
-class DataStatistics extends Component {
-    static propTypes = {
-        sectionKey: PropTypes.string.isRequired,
+const query = {
+    dataSummary: {
+        resource: 'dataSummary',
+    },
+}
+
+const DataStatistics = ({ sectionKey }) => {
+    const { loading, error, data } = useDataQuery(query)
+
+    if (loading) {
+        return (
+            <CenteredContent>
+                <CircularLoader />
+            </CenteredContent>
+        )
     }
 
-    state = {
-        loading: true,
-        error: null,
-        tables: null,
+    if (error) {
+        return (
+            <CenteredContent>
+                <NoticeBox error>{error.message}</NoticeBox>
+            </CenteredContent>
+        )
     }
 
-    loadDataStatistics = async () => {
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
-        try {
-            const response = await api.get('dataSummary')
-            const tables = {
-                [OBJECT_COUNTS_KEY]: objectCountsTableFromResponse(
-                    response[OBJECT_COUNTS_KEY]
-                ),
-                [ACTIVE_USERS_KEY]: activeUsersTableFromResponse(
-                    response[ACTIVE_USERS_KEY]
-                ),
-                [USER_INVITATIONS_KEY]: userInvitationsTableFromResponse(
-                    response[USER_INVITATIONS_KEY]
-                ),
-                [DATA_VALUE_COUNT_KEY]: dataValueCountsTableFromResponse(
-                    response[DATA_VALUE_COUNT_KEY]
-                ),
-                [EVENT_COUNT_KEY]: eventCountsTableFromResponse(
-                    response[EVENT_COUNT_KEY]
-                ),
-            }
-            this.setState({
-                loading: false,
-                tables,
-            })
-        } catch (error) {
-            this.setState({
-                loading: false,
-                error: error.message || i18n.t('Error loading data statistics'),
-            })
-        }
+    const { dataSummary } = data
+    const tables = {
+        [OBJECT_COUNTS_KEY]: objectCountsTableFromResponse(
+            dataSummary[OBJECT_COUNTS_KEY]
+        ),
+        [ACTIVE_USERS_KEY]: activeUsersTableFromResponse(
+            dataSummary[ACTIVE_USERS_KEY]
+        ),
+        [USER_INVITATIONS_KEY]: userInvitationsTableFromResponse(
+            dataSummary[USER_INVITATIONS_KEY]
+        ),
+        [DATA_VALUE_COUNT_KEY]: dataValueCountsTableFromResponse(
+            dataSummary[DATA_VALUE_COUNT_KEY]
+        ),
+        [EVENT_COUNT_KEY]: eventCountsTableFromResponse(
+            dataSummary[EVENT_COUNT_KEY]
+        ),
     }
 
-    componentDidMount() {
-        this.loadDataStatistics()
-    }
-
-    renderTable(key) {
-        if (!this.state.tables[key]) {
+    const renderTable = key => {
+        if (tables[key] === null) {
             return null
         }
 
         return (
             <TableCard
-                key={key}
-                label={this.state.tables[key].label}
-                elements={this.state.tables[key].elements}
+                label={tables[key].label}
+                elements={tables[key].elements}
             />
         )
     }
 
-    renderTables() {
-        if (Object.keys(this.state.tables).length === 0) {
-            return <em>{i18n.t('No data statistics to show.')}</em>
-        }
-
-        return (
+    return (
+        <div>
+            <PageHeader
+                sectionKey={sectionKey}
+                title={i18nKeys.dataStatistics.title}
+            />
             <div className="row">
+                <div className="col-md-6">{renderTable(OBJECT_COUNTS_KEY)}</div>
                 <div className="col-md-6">
-                    {this.renderTable(OBJECT_COUNTS_KEY)}
-                </div>
-                <div className="col-md-6">
-                    {this.renderTable(USER_INVITATIONS_KEY)}
-                    {this.renderTable(DATA_VALUE_COUNT_KEY)}
-                    {this.renderTable(EVENT_COUNT_KEY)}
-                    {this.renderTable(ACTIVE_USERS_KEY)}
+                    {renderTable(USER_INVITATIONS_KEY)}
+                    {renderTable(DATA_VALUE_COUNT_KEY)}
+                    {renderTable(EVENT_COUNT_KEY)}
+                    {renderTable(ACTIVE_USERS_KEY)}
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+}
 
-    render() {
-        return (
-            <div>
-                <PageHeader
-                    sectionKey={this.props.sectionKey}
-                    title={i18nKeys.dataStatistics.title}
-                />
-                {this.state.error ? (
-                    <NoticeBox error>{this.state.error}</NoticeBox>
-                ) : this.state.loading ? (
-                    <CenteredContent>
-                        <CircularLoader />
-                    </CenteredContent>
-                ) : (
-                    this.renderTables()
-                )}
-            </div>
-        )
-    }
+DataStatistics.propTypes = {
+    sectionKey: PropTypes.string.isRequired,
 }
 
 export default DataStatistics

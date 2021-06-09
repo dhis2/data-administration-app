@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-08T16:26:39.584Z\n"
-"PO-Revision-Date: 2021-06-08T16:26:39.584Z\n"
+"POT-Creation-Date: 2021-06-09T12:57:12.456Z\n"
+"PO-Revision-Date: 2021-06-09T12:57:12.456Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -401,12 +401,6 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
-
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
 msgstr ""
 
 msgid "Period"
