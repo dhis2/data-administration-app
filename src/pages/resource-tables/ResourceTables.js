@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import NotificationsTable from '../../components/notifications-table/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './ResourceTables.module.css'
 import { useResourceTablesPoll } from './use-resource-tables-poll'
@@ -63,20 +64,6 @@ const tables = [
 const startResourceTablesGenerationMutation = {
     resource: 'resourceTables',
     type: 'create',
-}
-
-const getUpdatedNotifications = taskNotifications => {
-    const lastIndex = taskNotifications.length - 1
-
-    // Reverse to sort oldest-newest
-    // Assumption: all tasks are completed, apart from the last one,
-    // which is the in-progress task.
-    // Exception is when the most recent task comes back as completed
-    // this indicates the entire process is done, so we respect that completed status.
-    return taskNotifications.reverse().map((x, i) => ({
-        ...x,
-        completed: x.completed || i < lastIndex,
-    }))
 }
 
 const ResourceTable = ({ sectionKey }) => {
