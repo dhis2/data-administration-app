@@ -53,7 +53,7 @@ export const sections = [
             icon: 'multiline_chart',
             description: i18nKeys.analytics.description,
             actionText: i18nKeys.analytics.actionText,
-            docs: 'generate_analytics_tables',
+            docs: 'analytics_tables_management',
         },
     },
     {
