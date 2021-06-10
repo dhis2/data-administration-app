@@ -66,7 +66,7 @@ const DataStatistics = ({ sectionKey }) => {
     }
 
     return (
-        <div>
+        <>
             <PageHeader
                 sectionKey={sectionKey}
                 title={i18nKeys.dataStatistics.title}
@@ -80,7 +80,7 @@ const DataStatistics = ({ sectionKey }) => {
                     {renderTable(ACTIVE_USERS_KEY)}
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
