@@ -1,58 +1,54 @@
 import { useDataQuery, useDataMutation, useAlert } from '@dhis2/app-runtime'
+import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { ButtonStrip, Button, CircularLoader } from '@dhis2/ui'
-import Dialog from 'material-ui/Dialog'
-import PropTypes from 'prop-types'
+import {
+    Card,
+    CenteredContent,
+    NoticeBox,
+    Button,
+    CircularLoader,
+} from '@dhis2/ui'
+import classnames from 'classnames'
+import FontIcon from 'material-ui/FontIcon'
 import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import AddLockExceptionForm from './AddLockExceptionForm'
 import styles from './LockException.module.css'
 
 const query = {
     levels: {
         resource: 'organisationUnitLevels',
-        fields: 'id,level,displayName',
-        paging: false,
-        order: 'level:asc',
+        params: {
+            fields: 'id,level,displayName',
+            paging: false,
+            order: 'level:asc',
+        },
     },
     groups: {
         resource: 'organisationUnitGroups',
-        fields: 'id,displayName',
-        paging: false,
+        params: {
+            fields: 'id,displayName',
+            paging: false,
+        },
     },
     dataSets: {
         resource: 'dataSets',
-        fields: 'id,displayName,periodType',
-        paging: false,
+        params: {
+            fields: 'id,displayName,periodType',
+            paging: false,
+        },
     },
 }
 
-// XXX
-const handleAddLockException = async ({
-    selectedOrgUnits,
-    selectedDataSetId,
-    selectedPeriodId,
-}) => {
-    const orgUnitIds = selectedOrgUnits.map(orgUnitPath => {
-        const splitOrgUnitPath = orgUnitPath.split('/')
-        return splitOrgUnitPath[splitOrgUnitPath.length - 1]
-    })
-
-    const formData = new FormData()
-    formData.append('ou', `[${orgUnitIds.join(',')}]`)
-    formData.append('pe', selectedPeriodId)
-    formData.append('ds', selectedDataSetId)
-
-    const d2 = await getD2Instance()
-    const api = d2.Api.getApi()
-    await api.post('lockExceptions', formData)
-
-    this.loadLockExceptionsForPager(LockException.initialPager, {
-        userAction: false,
-    })
+const mutation = {
+    resource: 'lockExceptions',
+    type: 'create',
+    params: params => params,
 }
 
 const AddLockException = () => {
-    const { loading, error, data } = useDataQuery(query)
+    const history = useHistory()
+    const dataQuery = useDataQuery(query)
     const successAlert = useAlert(i18n.t('Lock exception added'), {
         success: true,
     })
@@ -64,28 +60,37 @@ const AddLockException = () => {
             }),
         { critical: true }
     )
+    const [mutate, dataMutation] = useDataMutation(mutation, {
+        onComplete: () => {
+            successAlert.show()
+            history.push('/lock-exception')
+        },
+        onError: error => {
+            errorAlert.show({ error })
+        },
+    })
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
     const [selectedDataSetId, setSelectedDataSetId] = useState(null)
     const [selectedPeriodId, setSelectedPeriodId] = useState(null)
     const { d2 } = useD2()
-    const handleAdd = async () => {
-        try {
-            await onAdd({
-                selectedOrgUnits,
-                selectedDataSetId,
-                selectedPeriodId,
-            })
-            successAlert.show()
-            onClose()
-        } catch (error) {
-            errorAlert.show({ error })
-        }
+
+    const handleAdd = () => {
+        const orgUnitIds = selectedOrgUnits.map(orgUnitPath => {
+            const splitOrgUnitPath = orgUnitPath.split('/')
+            return splitOrgUnitPath[splitOrgUnitPath.length - 1]
+        })
+
+        mutate({
+            ou: `[${orgUnitIds.join(',')}]`,
+            pe: selectedPeriodId,
+            ds: selectedDataSetId,
+        })
     }
     const isAddActionDisabled =
-        isLoading ||
+        dataMutation.loading ||
         !(selectedOrgUnits.length > 0 && selectedDataSetId && selectedPeriodId)
 
-    if (loading) {
+    if (dataQuery.loading) {
         return (
             <CenteredContent>
                 <CircularLoader />
@@ -93,13 +98,19 @@ const AddLockException = () => {
         )
     }
 
-    if (error) {
+    if (dataQuery.error) {
         return (
             <CenteredContent>
-                <NoticeBox error>{error.message}</NoticeBox>
+                <NoticeBox error>{dataQuery.error.message}</NoticeBox>
             </CenteredContent>
         )
     }
+
+    const {
+        levels: { organisationUnitLevels },
+        groups: { organisationUnitGroups },
+        dataSets: { dataSets },
+    } = dataQuery.data
 
     return (
         <div className={styles.lockExceptions}>
@@ -124,24 +135,32 @@ const AddLockException = () => {
                     </span>
                 </h1>
             </div>
-            <AddLockExceptionForm
-                levels={levels}
-                groups={groups}
-                dataSets={dataSets}
-                updateSelectedOrgUnits={setSelectedOrgUnits}
-                updateSelectedDataSetId={setSelectedDataSetId}
-                updateSelectedPeriodId={setSelectedPeriodId}
-            />
-            <Button primary disabled={isAddActionDisabled} onClick={handleAdd}>
-                {isLoading ? (
-                    <>
-                        {i18n.t('Adding lock exception...')}
-                        <CircularLoader small />
-                    </>
-                ) : (
-                    i18n.t('Add lock exception')
-                )}
-            </Button>
+            <Card className={styles.card}>
+                <AddLockExceptionForm
+                    d2={d2}
+                    levels={organisationUnitLevels}
+                    groups={organisationUnitGroups}
+                    dataSets={dataSets}
+                    updateSelectedOrgUnits={setSelectedOrgUnits}
+                    updateSelectedDataSetId={setSelectedDataSetId}
+                    updateSelectedPeriodId={setSelectedPeriodId}
+                />
+                <Button
+                    className={styles.addLockExceptionButton}
+                    primary
+                    disabled={isAddActionDisabled}
+                    onClick={handleAdd}
+                >
+                    {dataMutation.loading ? (
+                        <>
+                            {i18n.t('Adding lock exception...')}
+                            <CircularLoader small />
+                        </>
+                    ) : (
+                        i18n.t('Add lock exception')
+                    )}
+                </Button>
+            </Card>
         </div>
     )
 }

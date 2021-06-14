@@ -5,11 +5,13 @@
 .headerContainer {
     display: flex;
     align-items: center;
+    margin-bottom: var(--spacers-dp16);
 }
 
 .header {
     display: flex;
     align-items: center;
+    margin: 0;
 }
 
 .flexSpaceBetween {
@@ -71,4 +73,12 @@
 
 .subHeader {
     font-weight: 500;
+}
+
+.card {
+    padding: var(--spacers-dp16);
+}
+
+.addLockExceptionButton {
+    margin-top: var(--spacers-dp12);
 }
