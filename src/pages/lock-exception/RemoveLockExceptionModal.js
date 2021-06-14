@@ -31,7 +31,11 @@ const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
         { critical: true }
     )
     const [mutate, { loading }] = useDataMutation(mutation, {
-        onComplete: () => successAlert.show(),
+        onComplete: () => {
+            successAlert.show()
+            onRemove()
+            onClose()
+        },
         onError: error => errorAlert.show({ error }),
     })
 
@@ -44,8 +48,6 @@ const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
             params.ou = lockException.organisationUnitId
         }
         mutate(params)
-        onRemove()
-        onClose()
     }
 
     return (
