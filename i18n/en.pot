@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-09T12:57:12.456Z\n"
-"PO-Revision-Date: 2021-06-09T12:57:12.456Z\n"
+"POT-Creation-Date: 2021-06-10T15:48:27.229Z\n"
+"PO-Revision-Date: 2021-06-10T15:48:27.229Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -403,6 +403,21 @@ msgstr ""
 msgid "Expired invitations"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
 msgid "Period"
 msgstr ""
 
@@ -550,34 +565,13 @@ msgstr ""
 msgid "Select a data set"
 msgstr ""
 
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
 msgid "Batch Deletion"
 msgstr ""
 
-msgid "Batch deletion"
-msgstr ""
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
 msgid "No lock exceptions to show."
+msgstr ""
+
+msgid "Batch deletion"
 msgstr ""
 
 msgid "Batch delete lock exceptions"

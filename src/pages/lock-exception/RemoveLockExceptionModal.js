@@ -1,4 +1,4 @@
-import { useAlert } from '@dhis2/app-runtime'
+import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Modal,
@@ -10,9 +10,15 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 
-const RemoveLockExceptionModal = ({ onRemove, onClose }) => {
+const mutation = {
+    resource: 'lockExceptions',
+    type: 'delete',
+    params: params => params,
+}
+
+const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
     const successAlert = useAlert(i18n.t('Lock exception removed'), {
         success: true,
     })
@@ -24,17 +30,22 @@ const RemoveLockExceptionModal = ({ onRemove, onClose }) => {
             }),
         { critical: true }
     )
-    const [isLoading, setIsLoading] = useState(false)
-    const handleRemove = async () => {
-        setIsLoading(true)
-        try {
-            await onRemove()
-            successAlert.show()
-            onClose()
-        } catch (error) {
-            errorAlert.show({ error })
+    const [mutate, { loading }] = useDataMutation(mutation, {
+        onComplete: () => successAlert.show(),
+        onError: error => errorAlert.show({ error }),
+    })
+
+    const handleRemoveLockException = () => {
+        const params = {
+            pe: lockException.periodId,
+            ds: lockException.dataSetId,
         }
-        setIsLoading(false)
+        if (lockException.organisationUnitId) {
+            params.ou = lockException.organisationUnitId
+        }
+        mutate(params)
+        onRemove()
+        onClose()
     }
 
     return (
@@ -45,15 +56,15 @@ const RemoveLockExceptionModal = ({ onRemove, onClose }) => {
             </ModalContent>
             <ModalActions>
                 <ButtonStrip>
-                    <Button disabled={isLoading} onClick={onClose}>
+                    <Button disabled={loading} onClick={onClose}>
                         {i18n.t('No, cancel')}
                     </Button>
                     <Button
                         destructive
-                        disabled={isLoading}
-                        onClick={handleRemove}
+                        disabled={loading}
+                        onClick={handleRemoveLockException}
                     >
-                        {isLoading ? (
+                        {loading ? (
                             <>
                                 {i18n.t('Removing lock exception...')}
                                 <CircularLoader small />
@@ -69,6 +80,7 @@ const RemoveLockExceptionModal = ({ onRemove, onClose }) => {
 }
 
 RemoveLockExceptionModal.propTypes = {
+    lockException: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
     onRemove: PropTypes.func.isRequired,
 }

@@ -1,3 +1,4 @@
+import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -8,101 +9,81 @@ import {
     ButtonStrip,
 } from '@dhis2/ui'
 import classnames from 'classnames'
-import { getInstance as getD2Instance } from 'd2'
-import FontIcon from 'material-ui/FontIcon'
-import IconButton from 'material-ui/IconButton'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
-import AddLockExceptionModal from './AddLockExceptionModal'
 import styles from './LockException.module.css'
 import LockExceptionsTable from './LockExceptionsTable'
+import { parseLockExceptions } from './parse-lock-exceptions'
 import RemoveLockExceptionModal from './RemoveLockExceptionModal'
 
-class LockException extends Component {
-    static initialPager = {
-        pageSize: 20,
-        page: 1,
-        total: 0,
-        pageCount: 1,
-    }
+const query = {
+    lockExceptions: {
+        resource: 'lockExceptions',
+        params: params => ({
+            ...params,
+            fields:
+                'name,period[id,displayName],organisationUnit[id,displayName],dataSet[id,displayName]',
+            order: 'name:asc',
+        }),
+    },
+}
 
-    static propTypes = {
-        sectionKey: PropTypes.string.isRequired,
-    }
+const LockException = ({ sectionKey }) => {
+    const [page, setPage] = useState(1)
+    const [pageSize, setPageSize] = useState(20)
+    const { loading, called, error, data, refetch } = useDataQuery(query, {
+        lazy: true,
+    })
+    const [removeLockExceptionModal, setRemoveLockExceptionModal] = useState({
+        visible: false,
+        lockException: null,
+    })
 
-    state = {
-        loading: false,
-        loaded: false,
-        error: null,
-        pager: LockException.initialPager,
-        atBatchDeletionPage: false,
-        levels: null,
-        groups: null,
-        dataSets: [],
-        addLockExceptionModal: {
-            isVisible: false,
-        },
-        removeLockExceptionModal: {
-            isVisible: false,
-            lockException: null,
-        },
-    }
+    useEffect(() => {
+        refetch({
+            page,
+            pageSize,
+        })
+    }, [page, pageSize])
 
-    prepareLockExceptionsResponseToDataTable(lockExceptionResponse) {
-        return lockExceptionResponse.map(
-            ({ dataSet, period, organisationUnit }) => {
-                const row = {
-                    period: period.displayName,
-                    periodId: period.id,
-                    dataSet: dataSet.displayName,
-                    dataSetId: dataSet.id,
-                }
-                if (!this.state.atBatchDeletionPage) {
-                    row.organisationUnit = organisationUnit.displayName
-                    row.organisationUnitId = organisationUnit.id
-                }
-                return row
-            }
+    const lockExceptions =
+        data && parseLockExceptions(data.lockExceptions.lockExceptions)
+    const renderPagination = () => {
+        const { total, pageCount } = data.lockExceptions.pager
+        return (
+            <div className={styles.pagination}>
+                <Pagination
+                    total={total}
+                    pageCount={pageCount}
+                    page={page}
+                    pageSize={pageSize}
+                    onPageSizeChange={pageSize => {
+                        setPage(1)
+                        setPageSize(pageSize)
+                    }}
+                    onPageChange={page => setPage(page)}
+                />
+            </div>
         )
     }
-
-    dataTableColumns() {
-        if (this.state.atBatchDeletionPage) {
-            return ['dataSet', 'period']
-        }
-        return ['organisationUnit', 'dataSet', 'period']
+    const handleShowRemoveLockExceptionModal = lockException => {
+        setRemoveLockExceptionModal({
+            visible: true,
+            lockException,
+        })
+    }
+    const handleCloseRemoveLockExceptionModal = () => {
+        setRemoveLockExceptionModal({
+            visible: false,
+            lockException: null,
+        })
     }
 
-    renderHeader() {
-        if (this.state.atBatchDeletionPage) {
-            return (
-                <div className={styles.headerContainer}>
-                    <IconButton onClick={this.backToLockExceptions}>
-                        <span title={i18n.t('Go back to all lock exceptions')}>
-                            <FontIcon
-                                className={classnames(
-                                    'material-icons',
-                                    styles.backArrowIcon
-                                )}
-                            >
-                                arrow_back
-                            </FontIcon>
-                        </span>
-                    </IconButton>
-                    <h1 className={styles.header}>
-                        <span>{i18n.t('Lock Exception')}</span>
-                        <span className={styles.headerDivider}> | </span>
-                        <span className={styles.subHeader}>
-                            {i18n.t('Batch Deletion')}
-                        </span>
-                    </h1>
-                </div>
-            )
-        }
-
-        return (
+    return (
+        <div className={styles.lockExceptions}>
             <div
                 className={classnames(
                     styles.headerContainer,
@@ -110,356 +91,53 @@ class LockException extends Component {
                 )}
             >
                 <PageHeader
-                    sectionKey={this.props.sectionKey}
+                    sectionKey={sectionKey}
                     title={i18nKeys.lockException.title}
                 />
                 <ButtonStrip>
-                    <Button
-                        primary
-                        onClick={this.handleShowAddLockExceptionModal}
-                        disabled={this.areActionsDisabled()}
-                    >
-                        {i18n.t('Add lock exception')}
-                    </Button>
-                    <Button
-                        onClick={this.goToBatchDeletionPage}
-                        disabled={this.areActionsDisabled()}
-                    >
-                        {i18n.t('Batch deletion')}
-                    </Button>
+                    <Link to="/lock-exception/add" tabIndex="-1">
+                        <Button primary>{i18n.t('Add lock exception')}</Button>
+                    </Link>
+                    <Link to="/lock-exception/batch-deletion" tabIndex="-1">
+                        <Button>{i18n.t('Batch deletion')}</Button>
+                    </Link>
                 </ButtonStrip>
             </div>
-        )
-    }
-
-    areActionsDisabled() {
-        return this.state.loading
-    }
-
-    componentDidMount() {
-        this.loadLockExceptionsForPager(LockException.initialPager, {
-            userAction: false,
-        })
-    }
-
-    loadLockExceptionsForPager = async (pager, { userAction }) => {
-        if (!userAction && (this.state.loading || this.state.loaded)) {
-            return
-        }
-
-        this.setState({
-            atBatchDeletionPage: false,
-            loaded: false,
-            loading: true,
-            error: null,
-        })
-
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
-        const url =
-            `lockExceptions?page=${pager.page}&pageSize=${pager.pageSize}` +
-            '&fields=name,' +
-            'period[id,displayName],' +
-            'organisationUnit[id,displayName],' +
-            'dataSet[id,displayName]' +
-            '&order=name:asc'
-
-        try {
-            const response = await api.get(url)
-
-            this.setState({
-                loaded: true,
-                loading: false,
-                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
-                    response.lockExceptions
-                ),
-                pager: response.pager,
-            })
-        } catch (error) {
-            const messageError =
-                error && error.message
-                    ? error.message
-                    : i18n.t('Error loading lock exceptions')
-            this.setState({
-                loaded: true,
-                loading: false,
-                error: messageError,
-            })
-        }
-    }
-
-    // Get information for Batch Deletion Page
-    loadLockExceptionCombinations = async () => {
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
-        const url =
-            'lockExceptions/combinations?fields=name,period[id,displayName],dataSet[id,displayName]'
-
-        this.setState({
-            atBatchDeletionPage: true,
-            loaded: false,
-            loading: true,
-        })
-
-        try {
-            const response = await api.get(url)
-
-            this.setState({
-                loaded: true,
-                loading: false,
-                atBatchDeletionPage: true,
-                lockExceptions: this.prepareLockExceptionsResponseToDataTable(
-                    response.lockExceptions
-                ),
-            })
-        } catch (error) {
-            const messageError =
-                error && error.message
-                    ? error.message
-                    : i18n.t('An unexpected error happened during operation')
-
-            this.setState({
-                loaded: true,
-                loading: false,
-                error: messageError,
-            })
-        }
-    }
-
-    handlePageChange = page => {
-        const pager = {
-            ...this.state.pager,
-            page,
-        }
-        this.loadLockExceptionsForPager(pager, { userAction: true })
-    }
-
-    handlePageSizeChange = pageSize => {
-        const pager = {
-            ...this.state.pager,
-            pageSize,
-        }
-        this.loadLockExceptionsForPager(pager, { userAction: true })
-    }
-
-    backToLockExceptions = () => {
-        this.loadLockExceptionsForPager(this.state.pager, { userAction: true })
-    }
-
-    goToBatchDeletionPage = () => {
-        this.loadLockExceptionCombinations()
-    }
-
-    handleShowRemoveLockExceptionModal = lockException => {
-        this.setState({
-            removeLockExceptionModal: {
-                isVisible: true,
-                lockException,
-            },
-        })
-    }
-
-    handleCloseRemoveLockExceptionModal = () => {
-        this.setState({
-            removeLockExceptionModal: {
-                isVisible: false,
-                lockException: null,
-            },
-        })
-    }
-
-    handleRemoveLockException = async lockException => {
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
-        let url = `lockExceptions?pe=${lockException.periodId}&ds=${lockException.dataSetId}`
-        if (lockException.organisationUnitId) {
-            url += `&ou=${lockException.organisationUnitId}`
-        }
-        await api.delete(url)
-
-        if (this.state.atBatchDeletionPage) {
-            this.setState({
-                lockExceptions: this.state.lockExceptions.filter(
-                    le =>
-                        le.periodId !== lockException.periodId ||
-                        le.dataSetId !== lockException.dataSetId
-                ),
-            })
-        } else {
-            this.loadLockExceptionsForPager(LockException.initialPager, {
-                userAction: true,
-            })
-        }
-    }
-
-    handleShowAddLockExceptionModal = async () => {
-        if (
-            this.state.levels &&
-            this.state.groups &&
-            this.state.dataSets.length > 0
-        ) {
-            this.setState({
-                addLockExceptionModal: {
-                    isVisible: true,
-                },
-            })
-            return
-        }
-
-        const d2 = await getD2Instance()
-        try {
-            const [levels, groups, dataSets] = await Promise.all([
-                d2.models.organisationUnitLevel.list({
-                    paging: false,
-                    fields: 'id,level,displayName',
-                    order: 'level:asc',
-                }),
-                d2.models.organisationUnitGroup.list({
-                    paging: false,
-                    fields: 'id,displayName',
-                }),
-                d2.models.dataSet.list({
-                    paging: false,
-                    fields: 'id,displayName,periodType',
-                }),
-            ])
-
-            this.setState({
-                addLockExceptionModal: {
-                    isVisible: true,
-                },
-                levels,
-                groups,
-                dataSets: dataSets.toArray(),
-            })
-        } catch (error) {
-            const messageError =
-                error && error.message
-                    ? error.message
-                    : i18n.t('An unexpected error happened during operation')
-
-            this.setState({
-                loading: false,
-                error: messageError,
-            })
-        }
-    }
-
-    handleCloseAddLockExceptionModal = () => {
-        this.setState({
-            addLockExceptionModal: {
-                isVisible: false,
-            },
-        })
-    }
-
-    handleAddLockException = async ({
-        selectedOrgUnits,
-        selectedDataSetId,
-        selectedPeriodId,
-    }) => {
-        const orgUnitIds = selectedOrgUnits.map(orgUnitPath => {
-            const splitOrgUnitPath = orgUnitPath.split('/')
-            return splitOrgUnitPath[splitOrgUnitPath.length - 1]
-        })
-
-        const formData = new FormData()
-        formData.append('ou', `[${orgUnitIds.join(',')}]`)
-        formData.append('pe', selectedPeriodId)
-        formData.append('ds', selectedDataSetId)
-
-        const d2 = await getD2Instance()
-        const api = d2.Api.getApi()
-        await api.post('lockExceptions', formData)
-
-        this.loadLockExceptionsForPager(LockException.initialPager, {
-            userAction: false,
-        })
-    }
-
-    renderPagination() {
-        if (this.areActionsDisabled() || this.state.atBatchDeletionPage) {
-            return null
-        }
-
-        const paginationProps = {
-            ...this.state.pager,
-            onPageSizeChange: this.handlePageSizeChange,
-            onPageChange: this.handlePageChange,
-        }
-        return (
-            <div className={styles.pagination}>
-                <Pagination {...paginationProps} />
-            </div>
-        )
-    }
-
-    renderTable() {
-        return this.state.lockExceptions?.length > 0 ? (
-            <div>
-                {this.renderPagination()}
-                <LockExceptionsTable
-                    columns={this.dataTableColumns()}
-                    rows={this.state.lockExceptions}
-                    onRemoveLockException={
-                        this.handleShowRemoveLockExceptionModal
-                    }
-                    atBatchDeletionPage={this.state.atBatchDeletionPage}
-                />
-                {this.renderPagination()}
-            </div>
-        ) : (
-            <em>{i18n.t('No lock exceptions to show.')}</em>
-        )
-    }
-
-    renderAddLockExceptionModal() {
-        if (this.state.addLockExceptionModal.isVisible) {
-            return (
-                <AddLockExceptionModal
-                    levels={this.state.levels}
-                    groups={this.state.groups}
-                    dataSets={this.state.dataSets}
-                    onAdd={this.handleAddLockException}
-                    onClose={this.handleCloseAddLockExceptionModal}
-                />
-            )
-        }
-    }
-
-    renderRemoveLockExceptionModal() {
-        if (this.state.removeLockExceptionModal.isVisible) {
-            return (
+            {error ? (
+                <NoticeBox error>{error.message}</NoticeBox>
+            ) : loading || !called ? (
+                <CenteredContent>
+                    <CircularLoader />
+                </CenteredContent>
+            ) : lockExceptions.length > 0 ? (
+                <>
+                    {renderPagination()}
+                    <LockExceptionsTable
+                        columns={['organisationUnit', 'dataSet', 'period']}
+                        rows={lockExceptions}
+                        onRemoveLockException={
+                            handleShowRemoveLockExceptionModal
+                        }
+                        atBatchDeletionPage={false}
+                    />
+                    {renderPagination()}
+                </>
+            ) : (
+                <em>{i18n.t('No lock exceptions to show.')}</em>
+            )}
+            {removeLockExceptionModal.visible && (
                 <RemoveLockExceptionModal
-                    onRemove={() =>
-                        this.handleRemoveLockException(
-                            this.state.removeLockExceptionModal.lockException
-                        )
-                    }
-                    onClose={this.handleCloseRemoveLockExceptionModal}
+                    lockException={removeLockExceptionModal.lockException}
+                    onRemove={refetch}
+                    onClose={handleCloseRemoveLockExceptionModal}
                 />
-            )
-        }
-    }
+            )}
+        </div>
+    )
+}
 
-    render() {
-        return (
-            <div className={styles.lockExceptions}>
-                {this.renderHeader()}
-                {this.state.error ? (
-                    <NoticeBox error>{this.state.error}</NoticeBox>
-                ) : this.state.loading ? (
-                    <CenteredContent>
-                        <CircularLoader />
-                    </CenteredContent>
-                ) : (
-                    this.renderTable()
-                )}
-                {this.renderAddLockExceptionModal()}
-                {this.renderRemoveLockExceptionModal()}
-            </div>
-        )
-    }
+LockException.propTypes = {
+    sectionKey: PropTypes.string.isRequired,
 }
 
 export default LockException
