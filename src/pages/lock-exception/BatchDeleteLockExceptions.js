@@ -1,6 +1,6 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { CenteredContent, CircularLoader, NoticeBox, Button } from '@dhis2/ui'
+import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import classnames from 'classnames'
 import FontIcon from 'material-ui/FontIcon'
 import React, { useState } from 'react'
