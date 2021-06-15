@@ -1,16 +1,16 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
+# easylin <lin_xd@126.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,10 +27,10 @@ msgstr "数据完整性"
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
-msgstr ""
+msgstr "运行数据完整性检查并揭示元数据设置中的异常和问题。"
 
 msgid "Check data integrity"
-msgstr ""
+msgstr "检查数据完整性"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr "完整性检查中发生意外错误"
@@ -150,7 +150,7 @@ msgstr "分析表"
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
-msgstr ""
+msgstr "数据集市是 DHIS 数据库中的一组表，所有报告和分析工具都使用它来检索数据。"
 
 msgid "Analytics tables update"
 msgstr "Analytics tables update"
@@ -201,13 +201,13 @@ msgid ""
 msgstr "产生最小-最大值，在数据的输入和验证过程中用于数据的验证。"
 
 msgid "Generate Min-Max Values"
-msgstr ""
+msgstr "生成最小-最大值"
 
 msgid "Number of last years of data to include"
 msgstr "Number of last years of data to include"
 
 msgid "Exporting..."
-msgstr ""
+msgstr "出口..."
 
 msgid "Start export"
 msgstr "开始导出"
@@ -216,13 +216,13 @@ msgid "All"
 msgstr "全部"
 
 msgid "Checking data integrity..."
-msgstr ""
+msgstr "正在检查数据完整性..."
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "运行完整性检查"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data elements without data set"
 msgstr "没有归属数据集的数据元"
@@ -294,34 +294,34 @@ msgid "Duplicate periods"
 msgstr "复制期间"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "无条件的程序规则"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "没有动作的程序规则"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "无优先级的程序规则"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "没有数据元素的程序规则变量"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "没有属性的程序规则变量"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "没有数据对象的程序规则操作"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "没有通知的程序规则操作"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "没有节 ID 的程序规则操作"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "没有阶段 ID 的程序规则操作"
 
 msgid "Program indicators with no expression"
-msgstr ""
+msgstr "没有表达式的程序指标"
 
 msgid "Indicators"
 msgstr "指标"
@@ -360,7 +360,7 @@ msgid "Pivot tables"
 msgstr "透视表"
 
 msgid "Program instances"
-msgstr ""
+msgstr "程序实例"
 
 msgid "Indicator types"
 msgstr "指标类型"
@@ -393,7 +393,7 @@ msgid "Today"
 msgstr "今天"
 
 msgid "Last {{days}} days"
-msgstr ""
+msgstr "过去 {{days}} 天"
 
 msgid "Last hour"
 msgstr "上一小时"
@@ -414,10 +414,10 @@ msgid "Expired invitations"
 msgstr "Expired invitations"
 
 msgid "Error loading data statistics"
-msgstr ""
+msgstr "加载数据统计时出错"
 
 msgid "No data statistics to show."
-msgstr ""
+msgstr "没有数据统计显示。"
 
 msgid "Period"
 msgstr "期间"
@@ -558,31 +558,31 @@ msgid "oct-mar"
 msgstr "10-3月"
 
 msgid "Error loading data for data set"
-msgstr ""
+msgstr "加载数据集的数据时出错"
 
 msgid "Loading organisation units tree..."
-msgstr ""
+msgstr "正在加载组织单位树..."
 
 msgid "Select a data set"
-msgstr ""
+msgstr "选择数据集"
 
 msgid "Lock exception added"
-msgstr ""
+msgstr "添加了锁定异常"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
+msgstr "添加锁异常时出错：{{error}}"
 
 msgid "Add lock exception"
-msgstr ""
+msgstr "添加锁异常"
 
 msgid "Cancel"
 msgstr "取消"
 
 msgid "Adding lock exception..."
-msgstr ""
+msgstr "添加锁异常..."
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "回到所有锁异常"
 
 msgid "Batch Deletion"
 msgstr "批量删除"
@@ -591,67 +591,67 @@ msgid "Batch deletion"
 msgstr "批量删除"
 
 msgid "Error loading lock exceptions"
-msgstr ""
+msgstr "加载锁异常时出错"
 
 msgid "No lock exceptions to show."
-msgstr ""
+msgstr "没有可显示的锁定异常。"
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "批量删除锁异常"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "移除锁异常"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "锁异常移除"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "删除锁定异常时出错：{{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "您确定要删除此锁定异常吗？"
 
 msgid "No, cancel"
 msgstr "不，取消"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "正在删除锁定异常..."
 
 msgid "Yes, remove lock exception"
-msgstr ""
+msgstr "是的，移除锁异常"
 
 msgid "Maintenance done"
 msgstr "维护完成"
 
 msgid "Performing maintenance..."
-msgstr ""
+msgstr "执行维护..."
 
 msgid "Error loading data"
-msgstr ""
+msgstr "加载数据时出错"
 
 msgid "Generating min-max values..."
-msgstr ""
+msgstr "生成最小-最大值..."
 
 msgid "Min-max values generated"
-msgstr ""
+msgstr "生成的最小值-最大值"
 
 msgid "Error generating min-max values"
-msgstr ""
+msgstr "生成最小值-最大值时出错"
 
 msgid "Removing min-max values..."
-msgstr ""
+msgstr "正在删除最小-最大值..."
 
 msgid "Min-max values removed"
-msgstr ""
+msgstr "删除了最小值-最大值"
 
 msgid "Error removing min-max values"
-msgstr ""
+msgstr "删除最小值-最大值时出错"
 
 msgid "Generate min-max values"
 msgstr "生成最大-最小值"
 
 msgid "Remove min-max values"
-msgstr ""
+msgstr "删除最小值-最大值"
 
 msgid "Generate tables"
 msgstr "生成资源表"
