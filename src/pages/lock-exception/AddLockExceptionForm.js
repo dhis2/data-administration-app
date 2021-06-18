@@ -1,12 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
 import { NoticeBox } from '@dhis2/ui'
-import OrgUnitSelectAll from 'd2-ui/lib/org-unit-select/OrgUnitSelectAll.component'
-import OrgUnitSelectByGroup from 'd2-ui/lib/org-unit-select/OrgUnitSelectByGroup.component'
-import OrgUnitSelectByLevel from 'd2-ui/lib/org-unit-select/OrgUnitSelectByLevel.component'
 import SelectField from 'd2-ui/lib/select-field/SelectField'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import styles from './AddLockExceptionForm.module.css'
+import OrgUnitSelectAll from './OrgUnitSelect/OrgUnitSelectAll'
+import OrgUnitSelectByGroup from './OrgUnitSelect/OrgUnitSelectByGroup'
+import OrgUnitSelectByLevel from './OrgUnitSelect/OrgUnitSelectByLevel'
 import OrgUnitTree from './OrgUnitTree'
 import PeriodPicker from './PeriodPicker'
 
@@ -17,6 +17,7 @@ const d2UiSelectStyleOverride = {
 
 class AddLockExceptionForm extends Component {
     static propTypes = {
+        d2: PropTypes.object.isRequired,
         dataSets: PropTypes.array.isRequired,
         groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
             .isRequired,
@@ -37,6 +38,8 @@ class AddLockExceptionForm extends Component {
             error: null,
         }
 
+        // Required by PeriodPicker
+        // TODO: Move translations to PeriodPicker component
         this.fixD2Translations()
     }
 
@@ -55,12 +58,6 @@ class AddLockExceptionForm extends Component {
             period: i18n.t('Period'),
             data_set: i18n.t('Data set'),
             organisation_unit: i18n.t('Organisation unit'),
-            organisation_unit_group: i18n.t('Organisation unit group'),
-            organisation_unit_level: i18n.t('Organisation unit level'),
-            select: i18n.t('Select'),
-            deselect: i18n.t('Deselect'),
-            select_all: i18n.t('Select All Org Units'),
-            deselect_all: i18n.t('Deselect All Org Units'),
             name: i18n.t('Name'),
             show: i18n.t('Show details'),
             remove: i18n.t('Remove'),
@@ -214,18 +211,21 @@ class AddLockExceptionForm extends Component {
                                 : i18n.t('For all organisation units:')}
                         </div>
                         <OrgUnitSelectByLevel
+                            d2={this.props.d2}
                             levels={this.props.levels}
                             selected={this.state.selected}
                             currentRoot={this.state.currentRoot}
                             onUpdateSelection={this.handleSelectionUpdate}
                         />
                         <OrgUnitSelectByGroup
+                            d2={this.props.d2}
                             groups={this.props.groups}
                             selected={this.state.selected}
                             currentRoot={this.state.currentRoot}
                             onUpdateSelection={this.handleSelectionUpdate}
                         />
                         <OrgUnitSelectAll
+                            d2={this.props.d2}
                             selected={this.state.selected}
                             currentRoot={this.state.currentRoot}
                             onUpdateSelection={this.handleSelectionUpdate}

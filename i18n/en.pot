@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-10T15:48:27.229Z\n"
-"PO-Revision-Date: 2021-06-10T15:48:27.229Z\n"
+"POT-Creation-Date: 2021-06-18T17:23:50.847Z\n"
+"PO-Revision-Date: 2021-06-18T17:23:50.847Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -427,24 +427,6 @@ msgstr ""
 msgid "Organisation unit"
 msgstr ""
 
-msgid "Organisation unit group"
-msgstr ""
-
-msgid "Organisation unit level"
-msgstr ""
-
-msgid "Select"
-msgstr ""
-
-msgid "Deselect"
-msgstr ""
-
-msgid "Select All Org Units"
-msgstr ""
-
-msgid "Deselect All Org Units"
-msgstr ""
-
 msgid "Name"
 msgstr ""
 
@@ -578,6 +560,24 @@ msgid "Batch delete lock exceptions"
 msgstr ""
 
 msgid "Remove lock exception"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
 msgstr ""
 
 msgid "Lock exception removed"
