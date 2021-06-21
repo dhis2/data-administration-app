@@ -29,7 +29,3 @@
 .subHeader {
     font-weight: 500;
 }
-
-.card {
-    padding: var(--spacers-dp16);
-}
