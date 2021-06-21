@@ -1,5 +1,4 @@
 import { useDataQuery, useDataMutation, useAlert } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import {
     Card,
@@ -73,7 +72,6 @@ const AddLockException = () => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
     const [selectedDataSetId, setSelectedDataSetId] = useState(null)
     const [selectedPeriodId, setSelectedPeriodId] = useState(null)
-    const { d2 } = useD2()
 
     const handleAdd = () => {
         const orgUnitIds = selectedOrgUnits.map(orgUnitPath => {
@@ -141,7 +139,6 @@ const AddLockException = () => {
             </div>
             <Card className={styles.card}>
                 <AddLockExceptionForm
-                    d2={d2}
                     levels={organisationUnitLevels}
                     groups={organisationUnitGroups}
                     dataSets={dataSets}
