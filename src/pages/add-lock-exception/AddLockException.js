@@ -116,7 +116,7 @@ const AddLockException = () => {
     return (
         <>
             <div className={lockExceptionsStyles.headerContainer}>
-                <Link to="/lock-exception">
+                <Link to="/lock-exceptions">
                     <span title={i18n.t('Go back to all lock exceptions')}>
                         <FontIcon
                             className={classnames(
