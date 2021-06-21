@@ -12,8 +12,9 @@ import classnames from 'classnames'
 import FontIcon from 'material-ui/FontIcon'
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import AddLockExceptionForm from './AddLockExceptionForm'
-import styles from './LockException.module.css'
+import lockExceptionsStyles from '../lock-exceptions/LockExceptions.module.css'
+import styles from './AddLockException.module.css'
+import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm'
 
 const query = {
     levels: {
@@ -113,24 +114,27 @@ const AddLockException = () => {
     } = dataQuery.data
 
     return (
-        <div className={styles.lockExceptions}>
-            <div className={styles.headerContainer}>
+        <>
+            <div className={lockExceptionsStyles.headerContainer}>
                 <Link to="/lock-exception">
                     <span title={i18n.t('Go back to all lock exceptions')}>
                         <FontIcon
                             className={classnames(
                                 'material-icons',
-                                styles.backArrowIcon
+                                lockExceptionsStyles.backArrowIcon
                             )}
                         >
                             arrow_back
                         </FontIcon>
                     </span>
                 </Link>
-                <h1 className={styles.header}>
+                <h1 className={lockExceptionsStyles.header}>
                     <span>{i18n.t('Lock Exception')}</span>
-                    <span className={styles.headerDivider}> | </span>
-                    <span className={styles.subHeader}>
+                    <span className={lockExceptionsStyles.headerDivider}>
+                        {' '}
+                        |{' '}
+                    </span>
+                    <span className={lockExceptionsStyles.subHeader}>
                         {i18n.t('Add lock exception')}
                     </span>
                 </h1>
@@ -161,7 +165,7 @@ const AddLockException = () => {
                     )}
                 </Button>
             </Card>
-        </div>
+        </>
     )
 }
 

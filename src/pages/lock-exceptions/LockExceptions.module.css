@@ -1,0 +1,35 @@
+.pagination {
+    margin: var(--spacers-dp16) 0;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacers-dp16);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.flexSpaceBetween {
+    justify-content: space-between;
+}
+
+.backArrowIcon {
+    margin-right: 20px;
+}
+
+.headerDivider {
+    margin: 0 10px 0 10px;
+}
+
+.subHeader {
+    font-weight: 500;
+}
+
+.card {
+    padding: var(--spacers-dp16);
+}

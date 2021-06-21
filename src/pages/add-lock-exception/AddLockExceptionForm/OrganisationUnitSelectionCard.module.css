@@ -1,7 +1,3 @@
-.selectsContainer {
-    display: flex;
-}
-
 .organisationUnitTree {
     flex: 1 0;
     height: 280px;

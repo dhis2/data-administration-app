@@ -12,12 +12,12 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal'
 import { i18nKeys } from '../../i18n-keys'
-import styles from './LockException.module.css'
-import LockExceptionsTable from './LockExceptionsTable'
-import { parseLockExceptions } from './parse-lock-exceptions'
-import RemoveLockExceptionModal from './RemoveLockExceptionModal'
+import { parseLockExceptions } from '../../parse-lock-exceptions'
+import styles from './LockExceptions.module.css'
 
 const query = {
     lockExceptions: {
@@ -31,7 +31,7 @@ const query = {
     },
 }
 
-const LockException = ({ sectionKey }) => {
+const LockExceptions = ({ sectionKey }) => {
     const [page, setPage] = useState(1)
     const [pageSize, setPageSize] = useState(20)
     const { loading, called, error, data, refetch } = useDataQuery(query, {
@@ -92,7 +92,7 @@ const LockException = ({ sectionKey }) => {
             >
                 <PageHeader
                     sectionKey={sectionKey}
-                    title={i18nKeys.lockException.title}
+                    title={i18nKeys.lockExceptions.title}
                 />
                 <ButtonStrip>
                     <Link to="/lock-exception/add" tabIndex="-1">
@@ -136,8 +136,8 @@ const LockException = ({ sectionKey }) => {
     )
 }
 
-LockException.propTypes = {
+LockExceptions.propTypes = {
     sectionKey: PropTypes.string.isRequired,
 }
 
-export default LockException
+export default LockExceptions
