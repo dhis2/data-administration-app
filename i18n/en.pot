@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-18T17:23:50.847Z\n"
-"PO-Revision-Date: 2021-06-18T17:23:50.847Z\n"
+"POT-Creation-Date: 2021-06-21T13:40:43.213Z\n"
+"PO-Revision-Date: 2021-06-21T13:40:43.213Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -418,13 +418,55 @@ msgstr ""
 msgid "Adding lock exception..."
 msgstr ""
 
-msgid "Period"
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Loading organisation units tree..."
+msgstr ""
+
+msgid "Select a data set"
 msgstr ""
 
 msgid "Data set"
 msgstr ""
 
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "No lock exceptions to show."
+msgstr ""
+
+msgid "Batch deletion"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
 msgid "Organisation unit"
+msgstr ""
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
 msgstr ""
 
 msgid "Name"
@@ -446,6 +488,9 @@ msgid "month"
 msgstr ""
 
 msgid "year"
+msgstr ""
+
+msgid "bi weekly"
 msgstr ""
 
 msgid "bi monthly"
@@ -536,48 +581,6 @@ msgid "apr-sep"
 msgstr ""
 
 msgid "oct-mar"
-msgstr ""
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch deletion"
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Select"
-msgstr ""
-
-msgid "Deselect"
-msgstr ""
-
-msgid "Select All Org Units"
-msgstr ""
-
-msgid "Deselect All Org Units"
-msgstr ""
-
-msgid "Organisation unit group"
-msgstr ""
-
-msgid "Organisation unit level"
 msgstr ""
 
 msgid "Lock exception removed"

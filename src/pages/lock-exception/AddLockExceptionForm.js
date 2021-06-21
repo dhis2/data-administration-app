@@ -37,65 +37,6 @@ class AddLockExceptionForm extends Component {
             orgUnitPaths: null,
             error: null,
         }
-
-        // Required by PeriodPicker
-        // TODO: Move translations to PeriodPicker component
-        this.fixD2Translations()
-    }
-
-    static childContextTypes = {
-        d2: PropTypes.object,
-    }
-
-    getChildContext() {
-        return {
-            d2: this.props.d2,
-        }
-    }
-
-    fixD2Translations() {
-        Object.assign(this.props.d2.i18n.translations, {
-            period: i18n.t('Period'),
-            data_set: i18n.t('Data set'),
-            organisation_unit: i18n.t('Organisation unit'),
-            name: i18n.t('Name'),
-            show: i18n.t('Show details'),
-            remove: i18n.t('Remove'),
-            actions: i18n.t('Actions'),
-            week: i18n.t('week'),
-            month: i18n.t('month'),
-            year: i18n.t('year'),
-            biMonth: i18n.t('bi monthly'),
-            day: i18n.t('day'),
-            jan: i18n.t('jan'),
-            feb: i18n.t('feb'),
-            mar: i18n.t('mar'),
-            apr: i18n.t('apr'),
-            may: i18n.t('may'),
-            jun: i18n.t('jun'),
-            jul: i18n.t('jul'),
-            aug: i18n.t('aug'),
-            sep: i18n.t('sep'),
-            oct: i18n.t('oct'),
-            nov: i18n.t('nov'),
-            dec: i18n.t('dec'),
-            'jan-feb': i18n.t('jan-feb'),
-            'mar-apr': i18n.t('mar-apr'),
-            'may-jun': i18n.t('may-jun'),
-            'jul-aug': i18n.t('jul-aug'),
-            'sep-oct': i18n.t('sep-oct'),
-            'nov-dec': i18n.t('nov-dec'),
-            quarter: i18n.t('quarter'),
-            Q1: i18n.t('Q1'),
-            Q2: i18n.t('Q2'),
-            Q3: i18n.t('Q3'),
-            Q4: i18n.t('Q4'),
-            sixMonth: i18n.t('six monthly'),
-            'jan-jun': i18n.t('jan-jun'),
-            'jul-dec': i18n.t('jul-dec'),
-            'apr-sep': i18n.t('apr-sep'),
-            'oct-mar': i18n.t('oct-mar'),
-        })
     }
 
     handleDataSetChange = async dataSet => {
