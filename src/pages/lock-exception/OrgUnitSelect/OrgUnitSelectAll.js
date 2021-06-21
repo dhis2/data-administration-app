@@ -1,9 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
-import RaisedButton from 'material-ui/RaisedButton/RaisedButton'
+import { ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { addToSelection, removeFromSelection } from './common'
-import style from './style'
 
 class OrgUnitSelectAll extends React.Component {
     constructor(props) {
@@ -71,20 +70,20 @@ class OrgUnitSelectAll extends React.Component {
 
     render() {
         return (
-            <div>
-                <RaisedButton
-                    style={style.button1}
-                    label={i18n.t('Select All Org Units')}
+            <ButtonStrip>
+                <Button
                     onClick={this.handleSelectAll}
                     disabled={this.state.loading}
-                />
-                <RaisedButton
-                    style={style.button}
-                    label={i18n.t('Deselect All Org Units')}
+                >
+                    {i18n.t('Select All Org Units')}
+                </Button>
+                <Button
                     onClick={this.handleDeselectAll}
                     disabled={this.state.loading}
-                />
-            </div>
+                >
+                    {i18n.t('Deselect All Org Units')}
+                </Button>
+            </ButtonStrip>
         )
     }
 }

@@ -1,9 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
-import LinearProgress from 'material-ui/LinearProgress/LinearProgress'
-import RaisedButton from 'material-ui/RaisedButton/RaisedButton'
+import { CircularLoader, Button, ButtonStrip } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import sharedStyles from '../style'
 
 const Controls = ({ loading, disabled, onSelect, onDeselect }) => (
     <div
@@ -14,19 +12,15 @@ const Controls = ({ loading, disabled, onSelect, onDeselect }) => (
             marginLeft: 16,
         }}
     >
-        {loading && <LinearProgress size={0.5} style={sharedStyles.progress} />}
-        <RaisedButton
-            label={i18n.t('Select')}
-            style={sharedStyles.button1}
-            onClick={onSelect}
-            disabled={disabled}
-        />
-        <RaisedButton
-            label={i18n.t('Deselect')}
-            style={sharedStyles.button}
-            onClick={onDeselect}
-            disabled={disabled}
-        />
+        {loading && <CircularLoader small />}
+        <ButtonStrip>
+            <Button onClick={onSelect} disabled={disabled}>
+                {i18n.t('Select')}
+            </Button>
+            <Button onClick={onDeselect} disabled={disabled}>
+                {i18n.t('Deselect')}
+            </Button>
+        </ButtonStrip>
     </div>
 )
 
