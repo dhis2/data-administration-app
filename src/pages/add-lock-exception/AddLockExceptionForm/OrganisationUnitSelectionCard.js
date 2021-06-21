@@ -88,8 +88,8 @@ OrganisationUnitSelectionCard.propTypes = {
     currentRoot: PropTypes.object,
     dataSetId: PropTypes.string,
     orgUnitPaths: PropTypes.array,
-    rootWithMembers: PropTypes.array,
-    selected: PropTypes.object,
+    rootWithMembers: PropTypes.object,
+    selected: PropTypes.array,
 }
 
 export default OrganisationUnitSelectionCard
