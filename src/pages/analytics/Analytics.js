@@ -11,7 +11,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import NotificationsTable from '../../components/notifications-table/NotificationsTable'
+import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'

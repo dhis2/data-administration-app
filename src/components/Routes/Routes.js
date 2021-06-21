@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import AddLockException from '../../pages/add-lock-exception/AddLockException.js'
+import BatchDeleteLockExceptions from '../../pages/batch-delete-lock-exceptions/BatchDeleteLockExceptions'
 import Home from '../../pages/home/Home'
-import AddLockException from '../../pages/lock-exception/AddLockException.js'
-import BatchDeleteLockExceptions from '../../pages/lock-exception/BatchDeleteLockExceptions'
 import { sections } from '../../pages/sections.conf'
 
 const Routes = () => (
