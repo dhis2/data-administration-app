@@ -22,8 +22,6 @@ const AddLockExceptionForm = ({
 }) => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
 
-    const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
-
     const handleDataSetChange = async dataSet => {
         if (selectedDataSetId !== null && dataSet.id === selectedDataSetId) {
             return
@@ -37,18 +35,11 @@ const AddLockExceptionForm = ({
         onSelectedOrgUnitsChange(newSelection)
     }
 
+    const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
     const dataSetItems = dataSets.map(dataSet => ({
         id: dataSet.id,
         name: dataSet.displayName,
-        periodType: dataSet.periodType,
     }))
-
-    let dataSetSelectLabel = i18n.t('Select a data set')
-    let dataSetSelectValue = null
-    if (selectedDataSet) {
-        dataSetSelectLabel = i18n.t('Data set')
-        dataSetSelectValue = selectedDataSet.id
-    }
 
     return (
         <>
@@ -56,13 +47,17 @@ const AddLockExceptionForm = ({
                 <div data-test="add-lock-exception-select-data-set">
                     <SelectField
                         style={d2UiSelectStyleOverride}
-                        label={dataSetSelectLabel}
+                        label={
+                            selectedDataSetId
+                                ? i18n.t('Data set')
+                                : i18n.t('Select a data set')
+                        }
                         items={dataSetItems}
                         onChange={handleDataSetChange}
-                        value={dataSetSelectValue}
+                        value={selectedDataSetId}
                     />
                 </div>
-                {selectedDataSet && (
+                {selectedDataSetId && (
                     <div>
                         <PeriodPicker
                             periodType={selectedDataSet.periodType}
@@ -71,9 +66,9 @@ const AddLockExceptionForm = ({
                     </div>
                 )}
             </div>
-            {selectedDataSet && (
+            {selectedDataSetId && (
                 <OrganisationUnitSelectionCard
-                    dataSetId={selectedDataSet.id}
+                    dataSetId={selectedDataSetId}
                     levels={levels}
                     groups={groups}
                     selected={selectedOrgUnits}
