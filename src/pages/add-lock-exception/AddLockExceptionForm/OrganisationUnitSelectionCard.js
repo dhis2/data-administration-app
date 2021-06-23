@@ -49,6 +49,7 @@ const OrganisationUnitSelectionCard = ({
     const { d2 } = useD2()
 
     useEffect(() => {
+        setCurrentRoot(null)
         refetch({ dataSetId })
     }, [dataSetId])
 

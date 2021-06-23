@@ -15,28 +15,28 @@ const AddLockExceptionForm = ({
     dataSets,
     groups,
     levels,
-    updateSelectedDataSetId,
+    selectedDataSetId,
+    onSelectedDataSetIdChange,
     updateSelectedOrgUnits,
     updateSelectedPeriodId,
 }) => {
-    const [selected, setSelected] = useState([])
-    const [selectedDataSet, setSelectedDataSet] = useState(null)
+    const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
+
+    const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
 
     const handleDataSetChange = async dataSet => {
-        const dataSetId = dataSet.id
-        if (selectedDataSet !== null && dataSetId === selectedDataSet.id) {
+        if (selectedDataSetId !== null && dataSet.id === selectedDataSetId) {
             return
         }
 
-        updateSelectedDataSetId(dataSetId)
-        setSelected([])
-        setSelectedDataSet(dataSet)
+        onSelectedDataSetIdChange(dataSet.id)
+        setSelectedOrgUnits([])
     }
     const handlePeriodChange = periodId => {
         updateSelectedPeriodId(periodId)
     }
-    const handleSelectionUpdate = newSelection => {
-        setSelected(newSelection)
+    const handleOrgUnitsSelectionUpdate = newSelection => {
+        setSelectedOrgUnits(newSelection)
         updateSelectedOrgUnits(newSelection)
     }
 
@@ -79,8 +79,8 @@ const AddLockExceptionForm = ({
                     dataSetId={selectedDataSet.id}
                     levels={levels}
                     groups={groups}
-                    selected={selected}
-                    onSelectionUpdate={handleSelectionUpdate}
+                    selected={selectedOrgUnits}
+                    onSelectionUpdate={handleOrgUnitsSelectionUpdate}
                 />
             )}
         </>
@@ -91,9 +91,10 @@ AddLockExceptionForm.propTypes = {
     dataSets: PropTypes.array.isRequired,
     groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-    updateSelectedDataSetId: PropTypes.func.isRequired,
     updateSelectedOrgUnits: PropTypes.func.isRequired,
     updateSelectedPeriodId: PropTypes.func.isRequired,
+    onSelectedDataSetIdChange: PropTypes.func.isRequired,
+    selectedDataSetId: PropTypes.string,
 }
 
 export default AddLockExceptionForm

@@ -27,7 +27,7 @@ class OrgUnitSelectByGroup extends React.Component {
         this.handleDeselect = this.handleDeselect.bind(this)
     }
 
-    getOrgUnitsForGroup(groupId, ignoreCache = false) {
+    getOrgUnitsForGroup(groupId) {
         const d2 = this.props.d2
         return new Promise(resolve => {
             if (this.props.currentRoot) {
@@ -47,7 +47,7 @@ class OrgUnitSelectByGroup extends React.Component {
 
                         resolve(orgUnits.slice())
                     })
-            } else if (!ignoreCache && this.groupCache.has(groupId)) {
+            } else if (this.groupCache.has(groupId)) {
                 resolve(this.groupCache.get(groupId).slice())
             } else {
                 this.setState({ loading: true })

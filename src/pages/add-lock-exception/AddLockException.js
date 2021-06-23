@@ -142,8 +142,9 @@ const AddLockException = () => {
                     levels={organisationUnitLevels}
                     groups={organisationUnitGroups}
                     dataSets={dataSets}
+                    selectedDataSetId={selectedDataSetId}
+                    onSelectedDataSetIdChange={setSelectedDataSetId}
                     updateSelectedOrgUnits={setSelectedOrgUnits}
-                    updateSelectedDataSetId={setSelectedDataSetId}
                     updateSelectedPeriodId={setSelectedPeriodId}
                 />
                 <Button
