@@ -35,13 +35,13 @@ When(`the user clicks on the 'Add lock exception' button`, () => {
     cy.findByRole('button', { name: 'Add lock exception' }).click()
 })
 
-Then('a modal appears', () => {
-    cy.getWithDataTest('{add-lock-exception-modal}').should('exist')
+Then('the user is sent to the add lock exception page', () => {
+    cy.url().should('contain', '/lock-exceptions/add')
     cy.wait('@fetchDataSets')
 })
 
 When('the user selects a data set', () => {
-    cy.getWithDataTest('{add-lock-exception-modal-select-data-set}')
+    cy.getWithDataTest('{add-lock-exception-select-data-set}')
         .find('.d2-ui-selectfield')
         .click()
     cy.findByRole('menuitem', { name: 'ART monthly summary' }).click()
@@ -53,10 +53,9 @@ Then('organisation units are fetched', () => {
 })
 
 When('the user selects an organisation unit', () => {
-    cy.getWithDataTest('{add-lock-exception-modal-org-unit-tree}')
-        .findByRole('button', { name: 'Bo' })
-        .find('input[type="checkbox"]')
-        .click()
+    cy.getWithDataTest('{add-lock-exception-org-unit-tree}')
+        .findByRole('checkbox', { name: 'Bo' })
+        .click({ force: true })
 })
 
 When('the user selects a period', () => {
@@ -67,10 +66,8 @@ When('the user selects a period', () => {
     cy.findByRole('menuitem', { name: 'jan' }).click()
 })
 
-When(`the user clicks the modal's 'Add lock exception' button`, () => {
-    cy.getWithDataTest('{add-lock-exception-modal-actions}')
-        .findByRole('button', { name: 'Add lock exception' })
-        .click()
+When(`the user clicks on the 'Add lock exception' button`, () => {
+    cy.findByRole('button', { name: 'Add lock exception' }).click()
 })
 
 Then('the lock exception should be added', () => {
