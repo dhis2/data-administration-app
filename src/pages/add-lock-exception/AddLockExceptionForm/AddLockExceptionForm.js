@@ -1,6 +1,4 @@
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
-import { NoticeBox } from '@dhis2/ui'
 import SelectField from 'd2-ui/lib/select-field/SelectField'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -23,11 +21,6 @@ const AddLockExceptionForm = ({
 }) => {
     const [selected, setSelected] = useState([])
     const [selectedDataSet, setSelectedDataSet] = useState(null)
-    const [orgUnitPaths, setOrgUnitPaths] = useState(null)
-    const [rootWithMembers, setRootWithMembers] = useState(null)
-    const [currentRoot, setCurrentRoot] = useState(null)
-    const [error, setError] = useState(null)
-    const { d2 } = useD2()
 
     const handleDataSetChange = async dataSet => {
         const dataSetId = dataSet.id
@@ -36,34 +29,8 @@ const AddLockExceptionForm = ({
         }
 
         updateSelectedDataSetId(dataSetId)
-        setRootWithMembers(null)
         setSelected([])
         setSelectedDataSet(dataSet)
-
-        try {
-            const [rootWithDataSetMembers, dataSetMembers] = await Promise.all([
-                d2.models.organisationUnits.list({
-                    paging: false,
-                    level: 1,
-                    fields:
-                        'id,displayName,path,children::isNotEmpty,memberCount',
-                    memberCollection: 'dataSets',
-                    memberObject: dataSetId,
-                }),
-                d2.models.dataSets.get(dataSetId, {
-                    paging: false,
-                    fields: 'organisationUnits[id,path]',
-                }),
-            ])
-
-            setRootWithMembers(rootWithDataSetMembers.toArray()[0])
-            setSelected([])
-            setOrgUnitPaths(
-                dataSetMembers.organisationUnits.toArray().map(ou => ou.path)
-            )
-        } catch (error) {
-            setError(i18n.t('Error loading data for data set'))
-        }
     }
     const handlePeriodChange = periodId => {
         updateSelectedPeriodId(periodId)
@@ -71,19 +38,6 @@ const AddLockExceptionForm = ({
     const handleSelectionUpdate = newSelection => {
         setSelected(newSelection)
         updateSelectedOrgUnits(newSelection)
-    }
-    const handleOrgUnitClick = (event, orgUnit) => {
-        let newSelected = null
-        if (selected.includes(orgUnit.path)) {
-            newSelected = selected.filter(oup => oup !== orgUnit.path)
-        } else {
-            newSelected = [...selected, orgUnit.path]
-        }
-        setSelected(newSelected)
-        updateSelectedOrgUnits(newSelected)
-    }
-    const handleChangeRoot = currentRoot => {
-        setCurrentRoot(currentRoot)
     }
 
     const dataSetItems = dataSets.map(dataSet => ({
@@ -114,31 +68,21 @@ const AddLockExceptionForm = ({
                 {selectedDataSet && (
                     <div>
                         <PeriodPicker
-                            d2={d2}
                             periodType={selectedDataSet.periodType}
                             onPickPeriod={handlePeriodChange}
                         />
                     </div>
                 )}
             </div>
-            {selectedDataSet &&
-                (error ? (
-                    <NoticeBox error>{error}</NoticeBox>
-                ) : (
-                    <OrganisationUnitSelectionCard
-                        d2={d2}
-                        levels={levels}
-                        groups={groups}
-                        rootWithMembers={rootWithMembers}
-                        selected={selected}
-                        currentRoot={currentRoot}
-                        dataSetId={selectedDataSet.id}
-                        onOrgUnitClick={handleOrgUnitClick}
-                        onChangeRoot={handleChangeRoot}
-                        orgUnitPaths={orgUnitPaths}
-                        onSelectionUpdate={handleSelectionUpdate}
-                    />
-                ))}
+            {selectedDataSet && (
+                <OrganisationUnitSelectionCard
+                    dataSetId={selectedDataSet.id}
+                    levels={levels}
+                    groups={groups}
+                    selected={selected}
+                    onSelectionUpdate={handleSelectionUpdate}
+                />
+            )}
         </>
     )
 }

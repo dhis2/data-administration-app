@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-21T21:44:32.217Z\n"
-"PO-Revision-Date: 2021-06-21T21:44:32.217Z\n"
+"POT-Creation-Date: 2021-06-22T17:23:57.234Z\n"
+"PO-Revision-Date: 2021-06-22T17:23:57.234Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -241,13 +241,10 @@ msgstr ""
 msgid "Adding lock exception..."
 msgstr ""
 
-msgid "Error loading data for data set"
-msgstr ""
-
 msgid "Select a data set"
 msgstr ""
 
-msgid "Loading organisation units tree..."
+msgid "Error loading data for data set"
 msgstr ""
 
 msgid "week"
