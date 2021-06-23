@@ -17,8 +17,8 @@ const AddLockExceptionForm = ({
     levels,
     selectedDataSetId,
     onSelectedDataSetIdChange,
-    updateSelectedOrgUnits,
-    updateSelectedPeriodId,
+    onSelectedOrgUnitsChange,
+    onSelectedPeriodIdChange,
 }) => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
 
@@ -32,12 +32,9 @@ const AddLockExceptionForm = ({
         onSelectedDataSetIdChange(dataSet.id)
         setSelectedOrgUnits([])
     }
-    const handlePeriodChange = periodId => {
-        updateSelectedPeriodId(periodId)
-    }
     const handleOrgUnitsSelectionUpdate = newSelection => {
         setSelectedOrgUnits(newSelection)
-        updateSelectedOrgUnits(newSelection)
+        onSelectedOrgUnitsChange(newSelection)
     }
 
     const dataSetItems = dataSets.map(dataSet => ({
@@ -69,7 +66,7 @@ const AddLockExceptionForm = ({
                     <div>
                         <PeriodPicker
                             periodType={selectedDataSet.periodType}
-                            onPickPeriod={handlePeriodChange}
+                            onPickPeriod={onSelectedPeriodIdChange}
                         />
                     </div>
                 )}
@@ -91,9 +88,9 @@ AddLockExceptionForm.propTypes = {
     dataSets: PropTypes.array.isRequired,
     groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-    updateSelectedOrgUnits: PropTypes.func.isRequired,
-    updateSelectedPeriodId: PropTypes.func.isRequired,
     onSelectedDataSetIdChange: PropTypes.func.isRequired,
+    onSelectedOrgUnitsChange: PropTypes.func.isRequired,
+    onSelectedPeriodIdChange: PropTypes.func.isRequired,
     selectedDataSetId: PropTypes.string,
 }
 

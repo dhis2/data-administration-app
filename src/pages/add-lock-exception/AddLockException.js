@@ -144,8 +144,8 @@ const AddLockException = () => {
                     dataSets={dataSets}
                     selectedDataSetId={selectedDataSetId}
                     onSelectedDataSetIdChange={setSelectedDataSetId}
-                    updateSelectedOrgUnits={setSelectedOrgUnits}
-                    updateSelectedPeriodId={setSelectedPeriodId}
+                    onSelectedOrgUnitsChange={setSelectedOrgUnits}
+                    onSelectedPeriodIdChange={setSelectedPeriodId}
                 />
                 <Button
                     className={styles.addLockExceptionButton}
