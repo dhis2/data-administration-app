@@ -33,7 +33,7 @@
         "@dhis2/app-runtime-adapter-d2": "^1.0.2",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^6.5.4",
+        "@dhis2/ui": "^6.10.2",
         "classnames": "^2.2.5",
         "d2": "^31.9.0",
         "d2-ui": "^29.0.35",
