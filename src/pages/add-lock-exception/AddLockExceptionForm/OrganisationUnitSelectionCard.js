@@ -52,9 +52,8 @@ const OrganisationUnitSelectionCard = ({
         refetch({ dataSetId })
     }, [dataSetId])
 
-    const handleOrgUnitClick = ({ path, selected }) => {
-        const root = path.split('/')[0]
-        setCurrentRoot(root)
+    const handleOrgUnitClick = ({ selected, ...currentRoot }) => {
+        setCurrentRoot(currentRoot)
         onSelectionUpdate(selected)
     }
 
