@@ -1,3 +1,8 @@
 .selectsContainer {
     display: flex;
 }
+
+.dataSetSelect {
+    min-width: 360px;
+    margin-right: var(--spacers-dp16);
+}

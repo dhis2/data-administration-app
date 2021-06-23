@@ -36,7 +36,6 @@
         "@dhis2/ui": "^6.10.2",
         "classnames": "^2.2.5",
         "d2": "^31.9.0",
-        "d2-ui": "^29.0.35",
         "eslint-plugin-cypress": "^2.11.3",
         "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",

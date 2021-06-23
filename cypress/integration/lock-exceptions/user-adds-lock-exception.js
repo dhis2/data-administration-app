@@ -41,10 +41,10 @@ Then('the user is sent to the add lock exception page', () => {
 })
 
 When('the user selects a data set', () => {
-    cy.getWithDataTest('{add-lock-exception-select-data-set}')
-        .find('.d2-ui-selectfield')
-        .click()
-    cy.findByRole('menuitem', { name: 'ART monthly summary' }).click()
+    cy.getWithDataTest('{add-lock-exception-select-data-set}').click()
+    cy.getWithDataTest('{dhis2-uicore-singleselectoption}')
+        .first()
+        .click({ force: true })
 })
 
 Then('organisation units are fetched', () => {

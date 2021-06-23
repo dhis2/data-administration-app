@@ -1,15 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
-import SelectField from 'd2-ui/lib/select-field/SelectField'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './AddLockExceptionForm.module.css'
 import OrganisationUnitSelectionCard from './OrganisationUnitSelectionCard'
 import PeriodPicker from './PeriodPicker'
-
-const d2UiSelectStyleOverride = {
-    minWidth: 360,
-    marginRight: 20,
-}
 
 const AddLockExceptionForm = ({
     dataSets,
@@ -22,12 +17,12 @@ const AddLockExceptionForm = ({
 }) => {
     const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
 
-    const handleDataSetChange = async dataSet => {
-        if (selectedDataSetId !== null && dataSet.id === selectedDataSetId) {
+    const handleDataSetChange = async ({ selected: dataSetId }) => {
+        if (selectedDataSetId !== null && dataSetId === selectedDataSetId) {
             return
         }
 
-        onSelectedDataSetIdChange(dataSet.id)
+        onSelectedDataSetIdChange(dataSetId)
         setSelectedOrgUnits([])
     }
     const handleOrgUnitsSelectionUpdate = newSelection => {
@@ -36,27 +31,27 @@ const AddLockExceptionForm = ({
     }
 
     const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
-    const dataSetItems = dataSets.map(dataSet => ({
-        id: dataSet.id,
-        name: dataSet.displayName,
-    }))
 
     return (
         <>
             <div className={styles.selectsContainer}>
-                <div data-test="add-lock-exception-select-data-set">
-                    <SelectField
-                        style={d2UiSelectStyleOverride}
-                        label={
-                            selectedDataSetId
-                                ? i18n.t('Data set')
-                                : i18n.t('Select a data set')
-                        }
-                        items={dataSetItems}
-                        onChange={handleDataSetChange}
-                        value={selectedDataSetId}
-                    />
-                </div>
+                <SingleSelectField
+                    className={styles.dataSetSelect}
+                    label={i18n.t('Data set')}
+                    placeholder={i18n.t('Select a data set')}
+                    selected={selectedDataSetId}
+                    filterable
+                    onChange={handleDataSetChange}
+                    dataTest="add-lock-exception-select-data-set"
+                >
+                    {dataSets.map(ds => (
+                        <SingleSelectOption
+                            key={ds.id}
+                            label={ds.displayName}
+                            value={ds.id}
+                        />
+                    ))}
+                </SingleSelectField>
                 {selectedDataSetId && (
                     <div>
                         <PeriodPicker
