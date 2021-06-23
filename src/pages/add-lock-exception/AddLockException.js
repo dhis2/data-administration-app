@@ -63,7 +63,7 @@ const AddLockException = () => {
     const [mutate, dataMutation] = useDataMutation(mutation, {
         onComplete: () => {
             successAlert.show()
-            history.push('/lock-exception')
+            history.push('/lock-exceptions')
         },
         onError: error => {
             errorAlert.show({ error })
