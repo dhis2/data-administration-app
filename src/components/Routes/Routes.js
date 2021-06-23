@@ -19,10 +19,10 @@ const Routes = () => (
             />
         ))}
         <Route
-            path="/lock-exception/batch-deletion"
+            path="/lock-exceptions/batch-deletion"
             component={BatchDeleteLockExceptions}
         />
-        <Route path="/lock-exception/add" component={AddLockException} />
+        <Route path="/lock-exceptions/add" component={AddLockException} />
         <Redirect from="*" to="/" />
     </Switch>
 )
