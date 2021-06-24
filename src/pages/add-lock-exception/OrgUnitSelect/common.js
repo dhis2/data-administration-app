@@ -18,8 +18,8 @@ function removeFromSelection(orgUnits) {
     this.props.onUpdateSelection([...newSelection])
 }
 
-function handleChangeSelection(event) {
-    this.setState({ selection: event.target.value })
+function handleChangeSelection({ selected }) {
+    this.setState({ selection: selected })
 }
 
 export { addToSelection, removeFromSelection, handleChangeSelection }

@@ -95,39 +95,36 @@ const OrganisationUnitSelectionCard = ({
                 />
             </div>
             <div className={styles.right}>
-                <div>
-                    <div>
-                        {currentRoot
-                            ? i18n.t(
-                                  'For organisation units within {{organisationUnitName}}:',
-                                  {
-                                      organisationUnitName:
-                                          currentRoot.displayName,
-                                  }
-                              )
-                            : i18n.t('For all organisation units:')}
-                    </div>
-                    <OrgUnitSelectByLevel
-                        d2={d2}
-                        levels={levels}
-                        selected={selected}
-                        currentRoot={currentRoot}
-                        onUpdateSelection={onSelectionUpdate}
-                    />
-                    <OrgUnitSelectByGroup
-                        d2={d2}
-                        groups={groups}
-                        selected={selected}
-                        currentRoot={currentRoot}
-                        onUpdateSelection={onSelectionUpdate}
-                    />
-                    <OrgUnitSelectAll
-                        d2={d2}
-                        selected={selected}
-                        currentRoot={currentRoot}
-                        onUpdateSelection={onSelectionUpdate}
-                    />
+                <div className={styles.currentRoot}>
+                    {currentRoot
+                        ? i18n.t(
+                              'For organisation units within {{organisationUnitName}}:',
+                              {
+                                  organisationUnitName: currentRoot.displayName,
+                              }
+                          )
+                        : i18n.t('For all organisation units:')}
                 </div>
+                <OrgUnitSelectByLevel
+                    d2={d2}
+                    levels={levels}
+                    selected={selected}
+                    currentRoot={currentRoot}
+                    onUpdateSelection={onSelectionUpdate}
+                />
+                <OrgUnitSelectByGroup
+                    d2={d2}
+                    groups={groups}
+                    selected={selected}
+                    currentRoot={currentRoot}
+                    onUpdateSelection={onSelectionUpdate}
+                />
+                <OrgUnitSelectAll
+                    d2={d2}
+                    selected={selected}
+                    currentRoot={currentRoot}
+                    onUpdateSelection={onSelectionUpdate}
+                />
             </div>
         </div>
     )

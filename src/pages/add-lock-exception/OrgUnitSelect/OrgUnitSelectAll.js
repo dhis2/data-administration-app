@@ -3,6 +3,7 @@ import { ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { addToSelection, removeFromSelection } from './common'
+import styles from './OrgUnitSelectAll.module.css'
 
 class OrgUnitSelectAll extends React.Component {
     constructor(props) {
@@ -70,7 +71,7 @@ class OrgUnitSelectAll extends React.Component {
 
     render() {
         return (
-            <ButtonStrip>
+            <ButtonStrip className={styles.container}>
                 <Button
                     onClick={this.handleSelectAll}
                     disabled={this.state.loading}

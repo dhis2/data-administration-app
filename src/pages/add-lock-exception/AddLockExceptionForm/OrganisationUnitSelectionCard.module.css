@@ -1,3 +1,11 @@
+.organisationUnitSelectionCard {
+    display: flex;
+    color: var(--colors-grey900);
+    box-shadow: 0 0 0 1px var(--colors-grey500);
+    margin-top: var(--spacers-dp8);
+    padding: var(--spacers-dp12)
+}
+
 .organisationUnitTree {
     flex: 1 0;
     height: 280px;
@@ -11,10 +19,7 @@
     margin-left: 1rem;
 }
 
-.organisationUnitSelectionCard {
-    display: flex;
-    color: var(--colors-grey900);
-    box-shadow: 0 0 0 1px var(--colors-grey500);
-    margin-top: var(--spacers-dp8);
-    padding: var(--spacers-dp12)
+.currentRoot {
+    margin-bottom: var(--spacers-dp16);
+    font-weight: 500;
 }

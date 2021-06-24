@@ -2,17 +2,19 @@ import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, Button, ButtonStrip } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styles from './Controls.module.css'
 
-const Controls = ({ loading, disabled, onSelect, onDeselect }) => (
-    <div
-        style={{
-            position: 'absolute',
-            display: 'inline-block',
-            top: 24,
-            marginLeft: 16,
-        }}
-    >
-        {loading && <CircularLoader small />}
+const Controls = ({ loading, disabled, onSelect, onDeselect }) => {
+    if (loading) {
+        return (
+            <div className={styles.loadingContainer}>
+                <CircularLoader small />
+                {i18n.t('Updating selection...')}
+            </div>
+        )
+    }
+
+    return (
         <ButtonStrip>
             <Button onClick={onSelect} disabled={disabled}>
                 {i18n.t('Select')}
@@ -21,8 +23,8 @@ const Controls = ({ loading, disabled, onSelect, onDeselect }) => (
                 {i18n.t('Deselect')}
             </Button>
         </ButtonStrip>
-    </div>
-)
+    )
+}
 
 Controls.propTypes = {
     disabled: PropTypes.bool.isRequired,

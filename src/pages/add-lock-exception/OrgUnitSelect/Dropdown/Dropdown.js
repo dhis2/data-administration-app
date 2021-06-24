@@ -1,27 +1,32 @@
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Controls from './Controls'
-import D2UiDropdown from './D2UiDropdown'
+import styles from './Dropdown.module.css'
 
 const Dropdown = ({
     menuItems,
     value,
     label,
+    placeholder,
     loading,
     onChange,
     onSelect,
     onDeselect,
 }) => (
-    // The minHeight on the wrapping div below is there to compensate for the fact that a
-    // Material-UI SelectField will change height depending on whether or not it has a value
-    <div style={{ position: 'relative', minHeight: 89 }}>
-        <D2UiDropdown
-            menuItems={menuItems}
-            value={value}
-            floatingLabelText={label}
+    <div className={styles.container}>
+        <SingleSelectField
+            label={label}
+            placeholder={placeholder}
+            selected={value}
             disabled={loading}
+            filterable
             onChange={onChange}
-        />
+        >
+            {menuItems.map(({ id, displayName }) => (
+                <SingleSelectOption key={id} label={displayName} value={id} />
+            ))}
+        </SingleSelectField>
         <Controls
             loading={loading}
             disabled={loading || !value}
@@ -34,6 +39,7 @@ const Dropdown = ({
 Dropdown.propTypes = {
     label: PropTypes.string.isRequired,
     menuItems: PropTypes.array.isRequired,
+    placeholder: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,

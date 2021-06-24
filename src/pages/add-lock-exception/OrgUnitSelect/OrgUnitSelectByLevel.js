@@ -97,13 +97,17 @@ class OrgUnitSelectByLevel extends React.Component {
 
         const menuItems = this.props.levels
             .filter(level => level.level >= currentRootLevel)
-            .map(level => ({ id: level.level, displayName: level.displayName }))
+            .map(level => ({
+                id: level.level.toString(),
+                displayName: level.displayName,
+            }))
 
         return (
             <Dropdown
                 menuItems={menuItems}
                 value={this.state.selection}
                 label={i18n.t('Organisation unit level')}
+                placeholder={i18n.t('Select an organisation unit level')}
                 loading={this.state.loading}
                 onChange={this.handleChangeSelection}
                 onSelect={this.handleSelect}

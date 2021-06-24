@@ -29,6 +29,7 @@ class OrgUnitSelectByGroup extends React.Component {
     getOrgUnitsForGroup = async groupId => {
         const { d2 } = this.props
         // TODO: Better error handling and set loading to false if encountered error
+        // TODO: Cache when current root selected
         if (this.props.currentRoot) {
             this.setState({ loading: true })
             const orgUnits = (
@@ -75,6 +76,7 @@ class OrgUnitSelectByGroup extends React.Component {
                 menuItems={this.props.groups}
                 value={this.state.selection}
                 label={i18n.t('Organisation unit group')}
+                placeholder={i18n.t('Select an organisation unit group')}
                 loading={this.state.loading}
                 onChange={this.handleChangeSelection}
                 onSelect={this.handleSelect}

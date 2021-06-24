@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    grid-template-columns: 300px auto 1fr;
+    align-items: end;
+    grid-gap: var(--spacers-dp16);
+    margin-bottom: var(--spacers-dp16);
+}
