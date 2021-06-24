@@ -5,10 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-22T17:23:57.234Z\n"
-"PO-Revision-Date: 2021-06-22T17:23:57.234Z\n"
+"POT-Creation-Date: 2021-06-24T00:12:50.992Z\n"
+"PO-Revision-Date: 2021-06-24T00:12:50.992Z\n"
 
 msgid "Open user guide"
+msgstr ""
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
 msgstr ""
 
 msgid "Data set"
@@ -207,9 +213,6 @@ msgstr ""
 msgid "Lock Exception Management"
 msgstr ""
 
-msgid "Lock Exception"
-msgstr ""
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data "
 "entry forms."
@@ -230,9 +233,6 @@ msgid "Lock exception added"
 msgstr ""
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Go back to all lock exceptions"
 msgstr ""
 
 msgid "Add lock exception"

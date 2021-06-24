@@ -1,14 +1,11 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
-import classnames from 'classnames'
-import FontIcon from 'material-ui/FontIcon'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader'
 import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable'
 import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal'
 import { parseLockExceptions } from '../../parse-lock-exceptions'
-import lockExceptionsStyles from '../lock-exceptions/LockExceptions.module.css'
 
 const query = {
     batchedLockExceptions: {
@@ -43,30 +40,7 @@ const BatchDeleteLockExceptions = () => {
 
     return (
         <>
-            <div className={lockExceptionsStyles.headerContainer}>
-                <Link to="/lock-exceptions">
-                    <span title={i18n.t('Go back to all lock exceptions')}>
-                        <FontIcon
-                            className={classnames(
-                                'material-icons',
-                                lockExceptionsStyles.backArrowIcon
-                            )}
-                        >
-                            arrow_back
-                        </FontIcon>
-                    </span>
-                </Link>
-                <h1 className={lockExceptionsStyles.header}>
-                    <span>{i18n.t('Lock Exception')}</span>
-                    <span className={lockExceptionsStyles.headerDivider}>
-                        {' '}
-                        |{' '}
-                    </span>
-                    <span className={lockExceptionsStyles.subHeader}>
-                        {i18n.t('Batch Deletion')}
-                    </span>
-                </h1>
-            </div>
+            <LockExceptionsSubpageHeader title={i18n.t('Batch Deletion')} />
             {error ? (
                 <NoticeBox error>{error.message}</NoticeBox>
             ) : loading ? (

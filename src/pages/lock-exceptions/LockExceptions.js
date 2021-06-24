@@ -8,7 +8,6 @@ import {
     Pagination,
     ButtonStrip,
 } from '@dhis2/ui'
-import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -84,12 +83,7 @@ const LockExceptions = ({ sectionKey }) => {
 
     return (
         <div className={styles.lockExceptions}>
-            <div
-                className={classnames(
-                    styles.headerContainer,
-                    styles.flexSpaceBetween
-                )}
-            >
+            <div className={styles.headerContainer}>
                 <PageHeader
                     sectionKey={sectionKey}
                     title={i18nKeys.lockExceptions.title}

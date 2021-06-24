@@ -1,0 +1,23 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacers-dp16);
+}
+
+.backArrowIcon {
+    margin-right: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.headerDivider {
+    margin: 0 10px 0 10px;
+}
+
+.subHeader {
+    font-weight: 500;
+}

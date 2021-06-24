@@ -7,11 +7,9 @@ import {
     Button,
     CircularLoader,
 } from '@dhis2/ui'
-import classnames from 'classnames'
-import FontIcon from 'material-ui/FontIcon'
 import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import lockExceptionsStyles from '../lock-exceptions/LockExceptions.module.css'
+import { useHistory } from 'react-router-dom'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader'
 import styles from './AddLockException.module.css'
 import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm'
 
@@ -113,30 +111,7 @@ const AddLockException = () => {
 
     return (
         <>
-            <div className={lockExceptionsStyles.headerContainer}>
-                <Link to="/lock-exceptions">
-                    <span title={i18n.t('Go back to all lock exceptions')}>
-                        <FontIcon
-                            className={classnames(
-                                'material-icons',
-                                lockExceptionsStyles.backArrowIcon
-                            )}
-                        >
-                            arrow_back
-                        </FontIcon>
-                    </span>
-                </Link>
-                <h1 className={lockExceptionsStyles.header}>
-                    <span>{i18n.t('Lock Exception')}</span>
-                    <span className={lockExceptionsStyles.headerDivider}>
-                        {' '}
-                        |{' '}
-                    </span>
-                    <span className={lockExceptionsStyles.subHeader}>
-                        {i18n.t('Add lock exception')}
-                    </span>
-                </h1>
-            </div>
+            <LockExceptionsSubpageHeader title={i18n.t('Add lock exception')} />
             <Card className={styles.card}>
                 <AddLockExceptionForm
                     levels={organisationUnitLevels}
