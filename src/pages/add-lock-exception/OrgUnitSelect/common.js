@@ -1,23 +1,21 @@
-function addToSelection(orgUnits) {
-    const orgUnitArray = Array.isArray(orgUnits) ? orgUnits : orgUnits.toArray()
-    const addedOus = orgUnitArray.filter(
-        ou => !this.props.selected.includes(ou.path)
-    )
+const mergeUnique = (arr1, arr2) => {
+    return [...new Set(arr1.concat(arr2))]
+}
 
-    this.props.onUpdateSelection(
-        this.props.selected.concat(addedOus.map(ou => ou.path))
+function addToSelection(orgUnits) {
+    const newSelection = mergeUnique(
+        this.props.selected,
+        orgUnits.map(ou => ou.path)
     )
+    this.props.onUpdateSelection(newSelection)
 }
 
 function removeFromSelection(orgUnits) {
-    const orgUnitArray = Array.isArray(orgUnits) ? orgUnits : orgUnits.toArray()
-    const removedOus = orgUnitArray.filter(ou =>
-        this.props.selected.includes(ou.path)
-    )
-    const removed = removedOus.map(ou => ou.path)
-    const selectedOus = this.props.selected.filter(ou => !removed.includes(ou))
-
-    this.props.onUpdateSelection(selectedOus)
+    const newSelection = new Set(this.props.selected)
+    orgUnits.forEach(ou => {
+        newSelection.delete(ou.path)
+    })
+    this.props.onUpdateSelection([...newSelection])
 }
 
 function handleChangeSelection(event) {
