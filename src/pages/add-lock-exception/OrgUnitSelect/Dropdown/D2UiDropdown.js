@@ -19,23 +19,26 @@ function createCallbackWithFakeEventFromMaterialSelectField(callback) {
     return (event, index, value) => callback({ target: { value } })
 }
 
-function D2UiDropdown({ onChange, value, disabled, menuItems, ...other }) {
-    const menuItemArray = Array.isArray(menuItems)
-        ? menuItems
-        : menuItems.toArray()
-    const hasOptions = menuItemArray.length > 0
+function D2UiDropdown({
+    menuItems,
+    value,
+    floatingLabelText,
+    disabled,
+    onChange,
+}) {
+    const hasOptions = menuItems.length > 0
     return (
         <SelectField
-            value={hasOptions ? value : 1}
             fullWidth={false}
+            value={hasOptions ? value : 1}
+            floatingLabelText={floatingLabelText}
+            disabled={!hasOptions || disabled}
             onChange={createCallbackWithFakeEventFromMaterialSelectField(
                 onChange
             )}
-            disabled={!hasOptions || disabled}
-            {...other}
         >
             {hasOptions ? (
-                renderMenuItems(menuItemArray)
+                renderMenuItems(menuItems)
             ) : (
                 <MenuItem value={1} primaryText="-" />
             )}
@@ -44,14 +47,12 @@ function D2UiDropdown({ onChange, value, disabled, menuItems, ...other }) {
 }
 
 D2UiDropdown.propTypes = {
+    floatingLabelText: PropTypes.string.isRequired,
+    menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+        .isRequired,
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
-    menuItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.bool,
-    ]),
+    value: PropTypes.string,
 }
 
 D2UiDropdown.defaultProps = {

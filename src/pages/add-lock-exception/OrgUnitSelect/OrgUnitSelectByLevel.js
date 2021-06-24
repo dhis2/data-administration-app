@@ -22,13 +22,12 @@ class OrgUnitSelectByLevel extends React.Component {
         this.removeFromSelection = removeFromSelection.bind(this)
         this.handleChangeSelection = handleChangeSelection.bind(this)
 
-        this.getOrgUnitsForLevel = this.getOrgUnitsForLevel.bind(this)
         this.handleSelect = this.handleSelect.bind(this)
         this.handleDeselect = this.handleDeselect.bind(this)
     }
 
-    getOrgUnitsForLevel(level, ignoreCache = false) {
-        const d2 = this.props.d2
+    getOrgUnitsForLevel = level => {
+        const { d2 } = this.props
         return new Promise(resolve => {
             if (this.props.currentRoot) {
                 const rootLevel =
@@ -52,7 +51,7 @@ class OrgUnitSelectByLevel extends React.Component {
                         this.setState({ loading: false })
                         resolve(orgUnitArray)
                     })
-            } else if (!ignoreCache && this.levelCache.has(level)) {
+            } else if (this.levelCache.has(level)) {
                 resolve(this.levelCache.get(level).slice())
             } else {
                 this.setState({ loading: true })
@@ -91,24 +90,20 @@ class OrgUnitSelectByLevel extends React.Component {
     }
 
     render() {
-        const currentRoot = this.props.currentRoot
+        const { currentRoot } = this.props
         const currentRootLevel = currentRoot
             ? currentRoot.level || currentRoot.path.match(/\//g).length
             : 1
 
-        const menuItems = (Array.isArray(this.props.levels)
-            ? this.props.levels
-            : this.props.levels.toArray()
-        )
+        const menuItems = this.props.levels
             .filter(level => level.level >= currentRootLevel)
             .map(level => ({ id: level.level, displayName: level.displayName }))
-        const label = i18n.t('Organisation unit level')
 
         return (
             <Dropdown
                 menuItems={menuItems}
                 value={this.state.selection}
-                label={label}
+                label={i18n.t('Organisation unit level')}
                 loading={this.state.loading}
                 onChange={this.handleChangeSelection}
                 onSelect={this.handleSelect}
