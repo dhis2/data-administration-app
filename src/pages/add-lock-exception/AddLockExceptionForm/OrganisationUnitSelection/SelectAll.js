@@ -97,7 +97,7 @@ SelectAll.propTypes = {
 
     // Whenever the selection changes, onSelectedChange will be called with
     // one argument: The new array of selected organisation unit paths
-    onSelectedChange: PropTypes.func.isRequired,
+    // onSelectedChange: PropTypes.func.isRequired,
 
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection

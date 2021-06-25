@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-06-24T22:34:47.799Z\n"
-"PO-Revision-Date: 2021-06-24T22:34:47.799Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
+"PO-Revision-Date: 2021-06-25T16:58:32.355Z\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -244,7 +244,34 @@ msgstr ""
 msgid "Select a data set"
 msgstr ""
 
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Deselect"
+msgstr ""
+
 msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr ""
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr ""
+
+msgid "Select an organisation unit level"
 msgstr ""
 
 msgid "week"
@@ -347,33 +374,6 @@ msgid "apr-sep"
 msgstr ""
 
 msgid "oct-mar"
-msgstr ""
-
-msgid "Updating selection..."
-msgstr ""
-
-msgid "Select"
-msgstr ""
-
-msgid "Deselect"
-msgstr ""
-
-msgid "Select All Org Units"
-msgstr ""
-
-msgid "Deselect All Org Units"
-msgstr ""
-
-msgid "Organisation unit group"
-msgstr ""
-
-msgid "Select an organisation unit group"
-msgstr ""
-
-msgid "Organisation unit level"
-msgstr ""
-
-msgid "Select an organisation unit level"
 msgstr ""
 
 msgid "Number of last years of data to include"

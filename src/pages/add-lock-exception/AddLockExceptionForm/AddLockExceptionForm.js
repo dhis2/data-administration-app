@@ -1,9 +1,9 @@
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './AddLockExceptionForm.module.css'
-import OrganisationUnitSelection from './OrganisationUnitSelection'
+import OrganisationUnitSelection from './OrganisationUnitSelection/OrganisationUnitSelection'
 import PeriodPicker from './PeriodPicker'
 
 const AddLockExceptionForm = ({
@@ -67,8 +67,8 @@ const AddLockExceptionForm = ({
 
 AddLockExceptionForm.propTypes = {
     dataSets: PropTypes.array.isRequired,
-    groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-    levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    groups: PropTypes.array.isRequired,
+    levels: PropTypes.array.isRequired,
     selectedOrgUnits: PropTypes.array.isRequired,
     onSelectedDataSetIdChange: PropTypes.func.isRequired,
     onSelectedOrgUnitsChange: PropTypes.func.isRequired,

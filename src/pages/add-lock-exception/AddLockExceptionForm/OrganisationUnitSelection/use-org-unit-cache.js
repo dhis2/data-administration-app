@@ -1,8 +1,7 @@
 // TODO: Unit tests
-
 import { useState } from 'react'
 
-export const useOrgUnitCache = () => {
+const useOrgUnitCache = () => {
     const [cache, setCache] = useState(new Map())
 
     return {
@@ -17,27 +16,8 @@ export const useOrgUnitCache = () => {
             setCache(cache)
         },
         get: (currentRootId = null, itemId) =>
-            cache.get(currenRootId).get(itemId),
+            cache.get(currentRootId).get(itemId),
     }
 }
 
-const mergeUnique = (arr1, arr2) => {
-    return [...new Set(arr1.concat(arr2))]
-}
-
-// TODO: Move to org unit selection so `selected` prop is single source of truth
-export const useSelection = () => {
-    // const [selection, setSelection] = useState(null)
-
-    return {
-        get: () => selection,
-        add: () => {
-            const newSelection = mergeUnique(
-                this.props.selected,
-                orgUnits.map(ou => ou.path)
-            )
-            return newSelection
-        },
-        remove,
-    }
-}
+export default useOrgUnitCache

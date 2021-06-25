@@ -4,7 +4,7 @@ import React from 'react'
 import { removeFromSelection, handleChangeSelection } from './common'
 import Dropdown from './Dropdown/Dropdown'
 
-class OrgUnitSelectByLevel extends React.Component {
+class SelectByLevel extends React.Component {
     constructor(props) {
         super(props)
 
@@ -113,19 +113,19 @@ class OrgUnitSelectByLevel extends React.Component {
     }
 }
 
-OrgUnitSelectByLevel.propTypes = {
+SelectByLevel.propTypes = {
     d2: PropTypes.object.isRequired,
 
-    // levels is an array of either ModelCollection objects or plain objects,
-    // where each object should contain `level` and `displayName` properties
-    levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    // levels is an array of objects, where each object should contain `level`
+    // and `displayName` properties
+    levels: PropTypes.array.isRequired,
 
     // selected is an array of selected organisation unit IDs
     selected: PropTypes.array.isRequired,
 
     // Whenever the selection changes, onSelectedChange will be called with
     // one argument: The new array of selected organisation unit paths
-    onSelectedChange: PropTypes.func.isRequired,
+    // onSelectedChange: PropTypes.func.isRequired,
 
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
@@ -150,4 +150,4 @@ OrgUnitSelectByLevel.propTypes = {
     },
 }
 
-export default OrgUnitSelectByLevel
+export default SelectByLevel

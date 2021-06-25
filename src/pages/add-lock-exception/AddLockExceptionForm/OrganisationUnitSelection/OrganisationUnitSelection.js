@@ -10,9 +10,18 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import styles from './OrganisationUnitSelection.module.css'
-import SelectAll from './SelectAll'
+// import SelectAll from './SelectAll'
 import SelectByGroup from './SelectByGroup'
-import SelectByLevel from './SelectByLevel'
+// import SelectByLevel from './SelectByLevel'
+
+const union = (arr1, arr2) => [...new Set(arr1.concat(arr2))]
+const difference = (arr1, arr2) => {
+    const set = new Set(arr1)
+    arr2.forEach(item => {
+        set.delete(item)
+    })
+    return [...set]
+}
 
 const query = {
     rootWithMembers: {
@@ -37,7 +46,7 @@ const query = {
 
 const OrganisationUnitSelection = ({
     dataSetId,
-    levels,
+    // levels,
     groups,
     selected,
     onSelectedChange,
@@ -55,7 +64,15 @@ const OrganisationUnitSelection = ({
 
     const handleOrgUnitClick = ({ selected, ...currentRoot }) => {
         setCurrentRoot(currentRoot)
-        onSelectionUpdate(selected)
+        onSelectedChange(selected)
+    }
+    const handleSelect = orgUnitPaths => {
+        const newSelected = union(selected, orgUnitPaths)
+        onSelectedChange(newSelected)
+    }
+    const handleDeselect = orgUnitPaths => {
+        const newSelected = difference(selected, orgUnitPaths)
+        onSelectedChange(newSelected)
     }
 
     if (loading || !called) {
@@ -88,6 +105,7 @@ const OrganisationUnitSelection = ({
                 <OrganisationUnitTree
                     roots={[rootWithMembers.id]}
                     initiallyExpanded={[rootWithMembers.path]}
+                    highlighted={currentRoot ? [currentRoot.id] : []}
                     filter={orgUnitPaths}
                     selected={selected}
                     onChange={handleOrgUnitClick}
@@ -104,25 +122,30 @@ const OrganisationUnitSelection = ({
                           )
                         : i18n.t('For all organisation units:')}
                 </div>
-                <SelectByLevel
+                {/*<SelectByLevel
                     d2={d2}
                     levels={levels}
                     currentRoot={currentRoot}
                     selected={selected}
-                    onSelectedChange={onSelectedChange}
-                />
+
+                    onSelect={handleSelect}
+                    onDeselect={handleDeselect}
+                    />*/}
                 <SelectByGroup
+                    d2={d2}
                     groups={groups}
                     currentRootId={currentRoot?.id}
-                    selected={selected}
-                    onSelectedChange={onSelectedChange}
+                    onSelect={handleSelect}
+                    onDeselect={handleDeselect}
                 />
-                <SelectAll
+                {/*<SelectAll
                     d2={d2}
                     currentRoot={currentRoot}
                     selected={selected}
-                    onSelectedChange={onSelectedChange}
-                />
+
+                    onSelect={handleSelect}
+                    onDeselect={handleDeselect}
+                />*/}
             </div>
         </div>
     )
@@ -130,10 +153,10 @@ const OrganisationUnitSelection = ({
 
 OrganisationUnitSelection.propTypes = {
     dataSetId: PropTypes.string.isRequired,
-    groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-    levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    groups: PropTypes.array.isRequired,
+    // levels: PropTypes.array.isRequired,
+    selected: PropTypes.array.isRequired,
     onSelectedChange: PropTypes.func.isRequired,
-    selected: PropTypes.array,
 }
 
 export default OrganisationUnitSelection

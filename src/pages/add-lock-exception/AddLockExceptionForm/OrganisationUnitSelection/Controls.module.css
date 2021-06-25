@@ -5,3 +5,8 @@
     grid-gap: var(--spacers-dp16);
     margin-bottom: var(--spacers-dp16);
 }
+
+.updatingSelection {
+    display: flex;
+    align-items: center;
+}
