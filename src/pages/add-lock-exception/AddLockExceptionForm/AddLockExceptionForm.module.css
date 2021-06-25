@@ -1,5 +1,6 @@
 .selectsContainer {
     display: flex;
+    margin-bottom: var(--spacers-dp16);
 }
 
 .dataSetSelect {

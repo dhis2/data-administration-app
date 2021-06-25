@@ -3,9 +3,9 @@ import { ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { addToSelection, removeFromSelection } from './common'
-import styles from './OrgUnitSelectAll.module.css'
+import styles from './SelectAll.module.css'
 
-class OrgUnitSelectAll extends React.Component {
+class SelectAll extends React.Component {
     constructor(props) {
         super(props)
 
@@ -26,7 +26,7 @@ class OrgUnitSelectAll extends React.Component {
                 this.addToSelection(orgUnits)
             })
         } else if (Array.isArray(this.state.cache)) {
-            this.props.onUpdateSelection(this.state.cache.slice())
+            this.props.onSelectedChange(this.state.cache.slice())
         } else {
             this.setState({ loading: true })
 
@@ -39,7 +39,7 @@ class OrgUnitSelectAll extends React.Component {
                         loading: false,
                     })
 
-                    this.props.onUpdateSelection(ous.slice())
+                    this.props.onSelectedChange(ous.slice())
                 })
                 .catch(err => {
                     this.setState({ loading: false })
@@ -65,7 +65,7 @@ class OrgUnitSelectAll extends React.Component {
                 this.removeFromSelection(orgUnits)
             })
         } else {
-            this.props.onUpdateSelection([])
+            this.props.onSelectedChange([])
         }
     }
 
@@ -89,22 +89,19 @@ class OrgUnitSelectAll extends React.Component {
     }
 }
 
-OrgUnitSelectAll.propTypes = {
+SelectAll.propTypes = {
     d2: PropTypes.object.isRequired,
 
-    // This prop is used, but in the functions defined in `common.js`
-    /* eslint-disable react/no-unused-prop-types */
     // selected is an array of selected organisation unit IDs
     selected: PropTypes.array.isRequired,
-    /* eslint-enable react/no-unused-prop-types */
 
-    // Whenever the selection changes, onUpdateSelection will be called with
+    // Whenever the selection changes, onSelectedChange will be called with
     // one argument: The new array of selected organisation unit paths
-    onUpdateSelection: PropTypes.func.isRequired,
+    onSelectedChange: PropTypes.func.isRequired,
 
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
     currentRoot: PropTypes.object,
 }
 
-export default OrgUnitSelectAll
+export default SelectAll

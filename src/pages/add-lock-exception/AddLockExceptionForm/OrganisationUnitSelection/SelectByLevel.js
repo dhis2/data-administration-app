@@ -1,11 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {
-    addToSelection,
-    removeFromSelection,
-    handleChangeSelection,
-} from './common'
+import { removeFromSelection, handleChangeSelection } from './common'
 import Dropdown from './Dropdown/Dropdown'
 
 class OrgUnitSelectByLevel extends React.Component {
@@ -124,18 +120,12 @@ OrgUnitSelectByLevel.propTypes = {
     // where each object should contain `level` and `displayName` properties
     levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 
-    // This prop is used, but in the functions defined in `common.js`
-    /* eslint-disable react/no-unused-prop-types */
     // selected is an array of selected organisation unit IDs
     selected: PropTypes.array.isRequired,
-    /* eslint-enable react/no-unused-prop-types */
 
-    // This prop is used, but in the functions defined in `common.js`
-    /* eslint-disable react/no-unused-prop-types */
-    // Whenever the selection changes, onUpdateSelection will be called with
+    // Whenever the selection changes, onSelectedChange will be called with
     // one argument: The new array of selected organisation unit paths
-    onUpdateSelection: PropTypes.func.isRequired,
-    /* eslint-enable react/no-unused-prop-types */
+    onSelectedChange: PropTypes.func.isRequired,
 
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection

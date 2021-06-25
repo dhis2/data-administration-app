@@ -1,8 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import { is53WeekISOYear, getFirstDateOfWeek } from 'd2/period/helpers'
 import DatePicker from 'material-ui/DatePicker'
-import MenuItem from 'material-ui/MenuItem'
-import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -45,13 +44,6 @@ const periodTypeLabels = {
 
 const styles = {
     datePicker: { width: '100%' },
-    year: { width: 95, marginRight: 16 },
-    month: { width: 125 },
-    week: { width: 105 },
-    biWeek: { width: 200 },
-    biMonth: { width: 200 },
-    quarter: { width: 200 },
-    sixMonth: { width: 200 },
     line: { marginTop: 0 },
 }
 
@@ -234,8 +226,8 @@ class PeriodPicker extends React.Component {
     }
 
     renderOptionPicker(name, options) {
-        const changeState = (e, i, value) =>
-            this.setState({ [name]: value }, this.handleChange)
+        const handleChange = ({ selected }) =>
+            this.setState({ [name]: selected }, this.handleChange)
         const isInvalid =
             (name === 'week' && this.state.invalidWeek) ||
             (name === 'biWeek' && this.state.invalidBiWeek)
@@ -245,28 +237,27 @@ class PeriodPicker extends React.Component {
                 style={{ display: 'inline-block' }}
                 data-test={`period-picker-option-${name}`}
             >
-                <SelectField
-                    value={this.state[name]}
-                    onChange={changeState}
-                    style={styles[name]}
-                    floatingLabelText={this.getTranslation(name)}
-                    floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+                <SingleSelectField
+                    label={this.getTranslation(name)}
+                    selected={this.state[name]}
+                    onChange={handleChange}
+                    error={isInvalid}
                 >
                     {Object.keys(options)
                         .sort()
                         .map(value => (
-                            <MenuItem
+                            <SingleSelectOption
                                 key={value}
-                                value={value}
-                                primaryText={
+                                label={
                                     /[^0-9]/.test(options[value]) &&
                                     name !== 'biWeek'
                                         ? this.getTranslation(options[value])
                                         : options[value]
                                 }
+                                value={value}
                             />
                         ))}
-                </SelectField>
+                </SingleSelectField>
             </div>
         )
     }

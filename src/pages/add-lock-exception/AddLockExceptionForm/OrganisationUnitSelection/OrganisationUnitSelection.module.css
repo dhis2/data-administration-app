@@ -1,9 +1,7 @@
-.organisationUnitSelectionCard {
+.container {
     display: flex;
     color: var(--colors-grey900);
-    box-shadow: 0 0 0 1px var(--colors-grey500);
-    margin-top: var(--spacers-dp8);
-    padding: var(--spacers-dp12)
+    margin-bottom: var(--spacers-dp16);
 }
 
 .organisationUnitTree {

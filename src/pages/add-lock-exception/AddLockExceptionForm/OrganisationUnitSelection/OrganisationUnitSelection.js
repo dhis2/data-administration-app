@@ -9,10 +9,10 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
-import OrgUnitSelectAll from '../OrgUnitSelect/OrgUnitSelectAll'
-import OrgUnitSelectByGroup from '../OrgUnitSelect/OrgUnitSelectByGroup'
-import OrgUnitSelectByLevel from '../OrgUnitSelect/OrgUnitSelectByLevel'
-import styles from './OrganisationUnitSelectionCard.module.css'
+import styles from './OrganisationUnitSelection.module.css'
+import SelectAll from './SelectAll'
+import SelectByGroup from './SelectByGroup'
+import SelectByLevel from './SelectByLevel'
 
 const query = {
     rootWithMembers: {
@@ -35,12 +35,12 @@ const query = {
     },
 }
 
-const OrganisationUnitSelectionCard = ({
+const OrganisationUnitSelection = ({
     dataSetId,
     levels,
     groups,
     selected,
-    onSelectionUpdate,
+    onSelectedChange,
 }) => {
     const [currentRoot, setCurrentRoot] = useState(null)
     const { loading, called, error, data, refetch } = useDataQuery(query, {
@@ -78,10 +78,9 @@ const OrganisationUnitSelectionCard = ({
     const orgUnitPaths = data.dataSetMembers.organisationUnits.map(
         ou => ou.path
     )
-    // TODO: ensure only org units in orgUnitPaths can be selected by OrgSelect components
 
     return (
-        <div className={styles.organisationUnitSelectionCard}>
+        <div className={styles.container}>
             <div
                 className={styles.organisationUnitTree}
                 data-test="add-lock-exception-org-unit-tree"
@@ -105,37 +104,36 @@ const OrganisationUnitSelectionCard = ({
                           )
                         : i18n.t('For all organisation units:')}
                 </div>
-                <OrgUnitSelectByLevel
+                <SelectByLevel
                     d2={d2}
                     levels={levels}
-                    selected={selected}
                     currentRoot={currentRoot}
-                    onUpdateSelection={onSelectionUpdate}
+                    selected={selected}
+                    onSelectedChange={onSelectedChange}
                 />
-                <OrgUnitSelectByGroup
-                    d2={d2}
+                <SelectByGroup
                     groups={groups}
+                    currentRootId={currentRoot?.id}
                     selected={selected}
-                    currentRoot={currentRoot}
-                    onUpdateSelection={onSelectionUpdate}
+                    onSelectedChange={onSelectedChange}
                 />
-                <OrgUnitSelectAll
+                <SelectAll
                     d2={d2}
-                    selected={selected}
                     currentRoot={currentRoot}
-                    onUpdateSelection={onSelectionUpdate}
+                    selected={selected}
+                    onSelectedChange={onSelectedChange}
                 />
             </div>
         </div>
     )
 }
 
-OrganisationUnitSelectionCard.propTypes = {
+OrganisationUnitSelection.propTypes = {
     dataSetId: PropTypes.string.isRequired,
     groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
-    onSelectionUpdate: PropTypes.func.isRequired,
+    onSelectedChange: PropTypes.func.isRequired,
     selected: PropTypes.array,
 }
 
-export default OrganisationUnitSelectionCard
+export default OrganisationUnitSelection

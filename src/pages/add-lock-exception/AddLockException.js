@@ -118,6 +118,7 @@ const AddLockException = () => {
                     groups={organisationUnitGroups}
                     dataSets={dataSets}
                     selectedDataSetId={selectedDataSetId}
+                    selectedOrgUnits={selectedOrgUnits}
                     onSelectedDataSetIdChange={setSelectedDataSetId}
                     onSelectedOrgUnitsChange={setSelectedOrgUnits}
                     onSelectedPeriodIdChange={setSelectedPeriodId}

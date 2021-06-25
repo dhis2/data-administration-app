@@ -3,7 +3,7 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './AddLockExceptionForm.module.css'
-import OrganisationUnitSelectionCard from './OrganisationUnitSelectionCard'
+import OrganisationUnitSelection from './OrganisationUnitSelection'
 import PeriodPicker from './PeriodPicker'
 
 const AddLockExceptionForm = ({
@@ -11,25 +11,18 @@ const AddLockExceptionForm = ({
     groups,
     levels,
     selectedDataSetId,
+    selectedOrgUnits,
     onSelectedDataSetIdChange,
     onSelectedOrgUnitsChange,
     onSelectedPeriodIdChange,
 }) => {
-    const [selectedOrgUnits, setSelectedOrgUnits] = useState([])
-
-    const handleDataSetChange = async ({ selected: dataSetId }) => {
+    const handleDataSetChange = ({ selected: dataSetId }) => {
         if (selectedDataSetId !== null && dataSetId === selectedDataSetId) {
             return
         }
-
         onSelectedDataSetIdChange(dataSetId)
-        setSelectedOrgUnits([])
+        onSelectedOrgUnitsChange([])
     }
-    const handleOrgUnitsSelectionUpdate = newSelection => {
-        setSelectedOrgUnits(newSelection)
-        onSelectedOrgUnitsChange(newSelection)
-    }
-
     const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
 
     return (
@@ -53,21 +46,19 @@ const AddLockExceptionForm = ({
                     ))}
                 </SingleSelectField>
                 {selectedDataSetId && (
-                    <div>
-                        <PeriodPicker
-                            periodType={selectedDataSet.periodType}
-                            onPickPeriod={onSelectedPeriodIdChange}
-                        />
-                    </div>
+                    <PeriodPicker
+                        periodType={selectedDataSet.periodType}
+                        onPickPeriod={onSelectedPeriodIdChange}
+                    />
                 )}
             </div>
             {selectedDataSetId && (
-                <OrganisationUnitSelectionCard
+                <OrganisationUnitSelection
                     dataSetId={selectedDataSetId}
                     levels={levels}
                     groups={groups}
                     selected={selectedOrgUnits}
-                    onSelectionUpdate={handleOrgUnitsSelectionUpdate}
+                    onSelectedChange={onSelectedOrgUnitsChange}
                 />
             )}
         </>
@@ -78,6 +69,7 @@ AddLockExceptionForm.propTypes = {
     dataSets: PropTypes.array.isRequired,
     groups: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
     levels: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+    selectedOrgUnits: PropTypes.array.isRequired,
     onSelectedDataSetIdChange: PropTypes.func.isRequired,
     onSelectedOrgUnitsChange: PropTypes.func.isRequired,
     onSelectedPeriodIdChange: PropTypes.func.isRequired,
