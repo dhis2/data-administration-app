@@ -78,14 +78,11 @@ const SelectByLevel = ({ d2, levels, currentRoot, onSelect, onDeselect }) => {
 
 SelectByLevel.propTypes = {
     d2: PropTypes.object.isRequired,
-
     // levels is an array of objects, where each object should contain `level`
     // and `displayName` properties
     levels: PropTypes.array.isRequired,
-
     onDeselect: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
-
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
     currentRoot: (props, propName) => {

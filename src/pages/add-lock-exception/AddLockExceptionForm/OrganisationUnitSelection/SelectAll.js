@@ -1,107 +1,82 @@
 import i18n from '@dhis2/d2-i18n'
-import { ButtonStrip, Button } from '@dhis2/ui'
+import { CircularLoader, ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React from 'react'
-import { addToSelection, removeFromSelection } from './common'
+import React, { useState } from 'react'
 import styles from './SelectAll.module.css'
+import useOrgUnitCache from './use-org-unit-cache'
 
-class SelectAll extends React.Component {
-    constructor(props) {
-        super(props)
+const SelectAll = ({
+    d2,
+    currentRootId,
+    allOrgUnitPaths,
+    onSelect,
+    onDeselect,
+}) => {
+    const [loading, setLoading] = useState(false)
+    const orgUnitCache = useOrgUnitCache()
 
-        this.state = {
-            loading: false,
-            cache: null,
-        }
-
-        this.addToSelection = addToSelection.bind(this)
-        this.removeFromSelection = removeFromSelection.bind(this)
-    }
-
-    handleSelectAll = () => {
-        if (this.props.currentRoot) {
-            this.setState({ loading: true })
-            this.getDescendantOrgUnits().then(orgUnits => {
-                this.setState({ loading: false })
-                this.addToSelection(orgUnits)
-            })
-        } else if (Array.isArray(this.state.cache)) {
-            this.props.onSelectedChange(this.state.cache.slice())
+    const getOrgUnitPathsForCurrentRoot = async () => {
+        if (!currentRootId) {
+            return allOrgUnitPaths
+        } else if (orgUnitCache.has(currentRootId, null)) {
+            return orgUnitCache.get(currentRootId, null)
         } else {
-            this.setState({ loading: true })
+            setLoading(true)
 
-            this.props.d2.models.organisationUnits
-                .list({ fields: 'id,path', paging: false })
-                .then(orgUnits => {
-                    const ous = orgUnits.toArray().map(ou => ou.path)
-                    this.setState({
-                        cache: ous,
-                        loading: false,
-                    })
+            const orgUnits = (
+                await d2.models.organisationUnits.list({
+                    root: currentRootId,
+                    paging: false,
+                    includeDescendants: true,
+                    fields: 'id,path',
+                })
+            ).toArray()
 
-                    this.props.onSelectedChange(ous.slice())
-                })
-                .catch(err => {
-                    this.setState({ loading: false })
-                    console.error('Failed to load all org units:', err)
-                })
+            setLoading(false)
+            const orgUnitPaths = orgUnits.map(({ path }) => path)
+            orgUnitCache.set(currentRootId, null, orgUnitPaths)
+            return orgUnitPaths
         }
     }
 
-    getDescendantOrgUnits() {
-        return this.props.d2.models.organisationUnits.list({
-            root: this.props.currentRoot.id,
-            paging: false,
-            includeDescendants: true,
-            fields: 'id,path',
-        })
+    const handleSelectAll = async () => {
+        const orgUnitPaths = await getOrgUnitPathsForCurrentRoot()
+        onSelect(orgUnitPaths)
+    }
+    const handleDeselectAll = async () => {
+        const orgUnitPaths = await getOrgUnitPathsForCurrentRoot()
+        onDeselect(orgUnitPaths)
     }
 
-    handleDeselectAll = () => {
-        if (this.props.currentRoot) {
-            this.setState({ loading: true })
-            this.getDescendantOrgUnits().then(orgUnits => {
-                this.setState({ loading: false })
-                this.removeFromSelection(orgUnits)
-            })
-        } else {
-            this.props.onSelectedChange([])
-        }
-    }
-
-    render() {
+    if (loading) {
         return (
-            <ButtonStrip className={styles.container}>
-                <Button
-                    onClick={this.handleSelectAll}
-                    disabled={this.state.loading}
-                >
-                    {i18n.t('Select All Org Units')}
-                </Button>
-                <Button
-                    onClick={this.handleDeselectAll}
-                    disabled={this.state.loading}
-                >
-                    {i18n.t('Deselect All Org Units')}
-                </Button>
-            </ButtonStrip>
+            <div className={styles.updatingSelection}>
+                <CircularLoader small />
+                {i18n.t('Updating selection...')}
+            </div>
         )
     }
+
+    return (
+        <ButtonStrip className={styles.container}>
+            <Button onClick={handleSelectAll} disabled={loading}>
+                {i18n.t('Select All Org Units')}
+            </Button>
+            <Button onClick={handleDeselectAll} disabled={loading}>
+                {i18n.t('Deselect All Org Units')}
+            </Button>
+        </ButtonStrip>
+    )
 }
 
 SelectAll.propTypes = {
+    allOrgUnitPaths: PropTypes.array.isRequired,
     d2: PropTypes.object.isRequired,
-
-    // selected is an array of selected organisation unit IDs
-    selected: PropTypes.array.isRequired,
-
-    // Whenever the selection changes, onSelectedChange will be called with
-    // one argument: The new array of selected organisation unit paths
-    // onSelectedChange: PropTypes.func.isRequired,
-
-    // If currentRoot is set, only org units that are descendants of the
+    onDeselect: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
+    // If currentRootId is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
-    currentRoot: PropTypes.object,
+    currentRootId: PropTypes.string,
 }
 
 export default SelectAll

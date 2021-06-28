@@ -70,14 +70,11 @@ const SelectByGroup = ({ d2, groups, currentRootId, onSelect, onDeselect }) => {
 
 SelectByGroup.propTypes = {
     d2: PropTypes.object.isRequired,
-
     // groups is an array of objects, where each object should contain `id` and
     // `displayName` properties
     groups: PropTypes.array.isRequired,
-
     onDeselect: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
-
     // If currentRootId is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
     currentRootId: PropTypes.string,

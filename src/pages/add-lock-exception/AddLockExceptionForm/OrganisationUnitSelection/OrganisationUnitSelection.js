@@ -10,7 +10,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import styles from './OrganisationUnitSelection.module.css'
-// import SelectAll from './SelectAll'
+import SelectAll from './SelectAll'
 import SelectByGroup from './SelectByGroup'
 import SelectByLevel from './SelectByLevel'
 
@@ -136,15 +136,13 @@ const OrganisationUnitSelection = ({
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
                 />
-                {/* TODO */}
-                {/*<SelectAll
+                <SelectAll
                     d2={d2}
-                    currentRoot={currentRoot}
-                    selected={selected}
-
+                    currentRootId={currentRoot?.id}
+                    allOrgUnitPaths={orgUnitPaths}
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
-                />*/}
+                />
             </div>
         </div>
     )
