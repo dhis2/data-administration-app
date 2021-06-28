@@ -320,7 +320,7 @@ msgid "Data sets"
 msgstr "Maʼlumotlar toʼplami"
 
 msgid "User groups"
-msgstr ""
+msgstr "Foydalanuvchi guruhlari"
 
 msgid "Users"
 msgstr "Foydalanuvchilar"
