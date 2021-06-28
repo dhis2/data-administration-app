@@ -2,15 +2,16 @@
 # Translators:
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# drprabhjot, 2021
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -433,7 +434,7 @@ msgid "Period"
 msgstr "Periodo"
 
 msgid "Data set"
-msgstr "Set de Datos\\:"
+msgstr "Set de Datos"
 
 msgid "Organisation unit"
 msgstr "Unidad organizativa"
@@ -622,7 +623,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "No, cancela"
 
 msgid "Removing lock exception..."
 msgstr ""
