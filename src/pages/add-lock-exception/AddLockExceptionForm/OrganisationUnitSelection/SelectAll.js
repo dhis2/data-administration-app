@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useDataEngine, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -27,26 +27,33 @@ const SelectAll = ({
     const [loading, setLoading] = useState(false)
     const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
 
     const getOrgUnitPathsForCurrentRoot = async () => {
         if (!currentRootId) {
             return allOrgUnitPaths
         } else if (orgUnitCache.has(currentRootId, null)) {
             return orgUnitCache.get(currentRootId, null)
-        } else {
-            setLoading(true)
+        }
 
+        setLoading(true)
+        try {
             const result = await engine.query(currentRootOrgUnitsQuery, {
                 variables: {
                     currentRootId,
                 },
             })
             const orgUnits = result.orgUnits.organisationUnits
-
-            setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
             orgUnitCache.set(currentRootId, null, orgUnitPaths)
             return orgUnitPaths
+        } catch (error) {
+            errorAlert.show({ error })
+            throw error
+        } finally {
+            setLoading(false)
         }
     }
 

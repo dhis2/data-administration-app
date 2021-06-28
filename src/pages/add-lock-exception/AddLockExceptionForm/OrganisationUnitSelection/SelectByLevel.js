@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useDataEngine, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -32,6 +32,9 @@ const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
     const [level, setLevel] = useState(null)
     const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
 
     const currentRootId = currentRoot?.id
     const currentRootLevel = currentRoot
@@ -49,11 +52,10 @@ const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
     const getOrgUnitPathsForLevel = async () => {
         if (orgUnitCache.has(currentRootId, level)) {
             return orgUnitCache.get(currentRootId, level)
-        } else {
-            setLoading(true)
+        }
 
-            // TODO: Better error handling (show alert) and set loading to false
-            // if encountered error
+        setLoading(true)
+        try {
             const relativeLevel = level - currentRootLevel
             const orgUnits = currentRootId
                 ? (
@@ -71,11 +73,14 @@ const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
                           },
                       })
                   ).orgUnits.organisationUnits
-
-            setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
             orgUnitCache.set(currentRootId, level, orgUnitPaths)
             return orgUnitPaths
+        } catch (error) {
+            errorAlert.show({ error })
+            throw error
+        } finally {
+            setLoading(false)
         }
     }
 

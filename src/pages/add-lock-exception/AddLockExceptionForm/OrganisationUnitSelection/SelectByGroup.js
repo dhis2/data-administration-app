@@ -1,4 +1,4 @@
-import { useDataEngine } from '@dhis2/app-runtime'
+import { useDataEngine, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
@@ -32,6 +32,9 @@ const SelectByGroup = ({ groups, currentRootId, onSelect, onDeselect }) => {
     const [groupId, setGroupId] = useState(null)
     const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
 
     const items = groups.map(({ id, displayName }) => ({
         label: displayName,
@@ -40,11 +43,10 @@ const SelectByGroup = ({ groups, currentRootId, onSelect, onDeselect }) => {
     const getOrgUnitPathsForGroup = async () => {
         if (orgUnitCache.has(currentRootId, groupId)) {
             return orgUnitCache.get(currentRootId, groupId)
-        } else {
-            setLoading(true)
+        }
 
-            // TODO: Better error handling (show alert) and set loading to false
-            // if encountered error
+        setLoading(true)
+        try {
             const orgUnits = currentRootId
                 ? (
                       await engine.query(currentRootOrgUnitsQuery, {
@@ -61,11 +63,14 @@ const SelectByGroup = ({ groups, currentRootId, onSelect, onDeselect }) => {
                           },
                       })
                   ).orgUnitGroups.organisationUnits
-
-            setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
             orgUnitCache.set(currentRootId, groupId, orgUnitPaths)
             return orgUnitPaths
+        } catch (error) {
+            errorAlert.show({ error })
+            throw error
+        } finally {
+            setLoading(false)
         }
     }
 
