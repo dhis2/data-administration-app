@@ -12,7 +12,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './OrganisationUnitSelection.module.css'
 // import SelectAll from './SelectAll'
 import SelectByGroup from './SelectByGroup'
-// import SelectByLevel from './SelectByLevel'
+import SelectByLevel from './SelectByLevel'
 
 const union = (arr1, arr2) => [...new Set(arr1.concat(arr2))]
 const difference = (arr1, arr2) => {
@@ -46,7 +46,7 @@ const query = {
 
 const OrganisationUnitSelection = ({
     dataSetId,
-    // levels,
+    levels,
     groups,
     selected,
     onSelectedChange,
@@ -122,15 +122,13 @@ const OrganisationUnitSelection = ({
                           )
                         : i18n.t('For all organisation units:')}
                 </div>
-                {/*<SelectByLevel
+                <SelectByLevel
                     d2={d2}
                     levels={levels}
                     currentRoot={currentRoot}
-                    selected={selected}
-
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
-                    />*/}
+                />
                 <SelectByGroup
                     d2={d2}
                     groups={groups}
@@ -138,6 +136,7 @@ const OrganisationUnitSelection = ({
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
                 />
+                {/* TODO */}
                 {/*<SelectAll
                     d2={d2}
                     currentRoot={currentRoot}
@@ -154,7 +153,7 @@ const OrganisationUnitSelection = ({
 OrganisationUnitSelection.propTypes = {
     dataSetId: PropTypes.string.isRequired,
     groups: PropTypes.array.isRequired,
-    // levels: PropTypes.array.isRequired,
+    levels: PropTypes.array.isRequired,
     selected: PropTypes.array.isRequired,
     onSelectedChange: PropTypes.func.isRequired,
 }

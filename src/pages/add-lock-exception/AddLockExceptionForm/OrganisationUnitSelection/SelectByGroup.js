@@ -46,11 +46,11 @@ const SelectByGroup = ({ d2, groups, currentRootId, onSelect, onDeselect }) => {
     }
 
     const handleSelect = async () => {
-        const orgUnitPaths = await getOrgUnitPathsForGroup(groupId)
+        const orgUnitPaths = await getOrgUnitPathsForGroup()
         onSelect(orgUnitPaths)
     }
     const handleDeselect = async () => {
-        const orgUnitPaths = await getOrgUnitPathsForGroup(groupId)
+        const orgUnitPaths = await getOrgUnitPathsForGroup()
         onDeselect(orgUnitPaths)
     }
 

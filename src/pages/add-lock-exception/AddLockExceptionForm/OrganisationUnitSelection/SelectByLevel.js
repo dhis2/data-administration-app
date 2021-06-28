@@ -1,116 +1,79 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
-import React from 'react'
-import { removeFromSelection, handleChangeSelection } from './common'
-import Dropdown from './Dropdown/Dropdown'
+import React, { useState } from 'react'
+import Controls from './Controls'
+import useOrgUnitCache from './use-org-unit-cache'
 
-class SelectByLevel extends React.Component {
-    constructor(props) {
-        super(props)
+const SelectByLevel = ({ d2, levels, currentRoot, onSelect, onDeselect }) => {
+    const [loading, setLoading] = useState(false)
+    const [level, setLevel] = useState(null)
+    const orgUnitCache = useOrgUnitCache()
 
-        this.state = {
-            loading: false,
-            selection: undefined,
+    const currentRootId = currentRoot?.id
+    const currentRootLevel = currentRoot
+        ? // The OrganisationUnitTree component does not currently fetch the `level`
+          // field and so we must count the number of forward slashes in the org unit
+          // path
+          currentRoot.level || currentRoot.path.match(/\//g).length
+        : 1
+    const items = levels
+        .filter(({ level }) => level >= currentRootLevel)
+        .map(({ displayName, level }) => ({
+            label: displayName,
+            value: level.toString(),
+        }))
+    const getOrgUnitPathsForLevel = async () => {
+        if (orgUnitCache.has(currentRootId, level)) {
+            return orgUnitCache.get(currentRootId, level)
+        } else {
+            setLoading(true)
+
+            // TODO: Better error handling (show alert) and set loading to false
+            // if encountered error
+            const fields = 'id,path'
+            const relativeLevel = level - currentRootLevel
+            const orgUnits = (currentRootId
+                ? await d2.models.organisationUnits.list({
+                      paging: false,
+                      level: relativeLevel,
+                      fields,
+                      root: currentRootId,
+                  })
+                : await d2.models.organisationUnits.list({
+                      paging: false,
+                      level,
+                      fields,
+                  })
+            ).toArray()
+
+            setLoading(false)
+            const orgUnitPaths = orgUnits.map(({ path }) => path)
+            orgUnitCache.set(currentRootId, level, orgUnitPaths)
+            return orgUnitPaths
         }
-        this.levelCache = new Map()
-
-        this.addToSelection = addToSelection.bind(this)
-        this.removeFromSelection = removeFromSelection.bind(this)
-        this.handleChangeSelection = handleChangeSelection.bind(this)
-
-        this.handleSelect = this.handleSelect.bind(this)
-        this.handleDeselect = this.handleDeselect.bind(this)
     }
 
-    getOrgUnitsForLevel = level => {
-        const { d2 } = this.props
-        return new Promise(resolve => {
-            if (this.props.currentRoot) {
-                const rootLevel =
-                    this.props.currentRoot.level || this.props.currentRoot.path
-                        ? this.props.currentRoot.path.match(/\//g).length
-                        : NaN
-                const relativeLevel = level - rootLevel
-                if (isNaN(relativeLevel) || relativeLevel < 0) {
-                    return resolve([])
-                }
-
-                d2.models.organisationUnits
-                    .list({
-                        paging: false,
-                        level: level - rootLevel,
-                        fields: 'id,path',
-                        root: this.props.currentRoot.id,
-                    })
-                    .then(orgUnits => orgUnits.toArray())
-                    .then(orgUnitArray => {
-                        this.setState({ loading: false })
-                        resolve(orgUnitArray)
-                    })
-            } else if (this.levelCache.has(level)) {
-                resolve(this.levelCache.get(level).slice())
-            } else {
-                this.setState({ loading: true })
-
-                d2.models.organisationUnits
-                    .list({ paging: false, level, fields: 'id,path' })
-                    .then(orgUnits => orgUnits.toArray())
-                    .then(orgUnitArray => {
-                        this.setState({ loading: false })
-                        this.levelCache.set(level, orgUnitArray)
-
-                        // Make a copy of the returned array to ensure that the cache won't be modified from elsewhere
-                        resolve(orgUnitArray.slice())
-                    })
-                    .catch(err => {
-                        this.setState({ loading: false })
-                        console.error(
-                            `Failed to load org units in level ${level}:`,
-                            err
-                        )
-                    })
-            }
-        })
+    const handleSelect = async () => {
+        const orgUnitPaths = await getOrgUnitPathsForLevel()
+        onSelect(orgUnitPaths)
+    }
+    const handleDeselect = async () => {
+        const orgUnitPaths = await getOrgUnitPathsForLevel()
+        onDeselect(orgUnitPaths)
     }
 
-    handleSelect() {
-        this.getOrgUnitsForLevel(this.state.selection).then(orgUnits => {
-            this.addToSelection(orgUnits)
-        })
-    }
-
-    handleDeselect() {
-        this.getOrgUnitsForLevel(this.state.selection).then(orgUnits => {
-            this.removeFromSelection(orgUnits)
-        })
-    }
-
-    render() {
-        const { currentRoot } = this.props
-        const currentRootLevel = currentRoot
-            ? currentRoot.level || currentRoot.path.match(/\//g).length
-            : 1
-
-        const menuItems = this.props.levels
-            .filter(level => level.level >= currentRootLevel)
-            .map(level => ({
-                id: level.level.toString(),
-                displayName: level.displayName,
-            }))
-
-        return (
-            <Dropdown
-                menuItems={menuItems}
-                value={this.state.selection}
-                label={i18n.t('Organisation unit level')}
-                placeholder={i18n.t('Select an organisation unit level')}
-                loading={this.state.loading}
-                onChange={this.handleChangeSelection}
-                onSelect={this.handleSelect}
-                onDeselect={this.handleDeselect}
-            />
-        )
-    }
+    return (
+        <Controls
+            items={items}
+            selectedItem={level ? String(level) : null}
+            onSelectedItemChange={level => setLevel(Number(level))}
+            label={i18n.t('Organisation unit level')}
+            placeholder={i18n.t('Select an organisation unit level')}
+            loading={loading}
+            onSelect={handleSelect}
+            onDeselect={handleDeselect}
+        />
+    )
 }
 
 SelectByLevel.propTypes = {
@@ -120,12 +83,8 @@ SelectByLevel.propTypes = {
     // and `displayName` properties
     levels: PropTypes.array.isRequired,
 
-    // selected is an array of selected organisation unit IDs
-    selected: PropTypes.array.isRequired,
-
-    // Whenever the selection changes, onSelectedChange will be called with
-    // one argument: The new array of selected organisation unit paths
-    // onSelectedChange: PropTypes.func.isRequired,
+    onDeselect: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired,
 
     // If currentRoot is set, only org units that are descendants of the
     // current root org unit will be added to or removed from the selection
