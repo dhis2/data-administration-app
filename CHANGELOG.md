@@ -1,3 +1,17 @@
+## [1.1.10](https://github.com/dhis2/data-administration-app/compare/v1.1.9...v1.1.10) (2021-06-09)
+
+
+### Bug Fixes
+
+* revert data sets API periodType schema fix ([#633](https://github.com/dhis2/data-administration-app/issues/633)) ([fd85975](https://github.com/dhis2/data-administration-app/commit/fd85975586ad812d67f88005a9db069d82b84d66))
+
+## [1.1.9](https://github.com/dhis2/data-administration-app/compare/v1.1.8...v1.1.9) (2021-06-08)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ab583fb](https://github.com/dhis2/data-administration-app/commit/ab583fb9df354dd28359e1d5e46319549ece0bc7))
+
 ## [1.1.8](https://github.com/dhis2/data-administration-app/compare/v1.1.7...v1.1.8) (2021-06-03)
 
 
