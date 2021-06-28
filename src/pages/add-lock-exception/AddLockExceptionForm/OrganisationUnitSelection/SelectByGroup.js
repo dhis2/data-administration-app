@@ -1,12 +1,36 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Controls from './Controls'
 import useOrgUnitCache from './use-org-unit-cache'
 
-const SelectByGroup = ({ d2, groups, currentRootId, onSelect, onDeselect }) => {
+const currentRootOrgUnitsQuery = {
+    orgUnits: {
+        resource: 'organisationUnits',
+        id: ({ currentRootId }) => currentRootId,
+        params: ({ groupId }) => ({
+            fields: 'id,path',
+            filter: `organisationUnitGroups.id:eq:${groupId}`,
+            includeDescendants: true,
+            paging: false,
+        }),
+    },
+}
+const orgUnitGroupsQuery = {
+    orgUnitGroups: {
+        resource: 'organisationUnitGroups',
+        id: ({ groupId }) => groupId,
+        params: {
+            fields: `organisationUnits[id,path]`,
+        },
+    },
+}
+
+const SelectByGroup = ({ groups, currentRootId, onSelect, onDeselect }) => {
     const [loading, setLoading] = useState(false)
     const [groupId, setGroupId] = useState(null)
+    const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
 
     const items = groups.map(({ id, displayName }) => ({
@@ -21,22 +45,22 @@ const SelectByGroup = ({ d2, groups, currentRootId, onSelect, onDeselect }) => {
 
             // TODO: Better error handling (show alert) and set loading to false
             // if encountered error
-            const fields = 'id,path'
             const orgUnits = currentRootId
                 ? (
-                      await d2.models.organisationUnits.list({
-                          root: currentRootId,
-                          paging: false,
-                          includeDescendants: true,
-                          fields,
-                          filter: `organisationUnitGroups.id:eq:${groupId}`,
+                      await engine.query(currentRootOrgUnitsQuery, {
+                          variables: {
+                              currentRootId,
+                              groupId,
+                          },
                       })
-                  ).toArray()
+                  ).orgUnits.organisationUnits
                 : (
-                      await d2.models.organisationUnitGroups.get(groupId, {
-                          fields: `organisationUnits[${fields}]`,
+                      await engine.query(orgUnitGroupsQuery, {
+                          variables: {
+                              groupId,
+                          },
                       })
-                  ).organisationUnits.toArray()
+                  ).orgUnitGroups.organisationUnits
 
             setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
@@ -69,7 +93,6 @@ const SelectByGroup = ({ d2, groups, currentRootId, onSelect, onDeselect }) => {
 }
 
 SelectByGroup.propTypes = {
-    d2: PropTypes.object.isRequired,
     // groups is an array of objects, where each object should contain `id` and
     // `displayName` properties
     groups: PropTypes.array.isRequired,

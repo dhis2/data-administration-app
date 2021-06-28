@@ -1,3 +1,4 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CircularLoader, ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
@@ -5,14 +6,26 @@ import React, { useState } from 'react'
 import styles from './SelectAll.module.css'
 import useOrgUnitCache from './use-org-unit-cache'
 
+const currentRootOrgUnitsQuery = {
+    orgUnits: {
+        resource: 'organisationUnits',
+        id: ({ currentRootId }) => currentRootId,
+        params: {
+            fields: 'id,path',
+            includeDescendants: true,
+            paging: false,
+        },
+    },
+}
+
 const SelectAll = ({
-    d2,
     currentRootId,
     allOrgUnitPaths,
     onSelect,
     onDeselect,
 }) => {
     const [loading, setLoading] = useState(false)
+    const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
 
     const getOrgUnitPathsForCurrentRoot = async () => {
@@ -23,14 +36,12 @@ const SelectAll = ({
         } else {
             setLoading(true)
 
-            const orgUnits = (
-                await d2.models.organisationUnits.list({
-                    root: currentRootId,
-                    paging: false,
-                    includeDescendants: true,
-                    fields: 'id,path',
-                })
-            ).toArray()
+            const result = await engine.query(currentRootOrgUnitsQuery, {
+                variables: {
+                    currentRootId,
+                },
+            })
+            const orgUnits = result.orgUnits.organisationUnits
 
             setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
@@ -71,7 +82,6 @@ const SelectAll = ({
 
 SelectAll.propTypes = {
     allOrgUnitPaths: PropTypes.array.isRequired,
-    d2: PropTypes.object.isRequired,
     onDeselect: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     // If currentRootId is set, only org units that are descendants of the

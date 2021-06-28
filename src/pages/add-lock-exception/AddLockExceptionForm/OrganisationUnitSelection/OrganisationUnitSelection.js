@@ -1,5 +1,4 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
 import i18n from '@dhis2/d2-i18n'
 import {
     NoticeBox,
@@ -55,7 +54,6 @@ const OrganisationUnitSelection = ({
     const { loading, called, error, data, refetch } = useDataQuery(query, {
         lazy: true,
     })
-    const { d2 } = useD2()
 
     useEffect(() => {
         setCurrentRoot(null)
@@ -123,21 +121,18 @@ const OrganisationUnitSelection = ({
                         : i18n.t('For all organisation units:')}
                 </div>
                 <SelectByLevel
-                    d2={d2}
                     levels={levels}
                     currentRoot={currentRoot}
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
                 />
                 <SelectByGroup
-                    d2={d2}
                     groups={groups}
                     currentRootId={currentRoot?.id}
                     onSelect={handleSelect}
                     onDeselect={handleDeselect}
                 />
                 <SelectAll
-                    d2={d2}
                     currentRootId={currentRoot?.id}
                     allOrgUnitPaths={orgUnitPaths}
                     onSelect={handleSelect}

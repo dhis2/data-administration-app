@@ -1,12 +1,36 @@
+import { useDataEngine } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Controls from './Controls'
 import useOrgUnitCache from './use-org-unit-cache'
 
-const SelectByLevel = ({ d2, levels, currentRoot, onSelect, onDeselect }) => {
+const currentRootOrgUnitsQuery = {
+    orgUnits: {
+        resource: 'organisationUnits',
+        id: ({ currentRootId }) => currentRootId,
+        params: ({ level }) => ({
+            fields: 'id,path',
+            level,
+            paging: false,
+        }),
+    },
+}
+const orgUnitsQuery = {
+    orgUnits: {
+        resource: 'organisationUnits',
+        params: ({ level }) => ({
+            fields: 'id,path',
+            level,
+            paging: false,
+        }),
+    },
+}
+
+const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
     const [loading, setLoading] = useState(false)
     const [level, setLevel] = useState(null)
+    const engine = useDataEngine()
     const orgUnitCache = useOrgUnitCache()
 
     const currentRootId = currentRoot?.id
@@ -30,21 +54,23 @@ const SelectByLevel = ({ d2, levels, currentRoot, onSelect, onDeselect }) => {
 
             // TODO: Better error handling (show alert) and set loading to false
             // if encountered error
-            const fields = 'id,path'
             const relativeLevel = level - currentRootLevel
-            const orgUnits = (currentRootId
-                ? await d2.models.organisationUnits.list({
-                      paging: false,
-                      level: relativeLevel,
-                      fields,
-                      root: currentRootId,
-                  })
-                : await d2.models.organisationUnits.list({
-                      paging: false,
-                      level,
-                      fields,
-                  })
-            ).toArray()
+            const orgUnits = currentRootId
+                ? (
+                      await engine.query(currentRootOrgUnitsQuery, {
+                          variables: {
+                              currentRootId,
+                              level: relativeLevel,
+                          },
+                      })
+                  ).orgUnits.organisationUnits
+                : (
+                      await engine.query(orgUnitsQuery, {
+                          variables: {
+                              level,
+                          },
+                      })
+                  ).orgUnits.organisationUnits
 
             setLoading(false)
             const orgUnitPaths = orgUnits.map(({ path }) => path)
@@ -77,7 +103,6 @@ const SelectByLevel = ({ d2, levels, currentRoot, onSelect, onDeselect }) => {
 }
 
 SelectByLevel.propTypes = {
-    d2: PropTypes.object.isRequired,
     // levels is an array of objects, where each object should contain `level`
     // and `displayName` properties
     levels: PropTypes.array.isRequired,
