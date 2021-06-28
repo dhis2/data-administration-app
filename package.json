@@ -26,17 +26,15 @@
         "@dhis2/cli-utils-cypress": "^7.0.1",
         "@dhis2/cypress-commands": "^7.0.1",
         "@dhis2/cypress-plugins": "^7.0.1",
-        "@testing-library/cypress": "^7.0.6"
+        "@testing-library/cypress": "^7.0.6",
+        "eslint-plugin-cypress": "^2.11.3"
     },
     "dependencies": {
         "@dhis2/app-runtime": "^2.8.0",
-        "@dhis2/app-runtime-adapter-d2": "^1.0.2",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "^6.10.2",
         "classnames": "^2.2.5",
-        "d2": "^31.9.0",
-        "eslint-plugin-cypress": "^2.11.3",
         "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",
         "prop-types": "^15.6.0",

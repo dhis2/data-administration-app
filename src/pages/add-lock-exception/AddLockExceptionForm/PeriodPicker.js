@@ -1,9 +1,36 @@
 import i18n from '@dhis2/d2-i18n'
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
-import { is53WeekISOYear, getFirstDateOfWeek } from 'd2/period/helpers'
 import DatePicker from 'material-ui/DatePicker'
 import PropTypes from 'prop-types'
 import React from 'react'
+
+const getFirstDateOfWeek = (year, week) => {
+    const ordTable = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    const ordTableLeap = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
+    const isLeapYear =
+        new Date(new Date(year, 2, 1).setDate(0)).getDate() === 29
+    const ordDiff = isLeapYear ? ordTableLeap : ordTable
+
+    const correction = (new Date(year, 0, 4).getDay() || 7) + 3
+    const ordDate = week * 7 + (1 - correction)
+    if (ordDate < 0) {
+        return new Date(year, 0, ordDate)
+    }
+
+    let month = 11
+    while (ordDate < ordDiff[month]) {
+        month--
+    }
+
+    return new Date(year, month, ordDate - ordDiff[month])
+}
+
+const is53WeekISOYear = year => {
+    const p = y =>
+        y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+    return p(year) % 7 === 4 || p(year - 1) % 7 === 3
+}
 
 const periodTypeLabels = {
     week: i18n.t('week'),
