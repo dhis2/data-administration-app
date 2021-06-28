@@ -60,10 +60,10 @@ When('the user selects an organisation unit', () => {
 
 When('the user selects a period', () => {
     cy.getWithDataTest('{period-picker-option-year}').click()
-    cy.findByRole('menuitem', { name: '2014' }).click()
+    cy.contains('2014').click()
 
     cy.getWithDataTest('{period-picker-option-month}').click()
-    cy.findByRole('menuitem', { name: 'jan' }).click()
+    cy.contains('jan').click()
 })
 
 When(`the user clicks on the 'Add lock exception' button`, () => {
