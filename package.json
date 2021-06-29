@@ -27,6 +27,7 @@
         "@dhis2/cypress-commands": "^7.0.1",
         "@dhis2/cypress-plugins": "^7.0.1",
         "@testing-library/cypress": "^7.0.6",
+        "@testing-library/react-hooks": "^7.0.0",
         "eslint-plugin-cypress": "^2.11.3"
     },
     "dependencies": {

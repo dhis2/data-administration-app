@@ -1,4 +1,3 @@
-// TODO: Unit tests
 import { useState } from 'react'
 
 const useOrgUnitCache = () => {
