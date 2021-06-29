@@ -34,7 +34,7 @@
         "@dhis2/app-runtime": "^2.8.0",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
-        "@dhis2/ui": "^6.10.2",
+        "@dhis2/ui": "^6.10.3",
         "classnames": "^2.2.5",
         "material-design-icons-iconfont": "^5.0.1",
         "material-ui": "^0.20.0",
