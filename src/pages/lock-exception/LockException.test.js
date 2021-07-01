@@ -128,11 +128,11 @@ it('Lock Exception Component renders Pagination on top and bottom of DataTable',
     expect(wrapper.find(Pagination)).toHaveLength(2)
 })
 
-it('Lock Exception Component renders BATCH DELETION Button at h1', () => {
+it('Lock Exception Component renders "Batch deletion" Button at h1', () => {
     const wrapper = ownShallow()
     const buttons = wrapper.find(RaisedButton)
     expect(buttons).toHaveLength(1)
-    expect(buttons.at(0).props().label === 'BATCH DELETION').toBe(true)
+    expect(buttons.at(0).props().label === 'Batch deletion').toBe(true)
 })
 
 it('Lock Exception Component renders Floating add button', () => {
@@ -162,13 +162,13 @@ it('Lock Exception Component renders Add new lock exception dialog in close stat
     expect(dialog.props().open).toBe(false)
 })
 
-it('Lock Exception Component calls goToBatchDeletionPage when BATCH DELETION button is clicked', () => {
+it('Lock Exception Component calls goToBatchDeletionPage when "Batch deletion" button is clicked', () => {
     // eslint-disable-next-line no-undef
     const spy = spyOn(LockException.prototype, 'goToBatchDeletionPage')
     const wrapper = ownShallow()
     const buttons = wrapper.find(RaisedButton)
     buttons.forEach(button => {
-        if (button.props().label === 'BATCH DELETION') {
+        if (button.props().label === 'Batch deletion') {
             button.simulate('click')
         }
     })
