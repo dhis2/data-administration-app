@@ -1,13 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2021
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-12-11T10:34:51.179Z\n"
+"POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: Karoline Tufte Lien <karoline@dhis2.org>, 2020\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,3 +18,660 @@ msgstr ""
 
 msgid "Data Administration"
 msgstr "Databehandling"
+
+msgid "Data Integrity"
+msgstr "Dataintegritet"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
+msgstr ""
+"Kjør dataintegritetskontroller og avdekke avvik og problemer i "
+"metadataoppsettet."
+
+msgid "Check Data Integrity"
+msgstr ""
+
+msgid "Performing data integrity checks..."
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "Run integrity checks"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr "Dataelementer uten grupper"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "Dataelementer som bryter eksklusive gruppesett"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr "Dataelementer tildelt datasett med forskjellige periodetyper"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "Datasetter er ikke tildelt til organisasjonsenheter"
+
+msgid "Indicators with identical formulas"
+msgstr "Indikatorer med identiske formler"
+
+msgid "Indicators without groups"
+msgstr "Indikatorer uten grupper"
+
+msgid "Invalid indicator numerators"
+msgstr "Ugyldige indikatortellere"
+
+msgid "Invalid indicator denominators"
+msgstr "Ugyldige indikatornevnere"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "Indikatorer som bryter eksklusive gruppesett"
+
+msgid "Organisation units with cyclic references"
+msgstr "Organisasjonsenheter med sykliske referanser"
+
+msgid "Orphaned organisation units"
+msgstr "Organisasjonsenheter uten overordnet"
+
+msgid "Organisation units without groups"
+msgstr "Organisasjonsenheter uten grupper"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr "Organisasjonsenhetgrupper uten gruppesett"
+
+msgid "Validation rules without groups"
+msgstr "Valideringsregler uten grupper"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "Ugyldig valideringsregel uttrykk fra venstre side"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "Ugyldig valideringsregel uttrykk fra høyre side"
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr "Ugyldige kategorikombinasjoner"
+
+msgid "Duplicate periods"
+msgstr "Duplikat perioder"
+
+msgid "Program rules with no condition"
+msgstr ""
+
+msgid "Program rules with no action"
+msgstr ""
+
+msgid "Program rules with no priority"
+msgstr ""
+
+msgid "Program rule variables with no data element"
+msgstr ""
+
+msgid "Program rule variables with no attribute"
+msgstr ""
+
+msgid "Program rule actions with no data object"
+msgstr ""
+
+msgid "Program rule actions with no notification"
+msgstr ""
+
+msgid "Program rule actions with no section id"
+msgstr ""
+
+msgid "Program rule actions with no stage id"
+msgstr ""
+
+msgid "Maintenance"
+msgstr "Metadata manager"
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "Perform maintenance"
+msgstr "Utfør vedlikehold"
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr "Vedlikehold utført"
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "Fjern analysetabeller"
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr "Beskjær perioder"
+
+msgid "Remove expired invitations"
+msgstr "Fjern utgåtte invitasjoner"
+
+msgid "Drop SQL views"
+msgstr "Dropp SQL-visninger"
+
+msgid "Create SQL views"
+msgstr "Opprett SQL visninger"
+
+msgid "Update category option combinations"
+msgstr "Oppdater kategorialternativ kombinasjoner"
+
+msgid "Update organisation unit paths"
+msgstr "Oppdater organisasjonsenhet baner"
+
+msgid "Clear application cache"
+msgstr "Fjern applikasjonsbuffer"
+
+msgid "Reload apps"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"Generer ressursdatabasetabeller for organisasjonsenhetens hierarki og "
+"gruppesettstruktur."
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "Generate tables"
+msgstr "Generer tabeller"
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "Organisasjonsenhet struktur"
+
+msgid "Organisation unit category option combo"
+msgstr "Organisasjonsenhet kategorialternativ kombo"
+
+msgid "Category option group set structure"
+msgstr "Kategorialternativ gruppesett struktur"
+
+msgid "Data element group set structure"
+msgstr "Dataelementgruppesettstruktur"
+
+msgid "Indicator group set structure"
+msgstr "Indikator gruppesett struktur"
+
+msgid "Organisation unit group set structure"
+msgstr "Organisasjonsenhet gruppsett struktur"
+
+msgid "Category structure"
+msgstr "Kategoristruktur"
+
+msgid "Data element category option combo name"
+msgstr "Dataelement kategorialternativ kombo navn"
+
+msgid "Data element structure"
+msgstr "Dataelement struktur"
+
+msgid "Period structure"
+msgstr "Periodestruktur"
+
+msgid "Date period structure"
+msgstr "Dataperiode struktur"
+
+msgid "Data element category option combinations"
+msgstr "Dataelement kategorialternativ kombinasjoner"
+
+msgid "Data Statistics"
+msgstr "Datastatistikk"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"Bla gjennom antall objekter i databasen, for eksempel dataelementer, "
+"indikatorer, datasett og dataverdier."
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr "Objekttype"
+
+msgid "Last hour"
+msgstr "Siste timen"
+
+msgid "Today"
+msgstr "I dag"
+
+msgid "Last"
+msgstr "Siste"
+
+msgid "days"
+msgstr "dager"
+
+msgid "Users logged in"
+msgstr "Brukere som er innlogget"
+
+msgid "User account invitations"
+msgstr "Brukerkonto invitasjoner"
+
+msgid "Pending invitations"
+msgstr "Ventende invitasjoner"
+
+msgid "Expired invitations"
+msgstr "Utgåtte invitasjoner"
+
+msgid "Data values"
+msgstr "Dataverdier"
+
+msgid "Events"
+msgstr "Hendelser"
+
+msgid "Indicators"
+msgstr "Indikatorer"
+
+msgid "Periods"
+msgstr "Perioder"
+
+msgid "Organisation units"
+msgstr "Organisasjonsenheter"
+
+msgid "Validation rules"
+msgstr "Valideringsregler"
+
+msgid "Programs"
+msgstr "Programmer"
+
+msgid "Data elements"
+msgstr "Dataelementer"
+
+msgid "Organisation unit groups"
+msgstr "Organisasjonsenhetgrupper"
+
+msgid "Pivot tables"
+msgstr "Pivottabeller"
+
+msgid "Indicator types"
+msgstr "Indikatortyper"
+
+msgid "Data sets"
+msgstr "Datasett"
+
+msgid "User groups"
+msgstr "Brukergrupper"
+
+msgid "Users"
+msgstr "Brukere"
+
+msgid "Maps"
+msgstr "Kart"
+
+msgid "Indicator groups"
+msgstr "Indikatorgrupper"
+
+msgid "Charts"
+msgstr "Diagrammer"
+
+msgid "Data element groups"
+msgstr "Dataelementgrupper"
+
+msgid "Dashboards"
+msgstr "Dashbord"
+
+msgid "Lock Exception Management"
+msgstr "Lås administrering av unntak"
+
+msgid "Lock Exception"
+msgstr "Lås unntak"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
+msgstr ""
+"Legg til eller fjern unntak fra standardreglene for låsing av "
+"dataregistreringsskjemaer."
+
+msgid "Batch deletion"
+msgstr "Satsvis sletting"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Add"
+msgstr "Legg til"
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr "Er du sikker?"
+
+msgid "Confirm"
+msgstr "Bekreft"
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Oppdaterer Organisasjonsenhettreet..."
+
+msgid "For organisation units within"
+msgstr "For organisasjonsenhet innenfor"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Data Set"
+msgstr "Datasett"
+
+msgid "Organisation Unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Organisation Unit Group"
+msgstr "Organisasjonsenhetgruppe"
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr "Velg"
+
+msgid "Deselect"
+msgstr "Fjern merking"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr "Fjern"
+
+msgid "Actions"
+msgstr "Handlinger"
+
+msgid "of"
+msgstr "av"
+
+msgid "week"
+msgstr "uke"
+
+msgid "month"
+msgstr "Måned"
+
+msgid "year"
+msgstr "år"
+
+msgid "bi monthly"
+msgstr "Tomånedlig"
+
+msgid "day"
+msgstr "dag"
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr "kvartal"
+
+msgid "Q1"
+msgstr "S1"
+
+msgid "Q2"
+msgstr "S2"
+
+msgid "Q3"
+msgstr "S3"
+
+msgid "Q4"
+msgstr "S4"
+
+msgid "six monthly"
+msgstr "Halvårlig"
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "Min-maks verdi generering"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"Generer min-maksverdier som kan brukes til datavalidering under "
+"dataregistrerings- og valideringsprosesser."
+
+msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Select Data set and Organisation Unit"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr "Valg av organisasjonsenhet"
+
+msgid "Generate"
+msgstr "Generer"
+
+msgid "Analytics tables management"
+msgstr ""
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from."
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr ""
+
+msgid "Start export"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+
+msgid "Skip generation of resource tables"
+msgstr ""
+
+msgid "Skip generation of event data"
+msgstr ""
+
+msgid "Skip generation of enrollment data"
+msgstr ""
+
+msgid "Analytics Tables Update"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr ""
+
+msgid "[ All ]"
+msgstr ""
+
+msgid "Settings"
+msgstr "Innstillinger"
+
+msgid "Search apps"
+msgstr "Søk etter apper"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Account"
+msgstr "Brukerkonto"
+
+msgid "Help"
+msgstr "Hjelp"
+
+msgid "Log out"
+msgstr "Logg ut"
+
+msgid "About DHIS 2"
+msgstr "Om DHIS 2"
+
+msgid "Manage my apps"
+msgstr "Administrer applikasjonene mine"
+
+msgid "No results found"
+msgstr "Ingen resultater funnet"
+
+msgid "Interpretations"
+msgstr "Tolkninger"
+
+msgid "Messages"
+msgstr "Meldinger"

@@ -1,13 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# Asos <aso.rezaiy@gmail.com>, 2021
+# phil_dhis2, 2021
+# KRG HIS <antonia.bezenchek@informa.pro>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Central Kurdish (https://www.transifex.com/hisp-uio/teams/100509/ckb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,7 +138,7 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "سةرةكي"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -285,10 +288,10 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ئەمڕۆ"
 
 msgid "Last"
-msgstr ""
+msgstr "كؤتايي"
 
 msgid "days"
 msgstr ""
@@ -309,22 +312,22 @@ msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "ڕووداوەکان"
 
 msgid "Indicators"
-msgstr ""
+msgstr "نیشاندەر"
 
 msgid "Periods"
-msgstr ""
+msgstr "ماوةكان"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "يةكةي ريكخراو"
 
 msgid "Validation rules"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "بةرنامةكان"
 
 msgid "Data elements"
 msgstr ""
@@ -345,7 +348,7 @@ msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "بةكارهينةرةكان"
 
 msgid "Maps"
 msgstr ""
@@ -383,7 +386,7 @@ msgid "Batch deletion"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "لابردن"
 
 msgid "Add"
 msgstr ""
@@ -404,7 +407,7 @@ msgid "Are you sure?"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "دووپاتکردنەوە"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -416,13 +419,13 @@ msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "ماوة"
 
 msgid "Data Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "یەکەی ڕێخکڕاو"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -431,7 +434,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "هەڵبژاردن"
 
 msgid "Deselect"
 msgstr ""
@@ -449,7 +452,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "لابردن"
 
 msgid "Actions"
 msgstr ""
@@ -633,22 +636,22 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "ريكخستن"
 
 msgid "Search apps"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "پرۆفایل"
 
 msgid "Account"
 msgstr ""
 
 msgid "Help"
-msgstr ""
+msgstr "هاوكاري"
 
 msgid "Log out"
-msgstr ""
+msgstr "جونةدةرةوة"
 
 msgid "About DHIS 2"
 msgstr ""
