@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,12 +19,13 @@ msgid "Data Administration"
 msgstr "پیرایش و دیکوریشن عنصر اطلاعات"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "درستی اطلاعات"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"اجرای دیتا چک یکپارچگی و پرده ناهنجاری و مشکلات در راه اندازی میتا دیتا"
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -42,55 +43,55 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "عنصر اطلاعات بیدون گروپ ها"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "عنصر اطلاعات وجود ندار"
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr ""
+msgstr "دیتا ایلمنت ها در دیتا سیت اضافه شده اند در دوره های متفاوت"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "دیتا سیت به واحد های سازمان تعین نگردید"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "شاخص ها با شناسایی فارمولا"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "شاخص بیدون گروپ ها"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "صورت شاخص باطل است"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "مخرج شاخص باطل است"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "تصحیح مجموعه گروپ واحد سازمان"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "شمارش واحد سازمان"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "ایجاد واحد سازمان جدید"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "واحد سازمان بیدون گروپ ها"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "واحد سازمان بیدون مجموعه گروپ"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "دستور سنجی بیدون گروپ ها"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "قانون اعتبار سنجی باطل به سمت چپ اصطلاحات"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "قانون اعتبار سنجی باطل به سمت راست اصطلاحات"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -102,10 +103,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "ترکیب کتگوری باطل"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "دوره های تکراری"
 
 msgid "Program rules with no condition"
 msgstr ""
@@ -135,7 +136,7 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "نگهداری"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -146,7 +147,7 @@ msgid "Perform Maintenance"
 msgstr ""
 
 msgid "Perform maintenance"
-msgstr ""
+msgstr "انجام دادن نگهداری"
 
 msgid "Performing Maintenance..."
 msgstr ""
@@ -158,7 +159,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "پاک کردن جدول های انالیتیکس"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -179,25 +180,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "اجازه مراحل بعدی"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "حذف کردن دعوت نامه منقضی شده"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "حذف SQL views"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "ایجاد SQL views"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "تجدید ترکیبات کتگوری گزینه ها"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "تصحیح آدرس واحد سازمان"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "پاک کردن حافظه اپلیکیشن"
 
 msgid "Reload apps"
 msgstr ""
@@ -209,12 +210,14 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"جدول های منبع دیتابیس را اجرا نماید برای مرحله واحد سازمان و سیت گروپ "
+"استرکچر همراه دیگران."
 
 msgid "Generate Resource Tables"
 msgstr ""
 
 msgid "Generate tables"
-msgstr ""
+msgstr "تولید کردن جدول ها"
 
 msgid "Resource Tables generated"
 msgstr ""
@@ -223,48 +226,50 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "ساختار واحد سازمان"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "گزینه ترکیب کتگوری واحد سازمان"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "ساختار گزینه کتگوری گروپ"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "ساختار مجموعه گروپ عنصر اطلاعات"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "ساختار مجموعه گروپ شاخص"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "ساختار مجموعه گروپ واحد سازمان"
 
 msgid "Category structure"
-msgstr ""
+msgstr "ساختار کتگوری"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "اسم گزینه ترکیب کتگوری عناصر معلومات"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "ساختار عنصر اطلاعات"
 
 msgid "Period structure"
-msgstr ""
+msgstr "ساختار معیاد"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "استرکچر دوره دیتا"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "مدیریت ترکیبات کتگوری گزینه عنصر اطلاعات"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "مجموعه های اطلاعات"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"تعداد شی را در دیتابیس بروز کنید، مانند دیتا ایلمنت ها، شاخص ها، سیت دیتا و "
+"ارزش دیتا"
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -279,94 +284,94 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "نوع اعداد"
 
 msgid "Last hour"
-msgstr ""
+msgstr "ساعت گذشته"
 
 msgid "Today"
-msgstr ""
+msgstr "امروز"
 
 msgid "Last"
-msgstr ""
+msgstr "آخری"
 
 msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr ""
+msgstr "استفاده کننده داخل سیستم شده"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "دعوت نامه استفاده کننده"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "دعوت نامه ها در انتظار"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "دعوتنامه های انقضا"
 
 msgid "Data values"
-msgstr ""
+msgstr "مجموعه های اطلاعات"
 
 msgid "Events"
-msgstr ""
+msgstr "پېښې"
 
 msgid "Indicators"
-msgstr ""
+msgstr "شاخص ها"
 
 msgid "Periods"
-msgstr ""
+msgstr "دوره ها"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "واحد های سازمان"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "قانون های اعتبار سنجی"
 
 msgid "Programs"
-msgstr ""
+msgstr "برنامه ها"
 
 msgid "Data elements"
-msgstr ""
+msgstr "دیتا ایلمنت ها"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "د سازمان د واحد ګروپونه"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "جداول محوری"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "شاخص ها"
 
 msgid "Data sets"
-msgstr ""
+msgstr "دیتا سیت ها"
 
 msgid "User groups"
-msgstr ""
+msgstr "گروپ های استفاده کننده گان"
 
 msgid "Users"
-msgstr ""
+msgstr "استفاده کننده گان"
 
 msgid "Maps"
-msgstr ""
+msgstr "نقشه ها"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "گروپ های شاخص"
 
 msgid "Charts"
-msgstr ""
+msgstr "چارت ها"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "گروپ های عنصر اطلاعات"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "داشبورد ها"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "بستن مدیریت مفهوم"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "قفل کردن استثنات"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -378,15 +383,17 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"اضافه کردن یا حذف کردن استثنات در قانون استندرد برای قفل کردن فارم درج "
+"معلومات"
 
 msgid "Batch deletion"
-msgstr ""
+msgstr "حذف یک بسته"
 
 msgid "Cancel"
-msgstr ""
+msgstr "انصراف"
 
 msgid "Add"
-msgstr ""
+msgstr "افزودن"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -401,10 +408,10 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "آیا ډاډه یاست؟"
 
 msgid "Confirm"
-msgstr ""
+msgstr "تائید"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -413,16 +420,16 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "برای واحدهای سازمانی در"
 
 msgid "Period"
-msgstr ""
+msgstr "دوره"
 
 msgid "Data Set"
-msgstr ""
+msgstr "مجموعه اطلاعات"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "واحد سازمان"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -431,10 +438,10 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "انتخاب"
 
 msgid "Deselect"
-msgstr ""
+msgstr "عدم انتخاب"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -443,19 +450,19 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
 msgid "Actions"
-msgstr ""
+msgstr "گزینه ها"
 
 msgid "of"
-msgstr ""
+msgstr "از"
 
 msgid "week"
 msgstr ""
@@ -557,12 +564,14 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "تولید کردن ارزش کروچک-بزرگ"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"اجرا ارزش کوچکتر-بزرگتر که در اعتبار سنجی در جریان درج معلومات و پروسه "
+"اعتبار سنجی استفاره دیتا"
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -589,13 +598,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "انتخاب واحد سازمان"
 
 msgid "Generate"
-msgstr ""
+msgstr "تولید"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "مدیریت جداول تحلیلی"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -606,10 +615,10 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "تجدید جداول تحلیلی"
 
 msgid "Start export"
-msgstr ""
+msgstr "آغاز صادر"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
@@ -633,34 +642,34 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 msgid "Search apps"
-msgstr ""
+msgstr "جستجوی برنامه ها"
 
 msgid "Profile"
-msgstr ""
+msgstr "مشخصات"
 
 msgid "Account"
-msgstr ""
+msgstr "حساب"
 
 msgid "Help"
-msgstr ""
+msgstr "کمک"
 
 msgid "Log out"
-msgstr ""
+msgstr "خروج از سیستم"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "درباره DHIS 2"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "مدیریت برنامه ها"
 
 msgid "No results found"
-msgstr ""
+msgstr "هیج نتیجه ی یافت نشد"
 
 msgid "Interpretations"
-msgstr ""
+msgstr "تفسیر ها"
 
 msgid "Messages"
-msgstr ""
+msgstr "پیام ها"
