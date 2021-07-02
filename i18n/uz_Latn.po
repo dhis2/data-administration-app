@@ -19,12 +19,14 @@ msgid "Data Administration"
 msgstr "Maʼlumotlarni boshqarish"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Maʼlumotlar yaxlitligi"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Maʼlumotlarning yaxlitligini tekshirishni boshlang va meta-maʼlumotni "
+"oʼrnatishda anomaliyalar va muammolarni oching."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -42,55 +44,57 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Guruhlar boʼlmagan maʼlumotlar elementlari"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Yangi SQL koʼrinishini qoʼshing"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"Turli xil davr turlari bilan maʼlumotlar toʼplamiga tayinlangan maʼlumotlar "
+"elementlari"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Maʼlumotlar toʼplamlari tashkiliy boʼlimlariga biriktirilmagan"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Bir xil formulalarga ega indikatorlar"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Guruhsiz indikatorlar"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Notoʼgʼri indikator surati"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Notoʼgʼri koʼrsatgich indikatorlari"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Eksklyuziv guruhlar toʼplamini buzadigan koʼrsatgichlar"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Siklik maʼlumotlarga ega boʼlgan tashkiliy boʼlimlar"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Yetim qolgan tashkiliy boʼlimlar"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Guruhsiz tashkiliy boʼlimlar"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Guruh toʼplami boʼlmagan tashkiliy boʼlim guruhlari"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Guruhlarsiz tasdiqlash qoidalari"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Notoʼgʼri tekshirish qoidasi chap tomondagi ifodalar"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Notoʼgʼri tekshirish qoidasi oʼng tomondagi ifodalar"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -102,10 +106,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Notoʼgʼri kategoriyadagi kombinatsiyalar"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Davrlardan nusxa olish"
 
 msgid "Program rules with no condition"
 msgstr ""
@@ -135,7 +139,7 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Texnik xizmat"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -158,7 +162,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Аnalitik jadvallarni tozalash"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -179,25 +183,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Kesishma davrlari"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Muddati oʼtgan taklifnomalarni olib tashlash"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "SQL koʼrinishini qoldiring"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "SQL koʼrinishni yaratish"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Kategoriya variantlari kombinatsiyalarini yangilash"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Tashkiliy boʼlim shajarasini yangilash"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Ilova keshini tozalash"
 
 msgid "Reload apps"
 msgstr ""
@@ -209,6 +213,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Tashkiliy boʼlim ierarxiyasi va boshqalar qatorida guruhlar toʼplami uchun "
+"resurslar bazasi jadvallarini yaratish."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -223,48 +229,50 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Tashkiliy boʼlimning tuzilishi"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Tashkiliy boʼlim kategoriyasi varianti kombinatsiyasi"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Kategoriya variantlari guruhi toʼplamining tuzilishi"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Maʼlumotlar elementi guruhi toʼplamining tuzilishi"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Indikator guruhi toʼplamining tuzilishi"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "tashkiliy boʼlim guruhi toʼplamining tuzilishi"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Kategoriya tarkibi"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Maʼlumotlar elementlari kategoriyasi parametrlari kombinatsiyasi nomi"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Maʼlumotlar elementi strukturasi"
 
 msgid "Period structure"
-msgstr ""
+msgstr "ylik tuzilishi"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Sananing davriylik tarkibi"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Maʼlumotlar elementi kategoriya varianti kombinatsiyalari"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Maʼlumotlar statistikasi"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Maʼlumotlar bazasi, maʼlumotlar elementlari, koʼrsatgichlar, maʼlumotlar "
+"toʼplamlari va maʼlumotlar qiymatlari kabi obʼektlar sonini koʼrib chiqing."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -279,94 +287,94 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Obʼekt turi"
 
 msgid "Last hour"
-msgstr ""
+msgstr "Oxirgi soatda"
 
 msgid "Today"
-msgstr ""
+msgstr "бугун"
 
 msgid "Last"
-msgstr ""
+msgstr "Keyingi"
 
 msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Foydalanuvchi tizimga kirdi"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Foydalanuvchi akkauntidagi taklifnomalar"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Kutilayotgan taklifnomalar"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Muddati oʼtgan taklifnomalar"
 
 msgid "Data values"
-msgstr ""
+msgstr "Maʼlumotlarning qiymatlari"
 
 msgid "Events"
-msgstr ""
+msgstr "Hodisa/tadbirlar"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Koʼrsatgichlar"
 
 msgid "Periods"
-msgstr ""
+msgstr "Davrlar"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Tashkiliy birliklar"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Tasdiqlash qoidalari"
 
 msgid "Programs"
-msgstr ""
+msgstr "Dasturlar"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Maʼlumot elementlari"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Tashkiliy boʼlim guruhlari"
 
 msgid "Pivot tables"
 msgstr ""
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Indikator turlari"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Maʼlumotlar toʼplami"
 
 msgid "User groups"
-msgstr ""
+msgstr "Foydalanuvchi guruhlari"
 
 msgid "Users"
-msgstr ""
+msgstr "Foydalanuvchilar"
 
 msgid "Maps"
-msgstr ""
+msgstr "Xaritalar"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Indikator guruhlari"
 
 msgid "Charts"
-msgstr ""
+msgstr "Diagrammalar"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Maʼlumotlar elementi guruhlari"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Boshqaruv Paneli"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Istisno holatlarini boshqarish"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Istisno holatini qulflash"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -378,15 +386,17 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Maʼlumotlarni kiritish shakllarini blokirovkalashning standart qoidalari "
+"istisnolarni qoʼshish yoki olib tanlash."
 
 msgid "Batch deletion"
 msgstr ""
 
 msgid "Cancel"
-msgstr ""
+msgstr "Бекор қилиш"
 
 msgid "Add"
-msgstr ""
+msgstr "Qoʼshish"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -401,40 +411,40 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Ishonchinigiz komilmi?"
 
 msgid "Confirm"
-msgstr ""
+msgstr "Tasdiqlang"
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Muassasalar daraxti (shajarasi) yangilanmoqda..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Tashkiliy boʼlimlar uchun"
 
 msgid "Period"
-msgstr ""
+msgstr "davr"
 
 msgid "Data Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Tashkiliy birlik"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Tashkiliy Boʼlim Guruhi"
 
 msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Танланг"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Tanlanmani bekor qilish"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -443,34 +453,34 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Исми"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Олиб ташлаш"
 
 msgid "Actions"
-msgstr ""
+msgstr "Аmallar"
 
 msgid "of"
-msgstr ""
+msgstr "ning"
 
 msgid "week"
-msgstr ""
+msgstr "hafta"
 
 msgid "month"
-msgstr ""
+msgstr "oy"
 
 msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "juft oy"
 
 msgid "day"
-msgstr ""
+msgstr "kun"
 
 msgid "jan"
 msgstr ""
@@ -527,22 +537,22 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "kvartal"
 
 msgid "Q1"
-msgstr ""
+msgstr "Q1"
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
-msgstr ""
+msgstr "Q3"
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "6 oylik"
 
 msgid "jan-jun"
 msgstr ""
@@ -557,12 +567,14 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Minimal-Maksimal qiymatni yaratish"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Maʼlumotlarni kiritish va tekshirish jarayonida maʼlumotlarini tekshirish "
+"uchun ishlatishi mumkin boʼlgan minimal-maksimal qiymatlarni yarating."
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -589,13 +601,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Tashkiliy Boʼlim Tanlash"
 
 msgid "Generate"
-msgstr ""
+msgstr "Yarating"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Аnalitika jadvallarini boshqarish"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -606,61 +618,63 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Аnalitik jadvallarni yangilang"
 
 msgid "Start export"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
+"Umumiy maʼlumotlar birlashtirilishi va maʼlumotlarni toʼldirilishini "
+"oʼtkazib yuborish"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Manba jadvalini yaratishni oʼtkazib yuborish"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Hodisa/Tadbir maʼlumotlarini yaratishni oʼtkazib yuborish"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Roʼyxatga olish maʼlumotlarini yaratishni oʼtkazib yuborish"
 
 msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Oxirgi yillar uchun maʼlumotlar soni, qoʼshichi qilish uchun"
 
 msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Sozlamalar"
 
 msgid "Search apps"
-msgstr ""
+msgstr "Ilovalarni qidirish"
 
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 msgid "Account"
-msgstr ""
+msgstr "Raqami"
 
 msgid "Help"
-msgstr ""
+msgstr "Yordam"
 
 msgid "Log out"
-msgstr ""
+msgstr "Chiqish"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "DHIS2 haqida"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "Ilovalarimni boshqarish"
 
 msgid "No results found"
-msgstr ""
+msgstr "Hech qanday natija topilmadi"
 
 msgid "Interpretations"
-msgstr ""
+msgstr "Talqinlar"
 
 msgid "Messages"
-msgstr ""
+msgstr "Xabarlar"
