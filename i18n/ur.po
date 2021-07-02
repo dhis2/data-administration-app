@@ -1,13 +1,14 @@
 # 
 # Translators:
 # phil_dhis2, 2021
+# Viktor Varland <viktor@dhis2.org>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-01T16:05:58.877Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,12 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "ڈیٹا کی سالمیت"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"اعداد و شمار سالمیت کی جانچ پڑتال کریں اور میٹا ڈیٹا سیٹ اپ میں انضمام اور "
+"مسائل کو بے نقاب کریں."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -39,55 +42,57 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "ڈیٹا عناصر کے بغیر"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "ڈیٹا عناصر خصوصی گروپ سیٹ کی خلاف ورزی کرتے ہیں"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"اعداد و شمار کے مختلف عناصر کے ساتھ اعداد و شمار کے مقرر کردہ اعداد و شمار "
+"عناصر"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "ڈیٹا سیٹ تنظیم تنظیموں کو تفویض نہیں کرتی"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "ایک ہی فارمولا کے ساتھ اشارے"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "گروہوں کے بغیر اشارے"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "غلط اشارے numerators"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "غلط اشارے ڈومینٹرز"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "خصوصی گروپ سیٹ کی خلاف ورزی کرنے والے اشارے"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "سائیکل یونین کے ساتھ تنظیم یونٹس"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "یتیم تنظیم تنظیم یونٹس"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "تنظیموں کے بغیر تنظیموں کے یونٹ"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "آرگنائزیشن یونٹ گروپ گروپ کے بغیر بغیر"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "گروہوں کے بغیر توثیق کے قوانین"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "غلط توثیق کا اصول بائیں جانب اظہار"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "غلط توثیقی قاعدہ دائیں جانب اظہار"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -99,10 +104,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "غلط زمرہ مجموعہ"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "ڈپلیکیٹ مدت"
 
 msgid "Program rules with no condition"
 msgstr ""
@@ -135,7 +140,7 @@ msgid "Program indicators wit no expression"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "دیکھ بھال"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -158,7 +163,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "تجزیہ کاری میزیں صاف کریں"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -179,25 +184,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "پراون دور"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "ختم شدہ دعوت نامہ ہٹائیں"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "SQL خیالات چھوڑیں"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "SQL خیالات بنائیں"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "تازہ ترین قسم کا اختیار مجموعہ"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "تنظیم یونٹ راستوں کو اپ ڈیٹ کریں"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "درخواست کیش صاف کریں"
 
 msgid "Reload apps"
 msgstr ""
@@ -209,6 +214,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"تنظیم یونٹ کے تنظیمی ڈھانچے اور گروپ سیٹ ڈھانچے کے لئے دوسروں کے درمیان "
+"وسائل ڈیٹا بیس کی میزیں بنائیں."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -223,48 +230,50 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "تنظیم یونٹ کی ساخت"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "تنظیم یونٹ قسم کا اختیار کامبو"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "زمرہ اختیار گروپ کی تشکیل"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "ڈیٹا عنصر گروپ سیٹ ڈھانچہ"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "اشارے گروپ سیٹ ڈھانچہ"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "تنظیم یونٹ گروپ کی تشکیل"
 
 msgid "Category structure"
-msgstr ""
+msgstr "زمرہ کی ساخت"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "ڈیٹا عنصر کی قسم کا اختیار کامبو نام"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "ڈیٹا عنصر کی ساخت"
 
 msgid "Period structure"
-msgstr ""
+msgstr "مدت کی ساخت"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "تاریخ کی مدت کی ساخت"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "ڈیٹا عنصر زمرہ اختیار کے مجموعے"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "ڈیٹا کے اعداد و شمار"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"ڈیٹا بیس میں اشیاء کی تعداد کو براؤز کریں، جیسے ڈیٹا عناصر، اشارے، ڈیٹا سیٹ "
+"اور ڈیٹا اقدار."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -279,94 +288,94 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "آبجیکٹ کی قسم"
 
 msgid "Last hour"
-msgstr ""
+msgstr "آخری گھنٹہ"
 
 msgid "Today"
-msgstr ""
+msgstr "آج"
 
 msgid "Last"
-msgstr ""
+msgstr "آخری"
 
 msgid "days"
-msgstr ""
+msgstr "دن"
 
 msgid "Users logged in"
-msgstr ""
+msgstr "لاگ ان صارفین"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "صارف اکاؤنٹ کی دعوت نامہ"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "موصول ہونے والی دعوت نامہ"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "متوقع دعوت نامہ"
 
 msgid "Data values"
-msgstr ""
+msgstr "ڈیٹا اقدار"
 
 msgid "Events"
-msgstr ""
+msgstr "تقریبات"
 
 msgid "Indicators"
-msgstr ""
+msgstr "اشارے"
 
 msgid "Periods"
-msgstr ""
+msgstr "دور"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "تنظیمی یونٹس"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "توثیقی قائدہ"
 
 msgid "Programs"
-msgstr ""
+msgstr "پروگرامز"
 
 msgid "Data elements"
-msgstr ""
+msgstr "ڈیٹا عنصر"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "تنظیمی یونٹ کے گروپس"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "پیوٹ ٹیبلز"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "اشارے کی اقسام"
 
 msgid "Data sets"
-msgstr ""
+msgstr "ڈیٹا سیٹس"
 
 msgid "User groups"
-msgstr ""
+msgstr "صارف کے گروہ"
 
 msgid "Users"
-msgstr ""
+msgstr "صارف"
 
 msgid "Maps"
-msgstr ""
+msgstr "نقسے"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "اشارے بمع گروپ"
 
 msgid "Charts"
-msgstr ""
+msgstr "چارٹس"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "ڈیٹا عناصر کے گروپ"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "ڈیشبورڈز"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "لاک استقبال مینجمنٹ"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "لاک استقبال"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -378,6 +387,8 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"ڈیٹا انٹری فارموں کو تالا لگا کرنے کیلئے معیاری قواعد میں استثنا شامل کریں "
+"یا ہٹائیں."
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -401,7 +412,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "کیا تمہیں یقین ہے؟"
 
 msgid "CONFIRM"
 msgstr ""
@@ -413,13 +424,13 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "تنظیم یونٹس کے اندر اندر"
 
 msgid "Period"
 msgstr "مدت"
 
 msgid "Data Set"
-msgstr ""
+msgstr "ڈیٹا سیٹ"
 
 msgid "Organisation Unit"
 msgstr ""
@@ -431,10 +442,10 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "منتخب کریں"
 
 msgid "Deselect"
-msgstr ""
+msgstr "منتخب کریں"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -443,19 +454,19 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "ÙØ§Ù"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
 msgid "Actions"
-msgstr ""
+msgstr "ایکشنز"
 
 msgid "of"
-msgstr ""
+msgstr "کی"
 
 msgid "week"
 msgstr ""
@@ -557,12 +568,14 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "مائن میکس ویلیو نسل"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"ڈیٹا انٹری اور توثیق کے عمل کے دوران ڈیٹا کی توثیق کے لئے استعمال کیا جا "
+"سکتا ہے جس میں کم سے زیادہ اقدار پیدا کریں."
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -586,10 +599,10 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "تنظیم یونٹ کا چناؤ"
 
 msgid "Generate"
-msgstr ""
+msgstr "پیدا"
 
 msgid "Analytics tables management"
 msgstr ""
@@ -630,37 +643,37 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "ØªØ±ØªÛØ¨Ø§Øª"
 
 msgid "Search apps"
-msgstr ""
+msgstr "ایپس تلاش کریں"
 
 msgid "Profile"
-msgstr ""
+msgstr "پرفائل"
 
 msgid "Account"
-msgstr ""
+msgstr "اکاؤنٹ"
 
 msgid "Help"
-msgstr ""
+msgstr "مدد"
 
 msgid "Log out"
-msgstr ""
+msgstr "لاگ آؤٹ"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "ڈی.آئی.ایچ.ایس کے متعلق"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "ایپ کی میجنمنٹ"
 
 msgid "No results found"
-msgstr ""
+msgstr "کوئی نتیجہ نہیں ملا"
 
 msgid "Interpretations"
-msgstr ""
+msgstr "تشریحات"
 
 msgid "Messages"
-msgstr ""
+msgstr "پیغامات"
 
 msgid "Data set"
 msgstr "ڈیٹا سیٹ"

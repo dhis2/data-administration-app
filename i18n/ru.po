@@ -1,5 +1,7 @@
 # 
 # Translators:
+# Saurabh Leekha <saurabh.leekha@hispindia.org>, 2021
+# Ulanbek Abakirov <ulans@mail.ru>, 2021
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 
@@ -17,12 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Целостность данных"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Запустить проверки целостности данных и объявить об аномалиях и проблемаъ в "
+"настройках мета данных."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -40,55 +44,56 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Элементы данных без групп"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Элементы данных нарушают исключительные (эксклюзивные) наборы данных"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"Элементы данных назначенных для наборов данных с различными видами периодов"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Наборы данных не назначены для организации"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Индикаторы с идентичной формулой"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Индикаторы без групп"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Недействительные числители индикатора"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Недействительные знаменатели индикатора"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Индикаторы нарушают исключительные (эксклюзивные) наборы данных"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Организационные отделы с циклическими ссылками"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Сиротские организационные отделы"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Организации/отделы без групп"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Организации/отделы без наборов групп"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Правила проверки без учета групп"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Недействительные правила проверки выражений левой части"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Недействительные правила проверки выражений правой части"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -100,10 +105,10 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Неверные комбинации категорий"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Дублирующиеся периоды"
 
 msgid "Program rules with no condition"
 msgstr ""
@@ -136,7 +141,7 @@ msgid "Program indicators wit no expression"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Содержание"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -159,7 +164,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr ""
+msgstr "Очистить аналитические таблицы"
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -180,25 +185,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Периоды вырезания"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Удалить просроченные приглашения"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Удаление SQL представления"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "Создать SQL представления"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Обновить комбинации категорий опций"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Обновить пути организационных единиц"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Очистить кеш приложения"
 
 msgid "Reload apps"
 msgstr ""
@@ -210,6 +215,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Генерировать таблицы ресурсов базы данных для иерархии организации и "
+"структуры набора  группы среды других."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -224,48 +231,50 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Структура организации"
 
 msgid "Organisation unit category option combo"
-msgstr ""
+msgstr "Комбинированная опция категории организационной единицы"
 
 msgid "Category option group set structure"
-msgstr ""
+msgstr "Структура набора групп опций категории"
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Структура набора группы элементов данных"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Структура набора группы индикаторов"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Структура набора группы организации"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Структура категории"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Элемент данных, название комбинированной опции категории"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Структура элемента данных"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Структура периода"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Структура периода даты"
 
 msgid "Data element category option combinations"
-msgstr ""
+msgstr "Комбинации опции категории элементы данных"
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Статистические данные"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Просмотреть число объектов в базе данных, lтакие как элементы данных, "
+"индикаторы, наборы данных и значение данных."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -280,94 +289,94 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Тип объекта"
 
 msgid "Last hour"
-msgstr ""
+msgstr "За последний час"
 
 msgid "Today"
-msgstr ""
+msgstr "Сегодня"
 
 msgid "Last"
-msgstr ""
+msgstr "Последняя"
 
 msgid "days"
-msgstr ""
+msgstr "дни"
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Пользователь зарегистировался"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Приглашения учетной записи пользователя"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Ожидающие приглашения"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Просроченные приглашения"
 
 msgid "Data values"
-msgstr ""
+msgstr "Значение данных"
 
 msgid "Events"
-msgstr ""
+msgstr "События"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Индикаторы"
 
 msgid "Periods"
-msgstr ""
+msgstr "Периоды"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Организационные единицы"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Правила проверки"
 
 msgid "Programs"
-msgstr ""
+msgstr "Программы"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Элементы данных"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Группы организаций"
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "Сводные таблицы"
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Виды индикаторов"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Наборы данных"
 
 msgid "User groups"
-msgstr ""
+msgstr "Группы пользователей"
 
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 msgid "Maps"
-msgstr ""
+msgstr "Карты"
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Группы индикаторов"
 
 msgid "Charts"
-msgstr ""
+msgstr "Диаграммы"
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Группы элементов данных"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Информационные панели"
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Блокировать управление исключений"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Блокировать исключения"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -379,6 +388,8 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Добавить или убрать исключения от стандартныз правил по блокировке форм "
+"ввода данных"
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -402,7 +413,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Вы уверены?"
 
 msgid "CONFIRM"
 msgstr ""
@@ -411,19 +422,19 @@ msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Обновление дерева организационных единиц ..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Для организационных единиц в пределах"
 
 msgid "Period"
 msgstr "Период"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Набор данных"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Организация"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -432,10 +443,10 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Выбрать"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Отменить"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -444,19 +455,19 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Убрать"
 
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 msgid "of"
-msgstr ""
+msgstr "management\\=управление"
 
 msgid "week"
 msgstr ""
@@ -558,12 +569,14 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Мин-макс генерирование"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Генерировать мин-макс значения, которые могут быть использованы для проверки"
+" данных во время ввода данных и процесса проверки/валидации."
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -587,13 +600,13 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Выбор организации"
 
 msgid "Generate"
-msgstr ""
+msgstr "Генерировать"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Управление таблицами аналитики"
 
 msgid "Analytics Tables"
 msgstr ""
@@ -604,64 +617,64 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Обновление аналитических таблиц"
 
 msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Skip generation of aggregate data and completeness data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Skip generation of resource tables"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Skip generation of event data"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Skip generation of enrollment data"
 
 msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Number of last years of data to include"
 
 msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 msgid "Search apps"
-msgstr ""
+msgstr "Поиск приложений"
 
 msgid "Profile"
-msgstr ""
+msgstr "Профиль"
 
 msgid "Account"
-msgstr ""
+msgstr "Учетная запись"
 
 msgid "Help"
-msgstr ""
+msgstr "Помощь"
 
 msgid "Log out"
-msgstr ""
+msgstr "Выйти"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "О DHIS 2"
 
 msgid "Manage my apps"
-msgstr ""
+msgstr "Управление моими приложениями"
 
 msgid "No results found"
-msgstr ""
+msgstr "Результаты не найдены"
 
 msgid "Interpretations"
-msgstr ""
+msgstr "Interpretations"
 
 msgid "Messages"
-msgstr ""
+msgstr "Сообщения"
 
 msgid "Data set"
 msgstr "Набор данных"
