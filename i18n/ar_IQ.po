@@ -285,7 +285,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "اليوم"
 
 msgid "Last"
 msgstr ""
@@ -312,13 +312,13 @@ msgid "Events"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "المؤشرات"
 
 msgid "Periods"
-msgstr ""
+msgstr "الفترات الزمنية"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "الوحدات التنظيمية"
 
 msgid "Validation rules"
 msgstr ""
@@ -327,34 +327,34 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "عناصر البيانات"
 
 msgid "Organisation unit groups"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "الجداول المحورية"
 
 msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "حزم البيانات"
 
 msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr ""
+msgstr "المستخدمون"
 
 msgid "Maps"
-msgstr ""
+msgstr "الخرائط"
 
 msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "المخططات البيانية"
 
 msgid "Data element groups"
 msgstr ""
@@ -401,7 +401,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "هل أنت متأكد؟"
 
 msgid "CONFIRM"
 msgstr ""
@@ -422,7 +422,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "الوحدة التنظيمية"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -431,7 +431,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "تحديد"
 
 msgid "Deselect"
 msgstr ""
@@ -443,13 +443,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "إزالة"
 
 msgid "Actions"
 msgstr ""
@@ -636,7 +636,7 @@ msgid "Search apps"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "ملف التعريف"
 
 msgid "Account"
 msgstr ""
@@ -657,10 +657,10 @@ msgid "No results found"
 msgstr ""
 
 msgid "Interpretations"
-msgstr ""
+msgstr "التفسيرات"
 
 msgid "Messages"
-msgstr ""
+msgstr "الرسائل"
 
 msgid "Data set"
 msgstr ""

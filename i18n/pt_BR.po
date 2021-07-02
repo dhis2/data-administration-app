@@ -17,12 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Data Integrity"
-msgstr ""
+msgstr "Integridade de dado"
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
+"Executar verificações de integridade de dados e revelar anomalias e "
+"problemas na configuração de metadados."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -40,55 +42,57 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr ""
+msgstr "Elementos de dados sem grupos"
 
 msgid "Data elements violating exclusive group sets"
-msgstr ""
+msgstr "Elementos de dados violaram conjuntos de grupo exclusivo"
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
+"Elementos de dados atribuídos a conjuntos de dados com tipos diferentes "
+"períodos"
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Conjuntos de dados não atribuídos a unidades organizacionais"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indicadores com fórmulas idênticas"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indicadores sem grupos"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Inválido numeradores de indicador"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "Inválido denominadores indicador"
 
 msgid "Indicators violating exclusive group sets"
-msgstr ""
+msgstr "Indicadores violaram conjuntos de grupos exclusivo"
 
 msgid "Organisation units with cyclic references"
-msgstr ""
+msgstr "Unidades organizacionais com referências cíclicas"
 
 msgid "Orphaned organisation units"
-msgstr ""
+msgstr "Unidades organizacionais Órfãs"
 
 msgid "Organisation units without groups"
-msgstr ""
+msgstr "Unidades organizacionais sem grupos"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr ""
+msgstr "Grupos de unidades Organização sem sets grupo"
 
 msgid "Validation rules without groups"
-msgstr ""
+msgstr "Regras de validação sem grupos"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Regra de validação inválida de expressões à esquerda"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Regra de validação inválida de expressões à direita"
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -136,7 +140,7 @@ msgid "Program indicators wit no expression"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Manutenção"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -180,7 +184,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Excluir períodos"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -210,6 +214,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Gerar tabelas de recursos da base de dados para a hierarquia de unidade "
+"organizacional e da estrutura definida grupo entre outros."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -224,7 +230,7 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr ""
+msgstr "Estrutura da Unidade Organizacional"
 
 msgid "Organisation unit category option combo"
 msgstr ""
@@ -233,25 +239,25 @@ msgid "Category option group set structure"
 msgstr ""
 
 msgid "Data element group set structure"
-msgstr ""
+msgstr "Estrutura de Dados de Elementos do Grupo"
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Estrutura de conjunto de grupo de indicador"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Estrutura de Grupo na unidade organizacional"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Estrutura da categoria"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Opcção de nome combo da categoria do elemento de dados"
 
 msgid "Data element structure"
-msgstr ""
+msgstr "Estrutura de elemento de dados"
 
 msgid "Period structure"
-msgstr ""
+msgstr "Estrutura periódica"
 
 msgid "Date period structure"
 msgstr ""
@@ -260,12 +266,14 @@ msgid "Data element category option combinations"
 msgstr ""
 
 msgid "Data Statistics"
-msgstr ""
+msgstr "Dados Estatísticos"
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Procurar o número de objetos no base de dados, como elementos de dados, "
+"conjuntos de indicadores, dados e valores de dados."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -280,13 +288,13 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr ""
+msgstr "Tipo de objecto"
 
 msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "Hoje"
 
 msgid "Last"
 msgstr ""
@@ -295,7 +303,7 @@ msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr ""
+msgstr "Utilizadores autênticados"
 
 msgid "User account invitations"
 msgstr ""
@@ -307,67 +315,67 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "Valor de Dados"
 
 msgid "Events"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicadores"
 
 msgid "Periods"
-msgstr ""
+msgstr "Períodos"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unidades organizacionais"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Regras de validação"
 
 msgid "Programs"
-msgstr ""
+msgstr "Programas"
 
 msgid "Data elements"
-msgstr ""
+msgstr "Os elementos de dados"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grupos de unidades organizacionais"
 
 msgid "Pivot tables"
 msgstr ""
 
 msgid "Indicator types"
-msgstr ""
+msgstr "Tipos de indicador"
 
 msgid "Data sets"
-msgstr ""
+msgstr "Agregação de Dados"
 
 msgid "User groups"
-msgstr ""
+msgstr "Grupos de Utilizadores"
 
 msgid "Users"
-msgstr ""
+msgstr "Utilizadores"
 
 msgid "Maps"
 msgstr ""
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Grupos de Indicadores"
 
 msgid "Charts"
 msgstr ""
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Grupos de Elementos de Dados"
 
 msgid "Dashboards"
 msgstr ""
 
 msgid "Lock Exception Management"
-msgstr ""
+msgstr "Gestão da excepção de bloqueio"
 
 msgid "Lock Exception"
-msgstr ""
+msgstr "Excepção de bloqueio"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -379,6 +387,8 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
+"Adicionar ou remover excepções às regras padrão para o bloqueio dos "
+"formulários de entrada de dados."
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -402,7 +412,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Tem certeza?"
 
 msgid "CONFIRM"
 msgstr ""
@@ -420,10 +430,10 @@ msgid "Period"
 msgstr "Período"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Conjunto de Dados"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unidade organizacional"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -432,7 +442,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Seleccione"
 
 msgid "Deselect"
 msgstr ""
@@ -444,13 +454,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 msgid "Actions"
 msgstr ""
@@ -558,12 +568,14 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr ""
+msgstr "Min-Max Geração de Valor"
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
+"Gerar min-max valores que podem ser usadas para validação de dados durante "
+"os processos de entrada de dados e validação."
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -587,10 +599,10 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Selecção de unidade organizacional"
 
 msgid "Generate"
-msgstr ""
+msgstr "Gerar"
 
 msgid "Analytics tables management"
 msgstr ""
@@ -604,7 +616,7 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Actualização das tabelas analiticas"
 
 msgid "START EXPORT"
 msgstr ""
@@ -631,25 +643,25 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 msgid "Search apps"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 msgid "Account"
-msgstr ""
+msgstr "Conta"
 
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 msgid "Log out"
-msgstr ""
+msgstr "Sair"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "Acerca de DHIS2"
 
 msgid "Manage my apps"
 msgstr ""
@@ -658,10 +670,10 @@ msgid "No results found"
 msgstr ""
 
 msgid "Interpretations"
-msgstr ""
+msgstr "Interpretações"
 
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 msgid "Data set"
 msgstr "Conjunto de dados"

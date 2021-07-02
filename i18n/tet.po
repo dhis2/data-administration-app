@@ -136,7 +136,7 @@ msgid "Program indicators wit no expression"
 msgstr ""
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Manutensaun"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -289,7 +289,7 @@ msgid "Today"
 msgstr ""
 
 msgid "Last"
-msgstr ""
+msgstr "Ikus"
 
 msgid "days"
 msgstr ""
@@ -313,25 +313,25 @@ msgid "Events"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikadores"
 
 msgid "Periods"
-msgstr ""
+msgstr "Períodus"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unidade organizasional"
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Regras validasaun"
 
 msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elementus dadus"
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grupus unidade organizasional"
 
 msgid "Pivot tables"
 msgstr ""
@@ -340,25 +340,25 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Pakote dadus"
 
 msgid "User groups"
-msgstr ""
+msgstr "Grupus utilizador"
 
 msgid "Users"
-msgstr ""
+msgstr "Utilizadores"
 
 msgid "Maps"
 msgstr ""
 
 msgid "Indicator groups"
-msgstr ""
+msgstr "Grupus indikadores"
 
 msgid "Charts"
 msgstr ""
 
 msgid "Data element groups"
-msgstr ""
+msgstr "Grupus elementus dadus"
 
 msgid "Dashboards"
 msgstr ""
@@ -402,7 +402,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Itabo'ot iha duni serteza kah??"
 
 msgid "CONFIRM"
 msgstr ""
@@ -420,10 +420,10 @@ msgid "Period"
 msgstr "Períodu"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Konjuntu Dadus"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unidade Organizasaun"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -432,7 +432,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Selesiona"
 
 msgid "Deselect"
 msgstr ""
@@ -444,13 +444,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Naran"
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Hasai"
 
 msgid "Actions"
 msgstr ""
@@ -587,7 +587,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Selesaun Unidade Organizasional"
 
 msgid "Generate"
 msgstr ""
@@ -631,25 +631,25 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Konfigurasaun"
 
 msgid "Search apps"
-msgstr ""
+msgstr "Buka aplikasoens"
 
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 msgid "Account"
-msgstr ""
+msgstr "Konta"
 
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 msgid "Log out"
-msgstr ""
+msgstr "Log out"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "Konabá DHIS 2"
 
 msgid "Manage my apps"
 msgstr ""
@@ -658,10 +658,10 @@ msgid "No results found"
 msgstr ""
 
 msgid "Interpretations"
-msgstr ""
+msgstr "Interpretasoens"
 
 msgid "Messages"
-msgstr ""
+msgstr "Mensajens"
 
 msgid "Data set"
 msgstr "Pakote dadus"
