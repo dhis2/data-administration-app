@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card, Button, NoticeBox, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { getUpdatedNotifications } from '../../get-updated-notifications'
@@ -67,23 +67,19 @@ const startResourceTablesGenerationMutation = {
 }
 
 const ResourceTable = ({ sectionKey }) => {
+    const poll = useResourceTablesPoll()
     const [
         handleStartResourceTablesGeneration,
         { loading, error, data },
-    ] = useDataMutation(startResourceTablesGenerationMutation)
-    const poll = useResourceTablesPoll()
+    ] = useDataMutation(startResourceTablesGenerationMutation, {
+        onComplete: data => {
+            const { id: jobId } = data.response
+            poll.start({ jobId })
+        },
+    })
     const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
     const isPolling =
         data && (!poll.data || !notifications.some(n => n.completed))
-
-    useEffect(() => {
-        if (loading || !data) {
-            return
-        }
-
-        const { id: jobId } = data.response
-        poll.start(jobId)
-    }, [loading, data])
 
     return (
         <div>

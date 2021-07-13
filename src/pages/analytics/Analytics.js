@@ -10,7 +10,7 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { getUpdatedNotifications } from '../../get-updated-notifications'
@@ -36,20 +36,16 @@ const Analytics = ({ sectionKey }) => {
     const [
         startAnalyticsTablesGeneration,
         { loading, error, data },
-    ] = useDataMutation(startAnalyticsTablesGenerationMutation)
+    ] = useDataMutation(startAnalyticsTablesGenerationMutation, {
+        onComplete: data => {
+            const { id: jobId } = data.response
+            poll.start({ jobId })
+        },
+    })
     const poll = useAnalyticsPoll()
     const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
     const isPolling =
         data && (!poll.data || !notifications.some(n => n.completed))
-
-    useEffect(() => {
-        if (loading || !data) {
-            return
-        }
-
-        const { id: jobId } = data.response
-        poll.start(jobId)
-    }, [loading, data])
 
     const handleStartAnalyticsTablesGeneration = () => {
         const params = {}
