@@ -8,12 +8,12 @@ Feature: Users should be able to manage their lock exceptions
 
   Scenario: User adds a lock exception
     When the user clicks on the 'Add lock exception' button
-    Then a modal appears
+    Then the user is sent to the add lock exception page
     When the user selects a data set
     Then organisation units are fetched
     When the user selects an organisation unit
     And the user selects a period
-    And the user clicks the modal's 'Add lock exception' button
+    And the user clicks on the 'Add lock exception' button
     Then the lock exception should be added
 
   Scenario: User deletes a lock exception

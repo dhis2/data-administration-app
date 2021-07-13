@@ -1,40 +1,38 @@
-import { useAlert } from '@dhis2/app-runtime'
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import { useDataMutation, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card, Button, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import Checkboxes from './Checkboxes'
 import styles from './Maintenance.module.css'
 import { useCheckboxes } from './use-checkboxes'
 
+const mutation = {
+    resource: 'maintenance',
+    type: 'create',
+    params: params => params,
+}
+
 const Maintenance = ({ sectionKey }) => {
-    const {
-        checkboxes,
-        toggleCheckbox,
-        toFormData: checkboxesToFormData,
-    } = useCheckboxes()
+    const { checkboxes, toggleCheckbox } = useCheckboxes()
     const successAlert = useAlert(i18n.t('Maintenance done'), { success: true })
-    const errorAlert = useAlert(({ message }) => message, { critical: true })
-    const { d2 } = useD2()
-    const [isLoading, setIsLoading] = useState(false)
+    const errorAlert = useAlert(({ error }) => error.message, {
+        critical: true,
+    })
+    const [mutate, { loading }] = useDataMutation(mutation, {
+        onComplete: () => successAlert.show(),
+        onError: error => errorAlert.show({ error }),
+    })
     const handlePerformMaintenance = async () => {
-        const api = d2.Api.getApi()
-        const formData = checkboxesToFormData()
-        setIsLoading(true)
-        try {
-            await api.post('maintenance', formData)
-            successAlert.show()
-        } catch (error) {
-            errorAlert.show({
-                message:
-                    error.message ||
-                    i18n.t('An unexpected error happened during maintenance'),
-            })
+        const params = {}
+        for (const [key, checked] of Object.entries(checkboxes)) {
+            if (checked) {
+                params[key] = true
+            }
         }
-        setIsLoading(false)
+        mutate(params)
     }
 
     return (
@@ -47,17 +45,17 @@ const Maintenance = ({ sectionKey }) => {
                 <Checkboxes
                     checkboxes={checkboxes}
                     toggleCheckbox={toggleCheckbox}
-                    disabled={isLoading}
+                    disabled={loading}
                 />
                 <Button
                     primary
                     disabled={
-                        isLoading ||
+                        loading ||
                         !Object.values(checkboxes).some(checked => checked)
                     }
                     onClick={handlePerformMaintenance}
                 >
-                    {isLoading ? (
+                    {loading ? (
                         <>
                             {i18n.t('Performing maintenance...')}
                             <CircularLoader small />

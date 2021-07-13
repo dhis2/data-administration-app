@@ -111,7 +111,7 @@ export const i18nKeys = {
         ),
         actionText: i18n.t('Overview Data Statistics'),
     },
-    lockException: {
+    lockExceptions: {
         title: i18n.t('Lock Exception Management'),
         label: i18n.t('Lock Exception'),
         description: i18n.t(

@@ -2,7 +2,7 @@ import { useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, CircularLoader, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import Issues from './Issues/Issues'
@@ -14,21 +14,17 @@ const startDataIntegrityCheckMutation = {
 }
 
 const DataIntegrity = ({ sectionKey }) => {
+    const poll = useDataIntegrityPoll()
     const [
         handleStartDataIntegrityCheck,
         { loading, error, data },
-    ] = useDataMutation(startDataIntegrityCheckMutation)
-    const poll = useDataIntegrityPoll()
+    ] = useDataMutation(startDataIntegrityCheckMutation, {
+        onComplete: data => {
+            const { id: jobId } = data.response
+            poll.start({ jobId })
+        },
+    })
     const isPolling = data && !poll.data
-
-    useEffect(() => {
-        if (loading || !data) {
-            return
-        }
-
-        const { id: jobId } = data.response
-        poll.start(jobId)
-    }, [loading, data])
 
     return (
         <>

@@ -5,9 +5,7 @@ When(`the user clicks the 'Batch deletion' button`, () => {
 })
 
 Then('the user is taken to the batch deletion page', () => {
-    cy.findByRole('heading', {
-        name: 'Lock Exception | Batch Deletion',
-    }).should('exist')
+    cy.url().should('contain', '/lock-exceptions/batch-deletion')
 })
 
 When('the user clicks on the batch delete button for a batch', () => {

@@ -18,3 +18,7 @@
 .noticeBox {
     margin-bottom: var(--spacers-dp16);
 }
+
+.notificationsTable {
+    margin-top: var(--spacers-dp16);
+}
