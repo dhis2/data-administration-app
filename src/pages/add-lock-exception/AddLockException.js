@@ -54,7 +54,7 @@ const AddLockException = () => {
         ({ error }) =>
             i18n.t('Error adding lock exception: {{error}}', {
                 error,
-                nsSeparator: null,
+                nsSeparator: '-:-',
             }),
         { critical: true }
     )

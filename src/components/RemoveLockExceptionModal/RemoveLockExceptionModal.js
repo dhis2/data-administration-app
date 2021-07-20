@@ -26,7 +26,7 @@ const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
         ({ error }) =>
             i18n.t('Error removing lock exception: {{error}}', {
                 error,
-                nsSeparator: null,
+                nsSeparator: '-:-',
             }),
         { critical: true }
     )
