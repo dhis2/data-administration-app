@@ -1,3 +1,5 @@
+import './locales'
+
 import { CssVariables } from '@dhis2/ui'
 import { MuiThemeProvider } from 'material-ui/styles'
 import React from 'react'
@@ -7,7 +9,6 @@ import Routes from './components/Routes/Routes'
 import Sidebar from './components/Sidebar/Sidebar'
 import muiTheme from './theme'
 import 'material-design-icons-iconfont'
-import './locales'
 
 const App = () => (
     <HashRouter>
