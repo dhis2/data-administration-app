@@ -134,7 +134,7 @@ msgid "Program rule actions with no stage id"
 msgstr "Akce pravidel programu bez id fáze"
 
 msgid "Program indicators wit no expression"
-msgstr ""
+msgstr "Ukazatele programu bez výrazu"
 
 msgid "Maintenance"
 msgstr "Údržba"
