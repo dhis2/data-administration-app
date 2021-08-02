@@ -128,7 +128,6 @@ class DataIntegrity extends Page {
                 }
                 return (
                     <DataIntegrityCard
-                        cardId={`errorElement-${element}`}
                         key={element}
                         title={control.label}
                         content={this.props.cards[element]}
