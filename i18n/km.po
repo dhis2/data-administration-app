@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
+"POT-Creation-Date: 2021-08-02T09:49:10.835Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Khmer (https://www.transifex.com/hisp-uio/teams/100509/km/)\n"
@@ -665,3 +665,6 @@ msgstr "កន្លែងសន្ទនារ"
 
 msgid "Messages"
 msgstr "សារ"
+
+msgid "{{issueTitle}} ({{issueElementsCount}})"
+msgstr ""
