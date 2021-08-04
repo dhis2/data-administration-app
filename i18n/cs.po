@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
@@ -17,6 +17,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "Otevřít uživatelskou příručku"
+
+msgid "Go back to all lock exceptions"
+msgstr "Vraťte se ke všem výjimkám zámku"
+
+msgid "Lock Exception"
+msgstr "Zamknout výjimku"
+
+msgid "Data set"
+msgstr "Datová sada"
+
+msgid "Period"
+msgstr "Období"
+
+msgid "Organisation unit"
+msgstr "Organizační jednotka"
+
+msgid "Batch delete lock exceptions"
+msgstr "Výjimky zámku pro dávkové mazání"
+
+msgid "Remove lock exception"
+msgstr "Odebrat výjimku zámku"
+
+msgid "Lock exception removed"
+msgstr "Výjimka zámku byla odstraněna"
+
+msgid "Error removing lock exception: {{error}}"
+msgstr "Chyba při odstraňování výjimky zámku: {{error}}"
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr "Opravdu chcete tuto výjimku zámku odebrat?"
+
+msgid "No, cancel"
+msgstr "Ne, zrušit"
+
+msgid "Removing lock exception..."
+msgstr "Odebírání výjimky zámku ..."
+
+msgid "Yes, remove lock exception"
+msgstr "Ano, odstranit výjimku zámku"
 
 msgid "Data Integrity"
 msgstr "Integrita dat"
@@ -191,9 +230,6 @@ msgstr "Přehled statistik dat"
 msgid "Lock Exception Management"
 msgstr "Zamknout správu výjimek"
 
-msgid "Lock Exception"
-msgstr "Zamknout výjimku"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -214,6 +250,153 @@ msgstr ""
 msgid "Generate Min-Max Values"
 msgstr "Generovat minimální a maximální hodnoty"
 
+msgid "Lock exception added"
+msgstr "Přidána výjimka zámku"
+
+msgid "Error adding lock exception: {{error}}"
+msgstr "Chyba při přidávání výjimky zámku: {{error}}"
+
+msgid "Add lock exception"
+msgstr "Přidat výjimku zámku"
+
+msgid "Adding lock exception..."
+msgstr "Přidávání výjimky zámku ..."
+
+msgid "Select a data set"
+msgstr "Vybrat datovou sadu"
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "Vybrat"
+
+msgid "Deselect"
+msgstr "Zrušit výběr"
+
+msgid "Error loading data for data set"
+msgstr "Chyba při načítání dat pro datovou sadu"
+
+msgid "Select All Org Units"
+msgstr "Vybrat všechny organizační jednotky"
+
+msgid "Deselect All Org Units"
+msgstr "Zrušit výběr všech organizačních jednotek"
+
+msgid "Organisation unit group"
+msgstr "Skupina organizační jednotky"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "Úroveň organizační jednotky"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr "týden"
+
+msgid "month"
+msgstr "měsíc"
+
+msgid "year"
+msgstr "rok"
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "dvakrát za měsíc"
+
+msgid "day"
+msgstr "den"
+
+msgid "jan"
+msgstr "led"
+
+msgid "feb"
+msgstr "úno"
+
+msgid "mar"
+msgstr "bře"
+
+msgid "apr"
+msgstr "dub"
+
+msgid "may"
+msgstr "kvě"
+
+msgid "jun"
+msgstr "čer"
+
+msgid "jul"
+msgstr "čvc"
+
+msgid "aug"
+msgstr "srp"
+
+msgid "sep"
+msgstr "zář"
+
+msgid "oct"
+msgstr "říj"
+
+msgid "nov"
+msgstr "lis"
+
+msgid "dec"
+msgstr "pro"
+
+msgid "jan-feb"
+msgstr "led-úno"
+
+msgid "mar-apr"
+msgstr "bře-dub"
+
+msgid "may-jun"
+msgstr "kvě-čer"
+
+msgid "jul-aug"
+msgstr "čvc-srp"
+
+msgid "sep-oct"
+msgstr "zář-říj"
+
+msgid "nov-dec"
+msgstr "lis-pro"
+
+msgid "quarter"
+msgstr "čtvrtletí"
+
+msgid "Q1"
+msgstr "Q1"
+
+msgid "Q2"
+msgstr "Q2"
+
+msgid "Q3"
+msgstr "Q3"
+
+msgid "Q4"
+msgstr "Q4"
+
+msgid "six monthly"
+msgstr "půlrok"
+
+msgid "jan-jun"
+msgstr "led-čer"
+
+msgid "jul-dec"
+msgstr "čvc-pro"
+
+msgid "apr-sep"
+msgstr "dub-zář"
+
+msgid "oct-mar"
+msgstr "říj-bře"
+
 msgid "Number of last years of data to include"
 msgstr "Počet posledních let údajů, které mají být zahrnuty"
 
@@ -225,6 +408,12 @@ msgstr "Zahájit export"
 
 msgid "All"
 msgstr "Vše"
+
+msgid "Batch Deletion"
+msgstr "Dávkové mazání"
+
+msgid "No lock exceptions to show."
+msgstr "Žádné výjimky zámku k zobrazení."
 
 msgid "Checking data integrity..."
 msgstr "Kontrola integrity dat ..."
@@ -424,212 +613,8 @@ msgstr "Nevyřízené pozvánky"
 msgid "Expired invitations"
 msgstr "Vypršené Pozvánky"
 
-msgid "Error loading data statistics"
-msgstr "Chyba při načítání statistik dat"
-
-msgid "No data statistics to show."
-msgstr "Žádné statistiky dat k zobrazení."
-
-msgid "Period"
-msgstr "Období"
-
-msgid "Data set"
-msgstr "Datová sada"
-
-msgid "Organisation unit"
-msgstr "Organizační jednotka"
-
-msgid "Organisation unit group"
-msgstr "Skupina organizační jednotky"
-
-msgid "Organisation unit level"
-msgstr "Úroveň organizační jednotky"
-
-msgid "Select"
-msgstr "Vybrat"
-
-msgid "Deselect"
-msgstr "Zrušit výběr"
-
-msgid "Select All Org Units"
-msgstr "Vybrat všechny organizační jednotky"
-
-msgid "Deselect All Org Units"
-msgstr "Zrušit výběr všech organizačních jednotek"
-
-msgid "Name"
-msgstr "Název"
-
-msgid "Show details"
-msgstr "Ukázat detaily"
-
-msgid "Remove"
-msgstr "Odebrat"
-
-msgid "Actions"
-msgstr "Akce"
-
-msgid "week"
-msgstr "týden"
-
-msgid "month"
-msgstr "měsíc"
-
-msgid "year"
-msgstr "rok"
-
-msgid "bi monthly"
-msgstr "dvakrát za měsíc"
-
-msgid "day"
-msgstr "den"
-
-msgid "jan"
-msgstr "led"
-
-msgid "feb"
-msgstr "úno"
-
-msgid "mar"
-msgstr "bře"
-
-msgid "apr"
-msgstr "dub"
-
-msgid "may"
-msgstr "kvě"
-
-msgid "jun"
-msgstr "čer"
-
-msgid "jul"
-msgstr "čvc"
-
-msgid "aug"
-msgstr "srp"
-
-msgid "sep"
-msgstr "zář"
-
-msgid "oct"
-msgstr "říj"
-
-msgid "nov"
-msgstr "lis"
-
-msgid "dec"
-msgstr "pro"
-
-msgid "jan-feb"
-msgstr "led-úno"
-
-msgid "mar-apr"
-msgstr "bře-dub"
-
-msgid "may-jun"
-msgstr "kvě-čer"
-
-msgid "jul-aug"
-msgstr "čvc-srp"
-
-msgid "sep-oct"
-msgstr "zář-říj"
-
-msgid "nov-dec"
-msgstr "lis-pro"
-
-msgid "quarter"
-msgstr "čtvrtletí"
-
-msgid "Q1"
-msgstr "Q1"
-
-msgid "Q2"
-msgstr "Q2"
-
-msgid "Q3"
-msgstr "Q3"
-
-msgid "Q4"
-msgstr "Q4"
-
-msgid "six monthly"
-msgstr "půlrok"
-
-msgid "jan-jun"
-msgstr "led-čer"
-
-msgid "jul-dec"
-msgstr "čvc-pro"
-
-msgid "apr-sep"
-msgstr "dub-zář"
-
-msgid "oct-mar"
-msgstr "říj-bře"
-
-msgid "Error loading data for data set"
-msgstr "Chyba při načítání dat pro datovou sadu"
-
-msgid "Loading organisation units tree..."
-msgstr "Načítání stromu organizačních jednotek ..."
-
-msgid "Select a data set"
-msgstr "Vybrat datovou sadu"
-
-msgid "Lock exception added"
-msgstr "Přidána výjimka zámku"
-
-msgid "Error adding lock exception: {{error}}"
-msgstr "Chyba při přidávání výjimky zámku: {{error}}"
-
-msgid "Add lock exception"
-msgstr "Přidat výjimku zámku"
-
-msgid "Cancel"
-msgstr "Zrušit"
-
-msgid "Adding lock exception..."
-msgstr "Přidávání výjimky zámku ..."
-
-msgid "Go back to all lock exceptions"
-msgstr "Vraťte se ke všem výjimkám zámku"
-
-msgid "Batch Deletion"
-msgstr "Dávkové mazání"
-
 msgid "Batch deletion"
 msgstr "Dávkové mazání"
-
-msgid "Error loading lock exceptions"
-msgstr "Chyba při načítání výjimek zámku"
-
-msgid "No lock exceptions to show."
-msgstr "Žádné výjimky zámku k zobrazení."
-
-msgid "Batch delete lock exceptions"
-msgstr "Výjimky zámku pro dávkové mazání"
-
-msgid "Remove lock exception"
-msgstr "Odebrat výjimku zámku"
-
-msgid "Lock exception removed"
-msgstr "Výjimka zámku byla odstraněna"
-
-msgid "Error removing lock exception: {{error}}"
-msgstr "Chyba při odstraňování výjimky zámku: {{error}}"
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr "Opravdu chcete tuto výjimku zámku odebrat?"
-
-msgid "No, cancel"
-msgstr "Ne, zrušit"
-
-msgid "Removing lock exception..."
-msgstr "Odebírání výjimky zámku ..."
-
-msgid "Yes, remove lock exception"
-msgstr "Ano, odstranit výjimku zámku"
 
 msgid "Maintenance done"
 msgstr "Údržba hotová"
@@ -637,32 +622,26 @@ msgstr "Údržba hotová"
 msgid "Performing maintenance..."
 msgstr "Provádění údržby ..."
 
-msgid "Error loading data"
-msgstr "Chyba při načítání dat"
-
-msgid "Generating min-max values..."
-msgstr "Generování minimálních a maximálních hodnot ..."
-
 msgid "Min-max values generated"
 msgstr "Vygenerovány minimální a maximální hodnoty"
-
-msgid "Error generating min-max values"
-msgstr "Chyba při generování minimálních a maximálních hodnot"
-
-msgid "Removing min-max values..."
-msgstr "Odebírání min-max hodnot ..."
 
 msgid "Min-max values removed"
 msgstr "Minimální a maximální hodnoty byly odstraněny"
 
-msgid "Error removing min-max values"
-msgstr "Chyba při odstraňování minimálních a maximálních hodnot"
+msgid "Generating min-max values..."
+msgstr "Generování minimálních a maximálních hodnot ..."
+
+msgid "Removing min-max values..."
+msgstr "Odebírání min-max hodnot ..."
 
 msgid "Generate min-max values"
 msgstr "Generovat hodnoty min-max"
 
 msgid "Remove min-max values"
 msgstr "Odebrat minimální a maximální hodnoty"
+
+msgid "Generating tables..."
+msgstr ""
 
 msgid "Generate tables"
 msgstr "Generovat tabulky"

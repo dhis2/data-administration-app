@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -18,6 +18,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "Åpne brukerveiledning"
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr "Lås unntak"
+
+msgid "Data set"
+msgstr "Datasett"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "Organisation unit"
+msgstr "Organisasjonsenhet"
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Error removing lock exception: {{error}}"
+msgstr ""
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "Nei, avbryt"
+
+msgid "Removing lock exception..."
+msgstr ""
+
+msgid "Yes, remove lock exception"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "Dataintegritet"
@@ -186,9 +225,6 @@ msgstr ""
 msgid "Lock Exception Management"
 msgstr "Lås administrering av unntak"
 
-msgid "Lock Exception"
-msgstr "Lås unntak"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -209,6 +245,153 @@ msgstr ""
 msgid "Generate Min-Max Values"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "Velg"
+
+msgid "Deselect"
+msgstr "Fjern merking"
+
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr "Organisasjonsenhetgruppe"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "Organisasjonsenhetnivå"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr "uke"
+
+msgid "month"
+msgstr "Måned"
+
+msgid "year"
+msgstr "år"
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "Tomånedlig"
+
+msgid "day"
+msgstr "dag"
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr "kvartal"
+
+msgid "Q1"
+msgstr "S1"
+
+msgid "Q2"
+msgstr "S2"
+
+msgid "Q3"
+msgstr "S3"
+
+msgid "Q4"
+msgstr "S4"
+
+msgid "six monthly"
+msgstr "Halvårlig"
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
 msgid "Number of last years of data to include"
 msgstr ""
 
@@ -220,6 +403,12 @@ msgstr ""
 
 msgid "All"
 msgstr "Alt"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "No lock exceptions to show."
+msgstr ""
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -419,212 +608,8 @@ msgstr "Ventende invitasjoner"
 msgid "Expired invitations"
 msgstr "Utgåtte invitasjoner"
 
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
-msgstr ""
-
-msgid "Period"
-msgstr "Periode"
-
-msgid "Data set"
-msgstr "Datasett"
-
-msgid "Organisation unit"
-msgstr "Organisasjonsenhet"
-
-msgid "Organisation unit group"
-msgstr "Organisasjonsenhetgruppe"
-
-msgid "Organisation unit level"
-msgstr "Organisasjonsenhetnivå"
-
-msgid "Select"
-msgstr "Velg"
-
-msgid "Deselect"
-msgstr "Fjern merking"
-
-msgid "Select All Org Units"
-msgstr ""
-
-msgid "Deselect All Org Units"
-msgstr ""
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Show details"
-msgstr "Vis detaljer"
-
-msgid "Remove"
-msgstr "Fjern"
-
-msgid "Actions"
-msgstr "Handlinger"
-
-msgid "week"
-msgstr "uke"
-
-msgid "month"
-msgstr "Måned"
-
-msgid "year"
-msgstr "år"
-
-msgid "bi monthly"
-msgstr "Tomånedlig"
-
-msgid "day"
-msgstr "dag"
-
-msgid "jan"
-msgstr ""
-
-msgid "feb"
-msgstr ""
-
-msgid "mar"
-msgstr ""
-
-msgid "apr"
-msgstr ""
-
-msgid "may"
-msgstr ""
-
-msgid "jun"
-msgstr ""
-
-msgid "jul"
-msgstr ""
-
-msgid "aug"
-msgstr ""
-
-msgid "sep"
-msgstr ""
-
-msgid "oct"
-msgstr ""
-
-msgid "nov"
-msgstr ""
-
-msgid "dec"
-msgstr ""
-
-msgid "jan-feb"
-msgstr ""
-
-msgid "mar-apr"
-msgstr ""
-
-msgid "may-jun"
-msgstr ""
-
-msgid "jul-aug"
-msgstr ""
-
-msgid "sep-oct"
-msgstr ""
-
-msgid "nov-dec"
-msgstr ""
-
-msgid "quarter"
-msgstr "kvartal"
-
-msgid "Q1"
-msgstr "S1"
-
-msgid "Q2"
-msgstr "S2"
-
-msgid "Q3"
-msgstr "S3"
-
-msgid "Q4"
-msgstr "S4"
-
-msgid "six monthly"
-msgstr "Halvårlig"
-
-msgid "jan-jun"
-msgstr ""
-
-msgid "jul-dec"
-msgstr ""
-
-msgid "apr-sep"
-msgstr ""
-
-msgid "oct-mar"
-msgstr ""
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr "Avbryt"
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr ""
-
 msgid "Batch deletion"
 msgstr "Satsvis sletting"
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Lock exception removed"
-msgstr ""
-
-msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
-
-msgid "No, cancel"
-msgstr "Nei, avbryt"
-
-msgid "Removing lock exception..."
-msgstr ""
-
-msgid "Yes, remove lock exception"
-msgstr ""
 
 msgid "Maintenance done"
 msgstr "Vedlikehold utført"
@@ -632,31 +617,25 @@ msgstr "Vedlikehold utført"
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
 msgstr "Generere min-max verdier"
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -19,6 +19,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "Mở hướng dẫn sử dụng"
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr "Khóa ngoại lệ"
+
+msgid "Data set"
+msgstr "Tập dữ liệu"
+
+msgid "Period"
+msgstr "Thời điểm"
+
+msgid "Organisation unit"
+msgstr "Đơn vị"
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Error removing lock exception: {{error}}"
+msgstr ""
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "Không"
+
+msgid "Removing lock exception..."
+msgstr ""
+
+msgid "Yes, remove lock exception"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "Toàn vẹn dữ liệu"
@@ -190,9 +229,6 @@ msgstr "Thống kê dữ liệu tổng quan"
 msgid "Lock Exception Management"
 msgstr "Quản lý Khóa Ngoại Lệ"
 
-msgid "Lock Exception"
-msgstr "Khóa ngoại lệ"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -211,6 +247,153 @@ msgstr ""
 msgid "Generate Min-Max Values"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "Chọn"
+
+msgid "Deselect"
+msgstr "Bỏ chọn"
+
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr "Chọn tất cả các đơn vị "
+
+msgid "Deselect All Org Units"
+msgstr "Bỏ chọn tất cả các đơn vị "
+
+msgid "Organisation unit group"
+msgstr "Nhóm Đơn vị"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "Cấp đơn vị"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr "Tuần"
+
+msgid "month"
+msgstr "Tháng"
+
+msgid "year"
+msgstr "Năm"
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "Kỳ 2 tháng này"
+
+msgid "day"
+msgstr "Ngày"
+
+msgid "jan"
+msgstr "tháng một"
+
+msgid "feb"
+msgstr "tháng 2"
+
+msgid "mar"
+msgstr "tháng 3"
+
+msgid "apr"
+msgstr "tháng 4"
+
+msgid "may"
+msgstr "tháng 5"
+
+msgid "jun"
+msgstr "tháng 6"
+
+msgid "jul"
+msgstr "tháng 7"
+
+msgid "aug"
+msgstr "tháng 8"
+
+msgid "sep"
+msgstr "tháng 9"
+
+msgid "oct"
+msgstr "tháng 10"
+
+msgid "nov"
+msgstr "tháng 11"
+
+msgid "dec"
+msgstr "tháng 12"
+
+msgid "jan-feb"
+msgstr "tháng 1 -  tháng 2"
+
+msgid "mar-apr"
+msgstr "tháng 3 - tháng 4"
+
+msgid "may-jun"
+msgstr "tháng 5 - tháng 6"
+
+msgid "jul-aug"
+msgstr "tháng 7 - tháng 8"
+
+msgid "sep-oct"
+msgstr "tháng 9 - tháng 10"
+
+msgid "nov-dec"
+msgstr "tháng 11 - tháng 12"
+
+msgid "quarter"
+msgstr "Quý"
+
+msgid "Q1"
+msgstr "Q1"
+
+msgid "Q2"
+msgstr "Q2"
+
+msgid "Q3"
+msgstr "Q3"
+
+msgid "Q4"
+msgstr "Q4"
+
+msgid "six monthly"
+msgstr "6 tháng"
+
+msgid "jan-jun"
+msgstr "tháng 1 - tháng 6"
+
+msgid "jul-dec"
+msgstr "tháng 7 - tháng 12"
+
+msgid "apr-sep"
+msgstr "tháng 4 - tháng 9"
+
+msgid "oct-mar"
+msgstr "tháng 10 - tháng 3"
+
 msgid "Number of last years of data to include"
 msgstr "Số năm phân tích "
 
@@ -222,6 +405,12 @@ msgstr "Bắt đầu trích xuất"
 
 msgid "All"
 msgstr "Tất cả"
+
+msgid "Batch Deletion"
+msgstr "Xóa hàng loạt"
+
+msgid "No lock exceptions to show."
+msgstr ""
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -424,212 +613,8 @@ msgstr "Lời mời đang hoãn"
 msgid "Expired invitations"
 msgstr "Lời mời hết hạn"
 
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
-msgstr ""
-
-msgid "Period"
-msgstr "Thời điểm"
-
-msgid "Data set"
-msgstr "Tập dữ liệu"
-
-msgid "Organisation unit"
-msgstr "Đơn vị"
-
-msgid "Organisation unit group"
-msgstr "Nhóm Đơn vị"
-
-msgid "Organisation unit level"
-msgstr "Cấp đơn vị"
-
-msgid "Select"
-msgstr "Chọn"
-
-msgid "Deselect"
-msgstr "Bỏ chọn"
-
-msgid "Select All Org Units"
-msgstr "Chọn tất cả các đơn vị "
-
-msgid "Deselect All Org Units"
-msgstr "Bỏ chọn tất cả các đơn vị "
-
-msgid "Name"
-msgstr "Tên"
-
-msgid "Show details"
-msgstr "Hiển thị chi tiết"
-
-msgid "Remove"
-msgstr "Tháo ra"
-
-msgid "Actions"
-msgstr "Hành động"
-
-msgid "week"
-msgstr "Tuần"
-
-msgid "month"
-msgstr "Tháng"
-
-msgid "year"
-msgstr "Năm"
-
-msgid "bi monthly"
-msgstr "Kỳ 2 tháng này"
-
-msgid "day"
-msgstr "Ngày"
-
-msgid "jan"
-msgstr "tháng một"
-
-msgid "feb"
-msgstr "tháng 2"
-
-msgid "mar"
-msgstr "tháng 3"
-
-msgid "apr"
-msgstr "tháng 4"
-
-msgid "may"
-msgstr "tháng 5"
-
-msgid "jun"
-msgstr "tháng 6"
-
-msgid "jul"
-msgstr "tháng 7"
-
-msgid "aug"
-msgstr "tháng 8"
-
-msgid "sep"
-msgstr "tháng 9"
-
-msgid "oct"
-msgstr "tháng 10"
-
-msgid "nov"
-msgstr "tháng 11"
-
-msgid "dec"
-msgstr "tháng 12"
-
-msgid "jan-feb"
-msgstr "tháng 1 -  tháng 2"
-
-msgid "mar-apr"
-msgstr "tháng 3 - tháng 4"
-
-msgid "may-jun"
-msgstr "tháng 5 - tháng 6"
-
-msgid "jul-aug"
-msgstr "tháng 7 - tháng 8"
-
-msgid "sep-oct"
-msgstr "tháng 9 - tháng 10"
-
-msgid "nov-dec"
-msgstr "tháng 11 - tháng 12"
-
-msgid "quarter"
-msgstr "Quý"
-
-msgid "Q1"
-msgstr "Q1"
-
-msgid "Q2"
-msgstr "Q2"
-
-msgid "Q3"
-msgstr "Q3"
-
-msgid "Q4"
-msgstr "Q4"
-
-msgid "six monthly"
-msgstr "6 tháng"
-
-msgid "jan-jun"
-msgstr "tháng 1 - tháng 6"
-
-msgid "jul-dec"
-msgstr "tháng 7 - tháng 12"
-
-msgid "apr-sep"
-msgstr "tháng 4 - tháng 9"
-
-msgid "oct-mar"
-msgstr "tháng 10 - tháng 3"
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr "Hủy"
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr "Xóa hàng loạt"
-
 msgid "Batch deletion"
 msgstr "Xóa khối"
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Lock exception removed"
-msgstr ""
-
-msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
-
-msgid "No, cancel"
-msgstr "Không"
-
-msgid "Removing lock exception..."
-msgstr ""
-
-msgid "Yes, remove lock exception"
-msgstr ""
 
 msgid "Maintenance done"
 msgstr "Đã bảo trì xong"
@@ -637,31 +622,25 @@ msgstr "Đã bảo trì xong"
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
 msgstr "Tạo các giá trị nhỏ-lớn nhất"
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Hamza Assada <7amza.it@gmail.com>, 2021\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
@@ -19,6 +19,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "فتح دليل المستخدم"
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr "استثناء القفل"
+
+msgid "Data set"
+msgstr "حزمة البيانات"
+
+msgid "Period"
+msgstr "الفترة الزمنية"
+
+msgid "Organisation unit"
+msgstr "الوحدة التنظيمية"
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Error removing lock exception: {{error}}"
+msgstr ""
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "لا، الغاء"
+
+msgid "Removing lock exception..."
+msgstr ""
+
+msgid "Yes, remove lock exception"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "تكامل البيانات"
@@ -187,9 +226,6 @@ msgstr "نظرة عامة على إحصائيات البيانات"
 msgid "Lock Exception Management"
 msgstr "إدارة استثناءات القفل"
 
-msgid "Lock Exception"
-msgstr "استثناء القفل"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -208,6 +244,153 @@ msgstr ""
 msgid "Generate Min-Max Values"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "Deselect"
+msgstr "إلغاء التحديد"
+
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr "تحديد كل الوحدات التنظيمية"
+
+msgid "Deselect All Org Units"
+msgstr "إلغاء التحديد عن كل الوحدات التنظيمية"
+
+msgid "Organisation unit group"
+msgstr "مجموعة الوحدات التنظيمية"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "مستوى الوحدة التنظيمية"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr "اسبوع"
+
+msgid "month"
+msgstr "شهر"
+
+msgid "year"
+msgstr "سنة"
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "كل شهرين"
+
+msgid "day"
+msgstr "يوم"
+
+msgid "jan"
+msgstr "يناير"
+
+msgid "feb"
+msgstr "فبراير"
+
+msgid "mar"
+msgstr "مارس"
+
+msgid "apr"
+msgstr "ابريل"
+
+msgid "may"
+msgstr "مايو"
+
+msgid "jun"
+msgstr "يونيو"
+
+msgid "jul"
+msgstr "يوليو"
+
+msgid "aug"
+msgstr "اغسطس"
+
+msgid "sep"
+msgstr "سبتمبر"
+
+msgid "oct"
+msgstr "اكتوبر"
+
+msgid "nov"
+msgstr "نوفمبر"
+
+msgid "dec"
+msgstr "ديسمبر"
+
+msgid "jan-feb"
+msgstr "يناير-فبراير"
+
+msgid "mar-apr"
+msgstr "مارس-ابريل"
+
+msgid "may-jun"
+msgstr "مايو-يونيو"
+
+msgid "jul-aug"
+msgstr "يوليو-اغسطس"
+
+msgid "sep-oct"
+msgstr "سبتمبر-اكتوبر"
+
+msgid "nov-dec"
+msgstr "نوفمبر-ديسمبر"
+
+msgid "quarter"
+msgstr "ربع"
+
+msgid "Q1"
+msgstr "الربع1"
+
+msgid "Q2"
+msgstr "الربع2"
+
+msgid "Q3"
+msgstr "الربع3"
+
+msgid "Q4"
+msgstr "الربع4"
+
+msgid "six monthly"
+msgstr "كل ستة أشهر"
+
+msgid "jan-jun"
+msgstr "يناير-يونيو"
+
+msgid "jul-dec"
+msgstr "يوليو-ديسمبر"
+
+msgid "apr-sep"
+msgstr "ابريل-سبتمبر"
+
+msgid "oct-mar"
+msgstr "اكتوبر-مارس"
+
 msgid "Number of last years of data to include"
 msgstr "عدد السنوات الأخيرة للبيانات التي يجب تضمينها"
 
@@ -219,6 +402,12 @@ msgstr "بدء التصدير"
 
 msgid "All"
 msgstr "الجميع"
+
+msgid "Batch Deletion"
+msgstr "حذف جماعي"
+
+msgid "No lock exceptions to show."
+msgstr ""
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -418,212 +607,8 @@ msgstr "الدعوات المعلقة"
 msgid "Expired invitations"
 msgstr "الدعوات منتهية الصلاحية"
 
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
-msgstr ""
-
-msgid "Period"
-msgstr "الفترة الزمنية"
-
-msgid "Data set"
-msgstr "حزمة البيانات"
-
-msgid "Organisation unit"
-msgstr "الوحدة التنظيمية"
-
-msgid "Organisation unit group"
-msgstr "مجموعة الوحدات التنظيمية"
-
-msgid "Organisation unit level"
-msgstr "مستوى الوحدة التنظيمية"
-
-msgid "Select"
-msgstr "تحديد"
-
-msgid "Deselect"
-msgstr "إلغاء التحديد"
-
-msgid "Select All Org Units"
-msgstr "تحديد كل الوحدات التنظيمية"
-
-msgid "Deselect All Org Units"
-msgstr "إلغاء التحديد عن كل الوحدات التنظيمية"
-
-msgid "Name"
-msgstr "الإسم"
-
-msgid "Show details"
-msgstr "إظهار التفاصيل"
-
-msgid "Remove"
-msgstr "إزلة"
-
-msgid "Actions"
-msgstr "الإجراءات"
-
-msgid "week"
-msgstr "اسبوع"
-
-msgid "month"
-msgstr "شهر"
-
-msgid "year"
-msgstr "سنة"
-
-msgid "bi monthly"
-msgstr "كل شهرين"
-
-msgid "day"
-msgstr "يوم"
-
-msgid "jan"
-msgstr "يناير"
-
-msgid "feb"
-msgstr "فبراير"
-
-msgid "mar"
-msgstr "مارس"
-
-msgid "apr"
-msgstr "ابريل"
-
-msgid "may"
-msgstr "مايو"
-
-msgid "jun"
-msgstr "يونيو"
-
-msgid "jul"
-msgstr "يوليو"
-
-msgid "aug"
-msgstr "اغسطس"
-
-msgid "sep"
-msgstr "سبتمبر"
-
-msgid "oct"
-msgstr "اكتوبر"
-
-msgid "nov"
-msgstr "نوفمبر"
-
-msgid "dec"
-msgstr "ديسمبر"
-
-msgid "jan-feb"
-msgstr "يناير-فبراير"
-
-msgid "mar-apr"
-msgstr "مارس-ابريل"
-
-msgid "may-jun"
-msgstr "مايو-يونيو"
-
-msgid "jul-aug"
-msgstr "يوليو-اغسطس"
-
-msgid "sep-oct"
-msgstr "سبتمبر-اكتوبر"
-
-msgid "nov-dec"
-msgstr "نوفمبر-ديسمبر"
-
-msgid "quarter"
-msgstr "ربع"
-
-msgid "Q1"
-msgstr "الربع1"
-
-msgid "Q2"
-msgstr "الربع2"
-
-msgid "Q3"
-msgstr "الربع3"
-
-msgid "Q4"
-msgstr "الربع4"
-
-msgid "six monthly"
-msgstr "كل ستة أشهر"
-
-msgid "jan-jun"
-msgstr "يناير-يونيو"
-
-msgid "jul-dec"
-msgstr "يوليو-ديسمبر"
-
-msgid "apr-sep"
-msgstr "ابريل-سبتمبر"
-
-msgid "oct-mar"
-msgstr "اكتوبر-مارس"
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr "إلغاء"
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr "حذف جماعي"
-
 msgid "Batch deletion"
 msgstr "حذف الدفعة"
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Lock exception removed"
-msgstr ""
-
-msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
-
-msgid "No, cancel"
-msgstr "لا، الغاء"
-
-msgid "Removing lock exception..."
-msgstr ""
-
-msgid "Yes, remove lock exception"
-msgstr ""
 
 msgid "Maintenance done"
 msgstr "تم إجراء عملية الصيانة"
@@ -631,31 +616,25 @@ msgstr "تم إجراء عملية الصيانة"
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
 msgstr "توليد القيم الدنيا-العليا"
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
