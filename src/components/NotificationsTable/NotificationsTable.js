@@ -15,6 +15,9 @@ import {
 import './style.css'
 
 const NotificationsTable = ({ notifications, animateIncomplete }) => {
+    // We use `some` here instead of e.g. `last(notifications).completed` as the
+    // order of the responses returned by the task APIs has been reversed in the past
+    // and this may reoccur in the future.
     const done = notifications.some(n => n.completed)
     const renderNotificationIcon = notification => {
         const notificationIconInfo = notificationStylesInfo[notification.level]
