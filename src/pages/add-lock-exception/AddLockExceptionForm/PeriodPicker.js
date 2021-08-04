@@ -34,7 +34,9 @@ const is53WeekISOYear = year => {
 
 const styles = {
     datePicker: { width: '100%' },
-    line: { marginTop: 0 },
+    line: {
+        display: 'flex',
+    },
 }
 
 const getYear = date => new Date(date).getFullYear().toString()
