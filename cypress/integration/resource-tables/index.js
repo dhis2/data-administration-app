@@ -22,6 +22,7 @@ Before(() => {
                     id: JOB_ID,
                     level: 'INFO',
                     message: 'Resource tables generated',
+                    time: new Date(),
                     completed: true,
                 },
             ])
@@ -43,4 +44,7 @@ Then('the resource tables are generated', () => {
     // Speed up clock due to timeout used for polling
     cy.tick(5000)
     cy.wait('@pollResourceTableGeneration')
+    cy.getWithDataTest('{notifications-table}')
+        .findByRole('cell', { name: /Resource tables generated/ })
+        .should('exist')
 })

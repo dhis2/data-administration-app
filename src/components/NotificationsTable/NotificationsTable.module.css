@@ -1,4 +1,8 @@
-.notification-icon-busy {
+.container {
+    border: 1px solid var(--colors-grey400);
+}
+
+.notificationIconBusy {
     overflow: hidden;
     display: inline-block;
     vertical-align: bottom;

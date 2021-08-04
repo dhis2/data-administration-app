@@ -17,3 +17,7 @@
 .lastYearsSelect {
     max-width: 300px;
 }
+
+.notificationsTable {
+    margin-top: var(--spacers-dp16);
+}
