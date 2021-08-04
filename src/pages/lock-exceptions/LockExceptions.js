@@ -23,8 +23,12 @@ const query = {
         resource: 'lockExceptions',
         params: params => ({
             ...params,
-            fields:
-                'name,period[id,displayName],organisationUnit[id,displayName],dataSet[id,displayName]',
+            fields: [
+                'name',
+                'period[id,displayName]',
+                'organisationUnit[id,displayName]',
+                'dataSet[id,displayName]',
+            ],
             order: 'name:asc',
         }),
     },
