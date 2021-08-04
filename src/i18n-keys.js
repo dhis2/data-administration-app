@@ -1,4 +1,4 @@
-import i18n from '@dhis2/d2-i18n'
+import i18n from './locales/index.js'
 
 export const i18nKeys = {
     dataIntegrity: {
@@ -111,7 +111,7 @@ export const i18nKeys = {
         ),
         actionText: i18n.t('Overview Data Statistics'),
     },
-    lockException: {
+    lockExceptions: {
         title: i18n.t('Lock Exception Management'),
         label: i18n.t('Lock Exception'),
         description: i18n.t(

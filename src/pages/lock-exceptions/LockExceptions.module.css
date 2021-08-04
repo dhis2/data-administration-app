@@ -1,0 +1,10 @@
+.pagination {
+    margin: var(--spacers-dp16) 0;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacers-dp16);
+}

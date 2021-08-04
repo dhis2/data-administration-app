@@ -2,17 +2,17 @@ import { Before, Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
     cy.intercept({ pathname: /maintenance$/, method: 'POST' }, req => {
-        const formData = new TextDecoder().decode(req.body)
+        const url = new URL(req.url)
         const expectFieldValue = (field, value) => {
-            expect(formData.includes(`name="${field}"\r\n\r\n${value}`)).to.be
-                .true
+            expect(url.searchParams.has(field))
+            expect(url.searchParams.get(field)).to.eq(value)
         }
-        const trueFields = [
+        const checkedFields = [
             'analyticsTableClear',
             'analyticsTableAnalyze',
             'zeroDataValueRemoval',
         ]
-        const falseFields = [
+        const uncheckedFields = [
             'softDeletedDataValueRemoval',
             'softDeletedEventRemoval',
             'softDeletedEnrollmentRemoval',
@@ -26,8 +26,8 @@ Before(() => {
             'cacheClear',
             'appReload',
         ]
-        trueFields.forEach(field => expectFieldValue(field, true))
-        falseFields.forEach(field => expectFieldValue(field, false))
+        checkedFields.forEach(field => expectFieldValue(field, 'true'))
+        uncheckedFields.forEach(field => expectFieldValue(field, null))
 
         req.reply({
             statusCode: 200,

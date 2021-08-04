@@ -2,7 +2,7 @@ import { i18nKeys } from '../i18n-keys'
 import Analytics from './analytics/Analytics'
 import DataIntegrity from './data-integrity/DataIntegrity'
 import DataStatistics from './data-statistics/DataStatistics'
-import LockException from './lock-exception/LockException'
+import LockExceptions from './lock-exceptions/LockExceptions'
 import Maintenance from './maintenance/Maintenance'
 import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
 import ResourceTables from './resource-tables/ResourceTables'
@@ -53,7 +53,7 @@ export const sections = [
             icon: 'multiline_chart',
             description: i18nKeys.analytics.description,
             actionText: i18nKeys.analytics.actionText,
-            docs: 'generate_analytics_tables',
+            docs: 'analytics_tables_management',
         },
     },
     {
@@ -70,13 +70,13 @@ export const sections = [
     },
     {
         key: 'lock',
-        path: '/lock-exception',
-        component: LockException,
+        path: '/lock-exceptions',
+        component: LockExceptions,
         info: {
-            label: i18nKeys.lockException.label,
+            label: i18nKeys.lockExceptions.label,
             icon: 'lock',
-            description: i18nKeys.lockException.description,
-            actionText: i18nKeys.lockException.actionText,
+            description: i18nKeys.lockExceptions.description,
+            actionText: i18nKeys.lockExceptions.actionText,
             docs: 'dataAdmin_lockException',
         },
     },

@@ -1,4 +1,5 @@
-import { useD2 } from '@dhis2/app-runtime-adapter-d2'
+import './locales'
+
 import { CssVariables } from '@dhis2/ui'
 import { MuiThemeProvider } from 'material-ui/styles'
 import React from 'react'
@@ -8,33 +9,24 @@ import Routes from './components/Routes/Routes'
 import Sidebar from './components/Sidebar/Sidebar'
 import muiTheme from './theme'
 import 'material-design-icons-iconfont'
-import './locales'
 
-const App = () => {
-    const { d2 } = useD2()
-
-    if (!d2) {
-        return null
-    }
-
-    return (
-        <HashRouter>
-            <CssVariables spacers colors />
-            <MuiThemeProvider muiTheme={muiTheme}>
-                <div className={styles.container}>
-                    <div className={styles.sidebar}>
-                        <Sidebar />
-                    </div>
-
-                    <main className={styles.content}>
-                        <div className={styles.contentWrapper}>
-                            <Routes />
-                        </div>
-                    </main>
+const App = () => (
+    <HashRouter>
+        <CssVariables spacers colors />
+        <MuiThemeProvider muiTheme={muiTheme}>
+            <div className={styles.container}>
+                <div className={styles.sidebar}>
+                    <Sidebar />
                 </div>
-            </MuiThemeProvider>
-        </HashRouter>
-    )
-}
+
+                <main className={styles.content}>
+                    <div className={styles.contentWrapper}>
+                        <Routes />
+                    </div>
+                </main>
+            </div>
+        </MuiThemeProvider>
+    </HashRouter>
+)
 
 export default App

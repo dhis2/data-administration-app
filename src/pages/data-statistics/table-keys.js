@@ -1,0 +1,7 @@
+export const OBJECT_COUNTS_KEY = 'objectCounts'
+export const ACTIVE_USERS_KEY = 'activeUsers'
+export const USER_INVITATIONS_KEY = 'userInvitations'
+export const DATA_VALUE_COUNT_KEY = 'dataValueCount'
+export const EVENT_COUNT_KEY = 'eventCount'
+export const PENDING_INVITATION_ALL_KEY = 'all'
+export const EXPIRED_INVITATION_KEY = 'expired'

@@ -15,17 +15,9 @@ export const useCheckboxes = () => {
             [key]: !checkboxes[key],
         })
     }
-    const toFormData = () => {
-        const formData = new FormData()
-        Object.entries(checkboxes).forEach(([key, checked]) => {
-            formData.append(key, checked)
-        })
-        return formData
-    }
 
     return {
         checkboxes,
         toggleCheckbox,
-        toFormData,
     }
 }

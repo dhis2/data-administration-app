@@ -1,0 +1,7 @@
+.card {
+    padding: var(--spacers-dp16);
+}
+
+.addLockExceptionButton {
+    margin-top: var(--spacers-dp12);
+}

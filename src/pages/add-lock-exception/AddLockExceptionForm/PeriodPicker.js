@@ -1,20 +1,42 @@
-import { is53WeekISOYear, getFirstDateOfWeek } from 'd2/period/helpers'
+import i18n from '@dhis2/d2-i18n'
+import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import DatePicker from 'material-ui/DatePicker'
-import MenuItem from 'material-ui/MenuItem'
-import SelectField from 'material-ui/SelectField'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+const getFirstDateOfWeek = (year, week) => {
+    const ordTable = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+    const ordTableLeap = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
+    const isLeapYear =
+        new Date(new Date(year, 2, 1).setDate(0)).getDate() === 29
+    const ordDiff = isLeapYear ? ordTableLeap : ordTable
+
+    const correction = (new Date(year, 0, 4).getDay() || 7) + 3
+    const ordDate = week * 7 + (1 - correction)
+    if (ordDate < 0) {
+        return new Date(year, 0, ordDate)
+    }
+
+    let month = 11
+    while (ordDate < ordDiff[month]) {
+        month--
+    }
+
+    return new Date(year, month, ordDate - ordDiff[month])
+}
+
+const is53WeekISOYear = year => {
+    const p = y =>
+        y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+    return p(year) % 7 === 4 || p(year - 1) % 7 === 3
+}
+
 const styles = {
     datePicker: { width: '100%' },
-    year: { width: 95, marginRight: 16 },
-    month: { width: 125 },
-    week: { width: 105 },
-    biWeek: { width: 200 },
-    biMonth: { width: 200 },
-    quarter: { width: 200 },
-    sixMonth: { width: 200 },
-    line: { marginTop: 0 },
+    line: {
+        display: 'flex',
+    },
 }
 
 const getYear = date => new Date(date).getFullYear().toString()
@@ -43,14 +65,50 @@ const isWeekValid = (date, week) =>
 const biWeekToWeek = biWeekStr => parseInt(biWeekStr) * 2 - 1
 
 class PeriodPicker extends React.Component {
-    constructor(props, context) {
-        super(props, context)
+    constructor(props) {
+        super(props)
 
         this.state = {}
     }
 
     getTranslation(key) {
-        return this.props.d2.i18n.getTranslation(key)
+        const periodTypeLabels = {
+            week: i18n.t('week'),
+            month: i18n.t('month'),
+            year: i18n.t('year'),
+            biWeek: i18n.t('bi weekly'),
+            biMonth: i18n.t('bi monthly'),
+            day: i18n.t('day'),
+            jan: i18n.t('jan'),
+            feb: i18n.t('feb'),
+            mar: i18n.t('mar'),
+            apr: i18n.t('apr'),
+            may: i18n.t('may'),
+            jun: i18n.t('jun'),
+            jul: i18n.t('jul'),
+            aug: i18n.t('aug'),
+            sep: i18n.t('sep'),
+            oct: i18n.t('oct'),
+            nov: i18n.t('nov'),
+            dec: i18n.t('dec'),
+            'jan-feb': i18n.t('jan-feb'),
+            'mar-apr': i18n.t('mar-apr'),
+            'may-jun': i18n.t('may-jun'),
+            'jul-aug': i18n.t('jul-aug'),
+            'sep-oct': i18n.t('sep-oct'),
+            'nov-dec': i18n.t('nov-dec'),
+            quarter: i18n.t('quarter'),
+            Q1: i18n.t('Q1'),
+            Q2: i18n.t('Q2'),
+            Q3: i18n.t('Q3'),
+            Q4: i18n.t('Q4'),
+            sixMonth: i18n.t('six monthly'),
+            'jan-jun': i18n.t('jan-jun'),
+            'jul-dec': i18n.t('jul-dec'),
+            'apr-sep': i18n.t('apr-sep'),
+            'oct-mar': i18n.t('oct-mar'),
+        }
+        return periodTypeLabels[key] || key
     }
 
     componentDidUpdate(prevProps) {
@@ -196,8 +254,8 @@ class PeriodPicker extends React.Component {
     }
 
     renderOptionPicker(name, options) {
-        const changeState = (e, i, value) =>
-            this.setState({ [name]: value }, this.handleChange)
+        const handleChange = ({ selected }) =>
+            this.setState({ [name]: selected }, this.handleChange)
         const isInvalid =
             (name === 'week' && this.state.invalidWeek) ||
             (name === 'biWeek' && this.state.invalidBiWeek)
@@ -207,28 +265,27 @@ class PeriodPicker extends React.Component {
                 style={{ display: 'inline-block' }}
                 data-test={`period-picker-option-${name}`}
             >
-                <SelectField
-                    value={this.state[name]}
-                    onChange={changeState}
-                    style={styles[name]}
-                    floatingLabelText={this.getTranslation(name)}
-                    floatingLabelStyle={isInvalid ? { color: 'red' } : {}}
+                <SingleSelectField
+                    label={this.getTranslation(name)}
+                    selected={this.state[name]}
+                    onChange={handleChange}
+                    error={isInvalid}
                 >
                     {Object.keys(options)
                         .sort()
                         .map(value => (
-                            <MenuItem
+                            <SingleSelectOption
                                 key={value}
-                                value={value}
-                                primaryText={
+                                label={
                                     /[^0-9]/.test(options[value]) &&
                                     name !== 'biWeek'
                                         ? this.getTranslation(options[value])
                                         : options[value]
                                 }
+                                value={value}
                             />
                         ))}
-                </SelectField>
+                </SingleSelectField>
             </div>
         )
     }
@@ -274,7 +331,7 @@ class PeriodPicker extends React.Component {
     renderBiWeekPicker() {
         const biWeeks = {}
         const biWeekLimit = 27
-        const prefix = this.getTranslation('bi_week')
+        const prefix = this.getTranslation('biWeek')
         for (let biWeek = 1; biWeek <= biWeekLimit; biWeek++) {
             biWeeks[`0${biWeek}`.substr(-2)] = `${prefix} ${biWeek}`
         }
@@ -397,8 +454,8 @@ class PeriodPicker extends React.Component {
         }
     }
 }
+
 PeriodPicker.propTypes = {
-    d2: PropTypes.object.isRequired,
     periodType: PropTypes.oneOf([
         'Daily',
         'Weekly',
@@ -418,7 +475,6 @@ PeriodPicker.propTypes = {
         'FinancialJuly',
         'FinancialOct',
     ]).isRequired,
-
     onPickPeriod: PropTypes.func.isRequired,
 }
 

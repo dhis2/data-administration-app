@@ -12,9 +12,13 @@ import {
     notificationStylesInfo,
     formatDateFromServer,
 } from './notifications-table.conf'
-import './style.css'
+import styles from './NotificationsTable.module.css'
 
 const NotificationsTable = ({ notifications, animateIncomplete }) => {
+    // We use `some` here instead of e.g. `last(notifications).completed` as the
+    // order of the responses returned by the task APIs has been reversed in the past
+    // and this may reoccur in the future.
+    const done = notifications.some(n => n.completed)
     const renderNotificationIcon = notification => {
         const notificationIconInfo = notificationStylesInfo[notification.level]
         if (
@@ -31,8 +35,8 @@ const NotificationsTable = ({ notifications, animateIncomplete }) => {
                     {notificationIconInfo.icon}
                 </FontIcon>
             )
-        } else if (animateIncomplete && !notification.completed) {
-            return <span className="notification-icon-busy">...</span>
+        } else if (animateIncomplete && !notification.completed && !done) {
+            return <span className={styles.notificationIconBusy}>...</span>
         }
 
         return null
@@ -61,11 +65,13 @@ const NotificationsTable = ({ notifications, animateIncomplete }) => {
 
     if (notifications && notifications.length > 0) {
         return (
-            <Table selectable={false}>
-                <TableBody displayRowCheckbox={false}>
-                    {notifications.map(renderNotificationRow)}
-                </TableBody>
-            </Table>
+            <div data-test="notifications-table" className={styles.container}>
+                <Table selectable={false}>
+                    <TableBody displayRowCheckbox={false}>
+                        {notifications.map(renderNotificationRow)}
+                    </TableBody>
+                </Table>
+            </div>
         )
     }
 

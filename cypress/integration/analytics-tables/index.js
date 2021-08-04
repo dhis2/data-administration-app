@@ -25,6 +25,7 @@ Before(() => {
                     id: JOB_ID,
                     level: 'INFO',
                     message: 'Analytics tables updated',
+                    time: new Date(),
                     completed: true,
                 },
             ])
@@ -48,4 +49,7 @@ Then('the tables are exported', () => {
     // Speed up clock due to timeout used for polling
     cy.tick(5000)
     cy.wait('@pollAnalyticsTablesExport')
+    cy.getWithDataTest('{notifications-table}')
+        .findByRole('cell', { name: /Analytics tables updated/ })
+        .should('exist')
 })
