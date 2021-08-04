@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
+"POT-Creation-Date: 2021-08-02T09:49:10.835Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
 "Last-Translator: Ibatov <ibatovk@who.int>, 2021\n"
 "Language-Team: Uzbek (Cyrillic) (https://www.transifex.com/hisp-uio/teams/100509/uz@Cyrl/)\n"
@@ -678,3 +678,6 @@ msgstr "Талқинлар"
 
 msgid "Messages"
 msgstr "Хабарлар"
+
+msgid "{{issueTitle}} ({{issueElementsCount}})"
+msgstr ""
