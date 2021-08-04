@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-01T16:05:58.877Z\n"
+"POT-Creation-Date: 2021-08-02T09:40:17.721Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Burmese (https://www.transifex.com/hisp-uio/teams/100509/my/)\n"
@@ -662,6 +662,9 @@ msgstr "ဘာသာပြန်ခြင်းများ"
 
 msgid "Messages"
 msgstr "သတင်းများ"
+
+msgid "{{issueTitle}} ({{issueElementsCount}})"
+msgstr ""
 
 msgid "Data set"
 msgstr "Dataset"
