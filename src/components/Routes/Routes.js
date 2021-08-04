@@ -18,6 +18,8 @@ const Routes = () => (
                 )}
             />
         ))}
+        {/* These routes are not in `sections.conf.js` as we are deprecating
+            this pattern (see https://jira.dhis2.org/browse/DHIS2-11344) */}
         <Route
             path="/lock-exceptions/batch-deletion"
             component={BatchDeleteLockExceptions}
