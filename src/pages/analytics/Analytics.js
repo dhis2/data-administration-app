@@ -49,7 +49,7 @@ const Analytics = ({ sectionKey }) => {
 
     const handleStartAnalyticsTablesGeneration = () => {
         const params = {}
-        for (const [key, checked] of Object.entries(checkboxes)) {
+        for (const [key, { checked }] of Object.entries(checkboxes)) {
             if (checked) {
                 params[key] = true
             }
