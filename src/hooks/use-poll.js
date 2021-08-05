@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const useConst = factory => {
     const ref = useRef(null)
@@ -11,22 +11,21 @@ const useConst = factory => {
 
 const useLazyInterval = (fn, interval) => {
     const intervalId = useRef(null)
+    const [started, setStarted] = useState(false)
 
     const cancel = () => {
         if (intervalId.current) {
             clearInterval(intervalId.current)
+            setStarted(false)
         }
     }
     const start = (...args) => {
         cancel()
         intervalId.current = setInterval(() => fn(...args), interval)
+        setStarted(true)
     }
 
-    useEffect(() => {
-        return cancel
-    }, [])
-
-    return { start, cancel }
+    return { start, cancel, started }
 }
 
 export const usePoll = ({ query, interval, checkDone }) => {
@@ -41,7 +40,14 @@ export const usePoll = ({ query, interval, checkDone }) => {
             }
         },
     })
-    const { start, cancel } = useLazyInterval(refetch, interval)
+    const { start, cancel, started: polling } = useLazyInterval(
+        refetch,
+        interval
+    )
+
+    useEffect(() => {
+        return cancel
+    }, [])
 
     useEffect(() => {
         if (error) {
@@ -52,6 +58,7 @@ export const usePoll = ({ query, interval, checkDone }) => {
     return {
         start,
         cancel,
+        polling,
         error,
         data: data?.poll,
     }

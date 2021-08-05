@@ -15,10 +15,6 @@ import {
 import styles from './NotificationsTable.module.css'
 
 const NotificationsTable = ({ notifications, animateIncomplete }) => {
-    // We use `some` here instead of e.g. `last(notifications).completed` as the
-    // order of the responses returned by the task APIs has been reversed in the past
-    // and this may reoccur in the future.
-    const done = notifications.some(n => n.completed)
     const renderNotificationIcon = notification => {
         const notificationIconInfo = notificationStylesInfo[notification.level]
         if (
@@ -35,7 +31,7 @@ const NotificationsTable = ({ notifications, animateIncomplete }) => {
                     {notificationIconInfo.icon}
                 </FontIcon>
             )
-        } else if (animateIncomplete && !notification.completed && !done) {
+        } else if (animateIncomplete && !notification.completed) {
             return <span className={styles.notificationIconBusy}>...</span>
         }
 
