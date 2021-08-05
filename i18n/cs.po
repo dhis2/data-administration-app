@@ -680,4 +680,4 @@ msgid "Messages"
 msgstr "Zprávy"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
