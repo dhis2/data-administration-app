@@ -35,9 +35,6 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "^6.12.0",
-        "classnames": "^2.2.5",
-        "material-design-icons-iconfont": "^5.0.1",
-        "material-ui": "^0.20.0",
         "prop-types": "^15.6.0",
         "react-router-dom": "^5.0.0"
     }
