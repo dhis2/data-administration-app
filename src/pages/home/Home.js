@@ -1,28 +1,20 @@
-import classNames from 'classnames'
 import React from 'react'
 import { sections } from '../sections.conf'
-import GridSection from './grid-section/GridSection'
 import styles from './Home.module.css'
-import './grid.css'
+import HomeCard from './HomeCard/HomeCard'
 
-const Home = () => {
-    const gridElements = sections.map(section => (
-        <div
-            key={section.key}
-            className={classNames(
-                'col-sm-12 col-md-6 col-lg-4',
-                styles.gridContainer
-            )}
-        >
-            <GridSection key={section.key} section={section} />
-        </div>
-    ))
-
-    return (
-        <div id="grid-list-id" className="row">
-            {gridElements}
-        </div>
-    )
-}
+const Home = () => (
+    <div className={styles.grid}>
+        {sections.map(section => (
+            <HomeCard
+                key={section.key}
+                to={section.path}
+                titleText={section.info.label}
+                bodyText={section.info.description}
+                linkText={section.info.actionText}
+            />
+        ))}
+    </div>
+)
 
 export default Home
