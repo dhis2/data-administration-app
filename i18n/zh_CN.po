@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: 晓东 林 <13981924470@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
@@ -18,6 +18,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "打开用户指南"
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr "锁异常"
+
+msgid "Data set"
+msgstr "数据集"
+
+msgid "Period"
+msgstr "周期"
+
+msgid "Organisation unit"
+msgstr "机构"
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Error removing lock exception: {{error}}"
+msgstr ""
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr "不，取消"
+
+msgid "Removing lock exception..."
+msgstr ""
+
+msgid "Yes, remove lock exception"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "数据完整性"
@@ -182,9 +221,6 @@ msgstr "数据统计概要"
 msgid "Lock Exception Management"
 msgstr "锁异常管理"
 
-msgid "Lock Exception"
-msgstr "锁异常"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -201,6 +237,153 @@ msgstr "产生最小-最大值，在数据的输入和验证过程中用于数�
 msgid "Generate Min-Max Values"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "选择"
+
+msgid "Deselect"
+msgstr "去选择"
+
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr "选择所有机构"
+
+msgid "Deselect All Org Units"
+msgstr "去选所有机构"
+
+msgid "Organisation unit group"
+msgstr "组织机构组"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "组织机构等级"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr "周"
+
+msgid "month"
+msgstr "月"
+
+msgid "year"
+msgstr "年"
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "两月"
+
+msgid "day"
+msgstr "天"
+
+msgid "jan"
+msgstr "一月"
+
+msgid "feb"
+msgstr "二月"
+
+msgid "mar"
+msgstr "三月"
+
+msgid "apr"
+msgstr "四月"
+
+msgid "may"
+msgstr "五月"
+
+msgid "jun"
+msgstr "六月"
+
+msgid "jul"
+msgstr "七月"
+
+msgid "aug"
+msgstr "八月"
+
+msgid "sep"
+msgstr "九月"
+
+msgid "oct"
+msgstr "十月"
+
+msgid "nov"
+msgstr "十一月"
+
+msgid "dec"
+msgstr "十二月"
+
+msgid "jan-feb"
+msgstr "一二月"
+
+msgid "mar-apr"
+msgstr "三四月"
+
+msgid "may-jun"
+msgstr "五六月"
+
+msgid "jul-aug"
+msgstr "七八月"
+
+msgid "sep-oct"
+msgstr "九十月"
+
+msgid "nov-dec"
+msgstr "冬腊月"
+
+msgid "quarter"
+msgstr "季度"
+
+msgid "Q1"
+msgstr "春季"
+
+msgid "Q2"
+msgstr "夏季"
+
+msgid "Q3"
+msgstr "秋季"
+
+msgid "Q4"
+msgstr "冬季"
+
+msgid "six monthly"
+msgstr "每六个月"
+
+msgid "jan-jun"
+msgstr "1-6月"
+
+msgid "jul-dec"
+msgstr "7-12月"
+
+msgid "apr-sep"
+msgstr "4-9月"
+
+msgid "oct-mar"
+msgstr "10-3月"
+
 msgid "Number of last years of data to include"
 msgstr "Number of last years of data to include"
 
@@ -212,6 +395,12 @@ msgstr ""
 
 msgid "All"
 msgstr "全部"
+
+msgid "Batch Deletion"
+msgstr "批量删除"
+
+msgid "No lock exceptions to show."
+msgstr ""
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -411,212 +600,8 @@ msgstr "Pending invitations"
 msgid "Expired invitations"
 msgstr "过期的邀请"
 
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
-msgstr ""
-
-msgid "Period"
-msgstr "周期"
-
-msgid "Data set"
-msgstr "数据集"
-
-msgid "Organisation unit"
-msgstr "机构"
-
-msgid "Organisation unit group"
-msgstr "组织机构组"
-
-msgid "Organisation unit level"
-msgstr "组织机构等级"
-
-msgid "Select"
-msgstr "选择"
-
-msgid "Deselect"
-msgstr "去选择"
-
-msgid "Select All Org Units"
-msgstr "选择所有机构"
-
-msgid "Deselect All Org Units"
-msgstr "去选所有机构"
-
-msgid "Name"
-msgstr "名称"
-
-msgid "Show details"
-msgstr "显示详情"
-
-msgid "Remove"
-msgstr "移除"
-
-msgid "Actions"
-msgstr "行动"
-
-msgid "week"
-msgstr "周"
-
-msgid "month"
-msgstr "月"
-
-msgid "year"
-msgstr "年"
-
-msgid "bi monthly"
-msgstr "两月"
-
-msgid "day"
-msgstr "天"
-
-msgid "jan"
-msgstr "一月"
-
-msgid "feb"
-msgstr "二月"
-
-msgid "mar"
-msgstr "三月"
-
-msgid "apr"
-msgstr "四月"
-
-msgid "may"
-msgstr "五月"
-
-msgid "jun"
-msgstr "六月"
-
-msgid "jul"
-msgstr "七月"
-
-msgid "aug"
-msgstr "八月"
-
-msgid "sep"
-msgstr "九月"
-
-msgid "oct"
-msgstr "十月"
-
-msgid "nov"
-msgstr "十一月"
-
-msgid "dec"
-msgstr "十二月"
-
-msgid "jan-feb"
-msgstr "一二月"
-
-msgid "mar-apr"
-msgstr "三四月"
-
-msgid "may-jun"
-msgstr "五六月"
-
-msgid "jul-aug"
-msgstr "七八月"
-
-msgid "sep-oct"
-msgstr "九十月"
-
-msgid "nov-dec"
-msgstr "冬腊月"
-
-msgid "quarter"
-msgstr "季度"
-
-msgid "Q1"
-msgstr "春季"
-
-msgid "Q2"
-msgstr "夏季"
-
-msgid "Q3"
-msgstr "秋季"
-
-msgid "Q4"
-msgstr "冬季"
-
-msgid "six monthly"
-msgstr "每六个月"
-
-msgid "jan-jun"
-msgstr "1-6月"
-
-msgid "jul-dec"
-msgstr "7-12月"
-
-msgid "apr-sep"
-msgstr "4-9月"
-
-msgid "oct-mar"
-msgstr "10-3月"
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr "取消"
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr "批量删除"
-
 msgid "Batch deletion"
 msgstr "批量删除"
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Lock exception removed"
-msgstr ""
-
-msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
-
-msgid "No, cancel"
-msgstr "不，取消"
-
-msgid "Removing lock exception..."
-msgstr ""
-
-msgid "Yes, remove lock exception"
-msgstr ""
 
 msgid "Maintenance done"
 msgstr "维护完成"
@@ -624,31 +609,25 @@ msgstr "维护完成"
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
 msgstr "生成最大-最小值"
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-05-26T16:18:29.578Z\n"
+"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
 "Language-Team: Urdu (https://www.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -18,6 +18,45 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "کھولیں صارف گائیڈ"
+
+msgid "Go back to all lock exceptions"
+msgstr ""
+
+msgid "Lock Exception"
+msgstr "لاک استقبال"
+
+msgid "Data set"
+msgstr "ڈیٹا سیٹ"
+
+msgid "Period"
+msgstr "مدت"
+
+msgid "Organisation unit"
+msgstr "تنظیم یونٹ"
+
+msgid "Batch delete lock exceptions"
+msgstr ""
+
+msgid "Remove lock exception"
+msgstr ""
+
+msgid "Lock exception removed"
+msgstr ""
+
+msgid "Error removing lock exception: {{error}}"
+msgstr ""
+
+msgid "Are you sure you want to remove this lock exception?"
+msgstr ""
+
+msgid "No, cancel"
+msgstr ""
+
+msgid "Removing lock exception..."
+msgstr ""
+
+msgid "Yes, remove lock exception"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "ڈیٹا کی سالمیت"
@@ -186,9 +225,6 @@ msgstr ""
 msgid "Lock Exception Management"
 msgstr "لاک استقبال مینجمنٹ"
 
-msgid "Lock Exception"
-msgstr "لاک استقبال"
-
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
@@ -209,6 +245,153 @@ msgstr ""
 msgid "Generate Min-Max Values"
 msgstr ""
 
+msgid "Lock exception added"
+msgstr ""
+
+msgid "Error adding lock exception: {{error}}"
+msgstr ""
+
+msgid "Add lock exception"
+msgstr ""
+
+msgid "Adding lock exception..."
+msgstr ""
+
+msgid "Select a data set"
+msgstr ""
+
+msgid "Updating selection..."
+msgstr ""
+
+msgid "Select"
+msgstr "منتخب کریں"
+
+msgid "Deselect"
+msgstr "منتخب کریں"
+
+msgid "Error loading data for data set"
+msgstr ""
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Organisation unit group"
+msgstr "تنظیمی یونٹ گروپ"
+
+msgid "Select an organisation unit group"
+msgstr ""
+
+msgid "Organisation unit level"
+msgstr "تنظیم یونٹ کی سطح"
+
+msgid "Select an organisation unit level"
+msgstr ""
+
+msgid "week"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "bi weekly"
+msgstr ""
+
+msgid "bi monthly"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr ""
+
+msgid "Q1"
+msgstr ""
+
+msgid "Q2"
+msgstr ""
+
+msgid "Q3"
+msgstr ""
+
+msgid "Q4"
+msgstr ""
+
+msgid "six monthly"
+msgstr ""
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
 msgid "Number of last years of data to include"
 msgstr ""
 
@@ -220,6 +403,12 @@ msgstr ""
 
 msgid "All"
 msgstr "تمام"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "No lock exceptions to show."
+msgstr ""
 
 msgid "Checking data integrity..."
 msgstr ""
@@ -421,212 +610,8 @@ msgstr "موصول ہونے والی دعوت نامہ"
 msgid "Expired invitations"
 msgstr "متوقع دعوت نامہ"
 
-msgid "Error loading data statistics"
-msgstr ""
-
-msgid "No data statistics to show."
-msgstr ""
-
-msgid "Period"
-msgstr "مدت"
-
-msgid "Data set"
-msgstr "ڈیٹا سیٹ"
-
-msgid "Organisation unit"
-msgstr "تنظیم یونٹ"
-
-msgid "Organisation unit group"
-msgstr "تنظیمی یونٹ گروپ"
-
-msgid "Organisation unit level"
-msgstr "تنظیم یونٹ کی سطح"
-
-msgid "Select"
-msgstr "منتخب کریں"
-
-msgid "Deselect"
-msgstr "منتخب کریں"
-
-msgid "Select All Org Units"
-msgstr ""
-
-msgid "Deselect All Org Units"
-msgstr ""
-
-msgid "Name"
-msgstr "ÙØ§Ù"
-
-msgid "Show details"
-msgstr "تفصیل دیکھاؤ"
-
-msgid "Remove"
-msgstr "حذف"
-
-msgid "Actions"
-msgstr "ایکشنز"
-
-msgid "week"
-msgstr ""
-
-msgid "month"
-msgstr ""
-
-msgid "year"
-msgstr ""
-
-msgid "bi monthly"
-msgstr ""
-
-msgid "day"
-msgstr ""
-
-msgid "jan"
-msgstr ""
-
-msgid "feb"
-msgstr ""
-
-msgid "mar"
-msgstr ""
-
-msgid "apr"
-msgstr ""
-
-msgid "may"
-msgstr ""
-
-msgid "jun"
-msgstr ""
-
-msgid "jul"
-msgstr ""
-
-msgid "aug"
-msgstr ""
-
-msgid "sep"
-msgstr ""
-
-msgid "oct"
-msgstr ""
-
-msgid "nov"
-msgstr ""
-
-msgid "dec"
-msgstr ""
-
-msgid "jan-feb"
-msgstr ""
-
-msgid "mar-apr"
-msgstr ""
-
-msgid "may-jun"
-msgstr ""
-
-msgid "jul-aug"
-msgstr ""
-
-msgid "sep-oct"
-msgstr ""
-
-msgid "nov-dec"
-msgstr ""
-
-msgid "quarter"
-msgstr ""
-
-msgid "Q1"
-msgstr ""
-
-msgid "Q2"
-msgstr ""
-
-msgid "Q3"
-msgstr ""
-
-msgid "Q4"
-msgstr ""
-
-msgid "six monthly"
-msgstr ""
-
-msgid "jan-jun"
-msgstr ""
-
-msgid "jul-dec"
-msgstr ""
-
-msgid "apr-sep"
-msgstr ""
-
-msgid "oct-mar"
-msgstr ""
-
-msgid "Error loading data for data set"
-msgstr ""
-
-msgid "Loading organisation units tree..."
-msgstr ""
-
-msgid "Select a data set"
-msgstr ""
-
-msgid "Lock exception added"
-msgstr ""
-
-msgid "Error adding lock exception: {{error}}"
-msgstr ""
-
-msgid "Add lock exception"
-msgstr ""
-
-msgid "Cancel"
-msgstr "منسوخ"
-
-msgid "Adding lock exception..."
-msgstr ""
-
-msgid "Go back to all lock exceptions"
-msgstr ""
-
-msgid "Batch Deletion"
-msgstr ""
-
 msgid "Batch deletion"
 msgstr "بیچ ختم"
-
-msgid "Error loading lock exceptions"
-msgstr ""
-
-msgid "No lock exceptions to show."
-msgstr ""
-
-msgid "Batch delete lock exceptions"
-msgstr ""
-
-msgid "Remove lock exception"
-msgstr ""
-
-msgid "Lock exception removed"
-msgstr ""
-
-msgid "Error removing lock exception: {{error}}"
-msgstr ""
-
-msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
-
-msgid "No, cancel"
-msgstr ""
-
-msgid "Removing lock exception..."
-msgstr ""
-
-msgid "Yes, remove lock exception"
-msgstr ""
 
 msgid "Maintenance done"
 msgstr ""
@@ -634,31 +619,25 @@ msgstr ""
 msgid "Performing maintenance..."
 msgstr ""
 
-msgid "Error loading data"
-msgstr ""
-
-msgid "Generating min-max values..."
-msgstr ""
-
 msgid "Min-max values generated"
-msgstr ""
-
-msgid "Error generating min-max values"
-msgstr ""
-
-msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Min-max values removed"
 msgstr ""
 
-msgid "Error removing min-max values"
+msgid "Generating min-max values..."
+msgstr ""
+
+msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
 msgstr ""
 
 msgid "Remove min-max values"
+msgstr ""
+
+msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
