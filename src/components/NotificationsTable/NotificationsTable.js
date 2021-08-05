@@ -1,77 +1,57 @@
 import {
     Table,
     TableBody,
+    TableCell,
     TableRow,
-    TableRowColumn,
-    FontIcon,
-} from 'material-ui'
+    colors,
+    IconError16,
+    IconCheckmark16,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import {
-    notificationsTableStyles,
-    notificationStylesInfo,
-    formatDateFromServer,
-} from './notifications-table.conf'
 import styles from './NotificationsTable.module.css'
 
-const NotificationsTable = ({ notifications, animateIncomplete }) => {
-    // We use `some` here instead of e.g. `last(notifications).completed` as the
-    // order of the responses returned by the task APIs has been reversed in the past
-    // and this may reoccur in the future.
-    const done = notifications.some(n => n.completed)
-    const renderNotificationIcon = notification => {
-        const notificationIconInfo = notificationStylesInfo[notification.level]
-        if (
-            notificationIconInfo &&
-            notificationIconInfo.icon &&
-            notification.completed
-        ) {
-            return (
-                <FontIcon
-                    className="material-icons"
-                    style={notificationsTableStyles.iconStyle}
-                    color={notificationIconInfo.iconColor}
-                >
-                    {notificationIconInfo.icon}
-                </FontIcon>
-            )
-        } else if (animateIncomplete && !notification.completed && !done) {
-            return <span className={styles.notificationIconBusy}>...</span>
-        }
-
-        return null
+/* FIXME think of using an third party library for that, converting for a standard time format defined by design team */
+const formatDateFromServer = dateFromServer => {
+    if (dateFromServer) {
+        return `${dateFromServer.slice(0, 10)} ${dateFromServer.slice(11, 19)}`
     }
 
-    const renderNotificationRow = (notification, index) => (
-        <TableRow
-            key={index}
-            displayBorder={false}
-            style={Object.assign(
-                {},
-                notificationStylesInfo[notification.level].row,
-                (index + 1) % 2 === 0
-                    ? notificationsTableStyles.evenRowStyle
-                    : {}
-            )}
-        >
-            <TableRowColumn style={notificationsTableStyles.timeColumnStyle}>
-                {formatDateFromServer(notification.time)}
-            </TableRowColumn>
-            <TableRowColumn style={notificationsTableStyles.messageColumnStyle}>
-                {notification.message} {renderNotificationIcon(notification)}
-            </TableRowColumn>
-        </TableRow>
-    )
+    return ''
+}
 
+const renderNotificationIcon = notification => {
+    if (notification.completed) {
+        if (notification.level === 'ERROR') {
+            return <IconError16 color={colors.red500} />
+        } else {
+            return <IconCheckmark16 color={colors.green500} />
+        }
+    } else if (!notification.completed) {
+        return <span className={styles.notificationIconBusy}>...</span>
+    }
+
+    return null
+}
+
+const NotificationsTable = ({ notifications }) => {
     if (notifications && notifications.length > 0) {
         return (
-            <div data-test="notifications-table" className={styles.container}>
-                <Table selectable={false}>
-                    <TableBody displayRowCheckbox={false}>
-                        {notifications.map(renderNotificationRow)}
-                    </TableBody>
-                </Table>
-            </div>
+            <Table className={styles.table} dataTest="notifications-table">
+                <TableBody>
+                    {notifications.map((notification, index) => (
+                        <TableRow key={index}>
+                            <TableCell>
+                                {formatDateFromServer(notification.time)}
+                            </TableCell>
+                            <TableCell>
+                                {notification.message}{' '}
+                                {renderNotificationIcon(notification)}
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
         )
     }
 
@@ -88,7 +68,6 @@ NotificationsTable.propTypes = {
             uid: PropTypes.string,
         })
     ).isRequired,
-    animateIncomplete: PropTypes.bool,
 }
 
 export default NotificationsTable

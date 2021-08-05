@@ -126,10 +126,7 @@ const Analytics = ({ sectionKey }) => {
                 </Button>
                 {notifications.length > 0 && (
                     <div className={styles.notificationsTable}>
-                        <NotificationsTable
-                            notifications={notifications}
-                            animateIncomplete
-                        />
+                        <NotificationsTable notifications={notifications} />
                     </div>
                 )}
             </Card>
