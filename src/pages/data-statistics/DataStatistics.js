@@ -71,9 +71,9 @@ const DataStatistics = ({ sectionKey }) => {
                 sectionKey={sectionKey}
                 title={i18nKeys.dataStatistics.title}
             />
-            <div className="row">
-                <div className="col-md-6">{renderTable(OBJECT_COUNTS_KEY)}</div>
-                <div className="col-md-6">
+            <div className={styles.tablesGrid}>
+                <div>{renderTable(OBJECT_COUNTS_KEY)}</div>
+                <div>
                     {renderTable(USER_INVITATIONS_KEY)}
                     {renderTable(DATA_VALUE_COUNT_KEY)}
                     {renderTable(EVENT_COUNT_KEY)}
