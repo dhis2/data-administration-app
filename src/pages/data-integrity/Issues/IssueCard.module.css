@@ -1,17 +1,40 @@
 .card {
-    margin-bottom: 10px;
+    padding: var(--spacers-dp12);
+    margin-bottom: var(--spacers-dp12);
 }
 
 .cardText {
-    padding-top: 0 !important;
+    font-size: 14px;
 }
 
-.card h4 {
-    margin-top: 0;
-    margin-bottom: 0;
+.card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
 }
 
 .card p {
     margin-top: 0;
     margin-bottom: 5px;
+}
+
+.title {
+    display: inline;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+}
+
+.validTitle {
+    composes: title;
+    color: var(--colors-green600);
+}
+
+.invalidTitle {
+    composes: title;
+    color: var(--colors-red600);
+}
+
+details[open] .cardHeader {
+    margin-bottom: var(--spacers-dp12);
 }
