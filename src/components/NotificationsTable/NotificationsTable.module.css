@@ -1,5 +1,5 @@
-.container {
-    border: 1px solid var(--colors-grey400);
+.table td:first-child {
+    width: 20%;
 }
 
 .notificationIconBusy {

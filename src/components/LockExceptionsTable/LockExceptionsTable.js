@@ -8,8 +8,8 @@ import {
     TableBody,
     TableRow,
     TableCell,
+    IconDelete16,
 } from '@dhis2/ui'
-import FontIcon from 'material-ui/FontIcon'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -57,9 +57,7 @@ const LockExceptionsTable = ({
                                         : i18n.t('Remove lock exception')
                                 }
                             >
-                                <FontIcon className="material-icons">
-                                    delete
-                                </FontIcon>
+                                <IconDelete16 />
                             </span>
                         </Button>
                     </TableCell>

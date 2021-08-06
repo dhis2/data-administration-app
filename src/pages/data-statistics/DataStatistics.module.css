@@ -3,3 +3,15 @@
     margin-bottom: 24px;
     height: unset !important;
 }
+
+.tablesGrid {
+    display: grid;
+    grid-template-columns: auto;
+    column-gap: 2rem;
+}
+
+@media (min-width: 960px) {
+    .tablesGrid {
+        grid-template-columns: auto auto;
+    }
+}

@@ -1,6 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
-import DatePicker from 'material-ui/DatePicker'
+import { InputField, SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -33,7 +32,6 @@ const is53WeekISOYear = year => {
 }
 
 const styles = {
-    datePicker: { width: '100%' },
     line: {
         display: 'flex',
     },
@@ -63,6 +61,8 @@ const isWeekValid = (date, week) =>
     // It's not possible to have a week 53 in a 52 week year
     !is53WeekISOYear(date) && Number(week) !== 53
 const biWeekToWeek = biWeekStr => parseInt(biWeekStr) * 2 - 1
+
+const isoDate = date => new Date(date).toISOString().split('T')[0]
 
 class PeriodPicker extends React.Component {
     constructor(props) {
@@ -357,7 +357,7 @@ class PeriodPicker extends React.Component {
     }
 
     render() {
-        const setDateState = (nothing, date) => {
+        const setDateState = ({ value: date }) => {
             const year = getYear(date)
             const month = getTwoDigitMonth(date)
             this.setState({ date, year, month }, this.handleChange)
@@ -366,12 +366,11 @@ class PeriodPicker extends React.Component {
         switch (this.props.periodType) {
             case 'Daily':
                 return (
-                    <DatePicker
-                        floatingLabelText={this.getTranslation('day')}
+                    <InputField
+                        type="date"
+                        label={this.getTranslation('day')}
+                        value={this.state.date && isoDate(this.state.date)}
                         onChange={setDateState}
-                        autoOk
-                        container="inline"
-                        style={styles.datePicker}
                     />
                 )
             case 'Weekly':

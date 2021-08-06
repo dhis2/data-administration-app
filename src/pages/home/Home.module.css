@@ -1,7 +1,12 @@
-.gridContainer {
-    margin-bottom: 8px;
+.grid {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: var(--spacers-dp16);
 }
 
-.gridContainer a {
-    text-decoration: none !important;
+@media (min-width: 800px) {
+    .grid {
+        grid-template-columns: auto auto;
+    }
 }

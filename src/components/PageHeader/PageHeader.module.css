@@ -7,4 +7,5 @@
 .headerTitle {
     font-weight: 500;
     margin: 0;
+    margin-right: var(--spacers-dp8);
 }

@@ -14,7 +14,6 @@ export const sections = [
         component: DataIntegrity,
         info: {
             label: i18nKeys.dataIntegrity.label,
-            icon: 'link',
             description: i18nKeys.dataIntegrity.description,
             actionText: i18nKeys.dataIntegrity.actionText,
             docs: 'dataAdmin_dataIntegrity',
@@ -26,7 +25,6 @@ export const sections = [
         component: Maintenance,
         info: {
             label: i18nKeys.maintenance.label,
-            icon: 'settings',
             description: i18nKeys.maintenance.description,
             actionText: i18nKeys.maintenance.actionText,
             docs: 'data_admin_maintenance',
@@ -38,7 +36,6 @@ export const sections = [
         component: ResourceTables,
         info: {
             label: i18nKeys.resourceTables.label,
-            icon: 'view_list',
             description: i18nKeys.resourceTables.description,
             actionText: i18nKeys.resourceTables.actionText,
             docs: 'dataAdmin_resourceTables',
@@ -50,7 +47,6 @@ export const sections = [
         component: Analytics,
         info: {
             label: i18nKeys.analytics.label,
-            icon: 'multiline_chart',
             description: i18nKeys.analytics.description,
             actionText: i18nKeys.analytics.actionText,
             docs: 'analytics_tables_management',
@@ -62,7 +58,6 @@ export const sections = [
         component: DataStatistics,
         info: {
             label: i18nKeys.dataStatistics.label,
-            icon: 'timeline',
             description: i18nKeys.dataStatistics.description,
             actionText: i18nKeys.dataStatistics.actionText,
             docs: 'dataAdmin_dataStatistics',
@@ -74,7 +69,6 @@ export const sections = [
         component: LockExceptions,
         info: {
             label: i18nKeys.lockExceptions.label,
-            icon: 'lock',
             description: i18nKeys.lockExceptions.description,
             actionText: i18nKeys.lockExceptions.actionText,
             docs: 'dataAdmin_lockException',
@@ -86,7 +80,6 @@ export const sections = [
         component: MinMaxValueGeneration,
         info: {
             label: i18nKeys.minMaxValueGeneration.label,
-            icon: 'compare_arrows',
             description: i18nKeys.minMaxValueGeneration.description,
             actionText: i18nKeys.minMaxValueGeneration.actionText,
             docs: 'dataAdmin_minMaxValueGeneration',

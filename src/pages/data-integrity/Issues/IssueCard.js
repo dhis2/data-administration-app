@@ -1,7 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { colors } from '@dhis2/ui'
-import { FontIcon } from 'material-ui'
-import { Card, CardText, CardHeader } from 'material-ui/Card'
+import { Card } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './IssueCard.module.css'
@@ -17,35 +15,29 @@ const Content = ({ content }) => {
     } else {
         return Object.entries(content).map(([element, value]) => (
             <div key={element}>
-                <h4>{element}</h4>
+                <h3>{element}</h3>
                 <p>{renderValue(value)}</p>
             </div>
         ))
     }
 }
 
-const jsStyles = {
-    titleStyle: {
-        fontSize: 16,
-        fontWeight: 'normal',
-    },
+Content.propTypes = {
+    content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
-const errorStyles = {
-    titleColor: colors.red600,
-    openIcon: 'keyboard_arrow_up',
-    closeIcon: 'keyboard_arrow_down',
-    iconStyle: {},
-}
+const Title = ({ title, type }) => (
+    <h2
+        data-test="issue-card-title"
+        className={type === 'invalid' ? styles.invalidTitle : styles.validTitle}
+    >
+        {title}
+    </h2>
+)
 
-const noErrorStyles = {
-    titleColor: colors.green600,
-    openIcon: 'done',
-    closeIcon: 'done',
-    iconStyle: {
-        color: colors.green600,
-        cursor: 'auto',
-    },
+Title.propTypes = {
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 }
 
 const countElements = content => {
@@ -65,45 +57,29 @@ const countElements = content => {
 
 const IssueCard = ({ title, content }) => {
     const elementsCount = countElements(content)
-    const expandable = elementsCount > 0
-    const { titleColor, openIcon, closeIcon, iconStyle } =
-        elementsCount > 0 ? errorStyles : noErrorStyles
-
-    const openFontIcon = (
-        <FontIcon className="material-icons">{openIcon}</FontIcon>
-    )
-    const closeFontIcon = (
-        <FontIcon className="material-icons">{closeIcon}</FontIcon>
-    )
 
     return (
         <Card className={styles.card}>
-            <CardHeader
-                title={
-                    <div data-test="issue-card-title">
-                        {elementsCount > 0
-                            ? i18n.t(
-                                  '{{issueTitle}} ({{issueElementsCount}})',
-                                  {
-                                      issueTitle: title,
-                                      issueElementsCount: elementsCount,
-                                  }
-                              )
-                            : title}
+            {elementsCount > 0 ? (
+                <details>
+                    <summary className={styles.cardHeader}>
+                        <Title
+                            title={i18n.t(
+                                '{{issueTitle}} ({{issueElementsCount}})',
+                                {
+                                    issueTitle: title,
+                                    issueElementsCount: elementsCount,
+                                }
+                            )}
+                            type="invalid"
+                        />
+                    </summary>
+                    <div className={styles.cardText}>
+                        <Content content={content} />
                     </div>
-                }
-                titleColor={titleColor}
-                titleStyle={jsStyles.titleStyle}
-                actAsExpander={expandable}
-                showExpandableButton={true}
-                closeIcon={closeFontIcon}
-                openIcon={openFontIcon}
-                iconStyle={iconStyle}
-            />
-            {elementsCount > 0 && (
-                <CardText className={styles.cardText} expandable={expandable}>
-                    <Content content={content} />
-                </CardText>
+                </details>
+            ) : (
+                <Title title={title} type="valid" />
             )}
         </Card>
     )
