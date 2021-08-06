@@ -1,4 +1,4 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
@@ -13,6 +13,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
 import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'
 import {
@@ -30,26 +31,39 @@ const startAnalyticsTablesGenerationMutation = {
     params: params => params,
 }
 
+const existingTasksQuery = {
+    tasks: {
+        resource: 'system/tasks/ANALYTICS_TABLE',
+    },
+}
+
 const Analytics = ({ sectionKey }) => {
     const { checkboxes, toggleCheckbox } = useCheckboxes()
     const [lastYears, setLastYears] = useState(DEFAULT_LAST_YEARS)
-    const [
-        startAnalyticsTablesGeneration,
-        { loading, error, data },
-    ] = useDataMutation(startAnalyticsTablesGenerationMutation, {
+    const poll = useAnalyticsPoll()
+    useDataQuery(existingTasksQuery, {
         onComplete: data => {
-            const { id: jobId } = data.response
-            poll.start({ jobId })
+            const taskId = getActiveTaskIdFromSummary(data.tasks)
+
+            if (taskId) {
+                poll.start({ taskId })
+            }
         },
     })
-    const poll = useAnalyticsPoll()
+    const [
+        startAnalyticsTablesGeneration,
+        { loading, error },
+    ] = useDataMutation(startAnalyticsTablesGenerationMutation, {
+        onComplete: data => {
+            const { id: taskId } = data.response
+            poll.start({ taskId })
+        },
+    })
     const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
-    const isPolling =
-        data && (!poll.data || !notifications.some(n => n.completed))
 
     const handleStartAnalyticsTablesGeneration = () => {
         const params = {}
-        for (const [key, checked] of Object.entries(checkboxes)) {
+        for (const [key, { checked }] of Object.entries(checkboxes)) {
             if (checked) {
                 params[key] = true
             }
@@ -87,7 +101,7 @@ const Analytics = ({ sectionKey }) => {
                                     onChange={() => {
                                         toggleCheckbox(key)
                                     }}
-                                    disabled={loading || isPolling}
+                                    disabled={loading || poll.polling}
                                 />
                             )
                         )}
@@ -99,7 +113,7 @@ const Analytics = ({ sectionKey }) => {
                         )}
                         selected={lastYears}
                         onChange={handleLastYearsChange}
-                        disabled={loading || isPolling}
+                        disabled={loading || poll.polling}
                     >
                         {lastYearElements.map(item => (
                             <SingleSelectOption
@@ -113,9 +127,9 @@ const Analytics = ({ sectionKey }) => {
                 <Button
                     primary
                     onClick={handleStartAnalyticsTablesGeneration}
-                    disabled={loading || isPolling}
+                    disabled={loading || poll.polling}
                 >
-                    {loading || isPolling ? (
+                    {loading || poll.polling ? (
                         <>
                             {i18n.t('Exporting...')}
                             <CircularLoader small />

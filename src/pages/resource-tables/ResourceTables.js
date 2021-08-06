@@ -1,10 +1,11 @@
-import { useDataMutation } from '@dhis2/app-runtime'
+import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Card, Button, NoticeBox, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
+import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
 import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './ResourceTables.module.css'
@@ -66,20 +67,32 @@ const startResourceTablesGenerationMutation = {
     type: 'create',
 }
 
+const existingTasksQuery = {
+    tasks: {
+        resource: 'system/tasks/RESOURCE_TABLE',
+    },
+}
+
 const ResourceTable = ({ sectionKey }) => {
     const poll = useResourceTablesPoll()
+    useDataQuery(existingTasksQuery, {
+        onComplete: data => {
+            const taskId = getActiveTaskIdFromSummary(data.tasks)
+            if (taskId) {
+                poll.start({ taskId })
+            }
+        },
+    })
     const [
         handleStartResourceTablesGeneration,
-        { loading, error, data },
+        { loading, error },
     ] = useDataMutation(startResourceTablesGenerationMutation, {
         onComplete: data => {
-            const { id: jobId } = data.response
-            poll.start({ jobId })
+            const { id: taskId } = data.response
+            poll.start({ taskId })
         },
     })
     const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
-    const isPolling =
-        data && (!poll.data || !notifications.some(n => n.completed))
 
     return (
         <div>
@@ -109,9 +122,9 @@ const ResourceTable = ({ sectionKey }) => {
                 <Button
                     primary
                     onClick={handleStartResourceTablesGeneration}
-                    disabled={loading || isPolling}
+                    disabled={loading || poll.polling}
                 >
-                    {loading || isPolling ? (
+                    {loading || poll.polling ? (
                         <>
                             {i18n.t('Generating tables...')}
                             <CircularLoader small />
