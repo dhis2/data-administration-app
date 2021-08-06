@@ -1,3 +1,11 @@
+## [1.1.13](https://github.com/dhis2/data-administration-app/compare/v1.1.12...v1.1.13) (2021-08-06)
+
+
+### Bug Fixes
+
+* fetch and show existing running tasks for analytics and resource tables ([ca13775](https://github.com/dhis2/data-administration-app/commit/ca137752f644e1d5b5b77c7caef9e23d0f694da2))
+* **analytics:** use correct checked state of params checkboxes ([0c40b83](https://github.com/dhis2/data-administration-app/commit/0c40b83d4fec64c596cf385a98a4a2b76b3262a4))
+
 ## [1.1.12](https://github.com/dhis2/data-administration-app/compare/v1.1.11...v1.1.12) (2021-08-05)
 
 
