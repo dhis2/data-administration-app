@@ -1,3 +1,10 @@
+## [1.1.15](https://github.com/dhis2/data-administration-app/compare/v1.1.14...v1.1.15) (2021-08-10)
+
+
+### Bug Fixes
+
+* cache poll responses to prevent flickering ([#665](https://github.com/dhis2/data-administration-app/issues/665)) ([7f9e1f9](https://github.com/dhis2/data-administration-app/commit/7f9e1f960d99c1508083610de88f9e5b31c680c1))
+
 ## [1.1.14](https://github.com/dhis2/data-administration-app/compare/v1.1.13...v1.1.14) (2021-08-10)
 
 
