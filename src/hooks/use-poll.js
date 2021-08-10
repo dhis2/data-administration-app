@@ -29,12 +29,16 @@ const useLazyInterval = (fn, interval) => {
 }
 
 export const usePoll = ({ query, interval, checkDone }) => {
+    // Store data in state and update in onComplete as useDataQuery sets data to
+    // null when a refetch is triggered
+    const [data, setData] = useState(null)
     const wrappedQuery = useConst(() => ({
         poll: query,
     }))
-    const { refetch, error, data } = useDataQuery(wrappedQuery, {
+    const { refetch, error } = useDataQuery(wrappedQuery, {
         lazy: true,
         onComplete: data => {
+            setData(data)
             if (checkDone(data.poll)) {
                 cancel()
             }
