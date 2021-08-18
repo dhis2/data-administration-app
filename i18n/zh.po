@@ -669,4 +669,4 @@ msgid "Messages"
 msgstr "消息"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
