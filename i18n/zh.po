@@ -255,7 +255,7 @@ msgid "Select a data set"
 msgstr "选择数据集"
 
 msgid "Updating selection..."
-msgstr ""
+msgstr "正在更新选择..."
 
 msgid "Select"
 msgstr "选择"
@@ -276,13 +276,13 @@ msgid "Organisation unit group"
 msgstr "组织机构组"
 
 msgid "Select an organisation unit group"
-msgstr ""
+msgstr "选择组织机构组"
 
 msgid "Organisation unit level"
 msgstr "组织机构等级"
 
 msgid "Select an organisation unit level"
-msgstr ""
+msgstr "选择组织机构级别"
 
 msgid "week"
 msgstr "周"
@@ -294,7 +294,7 @@ msgid "year"
 msgstr "年"
 
 msgid "bi weekly"
-msgstr ""
+msgstr "双周"
 
 msgid "bi monthly"
 msgstr "两月"
@@ -630,7 +630,7 @@ msgid "Remove min-max values"
 msgstr "删除最小值-最大值"
 
 msgid "Generating tables..."
-msgstr ""
+msgstr "正在生成表..."
 
 msgid "Generate tables"
 msgstr "生成资源表"
