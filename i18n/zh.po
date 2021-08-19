@@ -666,7 +666,7 @@ msgid "Messages"
 msgstr "消息"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data set"
 msgstr "数据集"
