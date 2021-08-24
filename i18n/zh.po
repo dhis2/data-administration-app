@@ -197,10 +197,10 @@ msgid "Update category option combinations"
 msgstr "更新分类组合选项"
 
 msgid "Update organisation unit paths"
-msgstr "Update 机构 paths"
+msgstr "更新机构路径"
 
 msgid "Clear application cache"
-msgstr "Clear application cache"
+msgstr "清除应用缓存"
 
 msgid "Reload apps"
 msgstr "重新载入APP"
@@ -318,7 +318,7 @@ msgid "Indicators"
 msgstr "指标"
 
 msgid "Periods"
-msgstr "周期"
+msgstr "期间"
 
 msgid "Organisation units"
 msgstr "组织机构"
@@ -473,7 +473,7 @@ msgid "bi monthly"
 msgstr "两月"
 
 msgid "day"
-msgstr "天"
+msgstr "日"
 
 msgid "jan"
 msgstr "一月"
@@ -592,10 +592,10 @@ msgid "Organisation Unit Selection"
 msgstr "组织机构选择"
 
 msgid "Generate"
-msgstr "Generate"
+msgstr "生成"
 
 msgid "Analytics tables management"
-msgstr "Analytics tables management"
+msgstr "分析表管理"
 
 msgid "Analytics Tables"
 msgstr "分析表"
@@ -606,31 +606,31 @@ msgid ""
 msgstr "数据集市是 DHIS 数据库中的一组表，所有报告和分析工具都使用它来检索数据。"
 
 msgid "Analytics tables update"
-msgstr "Analytics tables update"
+msgstr "分析表更新"
 
 msgid "START EXPORT"
 msgstr "开始导出"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr "Skip generation of aggregate data and completeness data"
+msgstr "跳过生成聚合数据和完整性数据"
 
 msgid "Skip generation of resource tables"
-msgstr "Skip generation of resource tables"
+msgstr "跳过资源表的生成"
 
 msgid "Skip generation of event data"
-msgstr "Skip generation of event data"
+msgstr "跳过事件数据的生成"
 
 msgid "Skip generation of enrollment data"
-msgstr "Skip generation of enrollment data"
+msgstr "跳过注册数据的生成"
 
 msgid "Analytics Tables Update"
 msgstr "分析表更新"
 
 msgid "Number of last years of data to include"
-msgstr "Number of last years of data to include"
+msgstr "要包括的最近几年的数据的数量"
 
 msgid "[ All ]"
-msgstr "【所有】"
+msgstr "[ 全部 ]"
 
 msgid "Settings"
 msgstr "设置"
