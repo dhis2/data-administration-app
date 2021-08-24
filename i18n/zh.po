@@ -86,7 +86,7 @@ msgid "Perform maintenance"
 msgstr "执行维护"
 
 msgid "Clear analytics tables"
-msgstr "Clear analytics tables"
+msgstr "清除分析表"
 
 msgid "Analyze analytics tables"
 msgstr "分析分析表"
@@ -122,10 +122,10 @@ msgid "Update category option combinations"
 msgstr "更新分类组合选项"
 
 msgid "Update organisation unit paths"
-msgstr "Update 机构 paths"
+msgstr "更新机构路径"
 
 msgid "Clear application cache"
-msgstr "Clear application cache"
+msgstr "清除应用缓存"
 
 msgid "Reload apps"
 msgstr "重新载入APP"
@@ -181,7 +181,7 @@ msgid "Data element category option combinations"
 msgstr "数据元分类组合选项"
 
 msgid "Analytics tables management"
-msgstr "Analytics tables management"
+msgstr "分析表管理"
 
 msgid "Analytics Tables"
 msgstr "分析表"
@@ -192,22 +192,22 @@ msgid ""
 msgstr "数据集市是 DHIS 数据库中的一组表，所有报告和分析工具都使用它来检索数据。"
 
 msgid "Analytics tables update"
-msgstr "Analytics tables update"
+msgstr "分析表更新"
 
 msgid "An unexpected error happened during maintenance"
 msgstr "维护中发生意外错误"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr "Skip generation of aggregate data and completeness data"
+msgstr "跳过生成聚合数据和完整性数据"
 
 msgid "Skip generation of resource tables"
-msgstr "Skip generation of resource tables"
+msgstr "跳过资源表的生成"
 
 msgid "Skip generation of event data"
-msgstr "Skip generation of event data"
+msgstr "跳过事件数据的生成"
 
 msgid "Skip generation of enrollment data"
-msgstr "Skip generation of enrollment data"
+msgstr "跳过注册数据的生成"
 
 msgid "Data Statistics"
 msgstr "数据统计"
@@ -300,7 +300,7 @@ msgid "bi monthly"
 msgstr "两月"
 
 msgid "day"
-msgstr "天"
+msgstr "日"
 
 msgid "jan"
 msgstr "一月"
@@ -387,7 +387,7 @@ msgid "oct-mar"
 msgstr "10-3月"
 
 msgid "Number of last years of data to include"
-msgstr "Number of last years of data to include"
+msgstr "要包括的最近几年的数据的数量"
 
 msgid "Exporting..."
 msgstr "出口..."
@@ -597,10 +597,10 @@ msgid "User account invitations"
 msgstr "用户帐号邀请"
 
 msgid "Pending invitations"
-msgstr "Pending invitations"
+msgstr "待处理的邀请"
 
 msgid "Expired invitations"
-msgstr "Expired invitations"
+msgstr "过期邀请"
 
 msgid "Batch deletion"
 msgstr "批量删除"
