@@ -136,7 +136,7 @@ msgstr "资源表"
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
-msgstr "为组织机构体系和组集结构在数据库中生成的其它相关的数据库资源表。\n"
+msgstr "为组织机构层次结构和组集结构等生成资源数据库表。"
 
 msgid "Generate Resource Tables"
 msgstr "生成资源表"
@@ -172,7 +172,7 @@ msgid "Data element structure"
 msgstr "数据元结构"
 
 msgid "Period structure"
-msgstr "Period结构"
+msgstr "期间结构"
 
 msgid "Date period structure"
 msgstr "日期期间结构"
@@ -294,7 +294,7 @@ msgid "year"
 msgstr "年"
 
 msgid "bi weekly"
-msgstr "双周"
+msgstr "两周"
 
 msgid "bi monthly"
 msgstr "两月"
@@ -387,10 +387,10 @@ msgid "oct-mar"
 msgstr "10-3月"
 
 msgid "Number of last years of data to include"
-msgstr "要包括的最近几年的数据的数量"
+msgstr "最近几年包括的数据量"
 
 msgid "Exporting..."
-msgstr "出口..."
+msgstr "导出..."
 
 msgid "Start export"
 msgstr "开始导出"
@@ -516,7 +516,7 @@ msgid "Indicators"
 msgstr "指标"
 
 msgid "Periods"
-msgstr "周期"
+msgstr "期间"
 
 msgid "Visualization"
 msgstr "可视化"
