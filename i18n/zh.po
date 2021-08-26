@@ -161,7 +161,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr "维护中发生意外错误"
 
 msgid "Clear analytics tables"
-msgstr "Clear analytics tables"
+msgstr "清除分析表"
 
 msgid "Analyze analytics tables"
 msgstr "分析分析表"
@@ -253,7 +253,7 @@ msgid "Data element structure"
 msgstr "数据元结构"
 
 msgid "Period structure"
-msgstr "Period结构"
+msgstr "期间结构"
 
 msgid "Date period structure"
 msgstr "日期期间结构"
@@ -303,10 +303,10 @@ msgid "User account invitations"
 msgstr "用户帐号邀请"
 
 msgid "Pending invitations"
-msgstr "Pending invitations"
+msgstr "待处理的邀请"
 
 msgid "Expired invitations"
-msgstr "Expired invitations"
+msgstr "过期邀请"
 
 msgid "Data values"
 msgstr "数据值"
