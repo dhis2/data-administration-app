@@ -14,8 +14,7 @@
 
 .label {
     font-size: 14px;
-    font-weight: 500;
-    margin-bottom: var(--spacers-dp4);
+    line-height: 24px;
 }
 
 .left {
@@ -31,19 +30,4 @@
 .tree {
     height: 100%;
     overflow: auto;
-}
-
-.select {
-    width: 100%;
-    height: 100%;
-    border: none;
-    font-size: 13px;
-}
-
-.tree, .select {
-    border: solid 1px var(--colors-grey500);
-}
-
-.options {
-    padding: var(--spacers-dp4) var(--spacers-dp8);
 }
