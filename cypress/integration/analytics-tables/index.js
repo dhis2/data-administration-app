@@ -19,6 +19,12 @@ Before(() => {
     cy.intercept(
         { pathname: /system\/tasks\/ANALYTICS_TABLE/, method: 'GET' },
         req => {
+            // Handle request for in-progress tasks
+            if (req.url.endsWith('ANALYTICS_TABLE')) {
+                req.reply(200, null)
+                return
+            }
+
             expect(req.url.endsWith(JOB_ID)).to.be.true
             req.reply(200, [
                 {

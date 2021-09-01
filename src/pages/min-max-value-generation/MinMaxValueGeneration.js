@@ -8,9 +8,11 @@ import {
     ButtonStrip,
     Button,
     Card,
+    MultiSelectField,
+    MultiSelectOption,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './MinMaxValueGeneration.module.css'
@@ -80,18 +82,10 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
         null
     )
     const [selectedDataSets, setSelectedDataSets] = useState([])
-    const dataSetsSelectRef = useRef(null)
 
     const formValid =
         selectedDataSets.length > 0 && selectedOrganisationUnit !== null
 
-    const handleDataSetsSelectClick = () => {
-        setSelectedDataSets(
-            Array.from(dataSetsSelectRef.current.selectedOptions).map(
-                ({ value }) => value
-            )
-        )
-    }
     const handleOrganisationUnitChange = ({ path, checked }) => {
         if (checked) {
             setSelectedOrganisationUnit({
@@ -147,23 +141,23 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
             <Card className={styles.card}>
                 <div className={styles.container}>
                     <div className={styles.left}>
-                        <div className={styles.label}>{i18n.t('Data set')}</div>
-                        <select
-                            multiple
-                            onClick={handleDataSetsSelectClick}
-                            className={styles.select}
-                            ref={dataSetsSelectRef}
+                        <MultiSelectField
+                            label={i18n.t('Data set')}
+                            onChange={({ selected }) =>
+                                setSelectedDataSets(selected)
+                            }
+                            selected={selectedDataSets}
+                            clearable
+                            filterable
                         >
                             {dataSets.map(item => (
-                                <option
+                                <MultiSelectOption
                                     key={item.id}
+                                    label={item.displayName}
                                     value={item.id}
-                                    className={styles.options}
-                                >
-                                    {item.displayName}
-                                </option>
+                                />
                             ))}
-                        </select>
+                        </MultiSelectField>
                     </div>
                     <div className={styles.right}>
                         <div className={styles.label}>
