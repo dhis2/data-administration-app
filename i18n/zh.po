@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
+"PO-Revision-Date: 2021-09-03 23:43+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2021\n"
 "Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
@@ -483,31 +483,31 @@ msgid "Duplicate periods"
 msgstr "复制期间"
 
 msgid "Program rules with no condition"
-msgstr "无条件的程序规则"
+msgstr "无条件的项目规则"
 
 msgid "Program rules with no action"
-msgstr "没有动作的程序规则"
+msgstr "没有动作的项目规则"
 
 msgid "Program rules with no priority"
-msgstr "无优先级的程序规则"
+msgstr "无优先级的项目规则"
 
 msgid "Program rule variables with no data element"
-msgstr "没有数据元素的程序规则变量"
+msgstr "没有数据元素的项目规则变量"
 
 msgid "Program rule variables with no attribute"
-msgstr "没有属性的程序规则变量"
+msgstr "没有属性的项目规则变量"
 
 msgid "Program rule actions with no data object"
-msgstr "没有数据对象的程序规则操作"
+msgstr "没有数据对象的项目规则操作"
 
 msgid "Program rule actions with no notification"
-msgstr "没有通知的程序规则操作"
+msgstr "没有通知的项目规则操作"
 
 msgid "Program rule actions with no section id"
-msgstr "没有节 ID 的程序规则操作"
+msgstr "没有节 ID 的项目规则操作"
 
 msgid "Program rule actions with no stage id"
-msgstr "没有阶段 ID 的程序规则操作"
+msgstr "没有阶段 ID 的项目规则操作"
 
 msgid "Program indicators with no expression"
 msgstr "没有表达式的程序指标"
@@ -549,7 +549,7 @@ msgid "Pivot tables"
 msgstr "透视表"
 
 msgid "Program instances"
-msgstr "程序实例"
+msgstr "项目实例"
 
 msgid "Indicator types"
 msgstr "指标类型"
