@@ -1,3 +1,10 @@
+## [1.1.21](https://github.com/dhis2/data-administration-app/compare/v1.1.20...v1.1.21) (2021-09-21)
+
+
+### Bug Fixes
+
+* upgrade app-scripts+runtime to introduce serviceworker killswitch ([#693](https://github.com/dhis2/data-administration-app/issues/693)) ([cd72af6](https://github.com/dhis2/data-administration-app/commit/cd72af6a76ee1b17334f9ab445608c65cb004734))
+
 ## [1.1.20](https://github.com/dhis2/data-administration-app/compare/v1.1.19...v1.1.20) (2021-08-31)
 
 
