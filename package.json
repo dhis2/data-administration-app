@@ -21,7 +21,7 @@
         "format": "yarn format:js && yarn format:text"
     },
     "devDependencies": {
-        "@dhis2/cli-app-scripts": "^6.0.0",
+        "@dhis2/cli-app-scripts": "^7.6.6",
         "@dhis2/cli-style": "^7.3.0",
         "@dhis2/cli-utils-cypress": "^7.0.1",
         "@dhis2/cypress-commands": "^7.0.1",
@@ -31,7 +31,7 @@
         "eslint-plugin-cypress": "^2.11.3"
     },
     "dependencies": {
-        "@dhis2/app-runtime": "^2.8.0",
+        "@dhis2/app-runtime": "^2.12.1",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "^6.12.0",
