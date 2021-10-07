@@ -3,7 +3,7 @@
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
-# drprabhjot, 2021
+# Prabhjot Singh, 2021
 # phil_dhis2, 2021
 # 
 msgid ""
