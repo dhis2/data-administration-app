@@ -7,13 +7,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2021\n"
+"Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,6 +205,9 @@ msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
 msgstr ""
+"Le magasin de données est un ensemble de tableaux dans la base de données "
+"DHIS qui est utilisé par tous les outils de génération de rapports et "
+"d'analyses pour récupérer des données."
 
 msgid "Analytics tables update"
 msgstr "Mise à jour des tables d'analytique"
@@ -429,10 +433,10 @@ msgid "Checking data integrity..."
 msgstr ""
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "Exécuter des vérifications d'intégrité"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data elements without data set"
 msgstr "Éléments de données sans ensemble de données"
@@ -510,31 +514,31 @@ msgid "Duplicate periods"
 msgstr "Périodes dupliquées"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "Règles de programme sans condition"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "Règles de programme sans action"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "Règles de programme sans priorité"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "Variables de règle de programme sans élément de donnée"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "Variables de règle de programme sans attribut"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "Actions de règle de programme sans objet de données"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "Actions de règle de programme sans notification"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "Actions de règle de programme sans identifiant de section"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "Actions de règle de programme sans identifiant d'étape"
 
 msgid "Program indicators with no expression"
 msgstr ""
