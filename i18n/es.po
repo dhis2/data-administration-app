@@ -5,13 +5,14 @@
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Prabhjot Singh, 2021
 # phil_dhis2, 2021
+# Janeth Cruz, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: phil_dhis2, 2021\n"
+"Last-Translator: Janeth Cruz, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,10 +143,10 @@ msgstr ""
 "organizativas y la estructura de conjuntos de datos, entre otros."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Generar tablas de recursos"
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante la operación"
 
 msgid "Organisation unit structure"
 msgstr "Estructura de unidad organizativa"
@@ -187,7 +188,7 @@ msgid "Analytics tables management"
 msgstr ""
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tablas analíticas"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -198,7 +199,7 @@ msgid "Analytics tables update"
 msgstr "Actualizar tablas Analytics"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante el mantenimiento"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
@@ -246,7 +247,7 @@ msgstr ""
 "procesos de entrada y validación de datos."
 
 msgid "Generate Min-Max Values"
-msgstr ""
+msgstr "Generar valores mínimos y máximos"
 
 msgid "Lock exception added"
 msgstr ""
@@ -261,91 +262,91 @@ msgid "Adding lock exception..."
 msgstr ""
 
 msgid "Select a data set"
-msgstr ""
+msgstr "Seleccionar un set de datos"
 
 msgid "Updating selection..."
-msgstr ""
+msgstr "Actualizando selección..."
 
 msgid "Select"
 msgstr "Seleccionar"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Quitar selección"
 
 msgid "Error loading data for data set"
-msgstr ""
+msgstr "Error al cargar los datos del set de datos"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Seleccionar todas las unidades organizativas"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Quitar selección de todas las unidades organizativas"
 
 msgid "Organisation unit group"
 msgstr "Grupo de Unidades Organizativas"
 
 msgid "Select an organisation unit group"
-msgstr ""
+msgstr "Seleccionar un grupo de unidades organizativas"
 
 msgid "Organisation unit level"
 msgstr "Nivel de unidad organizativa"
 
 msgid "Select an organisation unit level"
-msgstr ""
+msgstr "Seleccionar un nivel de unidad organizativa"
 
 msgid "week"
-msgstr ""
+msgstr "semana"
 
 msgid "month"
 msgstr "mes"
 
 msgid "year"
-msgstr ""
+msgstr "año"
 
 msgid "bi weekly"
-msgstr ""
+msgstr "quincenal"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "bimestral"
 
 msgid "day"
-msgstr ""
+msgstr "día"
 
 msgid "jan"
-msgstr ""
+msgstr "ene"
 
 msgid "feb"
-msgstr ""
+msgstr "feb"
 
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 msgid "apr"
-msgstr ""
+msgstr "abr"
 
 msgid "may"
-msgstr ""
+msgstr "may"
 
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 msgid "aug"
-msgstr ""
+msgstr "ago"
 
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 msgid "oct"
-msgstr ""
+msgstr "oct"
 
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 msgid "dec"
-msgstr ""
+msgstr "dic"
 
 msgid "jan-feb"
 msgstr ""
@@ -396,10 +397,10 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Número de datos de los últimos años a incluir"
 
 msgid "Exporting..."
-msgstr ""
+msgstr "Exportando..."
 
 msgid "Start export"
 msgstr "Iniciar exportación"
@@ -414,7 +415,7 @@ msgid "No lock exceptions to show."
 msgstr ""
 
 msgid "Checking data integrity..."
-msgstr ""
+msgstr "Comprobando integridad de datos ..."
 
 msgid "Run integrity checks"
 msgstr ""
