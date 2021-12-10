@@ -6,13 +6,14 @@
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Prabhjot Singh, 2021
+# Janeth Cruz, 2021
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-08-02T09:40:17.721Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Prabhjot Singh, 2021\n"
+"Last-Translator: Janeth Cruz, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,7 +165,7 @@ msgid "Maintenance done"
 msgstr ""
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante el mantenimiento"
 
 msgid "Clear analytics tables"
 msgstr "Eliminar tablas Analytics"
@@ -222,7 +223,7 @@ msgstr ""
 "organizativas y la estructura de conjuntos de datos, entre otros."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Generar tablas de recursos"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -231,7 +232,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante la operación"
 
 msgid "Organisation unit structure"
 msgstr "Estructura de unidad organizativa"
@@ -449,13 +450,13 @@ msgid "Select"
 msgstr "Seleccionar"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Deshacer selección"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Seleccionar todas las unidades organizativas"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Quitar selección de todas las unidades organizativas"
 
 msgid "Name"
 msgstr "Nombre"
@@ -473,55 +474,55 @@ msgid "of"
 msgstr "de"
 
 msgid "week"
-msgstr ""
+msgstr "semana"
 
 msgid "month"
 msgstr "mes"
 
 msgid "year"
-msgstr ""
+msgstr "año"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "bimestral"
 
 msgid "day"
-msgstr ""
+msgstr "día"
 
 msgid "jan"
-msgstr ""
+msgstr "ene"
 
 msgid "feb"
-msgstr ""
+msgstr "feb"
 
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 msgid "apr"
-msgstr ""
+msgstr "abr"
 
 msgid "may"
-msgstr ""
+msgstr "may"
 
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 msgid "aug"
-msgstr ""
+msgstr "ago"
 
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 msgid "oct"
-msgstr ""
+msgstr "oct"
 
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 msgid "dec"
-msgstr ""
+msgstr "dic"
 
 msgid "jan-feb"
 msgstr ""
@@ -612,7 +613,7 @@ msgid "Analytics tables management"
 msgstr ""
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tablas analíticas"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -641,7 +642,7 @@ msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Número de datos de los últimos años a incluir"
 
 msgid "[ All ]"
 msgstr ""
