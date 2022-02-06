@@ -32,6 +32,7 @@ const objectLabels = {
     chart: i18n.t('Charts'),
     dataElementGroup: i18n.t('Data element groups'),
     dashboard: i18n.t('Dashboards'),
+    eventVisualization: i18n.t('Event visualization'),
 }
 
 const translatedTimeLabelFromIntProperty = key => {
