@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2021-08-02T09:40:17.721Z\n"
-"PO-Revision-Date: 2021-08-02T09:40:17.721Z\n"
+"POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
+"PO-Revision-Date: 2022-02-06T18:57:00.335Z\n"
 
 msgid "Data Integrity"
 msgstr ""
@@ -353,6 +353,18 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
+msgstr ""
+
+msgid "Visualization"
+msgstr ""
+
+msgid "Event visualization"
+msgstr ""
+
+msgid "Program instance"
+msgstr ""
+
+msgid "Tracked entity instance"
 msgstr ""
 
 msgid "Lock Exception Management"

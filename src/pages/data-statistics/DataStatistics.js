@@ -47,10 +47,14 @@ class DataStatistics extends Page {
             for (let i = 0; i < objectCountsKeys.length; i++) {
                 const key = objectCountsKeys[i]
                 objectCountsTable.elements.push({
-                    label: i18n.t(i18nKeys.dataStatistics.objects[key]),
+                    label: i18n.t(i18nKeys.dataStatistics.objects[key] || key),
                     count: objectCountsResponse[key],
                 })
             }
+
+            objectCountsTable.elements.sort((a, b) =>
+                a.label.localeCompare(b.label)
+            )
 
             return objectCountsTable
         }

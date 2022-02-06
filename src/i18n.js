@@ -234,6 +234,10 @@ export const i18nKeys = {
             chart: i18n.t('Charts'),
             dataElementGroup: i18n.t('Data element groups'),
             dashboard: i18n.t('Dashboards'),
+            visualization: i18n.t('Visualization'),
+            eventVisualization: i18n.t('Event visualization'),
+            programInstance: i18n.t('Program instance'),
+            trackedEntityInstance: i18n.t('Tracked entity instance'),
         },
     },
     lockException: {
