@@ -1,3 +1,10 @@
+## [1.1.26](https://github.com/dhis2/data-administration-app/compare/v1.1.25...v1.1.26) (2022-02-07)
+
+
+### Bug Fixes
+
+* **data-statistics:** sort objects by label ([#725](https://github.com/dhis2/data-administration-app/issues/725)) ([0f7459d](https://github.com/dhis2/data-administration-app/commit/0f7459d0a248139f0052118029c90a9b7b693fc6))
+
 ## [1.1.25](https://github.com/dhis2/data-administration-app/compare/v1.1.24...v1.1.25) (2021-12-10)
 
 
