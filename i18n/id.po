@@ -1,15 +1,15 @@
 # 
 # Translators:
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
+# Viktor Varland <viktor@dhis2.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-02T09:49:10.835Z\n"
+"POT-Creation-Date: 2022-02-06T19:08:13.142Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -369,6 +369,18 @@ msgstr "Grup data elemen"
 
 msgid "Dashboards"
 msgstr ""
+
+msgid "Visualization"
+msgstr ""
+
+msgid "Event visualization"
+msgstr ""
+
+msgid "Program instance"
+msgstr ""
+
+msgid "Tracked entity instance"
+msgstr "Tracked entity instance"
 
 msgid "Lock Exception Management"
 msgstr "Manajemen Lock Exception"

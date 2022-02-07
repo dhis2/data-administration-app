@@ -2,16 +2,16 @@
 # Translators:
 # Saurabh Leekha <saurabh.leekha@hispindia.org>, 2021
 # Ulanbek Abakirov <ulans@mail.ru>, 2021
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Valeriu Plesca <vplesca@gmail.com>, 2021
+# phil_dhis2, 2022
+# Viktor Varland <viktor@dhis2.org>, 2022
+# Valeriu Plesca <vplesca@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-02T09:49:10.835Z\n"
+"POT-Creation-Date: 2022-02-06T19:08:13.142Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2021\n"
+"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/hisp-uio/teams/100509/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -372,6 +372,18 @@ msgstr "Группы элементов данных"
 
 msgid "Dashboards"
 msgstr "Информационные панели"
+
+msgid "Visualization"
+msgstr "Визуализация"
+
+msgid "Event visualization"
+msgstr ""
+
+msgid "Program instance"
+msgstr "Экземпляр программы"
+
+msgid "Tracked entity instance"
+msgstr "Экземпляр отслеживаемого объекта"
 
 msgid "Lock Exception Management"
 msgstr "Блокировать управление исключений"
