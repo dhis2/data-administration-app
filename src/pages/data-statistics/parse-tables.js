@@ -32,6 +32,7 @@ const objectLabels = {
     chart: i18n.t('Charts'),
     dataElementGroup: i18n.t('Data element groups'),
     dashboard: i18n.t('Dashboards'),
+    eventVisualization: i18n.t('Event visualization'),
 }
 
 const translatedTimeLabelFromIntProperty = key => {
@@ -52,12 +53,17 @@ const objectCountsTableFromResponse = objectCountsResponse => {
         return null
     }
 
-    return {
-        label: i18n.t('Object type'),
-        elements: Object.entries(objectCountsResponse).map(([key, count]) => ({
+    const elements = Object.entries(objectCountsResponse).map(
+        ([key, count]) => ({
             label: objectLabels[key] || key,
             count,
-        })),
+        })
+    )
+    elements.sort((a, b) => a.label.localeCompare(b.label))
+
+    return {
+        label: i18n.t('Object type'),
+        elements,
     }
 }
 
