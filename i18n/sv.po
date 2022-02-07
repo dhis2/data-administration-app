@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-08-02T09:40:17.721Z\n"
+"POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Swedish (https://www.transifex.com/hisp-uio/teams/100509/sv/)\n"
@@ -363,6 +363,18 @@ msgstr "Dataelementgrupper"
 
 msgid "Dashboards"
 msgstr "instrumentpaneler"
+
+msgid "Visualization"
+msgstr ""
+
+msgid "Event visualization"
+msgstr ""
+
+msgid "Program instance"
+msgstr ""
+
+msgid "Tracked entity instance"
+msgstr ""
 
 msgid "Lock Exception Management"
 msgstr ""
