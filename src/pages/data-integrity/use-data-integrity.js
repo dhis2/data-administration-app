@@ -23,7 +23,7 @@ export const useDataIntegrity = () => {
             return data
         },
     })
-    const [startDataIntegrityCheck, { loading, error, data }] = useDataMutation(
+    const [startDataIntegrityCheck, { loading, error }] = useDataMutation(
         startDataIntegrityCheckMutation,
         {
             onComplete: (data) => {
@@ -32,11 +32,11 @@ export const useDataIntegrity = () => {
             },
         }
     )
-    const isPolling = data && (!poll.data || poll.data?.size === 0)
+    const isPolling = !poll.data || poll.data?.size === 0
 
     return {
         startDataIntegrityCheck,
-        loading: loading || isPolling,
+        loading: loading || poll.polling,
         error: error || poll.error,
         issues: !isPolling && poll.data,
     }
