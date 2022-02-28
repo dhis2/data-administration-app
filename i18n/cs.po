@@ -374,7 +374,7 @@ msgid "Visualization"
 msgstr "Vizualizace"
 
 msgid "Event visualization"
-msgstr ""
+msgstr "Vizualizace události"
 
 msgid "Program instance"
 msgstr "Instance programu"
