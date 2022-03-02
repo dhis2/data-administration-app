@@ -408,113 +408,14 @@ msgstr "Batch Deletion"
 msgid "No lock exceptions to show."
 msgstr "No lock exceptions to show."
 
+msgid "Failed to load available data integrity checks"
+msgstr "Failed to load available data integrity checks"
+
 msgid "Checking data integrity..."
 msgstr "Checking data integrity..."
 
 msgid "Run integrity checks"
 msgstr "Run integrity checks"
-
-msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr "{{issueTitle}} ({{issueElementsCount}})"
-
-msgid "Data elements without data set"
-msgstr "Data elements without data set"
-
-msgid "Data elements without groups"
-msgstr "Data elements without groups"
-
-msgid "Data elements violating exclusive group sets"
-msgstr "Data elements violating exclusive group sets"
-
-msgid "Data elements assigned to data sets with different period types"
-msgstr "Data elements assigned to data sets with different period types"
-
-msgid "Data sets not assigned to organisation units"
-msgstr "Data sets not assigned to organisation units"
-
-msgid "Indicators with identical formulas"
-msgstr "Indicators with identical formulas"
-
-msgid "Indicators without groups"
-msgstr "Indicators without groups"
-
-msgid "Invalid indicator numerators"
-msgstr "Invalid indicator numerators"
-
-msgid "Invalid indicator denominators"
-msgstr "Invalid indicator denominators"
-
-msgid "Indicators violating exclusive group sets"
-msgstr "Indicators violating exclusive group sets"
-
-msgid "Organisation units with cyclic references"
-msgstr "Organisation units with cyclic references"
-
-msgid "Orphaned organisation units"
-msgstr "Orphaned organisation units"
-
-msgid "Organisation units without groups"
-msgstr "Organisation units without groups"
-
-msgid "Organisation units violating exclusive group sets"
-msgstr "Organisation units violating exclusive group sets"
-
-msgid "Organisation unit groups without group sets"
-msgstr "Organisation unit groups without group sets"
-
-msgid "Validation rules without groups"
-msgstr "Validation rules without groups"
-
-msgid "Invalid validation rule left side expressions"
-msgstr "Invalid validation rule left side expressions"
-
-msgid "Invalid validation rule right side expressions"
-msgstr "Invalid validation rule right side expressions"
-
-msgid "Invalid program indicator expressions"
-msgstr "Invalid program indicator expressions"
-
-msgid "Invalid program indicator filters"
-msgstr "Invalid program indicator filters"
-
-msgid "There are data elements in the form, but not in the form or sections"
-msgstr "There are data elements in the form, but not in the form or sections"
-
-msgid "Invalid category combinations"
-msgstr "Invalid category combinations"
-
-msgid "Duplicate periods"
-msgstr "Duplicate periods"
-
-msgid "Program rules with no condition"
-msgstr "Program rules with no condition"
-
-msgid "Program rules with no action"
-msgstr "Program rules with no action"
-
-msgid "Program rules with no priority"
-msgstr "Program rules with no priority"
-
-msgid "Program rule variables with no data element"
-msgstr "Program rule variables with no data element"
-
-msgid "Program rule variables with no attribute"
-msgstr "Program rule variables with no attribute"
-
-msgid "Program rule actions with no data object"
-msgstr "Program rule actions with no data object"
-
-msgid "Program rule actions with no notification"
-msgstr "Program rule actions with no notification"
-
-msgid "Program rule actions with no section id"
-msgstr "Program rule actions with no section id"
-
-msgid "Program rule actions with no stage id"
-msgstr "Program rule actions with no stage id"
-
-msgid "Program indicators with no expression"
-msgstr "Program indicators with no expression"
 
 msgid "Indicators"
 msgstr "Indicators"
