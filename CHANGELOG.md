@@ -1,3 +1,10 @@
+## [1.1.28](https://github.com/dhis2/data-administration-app/compare/v1.1.27...v1.1.28) (2022-03-04)
+
+
+### Bug Fixes
+
+* **deps:** bump cli-app-scripts and app-runtime for pwa fixes ([#750](https://github.com/dhis2/data-administration-app/issues/750)) ([edc0237](https://github.com/dhis2/data-administration-app/commit/edc023710006465639e1598c81987d1d4b03e76e))
+
 ## [1.1.27](https://github.com/dhis2/data-administration-app/compare/v1.1.26...v1.1.27) (2022-02-15)
 
 
