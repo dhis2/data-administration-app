@@ -10,6 +10,8 @@ const useConst = factory => {
 }
 
 const useLazyInterval = (fn, interval) => {
+    const fnRef = useRef()
+    fnRef.current = fn
     const intervalId = useRef(null)
     const [started, setStarted] = useState(false)
 
@@ -21,7 +23,7 @@ const useLazyInterval = (fn, interval) => {
     }
     const start = (...args) => {
         cancel()
-        intervalId.current = setInterval(() => fn(...args), interval)
+        intervalId.current = setInterval(() => fnRef.current(...args), interval)
         setStarted(true)
     }
 
