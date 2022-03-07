@@ -1,4 +1,3 @@
-import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
@@ -7,14 +6,11 @@ import {
     SingleSelectField,
     SingleSelectOption,
     NoticeBox,
-    CircularLoader,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
-import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
-import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'
 import {
     DEFAULT_LAST_YEARS,
@@ -22,44 +18,18 @@ import {
     lastYearElements,
 } from './analytics.conf'
 import styles from './Analytics.module.css'
-import { useAnalyticsPoll } from './use-analytics-poll'
+import { useAnalytics } from './use-analytics'
 import { useCheckboxes } from './use-checkboxes'
-
-const startAnalyticsTablesGenerationMutation = {
-    resource: 'resourceTables/analytics',
-    type: 'create',
-    params: params => params,
-}
-
-const existingTasksQuery = {
-    tasks: {
-        resource: 'system/tasks/ANALYTICS_TABLE',
-    },
-}
 
 const Analytics = ({ sectionKey }) => {
     const { checkboxes, toggleCheckbox } = useCheckboxes()
     const [lastYears, setLastYears] = useState(DEFAULT_LAST_YEARS)
-    const poll = useAnalyticsPoll()
-    useDataQuery(existingTasksQuery, {
-        onComplete: data => {
-            const taskId = getActiveTaskIdFromSummary(data.tasks)
-
-            if (taskId) {
-                poll.start({ taskId })
-            }
-        },
-    })
-    const [
+    const {
         startAnalyticsTablesGeneration,
-        { loading, error },
-    ] = useDataMutation(startAnalyticsTablesGenerationMutation, {
-        onComplete: data => {
-            const { id: taskId } = data.response
-            poll.start({ taskId })
-        },
-    })
-    const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
+        loading,
+        error,
+        notifications,
+    } = useAnalytics()
 
     const handleStartAnalyticsTablesGeneration = () => {
         const params = {}
@@ -84,9 +54,9 @@ const Analytics = ({ sectionKey }) => {
                 sectionKey={sectionKey}
             />
             <Card className={styles.card}>
-                {(error || poll.error) && (
+                {error && (
                     <NoticeBox className={styles.noticeBox} error>
-                        {error?.message || poll.error.message}
+                        {error.message}
                     </NoticeBox>
                 )}
                 <div className={styles.form}>
@@ -101,7 +71,7 @@ const Analytics = ({ sectionKey }) => {
                                     onChange={() => {
                                         toggleCheckbox(key)
                                     }}
-                                    disabled={loading || poll.polling}
+                                    disabled={loading}
                                 />
                             )
                         )}
@@ -113,7 +83,7 @@ const Analytics = ({ sectionKey }) => {
                         )}
                         selected={lastYears}
                         onChange={handleLastYearsChange}
-                        disabled={loading || poll.polling}
+                        disabled={loading}
                     >
                         {lastYearElements.map(item => (
                             <SingleSelectOption
@@ -127,16 +97,9 @@ const Analytics = ({ sectionKey }) => {
                 <Button
                     primary
                     onClick={handleStartAnalyticsTablesGeneration}
-                    disabled={loading || poll.polling}
+                    loading={loading}
                 >
-                    {loading || poll.polling ? (
-                        <>
-                            {i18n.t('Exporting...')}
-                            <CircularLoader small />
-                        </>
-                    ) : (
-                        i18n.t('Start export')
-                    )}
+                    {loading ? i18n.t('Exporting...') : i18n.t('Start export')}
                 </Button>
                 {notifications.length > 0 && (
                     <div className={styles.notificationsTable}>
