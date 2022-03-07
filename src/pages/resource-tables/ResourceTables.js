@@ -1,15 +1,12 @@
-import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
-import { Card, Button, NoticeBox, CircularLoader } from '@dhis2/ui'
+import { Card, Button, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
 import PageHeader from '../../components/PageHeader/PageHeader'
-import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
-import { getUpdatedNotifications } from '../../get-updated-notifications'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './ResourceTables.module.css'
-import { useResourceTablesPoll } from './use-resource-tables-poll'
+import { useResourceTables } from './use-resource-tables'
 
 const tables = [
     {
@@ -62,37 +59,13 @@ const tables = [
     },
 ]
 
-const startResourceTablesGenerationMutation = {
-    resource: 'resourceTables',
-    type: 'create',
-}
-
-const existingTasksQuery = {
-    tasks: {
-        resource: 'system/tasks/RESOURCE_TABLE',
-    },
-}
-
 const ResourceTable = ({ sectionKey }) => {
-    const poll = useResourceTablesPoll()
-    useDataQuery(existingTasksQuery, {
-        onComplete: data => {
-            const taskId = getActiveTaskIdFromSummary(data.tasks)
-            if (taskId) {
-                poll.start({ taskId })
-            }
-        },
-    })
-    const [
-        handleStartResourceTablesGeneration,
-        { loading, error },
-    ] = useDataMutation(startResourceTablesGenerationMutation, {
-        onComplete: data => {
-            const { id: taskId } = data.response
-            poll.start({ taskId })
-        },
-    })
-    const notifications = poll.data ? getUpdatedNotifications(poll.data) : []
+    const {
+        startResourceTablesGeneration,
+        loading,
+        error,
+        notifications,
+    } = useResourceTables()
 
     return (
         <div>
@@ -101,9 +74,9 @@ const ResourceTable = ({ sectionKey }) => {
                 sectionKey={sectionKey}
             />
             <Card className={styles.card}>
-                {(error || poll.error) && (
+                {error && (
                     <NoticeBox className={styles.noticeBox} error>
-                        {error?.message || poll.error.message}
+                        {error.message}
                     </NoticeBox>
                 )}
                 <div className={styles.description}>
@@ -121,17 +94,12 @@ const ResourceTable = ({ sectionKey }) => {
                 </div>
                 <Button
                     primary
-                    onClick={handleStartResourceTablesGeneration}
-                    disabled={loading || poll.polling}
+                    onClick={startResourceTablesGeneration}
+                    loading={loading}
                 >
-                    {loading || poll.polling ? (
-                        <>
-                            {i18n.t('Generating tables...')}
-                            <CircularLoader small />
-                        </>
-                    ) : (
-                        i18n.t('Generate tables')
-                    )}
+                    {loading
+                        ? i18n.t('Generating tables...')
+                        : i18n.t('Generate tables')}
                 </Button>
                 {notifications.length > 0 && (
                     <div className={styles.notificationsTable}>
