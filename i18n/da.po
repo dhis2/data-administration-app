@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
+"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: phil_dhis2, 2021\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
@@ -574,6 +574,9 @@ msgstr "Data element groups"
 
 msgid "Dashboards"
 msgstr "Dashboards"
+
+msgid "Event visualization"
+msgstr ""
 
 msgid "Today"
 msgstr ""
