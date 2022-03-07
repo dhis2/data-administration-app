@@ -24,7 +24,7 @@ const DataIntegrity = ({ sectionKey }) => {
             poll.start({ jobId })
         },
     })
-    const isPolling = data && !poll.data
+    const isPolling = data && (!poll.data || poll.data?.size === 0)
 
     return (
         <>
@@ -37,7 +37,7 @@ const DataIntegrity = ({ sectionKey }) => {
                     {error?.message || poll.error?.message}
                 </NoticeBox>
             )}
-            {poll.data && <Issues issues={poll.data} />}
+            {!isPolling && poll.data && <Issues issues={poll.data} />}
             <Button
                 primary
                 disabled={loading || isPolling}
