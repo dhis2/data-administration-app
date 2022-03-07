@@ -1,3 +1,10 @@
+## [1.1.30](https://github.com/dhis2/data-administration-app/compare/v1.1.29...v1.1.30) (2022-03-07)
+
+
+### Bug Fixes
+
+* **data-integrity:** handle empty /system/taskSummaries/DATA_INTEGRITY/:id responses ([#747](https://github.com/dhis2/data-administration-app/issues/747)) ([ee7f89d](https://github.com/dhis2/data-administration-app/commit/ee7f89dd81d89e81566d3b0f8b14d0879faed8b4))
+
 ## [1.1.29](https://github.com/dhis2/data-administration-app/compare/v1.1.28...v1.1.29) (2022-03-06)
 
 
