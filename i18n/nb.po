@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
+"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -583,6 +583,9 @@ msgstr "Dataelementgrupper"
 
 msgid "Dashboards"
 msgstr "Dashbord"
+
+msgid "Event visualization"
+msgstr ""
 
 msgid "Today"
 msgstr "I dag"
