@@ -1,3 +1,10 @@
+## [1.1.32](https://github.com/dhis2/data-administration-app/compare/v1.1.31...v1.1.32) (2022-03-08)
+
+
+### Bug Fixes
+
+* always use latest refetch from useDataQuery using ref ([#761](https://github.com/dhis2/data-administration-app/issues/761)) ([5d1794e](https://github.com/dhis2/data-administration-app/commit/5d1794e8109387229749511abf76fdd174485237))
+
 ## [1.1.31](https://github.com/dhis2/data-administration-app/compare/v1.1.30...v1.1.31) (2022-03-08)
 
 
