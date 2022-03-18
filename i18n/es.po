@@ -555,7 +555,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "trimestre"
 
 msgid "Q1"
 msgstr ""
@@ -570,7 +570,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr ""
+msgstr "Semestral"
 
 msgid "jan-jun"
 msgstr ""
