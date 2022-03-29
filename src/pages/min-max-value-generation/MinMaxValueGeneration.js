@@ -1,4 +1,4 @@
-import { useAlert, useDataQuery, useDataMutation } from '@dhis2/app-runtime'
+import { useAlert, useDataMutation } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     CenteredContent,
@@ -16,32 +16,9 @@ import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { i18nKeys } from '../../i18n-keys'
 import styles from './MinMaxValueGeneration.module.css'
+import { useQueries } from './use-queries'
 
 const MIN_MAX_VALUE_ENDPOINT = '/minMaxValues'
-
-const organisationIdFromPath = path => {
-    const last = array => array[array.length - 1]
-
-    return last(path.split('/'))
-}
-
-const query = {
-    organisationUnits: {
-        resource: 'organisationUnits',
-        params: {
-            fields: 'id',
-            paging: false,
-            level: 1,
-        },
-    },
-    dataSets: {
-        resource: 'dataSets',
-        params: {
-            fields: 'id,displayName',
-            paging: false,
-        },
-    },
-}
 
 const generateMinMaxValueMutation = {
     resource: MIN_MAX_VALUE_ENDPOINT,
@@ -57,12 +34,15 @@ const removeMinMaxValueMutation = {
 }
 
 const MinMaxValueGeneration = ({ sectionKey }) => {
+    const { loading, error, organisationUnits, dataSets } = useQueries()
     const successAlert = useAlert(({ message }) => message, { success: true })
     const errorAlert = useAlert(({ error }) => error.message, {
         critical: true,
     })
-    const { loading, error, data } = useDataQuery(query)
-    const [generateMinMaxValue] = useDataMutation(generateMinMaxValueMutation, {
+    const [
+        generateMinMaxValue,
+        { loading: generatingMinMaxValue },
+    ] = useDataMutation(generateMinMaxValueMutation, {
         onComplete: () => {
             successAlert.show({ message: i18n.t('Min-max values generated') })
         },
@@ -70,7 +50,10 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
             errorAlert.show({ error })
         },
     })
-    const [removeMinMaxValue] = useDataMutation(removeMinMaxValueMutation, {
+    const [
+        removeMinMaxValue,
+        { loading: removingMinMaxValue },
+    ] = useDataMutation(removeMinMaxValueMutation, {
         onComplete: () => {
             successAlert.show({ message: i18n.t('Min-max values removed') })
         },
@@ -86,25 +69,23 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
     const formValid =
         selectedDataSets.length > 0 && selectedOrganisationUnit !== null
 
-    const handleOrganisationUnitChange = ({ path, checked }) => {
+    const handleOrganisationUnitChange = ({ id, path, checked }) => {
         if (checked) {
             setSelectedOrganisationUnit({
+                id,
                 path,
-                id: organisationIdFromPath(path),
             })
         } else {
             setSelectedOrganisationUnit(null)
         }
     }
     const handleGenerateMinMaxValue = async () => {
-        successAlert.show({ message: i18n.t('Generating min-max values...') })
         generateMinMaxValue({
             organisationUnit: selectedOrganisationUnit.id,
             dataSets: selectedDataSets,
         })
     }
     const handleRemoveMinMaxValue = async () => {
-        successAlert.show({ message: i18n.t('Removing min-max values...') })
         removeMinMaxValue({
             id: selectedOrganisationUnit.id,
             ds: selectedDataSets,
@@ -126,11 +107,6 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
             </CenteredContent>
         )
     }
-
-    const {
-        organisationUnits: { organisationUnits },
-        dataSets: { dataSets },
-    } = data
 
     return (
         <div>
@@ -180,15 +156,17 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
                 <ButtonStrip>
                     <Button
                         primary
-                        onClick={handleGenerateMinMaxValue}
                         disabled={!formValid}
+                        loading={generatingMinMaxValue}
+                        onClick={handleGenerateMinMaxValue}
                     >
                         {i18n.t('Generate min-max values')}
                     </Button>
                     <Button
                         destructive
-                        onClick={handleRemoveMinMaxValue}
                         disabled={!formValid}
+                        loading={removingMinMaxValue}
+                        onClick={handleRemoveMinMaxValue}
                     >
                         {i18n.t('Remove min-max values')}
                     </Button>
