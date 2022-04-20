@@ -1,3 +1,10 @@
+## [1.1.34](https://github.com/dhis2/data-administration-app/compare/v1.1.33...v1.1.34) (2022-04-20)
+
+
+### Bug Fixes
+
+* **analytics-tables:** prevent excessive table width for long strings ([#779](https://github.com/dhis2/data-administration-app/issues/779)) ([dbf45ba](https://github.com/dhis2/data-administration-app/commit/dbf45bacfdef4586e40b2549eb8403d948f8656f))
+
 ## [1.1.33](https://github.com/dhis2/data-administration-app/compare/v1.1.32...v1.1.33) (2022-03-18)
 
 
