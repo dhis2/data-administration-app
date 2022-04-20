@@ -10,6 +10,10 @@
     width: 0px;
 }
 
+.message {
+    word-break: break-word;
+}
+
 @keyframes ellipsis {
     to {
         width: 14px;

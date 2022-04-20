@@ -45,7 +45,9 @@ const NotificationsTable = ({ notifications }) => {
                                 {formatDateFromServer(notification.time)}
                             </TableCell>
                             <TableCell>
-                                {notification.message}{' '}
+                                <span className={styles.message}>
+                                    {notification.message}
+                                </span>{' '}
                                 {renderNotificationIcon(notification)}
                             </TableCell>
                         </TableRow>
