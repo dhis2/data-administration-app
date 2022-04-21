@@ -2,13 +2,14 @@
 # Translators:
 # Yury Rogachev <yury@dhis2.org>, 2021
 # Cherise Beek <cherise.beek@gmail.com>, 2021
+# Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2021-09-03 23:43+0000\n"
-"Last-Translator: Cherise Beek <cherise.beek@gmail.com>, 2021\n"
+"Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,13 +27,13 @@ msgid "Lock Exception"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Gegevensreeks"
 
 msgid "Period"
 msgstr "Periode"
 
 msgid "Organisation unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Batch delete lock exceptions"
 msgstr ""
@@ -520,10 +521,10 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Gebeurtenissen"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Organisatieëenheden"
 
 msgid "Validation rules"
 msgstr ""
@@ -562,7 +563,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Kaarten"
 
 msgid "Indicator groups"
 msgstr ""
