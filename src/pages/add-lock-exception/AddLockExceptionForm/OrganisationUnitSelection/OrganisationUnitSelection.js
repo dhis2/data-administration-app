@@ -16,7 +16,7 @@ import SelectByLevel from './SelectByLevel'
 const union = (arr1, arr2) => [...new Set(arr1.concat(arr2))]
 const difference = (arr1, arr2) => {
     const set = new Set(arr1)
-    arr2.forEach(item => {
+    arr2.forEach((item) => {
         set.delete(item)
     })
     return [...set]
@@ -64,11 +64,11 @@ const OrganisationUnitSelection = ({
         setCurrentRoot(currentRoot)
         onSelectedChange(selected)
     }
-    const handleSelect = orgUnitPaths => {
+    const handleSelect = (orgUnitPaths) => {
         const newSelected = union(selected, orgUnitPaths)
         onSelectedChange(newSelected)
     }
-    const handleDeselect = orgUnitPaths => {
+    const handleDeselect = (orgUnitPaths) => {
         const newSelected = difference(selected, orgUnitPaths)
         onSelectedChange(newSelected)
     }
@@ -91,7 +91,7 @@ const OrganisationUnitSelection = ({
 
     const rootWithMembers = data.rootWithMembers.organisationUnits[0]
     const orgUnitPaths = data.dataSetMembers.organisationUnits.map(
-        ou => ou.path
+        (ou) => ou.path
     )
 
     return (

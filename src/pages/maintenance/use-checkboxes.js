@@ -9,7 +9,7 @@ export const useCheckboxes = () => {
         }
         return checkboxes
     })
-    const toggleCheckbox = key => {
+    const toggleCheckbox = (key) => {
         setCheckboxes({
             ...checkboxes,
             [key]: !checkboxes[key],

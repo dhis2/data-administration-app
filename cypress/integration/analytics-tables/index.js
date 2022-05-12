@@ -7,7 +7,7 @@ Before(() => {
 
     cy.intercept(
         { pathname: /resourceTables\/analytics$/, method: 'POST' },
-        req => {
+        (req) => {
             req.reply(200, {
                 response: {
                     id: JOB_ID,
@@ -18,7 +18,7 @@ Before(() => {
 
     cy.intercept(
         { pathname: /system\/tasks\/ANALYTICS_TABLE/, method: 'GET' },
-        req => {
+        (req) => {
             // Handle request for in-progress tasks
             if (req.url.endsWith('ANALYTICS_TABLE')) {
                 req.reply(200, null)

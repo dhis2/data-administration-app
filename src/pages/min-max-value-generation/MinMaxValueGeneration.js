@@ -19,8 +19,8 @@ import styles from './MinMaxValueGeneration.module.css'
 
 const MIN_MAX_VALUE_ENDPOINT = '/minMaxValues'
 
-const organisationIdFromPath = path => {
-    const last = array => array[array.length - 1]
+const organisationIdFromPath = (path) => {
+    const last = (array) => array[array.length - 1]
 
     return last(path.split('/'))
 }
@@ -46,7 +46,7 @@ const query = {
 const generateMinMaxValueMutation = {
     resource: MIN_MAX_VALUE_ENDPOINT,
     type: 'create',
-    data: data => data,
+    data: (data) => data,
 }
 
 const removeMinMaxValueMutation = {
@@ -66,7 +66,7 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
         onComplete: () => {
             successAlert.show({ message: i18n.t('Min-max values generated') })
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
@@ -74,13 +74,12 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
         onComplete: () => {
             successAlert.show({ message: i18n.t('Min-max values removed') })
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
-    const [selectedOrganisationUnit, setSelectedOrganisationUnit] = useState(
-        null
-    )
+    const [selectedOrganisationUnit, setSelectedOrganisationUnit] =
+        useState(null)
     const [selectedDataSets, setSelectedDataSets] = useState([])
 
     const formValid =
@@ -150,7 +149,7 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
                             clearable
                             filterable
                         >
-                            {dataSets.map(item => (
+                            {dataSets.map((item) => (
                                 <MultiSelectOption
                                     key={item.id}
                                     label={item.displayName}
@@ -165,7 +164,7 @@ const MinMaxValueGeneration = ({ sectionKey }) => {
                         </div>
                         <div className={styles.tree}>
                             <OrganisationUnitTree
-                                roots={organisationUnits.map(r => r.id)}
+                                roots={organisationUnits.map((r) => r.id)}
                                 singleSelection
                                 selected={
                                     selectedOrganisationUnit

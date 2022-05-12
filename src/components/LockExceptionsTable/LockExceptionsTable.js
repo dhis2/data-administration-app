@@ -28,7 +28,7 @@ const LockExceptionsTable = ({
     <Table>
         <TableHead>
             <TableRowHead>
-                {columns.map(column => (
+                {columns.map((column) => (
                     <TableCellHead key={column}>
                         {columnLabels[column]}
                     </TableCellHead>
@@ -41,7 +41,7 @@ const LockExceptionsTable = ({
         <TableBody>
             {rows.map((row, index) => (
                 <TableRow key={index}>
-                    {columns.map(column => (
+                    {columns.map((column) => (
                         <TableCell key={column}>{row[column]}</TableCell>
                     ))}
                     <TableCell>

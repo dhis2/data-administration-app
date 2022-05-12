@@ -23,7 +23,7 @@ Before(() => {
             pathname: /lockExceptions$/,
             method: 'POST',
         },
-        req => {
+        (req) => {
             req.reply({
                 statusCode: 200,
             })

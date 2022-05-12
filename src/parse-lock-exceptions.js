@@ -1,4 +1,4 @@
-export const parseLockExceptions = lockExceptionResponse =>
+export const parseLockExceptions = (lockExceptionResponse) =>
     lockExceptionResponse.map(({ dataSet, period, organisationUnit }) => {
         const row = {
             period: period.displayName,

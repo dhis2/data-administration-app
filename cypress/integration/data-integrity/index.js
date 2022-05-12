@@ -5,7 +5,7 @@ const JOB_ID = 'JOB_ID'
 Before(() => {
     cy.clock()
 
-    cy.intercept({ pathname: /dataIntegrity$/, method: 'POST' }, req => {
+    cy.intercept({ pathname: /dataIntegrity$/, method: 'POST' }, (req) => {
         req.reply(200, {
             response: {
                 id: JOB_ID,
@@ -15,7 +15,7 @@ Before(() => {
 
     cy.intercept(
         { pathname: /system\/taskSummaries\/DATA_INTEGRITY/, method: 'GET' },
-        req => {
+        (req) => {
             expect(req.url.endsWith(JOB_ID)).to.be.true
             req.reply(200, {
                 dataElementsWithoutDataSet: [

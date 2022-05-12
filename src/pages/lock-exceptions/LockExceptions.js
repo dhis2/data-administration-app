@@ -21,7 +21,7 @@ import styles from './LockExceptions.module.css'
 const query = {
     lockExceptions: {
         resource: 'lockExceptions',
-        params: params => ({
+        params: (params) => ({
             ...params,
             fields: [
                 'name',
@@ -63,16 +63,16 @@ const LockExceptions = ({ sectionKey }) => {
                     pageCount={pageCount}
                     page={page}
                     pageSize={pageSize}
-                    onPageSizeChange={pageSize => {
+                    onPageSizeChange={(pageSize) => {
                         setPage(1)
                         setPageSize(pageSize)
                     }}
-                    onPageChange={page => setPage(page)}
+                    onPageChange={(page) => setPage(page)}
                 />
             </div>
         )
     }
-    const handleShowRemoveLockExceptionModal = lockException => {
+    const handleShowRemoveLockExceptionModal = (lockException) => {
         setRemoveLockExceptionModal({
             visible: true,
             lockException,

@@ -12,7 +12,7 @@ import { useCheckboxes } from './use-checkboxes'
 const mutation = {
     resource: 'maintenance',
     type: 'create',
-    params: params => params,
+    params: (params) => params,
 }
 
 const Maintenance = ({ sectionKey }) => {
@@ -23,7 +23,7 @@ const Maintenance = ({ sectionKey }) => {
     })
     const [mutate, { loading }] = useDataMutation(mutation, {
         onComplete: () => successAlert.show(),
-        onError: error => errorAlert.show({ error }),
+        onError: (error) => errorAlert.show({ error }),
     })
     const handlePerformMaintenance = async () => {
         const params = {}
@@ -51,7 +51,7 @@ const Maintenance = ({ sectionKey }) => {
                     primary
                     disabled={
                         loading ||
-                        !Object.values(checkboxes).some(checked => checked)
+                        !Object.values(checkboxes).some((checked) => checked)
                     }
                     onClick={handlePerformMaintenance}
                 >

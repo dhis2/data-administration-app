@@ -23,7 +23,7 @@ const AddLockExceptionForm = ({
         onSelectedDataSetIdChange(dataSetId)
         onSelectedOrgUnitsChange([])
     }
-    const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
+    const selectedDataSet = dataSets.find((ds) => ds.id === selectedDataSetId)
 
     return (
         <>
@@ -37,7 +37,7 @@ const AddLockExceptionForm = ({
                     onChange={handleDataSetChange}
                     dataTest="add-lock-exception-select-data-set"
                 >
-                    {dataSets.map(ds => (
+                    {dataSets.map((ds) => (
                         <SingleSelectOption
                             key={ds.id}
                             label={ds.displayName}

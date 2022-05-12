@@ -52,7 +52,7 @@ const DataStatistics = ({ sectionKey }) => {
     }
 
     const tables = parseTables(data.dataSummary)
-    const renderTable = key => {
+    const renderTable = (key) => {
         if (tables[key] === null) {
             return null
         }

@@ -97,7 +97,7 @@ const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
         <Controls
             items={items}
             selectedItem={level ? String(level) : null}
-            onSelectedItemChange={level => setLevel(Number(level))}
+            onSelectedItemChange={(level) => setLevel(Number(level))}
             label={i18n.t('Organisation unit level')}
             placeholder={i18n.t('Select an organisation unit level')}
             loading={loading}

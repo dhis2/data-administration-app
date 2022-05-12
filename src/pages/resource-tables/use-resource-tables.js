@@ -23,10 +23,10 @@ export const useResourceTables = () => {
     const poll = usePoll({
         query: pollQuery,
         interval: 3000,
-        checkDone: data => data[0].completed,
+        checkDone: (data) => data[0].completed,
     })
     const { loading: loadingExistingTask } = useDataQuery(existingTasksQuery, {
-        onComplete: data => {
+        onComplete: (data) => {
             const taskId = getActiveTaskIdFromSummary(data.tasks)
             if (taskId) {
                 poll.start({ taskId })
@@ -36,7 +36,7 @@ export const useResourceTables = () => {
     const [startResourceTablesGeneration, { loading, error }] = useDataMutation(
         startResourceTablesGenerationMutation,
         {
-            onComplete: data => {
+            onComplete: (data) => {
                 const { id: taskId } = data.response
                 poll.start({ taskId })
             },

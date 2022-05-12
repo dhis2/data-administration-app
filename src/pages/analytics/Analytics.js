@@ -24,12 +24,8 @@ import { useCheckboxes } from './use-checkboxes'
 const Analytics = ({ sectionKey }) => {
     const { checkboxes, toggleCheckbox } = useCheckboxes()
     const [lastYears, setLastYears] = useState(DEFAULT_LAST_YEARS)
-    const {
-        startAnalyticsTablesGeneration,
-        loading,
-        error,
-        notifications,
-    } = useAnalytics()
+    const { startAnalyticsTablesGeneration, loading, error, notifications } =
+        useAnalytics()
 
     const handleStartAnalyticsTablesGeneration = () => {
         const params = {}
@@ -85,7 +81,7 @@ const Analytics = ({ sectionKey }) => {
                         onChange={handleLastYearsChange}
                         disabled={loading}
                     >
-                        {lastYearElements.map(item => (
+                        {lastYearElements.map((item) => (
                             <SingleSelectOption
                                 key={item.key}
                                 label={item.displayName}

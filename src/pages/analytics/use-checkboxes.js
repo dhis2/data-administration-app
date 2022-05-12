@@ -4,7 +4,7 @@ import { analyticsCheckboxes } from './analytics.conf'
 export const useCheckboxes = () => {
     const [checkboxes, setCheckboxes] = useState(() => {
         const checkboxes = {}
-        analyticsCheckboxes.forEach(checkbox => {
+        analyticsCheckboxes.forEach((checkbox) => {
             checkboxes[checkbox.key] = {
                 checked: false,
                 label: checkbox.label,
@@ -12,7 +12,7 @@ export const useCheckboxes = () => {
         })
         return checkboxes
     })
-    const toggleCheckbox = key => {
+    const toggleCheckbox = (key) => {
         setCheckboxes({
             ...checkboxes,
             [key]: {

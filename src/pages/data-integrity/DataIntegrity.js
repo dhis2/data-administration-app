@@ -8,12 +8,8 @@ import Issues from './Issues/Issues'
 import { useDataIntegrity } from './use-data-integrity'
 
 const DataIntegrity = ({ sectionKey }) => {
-    const {
-        startDataIntegrityCheck,
-        loading,
-        error,
-        issues,
-    } = useDataIntegrity()
+    const { startDataIntegrityCheck, loading, error, issues } =
+        useDataIntegrity()
 
     return (
         <>

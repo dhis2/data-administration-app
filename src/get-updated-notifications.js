@@ -1,4 +1,4 @@
-export const getUpdatedNotifications = taskNotifications => {
+export const getUpdatedNotifications = (taskNotifications) => {
     const lastIndex = taskNotifications.length - 1
 
     // Reverse to sort oldest-newest

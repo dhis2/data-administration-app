@@ -20,7 +20,7 @@ const DataStatisticsTable = ({ elements, label }) => (
             </TableRowHead>
         </TableHead>
         <TableBody>
-            {elements.map(element => (
+            {elements.map((element) => (
                 <TableRow key={element.label}>
                     <TableCell>{element.label}</TableCell>
                     <TableCell>

@@ -5,7 +5,7 @@ const JOB_ID = 'JOB_ID'
 Before(() => {
     cy.clock()
 
-    cy.intercept({ pathname: /resourceTables$/, method: 'POST' }, req => {
+    cy.intercept({ pathname: /resourceTables$/, method: 'POST' }, (req) => {
         req.reply(200, {
             response: {
                 id: JOB_ID,
@@ -15,7 +15,7 @@ Before(() => {
 
     cy.intercept(
         { pathname: /system\/tasks\/RESOURCE_TABLE/, method: 'GET' },
-        req => {
+        (req) => {
             // Handle request for in-progress tasks
             if (req.url.endsWith('RESOURCE_TABLE')) {
                 req.reply(200, null)

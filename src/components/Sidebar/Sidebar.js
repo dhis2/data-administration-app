@@ -5,7 +5,7 @@ import SidebarItem from './SidebarItem'
 
 const Sidebar = () => (
     <Menu>
-        {sections.map(section => (
+        {sections.map((section) => (
             <SidebarItem
                 key={section.key}
                 label={section.info.label}

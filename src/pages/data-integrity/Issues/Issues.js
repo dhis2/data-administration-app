@@ -83,7 +83,7 @@ const Issues = ({ issues }) => {
 
     return (
         <div className={styles.issues}>
-            {errorElementskeys.map(element => {
+            {errorElementskeys.map((element) => {
                 const label = controls[element]
                 if (!label) {
                     return null
@@ -97,8 +97,8 @@ const Issues = ({ issues }) => {
                 )
             })}
             {Object.keys(controls)
-                .filter(element => !errorElementskeys.includes(element))
-                .map(element => (
+                .filter((element) => !errorElementskeys.includes(element))
+                .map((element) => (
                     <IssueCard key={element} title={controls[element]} />
                 ))}
         </div>

@@ -1,7 +1,7 @@
 import { useDataQuery } from '@dhis2/app-runtime'
 import { useState, useRef, useEffect } from 'react'
 
-const useConst = factory => {
+const useConst = (factory) => {
     const ref = useRef(null)
     if (ref.current === null) {
         ref.current = factory()
@@ -39,17 +39,18 @@ export const usePoll = ({ query, interval, checkDone }) => {
     }))
     const { refetch, error } = useDataQuery(wrappedQuery, {
         lazy: true,
-        onComplete: data => {
+        onComplete: (data) => {
             setData(data)
             if (checkDone(data.poll)) {
                 cancel()
             }
         },
     })
-    const { start, cancel, started: polling } = useLazyInterval(
-        refetch,
-        interval
-    )
+    const {
+        start,
+        cancel,
+        started: polling,
+    } = useLazyInterval(refetch, interval)
 
     useEffect(() => {
         return cancel

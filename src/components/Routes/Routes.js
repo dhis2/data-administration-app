@@ -8,12 +8,12 @@ import { sections } from '../../pages/sections.conf'
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={Home} />
-        {sections.map(section => (
+        {sections.map((section) => (
             <Route
                 key={section.key}
                 exact
                 path={section.path}
-                component={props => (
+                component={(props) => (
                     <section.component sectionKey={section.key} {...props} />
                 )}
             />

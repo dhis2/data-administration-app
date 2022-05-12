@@ -5,7 +5,7 @@ import HomeCard from './HomeCard/HomeCard'
 
 const Home = () => (
     <div className={styles.grid}>
-        {sections.map(section => (
+        {sections.map((section) => (
             <HomeCard
                 key={section.key}
                 to={section.path}

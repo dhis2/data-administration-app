@@ -25,7 +25,7 @@ const BatchDeleteLockExceptions = () => {
 
     const lockExceptions =
         data && parseLockExceptions(data.batchedLockExceptions.lockExceptions)
-    const handleShowRemoveLockExceptionModal = lockException => {
+    const handleShowRemoveLockExceptionModal = (lockException) => {
         setRemoveLockExceptionModal({
             visible: true,
             lockException,

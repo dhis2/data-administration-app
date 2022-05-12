@@ -60,12 +60,8 @@ const tables = [
 ]
 
 const ResourceTable = ({ sectionKey }) => {
-    const {
-        startResourceTablesGeneration,
-        loading,
-        error,
-        notifications,
-    } = useResourceTables()
+    const { startResourceTablesGeneration, loading, error, notifications } =
+        useResourceTables()
 
     return (
         <div>
@@ -80,7 +76,7 @@ const ResourceTable = ({ sectionKey }) => {
                     </NoticeBox>
                 )}
                 <div className={styles.description}>
-                    {tables.map(table => (
+                    {tables.map((table) => (
                         <div key={table.key}>
                             {i18nKeys.resourceTables.tables[table.key]}
                             <span
