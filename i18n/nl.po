@@ -257,7 +257,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Last"
 msgstr ""
@@ -394,7 +394,7 @@ msgid "Data Set"
 msgstr "informatie reeks"
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Organisatieëenheid"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -421,7 +421,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Actions"
 msgstr ""
