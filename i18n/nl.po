@@ -395,7 +395,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -578,7 +578,7 @@ msgid "Dashboards"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "Vandaag"
 
 msgid "Last {{days}} days"
 msgstr ""
