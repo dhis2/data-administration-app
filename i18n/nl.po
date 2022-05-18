@@ -51,7 +51,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "Nee, annuleer"
 
 msgid "Removing lock exception..."
 msgstr ""
