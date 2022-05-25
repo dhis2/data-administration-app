@@ -9,17 +9,17 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { i18nKeys } from '../../i18n-keys'
+import NotificationsTable from '../../components/NotificationsTable/NotificationsTable.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { i18nKeys } from '../../i18n-keys.js'
 import {
     DEFAULT_LAST_YEARS,
     LAST_YEARS_INPUT_KEY,
     lastYearElements,
-} from './analytics.conf'
+} from './analytics.conf.js'
 import styles from './Analytics.module.css'
-import { useAnalytics } from './use-analytics'
-import { useCheckboxes } from './use-checkboxes'
+import { useAnalytics } from './use-analytics.js'
+import { useCheckboxes } from './use-checkboxes.js'
 
 const Analytics = ({ sectionKey }) => {
     const { checkboxes, toggleCheckbox } = useCheckboxes()

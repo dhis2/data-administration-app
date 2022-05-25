@@ -9,7 +9,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormattedNumber from '../../components/FormattedNumber/FormattedNumber'
+import FormattedNumber from '../../components/FormattedNumber/FormattedNumber.js'
 
 const DataStatisticsTable = ({ elements, label }) => (
     <Table suppressZebraStriping>

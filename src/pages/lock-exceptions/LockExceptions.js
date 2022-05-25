@@ -11,11 +11,11 @@ import {
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal'
-import { i18nKeys } from '../../i18n-keys'
-import { parseLockExceptions } from '../../parse-lock-exceptions'
+import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal.js'
+import { i18nKeys } from '../../i18n-keys.js'
+import { parseLockExceptions } from '../../parse-lock-exceptions.js'
 import styles from './LockExceptions.module.css'
 
 const query = {

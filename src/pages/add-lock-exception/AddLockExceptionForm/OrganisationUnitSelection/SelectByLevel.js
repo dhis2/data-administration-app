@@ -2,8 +2,8 @@ import { useDataEngine, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import Controls from './Controls'
-import useOrgUnitCache from './use-org-unit-cache'
+import Controls from './Controls.js'
+import useOrgUnitCache from './use-org-unit-cache.js'
 
 const currentRootOrgUnitsQuery = {
     orgUnits: {

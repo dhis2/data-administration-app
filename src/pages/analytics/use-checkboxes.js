@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { analyticsCheckboxes } from './analytics.conf'
+import { analyticsCheckboxes } from './analytics.conf.js'
 
 export const useCheckboxes = () => {
     const [checkboxes, setCheckboxes] = useState(() => {

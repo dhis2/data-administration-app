@@ -1,5 +1,5 @@
 import { useDataMutation } from '@dhis2/app-runtime'
-import { usePoll } from '../../hooks/use-poll'
+import { usePoll } from '../../hooks/use-poll.js'
 
 const startDataIntegrityCheckMutation = {
     resource: 'dataIntegrity',

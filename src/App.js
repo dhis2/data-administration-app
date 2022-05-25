@@ -1,11 +1,10 @@
-import './locales'
-
+import './locales/index.js'
 import { CssVariables } from '@dhis2/ui'
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
 import styles from './App.module.css'
-import Routes from './components/Routes/Routes'
-import Sidebar from './components/Sidebar/Sidebar'
+import Routes from './components/Routes/Routes.js'
+import Sidebar from './components/Sidebar/Sidebar.js'
 
 const App = () => (
     <HashRouter>

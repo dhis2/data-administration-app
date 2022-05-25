@@ -1,7 +1,7 @@
 import React from 'react'
-import { sections } from '../sections.conf'
+import { sections } from '../sections.conf.js'
 import styles from './Home.module.css'
-import HomeCard from './HomeCard/HomeCard'
+import HomeCard from './HomeCard/HomeCard.js'
 
 const Home = () => (
     <div className={styles.grid}>

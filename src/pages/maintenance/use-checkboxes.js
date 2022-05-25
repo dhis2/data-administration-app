@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { i18nKeys } from '../../i18n-keys'
+import { i18nKeys } from '../../i18n-keys.js'
 
 export const useCheckboxes = () => {
     const [checkboxes, setCheckboxes] = useState(() => {

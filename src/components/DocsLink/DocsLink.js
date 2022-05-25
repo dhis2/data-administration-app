@@ -2,8 +2,8 @@ import { useConfig } from '@dhis2/app-runtime'
 import { colors, Tooltip, IconQuestion24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import i18n from '../../locales'
-import { getDocsKeyForSection } from '../../pages/sections.conf'
+import i18n from '../../locales/index.js'
+import { getDocsKeyForSection } from '../../pages/sections.conf.js'
 import styles from './DocsLink.module.css'
 
 const getDocsVersion = ({ major, minor, tag }) => {

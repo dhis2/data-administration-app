@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import useOrgUnitCache from './use-org-unit-cache'
+import useOrgUnitCache from './use-org-unit-cache.js'
 
 const currentRootId = 'root-1'
 const itemId = 'item-1'

@@ -2,18 +2,18 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { Card, NoticeBox, CircularLoader, CenteredContent } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { i18nKeys } from '../../i18n-keys'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { i18nKeys } from '../../i18n-keys.js'
 import styles from './DataStatistics.module.css'
-import DataStatisticsTable from './DataStatisticsTable'
-import { parseTables } from './parse-tables'
+import DataStatisticsTable from './DataStatisticsTable.js'
+import { parseTables } from './parse-tables.js'
 import {
     OBJECT_COUNTS_KEY,
     ACTIVE_USERS_KEY,
     USER_INVITATIONS_KEY,
     DATA_VALUE_COUNT_KEY,
     EVENT_COUNT_KEY,
-} from './table-keys'
+} from './table-keys.js'
 
 const TableCard = ({ label, elements }) => (
     <Card className={styles.card}>

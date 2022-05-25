@@ -2,11 +2,11 @@ import i18n from '@dhis2/d2-i18n'
 import { Card, Button, NoticeBox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import NotificationsTable from '../../components/NotificationsTable/NotificationsTable'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { i18nKeys } from '../../i18n-keys'
+import NotificationsTable from '../../components/NotificationsTable/NotificationsTable.js'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { i18nKeys } from '../../i18n-keys.js'
 import styles from './ResourceTables.module.css'
-import { useResourceTables } from './use-resource-tables'
+import { useResourceTables } from './use-resource-tables.js'
 
 const tables = [
     {

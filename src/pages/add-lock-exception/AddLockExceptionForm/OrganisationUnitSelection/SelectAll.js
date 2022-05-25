@@ -4,7 +4,7 @@ import { CircularLoader, ButtonStrip, Button } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styles from './SelectAll.module.css'
-import useOrgUnitCache from './use-org-unit-cache'
+import useOrgUnitCache from './use-org-unit-cache.js'
 
 const currentRootOrgUnitsQuery = {
     orgUnits: {

@@ -3,8 +3,8 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './AddLockExceptionForm.module.css'
-import OrganisationUnitSelection from './OrganisationUnitSelection/OrganisationUnitSelection'
-import PeriodPicker from './PeriodPicker'
+import OrganisationUnitSelection from './OrganisationUnitSelection/OrganisationUnitSelection.js'
+import PeriodPicker from './PeriodPicker.js'
 
 const AddLockExceptionForm = ({
     dataSets,

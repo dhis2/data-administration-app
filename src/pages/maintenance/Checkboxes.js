@@ -1,7 +1,7 @@
 import { Checkbox } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { i18nKeys } from '../../i18n-keys'
+import { i18nKeys } from '../../i18n-keys.js'
 import styles from './Checkboxes.module.css'
 
 const Checkboxes = ({ checkboxes, toggleCheckbox, disabled }) => (

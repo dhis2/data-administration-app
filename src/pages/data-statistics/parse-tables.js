@@ -7,7 +7,7 @@ import {
     EVENT_COUNT_KEY,
     PENDING_INVITATION_ALL_KEY,
     EXPIRED_INVITATION_KEY,
-} from './table-keys'
+} from './table-keys.js'
 
 const objectLabels = {
     indicator: i18n.t('Indicators'),

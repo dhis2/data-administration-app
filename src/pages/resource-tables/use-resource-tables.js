@@ -1,7 +1,7 @@
 import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
-import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
-import { getUpdatedNotifications } from '../../get-updated-notifications'
-import { usePoll } from '../../hooks/use-poll'
+import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary.js'
+import { getUpdatedNotifications } from '../../get-updated-notifications.js'
+import { usePoll } from '../../hooks/use-poll.js'
 
 const pollQuery = {
     resource: 'system/tasks/RESOURCE_TABLE',
