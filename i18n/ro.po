@@ -390,7 +390,7 @@ msgid "Exporting..."
 msgstr ""
 
 msgid "Start export"
-msgstr ""
+msgstr "Începutul exportului"
 
 msgid "All"
 msgstr ""
@@ -513,7 +513,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Periods"
-msgstr ""
+msgstr "Perioade"
 
 msgid "Visualization"
 msgstr ""
