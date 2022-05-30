@@ -315,7 +315,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Periods"
-msgstr ""
+msgstr "Perioade"
 
 msgid "Organisation units"
 msgstr ""
@@ -386,7 +386,7 @@ msgid "Cancel"
 msgstr ""
 
 msgid "Add"
-msgstr ""
+msgstr "Adăugare"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -592,7 +592,7 @@ msgid "Organisation Unit Selection"
 msgstr ""
 
 msgid "Generate"
-msgstr ""
+msgstr "Generare"
 
 msgid "Analytics tables management"
 msgstr ""
@@ -609,7 +609,7 @@ msgid "Analytics tables update"
 msgstr ""
 
 msgid "Start export"
-msgstr ""
+msgstr "Începutul exportului"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
