@@ -285,7 +285,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Periods"
-msgstr ""
+msgstr "Perioade"
 
 msgid "Organisation units"
 msgstr ""
