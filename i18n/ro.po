@@ -315,7 +315,7 @@ msgid "Indicators"
 msgstr "Indicatori"
 
 msgid "Periods"
-msgstr ""
+msgstr "Perioade"
 
 msgid "Organisation units"
 msgstr ""
@@ -601,7 +601,7 @@ msgid "Organisation Unit Selection"
 msgstr ""
 
 msgid "Generate"
-msgstr ""
+msgstr "Generare"
 
 msgid "Analytics tables management"
 msgstr ""
