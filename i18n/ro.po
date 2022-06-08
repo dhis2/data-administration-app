@@ -318,7 +318,7 @@ msgid "Periods"
 msgstr "Perioade"
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unități organizaționale"
 
 msgid "Validation rules"
 msgstr ""
@@ -327,7 +327,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elemente de date"
 
 msgid "Organisation unit groups"
 msgstr ""
@@ -434,7 +434,7 @@ msgid "Data Set"
 msgstr ""
 
 msgid "Organisation Unit"
-msgstr ""
+msgstr "Unitate Organizațională"
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -443,7 +443,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Selectare"
 
 msgid "Deselect"
 msgstr ""
@@ -624,13 +624,13 @@ msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Omiterea generării tabelelor de resurse"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Omiterea generării datelor despre evenimente"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Omiterea generării datelor despre înrolări"
 
 msgid "Analytics Tables Update"
 msgstr ""
@@ -678,7 +678,7 @@ msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "Organisation unit"
 msgstr "Unitate organizațională"
