@@ -25,7 +25,7 @@ msgid "Lock Exception"
 msgstr ""
 
 msgid "Data set"
-msgstr ""
+msgstr "Set de date"
 
 msgid "Period"
 msgstr ""
@@ -198,13 +198,13 @@ msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Omiterea generării tabelelor de resurse"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Omiterea generării datelor despre evenimente"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Omiterea generării datelor despre înrolări"
 
 msgid "Data Statistics"
 msgstr ""
@@ -255,7 +255,7 @@ msgid "Updating selection..."
 msgstr ""
 
 msgid "Select"
-msgstr ""
+msgstr "Selectare"
 
 msgid "Deselect"
 msgstr ""
@@ -276,7 +276,7 @@ msgid "Select an organisation unit group"
 msgstr ""
 
 msgid "Organisation unit level"
-msgstr ""
+msgstr "Nivelul unității organizaționale"
 
 msgid "Select an organisation unit level"
 msgstr ""
@@ -522,7 +522,7 @@ msgid "Events"
 msgstr ""
 
 msgid "Organisation units"
-msgstr ""
+msgstr "Unități organizaționale"
 
 msgid "Validation rules"
 msgstr ""
@@ -534,7 +534,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "Elemente de date"
 
 msgid "Organisation unit groups"
 msgstr ""
