@@ -2,8 +2,8 @@ import { useDataEngine, useAlert } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import Controls from './Controls'
-import useOrgUnitCache from './use-org-unit-cache'
+import Controls from './Controls.js'
+import useOrgUnitCache from './use-org-unit-cache.js'
 
 const currentRootOrgUnitsQuery = {
     orgUnits: {
@@ -97,7 +97,7 @@ const SelectByLevel = ({ levels, currentRoot, onSelect, onDeselect }) => {
         <Controls
             items={items}
             selectedItem={level ? String(level) : null}
-            onSelectedItemChange={level => setLevel(Number(level))}
+            onSelectedItemChange={(level) => setLevel(Number(level))}
             label={i18n.t('Organisation unit level')}
             placeholder={i18n.t('Select an organisation unit level')}
             loading={loading}

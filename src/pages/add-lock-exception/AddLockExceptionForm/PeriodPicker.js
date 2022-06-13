@@ -24,8 +24,8 @@ const getFirstDateOfWeek = (year, week) => {
     return new Date(year, month, ordDate - ordDiff[month])
 }
 
-const is53WeekISOYear = year => {
-    const p = y =>
+const is53WeekISOYear = (year) => {
+    const p = (y) =>
         y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
 
     return p(year) % 7 === 4 || p(year - 1) % 7 === 3
@@ -37,20 +37,20 @@ const styles = {
     },
 }
 
-const getYear = date => new Date(date).getFullYear().toString()
-const getTwoDigitMonth = date => {
+const getYear = (date) => new Date(date).getFullYear().toString()
+const getTwoDigitMonth = (date) => {
     const month = new Date(date).getMonth() + 1 // Month is 0 indexed
 
     return `0${month}`.slice(-2)
 }
-const getTwoDigitDay = date => {
+const getTwoDigitDay = (date) => {
     const day = new Date(date).getDate()
 
     return `0${day}`.slice(-2)
 }
-const formattedDate = date =>
+const formattedDate = (date) =>
     `${getYear(date)}${getTwoDigitMonth(date)}${getTwoDigitDay(date)}`
-const getWeekYear = date => {
+const getWeekYear = (date) => {
     // Create a new date object for the thursday of this week
     const target = new Date(date)
     target.setDate(target.getDate() - ((date.getDay() + 6) % 7) + 3)
@@ -60,9 +60,9 @@ const getWeekYear = date => {
 const isWeekValid = (date, week) =>
     // It's not possible to have a week 53 in a 52 week year
     !is53WeekISOYear(date) && Number(week) !== 53
-const biWeekToWeek = biWeekStr => parseInt(biWeekStr) * 2 - 1
+const biWeekToWeek = (biWeekStr) => parseInt(biWeekStr) * 2 - 1
 
-const isoDate = date => new Date(date).toISOString().split('T')[0]
+const isoDate = (date) => new Date(date).toISOString().split('T')[0]
 
 class PeriodPicker extends React.Component {
     constructor(props) {
@@ -273,7 +273,7 @@ class PeriodPicker extends React.Component {
                 >
                     {Object.keys(options)
                         .sort()
-                        .map(value => (
+                        .map((value) => (
                             <SingleSelectOption
                                 key={value}
                                 label={

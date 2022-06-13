@@ -1,6 +1,6 @@
 import { Given, When } from 'cypress-cucumber-preprocessor/steps'
-import './user-generates-min-max-values'
-import './user-deletes-min-max-values'
+import './user-generates-min-max-values.js'
+import './user-deletes-min-max-values.js'
 
 Given('the user navigated to the min-max values page', () => {
     cy.visit('/#/min-max-value-generation')

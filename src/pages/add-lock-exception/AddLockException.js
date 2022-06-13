@@ -9,9 +9,9 @@ import {
 } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.js'
 import styles from './AddLockException.module.css'
-import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm'
+import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm.js'
 
 const query = {
     levels: {
@@ -41,7 +41,7 @@ const query = {
 const mutation = {
     resource: 'lockExceptions',
     type: 'create',
-    params: params => params,
+    params: (params) => params,
 }
 
 const AddLockException = () => {
@@ -63,7 +63,7 @@ const AddLockException = () => {
             successAlert.show()
             history.push('/lock-exceptions')
         },
-        onError: error => {
+        onError: (error) => {
             errorAlert.show({ error })
         },
     })
@@ -72,7 +72,7 @@ const AddLockException = () => {
     const [selectedPeriodId, setSelectedPeriodId] = useState(null)
 
     const handleAdd = () => {
-        const orgUnitIds = selectedOrgUnits.map(orgUnitPath => {
+        const orgUnitIds = selectedOrgUnits.map((orgUnitPath) => {
             const splitOrgUnitPath = orgUnitPath.split('/')
             return splitOrgUnitPath[splitOrgUnitPath.length - 1]
         })

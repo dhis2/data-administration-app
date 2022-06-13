@@ -3,8 +3,8 @@ import { SingleSelectField, SingleSelectOption } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './AddLockExceptionForm.module.css'
-import OrganisationUnitSelection from './OrganisationUnitSelection/OrganisationUnitSelection'
-import PeriodPicker from './PeriodPicker'
+import OrganisationUnitSelection from './OrganisationUnitSelection/OrganisationUnitSelection.js'
+import PeriodPicker from './PeriodPicker.js'
 
 const AddLockExceptionForm = ({
     dataSets,
@@ -23,7 +23,7 @@ const AddLockExceptionForm = ({
         onSelectedDataSetIdChange(dataSetId)
         onSelectedOrgUnitsChange([])
     }
-    const selectedDataSet = dataSets.find(ds => ds.id === selectedDataSetId)
+    const selectedDataSet = dataSets.find((ds) => ds.id === selectedDataSetId)
 
     return (
         <>
@@ -37,7 +37,7 @@ const AddLockExceptionForm = ({
                     onChange={handleDataSetChange}
                     dataTest="add-lock-exception-select-data-set"
                 >
-                    {dataSets.map(ds => (
+                    {dataSets.map((ds) => (
                         <SingleSelectOption
                             key={ds.id}
                             label={ds.displayName}

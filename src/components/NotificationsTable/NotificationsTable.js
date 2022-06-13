@@ -12,7 +12,7 @@ import React from 'react'
 import styles from './NotificationsTable.module.css'
 
 /* FIXME think of using an third party library for that, converting for a standard time format defined by design team */
-const formatDateFromServer = dateFromServer => {
+const formatDateFromServer = (dateFromServer) => {
     if (dateFromServer) {
         return `${dateFromServer.slice(0, 10)} ${dateFromServer.slice(11, 19)}`
     }
@@ -20,7 +20,7 @@ const formatDateFromServer = dateFromServer => {
     return ''
 }
 
-const renderNotificationIcon = notification => {
+const renderNotificationIcon = (notification) => {
     if (notification.completed) {
         if (notification.level === 'ERROR') {
             return <IconError16 color={colors.red500} />

@@ -5,11 +5,11 @@ import React from 'react'
 import styles from './IssueCard.module.css'
 
 const Content = ({ content }) => {
-    const renderValue = value =>
+    const renderValue = (value) =>
         Array.isArray(value) ? value.join(', ') : value
 
     if (Array.isArray(content)) {
-        return content.map(element => (
+        return content.map((element) => (
             <p key={element}>{renderValue(element)}</p>
         ))
     } else {
@@ -40,8 +40,8 @@ Title.propTypes = {
     type: PropTypes.string.isRequired,
 }
 
-const countElements = content => {
-    const sum = arr =>
+const countElements = (content) => {
+    const sum = (arr) =>
         arr.reduce((acc, element) => {
             return acc + countElements(element)
         }, 0)

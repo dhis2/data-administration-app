@@ -3,16 +3,16 @@ import i18n from '@dhis2/d2-i18n'
 import { Card, Button, CircularLoader } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PageHeader from '../../components/PageHeader/PageHeader'
-import { i18nKeys } from '../../i18n-keys'
-import Checkboxes from './Checkboxes'
+import PageHeader from '../../components/PageHeader/PageHeader.js'
+import { i18nKeys } from '../../i18n-keys.js'
+import Checkboxes from './Checkboxes.js'
 import styles from './Maintenance.module.css'
-import { useCheckboxes } from './use-checkboxes'
+import { useCheckboxes } from './use-checkboxes.js'
 
 const mutation = {
     resource: 'maintenance',
     type: 'create',
-    params: params => params,
+    params: (params) => params,
 }
 
 const Maintenance = ({ sectionKey }) => {
@@ -23,7 +23,7 @@ const Maintenance = ({ sectionKey }) => {
     })
     const [mutate, { loading }] = useDataMutation(mutation, {
         onComplete: () => successAlert.show(),
-        onError: error => errorAlert.show({ error }),
+        onError: (error) => errorAlert.show({ error }),
     })
     const handlePerformMaintenance = async () => {
         const params = {}
@@ -51,7 +51,7 @@ const Maintenance = ({ sectionKey }) => {
                     primary
                     disabled={
                         loading ||
-                        !Object.values(checkboxes).some(checked => checked)
+                        !Object.values(checkboxes).some((checked) => checked)
                     }
                     onClick={handlePerformMaintenance}
                 >

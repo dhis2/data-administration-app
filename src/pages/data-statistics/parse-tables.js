@@ -7,7 +7,7 @@ import {
     EVENT_COUNT_KEY,
     PENDING_INVITATION_ALL_KEY,
     EXPIRED_INVITATION_KEY,
-} from './table-keys'
+} from './table-keys.js'
 
 const objectLabels = {
     indicator: i18n.t('Indicators'),
@@ -35,7 +35,7 @@ const objectLabels = {
     eventVisualization: i18n.t('Event visualization'),
 }
 
-const translatedTimeLabelFromIntProperty = key => {
+const translatedTimeLabelFromIntProperty = (key) => {
     const intProperty = parseInt(key, 10)
     if (intProperty === 1) {
         return i18n.t('Today')
@@ -48,7 +48,7 @@ const translatedTimeLabelFromIntProperty = key => {
     }
 }
 
-const objectCountsTableFromResponse = objectCountsResponse => {
+const objectCountsTableFromResponse = (objectCountsResponse) => {
     if (!objectCountsResponse) {
         return null
     }
@@ -67,7 +67,7 @@ const objectCountsTableFromResponse = objectCountsResponse => {
     }
 }
 
-const activeUsersTableFromResponse = activeUsersResponse => {
+const activeUsersTableFromResponse = (activeUsersResponse) => {
     if (!activeUsersResponse) {
         return null
     }
@@ -81,7 +81,7 @@ const activeUsersTableFromResponse = activeUsersResponse => {
     }
 }
 
-const userInvitationsTableFromResponse = userInvitationsResponse => {
+const userInvitationsTableFromResponse = (userInvitationsResponse) => {
     if (!userInvitationsResponse) {
         return null
     }
@@ -118,7 +118,7 @@ const userInvitationsTableFromResponse = userInvitationsResponse => {
     return userInvitationsTable
 }
 
-const dataValueCountsTableFromResponse = dataValueCountsResponse => {
+const dataValueCountsTableFromResponse = (dataValueCountsResponse) => {
     if (!dataValueCountsResponse) {
         return null
     }
@@ -134,7 +134,7 @@ const dataValueCountsTableFromResponse = dataValueCountsResponse => {
     }
 }
 
-const eventCountsTableFromResponse = eventCountsResponse => {
+const eventCountsTableFromResponse = (eventCountsResponse) => {
     if (!eventCountsResponse) {
         return null
     }
@@ -148,7 +148,7 @@ const eventCountsTableFromResponse = eventCountsResponse => {
     }
 }
 
-export const parseTables = response => ({
+export const parseTables = (response) => ({
     [OBJECT_COUNTS_KEY]: objectCountsTableFromResponse(
         response[OBJECT_COUNTS_KEY]
     ),

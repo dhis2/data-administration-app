@@ -1,11 +1,11 @@
 import { Menu } from '@dhis2/ui'
 import React from 'react'
-import { sections } from '../../pages/sections.conf'
-import SidebarItem from './SidebarItem'
+import { sections } from '../../pages/sections.conf.js'
+import SidebarItem from './SidebarItem.js'
 
 const Sidebar = () => (
     <Menu>
-        {sections.map(section => (
+        {sections.map((section) => (
             <SidebarItem
                 key={section.key}
                 label={section.info.label}

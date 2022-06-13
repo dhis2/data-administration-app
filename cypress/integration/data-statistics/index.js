@@ -1,7 +1,7 @@
 import { Before, Given, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Before(() => {
-    cy.intercept({ pathname: /dataSummary$/, method: 'GET' }, req => {
+    cy.intercept({ pathname: /dataSummary$/, method: 'GET' }, (req) => {
         req.reply(200, {
             objectCounts: {},
             activeUsers: {},

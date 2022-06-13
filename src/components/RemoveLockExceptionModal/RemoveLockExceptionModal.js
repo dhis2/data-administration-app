@@ -15,7 +15,7 @@ import React from 'react'
 const mutation = {
     resource: 'lockExceptions',
     type: 'delete',
-    params: params => params,
+    params: (params) => params,
 }
 
 const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
@@ -36,7 +36,7 @@ const RemoveLockExceptionModal = ({ lockException, onRemove, onClose }) => {
             onRemove()
             onClose()
         },
-        onError: error => errorAlert.show({ error }),
+        onError: (error) => errorAlert.show({ error }),
     })
 
     const handleRemoveLockException = () => {

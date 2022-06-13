@@ -1,7 +1,7 @@
 import { useDataQuery, useDataMutation } from '@dhis2/app-runtime'
-import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary'
-import { getUpdatedNotifications } from '../../get-updated-notifications'
-import { usePoll } from '../../hooks/use-poll'
+import { getActiveTaskIdFromSummary } from '../../get-active-task-id-from-summary.js'
+import { getUpdatedNotifications } from '../../get-updated-notifications.js'
+import { usePoll } from '../../hooks/use-poll.js'
 
 const pollQuery = {
     resource: 'system/tasks/ANALYTICS_TABLE',
@@ -11,7 +11,7 @@ const pollQuery = {
 const startAnalyticsTablesGenerationMutation = {
     resource: 'resourceTables/analytics',
     type: 'create',
-    params: params => params,
+    params: (params) => params,
 }
 
 const existingTasksQuery = {
@@ -24,10 +24,10 @@ export const useAnalytics = () => {
     const poll = usePoll({
         query: pollQuery,
         interval: 3000,
-        checkDone: data => data[0].completed,
+        checkDone: (data) => data[0].completed,
     })
     const { loading: loadingExistingTask } = useDataQuery(existingTasksQuery, {
-        onComplete: data => {
+        onComplete: (data) => {
             const taskId = getActiveTaskIdFromSummary(data.tasks)
 
             if (taskId) {
@@ -35,15 +35,13 @@ export const useAnalytics = () => {
             }
         },
     })
-    const [
-        startAnalyticsTablesGeneration,
-        { loading, error },
-    ] = useDataMutation(startAnalyticsTablesGenerationMutation, {
-        onComplete: data => {
-            const { id: taskId } = data.response
-            poll.start({ taskId })
-        },
-    })
+    const [startAnalyticsTablesGeneration, { loading, error }] =
+        useDataMutation(startAnalyticsTablesGenerationMutation, {
+            onComplete: (data) => {
+                const { id: taskId } = data.response
+                poll.start({ taskId })
+            },
+        })
 
     return {
         startAnalyticsTablesGeneration,

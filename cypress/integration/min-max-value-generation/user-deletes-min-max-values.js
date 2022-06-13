@@ -6,7 +6,7 @@ Before(() => {
             pathname: /minMaxValues/,
             method: 'DELETE',
         },
-        req => {
+        (req) => {
             req.reply({
                 statusCode: 200,
             })

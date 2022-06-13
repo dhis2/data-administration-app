@@ -1,11 +1,11 @@
-import { i18nKeys } from '../i18n-keys'
-import Analytics from './analytics/Analytics'
-import DataIntegrity from './data-integrity/DataIntegrity'
-import DataStatistics from './data-statistics/DataStatistics'
-import LockExceptions from './lock-exceptions/LockExceptions'
-import Maintenance from './maintenance/Maintenance'
-import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration'
-import ResourceTables from './resource-tables/ResourceTables'
+import { i18nKeys } from '../i18n-keys.js'
+import Analytics from './analytics/Analytics.js'
+import DataIntegrity from './data-integrity/DataIntegrity.js'
+import DataStatistics from './data-statistics/DataStatistics.js'
+import LockExceptions from './lock-exceptions/LockExceptions.js'
+import Maintenance from './maintenance/Maintenance.js'
+import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration.js'
+import ResourceTables from './resource-tables/ResourceTables.js'
 
 export const sections = [
     {
@@ -87,5 +87,5 @@ export const sections = [
     },
 ]
 
-export const getDocsKeyForSection = sectionKey =>
-    sections.find(section => section.key === sectionKey)?.info.docs || ''
+export const getDocsKeyForSection = (sectionKey) =>
+    sections.find((section) => section.key === sectionKey)?.info.docs || ''

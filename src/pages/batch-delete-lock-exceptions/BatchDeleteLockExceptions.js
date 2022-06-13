@@ -2,10 +2,10 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import React, { useState } from 'react'
-import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader'
-import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable'
-import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal'
-import { parseLockExceptions } from '../../parse-lock-exceptions'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.js'
+import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable.js'
+import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal.js'
+import { parseLockExceptions } from '../../parse-lock-exceptions.js'
 
 const query = {
     batchedLockExceptions: {
@@ -25,7 +25,7 @@ const BatchDeleteLockExceptions = () => {
 
     const lockExceptions =
         data && parseLockExceptions(data.batchedLockExceptions.lockExceptions)
-    const handleShowRemoveLockExceptionModal = lockException => {
+    const handleShowRemoveLockExceptionModal = (lockException) => {
         setRemoveLockExceptionModal({
             visible: true,
             lockException,

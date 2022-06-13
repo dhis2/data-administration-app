@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React from 'react'
-import IssueCard from './IssueCard'
+import IssueCard from './IssueCard.js'
 import styles from './Issues.module.css'
 
 const controls = {
@@ -83,7 +83,7 @@ const Issues = ({ issues }) => {
 
     return (
         <div className={styles.issues}>
-            {errorElementskeys.map(element => {
+            {errorElementskeys.map((element) => {
                 const label = controls[element]
                 if (!label) {
                     return null
@@ -97,8 +97,8 @@ const Issues = ({ issues }) => {
                 )
             })}
             {Object.keys(controls)
-                .filter(element => !errorElementskeys.includes(element))
-                .map(element => (
+                .filter((element) => !errorElementskeys.includes(element))
+                .map((element) => (
                     <IssueCard key={element} title={controls[element]} />
                 ))}
         </div>

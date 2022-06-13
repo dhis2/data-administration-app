@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import { i18nKeys } from '../../i18n-keys'
+import { i18nKeys } from '../../i18n-keys.js'
 
 export const DEFAULT_LAST_YEARS = '-1'
 export const LAST_YEARS_INPUT_KEY = 'lastYears'
@@ -32,7 +32,7 @@ export const analyticsCheckboxes = [
     'skipResourceTables',
     'skipEvents',
     'skipEnrollment',
-].map(key => ({
+].map((key) => ({
     key,
     label: i18nKeys.analytics.checkboxes[key],
 }))

@@ -1,6 +1,6 @@
 import { Given } from 'cypress-cucumber-preprocessor/steps'
-import './user-views-lock-exceptions'
-import './user-adds-lock-exception'
+import './user-views-lock-exceptions.js'
+import './user-adds-lock-exception.js'
 
 Given('the user navigated to the lock exceptions page', () => {
     cy.visit('/#/lock-exceptions')

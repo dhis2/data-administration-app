@@ -1,4 +1,4 @@
-export const getActiveTaskIdFromSummary = taskSummaryResponse => {
+export const getActiveTaskIdFromSummary = (taskSummaryResponse) => {
     const { taskId } = Object.entries(taskSummaryResponse).reduce(
         (currLatestTask, [taskId, taskNotifications]) => {
             // First notification is last array item, so its timestamp represents the task start
