@@ -3,13 +3,14 @@
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2021
 # Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Raja Fathurrahim, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-02T08:42:21.320Z\n"
 "PO-Revision-Date: 2020-02-28 15:06+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
+"Last-Translator: Raja Fathurrahim, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,12 +39,13 @@ msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
+"Sebuah eror yang tidak terduga terjadi selama pemeriksaan integrasi data"
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "Menjalankan pemeriksaan integrasi"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "Elemen data tanpa set data"
 
 msgid "Data elements without groups"
 msgstr "Elemen data tanpa grup"
@@ -64,10 +66,10 @@ msgid "Indicators without groups"
 msgstr "Indikator tanpa grup"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "indikator pembilan tidak valid"
 
 msgid "Invalid indicator denominators"
-msgstr ""
+msgstr "indikator penyebut tidak valid"
 
 msgid "Indicators violating exclusive group sets"
 msgstr ""
@@ -91,55 +93,56 @@ msgid "Validation rules without groups"
 msgstr "Validation rules tanpa grup"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Aturan validasi tidak valid pada ekspresi sisi kiri"
 
 msgid "Invalid validation rule right side expressions"
-msgstr ""
+msgstr "Aturan validasi tidak valid pada ekspresi sisi kanan"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Ekspresi indikator program tidak valid"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "Tapis indikator program tidak valid"
 
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
+"Ada elemen data dalam formulir, tetapi tidak dalam formulir atau bagian"
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "Kombinasi kategori tidak valid"
 
 msgid "Duplicate periods"
 msgstr "Duplikatkan periode"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "Aturan program tanpa kondisi"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "Aturan program tanpa tindakan"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "Aturan program tanpa prioritas"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "Variabel aturan program tanpa elemen data"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "Variabel aturan program tanpa atribut"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "Tindakan aturan program tanpa obyek data"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "Tindakan aturan program tanpa pemberitahuan"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "Tindakan aturan program tanpa id bagian"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "Tindakan aturan program tanpa id tahapan"
 
 msgid "Maintenance"
-msgstr ""
+msgstr "Perawatan"
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -150,13 +153,13 @@ msgid "Perform Maintenance"
 msgstr ""
 
 msgid "Perform maintenance"
-msgstr ""
+msgstr "Lakukan perawatan"
 
 msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Perawatan selesai"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -165,10 +168,10 @@ msgid "Clear analytics tables"
 msgstr "Hapus tabel analitik"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "Menganalisis tabel analitik"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "Hapus nilai data nol"
 
 msgid "Permanently remove soft deleted data values"
 msgstr ""
@@ -189,25 +192,25 @@ msgid "Remove expired invitations"
 msgstr "Hapus undangan yang sudah tidak berlaku"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Jatuhkan tampilan SQL"
 
 msgid "Create SQL views"
-msgstr ""
+msgstr "Membuat tampilan SQL"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Perbaharui kategori pilihan kombinasi"
 
 msgid "Update organisation unit paths"
 msgstr "Update jalur unit organisasi"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Hapus cache aplikasi"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "Muat ulang aplikasi"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "Tabel sumber daya"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -217,7 +220,7 @@ msgstr ""
 "grup diantara yang lain."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Membuat tabel sumber daya"
 
 msgid "Generate tables"
 msgstr "Buat tabel"
@@ -226,7 +229,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Sebuah eror yang tidak terduga terjadi selama operasi"
 
 msgid "Organisation unit structure"
 msgstr "Struktur unit organisasi"
@@ -247,7 +250,7 @@ msgid "Organisation unit group set structure"
 msgstr "Struktur set grup unit organisasi"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Struktur kotegori"
 
 msgid "Data element category option combo name"
 msgstr "Nama elemen data category option combo"
@@ -350,7 +353,7 @@ msgid "Data sets"
 msgstr "Data set"
 
 msgid "User groups"
-msgstr ""
+msgstr "Grup pengguna"
 
 msgid "Users"
 msgstr "User"
@@ -368,7 +371,7 @@ msgid "Data element groups"
 msgstr "Grup data elemen"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dasbor"
 
 msgid "Lock Exception Management"
 msgstr "Manajemen Lock Exception"
@@ -377,7 +380,7 @@ msgid "Lock Exception"
 msgstr ""
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "Penghapusan batch"
 
 msgid "Add new lock exception"
 msgstr ""
@@ -444,13 +447,13 @@ msgid "Select"
 msgstr "Pilih"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Batal pilih"
 
 msgid "Select All Org Units"
-msgstr ""
+msgstr "Pilih semua unit organisasi"
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Batal pilih semua unit organisasi"
 
 msgid "Name"
 msgstr "Nama"
@@ -468,103 +471,103 @@ msgid "of"
 msgstr ""
 
 msgid "week"
-msgstr ""
+msgstr "minggu"
 
 msgid "month"
-msgstr ""
+msgstr "bulan"
 
 msgid "year"
-msgstr ""
+msgstr "tahun"
 
 msgid "bi monthly"
-msgstr ""
+msgstr "dua bulan sekali"
 
 msgid "day"
-msgstr ""
+msgstr "hari"
 
 msgid "jan"
-msgstr ""
+msgstr "jan"
 
 msgid "feb"
-msgstr ""
+msgstr "peb"
 
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 msgid "apr"
-msgstr ""
+msgstr "apr"
 
 msgid "may"
-msgstr ""
+msgstr "mei"
 
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 msgid "aug"
-msgstr ""
+msgstr "agu"
 
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 msgid "oct"
-msgstr ""
+msgstr "okt"
 
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 msgid "dec"
-msgstr ""
+msgstr "des"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "jan-peb"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "mar-apr"
 
 msgid "may-jun"
-msgstr ""
+msgstr "mei-jun"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "jul-agu"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "sep-okt"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "nov-des"
 
 msgid "quarter"
-msgstr ""
+msgstr "seperempat"
 
 msgid "Q1"
-msgstr ""
+msgstr "Q1"
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
-msgstr ""
+msgstr "Q3"
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
-msgstr ""
+msgstr "Per enam bulan"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "Januari - Juni"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "Juli-Desember"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "April-September"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "Oktober-Maret"
 
 msgid "Min-Max Value Generation"
 msgstr "Pembuatan Nilai Min-Maks"
@@ -621,7 +624,7 @@ msgid "Analytics tables update"
 msgstr ""
 
 msgid "Start export"
-msgstr ""
+msgstr "Memulai ekspor"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
@@ -639,7 +642,7 @@ msgid "Analytics Tables Update"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Jumlah tahun terakhir data untuk dimasukan"
 
 msgid "[ All ]"
 msgstr ""
