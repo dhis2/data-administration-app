@@ -30,17 +30,17 @@ msgstr ""
 "masalah setup metadata"
 
 msgid "Check Data Integrity"
-msgstr ""
+msgstr "Periksa integritas data"
 
 msgid "Performing data integrity checks..."
-msgstr ""
+msgstr "Melakukan pemeriksaan integritas data..."
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 "Sebuah eror yang tidak terduga terjadi selama pemeriksaan integrasi data"
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "JALANKAN PEMERIKSAAN INTEGRITAS "
 
 msgid "Data elements without data set"
 msgstr "Elemen data tanpa set data"
@@ -151,19 +151,19 @@ msgid ""
 msgstr ""
 
 msgid "Perform Maintenance"
-msgstr ""
+msgstr "Melakukan Pemeliharaan"
 
 msgid "PERFORM MAINTENANCE"
-msgstr ""
+msgstr "MELAKUKAN PEMELIHARAAN"
 
 msgid "Performing Maintenance..."
-msgstr ""
+msgstr "Sedang melakukan pemeliharaan..."
 
 msgid "Maintenance done"
 msgstr "Perawatan selesai"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Sebuah kesalahan tidak terduga terjadi selama proses pemeliharaan"
 
 msgid "Clear analytics tables"
 msgstr "Hapus tabel analitik"
@@ -224,10 +224,10 @@ msgid "Generate Resource Tables"
 msgstr "Membuat tabel sumber daya"
 
 msgid "GENERATE TABLES"
-msgstr ""
+msgstr "MEMBUAT TABEL"
 
 msgid "Resource Tables generated"
-msgstr ""
+msgstr "Tabel sumber data telah dibuat"
 
 msgid "An unexpected error happened during operation"
 msgstr "Sebuah eror yang tidak terduga terjadi selama operasi"
@@ -288,7 +288,7 @@ msgid "It was not possible to load Data Statistics"
 msgstr ""
 
 msgid "No data to show."
-msgstr ""
+msgstr "Tidak ada data untuk ditampilkan."
 
 msgid "Object type"
 msgstr "Tipe Obyek"
@@ -303,7 +303,7 @@ msgid "Last"
 msgstr "Terakhir"
 
 msgid "days"
-msgstr ""
+msgstr "hari"
 
 msgid "Users logged in"
 msgstr "User sedang log in"
@@ -409,10 +409,10 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "MEMBATALKAN"
 
 msgid "ADD"
-msgstr ""
+msgstr "MENAMBAHKAN"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -430,10 +430,10 @@ msgid "Are you sure?"
 msgstr "Apakah Anda yakin?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "KONFIRMASI"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Pilih sebuah Himpunan Data"
 
 msgid "Updating Organisation Units Tree..."
 msgstr "Memperbarui Pohon Unit Organisasi.."
@@ -451,10 +451,10 @@ msgid "Organisation Unit"
 msgstr "Unit Organisasi"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Grup Unit Organisasi"
 
 msgid "Organisation Unit Level"
-msgstr ""
+msgstr "Tingkat Unit Organisasi"
 
 msgid "Select"
 msgstr "Pilih"
@@ -472,13 +472,13 @@ msgid "Name"
 msgstr "Nama"
 
 msgid "Show Details"
-msgstr ""
+msgstr "Tampilkan secara detail"
 
 msgid "Remove"
 msgstr "Hapus"
 
 msgid "Actions"
-msgstr ""
+msgstr "Tindakan / Aksi"
 
 msgid "of"
 msgstr ""
@@ -611,19 +611,19 @@ msgid "Min Max removal done"
 msgstr ""
 
 msgid "Loading data sets"
-msgstr ""
+msgstr "Memuat himpunan data"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Pilih unit organisasi"
 
 msgid "Generate"
 msgstr "Buat"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Manajemen Tabel analitik"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tabel Analitik"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -631,31 +631,31 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Pembaruan Tabel analitik"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "MULAI EKSPOR"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Lewati pembuatan data agregat dan kelengkapan data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Lewati pembuatan tabel sumber daya"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Lewati pembuatan data kejadian"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Lewati pembuatan data pendaftaran"
 
 msgid "Analytics Tables Update"
-msgstr ""
+msgstr "Pembaruan Tabel analitik"
 
 msgid "Number of last years of data to include"
 msgstr "Jumlah tahun terakhir data untuk dimasukan"
 
 msgid "[ All ]"
-msgstr ""
+msgstr "[Semua]"
 
 msgid "Settings"
 msgstr "Setting"
