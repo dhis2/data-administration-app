@@ -185,10 +185,10 @@ msgid "Data element category option combinations"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Manajemen Tabel analitik"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tabel Analitik"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -196,22 +196,22 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Pembaruan Tabel analitik"
 
 msgid "An unexpected error happened during maintenance"
-msgstr ""
+msgstr "Sebuah kesalahan tidak terduga terjadi selama proses pemeliharaan"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Lewati pembuatan data agregat dan kelengkapan data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Lewati pembuatan tabel sumber daya"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Lewati pembuatan data kejadian"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Lewati pembuatan data pendaftaran"
 
 msgid "Data Statistics"
 msgstr "Statistik data"
