@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Karoline Tufte Lien <karoline@dhis2.org>, 2020
-# Caroline Hesthagen Holen <caroline@devotta.no>, 2020
+# Karoline Tufte Lien <karoline@dhis2.org>, 2022
+# Caroline Hesthagen Holen <caroline@devotta.no>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
-"PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:34+0000\n"
+"Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2022\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/hisp-uio/teams/100509/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,14 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Data Integrity"
-msgstr "Dataintegritet"
+msgstr ""
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
-"Kjør dataintegritetskontroller og avdekke avvik og problemer i "
-"metadataoppsettet."
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -42,16 +40,16 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr "Dataelementer uten grupper"
+msgstr ""
 
 msgid "Data elements violating exclusive group sets"
-msgstr "Dataelementer som bryter eksklusive gruppesett"
+msgstr ""
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr "Dataelementer tildelt datasett med forskjellige periodetyper"
+msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr "Datasetter er ikke tildelt til organisasjonsenheter"
+msgstr ""
 
 msgid "Indicators with identical formulas"
 msgstr "Indikatorer med identiske formler"
@@ -60,34 +58,34 @@ msgid "Indicators without groups"
 msgstr "Indikatorer uten grupper"
 
 msgid "Invalid indicator numerators"
-msgstr "Ugyldige indikatortellere"
+msgstr ""
 
 msgid "Invalid indicator denominators"
-msgstr "Ugyldige indikatornevnere"
+msgstr ""
 
 msgid "Indicators violating exclusive group sets"
-msgstr "Indikatorer som bryter eksklusive gruppesett"
+msgstr ""
 
 msgid "Organisation units with cyclic references"
-msgstr "Organisasjonsenheter med sykliske referanser"
+msgstr ""
 
 msgid "Orphaned organisation units"
-msgstr "Organisasjonsenheter uten overordnet"
+msgstr ""
 
 msgid "Organisation units without groups"
-msgstr "Organisasjonsenheter uten grupper"
+msgstr ""
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr "Organisasjonsenhetgrupper uten gruppesett"
+msgstr ""
 
 msgid "Validation rules without groups"
 msgstr "Valideringsregler uten grupper"
 
 msgid "Invalid validation rule left side expressions"
-msgstr "Ugyldig valideringsregel uttrykk fra venstre side"
+msgstr ""
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Ugyldig valideringsregel uttrykk fra høyre side"
@@ -102,13 +100,13 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr "Ugyldige kategorikombinasjoner"
+msgstr ""
 
 msgid "Duplicate periods"
-msgstr "Duplikat perioder"
+msgstr ""
 
 msgid "Maintenance"
-msgstr "Vedlikehold"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -119,19 +117,19 @@ msgid "Perform Maintenance"
 msgstr ""
 
 msgid "PERFORM MAINTENANCE"
-msgstr "UTFØR VEDLIKEHOLD"
+msgstr ""
 
 msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr "Vedlikehold utført"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr "Fjern analysetabeller"
+msgstr ""
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -152,25 +150,25 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr "Beskjær perioder"
+msgstr ""
 
 msgid "Remove expired invitations"
-msgstr "Fjern utgåtte invitasjoner"
+msgstr ""
 
 msgid "Drop SQL views"
-msgstr "Dropp SQL-visninger"
+msgstr ""
 
 msgid "Create SQL views"
-msgstr "Opprett SQL visninger"
+msgstr ""
 
 msgid "Update category option combinations"
-msgstr "Oppdater kategorialternativ kombinasjoner"
+msgstr ""
 
 msgid "Update organisation unit paths"
-msgstr "Oppdater organisasjonsenhet baner"
+msgstr ""
 
 msgid "Clear application cache"
-msgstr "Fjern applikasjonsbuffer"
+msgstr ""
 
 msgid "Reload apps"
 msgstr ""
@@ -182,8 +180,6 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
-"Generer ressursdatabasetabeller for organisasjonsenhetens hierarki og "
-"gruppesettstruktur."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -198,50 +194,48 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr "Organisasjonsenhet struktur"
+msgstr ""
 
 msgid "Organisation unit category option combo"
-msgstr "Organisasjonsenhet kategorialternativ kombo"
+msgstr ""
 
 msgid "Category option group set structure"
-msgstr "Kategorialternativ gruppesett struktur"
+msgstr ""
 
 msgid "Data element group set structure"
-msgstr "Dataelement gruppesett struktur"
+msgstr ""
 
 msgid "Indicator group set structure"
-msgstr "Indikator gruppesett struktur"
+msgstr ""
 
 msgid "Organisation unit group set structure"
-msgstr "Organisasjonsenhet gruppsett struktur"
+msgstr ""
 
 msgid "Category structure"
-msgstr "Kategoristruktur"
+msgstr ""
 
 msgid "Data element category option combo name"
-msgstr "Dataelement kategorialternativ kombo navn"
+msgstr ""
 
 msgid "Data element structure"
-msgstr "Dataelement struktur"
+msgstr ""
 
 msgid "Period structure"
-msgstr "Periodestruktur"
+msgstr ""
 
 msgid "Date period structure"
-msgstr "Dataperiode struktur"
+msgstr ""
 
 msgid "Data element category option combinations"
-msgstr "Dataelement kategorialternativ kombinasjoner"
+msgstr ""
 
 msgid "Data Statistics"
-msgstr "Datastatistikk"
+msgstr ""
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
-"Bla gjennom antall objekter i databasen, for eksempel dataelementer, "
-"indikatorer, datasett og dataverdier."
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -256,55 +250,55 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr "Objekttype"
+msgstr ""
 
 msgid "Last hour"
-msgstr "Siste timen"
+msgstr ""
 
 msgid "Today"
-msgstr "I dag"
+msgstr ""
 
 msgid "Last"
-msgstr "Siste"
+msgstr ""
 
 msgid "days"
-msgstr "dager"
+msgstr ""
 
 msgid "Users logged in"
-msgstr "Brukere som er innlogget"
+msgstr ""
 
 msgid "User account invitations"
-msgstr "Brukerkonto invitasjoner"
+msgstr ""
 
 msgid "Pending invitations"
-msgstr "Ventende invitasjoner"
+msgstr ""
 
 msgid "Expired invitations"
-msgstr "Utgåtte invitasjoner"
+msgstr ""
 
 msgid "Data values"
-msgstr "Dataverdier"
+msgstr ""
 
 msgid "Events"
-msgstr "Hendelser"
+msgstr ""
 
 msgid "Indicators"
-msgstr "Indikatorer"
+msgstr ""
 
 msgid "Periods"
-msgstr "Perioder"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisasjonsenheter"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "Valideringsregler"
+msgstr ""
 
 msgid "Programs"
-msgstr "Programmer"
+msgstr ""
 
 msgid "Data elements"
-msgstr "Dataelementer"
+msgstr ""
 
 msgid "Organisation unit groups"
 msgstr "Organisasjonsenhetgrupper"
@@ -313,37 +307,37 @@ msgid "Pivot tables"
 msgstr "Pivottabeller"
 
 msgid "Indicator types"
-msgstr "Indikatortyper"
+msgstr ""
 
 msgid "Data sets"
-msgstr "Datasett"
+msgstr ""
 
 msgid "User groups"
-msgstr "Brukergrupper"
+msgstr ""
 
 msgid "Users"
-msgstr "Brukere"
+msgstr ""
 
 msgid "Maps"
-msgstr "Kart"
+msgstr ""
 
 msgid "Indicator groups"
-msgstr "Indikatorgrupper"
+msgstr ""
 
 msgid "Charts"
-msgstr "Diagrammer"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Dataelementgrupper"
+msgstr ""
 
 msgid "Dashboards"
-msgstr "Dashbord"
+msgstr ""
 
 msgid "Lock Exception Management"
-msgstr "Lås administrering av unntak"
+msgstr ""
 
 msgid "Lock Exception"
-msgstr "Lås unntak"
+msgstr ""
 
 msgid "Batch Deletion"
 msgstr ""
@@ -355,8 +349,6 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
-"Legg til eller fjern unntak fra standardreglene for låsing av "
-"dataregistreringsskjemaer."
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -380,40 +372,40 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr "Er du sikker?"
+msgstr ""
 
 msgid "CONFIRM"
-msgstr "BEKREFT"
+msgstr ""
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr "Oppdaterer Organisasjonsenhettreet..."
+msgstr ""
 
 msgid "For organisation units within"
-msgstr "For organisasjonsenhet innenfor"
+msgstr ""
 
 msgid "Period"
-msgstr "Periode"
+msgstr ""
 
 msgid "Data Set"
-msgstr "Datasett"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisasjonsenhet"
+msgstr ""
 
 msgid "Organisation Unit Group"
-msgstr "Organisasjonsenhet gruppe"
+msgstr ""
 
 msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr "Velg"
+msgstr ""
 
 msgid "Deselect"
-msgstr "Fjern merking"
+msgstr ""
 
 msgid "Select All Org Units"
 msgstr ""
@@ -422,34 +414,34 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr "Navn"
+msgstr ""
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Fjern"
+msgstr ""
 
 msgid "Actions"
-msgstr "Handlinger"
+msgstr ""
 
 msgid "of"
 msgstr "av"
 
 msgid "week"
-msgstr "uke"
+msgstr ""
 
 msgid "month"
-msgstr "Måned"
+msgstr ""
 
 msgid "year"
-msgstr "år"
+msgstr ""
 
 msgid "bi monthly"
-msgstr "Tomånedlig"
+msgstr ""
 
 msgid "day"
-msgstr "dag"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -506,22 +498,22 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr "kvartal"
+msgstr ""
 
 msgid "Q1"
-msgstr "S1"
+msgstr ""
 
 msgid "Q2"
-msgstr "S2"
+msgstr ""
 
 msgid "Q3"
-msgstr "S3"
+msgstr ""
 
 msgid "Q4"
-msgstr "S4"
+msgstr ""
 
 msgid "six monthly"
-msgstr "Halvårlig"
+msgstr ""
 
 msgid "jan-jun"
 msgstr ""
@@ -539,14 +531,12 @@ msgid "For all organisation units:"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr "Min-maks verdi generering"
+msgstr ""
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
-"Generer min-maksverdier som kan brukes til datavalidering under "
-"datainnførings- og valideringsprosesser."
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -573,7 +563,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr "Valg av organisasjonsenhet"
+msgstr ""
 
 msgid "GENERATE"
 msgstr ""
