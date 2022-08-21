@@ -1,15 +1,16 @@
 # 
 # Translators:
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2022
 # phil_dhis2, 2022
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2022-08-21 23:34+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2022\n"
 "Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +51,7 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Tập Dữ Liệu không được gán cho Đơn Vị nào"
 
 msgid "Indicators with identical formulas"
 msgstr "Chỉ Số có biểu thức giống nhau"
@@ -59,7 +60,7 @@ msgid "Indicators without groups"
 msgstr "Chỉ Số không thuộc Nhóm Chỉ Số nào"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Tử số không hợp lệ"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -86,13 +87,13 @@ msgid "Validation rules without groups"
 msgstr "Luật Hợp Lệ không thuộc Nhóm Luật Hợp Lệ nào"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Biểu thức vế trái không hợp lệ"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Biểu thức vế phải không hợp lệ"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Biểu thức chỉ báo chương trình không hợp lệ"
 
 msgid "Invalid program indicator filters"
 msgstr ""
@@ -113,6 +114,8 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Thực hiện các nhiệm vụ bảo trì và tạo các bảng cơ sở dữ liệu tài nguyên cho "
+"cấu trúc phân cấp đơn vị và cấu trúc tập nhóm."
 
 msgid "Perform Maintenance"
 msgstr ""
@@ -124,7 +127,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Đã bảo trì xong"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -151,7 +154,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Lược bớt thời điểm"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -163,13 +166,13 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Sửa Tổ Hợp Tùy Chọn Phân Loại"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "Sửa đường dẫn Đơn Vị"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Xóa dữ liệu tạm ứng dụng"
 
 msgid "Reload apps"
 msgstr ""
@@ -181,9 +184,10 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Xuất bảng tài nguyên cơ sở dữ liệu cho cây đơn vị, cấu trúc tập nhóm,..."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Tạo bảng tài nguyên"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -192,7 +196,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Đã xảy ra lỗi không mong muốn trong quá trình hoạt động"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -207,25 +211,25 @@ msgid "Data element group set structure"
 msgstr ""
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "Cấu trúc Tập Nhóm Chỉ Số"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Cấu trúc Tập Nhóm Đơn Vị"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Cấu trúc phân loại"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Tên Tổ hợp tùy chọn phân loại"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Cấu trúc thời điểm"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Cấu trúc thời điểm ngày"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -239,13 +243,13 @@ msgid ""
 msgstr ""
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "Thống kê dữ liệu tổng quan"
 
 msgid "Loading Data Statistics..."
 msgstr ""
 
 msgid "It was not possible to load Data Statistics"
-msgstr ""
+msgstr "Không thể tải Thống kê dữ liệu"
 
 msgid "No data to show."
 msgstr ""
@@ -272,19 +276,19 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Lời mời đang hoãn"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Lời mời hết hạn"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Sự kiện"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Chỉ số"
 
 msgid "Periods"
 msgstr ""
@@ -293,7 +297,7 @@ msgid "Organisation units"
 msgstr ""
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Quy tắc hợp lệ"
 
 msgid "Programs"
 msgstr ""
@@ -320,7 +324,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Bản đồ"
 
 msgid "Indicator groups"
 msgstr ""
@@ -332,7 +336,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Bảng điều khiển"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -355,40 +359,40 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "HỦY"
 
 msgid "ADD"
 msgstr ""
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Đang tải ngoại lệ khóa ..."
 
 msgid "Adding Lock Exception..."
 msgstr ""
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Khóa ngoại lệ đã bị xóa"
 
 msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Bạn có chắc chắn không?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "Xác nhận"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Chọn Tập dữ liệu"
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Cập nhật cây đơn vị"
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Đối với đơn vị trong"
 
 msgid "Period"
-msgstr ""
+msgstr "Thời điểm"
 
 msgid "Data Set"
 msgstr ""
@@ -406,19 +410,19 @@ msgid "Select"
 msgstr ""
 
 msgid "Deselect"
-msgstr ""
+msgstr "Bỏ chọn"
 
 msgid "Select All Org Units"
 msgstr ""
 
 msgid "Deselect All Org Units"
-msgstr ""
+msgstr "Bỏ chọn tất cả các đơn vị "
 
 msgid "Name"
-msgstr ""
+msgstr "Tên"
 
 msgid "Show Details"
-msgstr ""
+msgstr "Hiển thị chi tiết"
 
 msgid "Remove"
 msgstr ""
@@ -439,13 +443,13 @@ msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "Kỳ 2 tháng này"
 
 msgid "day"
-msgstr ""
+msgstr "Ngày"
 
 msgid "jan"
-msgstr ""
+msgstr "tháng một"
 
 msgid "feb"
 msgstr ""
@@ -460,7 +464,7 @@ msgid "may"
 msgstr ""
 
 msgid "jun"
-msgstr ""
+msgstr "tháng 6"
 
 msgid "jul"
 msgstr ""
@@ -469,7 +473,7 @@ msgid "aug"
 msgstr ""
 
 msgid "sep"
-msgstr ""
+msgstr "tháng 9"
 
 msgid "oct"
 msgstr ""
@@ -505,13 +509,13 @@ msgid "Q1"
 msgstr ""
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr ""
@@ -555,7 +559,7 @@ msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Tạo Lớn nhất-Nhỏ nhất..."
 
 msgid "Min Max removal done"
 msgstr ""
@@ -564,16 +568,16 @@ msgid "Loading data sets"
 msgstr "Đang tải tập dữ liệu"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Chọn đơn vị"
 
 msgid "GENERATE"
 msgstr ""
 
 msgid "REMOVE"
-msgstr ""
+msgstr "XÓA"
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Quản lý bảng phân tích tổng hợp"
 
 msgid "Analytics Tables"
 msgstr "Bảng phân tích"
@@ -584,22 +588,22 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr ""
+msgstr "Cập nhật bảng phân tích"
 
 msgid "START EXPORT"
-msgstr ""
+msgstr "BẮT ĐẦU TRÍCH XUẤT "
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Bỏ qua việc tạo dữ liệu tổng hợp và dữ liệu đầy đủ"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Bỏ qua việc tạo bảng tài nguyên"
 
 msgid "Skip generation of event data"
 msgstr ""
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Bỏ qua việc tạo dữ liệu đăng ký"
 
 msgid "Analytics Tables Update"
 msgstr ""

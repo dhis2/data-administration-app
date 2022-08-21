@@ -49,7 +49,7 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Datasetter er ikke tildelt til organisasjonsenheter"
 
 msgid "Indicators with identical formulas"
 msgstr "Indikatorer med identiske formler"
@@ -58,7 +58,7 @@ msgid "Indicators without groups"
 msgstr "Indikatorer uten grupper"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Ugyldige indikatortellere"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -85,7 +85,7 @@ msgid "Validation rules without groups"
 msgstr "Valideringsregler uten grupper"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Ugyldig valideringsregel uttrykk fra venstre side"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Ugyldig valideringsregel uttrykk fra høyre side"
@@ -103,7 +103,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplikat perioder"
 
 msgid "Maintenance"
 msgstr ""
@@ -123,7 +123,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Vedlikehold utført"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -150,7 +150,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Beskjær perioder"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -162,7 +162,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Oppdater kategorialternativ kombinasjoner"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -180,6 +180,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Generer ressursdatabasetabeller for organisasjonsenhetens hierarki og "
+"gruppesettstruktur."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -209,22 +211,22 @@ msgid "Indicator group set structure"
 msgstr ""
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "Organisasjonsenhet gruppsett struktur"
 
 msgid "Category structure"
-msgstr ""
+msgstr "Kategoristruktur"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Dataelement kategorialternativ kombo navn"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Periodestruktur"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Dataperiode struktur"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -271,19 +273,19 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Ventende invitasjoner"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Utgåtte invitasjoner"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Hendelser"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikatorer"
 
 msgid "Periods"
 msgstr ""
@@ -292,7 +294,7 @@ msgid "Organisation units"
 msgstr ""
 
 msgid "Validation rules"
-msgstr ""
+msgstr "Valideringsregler"
 
 msgid "Programs"
 msgstr ""
@@ -319,7 +321,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Kart"
 
 msgid "Indicator groups"
 msgstr ""
@@ -331,7 +333,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dashbord"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -372,22 +374,22 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Er du sikker?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "BEKREFT"
 
 msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "Oppdaterer Organisasjonsenhettreet..."
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "For organisasjonsenhet innenfor"
 
 msgid "Period"
-msgstr ""
+msgstr "Periode"
 
 msgid "Data Set"
 msgstr ""
@@ -414,7 +416,7 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 msgid "Show Details"
 msgstr ""
@@ -438,7 +440,7 @@ msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "Tomånedlig"
 
 msgid "day"
 msgstr ""
@@ -510,7 +512,7 @@ msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "S4"
 
 msgid "six monthly"
 msgstr ""
@@ -563,7 +565,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Valg av organisasjonsenhet"
 
 msgid "GENERATE"
 msgstr ""

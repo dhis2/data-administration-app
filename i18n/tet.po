@@ -1,14 +1,14 @@
 # 
 # Translators:
-# phil_dhis2, 2019
-# Viktor Varland <viktor@dhis2.org>, 2019
+# Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
-"PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2019\n"
+"PO-Revision-Date: 2022-08-21 23:34+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Tetum (Tetun) (https://www.transifex.com/hisp-uio/teams/100509/tet/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,7 +106,7 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Manutensaun"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -259,7 +259,7 @@ msgid "Today"
 msgstr ""
 
 msgid "Last"
-msgstr "Ikus"
+msgstr ""
 
 msgid "days"
 msgstr ""
@@ -286,10 +286,10 @@ msgid "Indicators"
 msgstr "Indikadores"
 
 msgid "Periods"
-msgstr "Períodus"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Unidade organizasional"
+msgstr ""
 
 msgid "Validation rules"
 msgstr "Regras validasaun"
@@ -298,7 +298,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr "Elementus dadus"
+msgstr ""
 
 msgid "Organisation unit groups"
 msgstr "Grupus unidade organizasional"
@@ -310,25 +310,25 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Pakote dadus"
+msgstr ""
 
 msgid "User groups"
-msgstr "Grupus utilizador"
+msgstr ""
 
 msgid "Users"
-msgstr "Utilizadores"
+msgstr ""
 
 msgid "Maps"
 msgstr ""
 
 msgid "Indicator groups"
-msgstr "Grupus indikadores"
+msgstr ""
 
 msgid "Charts"
 msgstr ""
 
 msgid "Data element groups"
-msgstr "Grupus elementus dadus"
+msgstr ""
 
 msgid "Dashboards"
 msgstr ""
@@ -390,10 +390,10 @@ msgid "Period"
 msgstr "Períodu"
 
 msgid "Data Set"
-msgstr "Konjuntu Dadus"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Unidade Organizasaun"
+msgstr ""
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -402,7 +402,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr "Selesiona"
+msgstr ""
 
 msgid "Deselect"
 msgstr ""
@@ -420,7 +420,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Hasai"
+msgstr ""
 
 msgid "Actions"
 msgstr ""

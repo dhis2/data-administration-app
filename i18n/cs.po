@@ -33,7 +33,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "SPUSTIT KONTROLY INTEGRITY"
 
 msgid "Data elements without data set"
 msgstr ""
@@ -48,16 +48,16 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Datové sady, které nejsou přiřazeny organizačním jednotkám"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indikátory se stejnými vzorci"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Ukazatele bez skupin"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Neplatné čitatele indikátoru"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -84,13 +84,13 @@ msgid "Validation rules without groups"
 msgstr "Pravidla ověření bez skupin"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Neplatné výrazy pravidla ověření na levé straně"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Neplatné výrazy na pravé straně pravidla pro ověření"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Neplatné výrazy indikátoru programu"
 
 msgid "Invalid program indicator filters"
 msgstr ""
@@ -102,7 +102,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplicitní období"
 
 msgid "Maintenance"
 msgstr ""
@@ -111,6 +111,8 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Provádějte úlohy údržby a generujte tabulky databází prostředků pro "
+"hierarchii organizačních jednotek a strukturu skupin."
 
 msgid "Perform Maintenance"
 msgstr ""
@@ -122,7 +124,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Údržba hotová"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -149,7 +151,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Omezit období"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -161,7 +163,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Aktualizovat kombinace možností kategorií"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -181,7 +183,7 @@ msgid ""
 msgstr ""
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Generovat tabulky zdrojů"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -190,7 +192,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Během operace došlo k neočekávané chybě"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -211,19 +213,19 @@ msgid "Organisation unit group set structure"
 msgstr ""
 
 msgid "Category structure"
-msgstr ""
+msgstr "Struktura kategorie"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Název kombinované kategorie datových prvků"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Struktura období"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Struktura období"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -270,16 +272,16 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Nevyřízené pozvánky"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Vypršené Pozvánky"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Události"
 
 msgid "Indicators"
 msgstr ""
@@ -300,7 +302,7 @@ msgid "Data elements"
 msgstr ""
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Skupiny organizačních jednotek"
 
 msgid "Pivot tables"
 msgstr "Kontingenční tabulky"
@@ -353,40 +355,40 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "ZRUŠIT"
 
 msgid "ADD"
 msgstr ""
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Načítání výjimek zámku ..."
 
 msgid "Adding Lock Exception..."
 msgstr ""
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Výjimka zámku odstraněna"
 
 msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jste si jist?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "POTVRDIT"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Vybrat datovou sadu"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Pro organizační jednotky uvnitř"
 
 msgid "Period"
-msgstr ""
+msgstr "Období"
 
 msgid "Data Set"
 msgstr ""
@@ -416,7 +418,7 @@ msgid "Name"
 msgstr ""
 
 msgid "Show Details"
-msgstr ""
+msgstr "Ukázat detaily"
 
 msgid "Remove"
 msgstr ""
@@ -443,7 +445,7 @@ msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "led"
 
 msgid "feb"
 msgstr ""
@@ -476,7 +478,7 @@ msgid "nov"
 msgstr ""
 
 msgid "dec"
-msgstr ""
+msgstr "pro"
 
 msgid "jan-feb"
 msgstr ""
@@ -509,7 +511,7 @@ msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr ""
@@ -553,7 +555,7 @@ msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Vytvoření Min Max dokončeno"
 
 msgid "Min Max removal done"
 msgstr ""
@@ -562,7 +564,7 @@ msgid "Loading data sets"
 msgstr "Načítání datových sad"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Výběr organizační jednotky"
 
 msgid "GENERATE"
 msgstr ""
@@ -571,10 +573,10 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Správa tabulek Analýzy"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tabulky analytiky"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -588,10 +590,10 @@ msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Přeskočit generování souhrnných údajů a údajů o úplnosti"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Přeskočit generování tabulek zdrojů"
 
 msgid "Skip generation of event data"
 msgstr ""

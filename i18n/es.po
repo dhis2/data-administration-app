@@ -1,6 +1,7 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Janeth Cruz, 2022
 # phil_dhis2, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # 
@@ -50,16 +51,16 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Conjunto de datos no asignado a unidad organizativa"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indicadores con formulas identicas"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indicadores sin grupos"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Numerador inválido"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -86,7 +87,7 @@ msgid "Validation rules without groups"
 msgstr "Reglas de validación sin grupo"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Expresión del lado izquierdo de la regla de validación inválida"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Expresión del lado derecho de la regla de validación inválida"
@@ -151,7 +152,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Periodos depurados"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -181,9 +182,11 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Generat tablas de recursos de base de datos para la jerarquía de unidades "
+"organizativas y la estructura de conjuntos de datos, entre otros."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Generar tablas de recursos"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -192,7 +195,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Ocurrió un error inesperado durante la operación"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -213,16 +216,16 @@ msgid "Organisation unit group set structure"
 msgstr ""
 
 msgid "Category structure"
-msgstr ""
+msgstr "Estructura de la categoría"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Nombre de combinación de opción de categorías de elemento de dato"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Estructura de periodo"
 
 msgid "Date period structure"
 msgstr ""
@@ -275,16 +278,16 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Invitaciones caducadas"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Eventos"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicadores"
 
 msgid "Periods"
 msgstr ""
@@ -302,7 +305,7 @@ msgid "Data elements"
 msgstr ""
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grupos de unidad organizativa"
 
 msgid "Pivot tables"
 msgstr "Tablas dinámicas"
@@ -320,7 +323,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 msgid "Indicator groups"
 msgstr ""
@@ -332,7 +335,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Cuadros de mandos"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -373,10 +376,10 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "¿Está seguro?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "CONFIRMAR"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -388,7 +391,7 @@ msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "Periodo"
 
 msgid "Data Set"
 msgstr ""
@@ -439,13 +442,13 @@ msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "bimestral"
 
 msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "ene"
 
 msgid "feb"
 msgstr ""
@@ -478,7 +481,7 @@ msgid "nov"
 msgstr ""
 
 msgid "dec"
-msgstr ""
+msgstr "dic"
 
 msgid "jan-feb"
 msgstr ""
@@ -564,7 +567,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Selección de Unidades Organizativas"
 
 msgid "GENERATE"
 msgstr ""
@@ -576,7 +579,7 @@ msgid "Analytics tables management"
 msgstr ""
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tablas analíticas"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "

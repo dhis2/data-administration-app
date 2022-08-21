@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2019
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
-"PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: phil_dhis2, 2019\n"
+"PO-Revision-Date: 2022-08-21 23:34+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Persian (Afghanistan) (https://www.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,13 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Data Integrity"
-msgstr "درستی اطلاعات"
+msgstr ""
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the meta data"
 " setup."
 msgstr ""
-"اجرای دیتا چک یکپارچگی و پرده ناهنجاری و مشکلات در راه اندازی میتا دیتا"
 
 msgid "Check Data Integrity"
 msgstr ""
@@ -40,13 +39,13 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr "عنصر اطلاعات بیدون گروپ ها"
+msgstr ""
 
 msgid "Data elements violating exclusive group sets"
-msgstr "عنصر اطلاعات وجود ندار"
+msgstr ""
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr "دیتا ایلمنت ها در دیتا سیت اضافه شده اند در دوره های متفاوت"
+msgstr ""
 
 msgid "Data sets not assigned to organisation units"
 msgstr "دیتا سیت به واحد های سازمان تعین نگردید"
@@ -61,25 +60,25 @@ msgid "Invalid indicator numerators"
 msgstr "صورت شاخص باطل است"
 
 msgid "Invalid indicator denominators"
-msgstr "مخرج شاخص باطل است"
+msgstr ""
 
 msgid "Indicators violating exclusive group sets"
-msgstr "تصحیح مجموعه گروپ واحد سازمان"
+msgstr ""
 
 msgid "Organisation units with cyclic references"
-msgstr "شمارش واحد سازمان"
+msgstr ""
 
 msgid "Orphaned organisation units"
-msgstr "ایجاد واحد سازمان جدید"
+msgstr ""
 
 msgid "Organisation units without groups"
-msgstr "واحد سازمان بیدون گروپ ها"
+msgstr ""
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr "واحد سازمان بیدون مجموعه گروپ"
+msgstr ""
 
 msgid "Validation rules without groups"
 msgstr "دستور سنجی بیدون گروپ ها"
@@ -100,13 +99,13 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr "ترکیب کتگوری باطل"
+msgstr ""
 
 msgid "Duplicate periods"
 msgstr "دوره های تکراری"
 
 msgid "Maintenance"
-msgstr "نگهداری"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -129,7 +128,7 @@ msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Clear analytics tables"
-msgstr "پاک کردن جدول های انالیتیکس"
+msgstr ""
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -153,22 +152,22 @@ msgid "Prune periods"
 msgstr "اجازه مراحل بعدی"
 
 msgid "Remove expired invitations"
-msgstr "حذف کردن دعوت نامه منقضی شده"
+msgstr ""
 
 msgid "Drop SQL views"
-msgstr "حذف SQL views"
+msgstr ""
 
 msgid "Create SQL views"
-msgstr "ایجاد SQL views"
+msgstr ""
 
 msgid "Update category option combinations"
 msgstr "تجدید ترکیبات کتگوری گزینه ها"
 
 msgid "Update organisation unit paths"
-msgstr "تصحیح آدرس واحد سازمان"
+msgstr ""
 
 msgid "Clear application cache"
-msgstr "پاک کردن حافظه اپلیکیشن"
+msgstr ""
 
 msgid "Reload apps"
 msgstr ""
@@ -196,22 +195,22 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr "ساختار واحد سازمان"
+msgstr ""
 
 msgid "Organisation unit category option combo"
-msgstr "گزینه ترکیب کتگوری واحد سازمان"
+msgstr ""
 
 msgid "Category option group set structure"
-msgstr "ساختار گزینه کتگوری گروپ"
+msgstr ""
 
 msgid "Data element group set structure"
-msgstr "ساختار مجموعه گروپ عنصر اطلاعات"
+msgstr ""
 
 msgid "Indicator group set structure"
-msgstr "ساختار مجموعه گروپ شاخص"
+msgstr ""
 
 msgid "Organisation unit group set structure"
-msgstr "ساختار مجموعه گروپ واحد سازمان"
+msgstr ""
 
 msgid "Category structure"
 msgstr "ساختار کتگوری"
@@ -220,7 +219,7 @@ msgid "Data element category option combo name"
 msgstr "اسم گزینه ترکیب کتگوری عناصر معلومات"
 
 msgid "Data element structure"
-msgstr "ساختار عنصر اطلاعات"
+msgstr ""
 
 msgid "Period structure"
 msgstr "ساختار معیاد"
@@ -229,17 +228,15 @@ msgid "Date period structure"
 msgstr "استرکچر دوره دیتا"
 
 msgid "Data element category option combinations"
-msgstr "مدیریت ترکیبات کتگوری گزینه عنصر اطلاعات"
+msgstr ""
 
 msgid "Data Statistics"
-msgstr "مجموعه های اطلاعات"
+msgstr ""
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
-"تعداد شی را در دیتابیس بروز کنید، مانند دیتا ایلمنت ها، شاخص ها، سیت دیتا و "
-"ارزش دیتا"
 
 msgid "Overview Data Statistics"
 msgstr ""
@@ -254,25 +251,25 @@ msgid "No data to show."
 msgstr ""
 
 msgid "Object type"
-msgstr "نوع اعداد"
+msgstr ""
 
 msgid "Last hour"
-msgstr "ساعت گذشته"
+msgstr ""
 
 msgid "Today"
-msgstr "امروز"
+msgstr ""
 
 msgid "Last"
-msgstr "آخری"
+msgstr ""
 
 msgid "days"
 msgstr ""
 
 msgid "Users logged in"
-msgstr "استفاده کننده داخل سیستم شده"
+msgstr ""
 
 msgid "User account invitations"
-msgstr "دعوت نامه استفاده کننده"
+msgstr ""
 
 msgid "Pending invitations"
 msgstr "دعوت نامه ها در انتظار"
@@ -281,7 +278,7 @@ msgid "Expired invitations"
 msgstr "دعوتنامه های انقضا"
 
 msgid "Data values"
-msgstr "مجموعه های اطلاعات"
+msgstr ""
 
 msgid "Events"
 msgstr "پېښې"
@@ -290,19 +287,19 @@ msgid "Indicators"
 msgstr "شاخص ها"
 
 msgid "Periods"
-msgstr "دوره ها"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "واحد های سازمان"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "قانون های اعتبار سنجی"
+msgstr ""
 
 msgid "Programs"
-msgstr "برنامه ها"
+msgstr ""
 
 msgid "Data elements"
-msgstr "دیتا ایلمنت ها"
+msgstr ""
 
 msgid "Organisation unit groups"
 msgstr "د سازمان د واحد ګروپونه"
@@ -311,37 +308,37 @@ msgid "Pivot tables"
 msgstr "جداول محوری"
 
 msgid "Indicator types"
-msgstr "شاخص ها"
+msgstr ""
 
 msgid "Data sets"
-msgstr "دیتا سیت ها"
+msgstr ""
 
 msgid "User groups"
-msgstr "گروپ های استفاده کننده گان"
+msgstr ""
 
 msgid "Users"
-msgstr "استفاده کننده گان"
+msgstr ""
 
 msgid "Maps"
 msgstr "نقشه ها"
 
 msgid "Indicator groups"
-msgstr "گروپ های شاخص"
+msgstr ""
 
 msgid "Charts"
-msgstr "چارت ها"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "گروپ های عنصر اطلاعات"
+msgstr ""
 
 msgid "Dashboards"
 msgstr "داشبورد ها"
 
 msgid "Lock Exception Management"
-msgstr "بستن مدیریت مفهوم"
+msgstr ""
 
 msgid "Lock Exception"
-msgstr "قفل کردن استثنات"
+msgstr ""
 
 msgid "Batch Deletion"
 msgstr ""
@@ -353,8 +350,6 @@ msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
-"اضافه کردن یا حذف کردن استثنات در قانون استندرد برای قفل کردن فارم درج "
-"معلومات"
 
 msgid "BATCH DELETION"
 msgstr ""
@@ -396,10 +391,10 @@ msgid "Period"
 msgstr "دوره"
 
 msgid "Data Set"
-msgstr "مجموعه اطلاعات"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "واحد سازمان"
+msgstr ""
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -408,10 +403,10 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr "انتخاب"
+msgstr ""
 
 msgid "Deselect"
-msgstr "عدم انتخاب"
+msgstr ""
 
 msgid "Select All Org Units"
 msgstr ""
@@ -420,16 +415,16 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr "نام"
+msgstr ""
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "حذف"
+msgstr ""
 
 msgid "Actions"
-msgstr "گزینه ها"
+msgstr ""
 
 msgid "of"
 msgstr "از"
@@ -537,14 +532,12 @@ msgid "For all organisation units:"
 msgstr ""
 
 msgid "Min-Max Value Generation"
-msgstr "تولید کردن ارزش کروچک-بزرگ"
+msgstr ""
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
-"اجرا ارزش کوچکتر-بزرگتر که در اعتبار سنجی در جریان درج معلومات و پروسه "
-"اعتبار سنجی استفاره دیتا"
 
 msgid "Generate Min-Max Value"
 msgstr ""
@@ -591,7 +584,7 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr "تجدید جداول تحلیلی"
+msgstr ""
 
 msgid "START EXPORT"
 msgstr ""

@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2020
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
-"PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: phil_dhis2, 2020\n"
+"PO-Revision-Date: 2022-08-21 23:34+0000\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Danish (https://www.transifex.com/hisp-uio/teams/100509/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,7 +105,7 @@ msgid "Duplicate periods"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Maintenance"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -258,7 +258,7 @@ msgid "Today"
 msgstr ""
 
 msgid "Last"
-msgstr "Last"
+msgstr ""
 
 msgid "days"
 msgstr ""
@@ -288,16 +288,16 @@ msgid "Periods"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisation units"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "Validation rules"
+msgstr ""
 
 msgid "Programs"
-msgstr "Programs"
+msgstr ""
 
 msgid "Data elements"
-msgstr "Data elements"
+msgstr ""
 
 msgid "Organisation unit groups"
 msgstr "Organisation unit groups"
@@ -309,28 +309,28 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr "Data sets"
+msgstr ""
 
 msgid "User groups"
-msgstr "User groups"
+msgstr ""
 
 msgid "Users"
-msgstr "Users"
+msgstr ""
 
 msgid "Maps"
-msgstr "Maps"
+msgstr ""
 
 msgid "Indicator groups"
-msgstr "Indicator groups"
+msgstr ""
 
 msgid "Charts"
-msgstr "Charts"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Data element groups"
+msgstr ""
 
 msgid "Dashboards"
-msgstr "Dashboards"
+msgstr ""
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -413,13 +413,13 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Remove"
+msgstr ""
 
 msgid "Actions"
 msgstr ""

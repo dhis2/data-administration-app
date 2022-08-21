@@ -49,7 +49,7 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "ڈیٹا سیٹ تنظیم تنظیموں کو تفویض نہیں کرتی"
 
 msgid "Indicators with identical formulas"
 msgstr "ایک ہی فارمولا کے ساتھ اشارے"
@@ -58,7 +58,7 @@ msgid "Indicators without groups"
 msgstr "گروہوں کے بغیر اشارے"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "غلط اشارے numerators"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -85,7 +85,7 @@ msgid "Validation rules without groups"
 msgstr "گروہوں کے بغیر توثیق کے قوانین"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "غلط توثیق کا اصول بائیں جانب اظہار"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "غلط توثیقی قاعدہ دائیں جانب اظہار"
@@ -150,7 +150,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "پراون دور"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -162,10 +162,10 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "تازہ ترین قسم کا اختیار مجموعہ"
 
 msgid "Update organisation unit paths"
-msgstr ""
+msgstr "تنظیم یونٹ راستوں کو اپ ڈیٹ کریں"
 
 msgid "Clear application cache"
 msgstr ""
@@ -180,6 +180,8 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"تنظیم یونٹ کے تنظیمی ڈھانچے اور گروپ سیٹ ڈھانچے کے لئے دوسروں کے درمیان "
+"وسائل ڈیٹا بیس کی میزیں بنائیں."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -206,25 +208,25 @@ msgid "Data element group set structure"
 msgstr ""
 
 msgid "Indicator group set structure"
-msgstr ""
+msgstr "اشارے گروپ سیٹ ڈھانچہ"
 
 msgid "Organisation unit group set structure"
-msgstr ""
+msgstr "تنظیم یونٹ گروپ کی تشکیل"
 
 msgid "Category structure"
-msgstr ""
+msgstr "زمرہ کی ساخت"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "ڈیٹا عنصر کی قسم کا اختیار کامبو نام"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "مدت کی ساخت"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "تاریخ کی مدت کی ساخت"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -271,19 +273,19 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "موصول ہونے والی دعوت نامہ"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "متوقع دعوت نامہ"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "تقریبات"
 
 msgid "Indicators"
-msgstr ""
+msgstr "اشارے"
 
 msgid "Periods"
 msgstr ""
@@ -292,7 +294,7 @@ msgid "Organisation units"
 msgstr ""
 
 msgid "Validation rules"
-msgstr ""
+msgstr "توثیقی قائدہ"
 
 msgid "Programs"
 msgstr ""
@@ -319,7 +321,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "نقسے"
 
 msgid "Indicator groups"
 msgstr ""
@@ -331,7 +333,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "ڈیشبورڈز"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -372,7 +374,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "کیا تمہیں یقین ہے؟"
 
 msgid "CONFIRM"
 msgstr ""
@@ -384,10 +386,10 @@ msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "تنظیم یونٹس کے اندر اندر"
 
 msgid "Period"
-msgstr ""
+msgstr "مدت"
 
 msgid "Data Set"
 msgstr ""
@@ -405,7 +407,7 @@ msgid "Select"
 msgstr ""
 
 msgid "Deselect"
-msgstr ""
+msgstr "منتخب کریں"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -414,7 +416,7 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "ÙØ§Ù"
 
 msgid "Show Details"
 msgstr ""
@@ -563,7 +565,7 @@ msgid "Loading data sets"
 msgstr ""
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "تنظیم یونٹ کا چناؤ"
 
 msgid "GENERATE"
 msgstr ""

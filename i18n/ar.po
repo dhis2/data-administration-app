@@ -1,15 +1,15 @@
 # 
 # Translators:
-# phil_dhis2, 2022
 # Hamza Assada <7amza.it@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# phil_dhis2, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2022-08-21 23:34+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: phil_dhis2, 2022\n"
 "Language-Team: Arabic (https://www.transifex.com/hisp-uio/teams/100509/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "قم بتشغيل اختبارات سلامة البيانات"
 
 msgid "Data elements without data set"
 msgstr ""
@@ -50,16 +50,16 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "حزم البيانات غير المسندة إلى وحدات تنظيمية"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "المؤشرات بصيغ متطابقة"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "المؤشرات بدون مجموعات"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "بسوط المؤشر غير صالحة"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -86,13 +86,13 @@ msgid "Validation rules without groups"
 msgstr "قواعد التحقق بدون مجموعات"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "تعابير الطرف الأيسر لقاعدة التحقق غير صالحة"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "تعابير الطرف الأيمن لقاعدة التحقق غير صالحة"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "تعبيرات مؤشر البرنامج غير صالحة"
 
 msgid "Invalid program indicator filters"
 msgstr ""
@@ -104,7 +104,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "تكرار الفترات الزمنية"
 
 msgid "Maintenance"
 msgstr ""
@@ -124,7 +124,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "تم إجراء عملية الصيانة"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -151,7 +151,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "تقليم الفترات الزمنية"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -163,7 +163,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "تحديث أمزجة خيارات الفئة"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -192,7 +192,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "حدث خطأ غير متوقع أثناء العملية"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -213,19 +213,19 @@ msgid "Organisation unit group set structure"
 msgstr ""
 
 msgid "Category structure"
-msgstr ""
+msgstr "هيكلية الفئة"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "اسم مزيج خيارات فئة عناصر البيانات"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "هيكلية الفترة الزمنية"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "هيكلية الفترة الزمنية للتاريخ"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -272,16 +272,16 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "الدعوات المعلقة"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "الدعوات منتهية الصلاحية"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "الأحداث"
 
 msgid "Indicators"
 msgstr ""
@@ -302,7 +302,7 @@ msgid "Data elements"
 msgstr ""
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "مجموعات الوحدات التنظيمية"
 
 msgid "Pivot tables"
 msgstr "الجداول المحورية"
@@ -355,40 +355,40 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "إلغاء"
 
 msgid "ADD"
 msgstr ""
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "تحميل استثناءات القفل"
 
 msgid "Adding Lock Exception..."
 msgstr ""
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "إزالة استثناء القفل"
 
 msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "هل أنت متأكد؟"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "تأكيد"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "إختر حزمة بيانات"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "للوحدات التنظيمية التي ضمن"
 
 msgid "Period"
-msgstr ""
+msgstr "الفترة الزمنية"
 
 msgid "Data Set"
 msgstr ""
@@ -418,7 +418,7 @@ msgid "Name"
 msgstr ""
 
 msgid "Show Details"
-msgstr ""
+msgstr "عرض التفاصيل"
 
 msgid "Remove"
 msgstr ""
@@ -445,7 +445,7 @@ msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "يناير"
 
 msgid "feb"
 msgstr ""
@@ -478,7 +478,7 @@ msgid "nov"
 msgstr ""
 
 msgid "dec"
-msgstr ""
+msgstr "ديسمبر"
 
 msgid "jan-feb"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "الربع4"
 
 msgid "six monthly"
 msgstr ""
@@ -555,7 +555,7 @@ msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "توليد القيمة الأدنى والأعلى تم"
 
 msgid "Min Max removal done"
 msgstr ""
@@ -564,7 +564,7 @@ msgid "Loading data sets"
 msgstr "تحميل حزم البيانات"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "تحديد الوحدة التنظيمية"
 
 msgid "GENERATE"
 msgstr ""
@@ -573,10 +573,10 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "إدارة جداول التحليلات"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "الجداول التحليلية"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -590,10 +590,10 @@ msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "تخطي توليد البيانات التجميعية والبيانات المكتملة"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "تخطي توليد جداول المصادر"
 
 msgid "Skip generation of event data"
 msgstr ""

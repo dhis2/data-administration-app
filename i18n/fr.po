@@ -1,16 +1,18 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
+# Edem Kossi <ekossi@hispwca.org>, 2022
+# Yao Selom Saka <ysaka@hispwca.org>, 2022
 # phil_dhis2, 2022
-# Yayra Gomado <ygomado@hispwca.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Yayra Gomado <ygomado@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2022-08-21 23:34+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Yayra Gomado <ygomado@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +38,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "EXÉCUTER LES CONTRÔLES D'INTÉGRITÉ"
 
 msgid "Data elements without data set"
 msgstr ""
@@ -51,16 +53,16 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Ensembles de données non assignés aux unités d'organisation"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indicateurs avec formules identiques"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indicateurs n'appartenant à aucun groupe"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "Numérateurs invalides"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -87,13 +89,13 @@ msgid "Validation rules without groups"
 msgstr "Règles de validation sans groupes"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Expression de gauche de règle de validation invalide"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Expression de droite de règle de validation invalide"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Expressions d'indicateur de programme non valides"
 
 msgid "Invalid program indicator filters"
 msgstr ""
@@ -105,7 +107,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Périodes dupliquées"
 
 msgid "Maintenance"
 msgstr ""
@@ -114,6 +116,9 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Effectuer des tâches de maintenance et générer des tables de ressources de "
+"la base de données  pour la hiérarchie des unités d'organisation et la "
+"structure d'ensemble de groupes."
 
 msgid "Perform Maintenance"
 msgstr ""
@@ -125,7 +130,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Maintenance effectuée"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -154,7 +159,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Elaguer les périodes"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -166,7 +171,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Mettre à jour les combinaisons d'option de catégorie"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -184,9 +189,11 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Générer des tables ressources de la base de données pour la hiérarchie des "
+"unités d'organisation et la structure d'ensembles de groupes entre autres."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Générer des tableaux de ressources"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -195,7 +202,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Une erreur inattendue s'est produite pendant l'opération"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -216,19 +223,19 @@ msgid "Organisation unit group set structure"
 msgstr ""
 
 msgid "Category structure"
-msgstr ""
+msgstr "Structure de catégorie"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Nom de la combo d'options de catégorie"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Structure de période"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Structure de période de la date"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -275,19 +282,19 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Invitations en attente"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Invitations périmées"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Événements"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicateurs"
 
 msgid "Periods"
 msgstr ""
@@ -305,7 +312,7 @@ msgid "Data elements"
 msgstr ""
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Groupes d'unités d'organisation"
 
 msgid "Pivot tables"
 msgstr "Tableaux croisés dynamiques"
@@ -323,7 +330,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Cartes"
 
 msgid "Indicator groups"
 msgstr ""
@@ -335,7 +342,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Tableaux de bord"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -358,40 +365,40 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "ANNULER"
 
 msgid "ADD"
 msgstr ""
 
 msgid "Loading Lock Exceptions..."
-msgstr ""
+msgstr "Chargement des exceptions de verrouillage ..."
 
 msgid "Adding Lock Exception..."
 msgstr ""
 
 msgid "Lock Exception removed"
-msgstr ""
+msgstr "Exception de verrouillage supprimée"
 
 msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Etes-vous sûre ?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "CONFIRMER"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Sélectionner un ensemble de données"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
 
 msgid "For organisation units within"
-msgstr ""
+msgstr "Pour les unités d'organisation dans"
 
 msgid "Period"
-msgstr ""
+msgstr "Période"
 
 msgid "Data Set"
 msgstr ""
@@ -421,7 +428,7 @@ msgid "Name"
 msgstr ""
 
 msgid "Show Details"
-msgstr ""
+msgstr "Afficher les détails"
 
 msgid "Remove"
 msgstr ""
@@ -442,13 +449,13 @@ msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "bimensuel"
 
 msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "Janv"
 
 msgid "feb"
 msgstr ""
@@ -481,7 +488,7 @@ msgid "nov"
 msgstr ""
 
 msgid "dec"
-msgstr ""
+msgstr "Déc"
 
 msgid "jan-feb"
 msgstr ""
@@ -514,7 +521,7 @@ msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr ""
@@ -558,7 +565,7 @@ msgid "Removing Min Max generation..."
 msgstr ""
 
 msgid "Min Max generation done"
-msgstr ""
+msgstr "Génération Min Max terminée"
 
 msgid "Min Max removal done"
 msgstr ""
@@ -567,7 +574,7 @@ msgid "Loading data sets"
 msgstr "Chargement d'ensemble de données"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Sélection de l'unité d'Organisation"
 
 msgid "GENERATE"
 msgstr ""
@@ -576,10 +583,10 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Gestion des tables analytiques"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tables analytiques"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -594,15 +601,16 @@ msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
+"Ignorer la génération des données agrégées et des données d'exhaustivité"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Ignorer la génération des tables de ressources"
 
 msgid "Skip generation of event data"
 msgstr ""
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Ignorer la génération des données d'inscription"
 
 msgid "Analytics Tables Update"
 msgstr ""

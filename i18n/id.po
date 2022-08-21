@@ -1,15 +1,16 @@
 # 
 # Translators:
-# Raja Fathurrahim, 2022
+# Untoro Dwi Raharjo <untoro.dwi.raharjo@mail.ugm.ac.id>, 2022
 # Aprisa Chrysantina <aprisa.chrysantina@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Raja Fathurrahim, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
 "PO-Revision-Date: 2022-08-21 23:34+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Raja Fathurrahim, 2022\n"
 "Language-Team: Indonesian (https://www.transifex.com/hisp-uio/teams/100509/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +36,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "RUN INTEGRITY CHECKS"
-msgstr ""
+msgstr "JALANKAN PEMERIKSAAN INTEGRITAS "
 
 msgid "Data elements without data set"
 msgstr ""
@@ -50,16 +51,16 @@ msgid "Data elements assigned to data sets with different period types"
 msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr ""
+msgstr "Set data yang tidak tetapkan unit organisasi"
 
 msgid "Indicators with identical formulas"
-msgstr ""
+msgstr "Indikator dengan rumus yang identik"
 
 msgid "Indicators without groups"
-msgstr ""
+msgstr "Indikator tanpa grup"
 
 msgid "Invalid indicator numerators"
-msgstr ""
+msgstr "indikator pembilan tidak valid"
 
 msgid "Invalid indicator denominators"
 msgstr ""
@@ -86,13 +87,13 @@ msgid "Validation rules without groups"
 msgstr "Validation rules tanpa grup"
 
 msgid "Invalid validation rule left side expressions"
-msgstr ""
+msgstr "Aturan validasi tidak valid pada ekspresi sisi kiri"
 
 msgid "Invalid validation rule right side expressions"
 msgstr "Aturan validasi tidak valid pada ekspresi sisi kanan"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Ekspresi indikator program tidak valid"
 
 msgid "Invalid program indicator filters"
 msgstr ""
@@ -104,7 +105,7 @@ msgid "Invalid category combinations"
 msgstr ""
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Duplikatkan periode"
 
 msgid "Maintenance"
 msgstr ""
@@ -124,7 +125,7 @@ msgid "Performing Maintenance..."
 msgstr ""
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Perawatan selesai"
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
@@ -151,7 +152,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr ""
+msgstr "Pangkas periode"
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -163,7 +164,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Perbaharui kategori pilihan kombinasi"
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -181,9 +182,11 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
+"Buat sumber tabel database untuk hierarki unit organisasi dan struktur set "
+"grup diantara yang lain."
 
 msgid "Generate Resource Tables"
-msgstr ""
+msgstr "Membuat tabel sumber daya"
 
 msgid "GENERATE TABLES"
 msgstr ""
@@ -192,7 +195,7 @@ msgid "Resource Tables generated"
 msgstr ""
 
 msgid "An unexpected error happened during operation"
-msgstr ""
+msgstr "Sebuah eror yang tidak terduga terjadi selama operasi"
 
 msgid "Organisation unit structure"
 msgstr ""
@@ -213,19 +216,19 @@ msgid "Organisation unit group set structure"
 msgstr ""
 
 msgid "Category structure"
-msgstr ""
+msgstr "Struktur kategori"
 
 msgid "Data element category option combo name"
-msgstr ""
+msgstr "Nama elemen data category option combo"
 
 msgid "Data element structure"
 msgstr ""
 
 msgid "Period structure"
-msgstr ""
+msgstr "Struktur periode"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Struktur tanggal periode"
 
 msgid "Data element category option combinations"
 msgstr ""
@@ -272,19 +275,19 @@ msgid "User account invitations"
 msgstr ""
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Undangan yang tertunda"
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Undangan sudah tidak berlaku"
 
 msgid "Data values"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "Even"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indikator"
 
 msgid "Periods"
 msgstr ""
@@ -302,7 +305,7 @@ msgid "Data elements"
 msgstr ""
 
 msgid "Organisation unit groups"
-msgstr ""
+msgstr "Grup unit organisasi"
 
 msgid "Pivot tables"
 msgstr "Tabel pivot"
@@ -320,7 +323,7 @@ msgid "Users"
 msgstr ""
 
 msgid "Maps"
-msgstr ""
+msgstr "Peta"
 
 msgid "Indicator groups"
 msgstr ""
@@ -332,7 +335,7 @@ msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "Dasbor"
 
 msgid "Lock Exception Management"
 msgstr ""
@@ -355,7 +358,7 @@ msgid "BATCH DELETION"
 msgstr ""
 
 msgid "CANCEL"
-msgstr ""
+msgstr "MEMBATALKAN"
 
 msgid "ADD"
 msgstr ""
@@ -373,13 +376,13 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Apakah Anda yakin?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "KONFIRMASI"
 
 msgid "Select a Data Set"
-msgstr ""
+msgstr "Pilih sebuah Himpunan Data"
 
 msgid "Updating Organisation Units Tree..."
 msgstr ""
@@ -388,7 +391,7 @@ msgid "For organisation units within"
 msgstr ""
 
 msgid "Period"
-msgstr ""
+msgstr "Periode"
 
 msgid "Data Set"
 msgstr ""
@@ -418,7 +421,7 @@ msgid "Name"
 msgstr ""
 
 msgid "Show Details"
-msgstr ""
+msgstr "Tampilkan secara detail"
 
 msgid "Remove"
 msgstr ""
@@ -439,13 +442,13 @@ msgid "year"
 msgstr ""
 
 msgid "bi monthly"
-msgstr ""
+msgstr "dua bulan sekali"
 
 msgid "day"
 msgstr ""
 
 msgid "jan"
-msgstr ""
+msgstr "jan"
 
 msgid "feb"
 msgstr ""
@@ -478,7 +481,7 @@ msgid "nov"
 msgstr ""
 
 msgid "dec"
-msgstr ""
+msgstr "des"
 
 msgid "jan-feb"
 msgstr ""
@@ -511,7 +514,7 @@ msgid "Q3"
 msgstr ""
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr ""
@@ -564,7 +567,7 @@ msgid "Loading data sets"
 msgstr "Memuat himpunan data"
 
 msgid "Organisation Unit Selection"
-msgstr ""
+msgstr "Pilih unit organisasi"
 
 msgid "GENERATE"
 msgstr ""
@@ -573,10 +576,10 @@ msgid "REMOVE"
 msgstr ""
 
 msgid "Analytics tables management"
-msgstr ""
+msgstr "Manajemen Tabel analitik"
 
 msgid "Analytics Tables"
-msgstr ""
+msgstr "Tabel Analitik"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -590,16 +593,16 @@ msgid "START EXPORT"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Lewati pembuatan data agregat dan kelengkapan data"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Lewati pembuatan tabel sumber daya"
 
 msgid "Skip generation of event data"
 msgstr ""
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Lewati pembuatan data pendaftaran"
 
 msgid "Analytics Tables Update"
 msgstr ""

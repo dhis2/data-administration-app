@@ -1,14 +1,13 @@
 # 
 # Translators:
-# Cherise Beek <cherise.beek@gmail.com>, 2021
-# Yury Rogachev <yury@dhis2.org>, 2021
+# Cherise Beek <cherise.beek@gmail.com>, 2022
 # Rica Zamora Duchateau, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2019-10-25T09:49:56.143Z\n"
-"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"PO-Revision-Date: 2022-08-21 23:34+0000\n"
 "Last-Translator: Rica Zamora Duchateau, 2022\n"
 "Language-Team: Dutch (https://www.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -257,7 +256,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr "Vandaag"
+msgstr ""
 
 msgid "Last"
 msgstr ""
@@ -290,7 +289,7 @@ msgid "Periods"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisatieëenheden"
+msgstr ""
 
 msgid "Validation rules"
 msgstr ""
@@ -299,7 +298,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr "Gegevenselementen"
+msgstr ""
 
 msgid "Organisation unit groups"
 msgstr ""
@@ -391,10 +390,10 @@ msgid "Period"
 msgstr "Periode"
 
 msgid "Data Set"
-msgstr "informatie reeks"
+msgstr ""
 
 msgid "Organisation Unit"
-msgstr "Organisatieëenheid"
+msgstr ""
 
 msgid "Organisation Unit Group"
 msgstr ""
@@ -403,7 +402,7 @@ msgid "Organisation Unit Level"
 msgstr ""
 
 msgid "Select"
-msgstr "Selecteer"
+msgstr ""
 
 msgid "Deselect"
 msgstr ""
@@ -421,7 +420,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "Verwijderen"
+msgstr ""
 
 msgid "Actions"
 msgstr ""
