@@ -467,10 +467,10 @@ msgid "Remove"
 msgstr "Прибрати"
 
 msgid "Actions"
-msgstr ""
+msgstr "Дії"
 
 msgid "of"
-msgstr ""
+msgstr "з"
 
 msgid "week"
 msgstr ""
