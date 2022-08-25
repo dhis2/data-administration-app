@@ -366,7 +366,7 @@ msgid "Dashboards"
 msgstr "Інформаційні панелі (дашборди)"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Візуалізація"
 
 msgid "Event visualization"
 msgstr ""
@@ -440,7 +440,7 @@ msgid "Organisation Unit"
 msgstr "Організаційний підрозділ"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Група організаційних підрозділів"
 
 msgid "Organisation Unit Level"
 msgstr ""
