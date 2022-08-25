@@ -518,7 +518,7 @@ msgid "Periods"
 msgstr "Періоди"
 
 msgid "Visualization"
-msgstr ""
+msgstr "Візуалізація"
 
 msgid "Events"
 msgstr "Події"
