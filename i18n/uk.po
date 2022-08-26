@@ -428,7 +428,7 @@ msgid "Organisation Unit"
 msgstr "Організаційний підрозділ"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Група організаційних підрозділів"
 
 msgid "Organisation Unit Level"
 msgstr ""
