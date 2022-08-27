@@ -287,7 +287,7 @@ msgid "week"
 msgstr ""
 
 msgid "month"
-msgstr ""
+msgstr "місяць"
 
 msgid "year"
 msgstr ""
@@ -602,7 +602,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Запрошення, термін дії яких минув"
 
 msgid "Batch deletion"
 msgstr ""
