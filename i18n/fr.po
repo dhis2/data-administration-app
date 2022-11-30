@@ -3,18 +3,18 @@
 # phil_dhis2, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Karoline Tufte Lien <karoline@dhis2.org>, 2021
-# Yao Selom Saka <ysaka@hispwca.org>, 2021
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Yayra Gomado <ygomado@hispwca.org>, 2021
 # Edem Kossi <ekossi@hispwca.org>, 2021
 # tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2021-09-03 23:43+0000\n"
-"Last-Translator: tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
 "Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgid "Open user guide"
 msgstr "Ouvrir le guide de l'utilisateur"
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "Retourner à toutes les exceptions de verrouillage"
 
 msgid "Lock Exception"
 msgstr "Exception de Vérrouillage"
@@ -41,28 +41,28 @@ msgid "Organisation unit"
 msgstr "Unité d'organisation"
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "Suppression par lots des exceptions au verrouillage"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "Suppression de l'exception de verrouillage"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "Exception de verrouillage supprimée"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "Erreur de suppression de l'exception de verrouillage : {{erreur}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "Etes-vous sûr de vouloir supprimer cette exception de verrouillage?"
 
 msgid "No, cancel"
 msgstr "Non, annuler"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "Suppression de l'exception de verrouillage..."
 
 msgid "Yes, remove lock exception"
-msgstr ""
+msgstr "Oui, supprimer l'exception de verrouillage"
 
 msgid "Data Integrity"
 msgstr "Intégrité des Données"
@@ -71,9 +71,11 @@ msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
 msgstr ""
+"Exécuter des contrôles d'intégrité des données et dévoiler les anomalies et "
+"les problèmes dans la configuration des métadonnées."
 
 msgid "Check data integrity"
-msgstr ""
+msgstr "Vérifier l'intégrité des données"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -262,25 +264,25 @@ msgstr ""
 "des données pendant les processus de saisie des données et de validation."
 
 msgid "Generate Min-Max Values"
-msgstr ""
+msgstr "Générer des valeurs min-max"
 
 msgid "Lock exception added"
-msgstr ""
+msgstr "Exception de verrouillage ajoutée"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
+msgstr "Erreur lors de l'ajout d'une exception de verrouillage : {{erreur}}"
 
 msgid "Add lock exception"
-msgstr ""
+msgstr "Ajouter une exception de verrouillage"
 
 msgid "Adding lock exception..."
-msgstr ""
+msgstr "Ajout d'une exception de verrouillage ..."
 
 msgid "Select a data set"
-msgstr ""
+msgstr "Sélectionner un ensemble de données"
 
 msgid "Updating selection..."
-msgstr ""
+msgstr "Mise à jour de la sélection..."
 
 msgid "Select"
 msgstr "Sélectionner"
@@ -289,7 +291,7 @@ msgid "Deselect"
 msgstr "Désélectionner"
 
 msgid "Error loading data for data set"
-msgstr ""
+msgstr "Erreur lors du chargement des données pour l'ensemble de données"
 
 msgid "Select All Org Units"
 msgstr "Sélectionner toutes les unités d'organisation"
@@ -301,13 +303,13 @@ msgid "Organisation unit group"
 msgstr "Groupe d'Unités d'Organisation"
 
 msgid "Select an organisation unit group"
-msgstr ""
+msgstr "Sélectionner un groupe d'unités d'organisation"
 
 msgid "Organisation unit level"
 msgstr "Organisation unit level"
 
 msgid "Select an organisation unit level"
-msgstr ""
+msgstr "Sélectionner un niveau d'unité d'organisation"
 
 msgid "week"
 msgstr "semaine"
@@ -319,7 +321,7 @@ msgid "year"
 msgstr "année"
 
 msgid "bi weekly"
-msgstr ""
+msgstr "Bi-hebdomadaire"
 
 msgid "bi monthly"
 msgstr "bimensuel"
@@ -415,7 +417,7 @@ msgid "Number of last years of data to include"
 msgstr "Nombre de dernières années de données à inclure"
 
 msgid "Exporting..."
-msgstr ""
+msgstr "Exportation..."
 
 msgid "Start export"
 msgstr "Commencez l'exportation"
@@ -427,10 +429,10 @@ msgid "Batch Deletion"
 msgstr "Suppression par lots"
 
 msgid "No lock exceptions to show."
-msgstr ""
+msgstr "Aucune exception de verrouillage à afficher."
 
 msgid "Checking data integrity..."
-msgstr ""
+msgstr "Vérification de l'intégrité des données..."
 
 msgid "Run integrity checks"
 msgstr "Exécuter des vérifications d'intégrité"
@@ -541,7 +543,7 @@ msgid "Program rule actions with no stage id"
 msgstr "Actions de règle de programme sans identifiant d'étape"
 
 msgid "Program indicators with no expression"
-msgstr ""
+msgstr "Indicateurs de programme sans expression"
 
 msgid "Indicators"
 msgstr "Indicateurs"
@@ -580,7 +582,7 @@ msgid "Pivot tables"
 msgstr "Tableaux croisés dynamiques"
 
 msgid "Program instances"
-msgstr ""
+msgstr "Instances de programme"
 
 msgid "Indicator types"
 msgstr "Types d'indicateur"
@@ -613,7 +615,7 @@ msgid "Today"
 msgstr "Aujourd'hui"
 
 msgid "Last {{days}} days"
-msgstr ""
+msgstr "Derniers {{days}} jours"
 
 msgid "Last hour"
 msgstr "La dernière heure"
@@ -640,28 +642,28 @@ msgid "Maintenance done"
 msgstr "Maintenance effectuée"
 
 msgid "Performing maintenance..."
-msgstr ""
+msgstr "Réalisation de la maintenance..."
 
 msgid "Min-max values generated"
-msgstr ""
+msgstr "Valeurs Min-Max générées"
 
 msgid "Min-max values removed"
-msgstr ""
+msgstr "Valeurs min-max supprimées"
 
 msgid "Generating min-max values..."
-msgstr ""
+msgstr "Génération de valeurs min-max..."
 
 msgid "Removing min-max values..."
-msgstr ""
+msgstr "Suppression de valeurs min-max..."
 
 msgid "Generate min-max values"
 msgstr "Générer des valeurs min-max"
 
 msgid "Remove min-max values"
-msgstr ""
+msgstr "Supprimer les valeurs min-max"
 
 msgid "Generating tables..."
-msgstr ""
+msgstr "Génération de tables..."
 
 msgid "Generate tables"
 msgstr "Générer des tables"
