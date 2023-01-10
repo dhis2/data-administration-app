@@ -1,0 +1,10 @@
+.section {
+    margin-bottom: var(--spacers-dp16);
+}
+
+.sectionName {
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: var(--spacers-dp8);
+}
