@@ -1,7 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import { Tag, Tooltip } from '@dhis2/ui'
 import React from 'react'
-import SeverityPropType from './SeverityPropType'
+import SeverityPropType from './SeverityPropType.js'
 
 const severities = {
     INFO: {

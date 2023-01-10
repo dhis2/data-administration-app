@@ -11,11 +11,11 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import styles from './Section.module.css'
-import Severity from './Severity'
-import SeverityPropType from './SeverityPropType'
+import Severity from './Severity.js'
+import SeverityPropType from './SeverityPropType.js'
 
 const Section = ({ name, checks, selectedChecks, setSelectedChecks }) => {
-    const allSelected = checks.every(check => selectedChecks.has(check.name))
+    const allSelected = checks.every((check) => selectedChecks.has(check.name))
     const handleToggle = ({ value: checkName }) => {
         const newSelectedChecks = new Set(selectedChecks)
         if (selectedChecks.has(checkName)) {
