@@ -101,6 +101,9 @@ export const i18nKeys = {
             skipResourceTables: i18n.t('Skip generation of resource tables'),
             skipEvents: i18n.t('Skip generation of event data'),
             skipEnrollment: i18n.t('Skip generation of enrollment data'),
+            skipOrgUnitOwnership: i18n.t(
+                'Skip generation of organisation unit ownership data'
+            ),
         },
     },
     dataStatistics: {
