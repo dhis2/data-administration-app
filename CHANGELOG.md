@@ -1,3 +1,10 @@
+## [1.1.51](https://github.com/dhis2/data-administration-app/compare/v1.1.50...v1.1.51) (2023-01-24)
+
+
+### Bug Fixes
+
+* add skipOrgUnitOwnership checkbox [DHIS2-13916] ([#900](https://github.com/dhis2/data-administration-app/issues/900)) ([2a1b119](https://github.com/dhis2/data-administration-app/commit/2a1b11972a62550d8be6714be990f6d2a8d9a239))
+
 ## [1.1.50](https://github.com/dhis2/data-administration-app/compare/v1.1.49...v1.1.50) (2022-11-30)
 
 
