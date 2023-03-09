@@ -8,3 +8,7 @@
     justify-content: space-between;
     margin-bottom: var(--spacers-dp16);
 }
+
+.linkButton {
+    text-decoration: none;
+}
