@@ -1,3 +1,10 @@
+## [1.1.52](https://github.com/dhis2/data-administration-app/compare/v1.1.51...v1.1.52) (2023-03-09)
+
+
+### Bug Fixes
+
+* **lock exception:** remove text underline from top-right buttons ([2067721](https://github.com/dhis2/data-administration-app/commit/2067721f5f67763e3daef22ff88f364d1d036729))
+
 ## [1.1.51](https://github.com/dhis2/data-administration-app/compare/v1.1.50...v1.1.51) (2023-01-24)
 
 
