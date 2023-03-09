@@ -93,10 +93,18 @@ const LockExceptions = ({ sectionKey }) => {
                     title={i18nKeys.lockExceptions.title}
                 />
                 <ButtonStrip>
-                    <Link to="/lock-exceptions/add" tabIndex="-1">
+                    <Link
+                        className={styles.linkButton}
+                        to="/lock-exceptions/add"
+                        tabIndex="-1"
+                    >
                         <Button primary>{i18n.t('Add lock exception')}</Button>
                     </Link>
-                    <Link to="/lock-exceptions/batch-deletion" tabIndex="-1">
+                    <Link
+                        className={styles.linkButton}
+                        to="/lock-exceptions/batch-deletion"
+                        tabIndex="-1"
+                    >
                         <Button>{i18n.t('Batch deletion')}</Button>
                     </Link>
                 </ButtonStrip>
