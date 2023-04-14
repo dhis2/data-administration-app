@@ -1,4 +1,9 @@
-import { useDataQuery, useDataMutation, useAlert } from '@dhis2/app-runtime'
+import {
+    useConfig,
+    useDataQuery,
+    useDataMutation,
+    useAlert,
+} from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import {
     Card,
@@ -8,7 +13,7 @@ import {
     CircularLoader,
 } from '@dhis2/ui'
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.js'
 import styles from './AddLockException.module.css'
 import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm.js'
@@ -45,7 +50,8 @@ const mutation = {
 }
 
 const AddLockException = () => {
-    const history = useHistory()
+    const { baseUrl, apiVersion } = useConfig()
+    // const history = useHistory()
     const dataQuery = useDataQuery(query)
     const successAlert = useAlert(i18n.t('Lock exception added'), {
         success: true,
@@ -59,10 +65,6 @@ const AddLockException = () => {
         { critical: true }
     )
     const [mutate, dataMutation] = useDataMutation(mutation, {
-        onComplete: () => {
-            successAlert.show()
-            history.push('/lock-exceptions')
-        },
         onError: (error) => {
             errorAlert.show({ error })
         },
@@ -71,17 +73,44 @@ const AddLockException = () => {
     const [selectedDataSetId, setSelectedDataSetId] = useState(null)
     const [selectedPeriodId, setSelectedPeriodId] = useState(null)
 
-    const handleAdd = () => {
+    const handleAdd = async () => {
         const orgUnitIds = selectedOrgUnits.map((orgUnitPath) => {
             const splitOrgUnitPath = orgUnitPath.split('/')
             return splitOrgUnitPath[splitOrgUnitPath.length - 1]
         })
 
-        mutate({
-            ou: `[${orgUnitIds.join(',')}]`,
-            pe: selectedPeriodId,
-            ds: selectedDataSetId,
+        // concatenated list will be 11 characters per uid, + length-1 commas
+        const orgUnitLength = orgUnitIds.length * 12 - 1
+        // base url, api, + additional characters for rest of request (e.g. dataSetId, periodId)
+        const baseLength =
+            baseUrl.length +
+            String(apiVersion).length +
+            '/api//lockExceptions?ou=%5B%5D&pe=&ds='.length +
+            11 * 2
+        // set slightly below prevailing URL max length of 2048
+        const MAX_URL_LENGTH = 2000
+
+        const numberOfPosts = Math.ceil(
+            orgUnitLength / (MAX_URL_LENGTH - baseLength)
+        )
+        const orgUnitsPerPost = Math.ceil(orgUnitIds.length / numberOfPosts)
+        const orgUnitsByPost = []
+
+        for (let i = 0; i < orgUnitIds.length; i += orgUnitsPerPost) {
+            const orgUnitsInPost = orgUnitIds.slice(i, i + orgUnitsPerPost)
+            orgUnitsByPost.push(orgUnitsInPost)
+        }
+
+        const lockExceptionsPosts = orgUnitsByPost.map(async (orgUnits) => {
+            return await mutate({
+                ou: `[${orgUnits.join()}]`,
+                pe: selectedPeriodId,
+                ds: selectedDataSetId,
+            })
         })
+
+        await Promise.all(lockExceptionsPosts)
+        successAlert.show()
     }
     const isAddActionDisabled =
         dataMutation.loading ||
