@@ -82,7 +82,7 @@ export const sections = [
             label: i18nKeys.minMaxValueGeneration.label,
             description: i18nKeys.minMaxValueGeneration.description,
             actionText: i18nKeys.minMaxValueGeneration.actionText,
-            docs: 'dataAdmin_minMaxValueGeneration',
+            docs: 'data_admin_min_max_value_generation',
         },
     },
 ]
