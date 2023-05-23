@@ -1,17 +1,17 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# 晓东 林 <13981924470@126.com>, 2021
-# easylin <lin_xd@126.com>, 2022
+# phil_dhis2, 2023
+# easylin <lin_xd@126.com>, 2023
+# 晓东 林 <13981924470@126.com>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2022\n"
-"Language-Team: Chinese (https://www.transifex.com/hisp-uio/teams/100509/zh/)\n"
+"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"PO-Revision-Date: 2023-05-22 18:19+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgid "Open user guide"
 msgstr "打开用户指南"
 
 msgid "Go back to all lock exceptions"
-msgstr "回到所有锁异常"
+msgstr ""
 
 msgid "Lock Exception"
 msgstr "锁异常"
@@ -37,28 +37,28 @@ msgid "Organisation unit"
 msgstr "机构"
 
 msgid "Batch delete lock exceptions"
-msgstr "批量删除锁异常"
+msgstr ""
 
 msgid "Remove lock exception"
-msgstr "移除锁异常"
+msgstr ""
 
 msgid "Lock exception removed"
-msgstr "锁异常移除"
+msgstr ""
 
 msgid "Error removing lock exception: {{error}}"
-msgstr "删除锁定异常时出错：{{error}}"
+msgstr ""
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr "您确定要删除此锁定异常吗？"
+msgstr ""
 
 msgid "No, cancel"
 msgstr "不，取消"
 
 msgid "Removing lock exception..."
-msgstr "正在删除锁定异常..."
+msgstr ""
 
 msgid "Yes, remove lock exception"
-msgstr "是的，移除锁异常"
+msgstr ""
 
 msgid "Data Integrity"
 msgstr "数据完整性"
@@ -66,10 +66,10 @@ msgstr "数据完整性"
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
-msgstr "运行数据完整性检查并揭示元数据设置中的异常和问题。"
+msgstr ""
 
 msgid "Check data integrity"
-msgstr "检查数据完整性"
+msgstr ""
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr "完整性检查中发生意外错误"
@@ -166,7 +166,7 @@ msgid "Category structure"
 msgstr "分类结构"
 
 msgid "Data element category option combo name"
-msgstr "数据元分类选项组合的名称"
+msgstr "数据元分类组合选项的名称"
 
 msgid "Data element structure"
 msgstr "数据元结构"
@@ -178,7 +178,7 @@ msgid "Date period structure"
 msgstr "日期期间结构"
 
 msgid "Data element category option combinations"
-msgstr "数据元分类组合选项"
+msgstr "数据元 分类组合选项"
 
 msgid "Analytics tables management"
 msgstr "分析表管理"
@@ -209,6 +209,9 @@ msgstr "跳过事件数据的生成"
 msgid "Skip generation of enrollment data"
 msgstr "跳过注册数据的生成"
 
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
 msgid "Data Statistics"
 msgstr "数据统计"
 
@@ -237,22 +240,22 @@ msgid ""
 msgstr "产生最小-最大值，在数据的输入和验证过程中用于数据的验证。"
 
 msgid "Generate Min-Max Values"
-msgstr "生成最小-最大值"
+msgstr ""
 
 msgid "Lock exception added"
-msgstr "添加了锁定异常"
+msgstr ""
 
 msgid "Error adding lock exception: {{error}}"
-msgstr "添加锁异常时出错：{{error}}"
+msgstr ""
 
 msgid "Add lock exception"
-msgstr "添加锁异常"
+msgstr ""
 
 msgid "Adding lock exception..."
-msgstr "添加锁异常..."
+msgstr ""
 
 msgid "Select a data set"
-msgstr "选择数据集"
+msgstr ""
 
 msgid "Updating selection..."
 msgstr "正在更新选择..."
@@ -264,7 +267,7 @@ msgid "Deselect"
 msgstr "去选择"
 
 msgid "Error loading data for data set"
-msgstr "加载数据集的数据时出错"
+msgstr ""
 
 msgid "Select All Org Units"
 msgstr "选择所有机构"
@@ -402,10 +405,10 @@ msgid "Batch Deletion"
 msgstr "批量删除"
 
 msgid "No lock exceptions to show."
-msgstr "没有可显示的锁定异常。"
+msgstr ""
 
 msgid "Checking data integrity..."
-msgstr "正在检查数据完整性..."
+msgstr ""
 
 msgid "Run integrity checks"
 msgstr "运行完整性检查"
@@ -483,34 +486,34 @@ msgid "Duplicate periods"
 msgstr "复制期间"
 
 msgid "Program rules with no condition"
-msgstr "无条件的程序规则"
+msgstr "无条件的项目规则"
 
 msgid "Program rules with no action"
-msgstr "没有动作的程序规则"
+msgstr "没有动作的项目规则"
 
 msgid "Program rules with no priority"
-msgstr "无优先级的程序规则"
+msgstr "无优先级的项目规则"
 
 msgid "Program rule variables with no data element"
-msgstr "没有数据元素的程序规则变量"
+msgstr "没有数据元素的项目规则变量"
 
 msgid "Program rule variables with no attribute"
-msgstr "没有属性的程序规则变量"
+msgstr "没有属性的项目规则变量"
 
 msgid "Program rule actions with no data object"
-msgstr "没有数据对象的程序规则操作"
+msgstr "没有数据对象的项目规则操作"
 
 msgid "Program rule actions with no notification"
-msgstr "没有通知的程序规则操作"
+msgstr "没有通知的项目规则操作"
 
 msgid "Program rule actions with no section id"
-msgstr "没有节 ID 的程序规则操作"
+msgstr "没有节 ID 的项目规则操作"
 
 msgid "Program rule actions with no stage id"
-msgstr "没有阶段 ID 的程序规则操作"
+msgstr "没有阶段 ID 的项目规则操作"
 
 msgid "Program indicators with no expression"
-msgstr "没有表达式的程序指标"
+msgstr "没有表达式的项目指标"
 
 msgid "Indicators"
 msgstr "指标"
@@ -546,10 +549,10 @@ msgid "Tracked entity instances"
 msgstr "跟踪的实体实例"
 
 msgid "Pivot tables"
-msgstr "透视表"
+msgstr "透视表应用"
 
 msgid "Program instances"
-msgstr "程序实例"
+msgstr "项目实例"
 
 msgid "Indicator types"
 msgstr "指标类型"
@@ -561,16 +564,16 @@ msgid "User groups"
 msgstr "用户组"
 
 msgid "Users"
-msgstr "用户"
+msgstr "用户管理"
 
 msgid "Maps"
-msgstr "地图"
+msgstr "地图应用"
 
 msgid "Indicator groups"
 msgstr "指标分组"
 
 msgid "Charts"
-msgstr "图表"
+msgstr "可视化图表应用"
 
 msgid "Data element groups"
 msgstr "数据元组"
@@ -585,7 +588,7 @@ msgid "Today"
 msgstr "今天"
 
 msgid "Last {{days}} days"
-msgstr "过去 {{days}} 天"
+msgstr ""
 
 msgid "Last hour"
 msgstr "上一小时"
@@ -603,7 +606,7 @@ msgid "Pending invitations"
 msgstr "待处理的邀请"
 
 msgid "Expired invitations"
-msgstr "过期邀请"
+msgstr "过期的邀请"
 
 msgid "Batch deletion"
 msgstr "批量删除"
@@ -612,25 +615,25 @@ msgid "Maintenance done"
 msgstr "维护完成"
 
 msgid "Performing maintenance..."
-msgstr "执行维护..."
+msgstr ""
 
 msgid "Min-max values generated"
-msgstr "生成的最小值-最大值"
+msgstr ""
 
 msgid "Min-max values removed"
-msgstr "删除了最小值-最大值"
+msgstr ""
 
 msgid "Generating min-max values..."
-msgstr "生成最小-最大值..."
+msgstr ""
 
 msgid "Removing min-max values..."
-msgstr "正在删除最小-最大值..."
+msgstr ""
 
 msgid "Generate min-max values"
 msgstr "生成最大-最小值"
 
 msgid "Remove min-max values"
-msgstr "删除最小值-最大值"
+msgstr ""
 
 msgid "Generating tables..."
 msgstr "正在生成表..."

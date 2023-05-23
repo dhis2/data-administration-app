@@ -1,19 +1,20 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# Sheila André <sandre@saudigitus.org>, 2021
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Ge Joao <gsimango@saudigitus.org>, 2021
-# Emilio Mosse, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# phil_dhis2, 2023
+# Sheila André <sandre@saudigitus.org>, 2023
+# Emilio Mosse, 2023
+# David Júnior <davidjr.mondlane@gmail.com>, 2023
+# Ge Joao <gsimango@saudigitus.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Emilio Mosse, 2022\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"PO-Revision-Date: 2023-05-22 18:19+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,7 +55,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "Não, cancelar"
+msgstr "Não cancele"
 
 msgid "Removing lock exception..."
 msgstr ""
@@ -95,10 +96,10 @@ msgid "Clear analytics tables"
 msgstr "Limpar tabelas analíticas"
 
 msgid "Analyze analytics tables"
-msgstr "Analisar tabelas"
+msgstr "Analizar tabelas analíticas"
 
 msgid "Remove zero data values"
-msgstr "Remova zero valor de dados"
+msgstr "Remova dados com valor zero"
 
 msgid "Permanently remove soft deleted data values"
 msgstr "Remover permanentemente valores de dados excluídos"
@@ -221,6 +222,9 @@ msgstr "Ignorar geração de dados do evento"
 msgid "Skip generation of enrollment data"
 msgstr "Ignorar geração de dados de inscrição"
 
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
 msgid "Data Statistics"
 msgstr "Dados Estatísticos"
 
@@ -276,7 +280,7 @@ msgid "Updating selection..."
 msgstr ""
 
 msgid "Select"
-msgstr "Seleccione"
+msgstr "Selecione"
 
 msgid "Deselect"
 msgstr "Desmarcar"

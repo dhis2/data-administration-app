@@ -1,14 +1,14 @@
 # 
 # Translators:
-# trendspotter <jirka.p@volny.cz>, 2022
+# Jiří Podhorecký, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: trendspotter <jirka.p@volny.cz>, 2022\n"
-"Language-Team: Czech (https://www.transifex.com/hisp-uio/teams/100509/cs/)\n"
+"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"PO-Revision-Date: 2023-05-22 18:19+0000\n"
+"Last-Translator: Jiří Podhorecký, 2023\n"
+"Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -213,6 +213,9 @@ msgstr "Přeskočit generování dat událostí"
 
 msgid "Skip generation of enrollment data"
 msgstr "Přeskočit generování údajů o zápisu"
+
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
 
 msgid "Data Statistics"
 msgstr "Statistika dat"

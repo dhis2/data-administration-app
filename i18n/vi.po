@@ -1,16 +1,17 @@
 # 
 # Translators:
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Mai Nguyen <thanhmai.jica@gmail.com>, 2021
+# Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
+# Mai Nguyen <thanhmai.jica@gmail.com>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Mai Nguyen <thanhmai.jica@gmail.com>, 2021\n"
-"Language-Team: Vietnamese (https://www.transifex.com/hisp-uio/teams/100509/vi/)\n"
+"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"PO-Revision-Date: 2023-05-22 18:19+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -212,6 +213,9 @@ msgstr "Bỏ qua việc tạo dữ liệu sự kiện"
 
 msgid "Skip generation of enrollment data"
 msgstr "Bỏ qua việc tạo dữ liệu đăng ký"
+
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
 
 msgid "Data Statistics"
 msgstr "Thống kê dữ liệu"
@@ -524,7 +528,7 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr "Các chỉ số"
+msgstr "Chỉ số"
 
 msgid "Periods"
 msgstr "Thời điểm"
@@ -548,7 +552,7 @@ msgid "Programs"
 msgstr "Chương trình"
 
 msgid "Data elements"
-msgstr "Các phần tử dữ liệu"
+msgstr "Phần tử dữ liệu"
 
 msgid "Organisation unit groups"
 msgstr "Nhóm đơn vị"
@@ -566,7 +570,7 @@ msgid "Indicator types"
 msgstr "Loại Chỉ Số"
 
 msgid "Data sets"
-msgstr "Biểu nhập"
+msgstr "Data sets"
 
 msgid "User groups"
 msgstr "Nhóm người dùng"
@@ -581,7 +585,7 @@ msgid "Indicator groups"
 msgstr "Nhóm chỉ số"
 
 msgid "Charts"
-msgstr "Biểu đồ"
+msgstr "Biểu Đồ"
 
 msgid "Data element groups"
 msgstr "Nhóm phần tử dữ liệu"

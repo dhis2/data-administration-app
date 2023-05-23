@@ -1,21 +1,22 @@
 # 
 # Translators:
-# Edem Kossi <ekossi@hispwca.org>, 2021
-# Karoline Tufte Lien <karoline@dhis2.org>, 2021
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
-# phil_dhis2, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Yayra Gomado <ygomado@hispwca.org>, 2021
-# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2021
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
+# tx_e2f_frfr r6 <tx_e2f_frfr_r661@ate2f.com>, 2023
+# Karoline Tufte Lien <karoline@dhis2.org>, 2023
+# Edem Kossi <ekossi@hispwca.org>, 2023
+# tx_e2f_fr r25 <tx_e2f_fr_r25@ate2f.com>, 2023
+# Yayra Gomado <ygomado@hispwca.org>, 2023
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
+# phil_dhis2, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
-"PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022\n"
-"Language-Team: French (https://www.transifex.com/hisp-uio/teams/100509/fr/)\n"
+"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"PO-Revision-Date: 2023-05-22 18:19+0000\n"
+"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +45,7 @@ msgid "Batch delete lock exceptions"
 msgstr "Suppression par lots des exceptions au verrouillage"
 
 msgid "Remove lock exception"
-msgstr "Suppression de l'exception de verrouillage"
+msgstr "Supprimer une exception de verrouillage"
 
 msgid "Lock exception removed"
 msgstr "Exception de verrouillage supprimée"
@@ -207,9 +208,9 @@ msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
 msgstr ""
-"Le magasin de données est un ensemble de tableaux dans la base de données "
-"DHIS qui est utilisé par tous les outils de génération de rapports et "
-"d'analyses pour récupérer des données."
+"L’entrepôt de données est un ensemble de tableaux dans la base de données du"
+" DHIS qui est utilisé par tous les outils de génération de rapports et "
+"d’analyses pour récupérer des données."
 
 msgid "Analytics tables update"
 msgstr "Mise à jour des tables d'analytique"
@@ -229,6 +230,9 @@ msgstr "Ignorer la génération des données d'événements"
 
 msgid "Skip generation of enrollment data"
 msgstr "Ignorer la génération des données d'inscription"
+
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
 
 msgid "Data Statistics"
 msgstr "Statistiques des Données"
@@ -306,7 +310,7 @@ msgid "Select an organisation unit group"
 msgstr "Sélectionner un groupe d'unités d'organisation"
 
 msgid "Organisation unit level"
-msgstr "Organisation unit level"
+msgstr "Niveau d'unité d'organisation"
 
 msgid "Select an organisation unit level"
 msgstr "Sélectionner un niveau d'unité d'organisation"
@@ -435,7 +439,7 @@ msgid "Checking data integrity..."
 msgstr "Vérification de l'intégrité des données..."
 
 msgid "Run integrity checks"
-msgstr "Exécuter des vérifications d'intégrité"
+msgstr "Exécuter des vérifications d’intégrité"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr "{{issueTitle}} ({{issueElementsCount}})"
@@ -540,7 +544,7 @@ msgid "Program rule actions with no section id"
 msgstr "Actions de règle de programme sans identifiant de section"
 
 msgid "Program rule actions with no stage id"
-msgstr "Actions de règle de programme sans identifiant d'étape"
+msgstr "Actions de règle de programme sans identifiant d’étape"
 
 msgid "Program indicators with no expression"
 msgstr "Indicateurs de programme sans expression"
@@ -663,7 +667,7 @@ msgid "Generate min-max values"
 msgstr "Générer des valeurs min-max"
 
 msgid "Remove min-max values"
-msgstr "Supprimer les valeurs min-max"
+msgstr "Supprimer des valeurs min-max"
 
 msgid "Generating tables..."
 msgstr "Génération de tables..."
