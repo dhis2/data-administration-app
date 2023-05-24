@@ -285,7 +285,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "අද"
 
 msgid "Last"
 msgstr ""
@@ -672,7 +672,7 @@ msgid "Interpretations"
 msgstr ""
 
 msgid "Messages"
-msgstr ""
+msgstr "පණිවිඩ"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
