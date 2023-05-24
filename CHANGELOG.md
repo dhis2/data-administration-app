@@ -1,3 +1,10 @@
+## [1.1.54](https://github.com/dhis2/data-administration-app/compare/v1.1.53...v1.1.54) (2023-05-24)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([ebc0c23](https://github.com/dhis2/data-administration-app/commit/ebc0c233911e85cf43af6a0df3884c92a868b83a))
+
 ## [1.1.53](https://github.com/dhis2/data-administration-app/compare/v1.1.52...v1.1.53) (2023-05-23)
 
 
