@@ -528,7 +528,7 @@ msgid "Validation rules"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "දත්ත අගයන්"
 
 msgid "Programs"
 msgstr ""
