@@ -461,7 +461,7 @@ msgid "Show Details"
 msgstr ""
 
 msgid "Remove"
-msgstr "ඉවත් කරන්"
+msgstr "ඉවත් කරන්න"
 
 msgid "Actions"
 msgstr ""
@@ -539,7 +539,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "කාර්තුව"
 
 msgid "Q1"
 msgstr ""
@@ -554,7 +554,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr ""
+msgstr "6 මසකට වරක්"
 
 msgid "jan-jun"
 msgstr ""
@@ -660,7 +660,7 @@ msgid "Log out"
 msgstr ""
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "DHIS 2 ගැන"
 
 msgid "Manage my apps"
 msgstr ""
