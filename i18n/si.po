@@ -306,7 +306,7 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "දත්ත අගයන්"
 
 msgid "Events"
 msgstr ""
@@ -455,7 +455,7 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Name"
-msgstr ""
+msgstr "නම"
 
 msgid "Show Details"
 msgstr ""
@@ -654,7 +654,7 @@ msgid "Account"
 msgstr ""
 
 msgid "Help"
-msgstr ""
+msgstr "උදවු"
 
 msgid "Log out"
 msgstr ""
