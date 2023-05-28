@@ -354,7 +354,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr ""
+msgstr "කාර්තුව"
 
 msgid "Q1"
 msgstr ""
@@ -369,7 +369,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr ""
+msgstr "6 මසකට වරක්"
 
 msgid "jan-jun"
 msgstr ""
