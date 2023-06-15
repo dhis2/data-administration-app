@@ -291,7 +291,7 @@ msgid "Today"
 msgstr "Vandaag"
 
 msgid "Last"
-msgstr ""
+msgstr "Laatst"
 
 msgid "days"
 msgstr ""
@@ -401,7 +401,7 @@ msgid "Cancel"
 msgstr "Annuleer"
 
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 msgid "Loading Lock Exceptions..."
 msgstr ""
@@ -607,7 +607,7 @@ msgid "Organisation Unit Selection"
 msgstr ""
 
 msgid "Generate"
-msgstr ""
+msgstr "Genereer"
 
 msgid "Analytics tables management"
 msgstr ""
@@ -648,22 +648,22 @@ msgid "[ All ]"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 msgid "Search apps"
 msgstr ""
 
 msgid "Profile"
-msgstr ""
+msgstr "Profiel"
 
 msgid "Account"
-msgstr ""
+msgstr "Account"
 
 msgid "Help"
-msgstr ""
+msgstr "Hulp"
 
 msgid "Log out"
-msgstr ""
+msgstr "Uitloggen"
 
 msgid "About DHIS 2"
 msgstr ""
