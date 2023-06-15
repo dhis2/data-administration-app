@@ -357,7 +357,7 @@ msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "Grafieken"
 
 msgid "Data element groups"
 msgstr ""
@@ -648,7 +648,7 @@ msgid "Settings"
 msgstr "Instellingen"
 
 msgid "Search apps"
-msgstr ""
+msgstr "Zoek apps"
 
 msgid "Profile"
 msgstr "Profiel"
