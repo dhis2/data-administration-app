@@ -573,7 +573,7 @@ msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "Grafieken"
 
 msgid "Data element groups"
 msgstr ""
