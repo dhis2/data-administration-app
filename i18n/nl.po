@@ -357,7 +357,7 @@ msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "Grafieken"
 
 msgid "Data element groups"
 msgstr ""
@@ -419,7 +419,7 @@ msgid "Are you sure?"
 msgstr ""
 
 msgid "Confirm"
-msgstr ""
+msgstr "Bevestigen"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -651,7 +651,7 @@ msgid "Settings"
 msgstr "Instellingen"
 
 msgid "Search apps"
-msgstr ""
+msgstr "Zoek apps"
 
 msgid "Profile"
 msgstr "Profiel"
