@@ -315,7 +315,7 @@ msgid "Events"
 msgstr "Gebeurtenissen"
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicatoren"
 
 msgid "Periods"
 msgstr ""
@@ -663,7 +663,7 @@ msgid "Log out"
 msgstr "Uitloggen"
 
 msgid "About DHIS 2"
-msgstr ""
+msgstr "Over DHIS 2"
 
 msgid "Manage my apps"
 msgstr ""
