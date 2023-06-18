@@ -516,7 +516,7 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "Indicatoren"
 
 msgid "Periods"
 msgstr ""
