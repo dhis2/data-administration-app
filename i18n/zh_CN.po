@@ -1,15 +1,15 @@
 # 
 # Translators:
-# easylin <lin_xd@126.com>, 2022
 # 晓东 林 <13981924470@126.com>, 2022
+# easylin <lin_xd@126.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T19:08:13.142Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: 晓东 林 <13981924470@126.com>, 2022\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
+"Last-Translator: easylin <lin_xd@126.com>, 2023\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/hisp-uio/teams/100509/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +37,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr "完整性检查中发生意外错误"
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "运行完整性检查"
 
 msgid "Data elements without data set"
 msgstr "没有归属数据集的数据元"
@@ -109,31 +109,31 @@ msgid "Duplicate periods"
 msgstr "复制期间"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "无条件的程序规则"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "无操作的程序规则"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "无优先级的程序规则"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "没有数据元素的程序规则变量"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "没有属性的程序规则变量"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "没有数据对象的程序规则操作"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "没有通知的程序规则操作"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "没有部分 ID 的程序规则操作"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "没有阶段 ID 的程序规则操作"
 
 msgid "Maintenance"
 msgstr "系统维护"
@@ -367,7 +367,7 @@ msgid "Visualization"
 msgstr "可视化"
 
 msgid "Event visualization"
-msgstr ""
+msgstr "事件可视化"
 
 msgid "Program instance"
 msgstr "项目实例"
@@ -616,13 +616,13 @@ msgstr "分析表"
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
-msgstr ""
+msgstr "数据集市是 DHIS 数据库中的一组表，所有报告和分析工具都使用这些表从中检索数据。"
 
 msgid "Analytics tables update"
 msgstr "Analytics tables update"
 
 msgid "Start export"
-msgstr ""
+msgstr "开始导出"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr "Skip generation of aggregate data and completeness data"
@@ -679,4 +679,4 @@ msgid "Messages"
 msgstr "消息"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
