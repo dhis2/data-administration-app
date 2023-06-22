@@ -375,7 +375,7 @@ msgid "Program instance"
 msgstr ""
 
 msgid "Tracked entity instance"
-msgstr ""
+msgstr "Bijgehouden entiteitsinstantie"
 
 msgid "Lock Exception Management"
 msgstr ""
