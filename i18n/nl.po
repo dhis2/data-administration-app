@@ -327,7 +327,7 @@ msgid "Validation rules"
 msgstr ""
 
 msgid "Programs"
-msgstr ""
+msgstr "Programma's"
 
 msgid "Data elements"
 msgstr "Gegevenselementen"
@@ -342,7 +342,7 @@ msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr ""
+msgstr "Gegevensreeksen"
 
 msgid "User groups"
 msgstr ""
