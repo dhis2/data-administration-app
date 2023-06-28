@@ -309,7 +309,7 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "Gegevens waarden"
 
 msgid "Events"
 msgstr "Gebeurtenissen"
@@ -416,7 +416,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Weet je het zeker?"
 
 msgid "Confirm"
 msgstr "Bevestigen"
