@@ -534,7 +534,7 @@ msgid "Validation rules"
 msgstr ""
 
 msgid "Data values"
-msgstr ""
+msgstr "Gegevens waarden"
 
 msgid "Programs"
 msgstr "Programma's"
