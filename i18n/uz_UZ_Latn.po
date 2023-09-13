@@ -1,0 +1,698 @@
+# 
+# Translators:
+# Yury Rogachev <yury@dhis2.org>, 2022
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: i18next-conv\n"
+"POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
+"PO-Revision-Date: 2019-09-01 20:42+0000\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
+"Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz@Latn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Data Integrity"
+msgstr "Maʼlumotlar yaxlitligi"
+
+msgid ""
+"Run data integrity checks and unveil anomalies and problems in the meta data"
+" setup."
+msgstr ""
+"Maʼlumotlarning yaxlitligini tekshirishni boshlang va meta-maʼlumotni "
+"oʼrnatishda anomaliyalar va muammolarni oching."
+
+msgid "Check Data Integrity"
+msgstr ""
+
+msgid "Performing data integrity checks..."
+msgstr ""
+
+msgid "An unexpected error happened during data integrity checks"
+msgstr ""
+
+msgid "RUN INTEGRITY CHECKS"
+msgstr ""
+
+msgid "Data elements without data set"
+msgstr ""
+
+msgid "Data elements without groups"
+msgstr "Guruhlar boʼlmagan maʼlumotlar elementlari"
+
+msgid "Data elements violating exclusive group sets"
+msgstr "Yangi SQL koʼrinishini qoʼshing"
+
+msgid "Data elements assigned to data sets with different period types"
+msgstr ""
+"Turli xil davr turlari bilan maʼlumotlar toʼplamiga tayinlangan maʼlumotlar "
+"elementlari"
+
+msgid "Data sets not assigned to organisation units"
+msgstr "Maʼlumotlar toʼplamlari tashkiliy boʼlimlariga biriktirilmagan"
+
+msgid "Indicators with identical formulas"
+msgstr "Bir xil formulalarga ega indikatorlar"
+
+msgid "Indicators without groups"
+msgstr "Guruhsiz indikatorlar"
+
+msgid "Invalid indicator numerators"
+msgstr "Notoʼgʼri indikator surati"
+
+msgid "Invalid indicator denominators"
+msgstr "Notoʼgʼri koʼrsatgich indikatorlari"
+
+msgid "Indicators violating exclusive group sets"
+msgstr "Eksklyuziv guruhlar toʼplamini buzadigan koʼrsatgichlar"
+
+msgid "Organisation units with cyclic references"
+msgstr "Siklik maʼlumotlarga ega boʼlgan tashkiliy boʼlimlar"
+
+msgid "Orphaned organisation units"
+msgstr "Yetim qolgan tashkiliy boʼlimlar"
+
+msgid "Organisation units without groups"
+msgstr "Guruhsiz tashkiliy boʼlimlar"
+
+msgid "Organisation units violating exclusive group sets"
+msgstr ""
+
+msgid "Organisation unit groups without group sets"
+msgstr "Guruh toʼplami boʼlmagan tashkiliy boʼlim guruhlari"
+
+msgid "Validation rules without groups"
+msgstr "Guruhlarsiz tasdiqlash qoidalari"
+
+msgid "Invalid validation rule left side expressions"
+msgstr "Notoʼgʼri tekshirish qoidasi chap tomondagi ifodalar"
+
+msgid "Invalid validation rule right side expressions"
+msgstr "Notoʼgʼri tekshirish qoidasi oʼng tomondagi ifodalar"
+
+msgid "Invalid program indicator expressions"
+msgstr ""
+
+msgid "Invalid program indicator filters"
+msgstr ""
+
+msgid "There are data elements in the form, but not in the form or sections"
+msgstr ""
+
+msgid "Invalid category combinations"
+msgstr "Notoʼgʼri kategoriyadagi kombinatsiyalar"
+
+msgid "Duplicate periods"
+msgstr "Davrlardan nusxa olish"
+
+msgid "Program rules with no condition"
+msgstr ""
+
+msgid "Program rules with no action"
+msgstr ""
+
+msgid "Program rules with no priority"
+msgstr ""
+
+msgid "Program rule variables with no data element"
+msgstr ""
+
+msgid "Program rule variables with no attribute"
+msgstr ""
+
+msgid "Program rule actions with no data object"
+msgstr ""
+
+msgid "Program rule actions with no notification"
+msgstr ""
+
+msgid "Program rule actions with no section id"
+msgstr ""
+
+msgid "Program rule actions with no stage id"
+msgstr ""
+
+msgid "Program indicators wit no expression"
+msgstr ""
+
+msgid "Maintenance"
+msgstr "Texnik xizmat"
+
+msgid ""
+"Perform maintenance tasks and generate resource database tables for the "
+"organisation unit hierarchy and group set structure."
+msgstr ""
+
+msgid "Perform Maintenance"
+msgstr ""
+
+msgid "PERFORM MAINTENANCE"
+msgstr ""
+
+msgid "Performing Maintenance..."
+msgstr ""
+
+msgid "Maintenance done"
+msgstr ""
+
+msgid "An unexpected error happened during maintenance"
+msgstr ""
+
+msgid "Clear analytics tables"
+msgstr "Аnalitik jadvallarni tozalash"
+
+msgid "Analyze analytics tables"
+msgstr ""
+
+msgid "Remove zero data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted data values"
+msgstr ""
+
+msgid "Permanently remove soft deleted events"
+msgstr ""
+
+msgid "Permanently remove soft deleted enrollments"
+msgstr ""
+
+msgid "Permanently remove soft deleted tracked entity instances"
+msgstr ""
+
+msgid "Prune periods"
+msgstr "Kesishma davrlari"
+
+msgid "Remove expired invitations"
+msgstr "Muddati oʼtgan taklifnomalarni olib tashlash"
+
+msgid "Drop SQL views"
+msgstr "SQL koʼrinishini qoldiring"
+
+msgid "Create SQL views"
+msgstr "SQL koʼrinishni yaratish"
+
+msgid "Update category option combinations"
+msgstr "Kategoriya variantlari kombinatsiyalarini yangilash"
+
+msgid "Update organisation unit paths"
+msgstr "Tashkiliy boʼlim shajarasini yangilash"
+
+msgid "Clear application cache"
+msgstr "Ilova keshini tozalash"
+
+msgid "Reload apps"
+msgstr ""
+
+msgid "Resource Tables"
+msgstr ""
+
+msgid ""
+"Generate resource database tables for the organisation unit hierarchy and "
+"group set structure among others."
+msgstr ""
+"Tashkiliy boʼlim ierarxiyasi va boshqalar qatorida guruhlar toʼplami uchun "
+"resurslar bazasi jadvallarini yaratish."
+
+msgid "Generate Resource Tables"
+msgstr ""
+
+msgid "GENERATE TABLES"
+msgstr ""
+
+msgid "Resource Tables generated"
+msgstr ""
+
+msgid "An unexpected error happened during operation"
+msgstr ""
+
+msgid "Organisation unit structure"
+msgstr "Tashkiliy boʼlimning tuzilishi"
+
+msgid "Organisation unit category option combo"
+msgstr "Tashkiliy boʼlim kategoriyasi varianti kombinatsiyasi"
+
+msgid "Category option group set structure"
+msgstr "Kategoriya variantlari guruhi toʼplamining tuzilishi"
+
+msgid "Data element group set structure"
+msgstr "Maʼlumotlar elementi guruhi toʼplamining tuzilishi"
+
+msgid "Indicator group set structure"
+msgstr "Indikator guruhi toʼplamining tuzilishi"
+
+msgid "Organisation unit group set structure"
+msgstr "tashkiliy boʼlim guruhi toʼplamining tuzilishi"
+
+msgid "Category structure"
+msgstr "Kategoriya tarkibi"
+
+msgid "Data element category option combo name"
+msgstr "Maʼlumotlar elementlari kategoriyasi parametrlari kombinatsiyasi nomi"
+
+msgid "Data element structure"
+msgstr "Maʼlumotlar elementi strukturasi"
+
+msgid "Period structure"
+msgstr "ylik tuzilishi"
+
+msgid "Date period structure"
+msgstr "Sananing davriylik tarkibi"
+
+msgid "Data element category option combinations"
+msgstr "Maʼlumotlar elementi kategoriya varianti kombinatsiyalari"
+
+msgid "Data Statistics"
+msgstr "Maʼlumotlar statistikasi"
+
+msgid ""
+"Browse the number of objects in the database, like data elements, "
+"indicators, data sets and data values."
+msgstr ""
+"Maʼlumotlar bazasi, maʼlumotlar elementlari, koʼrsatgichlar, maʼlumotlar "
+"toʼplamlari va maʼlumotlar qiymatlari kabi obʼektlar sonini koʼrib chiqing."
+
+msgid "Overview Data Statistics"
+msgstr ""
+
+msgid "Loading Data Statistics..."
+msgstr ""
+
+msgid "It was not possible to load Data Statistics"
+msgstr ""
+
+msgid "No data to show."
+msgstr ""
+
+msgid "Object type"
+msgstr "Obʼekt turi"
+
+msgid "Last hour"
+msgstr "Oxirgi soatda"
+
+msgid "Today"
+msgstr "бугун"
+
+msgid "Last"
+msgstr "Keyingi"
+
+msgid "days"
+msgstr ""
+
+msgid "Users logged in"
+msgstr "Foydalanuvchi tizimga kirdi"
+
+msgid "User account invitations"
+msgstr "Foydalanuvchi akkauntidagi taklifnomalar"
+
+msgid "Pending invitations"
+msgstr "Kutilayotgan taklifnomalar"
+
+msgid "Expired invitations"
+msgstr "Muddati oʼtgan taklifnomalar"
+
+msgid "Data values"
+msgstr "Maʼlumotlarning qiymatlari"
+
+msgid "Events"
+msgstr "Hodisa/tadbirlar"
+
+msgid "Indicators"
+msgstr "Koʼrsatgichlar"
+
+msgid "Periods"
+msgstr "Davrlar"
+
+msgid "Organisation units"
+msgstr "Tashkiliy birliklar"
+
+msgid "Validation rules"
+msgstr "Tasdiqlash qoidalari"
+
+msgid "Programs"
+msgstr "Dasturlar"
+
+msgid "Data elements"
+msgstr "Maʼlumot elementlari"
+
+msgid "Organisation unit groups"
+msgstr "Tashkiliy boʼlim guruhlari"
+
+msgid "Pivot tables"
+msgstr ""
+
+msgid "Indicator types"
+msgstr "Indikator turlari"
+
+msgid "Data sets"
+msgstr "Maʼlumotlar toʼplami"
+
+msgid "User groups"
+msgstr "Foydalanuvchi guruhlari"
+
+msgid "Users"
+msgstr "Foydalanuvchilar"
+
+msgid "Maps"
+msgstr "Xaritalar"
+
+msgid "Indicator groups"
+msgstr "Indikator guruhlari"
+
+msgid "Charts"
+msgstr "Diagrammalar"
+
+msgid "Data element groups"
+msgstr "Maʼlumotlar elementi guruhlari"
+
+msgid "Dashboards"
+msgstr "Boshqaruv Paneli"
+
+msgid "Visualization"
+msgstr "Vizualizatsiya"
+
+msgid "Event visualization"
+msgstr ""
+
+msgid "Program instance"
+msgstr ""
+
+msgid "Tracked entity instance"
+msgstr "Kuzatilayotgan obʼekt namunasi"
+
+msgid "Lock Exception Management"
+msgstr "Istisno holatlarini boshqarish"
+
+msgid "Lock Exception"
+msgstr "Istisno holatini qulflash"
+
+msgid "Batch Deletion"
+msgstr ""
+
+msgid "Add new lock exception"
+msgstr ""
+
+msgid ""
+"Add or remove exceptions to the the standard rules for locking of data entry"
+" forms."
+msgstr ""
+"Maʼlumotlarni kiritish shakllarini blokirovkalashning standart qoidalari "
+"istisnolarni qoʼshish yoki olib tanlash."
+
+msgid "BATCH DELETION"
+msgstr ""
+
+msgid "CANCEL"
+msgstr ""
+
+msgid "ADD"
+msgstr ""
+
+msgid "Loading Lock Exceptions..."
+msgstr ""
+
+msgid "Adding Lock Exception..."
+msgstr ""
+
+msgid "Lock Exception removed"
+msgstr ""
+
+msgid "Lock Exception Added"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr "Ishonchinigiz komilmi?"
+
+msgid "CONFIRM"
+msgstr "TАSDIQLАNG"
+
+msgid "Select a Data Set"
+msgstr ""
+
+msgid "Updating Organisation Units Tree..."
+msgstr "Muassasalar daraxti (shajarasi) yangilanmoqda..."
+
+msgid "For organisation units within"
+msgstr "Tashkiliy boʼlimlar uchun"
+
+msgid "Period"
+msgstr "davr"
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Organisation Unit"
+msgstr "Tashkiliy birlik"
+
+msgid "Organisation Unit Group"
+msgstr "Tashkiliy Boʼlim Guruhi"
+
+msgid "Organisation Unit Level"
+msgstr ""
+
+msgid "Select"
+msgstr "Танланг"
+
+msgid "Deselect"
+msgstr "Tanlanmani bekor qilish"
+
+msgid "Select All Org Units"
+msgstr ""
+
+msgid "Deselect All Org Units"
+msgstr ""
+
+msgid "Name"
+msgstr "Исми"
+
+msgid "Show Details"
+msgstr ""
+
+msgid "Remove"
+msgstr "Олиб ташлаш"
+
+msgid "Actions"
+msgstr "Аmallar"
+
+msgid "of"
+msgstr "ning"
+
+msgid "week"
+msgstr "hafta"
+
+msgid "month"
+msgstr "oy"
+
+msgid "year"
+msgstr ""
+
+msgid "bi monthly"
+msgstr "juft oy"
+
+msgid "day"
+msgstr "kun"
+
+msgid "jan"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "jan-feb"
+msgstr ""
+
+msgid "mar-apr"
+msgstr ""
+
+msgid "may-jun"
+msgstr ""
+
+msgid "jul-aug"
+msgstr ""
+
+msgid "sep-oct"
+msgstr ""
+
+msgid "nov-dec"
+msgstr ""
+
+msgid "quarter"
+msgstr "kvartal"
+
+msgid "Q1"
+msgstr "Q1"
+
+msgid "Q2"
+msgstr "Q2"
+
+msgid "Q3"
+msgstr "Q3"
+
+msgid "Q4"
+msgstr "Q4"
+
+msgid "six monthly"
+msgstr "6 oylik"
+
+msgid "jan-jun"
+msgstr ""
+
+msgid "jul-dec"
+msgstr ""
+
+msgid "apr-sep"
+msgstr ""
+
+msgid "oct-mar"
+msgstr ""
+
+msgid "Min-Max Value Generation"
+msgstr "Minimal-Maksimal qiymatni yaratish"
+
+msgid ""
+"Generate min-max values which can be used for data validation during data "
+"entry and validation processes."
+msgstr ""
+"Maʼlumotlarni kiritish va tekshirish jarayonida maʼlumotlarini tekshirish "
+"uchun ishlatishi mumkin boʼlgan minimal-maksimal qiymatlarni yarating."
+
+msgid "Generate Min-Max Value"
+msgstr ""
+
+msgid "It was not possible to load data"
+msgstr ""
+
+msgid "Doing Min Max generation..."
+msgstr ""
+
+msgid "Removing Min Max generation..."
+msgstr ""
+
+msgid "Min Max generation done"
+msgstr ""
+
+msgid "Min Max removal done"
+msgstr ""
+
+msgid "Loading data sets"
+msgstr ""
+
+msgid "Organisation Unit Selection"
+msgstr "Tashkiliy Boʼlim Tanlash"
+
+msgid "Generate"
+msgstr "Yarating"
+
+msgid "Analytics tables management"
+msgstr "Аnalitika jadvallarini boshqarish"
+
+msgid "Analytics Tables"
+msgstr ""
+
+msgid ""
+"The data mart is a set of tables in the DHIS database which is used by all "
+"reporting and analysis tools to retrieve data from."
+msgstr ""
+
+msgid "Analytics tables update"
+msgstr "Аnalitik jadvallarni yangilang"
+
+msgid "START EXPORT"
+msgstr ""
+
+msgid "Skip generation of aggregate data and completeness data"
+msgstr ""
+"Umumiy maʼlumotlar birlashtirilishi va maʼlumotlarni toʼldirilishini "
+"oʼtkazib yuborish"
+
+msgid "Skip generation of resource tables"
+msgstr "Manba jadvalini yaratishni oʼtkazib yuborish"
+
+msgid "Skip generation of event data"
+msgstr "Hodisa/Tadbir maʼlumotlarini yaratishni oʼtkazib yuborish"
+
+msgid "Skip generation of enrollment data"
+msgstr "Roʼyxatga olish maʼlumotlarini yaratishni oʼtkazib yuborish"
+
+msgid "Analytics Tables Update"
+msgstr ""
+
+msgid "Number of last years of data to include"
+msgstr "Oxirgi yillar uchun maʼlumotlar soni, qoʼshichi qilish uchun"
+
+msgid "[ All ]"
+msgstr ""
+
+msgid "Settings"
+msgstr "Sozlamalar"
+
+msgid "Search apps"
+msgstr "Ilovalarni qidirish"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Account"
+msgstr "Raqami"
+
+msgid "Help"
+msgstr "Yordam"
+
+msgid "Log out"
+msgstr "Chiqish"
+
+msgid "About DHIS 2"
+msgstr "DHIS2 haqida"
+
+msgid "Manage my apps"
+msgstr "Ilovalarimni boshqarish"
+
+msgid "No results found"
+msgstr "Hech qanday natija topilmadi"
+
+msgid "Interpretations"
+msgstr "Talqinlar"
+
+msgid "Messages"
+msgstr "Xabarlar"
+
+msgid "{{issueTitle}} ({{issueElementsCount}})"
+msgstr ""
+
+msgid "Data set"
+msgstr "Maʼlumotlar toʼplami"
+
+msgid "Organisation unit"
+msgstr "Ташкилий бирлик"
