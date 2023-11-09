@@ -2,16 +2,8 @@ import { useState } from 'react'
 import { analyticsCheckboxes } from './analytics.conf.js'
 
 export const useCheckboxes = () => {
-    const [checkboxes, setCheckboxes] = useState(() => {
-        const checkboxes = {}
-        analyticsCheckboxes.forEach((checkbox) => {
-            checkboxes[checkbox.key] = {
-                checked: false,
-                label: checkbox.label,
-            }
-        })
-        return checkboxes
-    })
+    const [checkboxes, setCheckboxes] = useState(analyticsCheckboxes)
+
     const toggleCheckbox = (key) => {
         setCheckboxes({
             ...checkboxes,

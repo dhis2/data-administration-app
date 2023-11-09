@@ -104,7 +104,7 @@ export const i18nKeys = {
             skipOrgUnitOwnership: i18n.t(
                 'Skip generation of organisation unit ownership data'
             ),
-            executeTei: i18n.t('Generate outlier data'),
+            skipOutliers: i18n.t('Skip generation of outlier data'),
         },
     },
     dataStatistics: {
