@@ -33,6 +33,7 @@ export const analyticsCheckboxes = [
     'skipEvents',
     'skipEnrollment',
     'skipOrgUnitOwnership',
+    'executeTei',
 ].map((key) => ({
     key,
     label: i18nKeys.analytics.checkboxes[key],
