@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-11-09T10:55:29.694Z\n"
-"PO-Revision-Date: 2023-11-09T10:55:29.694Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
+"PO-Revision-Date: 2023-11-24T08:17:24.184Z\n"
 
 msgid "Open user guide"
 msgstr "Open user guide"
@@ -209,6 +209,9 @@ msgstr "Skip generation of enrollment data"
 
 msgid "Skip generation of organisation unit ownership data"
 msgstr "Skip generation of organisation unit ownership data"
+
+msgid "Skip generation of tracked entity data"
+msgstr "Skip generation of tracked entity data"
 
 msgid "Skip generation of outlier data"
 msgstr "Skip generation of outlier data"

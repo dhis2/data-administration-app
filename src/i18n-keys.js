@@ -104,6 +104,9 @@ export const i18nKeys = {
             skipOrgUnitOwnership: i18n.t(
                 'Skip generation of organisation unit ownership data'
             ),
+            skipTrackedEntities: i18n.t(
+                'Skip generation of tracked entity data'
+            ),
             skipOutliers: i18n.t('Skip generation of outlier data'),
         },
     },
