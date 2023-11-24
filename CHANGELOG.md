@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dhis2/data-administration-app/compare/v1.1.66...v1.2.0) (2023-11-24)
+
+
+### Features
+
+* add checkboxes for skipping tracked entity and outlier data (DHIS2-16143) ([#1014](https://github.com/dhis2/data-administration-app/issues/1014)) ([bee280b](https://github.com/dhis2/data-administration-app/commit/bee280b76ce43cc177d6fab5d5d3917211eb8a0b))
+
 ## [1.1.66](https://github.com/dhis2/data-administration-app/compare/v1.1.65...v1.1.66) (2023-10-03)
 
 
