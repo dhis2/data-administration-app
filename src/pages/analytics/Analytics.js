@@ -28,12 +28,12 @@ const Analytics = ({ sectionKey }) => {
         useAnalytics()
 
     const handleStartAnalyticsTablesGeneration = () => {
-        const params = {}
-        for (const [key, { checked }] of Object.entries(checkboxes)) {
+        const params = checkboxes.reduce((obj, { key, checked }) => {
             if (checked) {
-                params[key] = true
+                obj[key] = checked
             }
-        }
+            return obj
+        }, {})
         if (lastYears !== DEFAULT_LAST_YEARS) {
             params[LAST_YEARS_INPUT_KEY] = lastYears
         }
