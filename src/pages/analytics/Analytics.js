@@ -37,6 +37,7 @@ const Analytics = ({ sectionKey }) => {
         if (lastYears !== DEFAULT_LAST_YEARS) {
             params[LAST_YEARS_INPUT_KEY] = lastYears
         }
+
         startAnalyticsTablesGeneration(params)
     }
     const handleLastYearsChange = ({ selected }) => {
@@ -57,20 +58,18 @@ const Analytics = ({ sectionKey }) => {
                 )}
                 <div className={styles.form}>
                     <div className={styles.checkboxes}>
-                        {Object.entries(checkboxes).map(
-                            ([key, { label, checked }]) => (
-                                <Checkbox
-                                    key={key}
-                                    className={styles.checkbox}
-                                    label={label}
-                                    checked={checked}
-                                    onChange={() => {
-                                        toggleCheckbox(key)
-                                    }}
-                                    disabled={loading}
-                                />
-                            )
-                        )}
+                        {checkboxes.map(({ key, label, checked }) => (
+                            <Checkbox
+                                key={key}
+                                className={styles.checkbox}
+                                label={label}
+                                checked={checked}
+                                onChange={() => {
+                                    toggleCheckbox(key)
+                                }}
+                                disabled={loading}
+                            />
+                        ))}
                     </div>
                     <SingleSelectField
                         className={styles.lastYearsSelect}
