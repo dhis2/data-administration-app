@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # 晓东 林 <13981924470@126.com>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # easylin <lin_xd@126.com>, 2023
