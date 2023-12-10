@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/dhis2/data-administration-app/compare/v1.2.0...v1.2.1) (2023-12-10)
+
+
+### Bug Fixes
+
+* **translations:** sync translations from transifex (master) ([99827f8](https://github.com/dhis2/data-administration-app/commit/99827f8ed4289fda9f0c9bc8e161ce255de31b5f))
+* enable support for pre-checked analytics options (DHIS2-16143) ([#1016](https://github.com/dhis2/data-administration-app/issues/1016)) ([262ab88](https://github.com/dhis2/data-administration-app/commit/262ab889c00e5cc1164f8fee9ec40bb1c0689969))
+
 # [1.2.0](https://github.com/dhis2/data-administration-app/compare/v1.1.66...v1.2.0) (2023-11-24)
 
 
