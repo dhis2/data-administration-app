@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/dhis2/data-administration-app/compare/v1.2.1...v1.2.2) (2023-12-11)
+
+
+### Bug Fixes
+
+* remove duplicate counts [DHIS2-15948] ([#1013](https://github.com/dhis2/data-administration-app/issues/1013)) ([74f85f8](https://github.com/dhis2/data-administration-app/commit/74f85f8e024481002d260a59d5ec277a9e6c31cf))
+
 ## [1.2.1](https://github.com/dhis2/data-administration-app/compare/v1.2.0...v1.2.1) (2023-12-10)
 
 
