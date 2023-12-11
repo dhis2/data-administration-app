@@ -28,12 +28,15 @@ export const lastYearElements = lastYearValues
 
 /* Form checkboxes */
 export const analyticsCheckboxes = [
-    'skipAggregate',
-    'skipResourceTables',
-    'skipEvents',
-    'skipEnrollment',
-    'skipOrgUnitOwnership',
-].map((key) => ({
-    key,
-    label: i18nKeys.analytics.checkboxes[key],
+    { key: 'skipAggregate' },
+    { key: 'skipResourceTables' },
+    { key: 'skipEvents' },
+    { key: 'skipEnrollment' },
+    { key: 'skipOrgUnitOwnership' },
+    { key: 'skipTrackedEntities', checked: true },
+    { key: 'skipOutliers', checked: true },
+].map((obj) => ({
+    key: obj.key,
+    checked: Boolean(obj.checked),
+    label: i18nKeys.analytics.checkboxes[obj.key],
 }))

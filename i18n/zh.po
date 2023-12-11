@@ -1,6 +1,6 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # 晓东 林 <13981924470@126.com>, 2021
 # easylin <lin_xd@126.com>, 2023
@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2023\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -211,6 +211,12 @@ msgstr "跳过注册数据的生成"
 
 msgid "Skip generation of organisation unit ownership data"
 msgstr "跳过组织单位所有权数据的生成"
+
+msgid "Skip generation of tracked entity data"
+msgstr "跳过生成跟踪实体数据"
+
+msgid "Skip generation of outlier data"
+msgstr "跳过异常数据的生成"
 
 msgid "Data Statistics"
 msgstr "数据统计"
