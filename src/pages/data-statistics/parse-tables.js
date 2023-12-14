@@ -13,16 +13,16 @@ const objectLabels = {
     indicator: i18n.t('Indicators'),
     period: i18n.t('Periods'),
     visualization: i18n.t('Visualization'),
-    event: i18n.t('Events'),
+    programStageInstance: i18n.t('Events'),
     organisationUnit: i18n.t('Organisation units'),
     validationRule: i18n.t('Validation rules'),
     dataValue: i18n.t('Data values'),
     program: i18n.t('Programs'),
     dataElement: i18n.t('Data elements'),
     organisationUnitGroup: i18n.t('Organisation unit groups'),
-    trackedEntity: i18n.t('Tracked entities'),
+    trackedEntityInstance: i18n.t('Tracked entity instances'),
     reportTable: i18n.t('Pivot tables'),
-    enrollment: i18n.t('Enrollments'),
+    programInstance: i18n.t('Program instances'),
     indicatorType: i18n.t('Indicator types'),
     dataSet: i18n.t('Data sets'),
     userGroup: i18n.t('User groups'),
@@ -48,25 +48,17 @@ const translatedTimeLabelFromIntProperty = (key) => {
     }
 }
 
-// old (<=v40) keys
-const excludedObjectCountKeys = [
-    'programInstance',
-    'programStageInstance',
-    'trackedEntityInstance',
-]
-
 const objectCountsTableFromResponse = (objectCountsResponse) => {
     if (!objectCountsResponse) {
         return null
     }
 
-    // api returns old (<=v40) and new (>=v41) keys; filter out old ones
-    const elements = Object.entries(objectCountsResponse)
-        .filter(([key]) => !excludedObjectCountKeys.includes(key))
-        .map(([key, count]) => ({
+    const elements = Object.entries(objectCountsResponse).map(
+        ([key, count]) => ({
             label: objectLabels[key] || key,
             count,
-        }))
+        })
+    )
     elements.sort((a, b) => a.label.localeCompare(b.label))
 
     return {
