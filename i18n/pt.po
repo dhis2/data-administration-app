@@ -1,19 +1,19 @@
 # 
 # Translators:
-# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Sheila André <sandre@saudigitus.org>, 2021
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2021
 # Emilio Mosse, 2022
+# Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Emilio Mosse, 2022\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,6 +220,15 @@ msgstr "Ignorar geração de dados do evento"
 
 msgid "Skip generation of enrollment data"
 msgstr "Ignorar geração de dados de inscrição"
+
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
+msgid "Skip generation of tracked entity data"
+msgstr ""
+
+msgid "Skip generation of outlier data"
+msgstr ""
 
 msgid "Data Statistics"
 msgstr "Dados Estatísticos"
@@ -561,14 +570,14 @@ msgstr "Elementos de Dados"
 msgid "Organisation unit groups"
 msgstr "Grupos de unidades organizacionais"
 
-msgid "Tracked entity instances"
-msgstr "Instâncias de entidade rastreadas"
+msgid "Tracked entities"
+msgstr "Entidades rastreadas"
 
 msgid "Pivot tables"
 msgstr "Tabelas Pivô"
 
-msgid "Program instances"
-msgstr ""
+msgid "Enrollments"
+msgstr "Inscrições"
 
 msgid "Indicator types"
 msgstr "Tipos de indicador"
