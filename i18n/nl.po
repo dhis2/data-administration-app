@@ -2,15 +2,15 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
-# Rica Zamora Duchateau, 2022
 # Charel van den Elsen, 2023
+# Rica Zamora Duchateau, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Charel van den Elsen, 2023\n"
+"Last-Translator: Rica Zamora Duchateau, 2023\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -210,6 +210,12 @@ msgid "Skip generation of enrollment data"
 msgstr ""
 
 msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
+msgid "Skip generation of tracked entity data"
+msgstr ""
+
+msgid "Skip generation of outlier data"
 msgstr ""
 
 msgid "Data Statistics"
@@ -545,14 +551,14 @@ msgstr "Gegevenselementen"
 msgid "Organisation unit groups"
 msgstr ""
 
-msgid "Tracked entity instances"
-msgstr ""
+msgid "Tracked entities"
+msgstr "Getraceerde entiteiten"
 
 msgid "Pivot tables"
 msgstr "Draaitabellen"
 
-msgid "Program instances"
-msgstr ""
+msgid "Enrollments"
+msgstr "Inschrijvingen"
 
 msgid "Indicator types"
 msgstr ""
