@@ -1,15 +1,15 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
 # Jason Pickering <jason@dhis2.org>, 2023
+# Viktor Varland <viktor@dhis2.org>, 2023
+# Philip Larsen Donnelly, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Jason Pickering <jason@dhis2.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2023\n"
 "Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -209,6 +209,12 @@ msgid "Skip generation of enrollment data"
 msgstr ""
 
 msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
+msgid "Skip generation of tracked entity data"
+msgstr ""
+
+msgid "Skip generation of outlier data"
 msgstr ""
 
 msgid "Data Statistics"
@@ -544,14 +550,14 @@ msgstr "dataelement"
 msgid "Organisation unit groups"
 msgstr "Organisation enhetsgrupper"
 
-msgid "Tracked entity instances"
-msgstr ""
+msgid "Tracked entities"
+msgstr "Tracked entities"
 
 msgid "Pivot tables"
 msgstr "pivottabeller"
 
-msgid "Program instances"
-msgstr ""
+msgid "Enrollments"
+msgstr "Inskrivningar"
 
 msgid "Indicator types"
 msgstr ""

@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Yury Rogachev <yury@dhis2.org>, 2021
+# Yury Rogachev <yury@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2021\n"
+"Last-Translator: Yury Rogachev <yury@dhis2.org>, 2023\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -211,6 +211,12 @@ msgid "Skip generation of enrollment data"
 msgstr "Roʼyxatga olish maʼlumotlarini yaratishni oʼtkazib yuborish"
 
 msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
+msgid "Skip generation of tracked entity data"
+msgstr ""
+
+msgid "Skip generation of outlier data"
 msgstr ""
 
 msgid "Data Statistics"
@@ -554,14 +560,14 @@ msgstr "Maʼlumot elementlari"
 msgid "Organisation unit groups"
 msgstr "Tashkiliy boʼlim guruhlari"
 
-msgid "Tracked entity instances"
-msgstr "Kuzatilayotgan obʼekt namunasi"
+msgid "Tracked entities"
+msgstr "Kuzatuvdagi obʼektlar"
 
 msgid "Pivot tables"
 msgstr ""
 
-msgid "Program instances"
-msgstr ""
+msgid "Enrollments"
+msgstr "Roʼyxatdan oʼtish"
 
 msgid "Indicator types"
 msgstr "Indikator turlari"
