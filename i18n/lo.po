@@ -432,7 +432,7 @@ msgid "Select a Data Set"
 msgstr ""
 
 msgid "Updating Organisation Units Tree..."
-msgstr ""
+msgstr "ກຳລັງໂຫຼດໂຄງຮ່າງການຈັດຕັ້ງ"
 
 msgid "For organisation units within"
 msgstr ""
