@@ -5,6 +5,8 @@ import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader.js'
 import { i18nKeys } from '../../i18n-keys.js'
 import Issues from './Issues/Issues.js'
+import css from './Layout.module.css'
+import { DataIntegrityList } from './list/DataIntegrityList.js'
 import { useDataIntegrity } from './use-data-integrity.js'
 
 const DataIntegrity = ({ sectionKey }) => {
@@ -17,13 +19,7 @@ const DataIntegrity = ({ sectionKey }) => {
                 sectionKey={sectionKey}
                 title={i18nKeys.dataIntegrity.title}
             />
-            {error && <NoticeBox error>{error.message}</NoticeBox>}
-            {issues && <Issues issues={issues} />}
-            <Button primary loading={loading} onClick={startDataIntegrityCheck}>
-                {loading
-                    ? i18n.t('Checking data integrity...')
-                    : i18n.t('Run integrity checks')}
-            </Button>
+            <DataIntegrityList />
         </>
     )
 }
