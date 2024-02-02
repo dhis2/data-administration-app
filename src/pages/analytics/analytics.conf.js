@@ -5,7 +5,7 @@ export const DEFAULT_LAST_YEARS = '-1'
 export const LAST_YEARS_INPUT_KEY = 'lastYears'
 
 const LAST_YEAR = 10
-const FIRST_YEAR = 1
+const FIRST_YEAR = 0
 
 const lastYearValues = [
     {
