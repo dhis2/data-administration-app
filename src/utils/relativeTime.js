@@ -1,4 +1,3 @@
-
 import i18n from '@dhis2/d2-i18n'
 
 // our locales use _ instead of - for locales
@@ -31,15 +30,38 @@ const relativeTimeFormatter = new Intl.RelativeTimeFormat(relativeTimeLocale, {
 
 /**
  * Get language-sensitive relative time message from Dates.
+ * eg. "in 5 minutes", "3 days ago"
  * @param relative  - the relative dateTime
  * @param from     - the dateTime of reference
  */
-export function getRelativeTime(
-    relative,
-    from = new Date()
-) {
+export function getRelativeTime(relative, from = new Date()) {
     const delta = relative.getTime() - from.getTime()
     return getRelativeTimeFromDelta(delta)
+}
+
+function getClosestTimeUnit(deltaMs) {
+    const absoluteDelta = Math.abs(deltaMs)
+    for (const { unit, ms } of units) {
+        if (absoluteDelta >= ms) {
+            return { unit, value: Math.round(deltaMs / ms) }
+        }
+    }
+    return { unit: 'millisecond', value: deltaMs }
+}
+
+export function getDurationWithUnit(relative, from = new Date()) {
+    const deltaMs = relative.getTime() - from.getTime()
+    return getDurationWithUnitFromDelta(deltaMs)
+}
+
+export function getDurationWithUnitFromDelta(deltaMs) {
+    const { unit, value } = getClosestTimeUnit(deltaMs)
+    console.log({deltaMs, unit, value })
+    return Intl.NumberFormat(selectedLocale, {
+        style: 'unit',
+        unit: unit,
+        unitDisplay: 'long',
+    }).format(value)
 }
 
 /**

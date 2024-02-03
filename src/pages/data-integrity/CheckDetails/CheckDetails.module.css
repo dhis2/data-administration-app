@@ -1,0 +1,67 @@
+
+.wrapper {
+    padding: var(--spacers-dp16)
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacers-dp48)
+}
+
+.top button {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.top header {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.top header h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.top header p {
+    font-size: 14px;
+    color: var(--colors-grey700);
+    margin-block-start: 0;
+}
+
+.runCompletedWrapper {
+    padding: 16px 0px 8px 0px;
+}
+
+.runCompletedWrapper header {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    gap: 16px;
+}
+
+.runCompletedContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+
+}
+
+.completedTime {
+    color: var(--colors-grey700);
+    font-size: 12px;
+}
+
+.issuesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

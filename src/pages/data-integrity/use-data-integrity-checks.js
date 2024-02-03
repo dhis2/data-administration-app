@@ -31,16 +31,17 @@ const mergeRunResult = (checks, runSummary) => {
 
 export const useDataIntegrityChecks = () => {
     // grabs the the entire list of checks
-    const { data, loading } = useDataQuery(dataIntegrityChecksQuery)
+    const { data, loading, refetch } = useDataQuery(dataIntegrityChecksQuery)
 
-    const formattedData = useMemo(
-        () => data && mergeRunResult(data?.allChecks, data?.runSummary),
-        [data]
-    )
+    // const formattedData = useMemo(
+    //     () => data && mergeRunResult(data?.allChecks, data?.runSummary),
+    //     [data]
+    // )
     // grab run-info for checks
 
     return {
-        checks: formattedData,
+        checks: data?.allChecks,
         loading: loading,
+        refetch
     }
 }

@@ -28,7 +28,6 @@ export const List = ({ filter, setSelectedCheck, selectedCheck, checks }) => {
 }
 
 export const ListItem = ({ setSelectedCheck, check, selected }) => {
-    console.log({ check, selected })
     return (
         <div
             className={cx(css.listItem, { [css.selected]: selected })}
@@ -42,7 +41,7 @@ export const ListItem = ({ setSelectedCheck, check, selected }) => {
                 </div>
             </div>
             <span className={css.statusIcon}>
-                <StatusIcon check={check} />
+                <StatusIcon count={check?.runInfo.count} loading={check.loading} />
             </span>
         </div>
     )

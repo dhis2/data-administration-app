@@ -1,17 +1,21 @@
 import { Card, CircularLoader } from '@dhis2/ui'
 import React, { useState, useMemo } from 'react'
 import { useDataIntegrityChecks } from '../use-data-integrity-checks.js'
-import { CheckDetails } from './CheckDetails.js'
+import { CheckDetails } from '../CheckDetails/CheckDetails.js'
 import { List } from './List.js'
 import css from './List.module.css'
 import { ListToolbar } from './ListToolbar.js'
 import i18n from '@dhis2/d2-i18n'
+import { useDataIntegrity } from '../use-data-integrity.js'
+import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 
 export const DataIntegrityList = () => {
     const [filter, setFilter] = useState('')
     const [selectedCheck, setSelectedCheck] = useState(null)
 
-    const { checks, loading } = useDataIntegrityChecks()
+    const { startDataIntegrityCheck, checks, loadingChecks, runningCheck } =
+        useDataIntegritySummary()
+    // const { startDataIntegrityCheck, loading: running, error } = useDataIntegrity()
 
     const filteredChecks = useMemo(
         () =>
@@ -20,10 +24,19 @@ export const DataIntegrityList = () => {
             ),
         [checks, filter]
     )
+    // console.log({running, error})
     return (
         <Card>
-            <ListToolbar setFilter={setFilter} filter={filter} />
-            {loading ? (
+            <ListToolbar
+                setFilter={setFilter}
+                filter={filter}
+                onRunAll={() => {
+                    console.log('ON RUN ALL')
+                    startDataIntegrityCheck()
+                }}
+                runningAll={runningCheck}
+            />
+            {loadingChecks ? (
                 <CircularLoader />
             ) : (
                 <ListDetailsLayout>
@@ -33,7 +46,10 @@ export const DataIntegrityList = () => {
                         checks={filteredChecks}
                     />
                     {selectedCheck ? (
-                        <CheckDetails check={selectedCheck} />
+                        <CheckDetails
+                            key={selectedCheck.name}
+                            check={selectedCheck}
+                        />
                     ) : (
                         <ChooseCheck />
                     )}

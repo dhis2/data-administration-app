@@ -9,7 +9,7 @@ const useConst = (factory) => {
     return ref.current
 }
 
-const useLazyInterval = (fn, interval) => {
+export const useLazyInterval = (fn, interval) => {
     const fnRef = useRef()
     fnRef.current = fn
     const intervalId = useRef(null)
@@ -26,6 +26,10 @@ const useLazyInterval = (fn, interval) => {
         intervalId.current = setInterval(() => fnRef.current(...args), interval)
         setStarted(true)
     }
+
+    useEffect(() => {
+        return cancel
+    }, [])
 
     return { start, cancel, started }
 }
@@ -51,10 +55,6 @@ export const usePoll = ({ query, interval, checkDone }) => {
         cancel,
         started: polling,
     } = useLazyInterval(refetch, interval)
-
-    useEffect(() => {
-        return cancel
-    }, [])
 
     useEffect(() => {
         if (error) {

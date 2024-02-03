@@ -3,7 +3,7 @@ import { Button, Input, SingleSelect, SingleSelectOption } from '@dhis2/ui'
 import React from 'react'
 import css from './List.module.css'
 
-export const ListToolbar = ({ filter, setFilter, sort, setSort }) => {
+export const ListToolbar = ({ filter, setFilter, sort, setSort, onRunAll, runningAll }) => {
     return (
         <div className={css.listToolbar}>
             <Input
@@ -20,7 +20,7 @@ export const ListToolbar = ({ filter, setFilter, sort, setSort }) => {
                 <SingleSelectOption label="Section" value="section" />
                 <SingleSelectOption label="Number of errors" value="errors" />
             </SingleSelect>
-            <Button>{i18n.t('Run all checks')}</Button>
+            <Button disabled={runningAll} onClick={onRunAll}>{i18n.t('Run all checks')}</Button>
         </div>
     )
 }
