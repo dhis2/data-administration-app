@@ -8,9 +8,15 @@ import { ListToolbar } from './ListToolbar.js'
 import i18n from '@dhis2/d2-i18n'
 import { useDataIntegrity } from '../use-data-integrity.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
+import { SORT } from './sorter.js'
+import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
 
 export const DataIntegrityList = () => {
     const [filter, setFilter] = useState('')
+    const [selectedSort, setSelectedSort] = useState(SORT['A-Z'].value)
+
+    console.log({ sort: selectedSort })
+    const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
     const [selectedCheck, setSelectedCheck] = useState(null)
 
     const { startDataIntegrityCheck, checks, loadingChecks, runningCheck } =
@@ -19,10 +25,12 @@ export const DataIntegrityList = () => {
 
     const filteredChecks = useMemo(
         () =>
-            checks?.filter(
-                (check) => !filter || check.displayName.includes(filter)
-            ),
-        [checks, filter]
+            checks
+                ?.filter(
+                    (check) => !filter || check.displayName.includes(filter)
+                )
+                .sort(sorter),
+        [checks, filter, sorter]
     )
     // console.log({running, error})
     return (
@@ -35,26 +43,28 @@ export const DataIntegrityList = () => {
                     startDataIntegrityCheck()
                 }}
                 runningAll={runningCheck}
+                sort={selectedSort}
+                setSort={setSelectedSort}
             />
-            {loadingChecks ? (
-                <CircularLoader />
-            ) : (
-                <ListDetailsLayout>
+            <ListDetailsLayout>
+                {loadingChecks ? (
+                    <CircularLoaderCentered  />
+                ) : (
                     <List
                         selectedCheck={selectedCheck}
                         setSelectedCheck={setSelectedCheck}
                         checks={filteredChecks}
                     />
-                    {selectedCheck ? (
-                        <CheckDetails
-                            key={selectedCheck.name}
-                            check={selectedCheck}
-                        />
-                    ) : (
-                        <ChooseCheck />
-                    )}
-                </ListDetailsLayout>
-            )}
+                )}
+                {selectedCheck ? (
+                    <CheckDetails
+                        key={selectedCheck.name}
+                        check={selectedCheck}
+                    />
+                ) : (
+                    <ChooseCheck />
+                )}
+            </ListDetailsLayout>
         </Card>
     )
 }

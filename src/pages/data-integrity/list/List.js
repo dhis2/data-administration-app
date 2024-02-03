@@ -41,7 +41,7 @@ export const ListItem = ({ setSelectedCheck, check, selected }) => {
                 </div>
             </div>
             <span className={css.statusIcon}>
-                <StatusIcon count={check?.runInfo.count} loading={check.loading} />
+                <StatusIcon count={check?.runInfo?.count} loading={check.loading} />
             </span>
         </div>
     )

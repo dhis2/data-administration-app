@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 392px auto;
     height: 100%;
+    height: calc(100vh - 189px)
 }
 
-.list {
+.listDetailsWrapper > * {
     overflow-y: scroll;
-    height: calc(100vh - 187px)
 }
 
 .listItem {

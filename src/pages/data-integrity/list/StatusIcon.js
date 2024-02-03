@@ -31,6 +31,9 @@ export const StatusIcon = ({ count, loading }) => {
     if (count === 0) {
         return <SuccessIcon />
     }
+    if(count > 0) {
+        return <ErrorIcon numberOfErrors={count} />
 
-    return <ErrorIcon numberOfErrors={count} />
+    }
+    return null
 }

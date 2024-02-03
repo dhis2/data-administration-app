@@ -137,7 +137,7 @@ const DetailsRunIssues = ({ detailsCheck }) => {
                             : issue.name
                     const id = issue.id
                
-                    return <li key={id || name}>{name}</li>
+                    return <li key={id || name}>{issue.name}</li>
                 })}
             </ul>
         </Notice>
