@@ -27,7 +27,11 @@ export const DataIntegrityList = () => {
         () =>
             checks
                 ?.filter(
-                    (check) => !filter || check.displayName.includes(filter)
+                    (check) =>
+                        !filter ||
+                        check.displayName
+                            .toLowerCase()
+                            .includes(filter.toLowerCase())
                 )
                 .sort(sorter),
         [checks, filter, sorter]
@@ -48,7 +52,7 @@ export const DataIntegrityList = () => {
             />
             <ListDetailsLayout>
                 {loadingChecks ? (
-                    <CircularLoaderCentered  />
+                    <CircularLoaderCentered />
                 ) : (
                     <List
                         selectedCheck={selectedCheck}
