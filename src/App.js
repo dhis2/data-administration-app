@@ -15,9 +15,7 @@ const App = () => (
             </div>
 
             <main className={styles.content}>
-                <div className={styles.contentWrapper}>
                     <Routes />
-                </div>
             </main>
         </div>
     </HashRouter>

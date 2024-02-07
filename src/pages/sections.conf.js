@@ -17,6 +17,7 @@ export const sections = [
             description: i18nKeys.dataIntegrity.description,
             actionText: i18nKeys.dataIntegrity.actionText,
             docs: 'dataAdmin_dataIntegrity',
+            fullscreen: true,
         },
     },
     {

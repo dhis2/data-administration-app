@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader.js'
 import { i18nKeys } from '../../i18n-keys.js'
+import css from './DataIntegrity.module.css'
 import Issues from './Issues/Issues.js'
-import css from './Layout.module.css'
 import { DataIntegrityList } from './list/DataIntegrityList.js'
 import { useDataIntegrity } from './use-data-integrity.js'
 
@@ -14,13 +14,16 @@ const DataIntegrity = ({ sectionKey }) => {
         useDataIntegrity()
 
     return (
-        <>
-            <PageHeader
-                sectionKey={sectionKey}
-                title={i18nKeys.dataIntegrity.title}
-            />
+        <div className={css.wrapper}>
+            <div className={css.header}>
+                <PageHeader
+                    className={css.header}
+                    sectionKey={sectionKey}
+                    title={i18nKeys.dataIntegrity.title}
+                />
+            </div>
             <DataIntegrityList />
-        </>
+        </div>
     )
 }
 

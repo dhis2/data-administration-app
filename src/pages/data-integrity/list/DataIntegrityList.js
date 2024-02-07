@@ -1,16 +1,12 @@
-import { Card, CircularLoader } from '@dhis2/ui'
+import { Card } from '@dhis2/ui'
 import React, { useState, useMemo } from 'react'
-import { useDataIntegrityChecks } from '../use-data-integrity-checks.js'
-import { CheckDetails } from '../CheckDetails/CheckDetails.js'
+import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
+import { CheckDetailsView } from '../CheckDetails/CheckDetailsView.js'
+import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { List } from './List.js'
 import css from './List.module.css'
 import { ListToolbar } from './ListToolbar.js'
-import i18n from '@dhis2/d2-i18n'
-import { useDataIntegrity } from '../use-data-integrity.js'
-import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { SORT } from './sorter.js'
-import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
-import { CheckDetailsView } from '../CheckDetails/CheckDetailsView.js'
 
 const filterCheck = (check, filter) => {
     if (!filter || !filter.trim().length === 0) {
@@ -37,7 +33,7 @@ export const DataIntegrityList = () => {
     )
 
     return (
-        <Card>
+        <div className={css.listWrapper}>
             <ListToolbar
                 setFilter={setFilter}
                 filter={filter}
@@ -61,7 +57,7 @@ export const DataIntegrityList = () => {
                 )}
                 <CheckDetailsView key={selectedCheck?.name} selectedCheck={selectedCheck} />
             </ListDetailsLayout>
-        </Card>
+        </div>
     )
 }
 
