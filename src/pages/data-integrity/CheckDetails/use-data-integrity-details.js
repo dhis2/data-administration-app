@@ -49,17 +49,16 @@ export const useDataIntegrityDetails = (name) => {
             return
         }
         return detailsData.result[name]
-    }, [detailsData])
+    }, [detailsData, name])
 
     useEffect(() => {
         const didLoadDataForJob = formattedData?.startTime >= lastJob?.created
-        console.log({didLoadDataForJob})
+        console.log({ didLoadDataForJob })
         if (detailsError || didLoadDataForJob) {
             cancel()
         }
-    }, [detailsError, formattedData, lastJob])
+    }, [detailsError, formattedData, lastJob, name, cancel])
 
-    console.log({mutationLoading, startedPolling, detailsLoading, formattedData, lastJob})
     return {
         startDetailsCheck,
         runningCheck: mutationLoading || startedPolling,

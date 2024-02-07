@@ -23,7 +23,6 @@ export const DataIntegrityList = () => {
 
     const { startDataIntegrityCheck, checks, loadingChecks, runningCheck } =
         useDataIntegritySummary()
-    // const { startDataIntegrityCheck, loading: running, error } = useDataIntegrity()
 
     const filteredChecks = useMemo(
         () =>

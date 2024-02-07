@@ -34,7 +34,7 @@ const mergeRunResult = (checks, runSummary) => {
 
 export const useDataIntegritySummary = () => {
     const [lastJob, setLastJob] = React.useState(null)
-    const { checks, loading: checksLoading } = useDataIntegrityChecks()
+    const { data: checks, loading: checksLoading } = useDataIntegrityChecks()
     const {
         data: summaryData,
         loading: summaryLoading,
