@@ -2,9 +2,7 @@ import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, IconSync16 } from '@dhis2/ui'
 import React, { useEffect } from 'react'
-import {
-    getDurationWithUnitFromDelta
-} from '../../../utils/relativeTime.js'
+import { getDurationWithUnitFromDelta } from '../../../utils/relativeTime.js'
 import { StatusIcon } from '../list/StatusIcon.js'
 import css from './CheckDetails.module.css'
 import { Notice } from './Notice.js'
@@ -15,12 +13,10 @@ export const CheckDetails = ({ check }) => {
         useDataIntegrityDetails(check.name)
 
     useEffect(() => {
-        console.log({ loading, details })
         if (!loading && !details) {
-            console.log({ startDetailsCheck })
             startDetailsCheck({ name: check.name })
         }
-    }, [loading, details, check.name])
+    }, [loading, details, check.name, startDetailsCheck])
 
     return (
         <div className={css.wrapper}>
@@ -29,7 +25,11 @@ export const CheckDetails = ({ check }) => {
                     name={check.displayName}
                     description={check.description}
                 />
-                <Button icon={<IconSync16 />} onClick={startDetailsCheck}>
+                <Button
+                    disabled={runningCheck || loading}
+                    icon={<IconSync16 />}
+                    onClick={startDetailsCheck}
+                >
                     {i18n.t('Re-run')}
                 </Button>
             </div>
@@ -61,7 +61,12 @@ const DetailsRun = ({
     runningCheck,
     currentJob,
 }) => {
-    if (runningCheck && currentJob) {
+    // We dont have data for details at all
+    if (!detailsCheck) {
+        return <Notice status={'loading'} title={i18n.t('Loading')} />
+    }
+
+    if (runningCheck) {
         return (
             <DetailsRunLoading
                 detailsCheck={detailsCheck}
@@ -70,11 +75,6 @@ const DetailsRun = ({
                 currentJob={currentJob}
             />
         )
-    }
-
-    // We dont have data for details at all
-    if (!detailsCheck) {
-        return <Notice status={'loading'} title={i18n.t('Loading details')} />
     }
 
     return <DetailsRunCompleted detailsCheck={detailsCheck} />
@@ -138,39 +138,32 @@ const DetailsRunIssues = ({ detailsCheck }) => {
     )
 }
 
-
 const DetailsRunSuccess = () => {
     return <Notice status={'success'}>{i18n.t('Passed with 0 errors.')}</Notice>
 }
 
-const DetailsRunLoading = ({
-    detailsCheck,
-    summaryCheck,
-    runningCheck,
-    currentJob,
-}) => {
+const DetailsRunLoading = ({ detailsCheck, summaryCheck, currentJob }) => {
     const { fromServerDate } = useTimeZoneConversion()
-    if (runningCheck && currentJob) {
-        const previousRun = detailsCheck || summaryCheck?.runInfo
-        const jobStartedDate = fromServerDate(currentJob.created)
-        const jobDurationDelta = new Date().getTime() - jobStartedDate.getTime()
-        const checkInProgressString =
-            jobDurationDelta < 1000
-                ? i18n.t('Check in progress')
-                : i18n.t('Check in progress for {{time}}', {
-                      time: getDurationWithUnitFromDelta(jobDurationDelta),
+    const previousRun = detailsCheck || summaryCheck?.runInfo
+    const jobStartedDate = fromServerDate(currentJob?.created)
+    const jobDurationDelta = new Date().getTime() - jobStartedDate.getTime()
+
+    const checkInProgressString =
+        jobDurationDelta < 1000
+            ? i18n.t('Check in progress')
+            : i18n.t('Check in progress for {{time}}', {
+                  time: getDurationWithUnitFromDelta(jobDurationDelta),
+              })
+
+    return (
+        <Notice status="loading" title={checkInProgressString}>
+            {previousRun?.averageExecutionTime
+                ? i18n.t('Average execution time: {{ time }}', {
+                      time: getDurationWithUnitFromDelta(
+                          previousRun.averageExecutionTime
+                      ),
                   })
-        return (
-            <Notice status="loading" title={checkInProgressString}>
-                {previousRun?.averageExecutionTime
-                    ? i18n.t('Average execution time: {{ time }}', {
-                          time: getDurationWithUnitFromDelta(
-                              previousRun.averageExecutionTime
-                          ),
-                      })
-                    : null}
-            </Notice>
-        )
-    }
-    return null
+                : null}
+        </Notice>
+    )
 }

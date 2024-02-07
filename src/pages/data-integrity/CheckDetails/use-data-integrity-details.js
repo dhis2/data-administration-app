@@ -45,12 +45,13 @@ export const useDataIntegrityDetails = (name) => {
     }, [runMutation])
 
     const formattedData = useMemo(() => {
-        if (!detailsData?.result) {return}
+        if (!detailsData?.result) {
+            return
+        }
         return detailsData.result[name]
     }, [detailsData])
 
     useEffect(() => {
-        console.log('Got result', { formattedData, lastJob })
         const didLoadDataForJob = formattedData?.startTime >= lastJob?.created
         console.log({didLoadDataForJob})
         if (detailsError || didLoadDataForJob) {
