@@ -1,8 +1,8 @@
 import { CircularLoader } from '@dhis2/ui'
-import React from 'react'
-import css from './LoadingNotice.module.css'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
+import React from 'react'
+import css from './LoadingNotice.module.css'
 
 export const Notice = ({ title, children, status }) => {
     return (
@@ -22,7 +22,7 @@ export const Notice = ({ title, children, status }) => {
 }
 
 Notice.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.node,
     status: PropTypes.oneOf(['loading', 'success', 'error']).isRequired,
+    children: PropTypes.node,
+    title: PropTypes.string,
 }

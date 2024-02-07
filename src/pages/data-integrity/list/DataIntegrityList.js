@@ -1,4 +1,3 @@
-import { Card } from '@dhis2/ui'
 import React, { useState, useMemo } from 'react'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
 import { CheckDetailsView } from '../CheckDetails/CheckDetailsView.js'
@@ -38,7 +37,6 @@ export const DataIntegrityList = () => {
                 setFilter={setFilter}
                 filter={filter}
                 onRunAll={() => {
-                    console.log('ON RUN ALL')
                     startDataIntegrityCheck()
                 }}
                 runningAll={runningCheck}

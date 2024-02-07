@@ -1,13 +1,7 @@
-import React from 'react'
 import {
-    CircularLoader,
-    IconCheckmark16,
-    IconCheckmarkCircle16,
-    IconCheckmarkCircle24,
-    IconError16,
-    IconErrorFilled16,
-    IconErrorFilled24,
+    CircularLoader, IconCheckmarkCircle16, IconErrorFilled16
 } from '@dhis2/ui'
+import React from 'react'
 import css from './List.module.css'
 
 export const ErrorIcon = ({ numberOfErrors }) => {

@@ -1,7 +1,8 @@
 
 .listWrapper {
     height: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     overflow: auto;
     background-color: var(--colors-white);
 }
@@ -12,16 +13,6 @@
     height: 100%;
     overflow: auto;
 }
-/* 
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    box-shadow: 0 0 1px rgba(255,255,255,.5);
-} */
 
 .listDetailsWrapper > * {
     overflow-y: auto;

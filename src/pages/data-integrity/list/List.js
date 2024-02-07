@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-import css from './List.module.css'
-import { ListToolbar } from './ListToolbar.js'
-import { LastRunTime } from './LastRunTime.js'
-import i18n from '../../../locales/index.js'
-import { IconError16 } from '@dhis2/ui'
-import { StatusIcon } from './StatusIcon.js'
 import cx from 'classnames'
+import React from 'react'
+import { LastRunTime } from './LastRunTime.js'
+import css from './List.module.css'
+import { StatusIcon } from './StatusIcon.js'
 
 export const List = ({ setSelectedCheck, selectedCheck, checks }) => {
 

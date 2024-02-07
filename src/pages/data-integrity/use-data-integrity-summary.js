@@ -1,7 +1,7 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
-import { useLazyInterval, usePoll } from '../../hooks/use-poll.js'
-import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 import React, { useMemo, useEffect } from 'react'
+import { useLazyInterval } from '../../hooks/use-poll.js'
+import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 
 const startDataIntegrityCheckMutation = {
     resource: 'dataIntegrity/summary',
@@ -42,6 +42,8 @@ export const useDataIntegritySummary = () => {
         refetch: fetchSummary,
     } = useDataQuery(runSummaryQuery)
 
+
+
     const { start, cancel, started } = useLazyInterval(fetchSummary, 3000)
     const [startDataIntegrityCheck, { loading: mutationLoading, error, data }] =
         useDataMutation(startDataIntegrityCheckMutation, {
@@ -52,7 +54,7 @@ export const useDataIntegritySummary = () => {
         })
 
     const formattedData = useMemo(() => {
-        if (!summaryData || !checks) return
+        if (!summaryData || !checks) {return}
 
         const mergedRunResult = mergeRunResult(checks, summaryData.result)
 
@@ -74,7 +76,7 @@ export const useDataIntegritySummary = () => {
         if(summaryError || formattedData?.every((check) => !check.loading)) {
             cancel()
         }
-    }, [summaryError, formattedData])
+    }, [summaryError, formattedData, cancel])
 
     return {
         startDataIntegrityCheck,

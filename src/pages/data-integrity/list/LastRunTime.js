@@ -1,7 +1,7 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import React from 'react'
 import { getRelativeTime } from '../../../utils/relativeTime.js'
-import i18n from '@dhis2/d2-i18n'
 
 export const LastRunTime = ({ className, value }) => {
     const { fromServerDate } = useTimeZoneConversion()

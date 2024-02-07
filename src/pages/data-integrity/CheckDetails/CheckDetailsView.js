@@ -1,6 +1,6 @@
+import i18n from '@dhis2/d2-i18n'
 import { CheckDetails } from './CheckDetails.js'
 import css from './CheckDetails.module.css'
-import i18n from '@dhis2/d2-i18n'
 
 export const CheckDetailsView = ({ selectedCheck }) => {
     return selectedCheck ? (
