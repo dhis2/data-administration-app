@@ -39,7 +39,7 @@ export const ListToolbar = ({
                 ))}
             </SingleSelect>
             <Button disabled={runningAll} onClick={onRunAll}>
-                {i18n.t('Run all checks')}
+                {i18n.t('Run integrity checks')}
             </Button>
         </div>
     )

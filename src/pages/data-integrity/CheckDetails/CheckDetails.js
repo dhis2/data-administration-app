@@ -1,18 +1,14 @@
-import React, { useEffect } from 'react'
-import css from './CheckDetails.module.css'
-import cx from 'classnames'
-import { Button, CircularLoader, IconRedo16, NoticeBox } from '@dhis2/ui'
-import i18n from '@dhis2/d2-i18n'
-import { Notice } from './LoadingNotice.js'
-import { useDataIntegrityDetails } from './use-data-integrity-details.js'
-import {
-    getDurationWithUnit,
-    getDurationWithUnitFromDelta,
-    getRelativeTime,
-    getRelativeTimeFromDelta,
-} from '../../../utils/relativeTime.js'
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
+import { Button, IconSync16 } from '@dhis2/ui'
+import React, { useEffect } from 'react'
+import {
+    getDurationWithUnitFromDelta
+} from '../../../utils/relativeTime.js'
 import { StatusIcon } from '../list/StatusIcon.js'
+import css from './CheckDetails.module.css'
+import { Notice } from './Notice.js'
+import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
 export const CheckDetails = ({ check }) => {
     const { startDetailsCheck, runningCheck, loading, details, currentJob } =
@@ -33,7 +29,7 @@ export const CheckDetails = ({ check }) => {
                     name={check.displayName}
                     description={check.description}
                 />
-                <Button icon={<IconRedo16 />} onClick={startDetailsCheck}>
+                <Button icon={<IconSync16 />} onClick={startDetailsCheck}>
                     {i18n.t('Re-run')}
                 </Button>
             </div>
@@ -65,10 +61,6 @@ const DetailsRun = ({
     runningCheck,
     currentJob,
 }) => {
-    // We dont have data for details at all
-    if (!detailsCheck && !runningCheck) {
-        return <CircularLoader />
-    }
     if (runningCheck && currentJob) {
         return (
             <DetailsRunLoading
@@ -79,10 +71,12 @@ const DetailsRun = ({
             />
         )
     }
+
+    // We dont have data for details at all
     if (!detailsCheck) {
-        // this shouldn't really happen
-        return <div>No details loaded</div>
+        return <Notice status={'loading'} title={i18n.t('Loading details')} />
     }
+
     return <DetailsRunCompleted detailsCheck={detailsCheck} />
 }
 
@@ -136,13 +130,14 @@ const DetailsRunIssues = ({ detailsCheck }) => {
                             ? issue.name.substring(0, idInNameIndex)
                             : issue.name
                     const id = issue.id
-               
-                    return <li key={id || name}>{issue.name}</li>
+
+                    return <li key={id || issue.name}>{issue.name}</li>
                 })}
             </ul>
         </Notice>
     )
 }
+
 
 const DetailsRunSuccess = () => {
     return <Notice status={'success'}>{i18n.t('Passed with 0 errors.')}</Notice>
@@ -177,5 +172,5 @@ const DetailsRunLoading = ({
             </Notice>
         )
     }
-    return <div>hello</div>
+    return null
 }

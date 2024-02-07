@@ -16,14 +16,20 @@ export const useLazyInterval = (fn, interval) => {
     const [started, setStarted] = useState(false)
 
     const cancel = () => {
-        if (intervalId.current) {
-            clearInterval(intervalId.current)
+            clearTimeout(intervalId.current)
             setStarted(false)
-        }
     }
+
     const start = (...args) => {
         cancel()
-        intervalId.current = setInterval(() => fnRef.current(...args), interval)
+
+        const startTimeout = () => setTimeout(() => fnRef.current(...args).finally(() => {
+            if(started) {
+                intervalId.current = startTimeout()
+            }
+        }), interval)
+
+        startTimeout()
         setStarted(true)
     }
 
@@ -60,7 +66,7 @@ export const usePoll = ({ query, interval, checkDone }) => {
         if (error) {
             cancel()
         }
-    }, [error])
+    }, [error, cancel])
 
     return {
         start,

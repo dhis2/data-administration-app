@@ -65,3 +65,14 @@
     flex-direction: column;
     gap: 8px;
 }
+
+
+.chooseCheckMessage {
+    text-align: center;
+    color: var(--colors-grey700);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: var(--spacers-dp16);
+    justify-content: center;
+}

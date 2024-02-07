@@ -10,12 +10,19 @@ import { useDataIntegrity } from '../use-data-integrity.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { SORT } from './sorter.js'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
+import { CheckDetailsView } from '../CheckDetails/CheckDetailsView.js'
+
+const filterCheck = (check, filter) => {
+    if (!filter || !filter.trim().length === 0) {
+        return true
+    }
+    return check.displayName?.toLowerCase().includes(filter.toLowerCase())
+}
 
 export const DataIntegrityList = () => {
     const [filter, setFilter] = useState('')
     const [selectedSort, setSelectedSort] = useState(SORT['A-Z'].value)
 
-    console.log({ sort: selectedSort })
     const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
     const [selectedCheck, setSelectedCheck] = useState(null)
 
@@ -25,18 +32,10 @@ export const DataIntegrityList = () => {
 
     const filteredChecks = useMemo(
         () =>
-            checks
-                ?.filter(
-                    (check) =>
-                        !filter ||
-                        check.displayName
-                            .toLowerCase()
-                            .includes(filter.toLowerCase())
-                )
-                .sort(sorter),
+            checks?.filter((check) => filterCheck(check, filter)).sort(sorter),
         [checks, filter, sorter]
     )
-    // console.log({running, error})
+
     return (
         <Card>
             <ListToolbar
@@ -60,26 +59,11 @@ export const DataIntegrityList = () => {
                         checks={filteredChecks}
                     />
                 )}
-                {selectedCheck ? (
-                    <CheckDetails
-                        key={selectedCheck.name}
-                        check={selectedCheck}
-                    />
-                ) : (
-                    <ChooseCheck />
-                )}
+                <CheckDetailsView key={selectedCheck?.name} selectedCheck={selectedCheck} />
             </ListDetailsLayout>
         </Card>
     )
 }
-
-const ChooseCheck = () => (
-    <div className={css.chooseCheckMessage}>
-        {i18n.t(
-            'Choose a check to run from the list, or run all checks form the toolbar above'
-        )}
-    </div>
-)
 
 const ListDetailsLayout = ({ children }) => {
     return <div className={css.listDetailsWrapper}>{children}</div>

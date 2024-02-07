@@ -7,15 +7,11 @@ import { IconError16 } from '@dhis2/ui'
 import { StatusIcon } from './StatusIcon.js'
 import cx from 'classnames'
 
-export const List = ({ filter, setSelectedCheck, selectedCheck, checks }) => {
-    console.log('selected', selectedCheck)
+export const List = ({ setSelectedCheck, selectedCheck, checks }) => {
+
     return (
         <div className={css.list}>
-            {checks
-                ?.filter(
-                    (check) => !filter || check.displayName.includes(filter)
-                )
-                .map((check) => (
+            {checks?.map((check) => (
                     <ListItem
                         key={check.name}
                         setSelectedCheck={setSelectedCheck}
