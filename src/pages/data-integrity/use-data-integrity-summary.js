@@ -42,11 +42,14 @@ export const useDataIntegritySummary = () => {
     } = useDataQuery(summaryQuery)
 
     const { start, cancel, started: isPolling } = useLazyInterval(fetchSummary, 2000)
-    const [runMutation, { loading: mutationLoading }] =
+    const [runMutation, { loading: mutationLoading, error: mutationError }] =
         useDataMutation(startDataIntegrityCheckMutation, {
             onComplete: (data) => {
                 setLastJob(data.response)
-                start()
+                if(data?.response.created) {
+                    start()
+
+                }
             },
         })
 
@@ -81,11 +84,12 @@ export const useDataIntegritySummary = () => {
         })
     }, [summaryData, checks, lastJob, isPolling, mutationLoading])
 
+    const anyError = summaryError || mutationError
     useEffect(() => {
-        if (summaryError || formattedData?.every((check) => !check.loading)) {
+        if (anyError || formattedData?.every((check) => !check.loading)) {
             cancel()
         }
-    }, [summaryError, formattedData, cancel])
+    }, [anyError, formattedData, cancel])
 
     return {
         startDataIntegrityCheck,

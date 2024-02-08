@@ -35,30 +35,34 @@ export const useDataIntegrityDetails = (name) => {
         cancel,
         started: isPolling,
     } = useLazyInterval(fetchDetails, 500) // low due to long-polling
-    const [runMutation, { loading: mutationLoading }] =
+    const [runMutation, { loading: mutationLoading, error: mutationError }] =
         useDataMutation(startDetailsCheckMutation, {
             variables: { name },
             onComplete: (data) => {
                 setLastJob(data.response)
-                start({ name, timeout: 5000 })
+                if(data?.response?.created) {
+                   start({ name, timeout: 5000 })
+                }
             },
         })
 
     const startDetailsCheck = useCallback(() => {
+        setLastJob(null)
         runMutation()
     }, [runMutation])
 
     const details = detailsData?.result?.[name]
+    const anyError = detailsError || mutationError
 
     useEffect(() => {
         if(!isPolling) {
             return
         }
         const ranByLastJob = details?.startTime >= lastJob?.created
-        if (detailsError || ranByLastJob || lastJob == null) {
+        if (anyError || ranByLastJob || lastJob == null) {
             cancel()
         }
-    }, [detailsError, details, lastJob, name, cancel, isPolling])
+    }, [anyError, details, lastJob, name, cancel, isPolling])
 
     return {
         startDetailsCheck,
@@ -66,5 +70,6 @@ export const useDataIntegrityDetails = (name) => {
         loading: detailsLoading,
         details: details,
         currentJob: isPolling ? lastJob : null,
+        error: anyError,
     }
 }

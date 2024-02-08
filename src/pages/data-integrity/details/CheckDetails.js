@@ -2,7 +2,7 @@ import { useConfig, useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, IconSync16 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {
     getDurationWithUnitFromDelta,
     selectedLocale,
@@ -15,14 +15,36 @@ import { Notice } from './Notice.js'
 import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
 export const CheckDetails = ({ check }) => {
-    const { startDetailsCheck, runningCheck, loading, details, currentJob } =
-        useDataIntegrityDetails(check.name)
+    // make sure detailsCheck is only started once
+    const hasStartedCheck = useRef(false)
+    const {
+        startDetailsCheck,
+        runningCheck,
+        loading,
+        details,
+        currentJob,
+        error,
+    } = useDataIntegrityDetails(check.name)
 
     useEffect(() => {
-        if (!loading && !details && !runningCheck) {
+        if (
+            !loading &&
+            !details &&
+            !runningCheck &&
+            !error &&
+            !hasStartedCheck.current
+        ) {
+            hasStartedCheck.current = true
             startDetailsCheck({ name: check.name })
         }
-    }, [loading, details, runningCheck, check.name, startDetailsCheck])
+    }, [
+        loading,
+        details,
+        runningCheck,
+        check.name,
+        error,
+        startDetailsCheck,
+    ])
 
     return (
         <div className={css.wrapper}>
@@ -41,19 +63,23 @@ export const CheckDetails = ({ check }) => {
             </div>
 
             <div className={css.detailsRunWrapper}>
-                <DetailsContent
-                    summaryCheck={check}
-                    detailsCheck={details}
-                    runningCheck={runningCheck}
-                    currentJob={currentJob}
-                />
+                {error ? (
+                    <DetailsError />
+                ) : (
+                    <DetailsContent
+                        summaryCheck={check}
+                        detailsCheck={details}
+                        runningCheck={runningCheck}
+                        currentJob={currentJob}
+                    />
+                )}
             </div>
         </div>
     )
 }
 
 CheckDetails.propTypes = {
-    check: checkProps
+    check: checkProps,
 }
 
 export const DetailsHeader = ({ name, description }) => {
@@ -65,8 +91,7 @@ export const DetailsHeader = ({ name, description }) => {
     )
 }
 
-DetailsHeader.propTypes = {
-}
+DetailsHeader.propTypes = {}
 
 const DetailsContent = ({
     detailsCheck,
@@ -112,8 +137,7 @@ const DetailsRunCompleted = ({ detailsCheck }) => {
             <header title={latestRun.getClientZonedISOString()}>
                 {i18n.t('Latest run completed {{time}}', {
                     time: formattedLatestRun,
-                    interpolation: { escapeValue: false}
-                    
+                    interpolation: { escapeValue: false },
                 })}
                 <StatusIcon count={detailsCheck.issues.length} />
             </header>
@@ -133,6 +157,13 @@ const DetailsRunCompleted = ({ detailsCheck }) => {
     )
 }
 
+const DetailsError = () => {
+    return (
+        <Notice status="error">
+            {i18n.t('An error occurred when running the job')}
+        </Notice>
+    )
+}
 
 const DetailsRunSuccess = () => {
     return <Notice status={'success'}>{i18n.t('Passed with 0 errors.')}</Notice>
