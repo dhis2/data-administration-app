@@ -1,5 +1,5 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
-import React, { useEffect, useMemo, useCallback } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../../hooks/use-poll.js'
 
 const detailsQuery = {

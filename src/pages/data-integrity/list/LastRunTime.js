@@ -1,5 +1,6 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { getRelativeTime } from '../../../utils/relativeTime.js'
 
@@ -20,4 +21,9 @@ export const LastRunTime = ({ className, value }) => {
             {i18n.t('Last run {{time}}', { time: getRelativeTime(clientDate) })}
         </span>
     )
+}
+
+LastRunTime.propTypes = {
+    className: PropTypes.string,
+    value: PropTypes.string,
 }

@@ -1,5 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import { Button, Input, SingleSelect, SingleSelectOption } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React from 'react'
 import css from './List.module.css'
 import { SORT_OPTIONS } from './sorter.js'
@@ -43,4 +44,13 @@ export const ListToolbar = ({
             </Button>
         </div>
     )
+}
+
+ListToolbar.propTypes = {
+    filter: PropTypes.string.isRequired,
+    runningAll: PropTypes.bool.isRequired,
+    setFilter: PropTypes.func.isRequired,
+    setSort: PropTypes.func.isRequired,
+    sort: PropTypes.string.isRequired,
+    onRunAll: PropTypes.func.isRequired,
 }

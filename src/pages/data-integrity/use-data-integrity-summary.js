@@ -1,5 +1,5 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
-import React, { useMemo, useEffect } from 'react'
+import React, { useMemo, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../hooks/use-poll.js'
 import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 
@@ -42,13 +42,18 @@ export const useDataIntegritySummary = () => {
     } = useDataQuery(summaryQuery)
 
     const { start, cancel, started: isPolling } = useLazyInterval(fetchSummary, 2000)
-    const [startDataIntegrityCheck, { loading: mutationLoading }] =
+    const [runMutation, { loading: mutationLoading }] =
         useDataMutation(startDataIntegrityCheckMutation, {
             onComplete: (data) => {
                 setLastJob(data.response)
                 start()
             },
         })
+
+    const startDataIntegrityCheck = useCallback(() => {
+        setLastJob(null)
+        runMutation()
+}, [runMutation])
 
     const formattedData = useMemo(() => {
         if (!checks) {
@@ -58,22 +63,23 @@ export const useDataIntegritySummary = () => {
         const mergedRunResult = summaryData ? mergeRunResult(checks, summaryData.result) : checks
 
         return mergedRunResult.map((check) => {
-            let loading = isPolling
+            if(check.isSlow) {
+                return check
+            }
+            let loading = isPolling || mutationLoading
             if (check.runInfo && lastJob) {
                 // if check was started after the last job was created, it was propably
                 // started by last job
                 const ranByLastJob =
                     check.runInfo.startTime >= lastJob.created
-                // slow checks are not run, so don't show loading
-                loading = !check.isSlow && !ranByLastJob
+                loading = !ranByLastJob
             }
-
             return {
                 ...check,
                 loading
             }
         })
-    }, [summaryData, checks, lastJob, isPolling])
+    }, [summaryData, checks, lastJob, isPolling, mutationLoading])
 
     useEffect(() => {
         if (summaryError || formattedData?.every((check) => !check.loading)) {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
 import { CheckDetailsView } from '../details/CheckDetailsView.js'
@@ -52,7 +53,10 @@ export const DataIntegrityList = () => {
                         checks={filteredChecks}
                     />
                 )}
-                <CheckDetailsView key={selectedCheck?.name} selectedCheck={selectedCheck} />
+                <CheckDetailsView
+                    key={selectedCheck?.name}
+                    selectedCheck={selectedCheck}
+                />
             </ListDetailsLayout>
         </div>
     )
@@ -60,4 +64,8 @@ export const DataIntegrityList = () => {
 
 const ListDetailsLayout = ({ children }) => {
     return <div className={css.listDetailsWrapper}>{children}</div>
+}
+
+ListDetailsLayout.propTypes = {
+    children: PropTypes.node,
 }

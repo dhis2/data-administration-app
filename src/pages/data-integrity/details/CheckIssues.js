@@ -1,13 +1,15 @@
 import { useConfig } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
+import PropTypes from 'prop-types'
 import React from 'react'
 import css from './CheckDetails.module.css'
+import { checkProps } from './checkProps.js'
 import { getIssueLink } from './getIssueLink.js'
 import { Notice } from './Notice.js'
 
 export const CheckIssues = ({ detailsCheck }) => {
     const { baseUrl } = useConfig()
-    // const maintenance
+
     const numberOfErrors = detailsCheck.issues.length
     return (
         <Notice
@@ -28,6 +30,10 @@ export const CheckIssues = ({ detailsCheck }) => {
     )
 }
 
+CheckIssues.propTypes = {
+    detailsCheck: checkProps
+}
+
 const Issue = ({ issue, issuesIdType, baseUrl }) => {
     const { id, name } = issue
 
@@ -44,6 +50,12 @@ const Issue = ({ issue, issuesIdType, baseUrl }) => {
     )
 }
 
+Issue.propTypes = {
+    baseUrl: PropTypes.string,
+    issue: PropTypes.shape({ id: PropTypes.string, name: PropTypes.string }),
+    issuesIdType: PropTypes.string
+}
+
 const IssueLink = ({ href, children }) => {
     if (!href) {
         return children
@@ -53,4 +65,9 @@ const IssueLink = ({ href, children }) => {
             {children}
         </a>
     )
+}
+
+IssueLink.propTypes = {
+    children: PropTypes.node,
+    href: PropTypes.string,
 }

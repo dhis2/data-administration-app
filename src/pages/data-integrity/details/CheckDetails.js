@@ -1,6 +1,7 @@
 import { useConfig, useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, IconSync16 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import {
     getDurationWithUnitFromDelta,
@@ -8,7 +9,8 @@ import {
 } from '../../../utils/relativeTime.js'
 import { StatusIcon } from '../list/StatusIcon.js'
 import css from './CheckDetails.module.css'
-import { CheckIssues } from './DetailsIssues.js'
+import { CheckIssues } from './CheckIssues.js'
+import { checkProps } from './checkProps.js'
 import { Notice } from './Notice.js'
 import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
@@ -50,6 +52,10 @@ export const CheckDetails = ({ check }) => {
     )
 }
 
+CheckDetails.propTypes = {
+    check: checkProps
+}
+
 export const DetailsHeader = ({ name, description }) => {
     return (
         <header>
@@ -57,6 +63,9 @@ export const DetailsHeader = ({ name, description }) => {
             <p>{description}</p>
         </header>
     )
+}
+
+DetailsHeader.propTypes = {
 }
 
 const DetailsContent = ({

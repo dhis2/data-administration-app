@@ -1,6 +1,7 @@
 import {
     CircularLoader, IconCheckmarkCircle16, IconErrorFilled16
 } from '@dhis2/ui'
+import PropTypes from 'prop-types'
 import React from 'react'
 import css from './List.module.css'
 
@@ -11,6 +12,10 @@ export const ErrorIcon = ({ numberOfErrors }) => {
             <span>{numberOfErrors}</span>
         </span>
     )
+}
+
+ErrorIcon.propTypes = {
+    numberOfErrors: PropTypes.number.isRequired,
 }
 
 export const SuccessIcon = () => <IconCheckmarkCircle16 color="green" />
@@ -30,4 +35,9 @@ export const StatusIcon = ({ count, loading }) => {
 
     }
     return null
+}
+
+StatusIcon.propTypes = {
+    count: PropTypes.number,
+    loading: PropTypes.bool,
 }
