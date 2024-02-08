@@ -1,8 +1,11 @@
 import { useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, IconSync16 } from '@dhis2/ui'
-import React, { useEffect } from 'react'
-import { getDurationWithUnitFromDelta } from '../../../utils/relativeTime.js'
+import React, { useEffect, useState } from 'react'
+import {
+    getDurationWithUnitFromDelta,
+    selectedLocale,
+} from '../../../utils/relativeTime.js'
 import { StatusIcon } from '../list/StatusIcon.js'
 import css from './CheckDetails.module.css'
 import { Notice } from './Notice.js'
@@ -13,10 +16,11 @@ export const CheckDetails = ({ check }) => {
         useDataIntegrityDetails(check.name)
 
     useEffect(() => {
-        if (!loading && !details) {
+        if (!loading && !details && !runningCheck) {
+            console.log('Starting details check')
             startDetailsCheck({ name: check.name })
         }
-    }, [loading, details, check.name, startDetailsCheck])
+    }, [loading, details, runningCheck, check.name, startDetailsCheck])
 
     return (
         <div className={css.wrapper}>
@@ -61,11 +65,6 @@ const DetailsRun = ({
     runningCheck,
     currentJob,
 }) => {
-    // We dont have data for details at all
-    if (!detailsCheck) {
-        return <Notice status={'loading'} title={i18n.t('Loading')} />
-    }
-
     if (runningCheck) {
         return (
             <DetailsRunLoading
@@ -77,25 +76,36 @@ const DetailsRun = ({
         )
     }
 
+    // We dont have data for details at all
+    if (!detailsCheck) {
+        return <Notice status={'loading'} title={i18n.t('Loading')} />
+    }
+
     return <DetailsRunCompleted detailsCheck={detailsCheck} />
 }
 
 const DetailsRunCompleted = ({ detailsCheck }) => {
     const { fromServerDate } = useTimeZoneConversion()
 
-    const latestRun = fromServerDate(
-        detailsCheck.finishedTime
-    ).toLocaleTimeString()
+    const latestRun = fromServerDate(detailsCheck.finishedTime)
 
+    const formattedLatestRun = Intl.DateTimeFormat([selectedLocale], {
+        dateStyle: 'short',
+        timeStyle: 'short',
+    }).format(latestRun)
+
+    console.log({formattedLatestRun})
     const durationMs =
         fromServerDate(detailsCheck.finishedTime).getTime() -
         fromServerDate(detailsCheck.startTime).getTime()
 
     return (
         <div className={css.runCompletedWrapper}>
-            <header>
+            <header title={latestRun.getClientZonedISOString()}>
                 {i18n.t('Latest run completed {{time}}', {
-                    time: latestRun,
+                    time: formattedLatestRun,
+                    interpolation: { escapeValue: false}
+                    
                 })}
                 <StatusIcon count={detailsCheck.issues.length} />
             </header>
@@ -124,11 +134,6 @@ const DetailsRunIssues = ({ detailsCheck }) => {
         >
             <ul className={css.issuesList}>
                 {detailsCheck.issues.map((issue) => {
-                    const idInNameIndex = issue.name.lastIndexOf(':')
-                    const name =
-                        idInNameIndex !== -1
-                            ? issue.name.substring(0, idInNameIndex)
-                            : issue.name
                     const id = issue.id
 
                     return <li key={id || issue.name}>{issue.name}</li>
@@ -143,6 +148,16 @@ const DetailsRunSuccess = () => {
 }
 
 const DetailsRunLoading = ({ detailsCheck, summaryCheck, currentJob }) => {
+    const [, setTime] = useState(Date.now())
+
+    useEffect(() => {
+        // keep the progress timer updated
+        const interval = setInterval(() => setTime(Date.now()), 1000)
+        return () => {
+            clearInterval(interval)
+        }
+    }, [])
+
     const { fromServerDate } = useTimeZoneConversion()
     const previousRun = detailsCheck || summaryCheck?.runInfo
     const jobStartedDate = fromServerDate(currentJob?.created)

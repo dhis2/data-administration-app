@@ -1,11 +1,11 @@
 import i18n from '@dhis2/d2-i18n'
 
 // our locales use _ instead of - for locales
-const language = i18n.language?.replace('_', '-') || 'en'
+const language = i18n.language?.replace('_', '-') || 'en-gb'
 
 export const [selectedLocale] = Intl.DateTimeFormat.supportedLocalesOf([
     language,
-    'en',
+    'en-gb',
 ])
 
 // not sure if there can be discrepancies between supported locales

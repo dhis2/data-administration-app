@@ -1,5 +1,5 @@
 import { useDataQuery } from '@dhis2/app-runtime'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 const useConst = (factory) => {
     const ref = useRef(null)
@@ -15,10 +15,10 @@ export const useLazyInterval = (fn, interval) => {
     const intervalId = useRef(null)
     const [started, setStarted] = useState(false)
 
-    const cancel = () => {
+    const cancel = useCallback(() => {
             clearTimeout(intervalId.current)
             setStarted(false)
-    }
+    }, [])
 
     const start = (...args) => {
         cancel()
@@ -35,7 +35,7 @@ export const useLazyInterval = (fn, interval) => {
 
     useEffect(() => {
         return cancel
-    }, [])
+    }, [cancel])
 
     return { start, cancel, started }
 }

@@ -8,7 +8,7 @@ const startDataIntegrityCheckMutation = {
     type: 'create',
 }
 
-const runSummaryQuery = {
+const summaryQuery = {
     result: {
         resource: 'dataIntegrity/summary',
     },
@@ -37,15 +37,12 @@ export const useDataIntegritySummary = () => {
     const { data: checks, loading: checksLoading } = useDataIntegrityChecks()
     const {
         data: summaryData,
-        loading: summaryLoading,
         error: summaryError,
         refetch: fetchSummary,
-    } = useDataQuery(runSummaryQuery)
+    } = useDataQuery(summaryQuery)
 
-
-
-    const { start, cancel, started } = useLazyInterval(fetchSummary, 3000)
-    const [startDataIntegrityCheck, { loading: mutationLoading, error, data }] =
+    const { start, cancel, started: isPolling } = useLazyInterval(fetchSummary, 2000)
+    const [startDataIntegrityCheck, { loading: mutationLoading }] =
         useDataMutation(startDataIntegrityCheckMutation, {
             onComplete: (data) => {
                 setLastJob(data.response)
@@ -54,37 +51,41 @@ export const useDataIntegritySummary = () => {
         })
 
     const formattedData = useMemo(() => {
-        if (!summaryData || !checks) {return}
+        if (!checks) {
+            return
+        }
 
-        const mergedRunResult = mergeRunResult(checks, summaryData.result)
+        const mergedRunResult = summaryData ? mergeRunResult(checks, summaryData.result) : checks
 
         return mergedRunResult.map((check) => {
+            let loading = isPolling
             if (check.runInfo && lastJob) {
-                // if check was started after the last job was created, it was propably 
+                // if check was started after the last job was created, it was propably
                 // started by last job
-                const probablyThisJob =
+                const ranByLastJob =
                     check.runInfo.startTime >= lastJob.created
-                // loading if not slow and if we dont have data for last job
-                check.loading = !check.isSlow && !probablyThisJob
+                // slow checks are not run, so don't show loading
+                loading = !check.isSlow && !ranByLastJob
             }
-        
-            return check
+
+            return {
+                ...check,
+                loading
+            }
         })
-    }, [summaryData, checks, lastJob])
+    }, [summaryData, checks, lastJob, isPolling])
 
     useEffect(() => {
-        if(summaryError || formattedData?.every((check) => !check.loading)) {
+        if (summaryError || formattedData?.every((check) => !check.loading)) {
             cancel()
         }
     }, [summaryError, formattedData, cancel])
 
     return {
         startDataIntegrityCheck,
-        runningCheck: mutationLoading || started,
+        runningCheck: mutationLoading || isPolling,
         loadingChecks: checksLoading,
-        loading: checksLoading, // || isPolling,
-        //error: error || poll.error,
-        // issues: !isPolling && poll.data,
+        loading: checksLoading,
         checks: formattedData,
     }
 }

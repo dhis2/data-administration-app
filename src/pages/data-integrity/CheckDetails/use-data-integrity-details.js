@@ -5,8 +5,12 @@ import { useLazyInterval } from '../../../hooks/use-poll.js'
 const detailsQuery = {
     result: {
         resource: 'dataIntegrity/details',
-        params: ({ name }) => ({
+        params: ({ name, timeout }) => ({
             checks: name,
+            /* API supports timeout, which enables "long-polling", and means we have to poll less
+            Note that this is not enabled on the request that runs on mount - that is run to check if we have initial data 
+            for the check */
+            timeout,
         }),
     },
 }
@@ -29,14 +33,14 @@ export const useDataIntegrityDetails = (name) => {
     const {
         start,
         cancel,
-        started: startedPolling,
-    } = useLazyInterval(fetchDetails, 1000)
-    const [runMutation, { loading: mutationLoading, error, data }] =
+        started: isPolling,
+    } = useLazyInterval(fetchDetails, 500) // low due to long-polling
+    const [runMutation, { loading: mutationLoading }] =
         useDataMutation(startDetailsCheckMutation, {
             variables: { name },
             onComplete: (data) => {
                 setLastJob(data.response)
-                start({ name })
+                start({ name, timeout: 5000 })
             },
         })
 
@@ -52,18 +56,17 @@ export const useDataIntegrityDetails = (name) => {
     }, [detailsData, name])
 
     useEffect(() => {
-        const didLoadDataForJob = formattedData?.startTime >= lastJob?.created
-        console.log({ didLoadDataForJob })
-        if (detailsError || didLoadDataForJob) {
+        const ranByLastJob = formattedData?.startTime >= lastJob?.created
+        if (detailsError || ranByLastJob) {
             cancel()
         }
     }, [detailsError, formattedData, lastJob, name, cancel])
 
     return {
         startDetailsCheck,
-        runningCheck: mutationLoading || startedPolling,
+        runningCheck: mutationLoading || isPolling,
         loading: detailsLoading,
         details: formattedData,
-        currentJob: startedPolling ? lastJob : null,
+        currentJob: isPolling ? lastJob : null,
     }
 }
