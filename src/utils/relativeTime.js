@@ -56,10 +56,10 @@ export function getDurationWithUnit(relative, from = new Date()) {
 
 export function getDurationWithUnitFromDelta(deltaMs) {
     const { unit, value } = getClosestTimeUnit(deltaMs)
-    console.log({deltaMs, unit, value })
+
     return Intl.NumberFormat(selectedLocale, {
         style: 'unit',
-        unit: unit,
+        unit,
         unitDisplay: 'long',
     }).format(value)
 }

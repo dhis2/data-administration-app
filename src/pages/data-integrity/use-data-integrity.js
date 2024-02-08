@@ -27,7 +27,6 @@ export const useDataIntegrity = () => {
         startDataIntegrityCheckMutation,
         {
             onComplete: (data) => {
-                console.log('COMPLETED', data)
                 const { id: jobId } = data.response
                 poll.start({ jobId })
             },
