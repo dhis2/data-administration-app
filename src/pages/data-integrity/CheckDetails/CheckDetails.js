@@ -17,7 +17,6 @@ export const CheckDetails = ({ check }) => {
 
     useEffect(() => {
         if (!loading && !details && !runningCheck) {
-            console.log('Starting details check')
             startDetailsCheck({ name: check.name })
         }
     }, [loading, details, runningCheck, check.name, startDetailsCheck])

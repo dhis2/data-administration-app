@@ -8,8 +8,8 @@ const detailsQuery = {
         params: ({ name, timeout }) => ({
             checks: name,
             /* API supports timeout, which enables "long-polling", and means we have to poll less
-            Note that this is not enabled on the request that runs on mount - that is run to check if we have initial data 
-            for the check */
+            Note that this is not enabled on the request that runs on mount 
+            - which is used to check if we have initial data */
             timeout,
         }),
     },
@@ -48,25 +48,23 @@ export const useDataIntegrityDetails = (name) => {
         runMutation()
     }, [runMutation])
 
-    const formattedData = useMemo(() => {
-        if (!detailsData?.result) {
-            return
-        }
-        return detailsData.result[name]
-    }, [detailsData, name])
+    const details = detailsData?.result?.[name]
 
     useEffect(() => {
-        const ranByLastJob = formattedData?.startTime >= lastJob?.created
-        if (detailsError || ranByLastJob) {
+        if(!isPolling) {
+            return
+        }
+        const ranByLastJob = details?.startTime >= lastJob?.created
+        if (detailsError || ranByLastJob || lastJob == null) {
             cancel()
         }
-    }, [detailsError, formattedData, lastJob, name, cancel])
+    }, [detailsError, details, lastJob, name, cancel, isPolling])
 
     return {
         startDetailsCheck,
         runningCheck: mutationLoading || isPolling,
         loading: detailsLoading,
-        details: formattedData,
+        details: details,
         currentJob: isPolling ? lastJob : null,
     }
 }

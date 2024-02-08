@@ -13,25 +13,38 @@ export const useLazyInterval = (fn, interval) => {
     const fnRef = useRef()
     fnRef.current = fn
     const intervalId = useRef(null)
+    // need ref to keep track inside timeout
+    // need state as well, because we shouldn't read refs during render - and it's returned from the hook
+    const startedRef = useRef(false)
     const [started, setStarted] = useState(false)
 
     const cancel = useCallback(() => {
+        if (intervalId.current) {
             clearTimeout(intervalId.current)
+            startedRef.current = false
             setStarted(false)
+        }
     }, [])
 
-    const start = (...args) => {
-        cancel()
+    const start = useCallback(
+        (...args) => {
+            cancel()
 
-        const startTimeout = () => setTimeout(() => fnRef.current(...args).finally(() => {
-            if(started) {
-                intervalId.current = startTimeout()
-            }
-        }), interval)
+            const startTimeout = () =>
+                setTimeout(() => {
+                    fnRef.current(...args).finally(() => {
+                        if (startedRef.current) {
+                            intervalId.current = startTimeout()
+                        }
+                    })
+                }, interval)
 
-        startTimeout()
-        setStarted(true)
-    }
+            startTimeout()
+            startedRef.current = true
+            setStarted(true)
+        },
+        [cancel, interval]
+    )
 
     useEffect(() => {
         return cancel
