@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
-import { CheckDetailsView } from '../CheckDetails/CheckDetailsView.js'
+import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { List } from './List.js'
 import css from './List.module.css'

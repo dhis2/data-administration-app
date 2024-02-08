@@ -1,4 +1,4 @@
-import { useTimeZoneConversion } from '@dhis2/app-runtime'
+import { useConfig, useTimeZoneConversion } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { Button, IconSync16 } from '@dhis2/ui'
 import React, { useEffect, useState } from 'react'
@@ -8,6 +8,7 @@ import {
 } from '../../../utils/relativeTime.js'
 import { StatusIcon } from '../list/StatusIcon.js'
 import css from './CheckDetails.module.css'
+import { CheckIssues } from './DetailsIssues.js'
 import { Notice } from './Notice.js'
 import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
@@ -38,7 +39,7 @@ export const CheckDetails = ({ check }) => {
             </div>
 
             <div className={css.detailsRunWrapper}>
-                <DetailsRun
+                <DetailsContent
                     summaryCheck={check}
                     detailsCheck={details}
                     runningCheck={runningCheck}
@@ -58,7 +59,7 @@ export const DetailsHeader = ({ name, description }) => {
     )
 }
 
-const DetailsRun = ({
+const DetailsContent = ({
     detailsCheck,
     summaryCheck,
     runningCheck,
@@ -93,7 +94,6 @@ const DetailsRunCompleted = ({ detailsCheck }) => {
         timeStyle: 'short',
     }).format(latestRun)
 
-    console.log({formattedLatestRun})
     const durationMs =
         fromServerDate(detailsCheck.finishedTime).getTime() -
         fromServerDate(detailsCheck.startTime).getTime()
@@ -112,7 +112,7 @@ const DetailsRunCompleted = ({ detailsCheck }) => {
                 {detailsCheck.issues.length === 0 ? (
                     <DetailsRunSuccess />
                 ) : (
-                    <DetailsRunIssues detailsCheck={detailsCheck} />
+                    <CheckIssues detailsCheck={detailsCheck} />
                 )}
                 <div className={css.completedTime}>
                     {i18n.t('Completed in {{time}}', {
@@ -124,23 +124,6 @@ const DetailsRunCompleted = ({ detailsCheck }) => {
     )
 }
 
-const DetailsRunIssues = ({ detailsCheck }) => {
-    const numberOfErrors = detailsCheck.issues.length
-    return (
-        <Notice
-            title={i18n.t('{{ numberOfErrors }} errors', { numberOfErrors })}
-            status="error"
-        >
-            <ul className={css.issuesList}>
-                {detailsCheck.issues.map((issue) => {
-                    const id = issue.id
-
-                    return <li key={id || issue.name}>{issue.name}</li>
-                })}
-            </ul>
-        </Notice>
-    )
-}
 
 const DetailsRunSuccess = () => {
     return <Notice status={'success'}>{i18n.t('Passed with 0 errors.')}</Notice>

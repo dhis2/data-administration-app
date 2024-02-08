@@ -66,6 +66,10 @@
     gap: 8px;
 }
 
+.issuesList a {
+    color: var(--colors-grey900);
+}
+
 
 .chooseCheckMessage {
     text-align: center;
@@ -76,3 +80,5 @@
     padding: var(--spacers-dp16);
     justify-content: center;
 }
+
+
