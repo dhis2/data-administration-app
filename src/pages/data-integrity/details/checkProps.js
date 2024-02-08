@@ -18,5 +18,6 @@ export const checkProps = propTypes.shape({
     issuesIdType: propTypes.string,
     recommendation: propTypes.string,
     section: propTypes.string,
+    severity: propTypes.string,
     startTime: propTypes.string,
 })
