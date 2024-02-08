@@ -15,7 +15,7 @@ const App = () => (
             </div>
 
             <main className={styles.content}>
-                    <Routes />
+                <Routes />
             </main>
         </div>
     </HashRouter>

@@ -35,6 +35,7 @@ export const useDataIntegrityDetails = (name) => {
         cancel,
         started: isPolling,
     } = useLazyInterval(fetchDetails, 500) // low due to long-polling
+
     const [runMutation, { loading: mutationLoading, error: mutationError }] =
         useDataMutation(startDetailsCheckMutation, {
             variables: { name },

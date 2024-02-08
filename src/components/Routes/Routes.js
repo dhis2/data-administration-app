@@ -45,7 +45,11 @@ const Routes = () => (
                 <BatchDeleteLockExceptions />
             </ContentWrapper>
         </Route>
-        <Route path="/lock-exceptions/add" component={AddLockException} />
+        <Route path="/lock-exceptions/add">
+            <ContentWrapper>
+                <AddLockException />
+            </ContentWrapper>
+        </Route>
         <Redirect from="*" to="/" />
     </Switch>
 )
