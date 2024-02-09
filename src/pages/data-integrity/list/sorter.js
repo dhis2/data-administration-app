@@ -16,15 +16,19 @@ export const SORT = {
         value: 'severity',
         sorter: (a, b) => {
             const severityOrder = {
-                CRITICAL: 0,
-                SEVERE: 1,
-                WARNING: 2,
-                INFO: 3,
+                INFO: 0,
+                WARNING: 1,
+                SEVERE: 2,
+                CRITICAL: 3,
             }
-            return (
-                (severityOrder[a.severity] || 100) -
-                (severityOrder[b.severity] || 100)
-            )
+            const severityDiffs =
+                (severityOrder[b.severity] || -1) -
+                (severityOrder[a.severity] || -1)
+            // sort by section if severity is the same
+            if (severityDiffs === 0) {
+                return SORT.section.sorter(a, b)
+            }
+            return severityDiffs
         },
     },
     errors: {
@@ -35,7 +39,7 @@ export const SORT = {
                 a.runInfo?.count == undefined ||
                 b.runInfo?.count == undefined
             ) {
-                return SORT['A-Z'].sorter(a, b)
+                return SORT.section.sorter(a, b)
             }
             return b.runInfo.count - a.runInfo.count
         },
