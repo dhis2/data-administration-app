@@ -62,17 +62,6 @@ CheckDetails.propTypes = {
     check: checkProps,
 }
 
-export const DetailsHeader = ({ name, description }) => {
-    return (
-        <header>
-            <h2>{name}</h2>
-            <p>{description}</p>
-        </header>
-    )
-}
-
-DetailsHeader.propTypes = {}
-
 const DetailsError = () => {
     return (
         <Notice status="error">

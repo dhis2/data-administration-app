@@ -3,13 +3,10 @@ import i18n from '@dhis2/d2-i18n'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import {
-    getDurationWithUnitFromDelta,
-    selectedLocale,
+    getDurationWithUnitFromDelta
 } from '../../../utils/relativeTime.js'
-import { StatusIcon } from '../list/StatusIcon.js'
-import css from './CheckDetails.module.css'
-import { CheckIssues } from './CheckIssues.js'
 import { checkProps } from './checkProps.js'
+import { CheckRunCompleted } from './CheckRunCompleted.js'
 import { Notice } from './Notice.js'
 
 export const CheckRunContent = ({
@@ -34,7 +31,7 @@ export const CheckRunContent = ({
         return <Notice status={'loading'} title={i18n.t('Loading')} />
     }
 
-    return <DetailsRunCompleted detailsCheck={detailsCheck} />
+    return <CheckRunCompleted detailsCheck={detailsCheck} />
 }
 
 CheckRunContent.propTypes = {
@@ -44,52 +41,6 @@ CheckRunContent.propTypes = {
     summaryCheck: checkProps,
 }
 
-const DetailsRunCompleted = ({ detailsCheck }) => {
-    const { fromServerDate } = useTimeZoneConversion()
-
-    const latestRun = fromServerDate(detailsCheck.finishedTime)
-
-    const formattedLatestRun = Intl.DateTimeFormat([selectedLocale], {
-        dateStyle: 'short',
-        timeStyle: 'short',
-    }).format(latestRun)
-
-    const durationMs =
-        fromServerDate(detailsCheck.finishedTime).getTime() -
-        fromServerDate(detailsCheck.startTime).getTime()
-
-    return (
-        <div className={css.runCompletedWrapper}>
-            <header title={latestRun.getClientZonedISOString()}>
-                {i18n.t('Latest run completed {{time}}', {
-                    time: formattedLatestRun,
-                    interpolation: { escapeValue: false },
-                })}
-                <StatusIcon count={detailsCheck.issues.length} />
-            </header>
-            <div className={css.runCompletedContent}>
-                {detailsCheck.issues.length === 0 ? (
-                    <DetailsRunSuccess />
-                ) : (
-                    <CheckIssues detailsCheck={detailsCheck} />
-                )}
-                <div className={css.completedTime}>
-                    {i18n.t('Completed in {{time}}', {
-                        time: getDurationWithUnitFromDelta(durationMs),
-                    })}
-                </div>
-            </div>
-        </div>
-    )
-}
-
-DetailsRunCompleted.propTypes = {
-    detailsCheck: checkProps,
-}
-
-const DetailsRunSuccess = () => {
-    return <Notice status={'success'}>{i18n.t('Passed with 0 errors.')}</Notice>
-}
 
 const DetailsRunLoading = ({ detailsCheck, summaryCheck, currentJob }) => {
     const [, setTime] = useState(Date.now())

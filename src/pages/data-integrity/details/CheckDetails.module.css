@@ -7,6 +7,7 @@
     flex-direction: column;
     gap: var(--spacers-dp12);
 }
+
 .checkInfo header button {
     flex-shrink: 0;
     flex-grow: 0;
@@ -30,6 +31,7 @@
     display: flex;
     gap: 80px;
 }
+
 .keyInfo {
     display: flex;
     flex-direction: column;
@@ -90,7 +92,10 @@
 }
 
 .runCompletedWrapper {
-    padding: 16px 0px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp8);
+    padding: var(--spacers-dp16) 0px var(--spacers-dp8);
 }
 
 .runCompletedWrapper header {
@@ -100,14 +105,21 @@
     gap: 16px;
 }
 
-.runCompletedContent {
+.runSummary {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 12px;
 }
 
-.completedTime {
+.completedTimeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.completedDuration {
     color: var(--colors-grey700);
     font-size: 12px;
 }
