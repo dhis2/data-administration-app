@@ -1,3 +1,4 @@
+import i18n from '@dhis2/d2-i18n'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -9,6 +10,11 @@ import { StatusIcon } from './StatusIcon.js'
 export const List = ({ setSelectedCheck, selectedCheck, checks }) => {
     return (
         <div className={css.list}>
+            {checks?.length === 0 ? (
+                <p className={css.noItemsMessage}>
+                    {i18n.t('No integrity check matches your search criteria.')}
+                </p>
+            ) : null}
             {checks?.map((check) => (
                 <ListItem
                     key={check.name}

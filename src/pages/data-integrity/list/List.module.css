@@ -54,6 +54,16 @@
     color: var(--colors-grey700);
 }
 
+.noItemsMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+    color: var(--colors-grey700);
+
+}
+
 .subtitleSection {
     flex-shrink: 0;
 }

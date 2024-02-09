@@ -20,7 +20,7 @@ export const CheckRunCompleted = ({ detailsCheck }) => {
 
     return (
         <div className={css.runCompletedWrapper}>
-            {!passed && (
+            {!passed && detailsCheck.recommendation && (
                 <Recommendation>{detailsCheck.recommendation}</Recommendation>
             )}
             <div
@@ -101,7 +101,7 @@ const CheckRunSuccess = () => {
 }
 
 const Recommendation = ({ children }) => (
-    <NoticeBox title={i18n.t('Reccomendation')}>{children}</NoticeBox>
+    <NoticeBox title={i18n.t('Recommendation')}>{children}</NoticeBox>
 )
 
 Recommendation.propTypes = {
