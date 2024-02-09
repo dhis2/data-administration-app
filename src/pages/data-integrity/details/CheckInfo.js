@@ -26,7 +26,7 @@ export const CheckInfo = ({
                     {i18n.t('Re-run')}
                 </Button>
             </CheckHeader>
-            <Divider />
+            <Divider dense/>
 
             <div className={css.keyInfoWrapper}>
                 <CheckKeyInfoItem label={i18n.t('Severity')} value={severity} />

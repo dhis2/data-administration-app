@@ -9,7 +9,7 @@
 
 .listDetailsWrapper {
     display: grid;
-    grid-template-columns: 392px auto;
+    grid-template-columns: 392px minmax(400px, 1fr);
     height: 100%;
     overflow: auto;
 }
@@ -19,7 +19,7 @@
 }
 
 .listItem {
-    box-shadow: 0px -1px 0px 0px #e8edf2 inset;
+    box-shadow: 0px -1px 0px 0px var(--colors-grey300) inset;
     padding: 16px;
     gap: 10px;
     display: flex;
@@ -30,7 +30,7 @@
 
 .listItem.selected {
     background-color: var(--colors-grey100);
-    box-shadow: 4px 0px 0px 0px #1565C0 inset;
+    box-shadow: 4px 0px 0px 0px var(--colors-blue700) inset;
     cursor: initial;
 }
 
@@ -64,7 +64,7 @@
     padding: 8px 8px 8px 16px;
     border-width: 1px 0px 1px 0px;
     border-style: solid;
-    border-color: #d5dde5;
+    border-color: var(--colors-grey400);
 }
 
 .errorIcon {

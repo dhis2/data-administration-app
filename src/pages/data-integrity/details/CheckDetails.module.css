@@ -73,7 +73,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background: linear-gradient(transparent, 5%, white);
+    background: linear-gradient(rgba(255,255,255,0.7), white);
 }
 
 .introductionText.expanded {
