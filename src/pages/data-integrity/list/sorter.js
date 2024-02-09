@@ -11,6 +11,22 @@ export const SORT = {
         value: 'section',
         sorter: (a, b) => a.section.localeCompare(b.section),
     },
+    severity: {
+        label: i18n.t('Severity'),
+        value: 'severity',
+        sorter: (a, b) => {
+            const severityOrder = {
+                CRITICAL: 0,
+                SEVERE: 1,
+                WARNING: 2,
+                INFO: 3,
+            }
+            return (
+                (severityOrder[a.severity] || 100) -
+                (severityOrder[b.severity] || 100)
+            )
+        },
+    },
     errors: {
         label: i18n.t('Number of errors'),
         value: 'errors',

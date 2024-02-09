@@ -3,6 +3,7 @@ import { Button, IconSync16, Divider } from '@dhis2/ui'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { useLayoutEffect, useState, useRef } from 'react'
+import { getSeverityTranslation } from '../severityTranslation.js'
 import css from './CheckDetails.module.css'
 
 export const CheckInfo = ({
@@ -11,9 +12,6 @@ export const CheckInfo = ({
     onStartDetailsCheck,
     hasRun,
 }) => {
-    const severity =
-        check.severity.charAt(0).toUpperCase() +
-        check.severity.slice(1).toLowerCase()
     return (
         <div className={css.checkInfo}>
             <CheckHeader name={check.displayName}>
@@ -26,10 +24,13 @@ export const CheckInfo = ({
                     {i18n.t('Re-run')}
                 </Button>
             </CheckHeader>
-            <Divider dense/>
+            <Divider dense />
 
             <div className={css.keyInfoWrapper}>
-                <CheckKeyInfoItem label={i18n.t('Severity')} value={severity} />
+                <CheckKeyInfoItem
+                    label={i18n.t('Severity')}
+                    value={getSeverityTranslation(check.severity)}
+                />
                 <CheckKeyInfoItem
                     label={i18n.t('Section')}
                     value={check.section}
@@ -80,7 +81,8 @@ const CheckIntroduction = ({ introduction }) => {
         if (!textRef.current) {
             return
         }
-
+        // handle dynamic overflowing
+        // hiding the "fade" and "Show more" button when there's enough space
         const observer = new ResizeObserver(() => {
             if (!textRef.current) {
                 return

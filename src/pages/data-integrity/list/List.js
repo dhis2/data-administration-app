@@ -1,6 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { getSeverityTranslation } from '../severityTranslation.js'
 import { LastRunTime } from './LastRunTime.js'
 import css from './List.module.css'
 import { StatusIcon } from './StatusIcon.js'
@@ -35,8 +36,17 @@ export const ListItem = ({ setSelectedCheck, check, selected }) => {
             <div className={css.checkInfo}>
                 <header>{check.displayName}</header>
                 <div className={css.subtitle}>
-                    <LastRunTime value={check.runInfo?.finishedTime} />
-                    {check.section}
+                    <span>{getSeverityTranslation(check.severity)}</span>
+                    <VerticalDivider />
+                    <span className={css.subtitleSection}>{check.section}</span>
+                    {check.runInfo.finishedTime ? (
+                        <>
+                            <VerticalDivider />
+                            <LastRunTime
+                                value={check.runInfo?.finishedTime}
+                            />
+                        </>
+                    ) : null}
                 </div>
             </div>
             <span className={css.statusIcon}>
@@ -53,4 +63,8 @@ ListItem.propTypes = {
     check: PropTypes.object.isRequired,
     selected: PropTypes.bool.isRequired,
     setSelectedCheck: PropTypes.func.isRequired,
+}
+
+const VerticalDivider = () => {
+    return <span>|</span>
 }

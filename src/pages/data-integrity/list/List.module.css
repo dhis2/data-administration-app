@@ -48,9 +48,15 @@
 
 .listItem .subtitle {
     display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     font-size: 12px;
-    gap: 12px;
+    gap: 4px;
     color: var(--colors-grey700)
+}
+
+.subtitleSection {
+    flex-shrink: 0;
 }
 
 .statusIcon {

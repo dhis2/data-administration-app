@@ -18,7 +18,7 @@ export const LastRunTime = ({ className, value }) => {
             className={className}
             title={clientDate.getClientZonedISOString()}
         >
-            {i18n.t('Last run {{time}}', { time: getRelativeTime(clientDate) })}
+            {getRelativeTime(clientDate)}
         </span>
     )
 }
