@@ -37,7 +37,9 @@ export const CheckInfo = ({
                 />
             </div>
 
-            <CheckIntroduction introduction={check.introduction} />
+            {check.introduction && (
+                <CheckIntroduction introduction={check.introduction} />
+            )}
         </div>
     )
 }
