@@ -89,6 +89,16 @@
     box-shadow: none;
 }
 
+.slowCheckInfo {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-inline-start: 1px solid var(--colors-grey300);
+    padding-inline-start: 6px;
+    color: var(--colors-grey700);
+}
+
 /* disable borders and shadows from UI TabBar and Tab
 Prevents "double" border
 */

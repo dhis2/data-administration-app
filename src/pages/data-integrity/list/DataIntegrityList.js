@@ -9,7 +9,7 @@ import css from './List.module.css'
 import { ListToolbar, ToolbarTabs } from './ListToolbar.js'
 import { SORT } from './sorter.js'
 
-const filterCheck = (check, filter, showSlow) => {
+const filterCheck = (check, filter) => {
     if (!filter || !filter.trim().length === 0) {
         return true
     }
@@ -27,16 +27,18 @@ export const DataIntegrityList = () => {
     const { startDataIntegrityCheck, checks, loadingChecks, runningCheck } =
         useDataIntegritySummary()
 
+    const selectedSlow = selectedTab === 'slow'
+
     const filteredChecks = useMemo(
         () =>
             checks
                 ?.filter(
                     (check) =>
-                        (selectedTab === 'slow' ? check.isSlow : !check.isSlow) &&
-                        filterCheck(check, filter, selectedTab)
+                        (selectedSlow ? check.isSlow : !check.isSlow) &&
+                        filterCheck(check, filter)
                 )
                 .sort(sorter),
-        [checks, filter, sorter, selectedTab]
+        [checks, filter, sorter, selectedSlow]
     )
 
     return (
@@ -54,6 +56,7 @@ export const DataIntegrityList = () => {
                 runningAll={runningCheck}
                 sort={selectedSort}
                 setSort={setSelectedSort}
+                selectedSlow={selectedSlow}
             />
             <ListDetailsLayout>
                 {loadingChecks ? (

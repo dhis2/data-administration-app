@@ -1,6 +1,7 @@
 import i18n from '@dhis2/d2-i18n'
 import {
     Button,
+    IconInfo16,
     Input,
     SingleSelect,
     SingleSelectOption,
@@ -19,6 +20,7 @@ export const ListToolbar = ({
     setSort,
     onRunAll,
     runningAll,
+    selectedSlow,
 }) => {
     return (
         <div className={css.listToolbar}>
@@ -49,6 +51,12 @@ export const ListToolbar = ({
             <Button disabled={runningAll} onClick={onRunAll}>
                 {i18n.t('Run integrity checks')}
             </Button>
+            {selectedSlow && (
+                <span className={css.slowCheckInfo}>
+                    <IconInfo16 />
+                    Slow checks must be run individually
+                </span>
+            )}
         </div>
     )
 }
@@ -60,6 +68,7 @@ ListToolbar.propTypes = {
     setSort: PropTypes.func.isRequired,
     sort: PropTypes.string.isRequired,
     onRunAll: PropTypes.func.isRequired,
+    selectedSlow: PropTypes.bool,
 }
 
 export const ToolbarTabs = ({ selectedTab, setSelectedTab }) => {
