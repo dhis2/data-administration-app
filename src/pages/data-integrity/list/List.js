@@ -39,19 +39,17 @@ export const ListItem = ({ setSelectedCheck, check, selected }) => {
                     <span>{getSeverityTranslation(check.severity)}</span>
                     <VerticalDivider />
                     <span className={css.subtitleSection}>{check.section}</span>
-                    {check.runInfo.finishedTime ? (
+                    {check.runInfo?.finishedTime ? (
                         <>
                             <VerticalDivider />
-                            <LastRunTime
-                                value={check.runInfo?.finishedTime}
-                            />
+                            <LastRunTime value={check.runInfo?.finishedTime} />
                         </>
                     ) : null}
                 </div>
             </div>
             <span className={css.statusIcon}>
                 <StatusIcon
-                    count={check?.runInfo?.count}
+                    count={check.runInfo?.count}
                     loading={check.loading}
                 />
             </span>

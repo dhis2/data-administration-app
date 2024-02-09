@@ -1,5 +1,12 @@
 import i18n from '@dhis2/d2-i18n'
-import { Button, Input, SingleSelect, SingleSelectOption } from '@dhis2/ui'
+import {
+    Button,
+    Input,
+    SingleSelect,
+    SingleSelectOption,
+    Tab,
+    TabBar,
+} from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
 import css from './List.module.css'
@@ -53,4 +60,28 @@ ListToolbar.propTypes = {
     setSort: PropTypes.func.isRequired,
     sort: PropTypes.string.isRequired,
     onRunAll: PropTypes.func.isRequired,
+}
+
+export const ToolbarTabs = ({ selectedTab, setSelectedTab }) => {
+    return (
+        <TabBar className={css.toolbarTabs}>
+            <Tab
+                selected={selectedTab === 'standard'}
+                onClick={() => setSelectedTab('standard')}
+            >
+                {i18n.t('Standard checks')}
+            </Tab>
+            <Tab
+                selected={selectedTab === 'slow'}
+                onClick={() => setSelectedTab('slow')}
+            >
+                {i18n.t('Slow checks')}
+            </Tab>
+        </TabBar>
+    )
+}
+
+ToolbarTabs.propTypes = {
+    selectedTab: PropTypes.string.isRequired,
+    setSelectedTab: PropTypes.func.isRequired,
 }

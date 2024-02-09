@@ -1,3 +1,4 @@
+import { Tab, TabBar } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
@@ -5,10 +6,10 @@ import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { List } from './List.js'
 import css from './List.module.css'
-import { ListToolbar } from './ListToolbar.js'
+import { ListToolbar, ToolbarTabs } from './ListToolbar.js'
 import { SORT } from './sorter.js'
 
-const filterCheck = (check, filter) => {
+const filterCheck = (check, filter, showSlow) => {
     if (!filter || !filter.trim().length === 0) {
         return true
     }
@@ -17,6 +18,7 @@ const filterCheck = (check, filter) => {
 
 export const DataIntegrityList = () => {
     const [filter, setFilter] = useState('')
+    const [selectedTab, setSelectedTab] = useState('standard')
     const [selectedSort, setSelectedSort] = useState(SORT['A-Z'].value)
 
     const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
@@ -27,12 +29,22 @@ export const DataIntegrityList = () => {
 
     const filteredChecks = useMemo(
         () =>
-            checks?.filter((check) => filterCheck(check, filter)).sort(sorter),
-        [checks, filter, sorter]
+            checks
+                ?.filter(
+                    (check) =>
+                        (selectedTab === 'slow' ? check.isSlow : !check.isSlow) &&
+                        filterCheck(check, filter, selectedTab)
+                )
+                .sort(sorter),
+        [checks, filter, sorter, selectedTab]
     )
 
     return (
         <div className={css.listWrapper}>
+            <ToolbarTabs
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
+            />
             <ListToolbar
                 setFilter={setFilter}
                 filter={filter}

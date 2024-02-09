@@ -1,4 +1,3 @@
-
 .listWrapper {
     height: 100%;
     display: flex;
@@ -25,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     min-height: 69px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .listItem.selected {
@@ -52,7 +51,7 @@
     flex-wrap: wrap;
     font-size: 12px;
     gap: 4px;
-    color: var(--colors-grey700)
+    color: var(--colors-grey700);
 }
 
 .subtitleSection {
@@ -68,10 +67,26 @@
     gap: 10px;
     align-items: center;
     padding: 8px 8px 8px 16px;
-    border-width: 1px 0px 1px 0px;
+    border-width: 1px 0px 1px;
     border-style: solid;
     border-color: var(--colors-grey400);
 }
+
+.toolbarTabs {
+    border-width: 1px 0px 0px;
+    border-style: solid;
+    border-color: var(--colors-grey400);
+    box-shadow: none;
+}
+
+/* disable borders and shadows from UI TabBar and Tab
+Prevents "double" border
+*/
+.toolbarTabs div, .toolbarTabs button {
+    box-shadow: none;
+    border: none !important;
+}
+
 
 .errorIcon {
     display: flex;
