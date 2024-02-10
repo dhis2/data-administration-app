@@ -1,5 +1,5 @@
 import i18n from '@dhis2/d2-i18n'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import css from './CheckDetails.module.css'
 import { CheckInfo } from './CheckInfo.js'
 import { checkProps } from './checkProps.js'
@@ -46,7 +46,7 @@ export const CheckDetails = ({ check }) => {
             <CheckInfo
                 check={check}
                 hasRunCheck={hasRunCheck}
-                disableRunButton={runningCheck | loading}
+                disableRunButton={runningCheck || loading}
                 onStartDetailsCheck={() =>
                     startDetailsCheck({ name: check.name })
                 }

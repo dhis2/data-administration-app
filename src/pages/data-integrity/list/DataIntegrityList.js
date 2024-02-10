@@ -1,4 +1,3 @@
-import { Tab, TabBar } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
 import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'

@@ -73,6 +73,6 @@ export const useDataIntegrityDetails = (name) => {
         details: details,
         currentJob: isPolling ? lastJob : null,
         error: anyError,
-        hasRunCheck: called || details,
+        hasRunCheck: called || !!details,
     }
 }

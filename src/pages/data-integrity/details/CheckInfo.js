@@ -49,6 +49,7 @@ CheckInfo.propTypes = {
         displayName: PropTypes.string,
         introduction: PropTypes.string,
         name: PropTypes.string,
+        section: PropTypes.string,
         severity: PropTypes.string,
     }).isRequired,
     disableRunButton: PropTypes.bool,
@@ -65,6 +66,11 @@ const CheckHeader = ({ name, children }) => {
     )
 }
 
+CheckHeader.propTypes = {
+    children: PropTypes.node,
+    name: PropTypes.string,
+}
+
 const CheckKeyInfoItem = ({ label, value }) => {
     return (
         <div className={css.keyInfo}>
@@ -72,6 +78,11 @@ const CheckKeyInfoItem = ({ label, value }) => {
             <span>{value}</span>
         </div>
     )
+}
+
+CheckKeyInfoItem.propTypes = {
+    label: PropTypes.string,
+    value: PropTypes.string,
 }
 
 const CheckIntroduction = ({ introduction }) => {
@@ -118,4 +129,8 @@ const CheckIntroduction = ({ introduction }) => {
             )}
         </div>
     )
+}
+
+CheckIntroduction.propTypes = {
+    introduction: PropTypes.string,
 }
