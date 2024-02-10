@@ -22,7 +22,7 @@ export const Notice = ({ title, children, status }) => {
 }
 
 Notice.propTypes = {
-    status: PropTypes.oneOf(['loading', 'success', 'error']).isRequired,
     children: PropTypes.node,
+    status: PropTypes.oneOf(['loading', 'success', 'error']),
     title: PropTypes.string,
 }

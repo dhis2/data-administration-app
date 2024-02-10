@@ -9,7 +9,6 @@ import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
 export const CheckDetails = ({ check }) => {
     // make sure detailsCheck is only started once
-    const hasStartedCheck = useRef(false)
     const {
         startDetailsCheck,
         runningCheck,
@@ -17,26 +16,37 @@ export const CheckDetails = ({ check }) => {
         details,
         currentJob,
         error,
+        hasRunCheck,
     } = useDataIntegrityDetails(check.name)
 
     useEffect(() => {
         if (
+            !check.isSlow &&
             !loading &&
             !details &&
             !runningCheck &&
             !error &&
-            !hasStartedCheck.current
+            !hasRunCheck
         ) {
-            hasStartedCheck.current = true
             startDetailsCheck({ name: check.name })
         }
-    }, [loading, details, runningCheck, check.name, error, startDetailsCheck])
+    }, [
+        loading,
+        details,
+        runningCheck,
+        check.name,
+        check.isSlow,
+        hasRunCheck,
+        error,
+        startDetailsCheck,
+    ])
 
     return (
         <div className={css.wrapper}>
             <CheckInfo
                 check={check}
-                disableRun={runningCheck | loading}
+                hasRunCheck={hasRunCheck}
+                disableRunButton={runningCheck | loading}
                 onStartDetailsCheck={() =>
                     startDetailsCheck({ name: check.name })
                 }
@@ -47,10 +57,11 @@ export const CheckDetails = ({ check }) => {
                     <DetailsError />
                 ) : (
                     <CheckRunContent
-                        summaryCheck={check}
+                        check={check}
                         detailsCheck={details}
                         runningCheck={runningCheck}
                         currentJob={currentJob}
+                        hasRunCheck={hasRunCheck}
                     />
                 )}
             </div>

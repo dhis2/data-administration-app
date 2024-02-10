@@ -8,20 +8,20 @@ import css from './CheckDetails.module.css'
 
 export const CheckInfo = ({
     check,
-    disableRun,
+    disableRunButton,
     onStartDetailsCheck,
-    hasRun,
+    hasRunCheck,
 }) => {
     return (
         <div className={css.checkInfo}>
             <CheckHeader name={check.displayName}>
                 <Button
                     small
-                    disabled={disableRun}
+                    disabled={disableRunButton}
                     icon={<IconSync16 />}
                     onClick={onStartDetailsCheck}
                 >
-                    {i18n.t('Re-run')}
+                    {hasRunCheck ? i18n.t('Re-run') : i18n.t('Run')}
                 </Button>
             </CheckHeader>
             <Divider dense />
@@ -51,8 +51,8 @@ CheckInfo.propTypes = {
         name: PropTypes.string,
         severity: PropTypes.string,
     }).isRequired,
-    hasRun: PropTypes.bool,
-    isRunning: PropTypes.bool,
+    disableRunButton: PropTypes.bool,
+    hasRunCheck: PropTypes.bool,
     onStartDetailsCheck: PropTypes.func,
 }
 
