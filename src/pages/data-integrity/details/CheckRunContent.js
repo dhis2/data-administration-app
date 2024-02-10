@@ -25,10 +25,14 @@ export const CheckRunContent = ({
         )
     }
 
-    if(!detailsCheck && check?.isSlow) {
-        return <NoticeBox title={i18n.t('Slow check')} warning>
-            {i18n.t('This check is marked as slow, and you have to manually run it.')}
-        </NoticeBox>
+    if (!detailsCheck && check?.isSlow) {
+        return (
+            <NoticeBox title={i18n.t('Slow check')} warning>
+                {i18n.t(
+                    'This check is marked as slow, and you have to manually run it.'
+                )}
+            </NoticeBox>
+        )
     }
     // We dont have data for details at all
     if (!detailsCheck) {

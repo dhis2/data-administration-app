@@ -11,6 +11,6 @@ export const useDataIntegrityChecks = () => {
     const queryResult = useDataQuery(dataIntegrityChecksQuery)
     return {
         ...queryResult,
-        data: queryResult.data?.result
+        data: queryResult.data?.result,
     }
 }

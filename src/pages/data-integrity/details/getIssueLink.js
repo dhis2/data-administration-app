@@ -58,7 +58,7 @@ const getUserAppLink = (baseUrl, { issuesIdType, id }) => {
     }
 
     const sectionpath = sectionPathMap[issuesIdType]
-    if(!sectionPathMap) {
+    if (!sectionPathMap) {
         return basePath
     }
     return `${basePath}${sectionpath}/${editPath}`
@@ -70,15 +70,15 @@ export const getIssueLink = (baseUrl, { issuesIdType, id }) => {
         return `${baseUrl}${DASHBOARDS_RELATIVE_PATH}/#/${id}`
     }
 
-    if(userAppTypes.has(issuesIdType)) {
+    if (userAppTypes.has(issuesIdType)) {
         return getUserAppLink(baseUrl, { issuesIdType, id })
     }
 
-    if(visualizationsAppTypes.has(issuesIdType)) {
+    if (visualizationsAppTypes.has(issuesIdType)) {
         return `${baseUrl}${VISUALIZATIONS_RELATIVE_PATH}/#/${id}`
     }
-    
-    if(notSupportedIssueType.has(issuesIdType)) {
+
+    if (notSupportedIssueType.has(issuesIdType)) {
         return null
     }
     // if not handled above, assume it's a section in maintenance

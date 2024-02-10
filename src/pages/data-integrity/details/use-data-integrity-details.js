@@ -1,5 +1,5 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
-import React, { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../../hooks/use-poll.js'
 
 const detailsQuery = {
@@ -37,16 +37,18 @@ export const useDataIntegrityDetails = (name) => {
         started: isPolling,
     } = useLazyInterval(fetchDetails, 500) // low due to long-polling
 
-    const [runMutation, { loading: mutationLoading, error: mutationError, called }] =
-        useDataMutation(startDetailsCheckMutation, {
-            variables: { name },
-            onComplete: (data) => {
-                setLastJob(data.response)
-                if(data?.response?.created) {
-                   start({ name, timeout: 5000 })
-                }
-            },
-        })
+    const [
+        runMutation,
+        { loading: mutationLoading, error: mutationError, called },
+    ] = useDataMutation(startDetailsCheckMutation, {
+        variables: { name },
+        onComplete: (data) => {
+            setLastJob(data.response)
+            if (data?.response?.created) {
+                start({ name, timeout: 5000 })
+            }
+        },
+    })
 
     const startDetailsCheck = useCallback(() => {
         setLastJob(null)
@@ -57,7 +59,7 @@ export const useDataIntegrityDetails = (name) => {
     const anyError = detailsError || mutationError
 
     useEffect(() => {
-        if(!isPolling) {
+        if (!isPolling) {
             return
         }
         const ranByLastJob = details?.startTime >= lastJob?.created

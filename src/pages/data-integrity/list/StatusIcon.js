@@ -1,5 +1,7 @@
 import {
-    CircularLoader, IconCheckmarkCircle16, IconErrorFilled16
+    CircularLoader,
+    IconCheckmarkCircle16,
+    IconErrorFilled16,
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -30,9 +32,8 @@ export const StatusIcon = ({ count, loading }) => {
     if (count === 0) {
         return <SuccessIcon />
     }
-    if(count > 0) {
+    if (count > 0) {
         return <ErrorIcon numberOfErrors={count} />
-
     }
     return null
 }

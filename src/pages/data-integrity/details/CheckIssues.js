@@ -31,7 +31,7 @@ export const CheckIssues = ({ detailsCheck }) => {
 }
 
 CheckIssues.propTypes = {
-    detailsCheck: checkProps
+    detailsCheck: checkProps,
 }
 
 const Issue = ({ issue, issuesIdType, baseUrl }) => {
@@ -53,7 +53,7 @@ const Issue = ({ issue, issuesIdType, baseUrl }) => {
 Issue.propTypes = {
     baseUrl: PropTypes.string,
     issue: PropTypes.shape({ id: PropTypes.string, name: PropTypes.string }),
-    issuesIdType: PropTypes.string
+    issuesIdType: PropTypes.string,
 }
 
 const IssueLink = ({ href, children }) => {

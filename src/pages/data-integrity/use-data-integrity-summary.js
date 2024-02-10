@@ -41,14 +41,17 @@ export const useDataIntegritySummary = () => {
         refetch: fetchSummary,
     } = useDataQuery(summaryQuery)
 
-    const { start, cancel, started: isPolling } = useLazyInterval(fetchSummary, 2000)
+    const {
+        start,
+        cancel,
+        started: isPolling,
+    } = useLazyInterval(fetchSummary, 2000)
     const [runMutation, { loading: mutationLoading, error: mutationError }] =
         useDataMutation(startDataIntegrityCheckMutation, {
             onComplete: (data) => {
                 setLastJob(data.response)
-                if(data?.response.created) {
+                if (data?.response.created) {
                     start()
-
                 }
             },
         })
@@ -56,30 +59,31 @@ export const useDataIntegritySummary = () => {
     const startDataIntegrityCheck = useCallback(() => {
         setLastJob(null)
         runMutation()
-}, [runMutation])
+    }, [runMutation])
 
     const formattedData = useMemo(() => {
         if (!checks) {
             return
         }
 
-        const mergedRunResult = summaryData ? mergeRunResult(checks, summaryData.result) : checks
+        const mergedRunResult = summaryData
+            ? mergeRunResult(checks, summaryData.result)
+            : checks
 
         return mergedRunResult.map((check) => {
-            if(check.isSlow) {
+            if (check.isSlow) {
                 return check
             }
             let loading = isPolling || mutationLoading
             if (check.runInfo && lastJob) {
                 // if check was started after the last job was created, it was propably
                 // started by last job
-                const ranByLastJob =
-                    check.runInfo.startTime >= lastJob.created
+                const ranByLastJob = check.runInfo.startTime >= lastJob.created
                 loading = !ranByLastJob
             }
             return {
                 ...check,
-                loading
+                loading,
             }
         })
     }, [summaryData, checks, lastJob, isPolling, mutationLoading])
