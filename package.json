@@ -36,7 +36,8 @@
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "^9.2.0",
         "prop-types": "^15.6.0",
-        "react-router-dom": "^5.0.0"
+        "react-router-dom": "^5.0.0",
+        "zustand": "^4.5.0"
     },
     "resolutions": {
         "@dhis2/ui": "9.2.0"

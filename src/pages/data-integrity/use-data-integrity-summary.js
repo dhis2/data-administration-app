@@ -1,6 +1,7 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import React, { useMemo, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../hooks/use-poll.js'
+import { useDetailsChecks, useGetMergedCheck } from './checkDetailsStore.js'
 import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 
 const startDataIntegrityCheckMutation = {
@@ -34,6 +35,7 @@ const mergeRunResult = (checks, runSummary) => {
 
 export const useDataIntegritySummary = () => {
     const [lastJob, setLastJob] = React.useState(null)
+
     const { data: checks, loading: checksLoading } = useDataIntegrityChecks()
     const {
         data: summaryData,
@@ -71,22 +73,23 @@ export const useDataIntegritySummary = () => {
             : checks
 
         return mergedRunResult.map((check) => {
-            if (check.isSlow) {
-                return check
-            }
-            let loading = isPolling || mutationLoading
-            if (check.runInfo && lastJob) {
+            // ignore slow checks, because they are not started by summary
+            let loading = !check.isSlow && (isPolling || mutationLoading)
+            if (!check.isSlow && check.runInfo && lastJob) {
                 // if check was started after the last job was created, it was propably
                 // started by last job
                 const ranByLastJob = check.runInfo.startTime >= lastJob.created
                 loading = !ranByLastJob
             }
-            return {
-                ...check,
-                loading,
-            }
+            return { ...check, loading }
         })
-    }, [summaryData, checks, lastJob, isPolling, mutationLoading])
+    }, [
+        summaryData,
+        checks,
+        lastJob,
+        isPolling,
+        mutationLoading,
+    ])
 
     const anyError = summaryError || mutationError
     useEffect(() => {

@@ -1,6 +1,7 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import { useState, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../../hooks/use-poll.js'
+import { useAddCheckDetails } from '../checkDetailsStore.js'
 
 const detailsQuery = {
     result: {
@@ -23,13 +24,16 @@ const startDetailsCheckMutation = {
 
 export const useDataIntegrityDetails = (name) => {
     const [lastJob, setLastJob] = useState(null)
+    const addCheck = useAddCheckDetails()
 
     const {
         data: detailsData,
         loading: detailsLoading,
         error: detailsError,
         refetch: fetchDetails,
-    } = useDataQuery(detailsQuery, { variables: { name } })
+    } = useDataQuery(detailsQuery, {
+        variables: { name },
+    })
 
     const {
         start,
@@ -58,6 +62,13 @@ export const useDataIntegrityDetails = (name) => {
     const details = detailsData?.result?.[name]
     const anyError = detailsError || mutationError
 
+    // onComplete doesn't work because it's not called when
+    // refetch gets data
+    useEffect(() => {
+        if (details) {
+            addCheck(details)
+        }
+    }, [details, addCheck])
     useEffect(() => {
         if (!isPolling) {
             return

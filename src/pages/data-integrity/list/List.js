@@ -1,7 +1,8 @@
 import i18n from '@dhis2/d2-i18n'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { memo } from 'react'
+import { useMergedCheck } from '../checkDetailsStore.js'
 import { getSeverityTranslation } from '../severityTranslation.js'
 import { LastRunTime } from './LastRunTime.js'
 import css from './List.module.css'
@@ -33,35 +34,45 @@ List.propTypes = {
     selectedCheck: PropTypes.object,
 }
 
-export const ListItem = ({ setSelectedCheck, check, selected }) => {
+export const ListItem = memo(function ListItem({
+    setSelectedCheck,
+    check,
+    selected,
+}) {
+    const mergedCheck = useMergedCheck(check)
+
     return (
         <div
             className={cx(css.listItem, { [css.selected]: selected })}
             onClick={() => setSelectedCheck(check)}
         >
             <div className={css.checkInfo}>
-                <header>{check.displayName}</header>
+                <header>{mergedCheck.displayName}</header>
                 <div className={css.subtitle}>
-                    <span>{getSeverityTranslation(check.severity)}</span>
+                    <span>{getSeverityTranslation(mergedCheck.severity)}</span>
                     <VerticalDivider />
-                    <span className={css.subtitleSection}>{check.section}</span>
-                    {check.runInfo?.finishedTime ? (
+                    <span className={css.subtitleSection}>
+                        {mergedCheck.section}
+                    </span>
+                    {mergedCheck.runInfo?.finishedTime ? (
                         <>
                             <VerticalDivider />
-                            <LastRunTime value={check.runInfo?.finishedTime} />
+                            <LastRunTime
+                                value={mergedCheck.runInfo?.finishedTime}
+                            />
                         </>
                     ) : null}
                 </div>
             </div>
             <span className={css.statusIcon}>
                 <StatusIcon
-                    count={check.runInfo?.count}
+                    count={mergedCheck.runInfo?.count}
                     loading={check.loading}
                 />
             </span>
         </div>
     )
-}
+})
 
 ListItem.propTypes = {
     check: PropTypes.object.isRequired,
@@ -69,6 +80,4 @@ ListItem.propTypes = {
     setSelectedCheck: PropTypes.func.isRequired,
 }
 
-const VerticalDivider = () => {
-    return <span>|</span>
-}
+const VerticalDivider = () => <span>|</span>
