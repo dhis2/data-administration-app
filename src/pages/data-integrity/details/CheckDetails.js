@@ -19,27 +19,19 @@ export const CheckDetails = ({ check }) => {
         hasRunCheck,
     } = useDataIntegrityDetails(check.name)
 
+    const shouldRunCheck =
+        !check.isSlow &&
+        !loading &&
+        !details &&
+        !runningCheck &&
+        !error &&
+        !hasRunCheck
+
     useEffect(() => {
-        if (
-            !check.isSlow &&
-            !loading &&
-            !details &&
-            !runningCheck &&
-            !error &&
-            !hasRunCheck
-        ) {
+        if (shouldRunCheck) {
             startDetailsCheck({ name: check.name })
         }
-    }, [
-        loading,
-        details,
-        runningCheck,
-        check.name,
-        check.isSlow,
-        hasRunCheck,
-        error,
-        startDetailsCheck,
-    ])
+    }, [shouldRunCheck, check.name, startDetailsCheck])
 
     return (
         <div className={css.wrapper}>

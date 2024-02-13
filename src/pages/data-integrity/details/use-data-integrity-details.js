@@ -1,5 +1,5 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useLazyInterval } from '../../../hooks/use-poll.js'
 import { useAddCheckDetails } from '../checkDetailsStore.js'
 
@@ -31,6 +31,8 @@ export const useDataIntegrityDetails = (name) => {
         loading: detailsLoading,
         error: detailsError,
         refetch: fetchDetails,
+        called: detailsCalled,
+        fetching: detailsFetching,
     } = useDataQuery(detailsQuery, {
         variables: { name },
     })
@@ -69,6 +71,7 @@ export const useDataIntegrityDetails = (name) => {
             addCheck(details)
         }
     }, [details, addCheck])
+
     useEffect(() => {
         if (!isPolling) {
             return
@@ -82,10 +85,12 @@ export const useDataIntegrityDetails = (name) => {
     return {
         startDetailsCheck,
         runningCheck: mutationLoading || isPolling,
-        loading: detailsLoading,
+        loading: detailsLoading || detailsFetching,
         details: details,
         currentJob: isPolling ? lastJob : null,
         error: anyError,
         hasRunCheck: called || !!details,
+        detailsCalled,
+        detailsFetching,
     }
 }
