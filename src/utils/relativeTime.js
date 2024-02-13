@@ -39,10 +39,10 @@ export function getRelativeTime(relative, from = new Date()) {
     return getRelativeTimeFromDelta(delta)
 }
 
-function getClosestTimeUnit(deltaMs) {
+function getClosestTimeUnit(deltaMs, minUnit = 'millisecond') {
     const absoluteDelta = Math.abs(deltaMs)
     for (const { unit, ms } of units) {
-        if (absoluteDelta >= ms) {
+        if (absoluteDelta >= ms || unit === minUnit) {
             return { unit, value: Math.round(deltaMs / ms) }
         }
     }
@@ -68,13 +68,11 @@ export function getDurationWithUnitFromDelta(deltaMs) {
  * Get language-sensitive relative time message from elapsed time.
  * @param delta  - the elapsed time in milliseconds, negative if in the past
  */
-export function getRelativeTimeFromDelta(delta) {
+function getRelativeTimeFromDelta(delta) {
     // get closest unit
-    const absoluteDelta = Math.abs(delta)
-    for (const { unit, ms } of units) {
-        if (absoluteDelta >= ms || unit === 'second') {
-            return relativeTimeFormatter.format(Math.round(delta / ms), unit)
-        }
+    if(Math.abs(delta) < 1000) {
+        return i18n.t('Now')
     }
-    return ''
+    const { value, unit } = getClosestTimeUnit(delta, 'second')
+    return relativeTimeFormatter.format(value, unit)
 }
