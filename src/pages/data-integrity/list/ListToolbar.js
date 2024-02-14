@@ -48,9 +48,11 @@ export const ListToolbar = ({
                     />
                 ))}
             </SingleSelect>
-            <Button disabled={runningAll} onClick={onRunAll}>
-                {i18n.t('Run integrity checks')}
-            </Button>
+            {!selectedSlow && (
+                <Button disabled={runningAll} onClick={onRunAll}>
+                    {i18n.t('Run all standards checks')}
+                </Button>
+            )}
             {selectedSlow && (
                 <span className={css.slowCheckInfo}>
                     <IconInfo16 />
