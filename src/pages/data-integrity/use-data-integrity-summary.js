@@ -2,17 +2,22 @@ import { useAlert, useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import React, { useMemo, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../hooks/use-poll.js'
-import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 
-const startDataIntegrityCheckMutation = {
-    resource: 'dataIntegrity/summary',
-    type: 'create',
+const dataIntegrityChecksQuery = {
+    result: {
+        resource: 'dataIntegrity',
+    },
 }
 
 const summaryQuery = {
     result: {
         resource: 'dataIntegrity/summary',
     },
+}
+
+const startDataIntegrityCheckMutation = {
+    resource: 'dataIntegrity/summary',
+    type: 'create',
 }
 
 const mergeRunResult = (checks, runSummary) => {
@@ -50,11 +55,13 @@ export const useDataIntegritySummary = () => {
         i18n.t('Failed to run integrity check'),
         { critical: true }
     )
+
     const {
-        data: checks,
+        data: checksData,
         loading: checksLoading,
         error: checksError,
-    } = useDataIntegrityChecks()
+    } = useDataQuery(dataIntegrityChecksQuery)
+
     const {
         data: summaryData,
         error: summaryError,
@@ -87,13 +94,13 @@ export const useDataIntegritySummary = () => {
     }, [runMutation, hideFailedToRunError])
 
     const formattedData = useMemo(() => {
-        if (!checks) {
+        if (!checksData?.result) {
             return
         }
 
         const mergedRunResult = summaryData
-            ? mergeRunResult(checks, summaryData.result)
-            : checks
+            ? mergeRunResult(checksData.result, summaryData.result)
+            : checksData
 
         return mergedRunResult.map((check) => {
             // ignore slow checks, because they are not started by summary
@@ -106,7 +113,7 @@ export const useDataIntegritySummary = () => {
             }
             return { ...check, loading }
         })
-    }, [summaryData, checks, lastJob, isPolling, mutationLoading])
+    }, [summaryData, checksData, lastJob, isPolling, mutationLoading])
 
     const anyError = summaryError || mutationError
     useEffect(() => {
