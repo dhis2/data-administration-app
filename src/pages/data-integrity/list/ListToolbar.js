@@ -54,7 +54,7 @@ export const ListToolbar = ({
             {selectedSlow && (
                 <span className={css.slowCheckInfo}>
                     <IconInfo16 />
-                    Slow checks must be run individually
+                    {i18n.t('Slow checks must be run individually')}
                 </span>
             )}
         </div>

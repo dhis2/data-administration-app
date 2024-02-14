@@ -31,7 +31,6 @@ export const CheckRunCompleted = ({ detailsCheck }) => {
                     finishedTime={detailsCheck.finishedTime}
                     issuesCount={detailsCheck.issues.length}
                     expanded={expandSummary}
-                    setExp
                 />
                 {expandSummary ? <IconChevronUp24 /> : <IconChevronDown24 />}
             </div>

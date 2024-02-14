@@ -28,6 +28,29 @@ const relativeTimeFormatter = new Intl.RelativeTimeFormat(relativeTimeLocale, {
     numeric: 'always',
 })
 
+function getClosestTimeUnit(deltaMs, minUnit = 'millisecond') {
+    const absoluteDelta = Math.abs(deltaMs)
+    for (const { unit, ms } of units) {
+        if (absoluteDelta >= ms || unit === minUnit) {
+            return { unit, value: Math.round(deltaMs / ms) }
+        }
+    }
+    return { unit: 'millisecond', value: deltaMs }
+}
+
+/**
+ * Get language-sensitive relative time message from elapsed time.
+ * @param delta  - the elapsed time in milliseconds, negative if in the past
+ */
+function getRelativeTimeFromDelta(delta) {
+    // get closest unit
+    if (Math.abs(delta) < 1000) {
+        return i18n.t('Now')
+    }
+    const { value, unit } = getClosestTimeUnit(delta, 'second')
+    return relativeTimeFormatter.format(value, unit)
+}
+
 /**
  * Get language-sensitive relative time message from Dates.
  * eg. "in 5 minutes", "3 days ago"
@@ -39,21 +62,6 @@ export function getRelativeTime(relative, from = new Date()) {
     return getRelativeTimeFromDelta(delta)
 }
 
-function getClosestTimeUnit(deltaMs, minUnit = 'millisecond') {
-    const absoluteDelta = Math.abs(deltaMs)
-    for (const { unit, ms } of units) {
-        if (absoluteDelta >= ms || unit === minUnit) {
-            return { unit, value: Math.round(deltaMs / ms) }
-        }
-    }
-    return { unit: 'millisecond', value: deltaMs }
-}
-
-export function getDurationWithUnit(relative, from = new Date()) {
-    const deltaMs = relative.getTime() - from.getTime()
-    return getDurationWithUnitFromDelta(deltaMs)
-}
-
 export function getDurationWithUnitFromDelta(deltaMs) {
     const { unit, value } = getClosestTimeUnit(deltaMs)
 
@@ -62,17 +70,4 @@ export function getDurationWithUnitFromDelta(deltaMs) {
         unit,
         unitDisplay: 'long',
     }).format(value)
-}
-
-/**
- * Get language-sensitive relative time message from elapsed time.
- * @param delta  - the elapsed time in milliseconds, negative if in the past
- */
-function getRelativeTimeFromDelta(delta) {
-    // get closest unit
-    if(Math.abs(delta) < 1000) {
-        return i18n.t('Now')
-    }
-    const { value, unit } = getClosestTimeUnit(delta, 'second')
-    return relativeTimeFormatter.format(value, unit)
 }
