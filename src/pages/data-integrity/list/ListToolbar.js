@@ -49,7 +49,7 @@ export const ListToolbar = ({
                 ))}
             </SingleSelect>
             {!selectedSlow && (
-                <Button disabled={runningAll} onClick={onRunAll}>
+                <Button small disabled={runningAll} onClick={onRunAll}>
                     {i18n.t('Run all standards checks')}
                 </Button>
             )}
