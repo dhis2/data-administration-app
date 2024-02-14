@@ -9,6 +9,18 @@ const useConst = (factory) => {
     return ref.current
 }
 
+/** Utility hook mainly used for polling. Calls fn every interval milliseconds, or after
+ * the previous promise returned by fn is resolved (if longer than interval).
+ * Lasts until cancel is called.
+ *
+ * This does not start the interval on mount. start() must be called to start the interval.
+ * Any argument passed to start() is forwarved to fn.
+ *
+ * Cancel must be called to stop the interval.
+ *
+ * @param {function} fn - a function that returns a promise
+ * @param {number} interval - the interval in milliseconds
+ */
 export const useLazyInterval = (fn, interval) => {
     const fnRef = useRef()
     fnRef.current = fn

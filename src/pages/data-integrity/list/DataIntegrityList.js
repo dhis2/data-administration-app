@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
-import { CircularLoaderCentered } from '../../../components/Loading/CircularLoaderCentered.js'
+import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.js'
 import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { List } from './List.js'
@@ -23,8 +23,13 @@ export const DataIntegrityList = () => {
     const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
     const [selectedCheck, setSelectedCheck] = useState(null)
 
-    const { startDataIntegrityCheck, checks, loadingChecks, runningCheck } =
-        useDataIntegritySummary()
+    const {
+        startDataIntegrityCheck,
+        checks,
+        checksError,
+        loading,
+        runningCheck,
+    } = useDataIntegritySummary()
 
     const selectedSlow = selectedTab === 'slow'
 
@@ -58,15 +63,13 @@ export const DataIntegrityList = () => {
                 selectedSlow={selectedSlow}
             />
             <ListDetailsLayout>
-                {loadingChecks ? (
-                    <CircularLoaderCentered />
-                ) : (
+                <ErrorOrLoading error={checksError} loading={loading}>
                     <List
                         selectedCheck={selectedCheck}
                         setSelectedCheck={setSelectedCheck}
                         checks={filteredChecks}
                     />
-                )}
+                </ErrorOrLoading>
                 <CheckDetailsView
                     key={selectedCheck?.name}
                     selectedCheck={selectedCheck}

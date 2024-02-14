@@ -33,13 +33,28 @@ const mergeRunResult = (checks, runSummary) => {
     })
 }
 
+/**
+ * Handles fetching data integrity summary data (the data in list view).
+ *
+ * Fetches all the checks - for displaying the list of checks regardless if summary is available.
+ * Fetches the summary checks on mount - to get summary data if already available.
+ * Merges the result of the checks and the summary data.
+ *
+ * Also handles starting and polling the summary data. Polling is completed when all checks
+ * have startTime > lastJob.created, or when there is an error.
+ *
+ */
 export const useDataIntegritySummary = () => {
     const [lastJob, setLastJob] = React.useState(null)
     const { show: showFailedToRunError, hide: hideFailedToRunError } = useAlert(
         i18n.t('Failed to run integrity check'),
         { critical: true }
     )
-    const { data: checks, loading: checksLoading } = useDataIntegrityChecks()
+    const {
+        data: checks,
+        loading: checksLoading,
+        error: checksError,
+    } = useDataIntegrityChecks()
     const {
         data: summaryData,
         error: summaryError,
@@ -50,7 +65,7 @@ export const useDataIntegritySummary = () => {
         start,
         cancel,
         started: isPolling,
-    } = useLazyInterval(fetchSummary, 2000)
+    } = useLazyInterval(fetchSummary, 3000)
     const [runMutation, { loading: mutationLoading, error: mutationError }] =
         useDataMutation(startDataIntegrityCheckMutation, {
             onComplete: (data) => {
@@ -105,8 +120,8 @@ export const useDataIntegritySummary = () => {
     return {
         startDataIntegrityCheck,
         runningCheck: mutationLoading || isPolling,
-        loadingChecks: checksLoading,
         loading: checksLoading,
         checks: formattedData,
+        checksError,
     }
 }
