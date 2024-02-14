@@ -1,7 +1,7 @@
-import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
+import { useAlert, useDataMutation, useDataQuery } from '@dhis2/app-runtime'
+import i18n from '@dhis2/d2-i18n'
 import React, { useMemo, useEffect, useCallback } from 'react'
 import { useLazyInterval } from '../../hooks/use-poll.js'
-import { useDetailsChecks, useGetMergedCheck } from './checkDetailsStore.js'
 import { useDataIntegrityChecks } from './use-data-integrity-checks.js'
 
 const startDataIntegrityCheckMutation = {
@@ -35,7 +35,10 @@ const mergeRunResult = (checks, runSummary) => {
 
 export const useDataIntegritySummary = () => {
     const [lastJob, setLastJob] = React.useState(null)
-
+    const { show: showFailedToRunError, hide: hideFailedToRunError } = useAlert(
+        i18n.t('Failed to run integrity check'),
+        { critical: true }
+    )
     const { data: checks, loading: checksLoading } = useDataIntegrityChecks()
     const {
         data: summaryData,
@@ -56,12 +59,17 @@ export const useDataIntegritySummary = () => {
                     start()
                 }
             },
+            onError: (err) => {
+                console.error(err)
+                showFailedToRunError()
+            },
         })
 
     const startDataIntegrityCheck = useCallback(() => {
+        hideFailedToRunError()
         setLastJob(null)
         runMutation()
-    }, [runMutation])
+    }, [runMutation, hideFailedToRunError])
 
     const formattedData = useMemo(() => {
         if (!checks) {
@@ -83,17 +91,13 @@ export const useDataIntegritySummary = () => {
             }
             return { ...check, loading }
         })
-    }, [
-        summaryData,
-        checks,
-        lastJob,
-        isPolling,
-        mutationLoading,
-    ])
+    }, [summaryData, checks, lastJob, isPolling, mutationLoading])
 
     const anyError = summaryError || mutationError
     useEffect(() => {
-        if (anyError || formattedData?.every((check) => !check.loading)) {
+        const isFinished = formattedData?.every((check) => !check.loading)
+
+        if (anyError || isFinished) {
             cancel()
         }
     }, [anyError, formattedData, cancel])
