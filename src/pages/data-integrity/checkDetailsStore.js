@@ -10,7 +10,7 @@ const useCheckDetailsStore = create(
                 checks: { ...state.checks, [check.name]: addRunInfo(check) },
             })),
         getCheck: (name) => get().checks[name],
-        getMergedCheck: (summaryCheck) => {
+        getMostRecentCheck: (summaryCheck) => {
             const detailsCheck = get().getCheck(summaryCheck.name)
 
             if (!detailsCheck) {
@@ -31,7 +31,8 @@ const useCheckDetailsStore = create(
     }))
 )
 
-
+/* Extract run-info to it's own object
+This is to keep the checks the same API as a "check" that is merged with "summary-check" */
 export const addRunInfo = (detailsCheck) => {
     const { finishedTime, startTime, ...rest } = detailsCheck
     // runInfo contains most of the same props as check, pick only the relevant ones
@@ -46,8 +47,9 @@ export const addRunInfo = (detailsCheck) => {
 export const useAddCheckDetails = () =>
     useCheckDetailsStore((state) => state.addCheck)
 
-export const useMergedCheck = (check) => {
-    const mergedCheck = useCheckDetailsStore((state) => state.getMergedCheck(check))
-
-    return mergedCheck
+export const useMostRecentCheck = (check) => {
+    const mostRecentCheck = useCheckDetailsStore((state) =>
+        state.getMostRecentCheck(check)
+    )
+    return mostRecentCheck
 }

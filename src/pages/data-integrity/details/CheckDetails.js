@@ -8,7 +8,6 @@ import { Notice } from './Notice.js'
 import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
 export const CheckDetails = ({ check }) => {
-    // make sure detailsCheck is only started once
     const {
         startDetailsCheck,
         runningCheck,

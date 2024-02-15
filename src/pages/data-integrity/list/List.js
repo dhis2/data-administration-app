@@ -2,7 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
-import { useMergedCheck } from '../checkDetailsStore.js'
+import { useMostRecentCheck } from '../checkDetailsStore.js'
 import { getSeverityTranslation } from '../severityTranslation.js'
 import { LastRunTime } from './LastRunTime.js'
 import css from './List.module.css'
@@ -39,7 +39,7 @@ export const ListItem = memo(function ListItem({
     check,
     selected,
 }) {
-    const mergedCheck = useMergedCheck(check)
+    const mergedCheck = useMostRecentCheck(check)
 
     return (
         <div
