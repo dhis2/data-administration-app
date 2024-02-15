@@ -1,6 +1,6 @@
 import { useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import { useState, useEffect, useCallback } from 'react'
-import { useLazyInterval } from '../../../hooks/use-poll.js'
+import { useLazyInterval } from '../../../hooks/use-lazy-interval.js'
 import { useAddCheckDetails } from '../checkDetailsStore.js'
 
 const detailsQuery = {

@@ -1,7 +1,7 @@
 import { useAlert, useDataMutation, useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import React, { useMemo, useEffect, useCallback } from 'react'
-import { useLazyInterval } from '../../hooks/use-poll.js'
+import { useLazyInterval } from '../../hooks/use-lazy-interval.js'
 
 const dataIntegrityChecksQuery = {
     result: {

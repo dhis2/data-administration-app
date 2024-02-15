@@ -17,7 +17,7 @@ export const CheckIssues = ({ detailsCheck }) => {
             status="error"
         >
             <ul className={css.issuesList}>
-                {detailsCheck.issues.map((issue) => (
+                {detailsCheck.issues?.map((issue) => (
                     <Issue
                         key={issue.id || issue.name}
                         issue={issue}
