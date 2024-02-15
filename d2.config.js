@@ -4,6 +4,7 @@ const config = {
     title: 'Data Administration',
     coreApp: true,
 
+    minDHIS2Version: '2.39',
     entryPoints: {
         app: './src/App.js',
     },
