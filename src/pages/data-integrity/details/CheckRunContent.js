@@ -75,7 +75,8 @@ const DetailsRunLoading = ({ detailsCheck, check, currentJob }) => {
     return (
         <Notice status="loading" title={checkInProgressString}>
             {previousRun?.averageExecutionTime
-                ? i18n.t('Average execution time: {{ time }}', {
+                ? i18n.t('Average execution time: {{time}}', {
+                      nsSeparator: '~',
                       time: getDurationWithUnitFromDelta(
                           previousRun.averageExecutionTime
                       ),

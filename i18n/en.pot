@@ -5,11 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
-"PO-Revision-Date: 2023-11-24T08:17:24.184Z\n"
+"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
+"PO-Revision-Date: 2024-02-15T14:41:03.063Z\n"
 
 msgid "Open user guide"
 msgstr "Open user guide"
+
+msgid "An unknown error occurred"
+msgstr "An unknown error occurred"
+
+msgid "Failed to load"
+msgstr "Failed to load"
 
 msgid "Go back to all lock exceptions"
 msgstr "Go back to all lock exceptions"
@@ -417,12 +423,6 @@ msgstr "Batch Deletion"
 msgid "No lock exceptions to show."
 msgstr "No lock exceptions to show."
 
-msgid "Checking data integrity..."
-msgstr "Checking data integrity..."
-
-msgid "Run integrity checks"
-msgstr "Run integrity checks"
-
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
@@ -524,6 +524,109 @@ msgstr "Program rule actions with no stage id"
 
 msgid "Program indicators with no expression"
 msgstr "Program indicators with no expression"
+
+msgid "An error occurred when running the job"
+msgstr "An error occurred when running the job"
+
+msgid ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+msgstr ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+
+msgid "Re-run"
+msgstr "Re-run"
+
+msgid "Run"
+msgstr "Run"
+
+msgid "Severity"
+msgstr "Severity"
+
+msgid "Section"
+msgstr "Section"
+
+msgid "About this check"
+msgstr "About this check"
+
+msgid "Show more"
+msgstr "Show more"
+
+msgid "{{ numberOfErrors }} errors"
+msgstr "{{ numberOfErrors }} errors"
+
+msgid "Completed in {{time}}"
+msgstr "Completed in {{time}}"
+
+msgid "Latest run completed {{time}}"
+msgstr "Latest run completed {{time}}"
+
+msgid "Passed with 0 errors."
+msgstr "Passed with 0 errors."
+
+msgid "Recommendation"
+msgstr "Recommendation"
+
+msgid "Slow check"
+msgstr "Slow check"
+
+msgid "This check is marked as slow, and you have to manually run it."
+msgstr "This check is marked as slow, and you have to manually run it."
+
+msgid "Loading"
+msgstr "Loading"
+
+msgid "Check in progress"
+msgstr "Check in progress"
+
+msgid "Check in progress for {{time}}"
+msgstr "Check in progress for {{time}}"
+
+msgid "Average execution time: {{time}}"
+msgstr "Average execution time: {{time}}"
+
+msgid "No integrity check matches your search criteria."
+msgstr "No integrity check matches your search criteria."
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Sort"
+msgstr "Sort"
+
+msgid "Run all standards checks"
+msgstr "Run all standards checks"
+
+msgid "Slow checks must be run individually"
+msgstr "Slow checks must be run individually"
+
+msgid "Standard checks"
+msgstr "Standard checks"
+
+msgid "Slow checks"
+msgstr "Slow checks"
+
+msgid "A-Z"
+msgstr "A-Z"
+
+msgid "Number of errors"
+msgstr "Number of errors"
+
+msgid "Critical"
+msgstr "Critical"
+
+msgid "Severe"
+msgstr "Severe"
+
+msgid "Warning"
+msgstr "Warning"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Failed to run integrity check"
+msgstr "Failed to run integrity check"
 
 msgid "Indicators"
 msgstr "Indicators"
@@ -650,3 +753,6 @@ msgstr "Generating tables..."
 
 msgid "Generate tables"
 msgstr "Generate tables"
+
+msgid "Now"
+msgstr "Now"
