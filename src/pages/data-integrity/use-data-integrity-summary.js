@@ -100,9 +100,9 @@ export const useDataIntegritySummary = () => {
 
         const mergedRunResult = summaryData
             ? mergeRunResult(checksData.result, summaryData.result)
-            : checksData
+            : checksData.result
 
-        return mergedRunResult.map((check) => {
+        return mergedRunResult?.map((check) => {
             // ignore slow checks, because they are not started by summary
             let loading = !check.isSlow && (isPolling || mutationLoading)
             if (!check.isSlow && check.runInfo && lastJob) {
