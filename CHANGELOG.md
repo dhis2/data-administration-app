@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/dhis2/data-administration-app/compare/v1.2.4...v1.2.5) (2024-02-02)
+
+
+### Bug Fixes
+
+* last years missing valid value of 0 ([ccfee4b](https://github.com/dhis2/data-administration-app/commit/ccfee4b412439c6ff4b241cd5ea62d37c0de75a9))
+
 ## [1.2.4](https://github.com/dhis2/data-administration-app/compare/v1.2.3...v1.2.4) (2023-12-24)
 
 
