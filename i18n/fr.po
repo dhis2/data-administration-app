@@ -7,15 +7,15 @@
 # Yayra Gomado <ygomado@hispwca.org>, 2023
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
-# phil_dhis2, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgid "Lock exception removed"
 msgstr "Exception de verrouillage supprimée"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr "Erreur de suppression de l'exception de verrouillage : {{erreur}}"
+msgstr "Erreur de suppression de l'exception de verrouillage : {{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
 msgstr "Etes-vous sûr de vouloir supprimer cette exception de verrouillage?"
@@ -274,7 +274,7 @@ msgid "Lock exception added"
 msgstr "Exception de verrouillage ajoutée"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr "Erreur lors de l'ajout d'une exception de verrouillage : {{erreur}}"
+msgstr "Erreur lors de l'ajout d'une exception de verrouillage : {{error}}"
 
 msgid "Add lock exception"
 msgstr "Ajouter une exception de verrouillage"
