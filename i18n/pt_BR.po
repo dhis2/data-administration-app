@@ -1,15 +1,16 @@
 # 
 # Translators:
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2021
+# Thiago Rocha, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T19:08:13.142Z\n"
 "PO-Revision-Date: 2020-12-22 22:13+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2021\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
+"Last-Translator: Thiago Rocha, 2024\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/hisp-uio/teams/100509/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -297,7 +298,7 @@ msgid "Today"
 msgstr "Hoje"
 
 msgid "Last"
-msgstr ""
+msgstr "Último"
 
 msgid "days"
 msgstr ""
@@ -312,7 +313,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "Convites expirados"
 
 msgid "Data values"
 msgstr "Valor de Dados"
@@ -372,7 +373,7 @@ msgid "Dashboards"
 msgstr ""
 
 msgid "Visualization"
-msgstr ""
+msgstr "Visualização"
 
 msgid "Event visualization"
 msgstr ""
@@ -381,7 +382,7 @@ msgid "Program instance"
 msgstr ""
 
 msgid "Tracked entity instance"
-msgstr ""
+msgstr "Instância de entidade rastreada"
 
 msgid "Lock Exception Management"
 msgstr "Gestão da excepção de bloqueio"
@@ -448,7 +449,7 @@ msgid "Organisation Unit"
 msgstr "Unidade organizacional"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "Grupo de unidades de organização"
 
 msgid "Organisation Unit Level"
 msgstr ""
@@ -457,7 +458,7 @@ msgid "Select"
 msgstr "Seleccione"
 
 msgid "Deselect"
-msgstr ""
+msgstr "Desmarcar"
 
 msgid "Select All Org Units"
 msgstr ""
@@ -475,10 +476,10 @@ msgid "Remove"
 msgstr "Remover"
 
 msgid "Actions"
-msgstr ""
+msgstr "Acções"
 
 msgid "of"
-msgstr ""
+msgstr "de"
 
 msgid "week"
 msgstr ""
@@ -682,7 +683,7 @@ msgid "Manage my apps"
 msgstr ""
 
 msgid "No results found"
-msgstr ""
+msgstr "Nenhum resultado encontrado"
 
 msgid "Interpretations"
 msgstr "Interpretações"
