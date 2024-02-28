@@ -1,3 +1,15 @@
+# [100.0.0](https://github.com/dhis2/data-administration-app/compare/v99.9.99...v100.0.0) (2024-02-28)
+
+
+### Features
+
+* prepare v100 ([3632793](https://github.com/dhis2/data-administration-app/commit/363279302c06a8067360e1fc7e7f90c6f6b9e2ad))
+
+
+### BREAKING CHANGES
+
+* force CI to publish v100
+
 # [2.0.0](https://github.com/dhis2/data-administration-app/compare/v1.2.6...v2.0.0) (2024-02-28)
 
 
