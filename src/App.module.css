@@ -3,6 +3,8 @@
     height: 100%;
     grid-template-areas: "sidebar main";
     grid-template-columns: 300px auto;
+    grid-template-rows: 100%;
+    overflow: auto;
     color: var(--colors-grey900);
 }
 
@@ -17,10 +19,16 @@
 .content {
     position: relative;
     grid-area: main;
-    padding: var(--spacers-dp16);
     background: var(--colors-grey100);
 }
 
 .contentWrapper {
     max-width: 960px;
+    margin: var(--spacers-dp16);
+}
+
+.contentWrapper.fullscreen {
+    height: 100%;
+    max-width: none;
+    margin: 0;
 }

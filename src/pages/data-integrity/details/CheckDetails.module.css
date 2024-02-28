@@ -1,0 +1,151 @@
+.wrapper {
+    padding: var(--spacers-dp16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp12);
+}
+
+.checkInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp12);
+}
+
+.checkInfo header button {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.checkInfo header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.checkInfo header h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.keyInfoWrapper {
+    display: flex;
+    gap: 80px;
+}
+
+.keyInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.checkInfo h3 {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+}
+
+.introduction {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction h3 {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.introductionText {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    max-height: 90px;
+    margin: var(--spacers-dp4) 0;
+    overflow: hidden;
+    content: '';
+}
+
+.introductionText.overflowing:after {
+    content: '';
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255,255,255,0.7), white);
+}
+
+.introductionText.expanded {
+    max-height: none;
+}
+
+.showMoreButton {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.runCompletedWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacers-dp8);
+}
+
+.runCompletedWrapper header {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    gap: 16px;
+}
+
+.runSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+}
+
+.completedTimeWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.completedDuration {
+    color: var(--colors-grey700);
+    font-size: 12px;
+}
+
+.issuesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.issuesList a {
+    color: var(--colors-grey900);
+}
+
+.chooseCheckMessage {
+    text-align: center;
+    color: var(--colors-grey700);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: var(--spacers-dp16);
+    justify-content: center;
+}
