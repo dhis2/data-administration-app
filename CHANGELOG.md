@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dhis2/data-administration-app/compare/v1.2.6...v2.0.0) (2024-02-28)
+
+
+### Features
+
+* data integrity checks UI ([#1031](https://github.com/dhis2/data-administration-app/issues/1031)) ([dd7d267](https://github.com/dhis2/data-administration-app/commit/dd7d2673940842794db01ef0a5a98b0185949fef))
+
+
+### BREAKING CHANGES
+
+* force CI to bump to v100
+
 ## [1.2.6](https://github.com/dhis2/data-administration-app/compare/v1.2.5...v1.2.6) (2024-02-28)
 
 
