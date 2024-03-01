@@ -1,3 +1,10 @@
+## [100.0.1](https://github.com/dhis2/data-administration-app/compare/v100.0.0...v100.0.1) (2024-03-01)
+
+
+### Bug Fixes
+
+* **translation:** update run all-button translation ([73a1ccd](https://github.com/dhis2/data-administration-app/commit/73a1ccdbdd44d03f60c6ecf2ad3160f70d0631fe))
+
 # [100.0.0](https://github.com/dhis2/data-administration-app/compare/v99.9.99...v100.0.0) (2024-02-28)
 
 
