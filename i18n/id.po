@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
+"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Indonesian (https://app.transifex.com/hisp-uio/teams/100509/id/)\n"
@@ -23,6 +23,12 @@ msgstr ""
 
 msgid "Open user guide"
 msgstr "Buka pedoman pengguna"
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Failed to load"
+msgstr ""
 
 msgid "Go back to all lock exceptions"
 msgstr ""
@@ -425,12 +431,6 @@ msgstr "Penghapusan batch"
 msgid "No lock exceptions to show."
 msgstr ""
 
-msgid "Checking data integrity..."
-msgstr "Memeriksa integritas data..."
-
-msgid "Run integrity checks"
-msgstr "Menjalankan pemeriksaan integrasi"
-
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
 
@@ -534,6 +534,107 @@ msgstr "Tindakan aturan program tanpa id tahapan"
 
 msgid "Program indicators with no expression"
 msgstr "Indikator program tanpa ekspresi"
+
+msgid "An error occurred when running the job"
+msgstr ""
+
+msgid ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+msgstr ""
+
+msgid "Re-run"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Severity"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "About this check"
+msgstr ""
+
+msgid "Show more"
+msgstr ""
+
+msgid "{{ numberOfErrors }} errors"
+msgstr ""
+
+msgid "Completed in {{time}}"
+msgstr ""
+
+msgid "Latest run completed {{time}}"
+msgstr ""
+
+msgid "Passed with 0 errors."
+msgstr ""
+
+msgid "Recommendation"
+msgstr ""
+
+msgid "Slow check"
+msgstr ""
+
+msgid "This check is marked as slow, and you have to manually run it."
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Check in progress"
+msgstr ""
+
+msgid "Check in progress for {{time}}"
+msgstr ""
+
+msgid "Average execution time: {{time}}"
+msgstr ""
+
+msgid "No integrity check matches your search criteria."
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Run all standards checks"
+msgstr ""
+
+msgid "Slow checks must be run individually"
+msgstr ""
+
+msgid "Standard checks"
+msgstr ""
+
+msgid "Slow checks"
+msgstr ""
+
+msgid "A-Z"
+msgstr ""
+
+msgid "Number of errors"
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Severe"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Failed to run integrity check"
+msgstr ""
 
 msgid "Indicators"
 msgstr "Indikator"
@@ -660,3 +761,6 @@ msgstr "Membuat tabel..."
 
 msgid "Generate tables"
 msgstr "Buat tabel"
+
+msgid "Now"
+msgstr ""
