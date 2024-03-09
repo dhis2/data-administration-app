@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Valeriu Plesca <vplesca@gmail.com>, 2022
+# Valeriu Plesca <vplesca@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2022\n"
-"Language-Team: Romanian (https://www.transifex.com/hisp-uio/teams/100509/ro/)\n"
+"Last-Translator: Valeriu Plesca <vplesca@gmail.com>, 2024\n"
+"Language-Team: Romanian (https://app.transifex.com/hisp-uio/teams/100509/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,6 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid "Open user guide"
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Failed to load"
 msgstr ""
 
 msgid "Go back to all lock exceptions"
@@ -205,6 +211,15 @@ msgstr "Omiterea generării datelor despre evenimente"
 
 msgid "Skip generation of enrollment data"
 msgstr "Omiterea generării datelor despre înrolări"
+
+msgid "Skip generation of organisation unit ownership data"
+msgstr ""
+
+msgid "Skip generation of tracked entity data"
+msgstr ""
+
+msgid "Skip generation of outlier data"
+msgstr ""
 
 msgid "Data Statistics"
 msgstr ""
@@ -401,12 +416,6 @@ msgstr ""
 msgid "No lock exceptions to show."
 msgstr ""
 
-msgid "Checking data integrity..."
-msgstr ""
-
-msgid "Run integrity checks"
-msgstr ""
-
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
 
@@ -509,6 +518,107 @@ msgstr ""
 msgid "Program indicators with no expression"
 msgstr ""
 
+msgid "An error occurred when running the job"
+msgstr ""
+
+msgid ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+msgstr ""
+
+msgid "Re-run"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Severity"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "About this check"
+msgstr ""
+
+msgid "Show more"
+msgstr ""
+
+msgid "{{ numberOfErrors }} errors"
+msgstr ""
+
+msgid "Completed in {{time}}"
+msgstr ""
+
+msgid "Latest run completed {{time}}"
+msgstr ""
+
+msgid "Passed with 0 errors."
+msgstr ""
+
+msgid "Recommendation"
+msgstr ""
+
+msgid "Slow check"
+msgstr ""
+
+msgid "This check is marked as slow, and you have to manually run it."
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Check in progress"
+msgstr ""
+
+msgid "Check in progress for {{time}}"
+msgstr ""
+
+msgid "Average execution time: {{time}}"
+msgstr ""
+
+msgid "No integrity check matches your search criteria."
+msgstr ""
+
+msgid "Search"
+msgstr "Căutare"
+
+msgid "Sort"
+msgstr "Sortare"
+
+msgid "Run all standards checks"
+msgstr ""
+
+msgid "Slow checks must be run individually"
+msgstr ""
+
+msgid "Standard checks"
+msgstr ""
+
+msgid "Slow checks"
+msgstr ""
+
+msgid "A-Z"
+msgstr ""
+
+msgid "Number of errors"
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Severe"
+msgstr ""
+
+msgid "Warning"
+msgstr "Avertizare"
+
+msgid "Info"
+msgstr ""
+
+msgid "Failed to run integrity check"
+msgstr ""
+
 msgid "Indicators"
 msgstr "Indicatori"
 
@@ -539,13 +649,13 @@ msgstr "Elemente de date"
 msgid "Organisation unit groups"
 msgstr ""
 
-msgid "Tracked entity instances"
+msgid "Tracked entities"
 msgstr ""
 
 msgid "Pivot tables"
 msgstr ""
 
-msgid "Program instances"
+msgid "Enrollments"
 msgstr ""
 
 msgid "Indicator types"
@@ -633,4 +743,7 @@ msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
+msgstr ""
+
+msgid "Now"
 msgstr ""
