@@ -1,16 +1,16 @@
 # 
 # Translators:
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Philip Larsen Donnelly, 2021
 # Éva Tamási, 2022
-# Nadiia <semchuk@aph.org.ua>, 2023
+# Nadiia <semchuk@aph.org.ua>, 2024
+# Viktor Varland <viktor@dhis2.org>, 2024
+# Philip Larsen Donnelly, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
+"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Nadiia <semchuk@aph.org.ua>, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: Ukrainian (https://app.transifex.com/hisp-uio/teams/100509/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 msgid "Open user guide"
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Failed to load"
 msgstr ""
 
 msgid "Go back to all lock exceptions"
@@ -413,12 +419,6 @@ msgstr ""
 msgid "No lock exceptions to show."
 msgstr ""
 
-msgid "Checking data integrity..."
-msgstr ""
-
-msgid "Run integrity checks"
-msgstr ""
-
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
 
@@ -519,6 +519,107 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Program indicators with no expression"
+msgstr ""
+
+msgid "An error occurred when running the job"
+msgstr ""
+
+msgid ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+msgstr ""
+
+msgid "Re-run"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Severity"
+msgstr ""
+
+msgid "Section"
+msgstr "Секція"
+
+msgid "About this check"
+msgstr ""
+
+msgid "Show more"
+msgstr "Показати більше"
+
+msgid "{{ numberOfErrors }} errors"
+msgstr ""
+
+msgid "Completed in {{time}}"
+msgstr ""
+
+msgid "Latest run completed {{time}}"
+msgstr ""
+
+msgid "Passed with 0 errors."
+msgstr ""
+
+msgid "Recommendation"
+msgstr ""
+
+msgid "Slow check"
+msgstr ""
+
+msgid "This check is marked as slow, and you have to manually run it."
+msgstr ""
+
+msgid "Loading"
+msgstr "Завантаження"
+
+msgid "Check in progress"
+msgstr ""
+
+msgid "Check in progress for {{time}}"
+msgstr ""
+
+msgid "Average execution time: {{time}}"
+msgstr ""
+
+msgid "No integrity check matches your search criteria."
+msgstr ""
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Run all standards checks"
+msgstr ""
+
+msgid "Slow checks must be run individually"
+msgstr ""
+
+msgid "Standard checks"
+msgstr ""
+
+msgid "Slow checks"
+msgstr ""
+
+msgid "A-Z"
+msgstr ""
+
+msgid "Number of errors"
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Severe"
+msgstr ""
+
+msgid "Warning"
+msgstr "Попередження"
+
+msgid "Info"
+msgstr "Інформація"
+
+msgid "Failed to run integrity check"
 msgstr ""
 
 msgid "Indicators"
@@ -645,4 +746,7 @@ msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
+msgstr ""
+
+msgid "Now"
 msgstr ""

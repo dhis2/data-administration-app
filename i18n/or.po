@@ -1,24 +1,22 @@
 # 
 # Translators:
-# Jason Pickering <jason@dhis2.org>, 2023
-# Philip Larsen Donnelly, 2024
-# Viktor Varland <viktor@dhis2.org>, 2024
+# SubhamJena <subhamjena8465@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2024\n"
-"Language-Team: Swedish (https://app.transifex.com/hisp-uio/teams/100509/sv/)\n"
+"Last-Translator: SubhamJena <subhamjena8465@gmail.com>, 2024\n"
+"Language-Team: Odia (https://app.transifex.com/hisp-uio/teams/100509/or/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
+"Language: or\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Open user guide"
-msgstr "Öppna användarhandboken"
+msgstr ""
 
 msgid "An unknown error occurred"
 msgstr ""
@@ -33,13 +31,13 @@ msgid "Lock Exception"
 msgstr ""
 
 msgid "Data set"
-msgstr "datamängd"
+msgstr ""
 
 msgid "Period"
-msgstr "Period"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "Organisationsenhet"
+msgstr ""
 
 msgid "Batch delete lock exceptions"
 msgstr ""
@@ -80,7 +78,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "Underhåll"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -272,7 +270,7 @@ msgid "Updating selection..."
 msgstr ""
 
 msgid "Select"
-msgstr "Markera"
+msgstr ""
 
 msgid "Deselect"
 msgstr ""
@@ -302,7 +300,7 @@ msgid "week"
 msgstr ""
 
 msgid "month"
-msgstr "månad"
+msgstr ""
 
 msgid "year"
 msgstr ""
@@ -410,7 +408,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr "Alla"
+msgstr "ସବୁ"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -544,7 +542,7 @@ msgid "About this check"
 msgstr ""
 
 msgid "Show more"
-msgstr "Visa mer"
+msgstr ""
 
 msgid "{{ numberOfErrors }} errors"
 msgstr ""
@@ -583,7 +581,7 @@ msgid "No integrity check matches your search criteria."
 msgstr ""
 
 msgid "Search"
-msgstr "Sök"
+msgstr ""
 
 msgid "Sort"
 msgstr ""
@@ -613,16 +611,16 @@ msgid "Severe"
 msgstr ""
 
 msgid "Warning"
-msgstr "Varning"
+msgstr ""
 
 msgid "Info"
-msgstr ""
+msgstr "ସୂଚନା"
 
 msgid "Failed to run integrity check"
 msgstr ""
 
 msgid "Indicators"
-msgstr "indikatorer"
+msgstr ""
 
 msgid "Periods"
 msgstr ""
@@ -631,67 +629,67 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr "Händelser"
+msgstr ""
 
 msgid "Organisation units"
-msgstr "Organisation enheter"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "valideringsregler"
+msgstr ""
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr "program"
+msgstr ""
 
 msgid "Data elements"
-msgstr "dataelement"
+msgstr ""
 
 msgid "Organisation unit groups"
-msgstr "Organisation enhetsgrupper"
+msgstr ""
 
 msgid "Tracked entities"
-msgstr "Tracked entities"
+msgstr ""
 
 msgid "Pivot tables"
-msgstr "pivottabeller"
+msgstr ""
 
 msgid "Enrollments"
-msgstr "Inskrivningar"
+msgstr ""
 
 msgid "Indicator types"
 msgstr ""
 
 msgid "Data sets"
-msgstr "dataset"
+msgstr ""
 
 msgid "User groups"
-msgstr "Användargrupper grupper~~POS\\=HEADCOMP"
+msgstr ""
 
 msgid "Users"
-msgstr "användare"
+msgstr ""
 
 msgid "Maps"
-msgstr "Kartor"
+msgstr ""
 
 msgid "Indicator groups"
-msgstr "indikatorgrupper"
+msgstr ""
 
 msgid "Charts"
-msgstr "diagram"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Dataelementgrupper"
+msgstr ""
 
 msgid "Dashboards"
-msgstr "instrumentpaneler"
+msgstr ""
 
 msgid "Event visualization"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ଆଜି"
 
 msgid "Last {{days}} days"
 msgstr ""
@@ -700,7 +698,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Object type"
-msgstr "Objekttyp"
+msgstr ""
 
 msgid "Users logged in"
 msgstr ""
@@ -712,7 +710,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr "Förfallna inbjudningar"
+msgstr ""
 
 msgid "Batch deletion"
 msgstr ""

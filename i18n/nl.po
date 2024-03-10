@@ -2,15 +2,15 @@
 # Translators:
 # Cherise Beek <cherise.beek@gmail.com>, 2021
 # Yury Rogachev <yury@dhis2.org>, 2021
-# Charel van den Elsen, 2023
 # Rica Zamora Duchateau, 2023
+# Charel van den Elsen, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-11-24T08:17:24.184Z\n"
+"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Rica Zamora Duchateau, 2023\n"
+"Last-Translator: Charel van den Elsen, 2024\n"
 "Language-Team: Dutch (https://app.transifex.com/hisp-uio/teams/100509/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,6 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Open user guide"
+msgstr ""
+
+msgid "An unknown error occurred"
+msgstr ""
+
+msgid "Failed to load"
 msgstr ""
 
 msgid "Go back to all lock exceptions"
@@ -413,12 +419,6 @@ msgstr ""
 msgid "No lock exceptions to show."
 msgstr ""
 
-msgid "Checking data integrity..."
-msgstr ""
-
-msgid "Run integrity checks"
-msgstr ""
-
 msgid "{{issueTitle}} ({{issueElementsCount}})"
 msgstr ""
 
@@ -519,6 +519,107 @@ msgid "Program rule actions with no stage id"
 msgstr ""
 
 msgid "Program indicators with no expression"
+msgstr ""
+
+msgid "An error occurred when running the job"
+msgstr ""
+
+msgid ""
+"Choose a check to run from the list, or run all checks from the toolbar "
+"above"
+msgstr ""
+
+msgid "Re-run"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Severity"
+msgstr ""
+
+msgid "Section"
+msgstr "Sectie"
+
+msgid "About this check"
+msgstr ""
+
+msgid "Show more"
+msgstr "Laat meer zien"
+
+msgid "{{ numberOfErrors }} errors"
+msgstr ""
+
+msgid "Completed in {{time}}"
+msgstr ""
+
+msgid "Latest run completed {{time}}"
+msgstr ""
+
+msgid "Passed with 0 errors."
+msgstr ""
+
+msgid "Recommendation"
+msgstr ""
+
+msgid "Slow check"
+msgstr ""
+
+msgid "This check is marked as slow, and you have to manually run it."
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Check in progress"
+msgstr ""
+
+msgid "Check in progress for {{time}}"
+msgstr ""
+
+msgid "Average execution time: {{time}}"
+msgstr ""
+
+msgid "No integrity check matches your search criteria."
+msgstr ""
+
+msgid "Search"
+msgstr "Zoek"
+
+msgid "Sort"
+msgstr "Soort"
+
+msgid "Run all standards checks"
+msgstr ""
+
+msgid "Slow checks must be run individually"
+msgstr ""
+
+msgid "Standard checks"
+msgstr ""
+
+msgid "Slow checks"
+msgstr ""
+
+msgid "A-Z"
+msgstr ""
+
+msgid "Number of errors"
+msgstr ""
+
+msgid "Critical"
+msgstr ""
+
+msgid "Severe"
+msgstr ""
+
+msgid "Warning"
+msgstr "Waarschuwing"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Failed to run integrity check"
 msgstr ""
 
 msgid "Indicators"
@@ -645,4 +746,7 @@ msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
+msgstr ""
+
+msgid "Now"
 msgstr ""
