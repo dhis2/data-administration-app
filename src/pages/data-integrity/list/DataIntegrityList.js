@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.js'
 import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
 import { useSelectedCheck } from '../use-selected-check.js'
+import { useSelectedTab } from '../use-selected-tab.js'
 import { List } from './List.js'
 import css from './List.module.css'
 import { ListToolbar, ToolbarTabs } from './ListToolbar.js'
@@ -18,7 +19,7 @@ const filterCheck = (check, filter) => {
 
 export const DataIntegrityList = () => {
     const [filter, setFilter] = useState('')
-    const [selectedTab, setSelectedTab] = useState('standard')
+    const [selectedTab, setSelectedTab] = useSelectedTab()
     const [selectedSort, setSelectedSort] = useState(SORT['A-Z'].value)
 
     const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
@@ -32,13 +33,6 @@ export const DataIntegrityList = () => {
 
     const [selectedCheck, setSelectedCheck] = useSelectedCheck(checks)
     const selectedSlow = selectedTab === 'slow'
-
-    // keep selected-tab in sync
-    useEffect(() => {
-        if(selectedTab !== 'slow' && selectedCheck?.isSlow) {
-            setSelectedTab('slow')
-        }
-    }, [selectedCheck, selectedTab])
 
     const filteredChecks = useMemo(
         () =>

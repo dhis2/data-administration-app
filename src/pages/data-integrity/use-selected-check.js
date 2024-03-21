@@ -9,7 +9,7 @@ export const useSelectedCheck = (checks) => {
     }, [setCheckQueryParam])
 
     const selectedCheck = useMemo(() => {
-        if (checks && checks.length) {
+        if (checks?.length) {
             return checks.find((check) => check.name === checkQueryParam)
         }
         return null
