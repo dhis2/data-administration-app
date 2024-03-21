@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.js'
 import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
@@ -32,6 +32,13 @@ export const DataIntegrityList = () => {
 
     const [selectedCheck, setSelectedCheck] = useSelectedCheck(checks)
     const selectedSlow = selectedTab === 'slow'
+
+    // keep selected-tab in sync
+    useEffect(() => {
+        if(selectedTab !== 'slow' && selectedCheck?.isSlow) {
+            setSelectedTab('slow')
+        }
+    }, [selectedCheck, selectedTab])
 
     const filteredChecks = useMemo(
         () =>
