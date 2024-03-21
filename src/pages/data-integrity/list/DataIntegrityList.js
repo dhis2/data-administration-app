@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react'
 import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.js'
 import { CheckDetailsView } from '../details/CheckDetailsView.js'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
+import { useSelectedCheck } from '../use-selected-check.js'
 import { List } from './List.js'
 import css from './List.module.css'
 import { ListToolbar, ToolbarTabs } from './ListToolbar.js'
@@ -21,8 +22,6 @@ export const DataIntegrityList = () => {
     const [selectedSort, setSelectedSort] = useState(SORT['A-Z'].value)
 
     const sorter = useMemo(() => SORT[selectedSort].sorter, [selectedSort])
-    const [selectedCheck, setSelectedCheck] = useState(null)
-
     const {
         startDataIntegrityCheck,
         checks,
@@ -31,6 +30,7 @@ export const DataIntegrityList = () => {
         runningCheck,
     } = useDataIntegritySummary()
 
+    const [selectedCheck, setSelectedCheck] = useSelectedCheck(checks)
     const selectedSlow = selectedTab === 'slow'
 
     const filteredChecks = useMemo(
