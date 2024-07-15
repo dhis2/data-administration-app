@@ -11,47 +11,47 @@ import { useResourceTables } from './use-resource-tables.js'
 const tables = [
     {
         key: 'organisationUnitStructure',
-        name: 'analytics_rs_orgunitstructure',
+        name: '_orgunitstructure',
     },
     {
         key: 'dataElementGroupSetStructure',
-        name: 'analytics_rs_dataelementgroupsetstructure',
+        name: '_dataelementgroupsetstructure',
     },
     {
         key: 'indicatorGroupSetStructure',
-        name: 'analytics_rs_indicatorgroupsetstructure',
+        name: '_indicatorgroupsetstructure',
     },
     {
         key: 'organisationUnitGroupSetStructure',
-        name: 'analytics_rs_organisationunitgroupsetstructure',
+        name: '_organisationunitgroupsetstructure',
     },
     {
         key: 'categoryStructure',
-        name: 'analytics_rs_categorystructure',
+        name: '_categorystructure',
     },
     {
         key: 'dataElementCategoryOptionComboName',
-        name: 'analytics_rs_categoryoptioncomboname',
+        name: '_categoryoptioncomboname',
     },
     {
         key: 'dataElementStructure',
-        name: 'analytics_rs_dataelementstructure',
+        name: '_dataelementstructure',
     },
     {
         key: 'dataPeriodStructure',
-        name: 'analytics_rs_dateperiodstructure',
+        name: '_dateperiodstructure',
     },
     {
         key: 'periodStructure',
-        name: 'analytics_rs_periodstructure',
+        name: '_periodstructure',
     },
     {
         key: 'dataElementCategoryOptionCombinations',
-        name: 'analytics_rs_dataelementcategoryoptioncombo',
+        name: '_dataelementcategoryoptioncombo',
     },
     {
         key: 'dataSetOrganisationUnitCategory',
-        name: 'analytics_rs_datasetorganisationunitcategory',
+        name: '_datasetorganisationunitcategory',
     },
 ]
 
