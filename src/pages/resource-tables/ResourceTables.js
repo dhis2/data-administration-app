@@ -11,51 +11,47 @@ import { useResourceTables } from './use-resource-tables.js'
 const tables = [
     {
         key: 'organisationUnitStructure',
-        name: '_orgunitstructure',
-    },
-    {
-        key: 'organistionUnitCategoryOptionCombo',
-        name: '_orgunitstructure',
-    },
-    {
-        key: 'categoryOptionGroupSetStructure',
-        name: '_categoryoptiongroupsetstructure',
+        name: 'analytics_rs_orgunitstructure',
     },
     {
         key: 'dataElementGroupSetStructure',
-        name: '_dataelementgroupsetstructure',
+        name: 'analytics_rs_dataelementgroupsetstructure',
     },
     {
         key: 'indicatorGroupSetStructure',
-        name: '_indicatorgroupsetstructure',
+        name: 'analytics_rs_indicatorgroupsetstructure',
     },
     {
         key: 'organisationUnitGroupSetStructure',
-        name: '_organisationunitgroupsetstructure',
+        name: 'analytics_rs_organisationunitgroupsetstructure',
     },
     {
         key: 'categoryStructure',
-        name: '_categorystructure',
+        name: 'analytics_rs_categorystructure',
     },
     {
         key: 'dataElementCategoryOptionComboName',
-        name: '_categoryoptioncomboname',
+        name: 'analytics_rs_categoryoptioncomboname',
     },
     {
         key: 'dataElementStructure',
-        name: '_dataelementstructure',
-    },
-    {
-        key: 'periodStructure',
-        name: '_periodstructure',
+        name: 'analytics_rs_dataelementstructure',
     },
     {
         key: 'dataPeriodStructure',
-        name: '_dateperiodstructure',
+        name: 'analytics_rs_dateperiodstructure',
+    },
+    {
+        key: 'periodStructure',
+        name: 'analytics_rs_periodstructure',
     },
     {
         key: 'dataElementCategoryOptionCombinations',
-        name: '_dataelementcategoryoptioncombo',
+        name: 'analytics_rs_dataelementcategoryoptioncombo',
+    },
+    {
+        key: 'dataSetOrganisationUnitCategory',
+        name: 'analytics_rs_datasetorganisationunitcategory',
     },
 ]
 

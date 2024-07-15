@@ -16,7 +16,7 @@ export const sections = [
             label: i18nKeys.dataIntegrity.label,
             description: i18nKeys.dataIntegrity.description,
             actionText: i18nKeys.dataIntegrity.actionText,
-            docs: 'dataAdmin_dataIntegrity',
+            docs: 'data_admin_data_integrity',
             fullscreen: true,
         },
     },
@@ -39,7 +39,7 @@ export const sections = [
             label: i18nKeys.resourceTables.label,
             description: i18nKeys.resourceTables.description,
             actionText: i18nKeys.resourceTables.actionText,
-            docs: 'dataAdmin_resourceTables',
+            docs: 'data_admin_resource_tables',
         },
     },
     {
@@ -50,7 +50,7 @@ export const sections = [
             label: i18nKeys.analytics.label,
             description: i18nKeys.analytics.description,
             actionText: i18nKeys.analytics.actionText,
-            docs: 'analytics_tables_management',
+            docs: 'data_admin_analytics_tables',
         },
     },
     {
@@ -61,7 +61,7 @@ export const sections = [
             label: i18nKeys.dataStatistics.label,
             description: i18nKeys.dataStatistics.description,
             actionText: i18nKeys.dataStatistics.actionText,
-            docs: 'dataAdmin_dataStatistics',
+            docs: 'data_admin__data_statistics',
         },
     },
     {
@@ -72,7 +72,7 @@ export const sections = [
             label: i18nKeys.lockExceptions.label,
             description: i18nKeys.lockExceptions.description,
             actionText: i18nKeys.lockExceptions.actionText,
-            docs: 'dataAdmin_lockException',
+            docs: 'data_admin__lock_exception',
         },
     },
     {
@@ -83,7 +83,7 @@ export const sections = [
             label: i18nKeys.minMaxValueGeneration.label,
             description: i18nKeys.minMaxValueGeneration.description,
             actionText: i18nKeys.minMaxValueGeneration.actionText,
-            docs: 'dataAdmin_minMaxValueGeneration',
+            docs: 'data_admin_min_max_value_generation',
         },
     },
 ]
