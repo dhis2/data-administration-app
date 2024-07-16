@@ -14,14 +14,6 @@ const tables = [
         name: '_orgunitstructure',
     },
     {
-        key: 'organistionUnitCategoryOptionCombo',
-        name: '_orgunitstructure',
-    },
-    {
-        key: 'categoryOptionGroupSetStructure',
-        name: '_categoryoptiongroupsetstructure',
-    },
-    {
         key: 'dataElementGroupSetStructure',
         name: '_dataelementgroupsetstructure',
     },
@@ -46,16 +38,20 @@ const tables = [
         name: '_dataelementstructure',
     },
     {
-        key: 'periodStructure',
-        name: '_periodstructure',
-    },
-    {
         key: 'dataPeriodStructure',
         name: '_dateperiodstructure',
     },
     {
+        key: 'periodStructure',
+        name: '_periodstructure',
+    },
+    {
         key: 'dataElementCategoryOptionCombinations',
         name: '_dataelementcategoryoptioncombo',
+    },
+    {
+        key: 'dataSetOrganisationUnitCategory',
+        name: '_datasetorganisationunitcategory',
     },
 ]
 
