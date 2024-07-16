@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
-"PO-Revision-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
+"PO-Revision-Date: 2024-07-15T12:15:07.265Z\n"
 
 msgid "Open user guide"
 msgstr "Open user guide"
@@ -143,9 +143,6 @@ msgstr "An unexpected error happened during operation"
 msgid "Organisation unit structure"
 msgstr "Organisation unit structure"
 
-msgid "Organisation unit category option combo"
-msgstr "Organisation unit category option combo"
-
 msgid "Category option group set structure"
 msgstr "Category option group set structure"
 
@@ -175,6 +172,9 @@ msgstr "Date period structure"
 
 msgid "Data element category option combinations"
 msgstr "Data element category option combinations"
+
+msgid "Data set organisation unit category"
+msgstr "Data set organisation unit category"
 
 msgid "Analytics tables management"
 msgstr "Analytics tables management"

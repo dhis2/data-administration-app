@@ -59,9 +59,6 @@ export const i18nKeys = {
         ),
         tables: {
             organisationUnitStructure: i18n.t('Organisation unit structure'),
-            organistionUnitCategoryOptionCombo: i18n.t(
-                'Organisation unit category option combo'
-            ),
             categoryOptionGroupSetStructure: i18n.t(
                 'Category option group set structure'
             ),
@@ -81,6 +78,9 @@ export const i18nKeys = {
             dataPeriodStructure: i18n.t('Date period structure'),
             dataElementCategoryOptionCombinations: i18n.t(
                 'Data element category option combinations'
+            ),
+            dataSetOrganisationUnitCategory: i18n.t(
+                'Data set organisation unit category'
             ),
         },
     },
