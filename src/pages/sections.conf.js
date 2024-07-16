@@ -72,7 +72,7 @@ export const sections = [
             label: i18nKeys.lockExceptions.label,
             description: i18nKeys.lockExceptions.description,
             actionText: i18nKeys.lockExceptions.actionText,
-            docs: 'dataAdmin_lockException',
+            docs: 'data_admin__lock_exception',
         },
     },
     {
