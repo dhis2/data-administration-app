@@ -1,3 +1,10 @@
+## [100.0.6](https://github.com/dhis2/data-administration-app/compare/v100.0.5...v100.0.6) (2024-07-16)
+
+
+### Bug Fixes
+
+* clean up resource tables section [DHIS2-16445] ([#1055](https://github.com/dhis2/data-administration-app/issues/1055)) ([502ddf5](https://github.com/dhis2/data-administration-app/commit/502ddf55e4a9f5db63d8ee32dbd89c2920917f6c))
+
 ## [100.0.5](https://github.com/dhis2/data-administration-app/compare/v100.0.4...v100.0.5) (2024-06-09)
 
 
