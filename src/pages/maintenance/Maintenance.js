@@ -12,7 +12,7 @@ import { useCheckboxes } from './use-checkboxes.js'
 const mutation = {
     resource: 'maintenance',
     type: 'create',
-    params: (params) => params,
+    params: ({ params }) => params,
 }
 
 const Maintenance = ({ sectionKey }) => {
@@ -32,7 +32,7 @@ const Maintenance = ({ sectionKey }) => {
                 params[key] = true
             }
         }
-        mutate(params)
+        mutate({ params })
     }
 
     return (
