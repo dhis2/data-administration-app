@@ -3,17 +3,18 @@
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2022
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Prabhjot Singh, 2022
-# phil_dhis2, 2022
+# Philip Larsen Donnelly, 2022
 # Janeth Cruz, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Alejandra Avila <alejandra@dhis2.org>, 2023
+# Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
-"Last-Translator: Alejandra Avila <alejandra@dhis2.org>, 2023\n"
+"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgid "Open user guide"
 msgstr "Abrir guía de usuario"
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "Volver a todas las excepciones de bloqueo"
 
 msgid "Lock Exception"
 msgstr "Excepción de Bloqueo"
@@ -40,28 +41,28 @@ msgid "Organisation unit"
 msgstr "Unidad organizativa"
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "Eliminación por lotes de excepciones de bloqueo"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "Eliminar excepción de bloqueo"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "Excepción de bloqueo eliminada"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "Error al eliminar excepción de bloqueo: {{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "¿Está seguro de que desea eliminar esta excepción de bloqueo?"
 
 msgid "No, cancel"
 msgstr "No, cancela"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "Eliminación de la excepción de bloqueo..."
 
 msgid "Yes, remove lock exception"
-msgstr ""
+msgstr "Sí, eliminar excepción de bloqueo"
 
 msgid "Data Integrity"
 msgstr "Integridad de Datos"
@@ -70,12 +71,16 @@ msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
 msgstr ""
+"Realice comprobaciones de la integridad de los datos y descubra anomalías y "
+"problemas en la configuración de los metadatos."
 
 msgid "Check data integrity"
-msgstr ""
+msgstr "Comprobar la integridad de los datos"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
+"Se ha producido un error inesperado durante la comprobación de la integridad"
+" de los datos"
 
 msgid "Maintenance"
 msgstr "Mantenimiento"
@@ -84,6 +89,9 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
+"Realizar tareas de mantenimiento y generar tablas de bases de datos de "
+"recursos para la jerarquía de unidades organizativas y la estructura de "
+"conjuntos de grupos."
 
 msgid "Perform maintenance"
 msgstr "Realizar mantenimiento"
@@ -92,49 +100,51 @@ msgid "Clear analytics tables"
 msgstr "Eliminar tablas Analytics"
 
 msgid "Analyze analytics tables"
-msgstr ""
+msgstr "Analizar tablas de análisis"
 
 msgid "Remove zero data values"
-msgstr ""
+msgstr "Eliminar valores de datos cero"
 
 msgid "Permanently remove soft deleted data values"
-msgstr ""
+msgstr "Eliminar permanentemente los valores de los datos borrados"
 
 msgid "Permanently remove soft deleted events"
-msgstr ""
+msgstr "Eliminar permanentemente los eventos borrados con soft"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr ""
+msgstr "Eliminar permanentemente las inscripciones suprimidas por software"
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
+"Eliminar permanentemente las instancias de entidades rastreadas eliminadas "
+"de forma suave"
 
 msgid "Prune periods"
 msgstr "Periodos depurados"
 
 msgid "Remove expired invitations"
-msgstr ""
+msgstr "Eliminar invitaciones caducadas"
 
 msgid "Drop SQL views"
-msgstr ""
+msgstr "Soltar vistas SQL"
 
 msgid "Create SQL views"
 msgstr "Crear vistas SQL"
 
 msgid "Update category option combinations"
-msgstr ""
+msgstr "Actualización combinaciones de opciones de categoría"
 
 msgid "Update organisation unit paths"
 msgstr "Actualizar las rutas de las unidades organizativas"
 
 msgid "Clear application cache"
-msgstr ""
+msgstr "Borrar la caché de la aplicación"
 
 msgid "Reload apps"
-msgstr ""
+msgstr "Recargar aplicaciones"
 
 msgid "Resource Tables"
-msgstr ""
+msgstr "Tablas de recursos"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
@@ -152,11 +162,8 @@ msgstr "Ocurrió un error inesperado durante la operación"
 msgid "Organisation unit structure"
 msgstr "Estructura de unidad organizativa"
 
-msgid "Organisation unit category option combo"
-msgstr ""
-
 msgid "Category option group set structure"
-msgstr ""
+msgstr "opción de categoría estructura del grupo"
 
 msgid "Data element group set structure"
 msgstr "Estructura del conjunto de grupos de elementos de datos"
@@ -180,13 +187,16 @@ msgid "Period structure"
 msgstr "Estructura de periodo"
 
 msgid "Date period structure"
-msgstr ""
+msgstr "Estructura de los plazos"
 
 msgid "Data element category option combinations"
 msgstr "Combinación de categorías de elementos de datos"
 
-msgid "Analytics tables management"
+msgid "Data set organisation unit category"
 msgstr ""
+
+msgid "Analytics tables management"
+msgstr "Gestión de tablas analíticas"
 
 msgid "Analytics Tables"
 msgstr "Tablas analíticas"
@@ -195,6 +205,9 @@ msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
 "reporting and analysis tools to retrieve data from."
 msgstr ""
+"El mercado de datos es un conjunto de tablas de la base de datos DHIS que "
+"utilizan todas las herramientas de elaboración de informes y análisis para "
+"recuperar datos."
 
 msgid "Analytics tables update"
 msgstr "Actualizar tablas Analytics"
@@ -203,16 +216,16 @@ msgid "An unexpected error happened during maintenance"
 msgstr "Ocurrió un error inesperado durante el mantenimiento"
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr ""
+msgstr "Omitir la generación de datos agregados y datos de integridad"
 
 msgid "Skip generation of resource tables"
-msgstr ""
+msgstr "Omitir la generación de tablas de recursos"
 
 msgid "Skip generation of event data"
-msgstr ""
+msgstr "Omitir la generación de datos de sucesos"
 
 msgid "Skip generation of enrollment data"
-msgstr ""
+msgstr "Omitir la generación de datos de inscripción"
 
 msgid "Data Statistics"
 msgstr "Estadisticas de Dato"
@@ -225,7 +238,7 @@ msgstr ""
 "indicadores, conjuntos de datos y valores."
 
 msgid "Overview Data Statistics"
-msgstr ""
+msgstr "Resumen Estadísticas de datos"
 
 msgid "Lock Exception Management"
 msgstr "Administración de Excepciones de Bloqueo"
@@ -251,16 +264,16 @@ msgid "Generate Min-Max Values"
 msgstr "Generar valores mínimos y máximos"
 
 msgid "Lock exception added"
-msgstr ""
+msgstr "Excepción de bloqueo añadida"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
+msgstr "Error al añadir excepción de bloqueo: {{error}}"
 
 msgid "Add lock exception"
-msgstr ""
+msgstr "Añadir excepción de bloqueo"
 
 msgid "Adding lock exception..."
-msgstr ""
+msgstr "Añadir excepción de bloqueo..."
 
 msgid "Select a data set"
 msgstr "Seleccionar un set de datos"
@@ -350,52 +363,52 @@ msgid "dec"
 msgstr "dic"
 
 msgid "jan-feb"
-msgstr ""
+msgstr "enero-febrero"
 
 msgid "mar-apr"
-msgstr ""
+msgstr "mar-apr"
 
 msgid "may-jun"
-msgstr ""
+msgstr "may-jun"
 
 msgid "jul-aug"
-msgstr ""
+msgstr "julio-agosto"
 
 msgid "sep-oct"
-msgstr ""
+msgstr "sep-oct"
 
 msgid "nov-dec"
-msgstr ""
+msgstr "nov-dec"
 
 msgid "quarter"
 msgstr "trimestre"
 
 msgid "Q1"
-msgstr ""
+msgstr "Q1"
 
 msgid "Q2"
-msgstr ""
+msgstr "Q2"
 
 msgid "Q3"
-msgstr ""
+msgstr "Q3"
 
 msgid "Q4"
-msgstr ""
+msgstr "Q4"
 
 msgid "six monthly"
 msgstr "Semestral"
 
 msgid "jan-jun"
-msgstr ""
+msgstr "enero-junio"
 
 msgid "jul-dec"
-msgstr ""
+msgstr "julio-diciembre"
 
 msgid "apr-sep"
-msgstr ""
+msgstr "abr-sep"
 
 msgid "oct-mar"
-msgstr ""
+msgstr "oct-mar"
 
 msgid "Number of last years of data to include"
 msgstr "Número de datos de los últimos años a incluir"
@@ -410,22 +423,22 @@ msgid "All"
 msgstr "Todos"
 
 msgid "Batch Deletion"
-msgstr ""
+msgstr "Borrado por lotes"
 
 msgid "No lock exceptions to show."
-msgstr ""
+msgstr "No hay excepciones de cerradura que mostrar."
 
 msgid "Checking data integrity..."
 msgstr "Comprobando integridad de datos ..."
 
 msgid "Run integrity checks"
-msgstr ""
+msgstr "Ejecutar comprobaciones de integridad"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data elements without data set"
-msgstr ""
+msgstr "Elementos de datos sin conjunto de datos"
 
 msgid "Data elements without groups"
 msgstr "Elementos de datos sin grupos"
@@ -467,6 +480,7 @@ msgstr "Unidades organizativas sin grupos"
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
+"Unidades de organización que infringen los conjuntos de grupos exclusivos"
 
 msgid "Organisation unit groups without group sets"
 msgstr "Grupos de unidades organizativas sin conjuntos de grupo"
@@ -481,49 +495,51 @@ msgid "Invalid validation rule right side expressions"
 msgstr "Expresión del lado derecho de la regla de validación inválida"
 
 msgid "Invalid program indicator expressions"
-msgstr ""
+msgstr "Expresiones de indicador de programa no válidas"
 
 msgid "Invalid program indicator filters"
-msgstr ""
+msgstr "Filtros indicadores de programa no válidos"
 
 msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
+"Hay elementos de datos en el formulario, pero no en el formulario ni en las "
+"secciones"
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "No válido combinaciones de categorías"
 
 msgid "Duplicate periods"
-msgstr ""
+msgstr "Periodos duplicados"
 
 msgid "Program rules with no condition"
-msgstr ""
+msgstr "Normas del programa sin condición"
 
 msgid "Program rules with no action"
-msgstr ""
+msgstr "Normas del programa sin acción"
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "Normas del programa sin prioridad"
 
 msgid "Program rule variables with no data element"
-msgstr ""
+msgstr "Variables de regla de programa sin elemento de datos"
 
 msgid "Program rule variables with no attribute"
-msgstr ""
+msgstr "Variables de regla de programa sin atributo"
 
 msgid "Program rule actions with no data object"
-msgstr ""
+msgstr "Programar acciones de reglas sin objeto de datos"
 
 msgid "Program rule actions with no notification"
-msgstr ""
+msgstr "Programar acciones de reglas sin notificación"
 
 msgid "Program rule actions with no section id"
-msgstr ""
+msgstr "Programar acciones de reglas sin identificador de sección"
 
 msgid "Program rule actions with no stage id"
-msgstr ""
+msgstr "Programar acciones de reglas sin id de etapa"
 
 msgid "Program indicators with no expression"
-msgstr ""
+msgstr "Indicadores de programa sin expresión"
 
 msgid "Indicators"
 msgstr "Indicadores"
@@ -562,7 +578,7 @@ msgid "Pivot tables"
 msgstr "Tablas dinámicas"
 
 msgid "Program instances"
-msgstr ""
+msgstr "Instancias del programa"
 
 msgid "Indicator types"
 msgstr "Tipos de indicador"
@@ -592,16 +608,16 @@ msgid "Dashboards"
 msgstr "Cuadros de mandos"
 
 msgid "Event visualization"
-msgstr ""
+msgstr "Visualización de eventos"
 
 msgid "Today"
 msgstr "Hoy"
 
 msgid "Last {{days}} days"
-msgstr ""
+msgstr "Últimos {{days}} días"
 
 msgid "Last hour"
-msgstr ""
+msgstr "Última hora"
 
 msgid "Object type"
 msgstr "Tipo de objeto"
@@ -610,10 +626,10 @@ msgid "Users logged in"
 msgstr "Usuarios que han iniciado sesión"
 
 msgid "User account invitations"
-msgstr ""
+msgstr "Invitaciones a cuentas de usuario"
 
 msgid "Pending invitations"
-msgstr ""
+msgstr "Invitaciones pendientes"
 
 msgid "Expired invitations"
 msgstr "Invitaciones caducadas"
@@ -622,31 +638,31 @@ msgid "Batch deletion"
 msgstr "Eliminación de lote"
 
 msgid "Maintenance done"
-msgstr ""
+msgstr "Mantenimiento realizado"
 
 msgid "Performing maintenance..."
-msgstr ""
+msgstr "Realizando mantenimiento..."
 
 msgid "Min-max values generated"
-msgstr ""
+msgstr "Valores mínimo-máximo generados"
 
 msgid "Min-max values removed"
-msgstr ""
+msgstr "Valores mínimo-máximo eliminados"
 
 msgid "Generating min-max values..."
-msgstr ""
+msgstr "Generar valores mín-máx..."
 
 msgid "Removing min-max values..."
-msgstr ""
+msgstr "Eliminar valores mín-máx..."
 
 msgid "Generate min-max values"
 msgstr "Generar valores máximos y mínimos"
 
 msgid "Remove min-max values"
-msgstr ""
+msgstr "Eliminar valores mín-máx"
 
 msgid "Generating tables..."
-msgstr ""
+msgstr "Generar tablas..."
 
 msgid "Generate tables"
 msgstr "Generar tablas"
