@@ -1,3 +1,10 @@
+## [100.0.7](https://github.com/dhis2/data-administration-app/compare/v100.0.6...v100.0.7) (2024-07-23)
+
+
+### Bug Fixes
+
+* force current params [DHIS2-17758] ([#1059](https://github.com/dhis2/data-administration-app/issues/1059)) ([33ee611](https://github.com/dhis2/data-administration-app/commit/33ee6110934fc02c7e081c27caea4d56e7a06e1a))
+
 ## [100.0.6](https://github.com/dhis2/data-administration-app/compare/v100.0.5...v100.0.6) (2024-07-16)
 
 
