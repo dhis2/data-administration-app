@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
 "Last-Translator: Philip Larsen Donnelly, 2024\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
@@ -165,9 +165,6 @@ msgstr "Une erreur inattendue s'est produite pendant l'opération"
 msgid "Organisation unit structure"
 msgstr "Structure d'unités d'Organisation"
 
-msgid "Organisation unit category option combo"
-msgstr "Combinaison d'options de catégorie d'unité d'organisation"
-
 msgid "Category option group set structure"
 msgstr "Category option group set structure"
 
@@ -197,6 +194,9 @@ msgstr "Structure de période de la date"
 
 msgid "Data element category option combinations"
 msgstr "Combinaisons des options de catégories d'éléments de données"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "Gestion des tables analytiques"
