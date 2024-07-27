@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
 "Last-Translator: Caroline Hesthagen Holen <caroline@devotta.no>, 2023\n"
 "Language-Team: Norwegian Bokmål (https://app.transifex.com/hisp-uio/teams/100509/nb/)\n"
@@ -147,9 +147,6 @@ msgstr ""
 msgid "Organisation unit structure"
 msgstr "Organisasjonsenhet struktur"
 
-msgid "Organisation unit category option combo"
-msgstr "Organisasjonsenhet kategorialternativ kombo"
-
 msgid "Category option group set structure"
 msgstr "Kategorialternativ gruppesett struktur"
 
@@ -179,6 +176,9 @@ msgstr "Dataperiode struktur"
 
 msgid "Data element category option combinations"
 msgstr "Dataelement kategorialternativ kombinasjoner"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr ""

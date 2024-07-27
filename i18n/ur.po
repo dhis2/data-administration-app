@@ -1,12 +1,12 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
 "Language-Team: Urdu (https://app.transifex.com/hisp-uio/teams/100509/ur/)\n"
@@ -147,9 +147,6 @@ msgstr ""
 msgid "Organisation unit structure"
 msgstr "تنظیم یونٹ کی ساخت"
 
-msgid "Organisation unit category option combo"
-msgstr "تنظیم یونٹ قسم کا اختیار کامبو"
-
 msgid "Category option group set structure"
 msgstr "زمرہ اختیار گروپ کی تشکیل"
 
@@ -179,6 +176,9 @@ msgstr "تاریخ کی مدت کی ساخت"
 
 msgid "Data element category option combinations"
 msgstr "ڈیٹا عنصر زمرہ اختیار کے مجموعے"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr ""

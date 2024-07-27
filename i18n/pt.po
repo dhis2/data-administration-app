@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Sheila André <sandre@saudigitus.org>, 2023
 # Emilio Mosse, 2023
 # David Júnior <davidjr.mondlane@gmail.com>, 2023
@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
@@ -158,9 +158,6 @@ msgstr "Ocorreu um erro inesperado durante a operação"
 msgid "Organisation unit structure"
 msgstr "Estrutura da Unidade Organizacional"
 
-msgid "Organisation unit category option combo"
-msgstr "Combinação de opções de categoria de unidade organizacional"
-
 msgid "Category option group set structure"
 msgstr "Estrutura do conjunto de grupos de opções de categoria"
 
@@ -190,6 +187,9 @@ msgstr "Estrutura de período de dados"
 
 msgid "Data element category option combinations"
 msgstr "Combinação de valores de opção para a categoria do elemento de dados"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "Gerenciamento de tabelas de análise"
