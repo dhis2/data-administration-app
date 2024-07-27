@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
 "Last-Translator: easylin <lin_xd@126.com>, 2022\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
@@ -147,9 +147,6 @@ msgstr "操作中发生意外错误"
 msgid "Organisation unit structure"
 msgstr "组织机构结构"
 
-msgid "Organisation unit category option combo"
-msgstr "机构 分类选项 组合"
-
 msgid "Category option group set structure"
 msgstr "分类选项组集结构"
 
@@ -179,6 +176,9 @@ msgstr "日期期间结构"
 
 msgid "Data element category option combinations"
 msgstr "数据元 分类组合选项"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "分析表管理"
