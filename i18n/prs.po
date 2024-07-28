@@ -1,13 +1,13 @@
 # 
 # Translators:
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
-"Last-Translator: phil_dhis2, 2023\n"
+"Last-Translator: Philip Larsen Donnelly, 2023\n"
 "Language-Team: Persian (Afghanistan) (https://app.transifex.com/hisp-uio/teams/100509/fa_AF/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -146,9 +146,6 @@ msgstr ""
 msgid "Organisation unit structure"
 msgstr "ساختار واحد سازمان"
 
-msgid "Organisation unit category option combo"
-msgstr "گزینه ترکیب کتگوری واحد سازمان"
-
 msgid "Category option group set structure"
 msgstr "ساختار گزینه کتگوری گروپ"
 
@@ -178,6 +175,9 @@ msgstr "استرکچر دوره دیتا"
 
 msgid "Data element category option combinations"
 msgstr "مدیریت ترکیبات کتگوری گزینه عنصر اطلاعات"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "مدیریت جداول تحلیلی"

@@ -2,13 +2,13 @@
 # Translators:
 # Thuy Nguyen <thuynguyen@hispvietnam.org>, 2023
 # Mai Nguyen <thanhmai.jica@gmail.com>, 2023
-# phil_dhis2, 2023
+# Philip Larsen Donnelly, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2023-03-09T00:41:03.216Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
 "Last-Translator: Viktor Varland <viktor@dhis2.org>, 2023\n"
 "Language-Team: Vietnamese (https://app.transifex.com/hisp-uio/teams/100509/vi/)\n"
@@ -152,9 +152,6 @@ msgstr "Đã xảy ra lỗi không mong muốn trong quá trình hoạt động"
 msgid "Organisation unit structure"
 msgstr "Cấu trúc đơn vị"
 
-msgid "Organisation unit category option combo"
-msgstr "Tổ Hợp Tùy Chọn Phân Loại Đơn Vị"
-
 msgid "Category option group set structure"
 msgstr "Cấu trúc Tập Nhóm Tùy Chọn Phân Loại"
 
@@ -184,6 +181,9 @@ msgstr "Cấu trúc thời điểm ngày"
 
 msgid "Data element category option combinations"
 msgstr "Tổ hợp tùy chọn phân loại"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "Quản lý bảng phân tích tổng hợp"
