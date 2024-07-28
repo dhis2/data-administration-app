@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2022-03-02T11:44:10.658Z\n"
+"POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
 "Last-Translator: Yury Rogachev <yury@dhis2.org>, 2022\n"
 "Language-Team: Uzbek (Latin) (https://app.transifex.com/hisp-uio/teams/100509/uz@Latn/)\n"
@@ -146,9 +146,6 @@ msgstr ""
 msgid "Organisation unit structure"
 msgstr "Tashkiliy boʼlimning tuzilishi"
 
-msgid "Organisation unit category option combo"
-msgstr "Tashkiliy boʼlim kategoriyasi varianti kombinatsiyasi"
-
 msgid "Category option group set structure"
 msgstr "Kategoriya variantlari guruhi toʼplamining tuzilishi"
 
@@ -178,6 +175,9 @@ msgstr "Sananing davriylik tarkibi"
 
 msgid "Data element category option combinations"
 msgstr "Maʼlumotlar elementi kategoriya varianti kombinatsiyalari"
+
+msgid "Data set organisation unit category"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr "Аnalitika jadvallarini boshqarish"
