@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2023
+# Jiří Podhorecký, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Jiří Podhorecký, 2023\n"
+"Last-Translator: Jiří Podhorecký, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgid "Open user guide"
 msgstr "Otevřít uživatelskou příručku"
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Nastala neznámá chyba"
 
 msgid "Failed to load"
 msgstr ""
@@ -544,19 +544,19 @@ msgid "Re-run"
 msgstr ""
 
 msgid "Run"
-msgstr ""
+msgstr "Běh"
 
 msgid "Severity"
-msgstr ""
+msgstr "Vážnost"
 
 msgid "Section"
-msgstr ""
+msgstr "Sekce"
 
 msgid "About this check"
 msgstr ""
 
 msgid "Show more"
-msgstr ""
+msgstr "Zobrazit více"
 
 msgid "{{ numberOfErrors }} errors"
 msgstr ""
@@ -580,7 +580,7 @@ msgid "This check is marked as slow, and you have to manually run it."
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Načítání"
 
 msgid "Check in progress"
 msgstr ""
@@ -595,10 +595,10 @@ msgid "No integrity check matches your search criteria."
 msgstr ""
 
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 msgid "Sort"
-msgstr ""
+msgstr "Třídit"
 
 msgid "Run all standards checks"
 msgstr ""
@@ -622,13 +622,13 @@ msgid "Critical"
 msgstr ""
 
 msgid "Severe"
-msgstr ""
+msgstr "Závažné"
 
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 msgid "Failed to run integrity check"
 msgstr ""
@@ -760,4 +760,4 @@ msgid "Generate tables"
 msgstr "Generovat tabulky"
 
 msgid "Now"
-msgstr ""
+msgstr "Nyní"
