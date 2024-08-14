@@ -1,4 +1,3 @@
-import { useConfig } from '@dhis2/app-runtime'
 import { colors, Tooltip, IconQuestion24 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -6,16 +5,9 @@ import i18n from '../../locales/index.js'
 import { getDocsKeyForSection } from '../../pages/sections.conf.js'
 import styles from './DocsLink.module.css'
 
-const getDocsVersion = ({ major, minor, tag }) => {
-    if (tag === 'SNAPSHOT') {
-        return 'master'
-    }
-    return `${major}${minor}`
-}
-
 const DocsLink = ({ sectionKey }) => {
-    const { serverVersion } = useConfig()
-    const docsVersion = getDocsVersion(serverVersion)
+    // by default, use 'master' to prevent links to expired / removed docs
+    const docsVersion = 'master'
     const docsKey = getDocsKeyForSection(sectionKey)
 
     return (
