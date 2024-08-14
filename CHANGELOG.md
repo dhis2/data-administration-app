@@ -1,3 +1,10 @@
+## [100.0.11](https://github.com/dhis2/data-administration-app/compare/v100.0.10...v100.0.11) (2024-08-14)
+
+
+### Bug Fixes
+
+* reference master docs [DHIS2-16445] ([#1074](https://github.com/dhis2/data-administration-app/issues/1074)) ([6cf70ba](https://github.com/dhis2/data-administration-app/commit/6cf70badb1462f5e679ee4d69762f2ebdf114b92))
+
 ## [100.0.10](https://github.com/dhis2/data-administration-app/compare/v100.0.9...v100.0.10) (2024-08-11)
 
 
