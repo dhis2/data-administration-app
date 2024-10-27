@@ -22,16 +22,16 @@ msgid "Open user guide"
 msgstr "Mở hướng dẫn sử dụng"
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Xảy ra lỗi không xác định"
 
 msgid "Failed to load"
-msgstr ""
+msgstr "Không thể tải về"
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "Quay về tất cả ngoại lệ khóa"
 
 msgid "Lock Exception"
-msgstr "Khóa ngoại lệ"
+msgstr "Ngoại lệ khóa"
 
 msgid "Data set"
 msgstr "Tập dữ liệu"
@@ -43,25 +43,25 @@ msgid "Organisation unit"
 msgstr "Đơn vị"
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "Xóa hàng loạt ngoại lệ khóa"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "Bỏ ngoại lệ khóa"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "Đã bỏ ngoại lệ khóa"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "Lỗi khi bỏ ngoại lệ khóa: {{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "Bạn có chắc muốn bỏ ngoại lệ khóa này không?"
 
 msgid "No, cancel"
-msgstr "Không"
+msgstr "Không, hủy bỏ"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "Đang bỏ ngoại lệ khóa..."
 
 msgid "Yes, remove lock exception"
 msgstr ""
