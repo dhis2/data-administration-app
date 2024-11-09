@@ -1,13 +1,13 @@
 # 
 # Translators:
-# Jiří Podhorecký, 2022
+# Jiří Podhorecký <jirka.p@volny.cz>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
-"Last-Translator: Jiří Podhorecký, 2022\n"
+"Last-Translator: Jiří Podhorecký <jirka.p@volny.cz>, 2024\n"
 "Language-Team: Czech (https://app.transifex.com/hisp-uio/teams/100509/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,7 +181,7 @@ msgid "Data element category option combinations"
 msgstr "Kombinace možností kategorie datových prvků"
 
 msgid "Data set organisation unit category"
-msgstr ""
+msgstr "Kategorie organizační jednotky datového souboru"
 
 msgid "Analytics tables management"
 msgstr "Správa tabulek Analýzy"
