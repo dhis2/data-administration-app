@@ -7,13 +7,14 @@
 # Ge Joao <gsimango@saudigitus.org>, 2022
 # Emilio Mosse, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
+# Helton Dias, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2022-10-15 22:30+0000\n"
-"Last-Translator: Viktor Varland <viktor@dhis2.org>, 2022\n"
+"Last-Translator: Helton Dias, 2024\n"
 "Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgid "Open user guide"
 msgstr "Abrir o guião de utilizador "
 
 msgid "Go back to all lock exceptions"
-msgstr ""
+msgstr "Voltar a todas as excepções de bloqueio"
 
 msgid "Lock Exception"
 msgstr "Excepção de bloqueio"
@@ -40,28 +41,28 @@ msgid "Organisation unit"
 msgstr "Unidade organizacional"
 
 msgid "Batch delete lock exceptions"
-msgstr ""
+msgstr "Excepções de bloqueio de eliminação em lote"
 
 msgid "Remove lock exception"
-msgstr ""
+msgstr "Remover exceção de bloqueio"
 
 msgid "Lock exception removed"
-msgstr ""
+msgstr "Exceção de bloqueio removida"
 
 msgid "Error removing lock exception: {{error}}"
-msgstr ""
+msgstr "Erro ao remover a exceção de bloqueio: {{error}}"
 
 msgid "Are you sure you want to remove this lock exception?"
-msgstr ""
+msgstr "Tem a certeza de que pretende eliminar esta exceção de bloqueio?"
 
 msgid "No, cancel"
 msgstr "Não cancele"
 
 msgid "Removing lock exception..."
-msgstr ""
+msgstr "Remoção da exceção de bloqueio..."
 
 msgid "Yes, remove lock exception"
-msgstr ""
+msgstr "Sim, remover exceção de bloqueio"
 
 msgid "Data Integrity"
 msgstr "Integridade de dado"
@@ -70,9 +71,11 @@ msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
 "setup."
 msgstr ""
+"Efetuar verificações da integridade dos dados e revelar anomalias e "
+"problemas na configuração dos metadados."
 
 msgid "Check data integrity"
-msgstr ""
+msgstr "Verificar a integridade dos dados"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
@@ -189,7 +192,7 @@ msgid "Data element category option combinations"
 msgstr "Combinação de valores de opção para a categoria do elemento de dados"
 
 msgid "Data set organisation unit category"
-msgstr ""
+msgstr "Categoria da unidade organizacional do conjunto de dados"
 
 msgid "Analytics tables management"
 msgstr "Gerenciamento de tabelas de análise"
@@ -256,25 +259,25 @@ msgstr ""
 "os processos de entrada de dados e validação."
 
 msgid "Generate Min-Max Values"
-msgstr ""
+msgstr "Gerar valores mínimos e máximos"
 
 msgid "Lock exception added"
-msgstr ""
+msgstr "Exceção de bloqueio adicionada"
 
 msgid "Error adding lock exception: {{error}}"
-msgstr ""
+msgstr "Erro ao adicionar exceção de bloqueio: {{error}}"
 
 msgid "Add lock exception"
-msgstr ""
+msgstr "Adicionar exceção de bloqueio"
 
 msgid "Adding lock exception..."
-msgstr ""
+msgstr "Adicionar excepção de bloqueio..."
 
 msgid "Select a data set"
-msgstr ""
+msgstr "Selecionar um conjunto de dados"
 
 msgid "Updating selection..."
-msgstr ""
+msgstr "Actualização da seleção..."
 
 msgid "Select"
 msgstr "Selecione"
@@ -283,7 +286,7 @@ msgid "Deselect"
 msgstr "Desmarcar"
 
 msgid "Error loading data for data set"
-msgstr ""
+msgstr "Erro ao carregar dados para o conjunto de dados"
 
 msgid "Select All Org Units"
 msgstr "Selecionar todas unidades organizacionais "
@@ -295,13 +298,13 @@ msgid "Organisation unit group"
 msgstr "Grupo de Unidade de Organização"
 
 msgid "Select an organisation unit group"
-msgstr ""
+msgstr "Selecionar um grupo de unidades organizacionais"
 
 msgid "Organisation unit level"
 msgstr "Nível de unidade organizacional"
 
 msgid "Select an organisation unit level"
-msgstr ""
+msgstr "Selecionar um nível de unidade organizacional"
 
 msgid "week"
 msgstr "Semana"
@@ -313,7 +316,7 @@ msgid "year"
 msgstr "Ano"
 
 msgid "bi weekly"
-msgstr ""
+msgstr "duas vezes por semana"
 
 msgid "bi monthly"
 msgstr "Bimensal "
@@ -409,7 +412,7 @@ msgid "Number of last years of data to include"
 msgstr "Número de últimos anos de dados a incluir"
 
 msgid "Exporting..."
-msgstr ""
+msgstr "Exportar..."
 
 msgid "Start export"
 msgstr "Iniciar exportacão"
@@ -421,16 +424,16 @@ msgid "Batch Deletion"
 msgstr "Exclusão em lote"
 
 msgid "No lock exceptions to show."
-msgstr ""
+msgstr "Sem exceção de bloqueio para mostrar."
 
 msgid "Checking data integrity..."
-msgstr ""
+msgstr "Verificar a integridade dos dados..."
 
 msgid "Run integrity checks"
 msgstr "Executar verificações de integridade"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data elements without data set"
 msgstr "Elementos de dados sem conjunto de dados"
@@ -530,7 +533,7 @@ msgid "Program rule actions with no stage id"
 msgstr "Ações de regra do programa sem estágio de ID"
 
 msgid "Program indicators with no expression"
-msgstr ""
+msgstr "Indicadores do programa sem expressão"
 
 msgid "Indicators"
 msgstr "Indicadores"
@@ -569,7 +572,7 @@ msgid "Pivot tables"
 msgstr "Tabelas Pivô"
 
 msgid "Program instances"
-msgstr ""
+msgstr "Instâncias de programa"
 
 msgid "Indicator types"
 msgstr "Tipos de indicador"
@@ -599,13 +602,13 @@ msgid "Dashboards"
 msgstr "Painel"
 
 msgid "Event visualization"
-msgstr ""
+msgstr "Visualização de eventos"
 
 msgid "Today"
 msgstr "Hoje"
 
 msgid "Last {{days}} days"
-msgstr ""
+msgstr "Últimos {{days}} dias"
 
 msgid "Last hour"
 msgstr "Ultima hora "
@@ -632,28 +635,28 @@ msgid "Maintenance done"
 msgstr "Manunteção concluida "
 
 msgid "Performing maintenance..."
-msgstr ""
+msgstr "Efectuar a manutenção..."
 
 msgid "Min-max values generated"
-msgstr ""
+msgstr "Valores mínimos e máximos gerados"
 
 msgid "Min-max values removed"
-msgstr ""
+msgstr "Valores mínimos e máximos removidos"
 
 msgid "Generating min-max values..."
-msgstr ""
+msgstr "Geração de valores mínimos e máximos..."
 
 msgid "Removing min-max values..."
-msgstr ""
+msgstr "Remoção dos valores mín-máx..."
 
 msgid "Generate min-max values"
 msgstr "Gerar valores min-max"
 
 msgid "Remove min-max values"
-msgstr ""
+msgstr "Remover valores mínimos e máximos"
 
 msgid "Generating tables..."
-msgstr ""
+msgstr "Geração de tabelas..."
 
 msgid "Generate tables"
 msgstr "Gerar tabelas"
