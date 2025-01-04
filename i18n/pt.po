@@ -2,18 +2,19 @@
 # Translators:
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2021
 # Sheila André <sandre@saudigitus.org>, 2021
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # Ge Joao <gsimango@saudigitus.org>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Emilio Mosse, 2022
+# Helton Dias, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Emilio Mosse, 2022\n"
-"Language-Team: Portuguese (https://www.transifex.com/hisp-uio/teams/100509/pt/)\n"
+"Last-Translator: Helton Dias, 2024\n"
+"Language-Team: Portuguese (https://app.transifex.com/hisp-uio/teams/100509/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,7 +142,7 @@ msgid "Program rule actions with no stage id"
 msgstr "Ações de regra do programa sem estágio de ID"
 
 msgid "Program indicators wit no expression"
-msgstr ""
+msgstr "Indicadores de programas sem expressão"
 
 msgid "Maintenance"
 msgstr "Manutenção"
@@ -384,7 +385,7 @@ msgid "Visualization"
 msgstr "Visualização"
 
 msgid "Event visualization"
-msgstr ""
+msgstr "Visualização de eventos"
 
 msgid "Program instance"
 msgstr "Instância do programa"
@@ -699,7 +700,7 @@ msgid "Messages"
 msgstr "Mensagens"
 
 msgid "{{issueTitle}} ({{issueElementsCount}})"
-msgstr ""
+msgstr "{{issueTitle}} ({{issueElementsCount}})"
 
 msgid "Data set"
 msgstr "Ficha"
