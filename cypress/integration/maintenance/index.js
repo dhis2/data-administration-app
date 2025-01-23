@@ -16,7 +16,7 @@ Before(() => {
             'softDeletedDataValueRemoval',
             'softDeletedEventRemoval',
             'softDeletedEnrollmentRemoval',
-            'softDeletedTrackedEntityInstanceRemoval',
+            'softDeletedTrackedEntityRemoval',
             'periodPruning',
             'expiredInvitationsClear',
             'sqlViewsDrop',
