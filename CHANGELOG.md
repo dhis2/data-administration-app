@@ -1,3 +1,10 @@
+## [100.0.14](https://github.com/dhis2/data-administration-app/compare/v100.0.13...v100.0.14) (2025-01-23)
+
+
+### Bug Fixes
+
+* **maintenance:** update deprecated reference to deprecated softDeletedTrackedEntityInstanceRemoval ([b9b5a15](https://github.com/dhis2/data-administration-app/commit/b9b5a15cab6bf947ac380c7f9161db35a6804f9b))
+
 ## [100.0.13](https://github.com/dhis2/data-administration-app/compare/v100.0.12...v100.0.13) (2024-12-03)
 
 
