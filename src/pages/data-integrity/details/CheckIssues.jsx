@@ -5,7 +5,7 @@ import React from 'react'
 import css from './CheckDetails.module.css'
 import { checkProps } from './checkProps.js'
 import { getIssueLink } from './getIssueLink.js'
-import { Notice } from './Notice.js'
+import { Notice } from './Notice.jsx'
 
 export const CheckIssues = ({ detailsCheck }) => {
     const { baseUrl } = useConfig()

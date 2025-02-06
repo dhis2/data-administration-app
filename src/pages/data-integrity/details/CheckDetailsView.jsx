@@ -1,6 +1,6 @@
 import i18n from '@dhis2/d2-i18n'
 import React from 'react'
-import { CheckDetails } from './CheckDetails.js'
+import { CheckDetails } from './CheckDetails.jsx'
 import css from './CheckDetails.module.css'
 
 export const CheckDetailsView = ({ selectedCheck }) => {

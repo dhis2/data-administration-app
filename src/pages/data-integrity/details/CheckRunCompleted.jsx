@@ -7,11 +7,11 @@ import {
     getDurationWithUnitFromDelta,
     selectedLocale,
 } from '../../../utils/relativeTime.js'
-import { StatusIcon } from '../list/StatusIcon.js'
+import { StatusIcon } from '../list/StatusIcon.jsx'
 import css from './CheckDetails.module.css'
-import { CheckIssues } from './CheckIssues.js'
+import { CheckIssues } from './CheckIssues.jsx'
 import { checkProps } from './checkProps.js'
-import { Notice } from './Notice.js'
+import { Notice } from './Notice.jsx'
 
 export const CheckRunCompleted = ({ detailsCheck }) => {
     const [expandSummary, setExpandSummary] = useState(true)
