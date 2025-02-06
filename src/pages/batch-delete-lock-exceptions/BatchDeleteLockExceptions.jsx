@@ -2,9 +2,9 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import i18n from '@dhis2/d2-i18n'
 import { CenteredContent, CircularLoader, NoticeBox } from '@dhis2/ui'
 import React, { useState } from 'react'
-import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.js'
-import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable.js'
-import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal.js'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.jsx'
+import LockExceptionsTable from '../../components/LockExceptionsTable/LockExceptionsTable.jsx'
+import RemoveLockExceptionModal from '../../components/RemoveLockExceptionModal/RemoveLockExceptionModal.jsx'
 import { parseLockExceptions } from '../../parse-lock-exceptions.js'
 
 const query = {

@@ -1,11 +1,11 @@
 import { i18nKeys } from '../i18n-keys.js'
-import Analytics from './analytics/Analytics.js'
-import DataIntegrity from './data-integrity/DataIntegrity.js'
-import DataStatistics from './data-statistics/DataStatistics.js'
-import LockExceptions from './lock-exceptions/LockExceptions.js'
-import Maintenance from './maintenance/Maintenance.js'
-import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration.js'
-import ResourceTables from './resource-tables/ResourceTables.js'
+import Analytics from './analytics/Analytics.jsx'
+import DataIntegrity from './data-integrity/DataIntegrity.jsx'
+import DataStatistics from './data-statistics/DataStatistics.jsx'
+import LockExceptions from './lock-exceptions/LockExceptions.jsx'
+import Maintenance from './maintenance/Maintenance.jsx'
+import MinMaxValueGeneration from './min-max-value-generation/MinMaxValueGeneration.jsx'
+import ResourceTables from './resource-tables/ResourceTables.jsx'
 
 export const sections = [
     {

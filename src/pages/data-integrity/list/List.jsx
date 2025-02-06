@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { useMostRecentCheck } from '../checkDetailsStore.js'
 import { getSeverityTranslation } from '../severityTranslation.js'
-import { LastRunTime } from './LastRunTime.js'
+import { LastRunTime } from './LastRunTime.jsx'
 import css from './List.module.css'
-import { StatusIcon } from './StatusIcon.js'
+import { StatusIcon } from './StatusIcon.jsx'
 
 export const List = ({ setSelectedCheck, selectedCheck, checks }) => {
     return (

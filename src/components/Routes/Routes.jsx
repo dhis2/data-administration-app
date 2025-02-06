@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import css from '../../App.module.css'
-import AddLockException from '../../pages/add-lock-exception/AddLockException.js'
-import BatchDeleteLockExceptions from '../../pages/batch-delete-lock-exceptions/BatchDeleteLockExceptions.js'
-import Home from '../../pages/home/Home.js'
+import AddLockException from '../../pages/add-lock-exception/AddLockException.jsx'
+import BatchDeleteLockExceptions from '../../pages/batch-delete-lock-exceptions/BatchDeleteLockExceptions.jsx'
+import Home from '../../pages/home/Home.jsx'
 import { sections } from '../../pages/sections.conf.js'
 
 const ContentWrapper = ({ children, fullscreen }) => (

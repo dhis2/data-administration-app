@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { getDurationWithUnitFromDelta } from '../../../utils/relativeTime.js'
 import { checkProps } from './checkProps.js'
-import { CheckRunCompleted } from './CheckRunCompleted.js'
-import { Notice } from './Notice.js'
+import { CheckRunCompleted } from './CheckRunCompleted.jsx'
+import { Notice } from './Notice.jsx'
 
 export const CheckRunContent = ({
     detailsCheck,

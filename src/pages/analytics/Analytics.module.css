@@ -6,7 +6,8 @@
     margin-bottom: var(--spacers-dp24);
 }
 
-.checkboxes, .noticeBox {
+.checkboxes,
+.noticeBox {
     margin-bottom: var(--spacers-dp16);
 }
 

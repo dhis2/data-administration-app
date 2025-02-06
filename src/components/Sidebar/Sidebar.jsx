@@ -1,7 +1,7 @@
 import { Menu } from '@dhis2/ui'
 import React from 'react'
 import { sections } from '../../pages/sections.conf.js'
-import SidebarItem from './SidebarItem.js'
+import SidebarItem from './SidebarItem.jsx'
 
 const Sidebar = () => (
     <Menu>

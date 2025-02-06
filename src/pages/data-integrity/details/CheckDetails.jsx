@@ -1,10 +1,10 @@
 import i18n from '@dhis2/d2-i18n'
 import React, { useEffect } from 'react'
 import css from './CheckDetails.module.css'
-import { CheckInfo } from './CheckInfo.js'
+import { CheckInfo } from './CheckInfo.jsx'
 import { checkProps } from './checkProps.js'
-import { CheckRunContent } from './CheckRunContent.js'
-import { Notice } from './Notice.js'
+import { CheckRunContent } from './CheckRunContent.jsx'
+import { Notice } from './Notice.jsx'
 import { useDataIntegrityDetails } from './use-data-integrity-details.js'
 
 export const CheckDetails = ({ check }) => {
