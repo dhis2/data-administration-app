@@ -61,7 +61,6 @@
     height: 100%;
     font-size: 14px;
     color: var(--colors-grey700);
-
 }
 
 .subtitleSection {
@@ -76,7 +75,8 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    padding: var(--spacers-dp8) var(--spacers-dp8) var(--spacers-dp8) var(--spacers-dp16);
+    padding: var(--spacers-dp8) var(--spacers-dp8) var(--spacers-dp8)
+        var(--spacers-dp16);
     border-width: 1px 0px 1px;
     border-style: solid;
     border-color: var(--colors-grey400);
@@ -102,11 +102,11 @@
 /* disable borders and shadows from UI TabBar and Tab
 Prevents "double" border
 */
-.toolbarTabs div, .toolbarTabs button {
+.toolbarTabs div,
+.toolbarTabs button {
     box-shadow: none;
     border: none !important;
 }
-
 
 .errorIcon {
     display: flex;
