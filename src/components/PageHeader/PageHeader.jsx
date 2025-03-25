@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import DocsLink from '../DocsLink/DocsLink.js'
+import DocsLink from '../DocsLink/DocsLink.jsx'
 import styles from './PageHeader.module.css'
 
 const PageHeader = ({ title, sectionKey }) => (

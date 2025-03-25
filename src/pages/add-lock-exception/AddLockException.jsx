@@ -9,9 +9,9 @@ import {
 } from '@dhis2/ui'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.js'
+import LockExceptionsSubpageHeader from '../../components/LockExceptionsSubpageHeader/LockExceptionsSubpageHeader.jsx'
 import styles from './AddLockException.module.css'
-import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm.js'
+import AddLockExceptionForm from './AddLockExceptionForm/AddLockExceptionForm.jsx'
 
 const query = {
     levels: {

@@ -2,10 +2,10 @@ import { useDataQuery } from '@dhis2/app-runtime'
 import { Card, NoticeBox, CircularLoader, CenteredContent } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PageHeader from '../../components/PageHeader/PageHeader.js'
+import PageHeader from '../../components/PageHeader/PageHeader.jsx'
 import { i18nKeys } from '../../i18n-keys.js'
 import styles from './DataStatistics.module.css'
-import DataStatisticsTable from './DataStatisticsTable.js'
+import DataStatisticsTable from './DataStatisticsTable.jsx'
 import { parseTables } from './parse-tables.js'
 import {
     OBJECT_COUNTS_KEY,

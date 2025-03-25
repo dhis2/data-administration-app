@@ -9,9 +9,9 @@ import {
 import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import styles from './OrganisationUnitSelection.module.css'
-import SelectAll from './SelectAll.js'
-import SelectByGroup from './SelectByGroup.js'
-import SelectByLevel from './SelectByLevel.js'
+import SelectAll from './SelectAll.jsx'
+import SelectByGroup from './SelectByGroup.jsx'
+import SelectByLevel from './SelectByLevel.jsx'
 
 const union = (arr1, arr2) => [...new Set(arr1.concat(arr2))]
 const difference = (arr1, arr2) => {

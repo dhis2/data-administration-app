@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { useState, useMemo } from 'react'
-import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.js'
-import { CheckDetailsView } from '../details/CheckDetailsView.js'
+import { ErrorOrLoading } from '../../../components/Loading/ErrorOrLoading.jsx'
+import { CheckDetailsView } from '../details/CheckDetailsView.jsx'
 import { useDataIntegritySummary } from '../use-data-integrity-summary.js'
-import { List } from './List.js'
+import { List } from './List.jsx'
 import css from './List.module.css'
-import { ListToolbar, ToolbarTabs } from './ListToolbar.js'
+import { ListToolbar, ToolbarTabs } from './ListToolbar.jsx'
 import { SORT } from './sorter.js'
 
 const filterCheck = (check, filter) => {

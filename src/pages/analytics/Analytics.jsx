@@ -9,8 +9,8 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import NotificationsTable from '../../components/NotificationsTable/NotificationsTable.js'
-import PageHeader from '../../components/PageHeader/PageHeader.js'
+import NotificationsTable from '../../components/NotificationsTable/NotificationsTable.jsx'
+import PageHeader from '../../components/PageHeader/PageHeader.jsx'
 import { i18nKeys } from '../../i18n-keys.js'
 import {
     DEFAULT_LAST_YEARS,

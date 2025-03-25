@@ -13,7 +13,7 @@ import {
 } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
-import PageHeader from '../../components/PageHeader/PageHeader.js'
+import PageHeader from '../../components/PageHeader/PageHeader.jsx'
 import { i18nKeys } from '../../i18n-keys.js'
 import styles from './MinMaxValueGeneration.module.css'
 
