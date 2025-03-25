@@ -1,3 +1,10 @@
+## [100.0.15](https://github.com/dhis2/data-administration-app/compare/v100.0.14...v100.0.15) (2025-03-25)
+
+
+### Bug Fixes
+
+* **app-platform:** upgrade platform tools to use vite and react 18 ([35cf4fd](https://github.com/dhis2/data-administration-app/commit/35cf4fd34c24a5cca6eea13d997d23bff0e03b9a))
+
 ## [100.0.14](https://github.com/dhis2/data-administration-app/compare/v100.0.13...v100.0.14) (2025-01-23)
 
 
