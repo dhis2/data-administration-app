@@ -2,6 +2,7 @@ const MAINTENANCE_RELATIVE_PATH = '/dhis-web-maintenance'
 const DASHBOARDS_RELATIVE_PATH = '/dhis-web-dashboard'
 const USERS_RELATIVE_PATH = '/dhis-web-user'
 const VISUALIZATIONS_RELATIVE_PATH = '/dhis-web-data-visualizer'
+const MAPS_RELATIVE_PATH = '/dhis-web-maps'
 
 const maintenanceSections = {
     category: 'categorySection',
@@ -15,37 +16,44 @@ const maintenanceSections = {
 }
 
 const issuesTypeToSectionMap = {
-    trackedEntityAttribute: maintenanceSections['program'],
-    trackedEntityType: maintenanceSections['program'],
-    relationshipType: maintenanceSections['program'],
-    programIndicator: maintenanceSections['indicator'],
-    programIndicatorGroup: maintenanceSections['indicator'],
+    trackedEntityAttributes: maintenanceSections['program'],
+    trackedEntityTypes: maintenanceSections['program'],
+    relationshipTypes: maintenanceSections['program'],
+    programIndicators: maintenanceSections['indicator'],
+    programIndicatorGroups: maintenanceSections['indicator'],
+    categoryCombos: maintenanceSections['category'],
+    categories: maintenanceSections['category'],
 }
 
-const matchIssueTypeToSection = (issuesIdType) => {
-    const sections = Object.keys(maintenanceSections)
-
-    return sections.find((section) => section.startsWith(issuesIdType))
-}
-
-const getMaintenanceSectionPath = (singularissuesIdType) => {
-    const manuallyMaped = issuesTypeToSectionMap[singularissuesIdType]
+const getMaintenanceSectionPath = (issuesIdType) => {
+    const manuallyMaped = issuesTypeToSectionMap[issuesIdType]
 
     if (manuallyMaped) {
         return manuallyMaped
     }
     // most sections starts with the same as the singular issuesIdType
-    const matchesSection = matchIssueTypeToSection(singularissuesIdType)
+    const matchesSection = Object.keys(maintenanceSections).find((section) =>
+        issuesIdType.startsWith(section)
+    )
     if (matchesSection) {
         return maintenanceSections[matchesSection]
     }
-
     return 'otherSection'
+}
+
+const getMaintenanceAppLink = (baseUrl, { issuesIdType, id }) => {
+    let singularObjectType = issuesIdType.replace(/(.*)s$/, '$1')
+    if (issuesIdType === 'categories') {
+        singularObjectType = 'category'
+    }
+    const sectionPath = getMaintenanceSectionPath(issuesIdType)
+    return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}/#/edit/${sectionPath}/${singularObjectType}/${id}`
 }
 
 const userAppTypes = new Set(['userGroups', 'userRoles', 'users'])
 const dashboardsAppTypes = new Set(['dashboards'])
 const visualizationsAppTypes = new Set(['visualizations'])
+const mapsIssuesTypes = new Set(['maps'])
 const notSupportedIssueType = new Set(['periods'])
 
 const getUserAppLink = (baseUrl, { issuesIdType, id }) => {
@@ -78,12 +86,13 @@ export const getIssueLink = (baseUrl, { issuesIdType, id }) => {
         return `${baseUrl}${VISUALIZATIONS_RELATIVE_PATH}/#/${id}`
     }
 
+    if (mapsIssuesTypes.has(issuesIdType)) {
+        return `${baseUrl}${MAPS_RELATIVE_PATH}/#/${id}`
+    }
+
     if (notSupportedIssueType.has(issuesIdType)) {
         return null
     }
     // if not handled above, assume it's a section in maintenance
-    const singularObjectType = issuesIdType.replace(/(.*)s$/, '$1')
-    const sectionPath = getMaintenanceSectionPath(singularObjectType)
-
-    return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}/#/edit/${sectionPath}/${singularObjectType}/${id}`
+    return getMaintenanceAppLink(baseUrl, { issuesIdType, id })
 }
