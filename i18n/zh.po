@@ -542,10 +542,10 @@ msgid "Section"
 msgstr "分段"
 
 msgid "About this check"
-msgstr "关于本检查"
+msgstr "关于本次检查"
 
 msgid "Show more"
-msgstr "更多"
+msgstr "显示更多"
 
 msgid "{{ numberOfErrors }} errors"
 msgstr "{{ numberOfErrors }} 错误"
