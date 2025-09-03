@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
-"PO-Revision-Date: 2024-02-15T14:41:03.063Z\n"
+"POT-Creation-Date: 2025-09-02T13:25:42.504Z\n"
+"PO-Revision-Date: 2025-09-02T13:25:42.504Z\n"
 
 msgid "Open user guide"
 msgstr "Open user guide"
@@ -149,9 +149,6 @@ msgstr "An unexpected error happened during operation"
 msgid "Organisation unit structure"
 msgstr "Organisation unit structure"
 
-msgid "Organisation unit category option combo"
-msgstr "Organisation unit category option combo"
-
 msgid "Category option group set structure"
 msgstr "Category option group set structure"
 
@@ -181,6 +178,9 @@ msgstr "Date period structure"
 
 msgid "Data element category option combinations"
 msgstr "Data element category option combinations"
+
+msgid "Data set organisation unit category"
+msgstr "Data set organisation unit category"
 
 msgid "Analytics tables management"
 msgstr "Analytics tables management"
@@ -595,8 +595,8 @@ msgstr "Search"
 msgid "Sort"
 msgstr "Sort"
 
-msgid "Run all standards checks"
-msgstr "Run all standards checks"
+msgid "Run all standard checks"
+msgstr "Run all standard checks"
 
 msgid "Slow checks must be run individually"
 msgstr "Slow checks must be run individually"
