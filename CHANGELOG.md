@@ -1,3 +1,10 @@
+## [100.0.17](https://github.com/dhis2/data-administration-app/compare/v100.0.16...v100.0.17) (2025-09-11)
+
+
+### Bug Fixes
+
+* categories link [DHIS2-17687] ([#1135](https://github.com/dhis2/data-administration-app/issues/1135)) ([1a36926](https://github.com/dhis2/data-administration-app/commit/1a36926f78ca82d0eb84862c27d78d23edccbce6))
+
 ## [100.0.16](https://github.com/dhis2/data-administration-app/compare/v100.0.15...v100.0.16) (2025-03-30)
 
 

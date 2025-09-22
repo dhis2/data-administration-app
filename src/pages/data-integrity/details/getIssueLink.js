@@ -3,6 +3,19 @@ const DASHBOARDS_RELATIVE_PATH = '/dhis-web-dashboard'
 const USERS_RELATIVE_PATH = '/dhis-web-user'
 const VISUALIZATIONS_RELATIVE_PATH = '/dhis-web-data-visualizer'
 
+const nonStandardSingulars = {
+    categories: 'category',
+    pushAnalysis: 'pushAnalysis',
+    accesses: 'access',
+    userGroupAccesses: 'userGroupAccess',
+    outlierAnalysis: 'outlierAnalysis',
+    axes: 'axis',
+    legendDefinitions: 'legendDefinitions',
+    userAccesses: 'userAccess',
+    analyticsPeriodBoundaries: 'analyticsPeriodBoundary',
+    apiToken: 'apiToken',
+}
+
 const maintenanceSections = {
     category: 'categorySection',
     dataElement: 'dataElementSection',
@@ -82,7 +95,9 @@ export const getIssueLink = (baseUrl, { issuesIdType, id }) => {
         return null
     }
     // if not handled above, assume it's a section in maintenance
-    const singularObjectType = issuesIdType.replace(/(.*)s$/, '$1')
+    const singularObjectType =
+        nonStandardSingulars[issuesIdType] ??
+        issuesIdType.replace(/(.*)s$/, '$1')
     const sectionPath = getMaintenanceSectionPath(singularObjectType)
 
     return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}/#/edit/${sectionPath}/${singularObjectType}/${id}`
