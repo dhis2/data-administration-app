@@ -1,3 +1,10 @@
+# [100.1.0](https://github.com/dhis2/data-administration-app/compare/v100.0.17...v100.1.0) (2025-09-30)
+
+
+### Features
+
+* add shortcuts for command palette ([#1136](https://github.com/dhis2/data-administration-app/issues/1136)) ([abe2ba4](https://github.com/dhis2/data-administration-app/commit/abe2ba4c664d11f4d59f7b28c9120c71facb91fc))
+
 ## [100.0.17](https://github.com/dhis2/data-administration-app/compare/v100.0.16...v100.0.17) (2025-09-11)
 
 
