@@ -25,7 +25,7 @@ msgid "Open user guide"
 msgstr "Открыть руководство пользователя"
 
 msgid "An unknown error occurred"
-msgstr ""
+msgstr "Произошла неизвестная ошибка"
 
 msgid "Failed to load"
 msgstr ""

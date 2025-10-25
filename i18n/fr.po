@@ -8,16 +8,17 @@
 # Yayra Gomado <ygomado@hispwca.org>, 2024
 # Bram Piot <bram.piot@gmail.com>, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
-# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2024
 # Karoline Tufte Lien <karoline@dhis2.org>, 2024
 # Elise Desailly, 2024
+# Esther Tokouli, 2025
+# Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Elise Desailly, 2024\n"
+"Last-Translator: Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +33,7 @@ msgid "An unknown error occurred"
 msgstr "Une erreur inconnue est survenue"
 
 msgid "Failed to load"
-msgstr ""
+msgstr "Échec du chargement"
 
 msgid "Go back to all lock exceptions"
 msgstr "Retourner à toutes les exceptions de verrouillage"
@@ -106,10 +107,10 @@ msgid "Perform maintenance"
 msgstr "Effectuer la maintenance"
 
 msgid "Clear analytics tables"
-msgstr "Vider les tables analytiques"
+msgstr "Vider les tableaux analytiques"
 
 msgid "Analyze analytics tables"
-msgstr "Analyser les tableaux d'analytique"
+msgstr "Analyser les tableaux analytiques"
 
 msgid "Remove zero data values"
 msgstr "Supprimer les valeurs de données zéro"
@@ -134,16 +135,16 @@ msgid "Prune periods"
 msgstr "Elaguer les périodes"
 
 msgid "Remove expired invitations"
-msgstr "Supprimer les invitations périmées"
+msgstr "Supprimer les invitations expirées"
 
 msgid "Drop SQL views"
 msgstr "Supprimer les vues SQL"
 
 msgid "Create SQL views"
-msgstr "Créer vues SQL"
+msgstr "Créer des vues SQL"
 
 msgid "Update category option combinations"
-msgstr "Mettre à jour les combinaisons d'option de catégorie"
+msgstr "Mettre à jour les combinaisons d'options de catégories"
 
 msgid "Update organisation unit paths"
 msgstr "Mettre à jour les chemins d'accès des unités d'organisation"
@@ -155,29 +156,30 @@ msgid "Reload apps"
 msgstr "Recharger les applications"
 
 msgid "Resource Tables"
-msgstr "Tables de ressources"
+msgstr "Tableaux de ressources"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
-"Générer des tables ressources de la base de données pour la hiérarchie des "
-"unités d'organisation et la structure d'ensembles de groupes entre autres."
+"Générer des tableaux de ressources de la base de données pour la hiérarchie "
+"des unités d'organisation et la structure d'ensemble de groupes entre "
+"autres."
 
 msgid "Generate Resource Tables"
 msgstr "Générer des tableaux de ressources"
 
 msgid "An unexpected error happened during operation"
-msgstr "Une erreur inattendue s'est produite pendant l'opération"
+msgstr "Une erreur inattendue est survenue pendant l'opération"
 
 msgid "Organisation unit structure"
-msgstr "Structure d'unités d'Organisation"
+msgstr "Structure de l'unité d'Organisation"
 
 msgid "Organisation unit category option combo"
-msgstr "Combinaison d'options de catégorie d'unité d'organisation"
+msgstr "Combinaison d'options de catégorie de l'unité d'organisation"
 
 msgid "Category option group set structure"
-msgstr "Category option group set structure"
+msgstr "Structure de l'ensemble de groupe d'options de catégories"
 
 msgid "Data element group set structure"
 msgstr "Structure d'ensemble de groupes d'éléments de données"
@@ -192,7 +194,7 @@ msgid "Category structure"
 msgstr "Structure de catégorie"
 
 msgid "Data element category option combo name"
-msgstr "Nom de la combo d'options de catégorie"
+msgstr "Nom de la combo d'options de catégorie d'élément de donnée"
 
 msgid "Data element structure"
 msgstr "Structure d'élément de donnée"
@@ -204,13 +206,13 @@ msgid "Date period structure"
 msgstr "Structure de période de la date"
 
 msgid "Data element category option combinations"
-msgstr "Combinaisons des options de catégories d'éléments de données"
+msgstr "Combinaisons d'options de catégories d'élément de donnée"
 
 msgid "Analytics tables management"
-msgstr "Gestion des tables analytiques"
+msgstr "Gestion des tableaux analytiques"
 
 msgid "Analytics Tables"
-msgstr "Tables analytiques"
+msgstr "Tableaux analytiques"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -221,17 +223,17 @@ msgstr ""
 "d'analyses pour récupérer des données."
 
 msgid "Analytics tables update"
-msgstr "Mise à jour des tables d'analytique"
+msgstr "Mise à jour des tableaux analytiques"
 
 msgid "An unexpected error happened during maintenance"
-msgstr "Une erreur inattendue s'est produite lors de la maintenance"
+msgstr "Une erreur inattendue est survenue lors de la maintenance"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
-"Ignorer la génération des données agrégées et des données d'exhaustivité"
+"Ignorer la génération des données agrégées et des données de complétude"
 
 msgid "Skip generation of resource tables"
-msgstr "Ignorer la génération des tables de ressources"
+msgstr "Ignorer la génération des tableaux de ressources"
 
 msgid "Skip generation of event data"
 msgstr "Ignorer la génération des données d'événements"
@@ -241,12 +243,13 @@ msgstr "Ignorer la génération des données d'inscription"
 
 msgid "Skip generation of organisation unit ownership data"
 msgstr ""
+"Ignorer la génération des données de la propriété de l'unité d'organisation "
 
 msgid "Skip generation of tracked entity data"
-msgstr ""
+msgstr "Ignorer la génération des données de l'entité suivie "
 
 msgid "Skip generation of outlier data"
-msgstr ""
+msgstr "Ignorer la génération des données de valeur atypique"
 
 msgid "Data Statistics"
 msgstr "Statistiques des Données"
@@ -256,7 +259,8 @@ msgid ""
 "indicators, data sets and data values."
 msgstr ""
 "Parcourir les nombres d'objets dans la base de données tels que les éléments"
-" de données, indicateurs, ensembles de données et valeurs de données"
+" de données, les indicateurs, les ensembles de données et les valeurs de "
+"données"
 
 msgid "Overview Data Statistics"
 msgstr "Aperçu des statistiques de données"
@@ -315,16 +319,16 @@ msgid "Select All Org Units"
 msgstr "Sélectionner toutes les unités d'organisation"
 
 msgid "Deselect All Org Units"
-msgstr "Désélectionner toutes les unités organisationnelles"
+msgstr "Désélectionner toutes les unités d'organisation"
 
 msgid "Organisation unit group"
-msgstr "Groupe d'Unités d'Organisation"
+msgstr "Groupe d'unités d'organisation"
 
 msgid "Select an organisation unit group"
 msgstr "Sélectionner un groupe d'unités d'organisation"
 
 msgid "Organisation unit level"
-msgstr "Organisation unit level"
+msgstr "Niveau d'unité d'organisation"
 
 msgid "Select an organisation unit level"
 msgstr "Sélectionner un niveau d'unité d'organisation"
@@ -464,7 +468,7 @@ msgstr ""
 
 msgid "Data elements assigned to data sets with different period types"
 msgstr ""
-"Eléments de donnée assignés aux ensembles de données ayant des types de "
+"Eléments de donnée affectés aux ensembles de données ayant des types de "
 "période différents"
 
 msgid "Data sets not assigned to organisation units"
@@ -480,7 +484,7 @@ msgid "Invalid indicator numerators"
 msgstr "Numérateurs invalides"
 
 msgid "Invalid indicator denominators"
-msgstr "Dénominateurs invalide"
+msgstr "Dénominateurs invalides"
 
 msgid "Indicators violating exclusive group sets"
 msgstr "Indicateurs violant les ensembles de groupes mutuellement exclusifs"
@@ -505,10 +509,10 @@ msgid "Validation rules without groups"
 msgstr "Règles de validation sans groupes"
 
 msgid "Invalid validation rule left side expressions"
-msgstr "Expression de gauche de règle de validation invalide"
+msgstr "Expression de gauche de règle de validation non valide"
 
 msgid "Invalid validation rule right side expressions"
-msgstr "Expression de droite de règle de validation invalide"
+msgstr "Expression de droite de règle de validation non valide"
 
 msgid "Invalid program indicator expressions"
 msgstr "Expressions d'indicateur de programme non valides"
@@ -558,15 +562,17 @@ msgid "Program indicators with no expression"
 msgstr "Indicateurs de programme sans expression"
 
 msgid "An error occurred when running the job"
-msgstr ""
+msgstr "Une erreur s'est produite lors de l'exécution de la tâche"
 
 msgid ""
 "Choose a check to run from the list, or run all checks from the toolbar "
 "above"
 msgstr ""
+"Choisissez un contrôle à exécuter dans la liste ou exécutez tous les "
+"contrôles à partir de la barre d'outils située au-dessus."
 
 msgid "Re-run"
-msgstr ""
+msgstr "Re-exécuter"
 
 msgid "Run"
 msgstr "Exécuter"
@@ -578,46 +584,47 @@ msgid "Section"
 msgstr "Section"
 
 msgid "About this check"
-msgstr ""
+msgstr "À propos de ce contrôle"
 
 msgid "Show more"
 msgstr "Afficher plus"
 
 msgid "{{ numberOfErrors }} errors"
-msgstr ""
+msgstr "{{ numberOfErrors }} erreurs"
 
 msgid "Completed in {{time}}"
-msgstr ""
+msgstr "Terminé en {{time}}"
 
 msgid "Latest run completed {{time}}"
-msgstr ""
+msgstr "Dernière exécution terminée {{time}}"
 
 msgid "Passed with 0 errors."
-msgstr ""
+msgstr "Réussi avec 0 erreurs."
 
 msgid "Recommendation"
-msgstr ""
+msgstr "Recommandation"
 
 msgid "Slow check"
-msgstr ""
+msgstr "Contrôle lent"
 
 msgid "This check is marked as slow, and you have to manually run it."
 msgstr ""
+"Ce contrôle est considéré comme lent et vous devez l'exécuter manuellement."
 
 msgid "Loading"
 msgstr "Chargement"
 
 msgid "Check in progress"
-msgstr ""
+msgstr "Contrôle en cours"
 
 msgid "Check in progress for {{time}}"
-msgstr ""
+msgstr "Contrôle en cours pour {{time}}"
 
 msgid "Average execution time: {{time}}"
-msgstr ""
+msgstr "Temps d'exécution moyen : {{time}}"
 
 msgid "No integrity check matches your search criteria."
-msgstr ""
+msgstr "Aucun contrôle d'intégrité ne correspond à vos critères de recherche."
 
 msgid "Search"
 msgstr "Rechercher"
@@ -626,37 +633,37 @@ msgid "Sort"
 msgstr "Trier"
 
 msgid "Run all standards checks"
-msgstr ""
+msgstr "Exécuter tous les contrôles standards"
 
 msgid "Slow checks must be run individually"
-msgstr ""
+msgstr "Les contrôles lents doivent être effectués individuellement"
 
 msgid "Standard checks"
-msgstr ""
+msgstr "Contrôles standards"
 
 msgid "Slow checks"
-msgstr ""
+msgstr "Contrôles lents"
 
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d'erreurs"
 
 msgid "Critical"
-msgstr ""
+msgstr "Critique"
 
 msgid "Severe"
 msgstr "Grave"
 
 msgid "Warning"
-msgstr "Attention"
+msgstr "Avertissement"
 
 msgid "Info"
 msgstr "Info"
 
 msgid "Failed to run integrity check"
-msgstr ""
+msgstr "Échec du contrôle d'intégrité"
 
 msgid "Indicators"
 msgstr "Indicateurs"
@@ -695,7 +702,7 @@ msgid "Pivot tables"
 msgstr "Tableaux croisés dynamiques"
 
 msgid "Enrollments"
-msgstr "Enrôlements"
+msgstr "Inscriptions"
 
 msgid "Indicator types"
 msgstr "Types d'indicateur"
@@ -734,7 +741,7 @@ msgid "Last {{days}} days"
 msgstr "Derniers {{days}} jours"
 
 msgid "Last hour"
-msgstr "La dernière heure"
+msgstr "Dernière heure"
 
 msgid "Object type"
 msgstr "Type d'objet"
@@ -749,7 +756,7 @@ msgid "Pending invitations"
 msgstr "Invitations en attente"
 
 msgid "Expired invitations"
-msgstr "Invitations périmées"
+msgstr "Invitations expirées"
 
 msgid "Batch deletion"
 msgstr "Suppression en lot"
