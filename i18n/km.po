@@ -581,7 +581,7 @@ msgid "Event visualization"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Last {{days}} days"
 msgstr ""
