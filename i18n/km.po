@@ -578,7 +578,7 @@ msgid "Dashboards"
 msgstr "ផ្ទាំងប៉ាណ្ណូបរិធាន"
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Last {{days}} days"
 msgstr ""
