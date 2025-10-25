@@ -9,13 +9,14 @@
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Philip Larsen Donnelly, 2024
+# Esther Tokouli, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
-"Last-Translator: Philip Larsen Donnelly, 2024\n"
+"Last-Translator: Esther Tokouli, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +81,7 @@ msgstr "Vérifier l'intégrité des données"
 
 msgid "An unexpected error happened during data integrity checks"
 msgstr ""
-"Une erreur inattendue s'est produite lors des contrôles d'intégrité des "
+"Une erreur inattendue est survenue lors des contrôles d'intégrité des "
 "données"
 
 msgid "Maintenance"
@@ -90,18 +91,18 @@ msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
 "organisation unit hierarchy and group set structure."
 msgstr ""
-"Effectuer des tâches de maintenance et générer des tables de ressources de "
-"la base de données  pour la hiérarchie des unités d'organisation et la "
+"Effectuer des tâches de maintenance et générer des tableaux de ressources de"
+" la base de données  pour la hiérarchie des unités d'organisation et la "
 "structure d'ensemble de groupes."
 
 msgid "Perform maintenance"
 msgstr "Effectuer la maintenance"
 
 msgid "Clear analytics tables"
-msgstr "Vider les tables analytiques"
+msgstr "Vider les tableaux analytiques"
 
 msgid "Analyze analytics tables"
-msgstr "Analyser les tableaux d'analytique"
+msgstr "Analyser les tableaux analytiques"
 
 msgid "Remove zero data values"
 msgstr "Supprimer les valeurs de données zéro"
@@ -126,7 +127,7 @@ msgid "Prune periods"
 msgstr "Elaguer les périodes"
 
 msgid "Remove expired invitations"
-msgstr "Supprimer les invitations périmées"
+msgstr "Supprimer les invitations expirées"
 
 msgid "Drop SQL views"
 msgstr "Supprimer les vues SQL"
@@ -135,7 +136,7 @@ msgid "Create SQL views"
 msgstr "Créer vues SQL"
 
 msgid "Update category option combinations"
-msgstr "Mettre à jour les combinaisons d'option de catégorie"
+msgstr "Mettre à jour les combinaisons d'options de catégories"
 
 msgid "Update organisation unit paths"
 msgstr "Mettre à jour les chemins d'accès des unités d'organisation"
@@ -147,62 +148,63 @@ msgid "Reload apps"
 msgstr "Recharger les applications"
 
 msgid "Resource Tables"
-msgstr "Tables de ressources"
+msgstr "Tableaux de ressources"
 
 msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
-"Générer des tables ressources de la base de données pour la hiérarchie des "
-"unités d'organisation et la structure d'ensembles de groupes entre autres."
+"Générer des tableaux de ressources de la base de données pour la hiérarchie "
+"des unités d'organisation et la structure d'ensemble de groupes entre "
+"autres."
 
 msgid "Generate Resource Tables"
 msgstr "Générer des tableaux de ressources"
 
 msgid "An unexpected error happened during operation"
-msgstr "Une erreur inattendue s'est produite pendant l'opération"
+msgstr "Une erreur inattendue est survenue pendant l'opération"
 
 msgid "Organisation unit structure"
-msgstr "Structure d'unités d'Organisation"
+msgstr "Structure de l'unité d'Organisation"
 
 msgid "Category option group set structure"
-msgstr "Category option group set structure"
+msgstr "Structure de l'ensemble de groupe d'options de catégories"
 
 msgid "Data element group set structure"
-msgstr "Structure d'ensemble de groupes d'éléments de données"
+msgstr "Structure de l'ensemble de groupes d'éléments de données"
 
 msgid "Indicator group set structure"
-msgstr "Structure d'ensemble de groupes d'indicateurs"
+msgstr "Structure de l'ensemble de groupes d'indicateurs"
 
 msgid "Organisation unit group set structure"
-msgstr "Structure d'ensemble de groupes d'unités d'organisation"
+msgstr "Structure de l'ensemble de groupes d'unités d'organisation"
 
 msgid "Category structure"
-msgstr "Structure de catégorie"
+msgstr "Structure de la catégorie"
 
 msgid "Data element category option combo name"
-msgstr "Nom de la combo d'options de catégorie"
+msgstr "Nom de la combo d'options de catégorie d'élément de donnée"
 
 msgid "Data element structure"
-msgstr "Structure d'élément de donnée"
+msgstr "Structure de l'élément de donnée"
 
 msgid "Period structure"
-msgstr "Structure de période"
+msgstr "Structure de la période"
 
 msgid "Date period structure"
-msgstr "Structure de période de la date"
+msgstr "Structure de la période de la date"
 
 msgid "Data element category option combinations"
-msgstr "Combinaisons des options de catégories d'éléments de données"
+msgstr "Combinaisons d'options de catégories d'élément de donnée"
 
 msgid "Data set organisation unit category"
-msgstr ""
+msgstr "Catégorie de l'unité d'organisation de l'ensemble de données"
 
 msgid "Analytics tables management"
-msgstr "Gestion des tables analytiques"
+msgstr "Gestion des tableaux analytiques"
 
 msgid "Analytics Tables"
-msgstr "Tables analytiques"
+msgstr "Tableaux analytiques"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -213,17 +215,17 @@ msgstr ""
 "d’analyses pour récupérer des données."
 
 msgid "Analytics tables update"
-msgstr "Mise à jour des tables d'analytique"
+msgstr "Mise à jour des tableaux analytiques"
 
 msgid "An unexpected error happened during maintenance"
-msgstr "Une erreur inattendue s'est produite lors de la maintenance"
+msgstr "Une erreur inattendue est survenue lors de la maintenance"
 
 msgid "Skip generation of aggregate data and completeness data"
 msgstr ""
-"Ignorer la génération des données agrégées et des données d'exhaustivité"
+"Ignorer la génération des données agrégées et des données de complétude"
 
 msgid "Skip generation of resource tables"
-msgstr "Ignorer la génération des tables de ressources"
+msgstr "Ignorer la génération des tableaux de ressources"
 
 msgid "Skip generation of event data"
 msgstr "Ignorer la génération des données d'événements"
@@ -233,6 +235,7 @@ msgstr "Ignorer la génération des données d'inscription"
 
 msgid "Skip generation of organisation unit ownership data"
 msgstr ""
+"Ignorer la génération des données de la propriété de l'unité d'organisation "
 
 msgid "Data Statistics"
 msgstr "Statistiques des Données"
@@ -242,13 +245,14 @@ msgid ""
 "indicators, data sets and data values."
 msgstr ""
 "Parcourir les nombres d'objets dans la base de données tels que les éléments"
-" de données, indicateurs, ensembles de données et valeurs de données"
+" de données, les indicateurs, les ensembles de données et les valeurs de "
+"données"
 
 msgid "Overview Data Statistics"
 msgstr "Aperçu des statistiques de données"
 
 msgid "Lock Exception Management"
-msgstr "Gestion d'exceptions de vérrouillage"
+msgstr "Gestion des exceptions de verrouillage"
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
@@ -301,10 +305,10 @@ msgid "Select All Org Units"
 msgstr "Sélectionner toutes les unités d'organisation"
 
 msgid "Deselect All Org Units"
-msgstr "Désélectionner toutes les unités organisationnelles"
+msgstr "Désélectionner toutes les unités d'organisation"
 
 msgid "Organisation unit group"
-msgstr "Groupe d'Unités d'Organisation"
+msgstr "Groupe d'unités d'organisation"
 
 msgid "Select an organisation unit group"
 msgstr "Sélectionner un groupe d'unités d'organisation"
@@ -640,7 +644,7 @@ msgid "Pending invitations"
 msgstr "Invitations en attente"
 
 msgid "Expired invitations"
-msgstr "Invitations périmées"
+msgstr "Invitations expirées"
 
 msgid "Batch deletion"
 msgstr "Suppression en lot"
