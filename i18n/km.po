@@ -288,7 +288,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Last"
 msgstr ""
