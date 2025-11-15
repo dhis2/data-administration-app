@@ -242,7 +242,7 @@ msgid "Skip generation of enrollment data"
 msgstr "Ignorer la génération des données d'inscription"
 
 msgid "Skip generation of organisation unit ownership data"
-msgstr ""
+msgstr "Ignorer la génération des données de propriété unité d'organisation "
 
 msgid "Skip generation of tracked entity data"
 msgstr "Ignorer la génération des données d'entité suivie "
