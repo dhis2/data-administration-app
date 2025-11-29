@@ -257,6 +257,9 @@ msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Consulter le nombre d'objets dans la base de données. Il s'agit notamment "
+"des éléments de données, indicateurs, ensembles de données et valeurs de "
+"données."
 
 msgid "Overview Data Statistics"
 msgstr "Aperçu des statistiques de données"
@@ -432,7 +435,7 @@ msgid "oct-mar"
 msgstr "oct-mars"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Nombre d'années écoulées comprenant des données à inclure"
 
 msgid "Exporting..."
 msgstr "Exportation..."
