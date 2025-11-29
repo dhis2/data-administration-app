@@ -292,6 +292,9 @@ msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
+"Consulter le nombre d'objets dans la base de données. Il s'agit notamment "
+"des éléments de données, indicateurs, ensembles de données et valeurs de "
+"données."
 
 msgid "Overview Data Statistics"
 msgstr "Aperçu des statistiques de données"
@@ -617,13 +620,13 @@ msgid "Doing Min Max generation..."
 msgstr "Génération de valeurs min max..."
 
 msgid "Removing Min Max generation..."
-msgstr ""
+msgstr "Suppression de la génération de valeurs min max..."
 
 msgid "Min Max generation done"
-msgstr "Génération de valeurs min max terminée"
+msgstr "Génération de valeurs min max effectuée"
 
 msgid "Min Max removal done"
-msgstr ""
+msgstr "Suppression des valeurs min max effectuée"
 
 msgid "Loading data sets"
 msgstr "Chargement des ensembles de données"
@@ -671,7 +674,7 @@ msgid "Analytics Tables Update"
 msgstr "Mise à jour des tables analytiques"
 
 msgid "Number of last years of data to include"
-msgstr ""
+msgstr "Nombre d'années écoulées comprenant des données à inclure"
 
 msgid "[ All ]"
 msgstr "[ All ]"
