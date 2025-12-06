@@ -8,15 +8,15 @@
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2023
 # Viktor Varland <viktor@dhis2.org>, 2023
 # Philip Larsen Donnelly, 2024
-# Esther Tokouli, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -122,7 +122,7 @@ msgstr ""
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
-"Supprimer définitivement les entité suivie supprimées de manière logique"
+"Supprimer définitivement les entités suivies supprimées de manière logique"
 
 msgid "Prune periods"
 msgstr "Élaguer les périodes"
@@ -422,7 +422,7 @@ msgid "oct-mar"
 msgstr "oct-mars"
 
 msgid "Number of last years of data to include"
-msgstr "Nombre de dernières années de données à inclure"
+msgstr "Nombre d'années écoulées comprenant des données à inclure"
 
 msgid "Exporting..."
 msgstr "Exportation..."
