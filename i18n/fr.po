@@ -8,15 +8,15 @@
 # Gabriela Rodriguez <grodriguezcoronado@gmail.com>, 2022
 # Viktor Varland <viktor@dhis2.org>, 2022
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2022
-# Esther Tokouli, 2025
 # Cyrille Kabrane, 2025
+# Esther Tokouli, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Cyrille Kabrane, 2025\n"
+"Last-Translator: Esther Tokouli, 2025\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +75,7 @@ msgid "Invalid indicator numerators"
 msgstr "Numérateurs invalides"
 
 msgid "Invalid indicator denominators"
-msgstr "Dénominateurs invalides"
+msgstr "Dénominateurs d'indicateur invalides"
 
 msgid "Indicators violating exclusive group sets"
 msgstr "Indicateurs enfreignant les ensembles de groupes exclusifs"
@@ -283,7 +283,7 @@ msgid "Date period structure"
 msgstr "Structure de la période de date"
 
 msgid "Data element category option combinations"
-msgstr "Combinaisons d'options de catégorie pour élément de données"
+msgstr "Combinaisons d'options de catégorie de l'élément de données"
 
 msgid "Data Statistics"
 msgstr "Statistiques des données"
