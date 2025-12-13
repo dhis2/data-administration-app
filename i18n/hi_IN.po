@@ -645,7 +645,7 @@ msgid "Programs"
 msgstr ""
 
 msgid "Data elements"
-msgstr ""
+msgstr "डेटा एलिमेंट्स"
 
 msgid "Organisation unit groups"
 msgstr ""
