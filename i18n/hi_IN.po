@@ -1,20 +1,20 @@
 # 
 # Translators:
-# KRG HIS <antonia.bezenchek@informa.pro>, 2023
-# Mozafar Haider, 2025
+# Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2024-07-15T12:15:07.265Z\n"
 "PO-Revision-Date: 2023-05-22 18:19+0000\n"
-"Last-Translator: Mozafar Haider, 2025\n"
-"Language-Team: Arabic (Iraq) (https://app.transifex.com/hisp-uio/teams/100509/ar_IQ/)\n"
+"Last-Translator: Rohit Wadhwani, 2025\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ar_IQ\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -32,7 +32,7 @@ msgid "Period"
 msgstr ""
 
 msgid "Organisation unit"
-msgstr "الوحدة التنظيمية"
+msgstr ""
 
 msgid "Batch delete lock exceptions"
 msgstr ""
@@ -50,7 +50,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr ""
+msgstr "नहीं, कैंसल"
 
 msgid "Removing lock exception..."
 msgstr ""
@@ -73,7 +73,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "تطبيق الصيانة"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -259,7 +259,7 @@ msgid "Updating selection..."
 msgstr ""
 
 msgid "Select"
-msgstr "تحديد"
+msgstr ""
 
 msgid "Deselect"
 msgstr ""
@@ -397,7 +397,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr "الجميع"
+msgstr ""
 
 msgid "Batch Deletion"
 msgstr ""
@@ -514,10 +514,10 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr "المؤشرات"
+msgstr ""
 
 msgid "Periods"
-msgstr "الفترات الزمنية"
+msgstr ""
 
 msgid "Visualization"
 msgstr ""
@@ -526,19 +526,19 @@ msgid "Events"
 msgstr ""
 
 msgid "Organisation units"
-msgstr "الوحدات التنظيمية"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "قواعد التحقق"
+msgstr ""
 
 msgid "Data values"
 msgstr ""
 
 msgid "Programs"
-msgstr "البرامج"
+msgstr ""
 
 msgid "Data elements"
-msgstr "عناصر البيانات"
+msgstr "डेटा एलिमेंट्स"
 
 msgid "Organisation unit groups"
 msgstr ""
@@ -547,34 +547,34 @@ msgid "Tracked entity instances"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr "الجداول المحورية"
+msgstr ""
 
 msgid "Program instances"
 msgstr ""
 
 msgid "Indicator types"
-msgstr "أنواع المؤشرات"
+msgstr ""
 
 msgid "Data sets"
-msgstr "حزم البيانات"
+msgstr ""
 
 msgid "User groups"
 msgstr ""
 
 msgid "Users"
-msgstr "المستخدمون"
+msgstr ""
 
 msgid "Maps"
-msgstr "الخرائط"
+msgstr ""
 
 msgid "Indicator groups"
-msgstr "مجموعات المؤشرات"
+msgstr ""
 
 msgid "Charts"
-msgstr "المخططات البيانية"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "مجموعات عناصر البيانات"
+msgstr ""
 
 msgid "Dashboards"
 msgstr ""
@@ -583,7 +583,7 @@ msgid "Event visualization"
 msgstr ""
 
 msgid "Today"
-msgstr "اليوم"
+msgstr "आज"
 
 msgid "Last {{days}} days"
 msgstr ""
