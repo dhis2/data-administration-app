@@ -13,17 +13,23 @@ import {
     USER_INVITATIONS_KEY,
     DATA_VALUE_COUNT_KEY,
     EVENT_COUNT_KEY,
+    LOGGED_IN_USERS_KEY,
 } from './table-keys.js'
 
-const TableCard = ({ label, elements }) => (
+const TableCard = ({ label, description, elements }) => (
     <Card className={styles.card}>
-        <DataStatisticsTable label={label} elements={elements} />
+        <DataStatisticsTable
+            label={label}
+            elements={elements}
+            description={description}
+        />
     </Card>
 )
 
 TableCard.propTypes = {
     elements: PropTypes.array.isRequired,
     label: PropTypes.string.isRequired,
+    description: PropTypes.string,
 }
 
 const query = {
@@ -61,6 +67,7 @@ const DataStatistics = ({ sectionKey }) => {
             <TableCard
                 label={tables[key].label}
                 elements={tables[key].elements}
+                description={tables[key]?.description}
             />
         )
     }
@@ -78,6 +85,7 @@ const DataStatistics = ({ sectionKey }) => {
                     {renderTable(DATA_VALUE_COUNT_KEY)}
                     {renderTable(EVENT_COUNT_KEY)}
                     {renderTable(ACTIVE_USERS_KEY)}
+                    {renderTable(LOGGED_IN_USERS_KEY)}
                 </div>
             </div>
         </>

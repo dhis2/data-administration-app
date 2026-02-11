@@ -2,6 +2,7 @@
     display: block !important;
     margin-bottom: 24px;
     height: unset !important;
+    max-width: 400px;
 }
 
 .tablesGrid {
@@ -14,4 +15,11 @@
     .tablesGrid {
         grid-template-columns: auto auto;
     }
+}
+
+.dataStatisticsDescription {
+    display: inline-block;
+    margin-block-start: 4px;
+    font-size: 13px;
+    font-weight: 400;
 }
