@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-09-02T13:25:42.504Z\n"
-"PO-Revision-Date: 2025-09-02T13:25:42.504Z\n"
+"POT-Creation-Date: 2026-02-09T11:41:04.199Z\n"
+"PO-Revision-Date: 2026-02-09T11:41:04.200Z\n"
 
 msgid "Open user guide"
 msgstr "Open user guide"
@@ -756,39 +756,3 @@ msgstr "Generate tables"
 
 msgid "Now"
 msgstr "Now"
-
-msgctxt "Application title"
-msgid "__MANIFEST_APP_TITLE"
-msgstr "Data Administration"
-
-msgctxt "Application description"
-msgid "__MANIFEST_APP_DESCRIPTION"
-msgstr ""
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data and metadata integrity"
-msgstr "Data and metadata integrity"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data and metadata maintenance"
-msgstr "Data and metadata maintenance"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Resource tables"
-msgstr "Resource tables"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Analytics tables"
-msgstr "Analytics tables"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Data statistics"
-msgstr "Data statistics"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Lock exception"
-msgstr "Lock exception"
-
-msgctxt "Title for shortcut used by command palette"
-msgid "__MANIFEST_SHORTCUT_Min/Max value generation"
-msgstr "Min/Max value generation"

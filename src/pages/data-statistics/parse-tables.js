@@ -2,6 +2,7 @@ import i18n from '@dhis2/d2-i18n'
 import {
     OBJECT_COUNTS_KEY,
     ACTIVE_USERS_KEY,
+    LOGGED_IN_USERS_KEY,
     USER_INVITATIONS_KEY,
     DATA_VALUE_COUNT_KEY,
     EVENT_COUNT_KEY,
@@ -81,11 +82,31 @@ const activeUsersTableFromResponse = (activeUsersResponse) => {
     }
 
     return {
-        label: i18n.t('Users logged in'),
+        label: i18n.t('Active users'),
         elements: Object.entries(activeUsersResponse).map(([key, count]) => ({
             label: translatedTimeLabelFromIntProperty(key),
             count,
         })),
+        description: i18n.t(
+            'Number of users who have performed an action that results in a data statistic event (opened a dashboard, viewed a report etc) over the time period shown below.'
+        ),
+    }
+}
+
+const loggedInUsersTableFromResponse = (loggedInUsersResponse) => {
+    if (!loggedInUsersResponse) {
+        return null
+    }
+
+    return {
+        label: i18n.t('Users logged in'),
+        elements: Object.entries(loggedInUsersResponse).map(([key, count]) => ({
+            label: translatedTimeLabelFromIntProperty(key),
+            count,
+        })),
+        description: i18n.t(
+            'Number of users that have logged in at least once over the time period shown below.'
+        ),
     }
 }
 
@@ -162,6 +183,9 @@ export const parseTables = (response) => ({
     ),
     [ACTIVE_USERS_KEY]: activeUsersTableFromResponse(
         response[ACTIVE_USERS_KEY]
+    ),
+    [LOGGED_IN_USERS_KEY]: loggedInUsersTableFromResponse(
+        response[LOGGED_IN_USERS_KEY]
     ),
     [USER_INVITATIONS_KEY]: userInvitationsTableFromResponse(
         response[USER_INVITATIONS_KEY]
