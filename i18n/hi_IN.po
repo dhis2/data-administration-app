@@ -1,22 +1,20 @@
 # 
 # Translators:
-# Philip Larsen Donnelly, 2021
-# Viktor Varland <viktor@dhis2.org>, 2021
-# Saysamone Sibounma, 2023
-# Namwan Chanthavisouk, 2025
+# Siddharth Agarwal, 2025
+# Rohit Wadhwani, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2021-06-25T16:58:32.355Z\n"
 "PO-Revision-Date: 2021-09-03 23:43+0000\n"
-"Last-Translator: Namwan Chanthavisouk, 2025\n"
-"Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
+"Last-Translator: Rohit Wadhwani, 2026\n"
+"Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lo\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Open user guide"
 msgstr ""
@@ -25,16 +23,16 @@ msgid "Go back to all lock exceptions"
 msgstr ""
 
 msgid "Lock Exception"
-msgstr "Lock Exception"
+msgstr ""
 
 msgid "Data set"
-msgstr "Data set\\:"
+msgstr "डेटा सेट"
 
 msgid "Period"
-msgstr "ຊ່ວງເວລາ"
+msgstr ""
 
 msgid "Organisation unit"
-msgstr "​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
+msgstr ""
 
 msgid "Batch delete lock exceptions"
 msgstr ""
@@ -52,7 +50,7 @@ msgid "Are you sure you want to remove this lock exception?"
 msgstr ""
 
 msgid "No, cancel"
-msgstr "ບໍ່, ຍົກເລີກ"
+msgstr "नहीं, कैंसल"
 
 msgid "Removing lock exception..."
 msgstr ""
@@ -61,7 +59,7 @@ msgid "Yes, remove lock exception"
 msgstr ""
 
 msgid "Data Integrity"
-msgstr "Data Integrity"
+msgstr ""
 
 msgid ""
 "Run data integrity checks and unveil anomalies and problems in the metadata "
@@ -75,7 +73,7 @@ msgid "An unexpected error happened during data integrity checks"
 msgstr ""
 
 msgid "Maintenance"
-msgstr "ການ​ຮັກ​ສາ​ສ້ອມ​ແປງ"
+msgstr ""
 
 msgid ""
 "Perform maintenance tasks and generate resource database tables for the "
@@ -83,10 +81,10 @@ msgid ""
 msgstr ""
 
 msgid "Perform maintenance"
-msgstr "Perform maintenance"
+msgstr ""
 
 msgid "Clear analytics tables"
-msgstr "Clear analytics tables"
+msgstr ""
 
 msgid "Analyze analytics tables"
 msgstr ""
@@ -107,7 +105,7 @@ msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
 
 msgid "Prune periods"
-msgstr "Prune periods"
+msgstr ""
 
 msgid "Remove expired invitations"
 msgstr ""
@@ -119,7 +117,7 @@ msgid "Create SQL views"
 msgstr ""
 
 msgid "Update category option combinations"
-msgstr "Update category option combinations"
+msgstr ""
 
 msgid "Update organisation unit paths"
 msgstr ""
@@ -137,8 +135,6 @@ msgid ""
 "Generate resource database tables for the organisation unit hierarchy and "
 "group set structure among others."
 msgstr ""
-"Generate resource database tables for the organisation unit hierarchy and "
-"group set structure among others."
 
 msgid "Generate Resource Tables"
 msgstr ""
@@ -147,40 +143,40 @@ msgid "An unexpected error happened during operation"
 msgstr ""
 
 msgid "Organisation unit structure"
-msgstr "Organisation unit structure"
+msgstr ""
 
 msgid "Organisation unit category option combo"
 msgstr ""
 
 msgid "Category option group set structure"
-msgstr "Category option group set structure"
+msgstr ""
 
 msgid "Data element group set structure"
-msgstr "Data element group set structure"
+msgstr ""
 
 msgid "Indicator group set structure"
-msgstr "Indicator group set structure"
+msgstr ""
 
 msgid "Organisation unit group set structure"
-msgstr "Organisation unit group set structure"
+msgstr ""
 
 msgid "Category structure"
-msgstr "Category structure"
+msgstr ""
 
 msgid "Data element category option combo name"
-msgstr "Data element category option combo name"
+msgstr ""
 
 msgid "Data element structure"
-msgstr "Data element structure"
+msgstr ""
 
 msgid "Period structure"
-msgstr "Period structure"
+msgstr ""
 
 msgid "Date period structure"
-msgstr "Date period structure"
+msgstr ""
 
 msgid "Data element category option combinations"
-msgstr "Data element category option combinations"
+msgstr ""
 
 msgid "Analytics tables management"
 msgstr ""
@@ -194,55 +190,49 @@ msgid ""
 msgstr ""
 
 msgid "Analytics tables update"
-msgstr "​ປັບ​ປຸງ​ຄືນ​ຕາ​ຕະ​ລາງວິ​ໄຈ"
+msgstr ""
 
 msgid "An unexpected error happened during maintenance"
 msgstr ""
 
 msgid "Skip generation of aggregate data and completeness data"
-msgstr "Skip generation of aggregate data and completeness data"
+msgstr ""
 
 msgid "Skip generation of resource tables"
-msgstr "Skip generation of resource tables"
+msgstr ""
 
 msgid "Skip generation of event data"
-msgstr "Skip generation of event data"
+msgstr ""
 
 msgid "Skip generation of enrollment data"
-msgstr "Skip generation of enrollment data"
+msgstr ""
 
 msgid "Data Statistics"
-msgstr "Data Statistics"
+msgstr ""
 
 msgid ""
 "Browse the number of objects in the database, like data elements, "
 "indicators, data sets and data values."
 msgstr ""
-"Browse the number of objects in the database, like data elements, "
-"indicators, data sets and data values."
 
 msgid "Overview Data Statistics"
 msgstr ""
 
 msgid "Lock Exception Management"
-msgstr "Lock Exception Management"
+msgstr ""
 
 msgid ""
 "Add or remove exceptions to the the standard rules for locking of data entry"
 " forms."
 msgstr ""
-"Add or remove exceptions to the the standard rules for locking of data entry"
-" forms."
 
 msgid "Min-Max Value Generation"
-msgstr "Min-Max Value Generation"
+msgstr ""
 
 msgid ""
 "Generate min-max values which can be used for data validation during data "
 "entry and validation processes."
 msgstr ""
-"Generate min-max values which can be used for data validation during data "
-"entry and validation processes."
 
 msgid "Generate Min-Max Values"
 msgstr ""
@@ -266,7 +256,7 @@ msgid "Updating selection..."
 msgstr ""
 
 msgid "Select"
-msgstr "ເລືອກ"
+msgstr "चुनें"
 
 msgid "Deselect"
 msgstr ""
@@ -281,34 +271,34 @@ msgid "Deselect All Org Units"
 msgstr ""
 
 msgid "Organisation unit group"
-msgstr "Organisation Unit Group"
+msgstr ""
 
 msgid "Select an organisation unit group"
 msgstr ""
 
 msgid "Organisation unit level"
-msgstr "​ລະ​ດັບ​ຕ່າງໆ​ຂອງ​ຫົວ​ໜ່ວຍ​ການ​ຈັດ​ຕັ້ງ"
+msgstr ""
 
 msgid "Select an organisation unit level"
 msgstr ""
 
 msgid "week"
-msgstr "ອາທິດ"
+msgstr ""
 
 msgid "month"
-msgstr "ເດືອນ"
+msgstr ""
 
 msgid "year"
-msgstr "ປີ"
+msgstr ""
 
 msgid "bi weekly"
 msgstr ""
 
 msgid "bi monthly"
-msgstr "ສອງເດືອນຕໍ່ຄັ້ງ"
+msgstr ""
 
 msgid "day"
-msgstr "ມື້"
+msgstr ""
 
 msgid "jan"
 msgstr ""
@@ -365,7 +355,7 @@ msgid "nov-dec"
 msgstr ""
 
 msgid "quarter"
-msgstr "ໄຕມາດ"
+msgstr ""
 
 msgid "Q1"
 msgstr ""
@@ -380,7 +370,7 @@ msgid "Q4"
 msgstr ""
 
 msgid "six monthly"
-msgstr "ຫົກເດືອນຕໍ່ຄັ້ງ"
+msgstr ""
 
 msgid "jan-jun"
 msgstr ""
@@ -395,16 +385,16 @@ msgid "oct-mar"
 msgstr ""
 
 msgid "Number of last years of data to include"
-msgstr "Number of last years of data to include"
+msgstr ""
 
 msgid "Exporting..."
 msgstr ""
 
 msgid "Start export"
-msgstr "ນຳອອກ"
+msgstr ""
 
 msgid "All"
-msgstr "ທັງໝົດ"
+msgstr "सभी"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -425,55 +415,55 @@ msgid "Data elements without data set"
 msgstr ""
 
 msgid "Data elements without groups"
-msgstr "Data elements without groups"
+msgstr ""
 
 msgid "Data elements violating exclusive group sets"
-msgstr "Data elements violating exclusive group sets"
+msgstr ""
 
 msgid "Data elements assigned to data sets with different period types"
-msgstr "Data elements assigned to data sets with different period types"
+msgstr ""
 
 msgid "Data sets not assigned to organisation units"
-msgstr "Data sets not assigned to organisation units"
+msgstr ""
 
 msgid "Indicators with identical formulas"
-msgstr "Indicators with identical formulas"
+msgstr ""
 
 msgid "Indicators without groups"
-msgstr "Indicators without groups"
+msgstr ""
 
 msgid "Invalid indicator numerators"
-msgstr "Invalid indicator numerators"
+msgstr ""
 
 msgid "Invalid indicator denominators"
-msgstr "Invalid indicator denominators"
+msgstr ""
 
 msgid "Indicators violating exclusive group sets"
-msgstr "Indicators violating exclusive group sets"
+msgstr ""
 
 msgid "Organisation units with cyclic references"
-msgstr "Organisation units with cyclic references"
+msgstr ""
 
 msgid "Orphaned organisation units"
-msgstr "Orphaned organisation units"
+msgstr ""
 
 msgid "Organisation units without groups"
-msgstr "Organisation units without groups"
+msgstr ""
 
 msgid "Organisation units violating exclusive group sets"
 msgstr ""
 
 msgid "Organisation unit groups without group sets"
-msgstr "Organisation unit groups without group sets"
+msgstr ""
 
 msgid "Validation rules without groups"
-msgstr "Validation rules without groups"
+msgstr ""
 
 msgid "Invalid validation rule left side expressions"
-msgstr "Invalid validation rule left side expressions"
+msgstr ""
 
 msgid "Invalid validation rule right side expressions"
-msgstr "Invalid validation rule right side expressions"
+msgstr ""
 
 msgid "Invalid program indicator expressions"
 msgstr ""
@@ -485,7 +475,7 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr "ຊຸດປະສົມປະເພດທີ່ບໍ່ຖືກຕ້ອງ"
+msgstr ""
 
 msgid "Duplicate periods"
 msgstr ""
@@ -497,7 +487,7 @@ msgid "Program rules with no action"
 msgstr ""
 
 msgid "Program rules with no priority"
-msgstr "ກົດລະບຽບຂອງໂຄງການທີ່ບໍ່ມີບຸລິມະສິດ"
+msgstr ""
 
 msgid "Program rule variables with no data element"
 msgstr ""
@@ -521,85 +511,85 @@ msgid "Program indicators with no expression"
 msgstr ""
 
 msgid "Indicators"
-msgstr "ຕົວຊີ້ວັດ"
+msgstr "इंडिकेटर्स"
 
 msgid "Periods"
-msgstr "ຊ່ວງເວລາ"
+msgstr ""
 
 msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr "ເຫດການ"
+msgstr "इवेंट्स"
 
 msgid "Organisation units"
-msgstr "ໂຄງຮ່າງການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Validation rules"
-msgstr "ການກວດສອບ ຄວາມຖືກຕ້ອງ"
+msgstr ""
 
 msgid "Data values"
-msgstr "Data values"
+msgstr ""
 
 msgid "Programs"
-msgstr "ສາຍງານ"
+msgstr ""
 
 msgid "Data elements"
-msgstr "ອົງປະກອບຂໍ້ມູນ"
+msgstr "डेटा एलिमेंट्स"
 
 msgid "Organisation unit groups"
-msgstr "ກຸ່ມໂຄງຮ່າງການຈັດຕັ້ງ"
+msgstr ""
 
 msgid "Tracked entity instances"
-msgstr "ຕິດຕາມຂໍ້ມູນ"
+msgstr ""
 
 msgid "Pivot tables"
-msgstr "ຕາຕະລາງຂໍ້ມູນ"
+msgstr ""
 
 msgid "Program instances"
 msgstr ""
 
 msgid "Indicator types"
-msgstr "Indicator types"
+msgstr ""
 
 msgid "Data sets"
-msgstr "ແບບຟອມ"
+msgstr "डेटा सेट्स"
 
 msgid "User groups"
-msgstr "ກຸ່ມຜູ້ໃຊ້"
+msgstr ""
 
 msgid "Users"
-msgstr "ຜູ້ນໍາໃຊ້"
+msgstr ""
 
 msgid "Maps"
-msgstr "ແຜນທີ່"
+msgstr ""
 
 msgid "Indicator groups"
-msgstr "ກຸ່ມຕົວຊີ້ວັດ"
+msgstr ""
 
 msgid "Charts"
-msgstr "ແຜນວາດຂໍ້ມູນ"
+msgstr ""
 
 msgid "Data element groups"
-msgstr "Data Element Groups"
+msgstr ""
 
 msgid "Dashboards"
-msgstr "ກະດານຂໍ້ມູນ"
+msgstr ""
 
 msgid "Today"
-msgstr "ມື້ນີ້"
+msgstr "आज"
 
 msgid "Last {{days}} days"
 msgstr ""
 
 msgid "Last hour"
-msgstr "Last hour"
+msgstr ""
 
 msgid "Object type"
-msgstr "Object type"
+msgstr ""
 
 msgid "Users logged in"
-msgstr "Users logged in"
+msgstr ""
 
 msgid "User account invitations"
 msgstr ""
@@ -611,7 +601,7 @@ msgid "Expired invitations"
 msgstr ""
 
 msgid "Batch deletion"
-msgstr "Batch deletion"
+msgstr ""
 
 msgid "Maintenance done"
 msgstr ""
@@ -632,7 +622,7 @@ msgid "Removing min-max values..."
 msgstr ""
 
 msgid "Generate min-max values"
-msgstr "ສ້າງຄ່າຕ່ຳສຸດ-ສູງສຸດ"
+msgstr ""
 
 msgid "Remove min-max values"
 msgstr ""
@@ -641,4 +631,4 @@ msgid "Generating tables..."
 msgstr ""
 
 msgid "Generate tables"
-msgstr "Generate tables"
+msgstr ""
