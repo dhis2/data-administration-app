@@ -409,7 +409,7 @@ msgid "Start export"
 msgstr ""
 
 msgid "All"
-msgstr ""
+msgstr "सभी"
 
 msgid "Batch Deletion"
 msgstr ""
@@ -621,7 +621,7 @@ msgid "Failed to run integrity check"
 msgstr ""
 
 msgid "Indicators"
-msgstr ""
+msgstr "इंडिकेटर्स"
 
 msgid "Periods"
 msgstr ""
@@ -630,7 +630,7 @@ msgid "Visualization"
 msgstr ""
 
 msgid "Events"
-msgstr ""
+msgstr "इवेंट्स"
 
 msgid "Organisation units"
 msgstr ""
