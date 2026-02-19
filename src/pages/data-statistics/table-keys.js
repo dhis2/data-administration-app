@@ -1,5 +1,6 @@
 export const OBJECT_COUNTS_KEY = 'objectCounts'
 export const ACTIVE_USERS_KEY = 'activeUsers'
+export const LOGGED_IN_USERS_KEY = 'logins'
 export const USER_INVITATIONS_KEY = 'userInvitations'
 export const DATA_VALUE_COUNT_KEY = 'dataValueCount'
 export const EVENT_COUNT_KEY = 'eventCount'

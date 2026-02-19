@@ -10,15 +10,26 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormattedNumber from '../../components/FormattedNumber/FormattedNumber.jsx'
+import styles from './DataStatistics.module.css'
 
-const DataStatisticsTable = ({ elements, label }) => (
+const DataStatisticsTable = ({ elements, label, description }) => (
     <Table suppressZebraStriping>
         <TableHead>
             <TableRowHead>
-                <TableCellHead>{label}</TableCellHead>
+                <TableCellHead colSpan={2}>
+                    <>
+                        <div>{label}</div>
+                        {description && (
+                            <div className={styles.dataStatisticsDescription}>
+                                {description}
+                            </div>
+                        )}
+                    </>
+                </TableCellHead>
                 <TableCellHead></TableCellHead>
             </TableRowHead>
         </TableHead>
+
         <TableBody>
             {elements.map((element) => (
                 <TableRow key={element.label}>
@@ -35,6 +46,7 @@ const DataStatisticsTable = ({ elements, label }) => (
 DataStatisticsTable.propTypes = {
     elements: PropTypes.array.isRequired,
     label: PropTypes.string.isRequired,
+    description: PropTypes.string,
 }
 
 export default DataStatisticsTable
