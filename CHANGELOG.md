@@ -1,3 +1,10 @@
+## [100.1.5](https://github.com/dhis2/data-administration-app/compare/v100.1.4...v100.1.5) (2026-02-19)
+
+
+### Bug Fixes
+
+* add logged in users [DHIS2-20482] ([#1180](https://github.com/dhis2/data-administration-app/issues/1180)) ([69df556](https://github.com/dhis2/data-administration-app/commit/69df556a743cc4d55f32488175ede7ef11995118))
+
 ## [100.1.4](https://github.com/dhis2/data-administration-app/compare/v100.1.3...v100.1.4) (2026-02-15)
 
 
