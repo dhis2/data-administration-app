@@ -16,7 +16,7 @@ const DataStatisticsTable = ({ elements, label, description }) => (
     <Table suppressZebraStriping>
         <TableHead>
             <TableRowHead>
-                <TableCellHead colSpan={2}>
+                <TableCellHead colSpan="2">
                     <>
                         <div>{label}</div>
                         {description && (
