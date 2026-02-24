@@ -1,4 +1,4 @@
-import { useDataQuery } from '@dhis2/app-runtime'
+import { useDataQuery, useConfig } from '@dhis2/app-runtime'
 import { Card, NoticeBox, CircularLoader, CenteredContent } from '@dhis2/ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -40,6 +40,8 @@ const query = {
 
 const DataStatistics = ({ sectionKey }) => {
     const { loading, error, data } = useDataQuery(query)
+    const { apiVersion } = useConfig()
+    const activeUsersAreLoggedInUsers = Number.parseInt(apiVersion) <= 42
 
     if (loading) {
         return (
@@ -57,7 +59,9 @@ const DataStatistics = ({ sectionKey }) => {
         )
     }
 
-    const tables = parseTables(data.dataSummary)
+    const tables = parseTables(data.dataSummary, {
+        activeUsersAreLoggedInUsers,
+    })
     const renderTable = (key) => {
         if (tables[key] === null) {
             return null
