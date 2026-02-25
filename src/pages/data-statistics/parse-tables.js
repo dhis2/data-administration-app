@@ -76,20 +76,31 @@ const objectCountsTableFromResponse = (objectCountsResponse) => {
     }
 }
 
-const activeUsersTableFromResponse = (activeUsersResponse) => {
+const loggedInUsersDescription = i18n.t(
+    'Number of users that have logged in at least once over the time period shown below.'
+)
+
+const activeUsersTableFromResponse = (
+    activeUsersResponse,
+    { activeUsersAreLoggedInUsers }
+) => {
     if (!activeUsersResponse) {
         return null
     }
 
     return {
-        label: i18n.t('Active users'),
+        label: activeUsersAreLoggedInUsers
+            ? i18n.t('Users logged in')
+            : i18n.t('Active users'),
         elements: Object.entries(activeUsersResponse).map(([key, count]) => ({
             label: translatedTimeLabelFromIntProperty(key),
             count,
         })),
-        description: i18n.t(
-            'Number of users who have performed an action that results in a data statistic event (opened a dashboard, viewed a report etc) over the time period shown below.'
-        ),
+        description: activeUsersAreLoggedInUsers
+            ? loggedInUsersDescription
+            : i18n.t(
+                  'Number of users who have performed an action that results in a data statistic event (opened a dashboard, viewed a report etc) over the time period shown below.'
+              ),
     }
 }
 
@@ -104,9 +115,7 @@ const loggedInUsersTableFromResponse = (loggedInUsersResponse) => {
             label: translatedTimeLabelFromIntProperty(key),
             count,
         })),
-        description: i18n.t(
-            'Number of users that have logged in at least once over the time period shown below.'
-        ),
+        description: loggedInUsersDescription,
     }
 }
 
@@ -177,12 +186,13 @@ const eventCountsTableFromResponse = (eventCountsResponse) => {
     }
 }
 
-export const parseTables = (response) => ({
+export const parseTables = (response, { activeUsersAreLoggedInUsers }) => ({
     [OBJECT_COUNTS_KEY]: objectCountsTableFromResponse(
         response[OBJECT_COUNTS_KEY]
     ),
     [ACTIVE_USERS_KEY]: activeUsersTableFromResponse(
-        response[ACTIVE_USERS_KEY]
+        response[ACTIVE_USERS_KEY],
+        { activeUsersAreLoggedInUsers }
     ),
     [LOGGED_IN_USERS_KEY]: loggedInUsersTableFromResponse(
         response[LOGGED_IN_USERS_KEY]
