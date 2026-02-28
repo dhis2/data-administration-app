@@ -1,19 +1,18 @@
-# 
 # Translators:
 # Philip Larsen Donnelly, 2021
 # Viktor Varland <viktor@dhis2.org>, 2022
-# Namwan Chanthavisouk, 2024
-# Saysamone Sibounma, 2024
+# Namwan Chanthavisouk, 2025
+# Saysamone Sibounma, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Saysamone Sibounma, 2024\n"
+"Last-Translator: Saysamone Sibounma, 2026\n"
 "Language-Team: Lao (https://app.transifex.com/hisp-uio/teams/100509/lo/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -104,7 +103,7 @@ msgid "There are data elements in the form, but not in the form or sections"
 msgstr ""
 
 msgid "Invalid category combinations"
-msgstr ""
+msgstr "ຊຸດປະສົມປະເພດທີ່ບໍ່ຖືກຕ້ອງ"
 
 msgid "Duplicate periods"
 msgstr ""
@@ -116,7 +115,7 @@ msgid "Program rules with no action"
 msgstr ""
 
 msgid "Program rules with no priority"
-msgstr ""
+msgstr "ກົດລະບຽບຂອງໂຄງການທີ່ບໍ່ມີບຸລິມະສິດ"
 
 msgid "Program rule variables with no data element"
 msgstr ""
@@ -312,7 +311,7 @@ msgid "Pending invitations"
 msgstr ""
 
 msgid "Expired invitations"
-msgstr ""
+msgstr "ຄຳເຊີນທີ່ໝົດອາຍຸແລ້ວ"
 
 msgid "Data values"
 msgstr "Data values"
@@ -369,10 +368,10 @@ msgid "Data element groups"
 msgstr "Data Element Groups"
 
 msgid "Dashboards"
-msgstr ""
+msgstr "ກະດານຂໍ້ມູນ"
 
 msgid "Visualization"
-msgstr ""
+msgstr "ການສະແດງຜົນ (Visualization)"
 
 msgid "Event visualization"
 msgstr ""
@@ -427,7 +426,7 @@ msgid "Are you sure?"
 msgstr "ທ່ານ​ແນ່​ໃຈ​ບໍ່?"
 
 msgid "CONFIRM"
-msgstr ""
+msgstr "ຢືນຢັນ"
 
 msgid "Select a Data Set"
 msgstr ""
@@ -448,7 +447,7 @@ msgid "Organisation Unit"
 msgstr "ຫົວໜ່ວຍ ການຈັດຕັ້ງ"
 
 msgid "Organisation Unit Group"
-msgstr ""
+msgstr "ກຸ່ມຫົວໜ່ວຍການຈັດຕັ້ງ"
 
 msgid "Organisation Unit Level"
 msgstr ""
@@ -475,10 +474,10 @@ msgid "Remove"
 msgstr "ລົບອອກ"
 
 msgid "Actions"
-msgstr ""
+msgstr "ຄຳສັ່ງ"
 
 msgid "of"
-msgstr ""
+msgstr "ຈາກໜ້າ"
 
 msgid "week"
 msgstr "ອາທິດ"
