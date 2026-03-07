@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Juan M Alcantara Acosta <jmalcantara1@gmail.com>, 2021
 # ericbp <ericbarredap@gmail.com>, 2021
@@ -9,16 +8,17 @@
 # Janeth Cruz, 2023
 # Alejandra Avila <alejandra@dhis2.org>, 2023
 # Enzo Nicolas Rossi <enzo@dhis2.org>, 2024
+# Carlos Tejo Alonso, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: Enzo Nicolas Rossi <enzo@dhis2.org>, 2024\n"
+"Last-Translator: Carlos Tejo Alonso, 2025\n"
 "Language-Team: Spanish (https://app.transifex.com/hisp-uio/teams/100509/es/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
@@ -178,36 +178,42 @@ msgid "An unexpected error happened during maintenance"
 msgstr "Ocurrió un error inesperado durante el mantenimiento"
 
 msgid "Clear analytics tables"
-msgstr "Eliminar tablas Analytics"
+msgstr "Eliminar tablas de analíticas"
 
 msgid "Analyze analytics tables"
-msgstr "Analizar tablas de análisis"
+msgstr "Analizar tablas de analíticas"
 
 msgid "Remove zero data values"
 msgstr "Eliminar valores de datos cero"
 
 msgid "Permanently remove soft deleted data values"
-msgstr "Eliminar permanentemente los valores de los datos borrados"
+msgstr ""
+"Eliminar permanentemente valores de datos eliminados temporalmente (borrado "
+"lógico)"
 
 msgid "Permanently remove soft deleted events"
-msgstr "Eliminar permanentemente los eventos borrados con soft"
+msgstr ""
+"Eliminar permanentemente los eventos eliminados temporalmente (borrado "
+"lógico)"
 
 msgid "Permanently remove soft deleted enrollments"
-msgstr "Eliminar permanentemente las inscripciones suprimidas por software"
+msgstr ""
+"Eliminar permanentemente las inscripciones eliminadas temporalmente (borrado"
+" lógico)"
 
 msgid "Permanently remove soft deleted tracked entity instances"
 msgstr ""
-"Eliminar permanentemente las instancias de entidades rastreadas eliminadas "
-"de forma suave"
+"Eliminar permanentemente las entidades rastreadas eliminadas temporalmente "
+"(borrado lógico)"
 
 msgid "Prune periods"
-msgstr "Periodos depurados"
+msgstr "Limpiar periodos"
 
 msgid "Remove expired invitations"
 msgstr "Eliminar invitaciones caducadas"
 
 msgid "Drop SQL views"
-msgstr "Soltar vistas SQL"
+msgstr "Eliminar vistas SQL"
 
 msgid "Create SQL views"
 msgstr "Crear vistas SQL"
@@ -634,10 +640,10 @@ msgid "Generate"
 msgstr "Generar"
 
 msgid "Analytics tables management"
-msgstr "Gestión de tablas analíticas"
+msgstr "Gestión de tablas de analíticas"
 
 msgid "Analytics Tables"
-msgstr "Tablas analíticas"
+msgstr "Tablas de analíticas"
 
 msgid ""
 "The data mart is a set of tables in the DHIS database which is used by all "
@@ -648,7 +654,7 @@ msgstr ""
 "recuperar datos."
 
 msgid "Analytics tables update"
-msgstr "Actualizar tablas Analytics"
+msgstr "Actualizar tablas de analíticas"
 
 msgid "START EXPORT"
 msgstr "INICIAR EXPORTACIÓN"

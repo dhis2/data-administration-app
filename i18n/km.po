@@ -1,18 +1,19 @@
-# 
 # Translators:
 # Viktor Varland <viktor@dhis2.org>, 2021
-# phil_dhis2, 2021
+# Philip Larsen Donnelly, 2021
 # channara rin, 2023
+# Em Le <em.hispvietnam@gmail.com>, 2025
+# Kiry Heng, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
 "POT-Creation-Date: 2022-02-06T18:57:00.335Z\n"
 "PO-Revision-Date: 2019-09-01 20:42+0000\n"
-"Last-Translator: channara rin, 2023\n"
+"Last-Translator: Kiry Heng, 2025\n"
 "Language-Team: Khmer (https://app.transifex.com/hisp-uio/teams/100509/km/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: km\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -287,7 +288,7 @@ msgid "Last hour"
 msgstr ""
 
 msgid "Today"
-msgstr ""
+msgstr "ថ្ងៃនេះ"
 
 msgid "Last"
 msgstr ""
@@ -335,7 +336,7 @@ msgid "Organisation unit groups"
 msgstr ""
 
 msgid "Pivot tables"
-msgstr ""
+msgstr "តារាង Pivot"
 
 msgid "Indicator types"
 msgstr ""
@@ -350,19 +351,19 @@ msgid "Users"
 msgstr "គណនីប្រើប្រាស់"
 
 msgid "Maps"
-msgstr ""
+msgstr "ផែនទី"
 
 msgid "Indicator groups"
 msgstr ""
 
 msgid "Charts"
-msgstr ""
+msgstr "គំនូសតាង(ក្រាប)"
 
 msgid "Data element groups"
 msgstr ""
 
 msgid "Dashboards"
-msgstr ""
+msgstr "ផ្ទាំងប៉ាណ្ណូបរិធាន"
 
 msgid "Visualization"
 msgstr ""
@@ -415,7 +416,7 @@ msgid "Lock Exception Added"
 msgstr ""
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "តើអ្នកច្បាស់ទេ?"
 
 msgid "CONFIRM"
 msgstr ""
