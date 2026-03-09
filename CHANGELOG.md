@@ -1,3 +1,10 @@
+## [100.1.8](https://github.com/dhis2/data-administration-app/compare/v100.1.7...v100.1.8) (2026-03-09)
+
+
+### Bug Fixes
+
+* activeUsers label for v42 and earlier ([#1194](https://github.com/dhis2/data-administration-app/issues/1194)) ([dc96fc3](https://github.com/dhis2/data-administration-app/commit/dc96fc3844cbae52cc486574cdf84f1dcbf2f4d3))
+
 ## [100.1.7](https://github.com/dhis2/data-administration-app/compare/v100.1.6...v100.1.7) (2026-03-01)
 
 
