@@ -1,3 +1,10 @@
+# [100.2.0](https://github.com/dhis2/data-administration-app/compare/v100.1.8...v100.2.0) (2026-03-17)
+
+
+### Features
+
+* update links to metadata management app ([#1210](https://github.com/dhis2/data-administration-app/issues/1210)) ([840d00f](https://github.com/dhis2/data-administration-app/commit/840d00f97a77f9362b129a6215474ad68ece4d6d))
+
 ## [100.1.8](https://github.com/dhis2/data-administration-app/compare/v100.1.7...v100.1.8) (2026-03-09)
 
 
