@@ -10,23 +10,23 @@ describe('getIssueLink', () => {
     it.each([
         [
             'categories',
-            'www.mydhis2instance.org/dhis-web-maintenance/#/edit/categorySection/category/abc',
+            'www.mydhis2instance.org/dhis-web-metadata-management#/categories/abc',
         ],
         [
             'organisationUnits',
-            'www.mydhis2instance.org/dhis-web-maintenance/#/edit/organisationUnitSection/organisationUnit/abc',
+            'www.mydhis2instance.org/dhis-web-metadata-management#/organisationUnits/abc',
         ],
         [
             'relationshipTypes',
-            'www.mydhis2instance.org/dhis-web-maintenance/#/edit/programSection/relationshipType/abc',
+            'www.mydhis2instance.org/dhis-web-metadata-management#/relationshipTypes/abc',
         ],
         [
             'programIndicatorGroups',
-            'www.mydhis2instance.org/dhis-web-maintenance/#/edit/indicatorSection/programIndicatorGroup/abc',
+            'www.mydhis2instance.org/dhis-web-metadata-management#/programIndicatorGroups/abc',
         ],
         [
             'fakeObjects',
-            'www.mydhis2instance.org/dhis-web-maintenance/#/edit/otherSection/fakeObject/abc',
+            'www.mydhis2instance.org/dhis-web-metadata-management#/fakeObjects/abc',
         ],
         ['dashboards', 'www.mydhis2instance.org/dhis-web-dashboard/#/abc'],
         [
