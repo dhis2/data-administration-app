@@ -1,6 +1,4 @@
 name: 'dhis2: verify (commits)'
-env:
-  NODE_OPTIONS: --openssl-legacy-provider
 
 on:
     pull_request:
