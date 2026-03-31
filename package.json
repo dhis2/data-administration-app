@@ -35,7 +35,11 @@
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/prop-types": "^2.0.3",
         "@dhis2/ui": "^7.1.1",
+        "postcss": "8.4.31",
         "prop-types": "^15.6.0",
         "react-router-dom": "^5.0.0"
+    },
+    "resolutions": {
+        "postcss": "8.4.31"
     }
 }
