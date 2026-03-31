@@ -1,4 +1,6 @@
 name: 'dhis2: verify (app)'
+env:
+  NODE_OPTIONS: --openssl-legacy-provider
 
 on:
     push:
@@ -22,7 +24,7 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
 
             - uses: actions/cache@v4
               id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -42,7 +44,7 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
 
             - uses: actions/cache@v4
               id: yarn-cache
@@ -69,7 +71,7 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
 
             - uses: actions/cache@v4
               id: yarn-cache
@@ -94,7 +96,7 @@ jobs:
 
             - uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
 
             - uses: actions/download-artifact@v4
               with:
@@ -116,7 +118,7 @@ jobs:
 
             - uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
 
             - name: Publish release to GitHub
               run: npx @dhis2/cli-utils release
