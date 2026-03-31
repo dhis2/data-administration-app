@@ -32,7 +32,7 @@ export const i18nKeys = {
             softDeletedEnrollmentRemoval: i18n.t(
                 'Permanently remove soft deleted enrollments'
             ),
-            softDeletedTrackedEntityInstanceRemoval: i18n.t(
+            softDeletedTrackedEntityRemoval: i18n.t(
                 'Permanently remove soft deleted tracked entity instances'
             ),
             periodPruning: i18n.t('Prune periods'),
