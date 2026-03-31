@@ -12,6 +12,7 @@ env:
     GH_TOKEN: ${{secrets.DHIS2_BOT_GITHUB_TOKEN}}
     CI: true
     D2_VERBOSE: true
+    NODE_OPTIONS: --openssl-legacy-provider
 
 jobs:
     install:
