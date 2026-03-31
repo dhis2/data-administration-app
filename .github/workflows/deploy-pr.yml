@@ -9,6 +9,31 @@ concurrency:
 
 jobs:
     deploy:
-        uses: dhis2/workflows-platform/.github/workflows/deploy-pr.yml@v1
+        runs-on: ubuntu-latest
         if: '!github.event.pull_request.head.repo.fork'
-        secrets: inherit
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: yarn
+            - run: yarn install --frozen-lockfile
+            - run: yarn d2-app-scripts build --standalone
+              env:
+                  NODE_OPTIONS: --openssl-legacy-provider
+            - id: netlify-deploy
+              uses: nwtgck/actions-netlify@v3
+              timeout-minutes: 1
+              with:
+                  github-token: ${{ secrets.DHIS2_BOT_GITHUB_TOKEN }}
+                  github-deployment-environment: netlify
+                  github-deployment-description: PR Preview on Netlify
+                  deploy-message: ${{ github.event.pull_request.title }}
+                  enable-pull-request-comment: true
+                  enable-commit-comment: true
+                  enable-commit-status: true
+                  alias: pr-${{ github.event.number }}
+                  publish-dir: build/app
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.DHIS2_BOT_NETLIFY_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
