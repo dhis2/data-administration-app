@@ -1,6 +1,4 @@
 name: 'dhis2: pr preview'
-env:
-  NODE_OPTIONS: --openssl-legacy-provider
 
 # Requirements:
 #
@@ -33,6 +31,8 @@ jobs:
 
             - name: Build
               run: yarn d2-app-scripts build --standalone
+              env:
+                NODE_OPTIONS: --openssl-legacy-provider
 
             - name: Deploy
               id: netlify-deploy
@@ -51,3 +51,4 @@ jobs:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.DHIS2_BOT_NETLIFY_TOKEN }}
                   # repo secret
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+                  NODE_OPTIONS: --openssl-legacy-provider
