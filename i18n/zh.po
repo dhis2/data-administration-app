@@ -1,15 +1,15 @@
 # Translators:
 # Philip Larsen Donnelly, 2024
 # Viktor Varland <viktor@dhis2.org>, 2024
-# 晓东 林 <13981924470@126.com>, 2024
 # easylin <lin_xd@126.com>, 2026
+# 晓东 林 <13981924470@126.com>, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T11:41:04.199Z\n"
+"POT-Creation-Date: 2026-02-11T13:12:36.617Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: easylin <lin_xd@126.com>, 2026\n"
+"Last-Translator: 晓东 林 <13981924470@126.com>, 2026\n"
 "Language-Team: Chinese (https://app.transifex.com/hisp-uio/teams/100509/zh/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -702,8 +702,22 @@ msgstr "上一小时"
 msgid "Object type"
 msgstr "对象类型"
 
+msgid "Active users"
+msgstr "活跃用户"
+
+msgid ""
+"Number of users who have performed an action that results in a data "
+"statistic event (opened a dashboard, viewed a report etc) over the time "
+"period shown below."
+msgstr "在下表所示时间段内，执行了可导致数据 统计事件 的操作（打开仪表板、查看报告等）的用户数量。"
+
 msgid "Users logged in"
 msgstr "已经登入的用户"
+
+msgid ""
+"Number of users that have logged in at least once over the time period shown"
+" below."
+msgstr "在下表所示时间段内至少登录过一次的用户数量。"
 
 msgid "User account invitations"
 msgstr "用户帐号邀请"
