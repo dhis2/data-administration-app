@@ -8,16 +8,16 @@
 # Viktor Varland <viktor@dhis2.org>, 2024
 # Karoline Tufte Lien <karoline@dhis2.org>, 2024
 # Yao Selom SAKA (HISP WCA) <ysaka@hispwca.org>, 2025
-# Cyrille Kabrane, 2025
 # Esther Tokouli, 2026
 # Elise Desailly, 2026
+# Cyrille Kabrane, 2026
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2026-02-09T11:41:04.199Z\n"
+"POT-Creation-Date: 2026-02-11T13:12:36.617Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
-"Last-Translator: Elise Desailly, 2026\n"
+"Last-Translator: Cyrille Kabrane, 2026\n"
 "Language-Team: French (https://app.transifex.com/hisp-uio/teams/100509/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -744,8 +744,27 @@ msgstr "Dernière heure"
 msgid "Object type"
 msgstr "Type d'objet"
 
+msgid "Active users"
+msgstr "Utilisateurs actifs"
+
+msgid ""
+"Number of users who have performed an action that results in a data "
+"statistic event (opened a dashboard, viewed a report etc) over the time "
+"period shown below."
+msgstr ""
+"Nombre d'utilisateurs qui ont réalisé une action donnant lieu à un événement"
+" statistique (ouverture d'un tableau de bord, consultation d'un rapport, "
+"etc.) au cours de la période indiquée ci-dessous."
+
 msgid "Users logged in"
 msgstr "Utilisateurs connectés"
+
+msgid ""
+"Number of users that have logged in at least once over the time period shown"
+" below."
+msgstr ""
+"Nombre d'utilisateurs qui se sont connectés au moins une fois au cours de la"
+" période indiquée ci-dessous."
 
 msgid "User account invitations"
 msgstr "Invitations pour comptes utilisateur"
