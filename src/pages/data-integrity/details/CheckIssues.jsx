@@ -36,11 +36,18 @@ CheckIssues.propTypes = {
 
 const Issue = ({ issue, issuesIdType, baseUrl }) => {
     const { id, name } = issue
+    const { serverVersion } = useConfig()
 
     return (
         <li key={id || name}>
             {issuesIdType ? (
-                <IssueLink href={getIssueLink(baseUrl, { issuesIdType, id })}>
+                <IssueLink
+                    href={getIssueLink(baseUrl, {
+                        issuesIdType,
+                        id,
+                        minorVersion: serverVersion?.minor,
+                    })}
+                >
                     {name}
                 </IssueLink>
             ) : (
