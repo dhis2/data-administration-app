@@ -57,7 +57,7 @@ const getMaintenanceSectionPath = (singularissuesIdType) => {
 export const getOldMaintenanceAppLink = (baseUrl, { issuesIdType, id }) => {
     const singularObjectType =
         nonStandardSingulars[issuesIdType] ??
-        issuesIdType.replace(/(.*)s$/, '$1')
+        (issuesIdType.endsWith('s') ? issuesIdType.slice(0, -1) : issuesIdType)
     const sectionPath = getMaintenanceSectionPath(singularObjectType)
 
     return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}/#/edit/${sectionPath}/${singularObjectType}/${id}`
