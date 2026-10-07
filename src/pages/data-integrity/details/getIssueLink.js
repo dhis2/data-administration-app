@@ -43,7 +43,7 @@ export const getIssueLink = (baseUrl, { issuesIdType, id, minorVersion }) => {
     if (notSupportedIssueType.has(issuesIdType)) {
         return null
     }
-    if (Number(minorVersion) <= 41) {
+    if (Number(minorVersion) <= 42) {
         return getOldMaintenanceAppLink(baseUrl, { issuesIdType, id })
     }
     return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}#/${issuesIdType}/${id}`

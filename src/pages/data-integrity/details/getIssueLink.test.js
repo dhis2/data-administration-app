@@ -51,7 +51,7 @@ describe('getIssueLink (default)', () => {
     )
 })
 
-describe('getIssueLink v41', () => {
+describe('getIssueLink v41, v42', () => {
     afterEach(() => {
         jest.clearAllMocks()
     })
@@ -96,7 +96,7 @@ describe('getIssueLink v41', () => {
             const result = getIssueLink(baseUrl, {
                 issuesIdType,
                 id,
-                minorVersion: 41,
+                minorVersion: 42,
             })
             expect(result).toBe(expected)
         }
