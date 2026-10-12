@@ -1,3 +1,10 @@
+## [100.2.1](https://github.com/dhis2/data-administration-app/compare/v100.2.0...v100.2.1) (2026-10-12)
+
+
+### Bug Fixes
+
+* use old mainteanance app links prior to v41 [DHIS2-22004] ([#1290](https://github.com/dhis2/data-administration-app/issues/1290)) ([af544fc](https://github.com/dhis2/data-administration-app/commit/af544fcf27dce7f77d036dfb4cabf8ca42ae1127))
+
 # [100.2.0](https://github.com/dhis2/data-administration-app/compare/v100.1.8...v100.2.0) (2026-03-17)
 
 
