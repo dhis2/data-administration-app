@@ -1,3 +1,5 @@
+import { getOldMaintenanceAppLink } from './legacyMaintenanceAppLinkLogic.js'
+
 const MAINTENANCE_RELATIVE_PATH = '/dhis-web-metadata-management'
 const DASHBOARDS_RELATIVE_PATH = '/dhis-web-dashboard'
 const USERS_RELATIVE_PATH = '/dhis-web-user'
@@ -25,7 +27,7 @@ const getUserAppLink = (baseUrl, { issuesIdType, id }) => {
 }
 
 /* NOTE: This is best-effort, and all cases may not be accounted for */
-export const getIssueLink = (baseUrl, { issuesIdType, id }) => {
+export const getIssueLink = (baseUrl, { issuesIdType, id, minorVersion }) => {
     if (dashboardsAppTypes.has(issuesIdType)) {
         return `${baseUrl}${DASHBOARDS_RELATIVE_PATH}/#/${id}`
     }
@@ -40,6 +42,9 @@ export const getIssueLink = (baseUrl, { issuesIdType, id }) => {
 
     if (notSupportedIssueType.has(issuesIdType)) {
         return null
+    }
+    if (Number(minorVersion) <= 42) {
+        return getOldMaintenanceAppLink(baseUrl, { issuesIdType, id })
     }
     return `${baseUrl}${MAINTENANCE_RELATIVE_PATH}#/${issuesIdType}/${id}`
 }
