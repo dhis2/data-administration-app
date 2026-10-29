@@ -1,6 +1,10 @@
 # Data integrity checks { #data_admin_data_integrity_checks }
 
-This page lists every data integrity check in the **Data Administration** app, with the severity, a description and a recommendation for each check. To run the checks, see [Data integrity](#data_admin_data_integrity).
+> **Note**
+>
+> This list might not include every check on your instance. New releases of DHIS2 add checks, and a system administrator can add custom checks to an instance. Custom checks appear in the app in the same list as the checks on this page. To add your own checks, see [Custom data integrity checks](#custom_data_integrity_checks) in the developer documentation.
+
+This page lists the data integrity checks that come with DHIS2 in the **Data Administration** app, with the severity, a description and a recommendation for each check. To run the checks, see [Data integrity](#data_admin_data_integrity).
 
 The checks are grouped by the tab where the app shows them, **Standard checks** or **Slow checks**, and then by section. The check names are the names that the app shows. The **Versions** column shows which of v41, v42 and v43 include the check. A check can also exist in v40 and earlier.
 
