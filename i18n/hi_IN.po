@@ -1,4 +1,3 @@
-# 
 # Translators:
 # Siddharth Agarwal, 2025
 # Rohit Wadhwani, 2026
@@ -6,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2024-02-15T14:41:03.063Z\n"
+"POT-Creation-Date: 2026-02-11T13:12:36.617Z\n"
 "PO-Revision-Date: 2019-06-26 08:00+0000\n"
 "Last-Translator: Rohit Wadhwani, 2026\n"
 "Language-Team: Hindi (India) (https://app.transifex.com/hisp-uio/teams/100509/hi_IN/)\n"
@@ -35,7 +34,7 @@ msgid "Data set"
 msgstr "डेटा सेट"
 
 msgid "Period"
-msgstr ""
+msgstr "पीरियड"
 
 msgid "Organisation unit"
 msgstr ""
@@ -151,9 +150,6 @@ msgstr ""
 msgid "Organisation unit structure"
 msgstr ""
 
-msgid "Organisation unit category option combo"
-msgstr ""
-
 msgid "Category option group set structure"
 msgstr ""
 
@@ -182,6 +178,9 @@ msgid "Date period structure"
 msgstr ""
 
 msgid "Data element category option combinations"
+msgstr ""
+
+msgid "Data set organisation unit category"
 msgstr ""
 
 msgid "Analytics tables management"
@@ -587,7 +586,7 @@ msgstr "सर्च करें / खोजें"
 msgid "Sort"
 msgstr ""
 
-msgid "Run all standards checks"
+msgid "Run all standard checks"
 msgstr ""
 
 msgid "Slow checks must be run individually"
@@ -701,7 +700,21 @@ msgstr ""
 msgid "Object type"
 msgstr ""
 
+msgid "Active users"
+msgstr ""
+
+msgid ""
+"Number of users who have performed an action that results in a data "
+"statistic event (opened a dashboard, viewed a report etc) over the time "
+"period shown below."
+msgstr ""
+
 msgid "Users logged in"
+msgstr ""
+
+msgid ""
+"Number of users that have logged in at least once over the time period shown"
+" below."
 msgstr ""
 
 msgid "User account invitations"
