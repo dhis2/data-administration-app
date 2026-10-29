@@ -37,271 +37,17 @@ Each name in the list of errors is a link that opens the object in a new browser
 >
 > The steps in this section use the **Metadata Management** app. If your instance does not have the **Metadata Management** app, use the **Maintenance** app instead. See [Configure metadata (Metadata Management app)](#metadata_management_app).
 
-The app has more checks than this page describes. The headings in this
-section use the names that the app shows. To read the description and
-recommendation of any other check, choose it in the app.
+For the severity, description and recommendation of every check, see [Data integrity checks](#data_admin_data_integrity_checks).
 
-#### v40 and earlier { #data_admin_data_integrity_v40_and_earlier }
+### v40 and earlier { #data_admin_data_integrity_v40_and_earlier }
 
 In v40 and earlier, the **Data Administration** app does not have the **Standard checks** tab or the **Slow checks** tab.
 
 In v40 and earlier, the **Data Administration** app does not have the **Run all standard checks** button.
 
-### Aggregate data elements which are not a member of any dataset
-
-Aggregate data elements should normally be assigned to at least one data
-set. If a data element is not assigned to a data set, you cannot enter
-values for it in the system. There can be valid reasons to leave a data
-element out of all data sets. Otherwise, in the **Metadata Management** app,
-choose **Data sets** > **Data sets**, open the appropriate data set, and add the
-"orphaned" data element to it.
-
-### Aggregate data elements not in any data element groups
-
-All aggregate data elements should be in at least one data element
-group. Groups make data elements easier to find in the analysis apps and
-help to complete data element group sets. In the **Metadata Management** app, choose **Data elements** > **Data element groups**
-and add each data element that the check lists to a
-relevant group. If you do not need the data element, delete it.
-
-### Data elements which belong to multiple groups in a group set
-
-Some data elements have been allocated to several data element groups
-that are members of the same data element group set. All group sets in
-DHIS2 are defined as exclusive, which means that a data element can
-_only_ be allocated to _one_ data element group within that group set.
-In the **Metadata Management** app, choose **Data elements** > **Data element groups**
-to review each data element identified in the integrity check.
-Either remove the data element from all groups except the one that it
-should be allocated to, or decide whether one of the groups should be in
-a different group set.
-
-### Data sets with data elements not in data entry form
-
-Data elements have been assigned to a data set, but are neither in the data
-entry form of the data set nor in a section of the data set. For all data
-sets that use section forms, you should generally assign each data element in
-the data set to exactly one section of the data set. Alternatively, remove the
-data elements from the data set.
-
-This check is on the **Slow checks** tab.
-
-### Aggregate data elements which belong to data sets with different period types
-
-Data elements should not be assigned to two separate data sets whose
-period types differ. The recommended approach is to create two
-separate data elements (for example, a monthly and a yearly data element)
-and assign these to the respective data sets.
-
-### Data sets which have not been assigned to any organisation units
-
-All data sets should be assigned to at least one organisation unit.
-
-### Indicators with identical formulas
-
-Although this rule does not affect data quality, it generally does not
-make sense to have two indicators with the exact same definition. Review
-the identified indicators and their formulas, and delete or modify any
-indicator that appears to be a duplicate.
-
-### Indicators not included in any groups
-
-All indicators should be assigned to at least one indicator group,
-so you should allocate these indicators to their correct indicator
-group. In the **Metadata Management** app, choose **Indicators and Predictors** >
-**Indicator groups**, and allocate each of the \`Orphaned\` indicators
-to its correct group.
-
-### Indicators with invalid numerator
-
-An incorrect reference to a deleted or modified data element can cause
-violations of this rule. Review the indicator and correct the
-numerator definition.
-
-This check is on the **Slow checks** tab.
-
-### Indicators with invalid denominator
-
-An incorrect reference to a deleted or modified data element can cause
-violations of this rule. Review the indicator and correct the
-denominator definition.
-
-This check is on the **Slow checks** tab.
-
-### Indicators which belong to multiple groups in a group set
-
-Some indicators have been allocated to several indicator groups that are
-members of the same indicator group set. All group sets in DHIS2 are
-defined as exclusive, which means that an indicator can _only_ be
-allocated to _one_ indicator group within that group set. In the
-**Metadata Management** app, choose **Indicators and Predictors** > **Indicator groups** to
-review each indicator identified in the integrity check. Either remove
-the indicator from all groups except the one that it should be allocated
-to, or see if one of the groups should be placed in a different group
-set.
-
-### Periods with the same start date and period type
-
-Periods that have the same start date and period type are duplicates.
-If periods have been imported from external applications, some periods
-might be duplicated. If any periods appear to be duplicated here, you
-must resolve these directly in the DHIS2 database. You should move all
-data that has been assigned to a duplicated period to the period with the
-lower period ID, and remove the duplicate period.
-
-### Organisation units with cyclic references
-
-Organisation units cannot be both parent and children of each other,
-directly or indirectly. If this situation occurs, you must
-resolve the cyclic reference directly in the DHIS2 database, in the
-`organisationunit` table, by reassigning the `parentid` field of the
-organisation units.
-
-This check is on the **Slow checks** tab.
-
-### Orphaned organisation units
-
-Orphaned organisation units have neither a parent nor any children, so they
-have no relationship to the main organisation unit hierarchy. All organisation
-units must exist within the organisation unit hierarchy. In the **Metadata Management** app, choose **Organisation units** > **Hierarchy operations** and move the
-offending organisation unit into the proper position in the hierarchy.
-
-### Organisation units without groups
-
-All organisation units should usually belong to at least one organisation
-unit group. Organisation units that do not belong to any group are harder to
-identify in analysis apps such as the **Data Visualizer**. Create organisation
-unit groups that help you filter classes of organisation units, and add the
-organisation units that the check lists to them. In the **Metadata Management** app, choose **Organisation units** >
-**Organisation unit groups** to review each organisation unit identified and add the
-relevant group allocation.
-
-### Orgunits that are not in all compulsory orgunit group sets
-
-These organisation units have not been assigned to any organisation
-unit group within one of the _compulsory_ organisation unit group sets.
-When a group set is defined as compulsory, it means that an organisation
-unit must be allocated to at least one organisation unit group within
-that group set. For instance, all organisation units must belong to one
-of the groups in the 'Type' group set. An organisation unit might belong to the
-\`Hospital\` group, the \`Clinic\` group, or any other 'type' group, but it must
-belong to exactly one of them. In the **Metadata Management** app, choose **Organisation units** > **Organisation
-unit groups** to review each organisation unit identified in the integrity
-check. Allocate all organisation units to exactly one compulsory group.
-
-### Organisation units which belong to multiple groups in a group set
-
-Some organisation units have been allocated to several organisation unit
-groups that are members of the same organisation unit group set. All
-group sets in DHIS2 are defined as exclusive, which means that an
-organisation unit can _only_ be allocated to _one_ organisation unit
-group within that group set. For instance, an organisation unit cannot
-normally belong to both the 'Hospital' and 'Clinic' groups, but
-only to one of them. In the **Metadata Management** app, choose **Organisation units** > **Organisation
-unit groups** to review each organisation unit identified in the integrity
-check. Remove each organisation unit from all groups except the one that
-it should be allocated to.
-
-### Validation rules without a validation rule group
-
-All validation rules should be assigned to a group. In the **Metadata Management** app, choose **Validations** > **Validation rule groups** and assign the offending validation
-rule to a group.
-
-### Validation rules with invalid left side expression
-
-The left-side validation rule definition has an error. In the **Metadata Management** app, choose **Validations** > **Validation rules**, edit the
-offending rule, and correct the **Left side expression**.
-
-This check is on the **Slow checks** tab.
-
-### Validation rules with invalid right side expression
-
-The right-side validation rule definition has an error. In the **Metadata Management** app, choose **Validations** > **Validation rules**, edit the
-offending rule, and correct the **Right side expression**.
-
-This check is on the **Slow checks** tab.
-
-### Program rules without rule conditions
-
-The report highlights all **Program rules** that do not have a **Condition**. Rules without a condition always evaluate as false.
-
-### Program rules without priorities
-
-The report highlights all **Program rules** that do not have a **Priority**. Priority is optional, but it is very important when `ProgramRuleActionType` is `ASSIGN`. Rules with the `ASSIGN` action type should have higher priority than the rest of the action types.
-
-### Program rules without actions
-
-The report highlights all **Program rules** that do not have any `ProgramRuleAction`.
-
-### Program rule variables lacking a data element
-
-The report highlights all **Program rule variables** that do not have a `DataElement`. The report is based on the source type configuration. You should provide a `DataElement` when the source type of `ProgramRuleVariable` is `DataElement`.
-
-This check is on the **Slow checks** tab.
-
-### Program rule variables lacking an attribute
-
-The report highlights all **Program rule variables** that do not have a `TrackedEntityAttribute`. The report is based on the source type configuration. You should provide a `TrackedEntityAttribute` when the source type of `ProgramRuleVariable` is **Attribute**.
-
-This check is on the **Slow checks** tab.
-
-### Program rules with actions lacking a data object
-
-The report highlights all **Program rule actions** that do not have any data object. A data object can be either a `DataElement` or a `TrackedEntityAttribute`. Some ProgramRuleActions assign values to either a dataElement or a trackedEntityAttribute.
-
-This check is on the **Slow checks** tab.
-
-### Program rule with actions lacking a notification template
-
-The report highlights all **Program rule actions** that have `ProgramRuleActionType` set to `SENDMESSAGE/SCHEDULEMESSAGE` where the configuration does not provide any link to a notification.
-
-This check is on the **Slow checks** tab.
-
-### Program rules with actions lacking a program stage section
-
-The report highlights all **Program rule actions** that have `ProgramRuleActionType` set to `HIDESECTION` but the configuration does not provide any section id.
-
-This check is on the **Slow checks** tab.
-
-### Program rules with actions lacking a program stage
-
-The report highlights all **Program rule actions** that have `ProgramRuleActionType` set to `HIDEPROGRAMSTAGE` but the configuration does not provide any program stage id.
-
-This check is on the **Slow checks** tab.
-
-### Program indicators with invalid expression
-
-The report lists all violations in the program indicator expression that are caused by an invalid `DataElement` or an invalid `TrackedEntityAttribute`.
-
-This check is on the **Slow checks** tab.
-
-### Program indicators with invalid filter
-
-The report lists all violations in the program indicator filter expression that are caused by an invalid `DataElement` or an invalid `TrackedEntityAttribute`.
-
-This check is on the **Slow checks** tab.
-
-### Tracked entity attributes having a suboptimal search configuration that potentially results in slower search performance when searching tracked entities using those attributes
-
-The report lists all tracked entity attributes with a suboptimal configuration. This configuration can result in slower search performance when you search for tracked entities using those attributes.
-
-### Partial trigram indexes on trackedentityattributevalue table must be in sync with the tracked entity attribute metadata configuration
-
-The report lists all tracked entity attributes that are not in sync with the trigram index in the database. This means that some indexes might need to be created, deleted, or both.
-
-### Tracked entity attributes that have a partial trigram index created on the trackedentityattributevalue table
-
-The report lists all tracked entity attributes that have a partial trigram index in the `trackedentityattributevalue` table.
-
-#### v42 and earlier { #data_admin_data_integrity_v42_and_earlier }
+### v42 and earlier { #data_admin_data_integrity_v42_and_earlier }
 
 In v42 and earlier, the links in the list of errors open metadata objects in the **Maintenance** app, even when the **Metadata Management** app is installed.
-
-In v42 and earlier, the **Data Administration** app does not have the check **Tracked entity attributes having a suboptimal search configuration that potentially results in slower search performance when searching tracked entities using those attributes**.
-
-In v42 and earlier, the **Data Administration** app does not have the check **Partial trigram indexes on trackedentityattributevalue table must be in sync with the tracked entity attribute metadata configuration**.
-
-In v42 and earlier, the **Data Administration** app does not have the check **Tracked entity attributes that have a partial trigram index created on the trackedentityattributevalue table**.
 
 ## Maintenance { #data_admin_maintenance }
 
@@ -482,7 +228,7 @@ In v40 and earlier, the **Data Administration** app does not have the option **S
 
 In v40 and earlier, the **Data Administration** app does not have the option **Skip generation of outlier data**.
 
-## Data statistics { #data_admin\_\_data_statistics }
+## Data statistics { #data_admin_data_statistics }
 
 The data statistics module provides an overview of the number of objects
 stored in the DHIS2 database.
@@ -508,7 +254,7 @@ In v42 and earlier, the **Data Administration** app (version 100.1.8 and later) 
 
 In v43 and later, the **Data Administration** app shows the **Active users** table and the **Users logged in** table.
 
-## Lock exceptions { #data_admin\_\_lock_exception }
+## Lock exceptions { #data_admin_lock_exception }
 
 Lock exceptions provide fine-grained control over exemption from a
 locked data set.
