@@ -69,7 +69,7 @@ relevant group. If you do not need the data element, delete it.
 Some data elements have been allocated to several data element groups
 that are members of the same data element group set. All group sets in
 DHIS2 are defined as exclusive, which means that a data element can
-*only* be allocated to *one* data element group within that group set.
+_only_ be allocated to _one_ data element group within that group set.
 In the **Metadata Management** app, choose **Data elements** > **Data element groups**
 to review each data element identified in the integrity check.
 Either remove the data element from all groups except the one that it
@@ -132,8 +132,8 @@ This check is on the **Slow checks** tab.
 
 Some indicators have been allocated to several indicator groups that are
 members of the same indicator group set. All group sets in DHIS2 are
-defined as exclusive, which means that an indicator can *only* be
-allocated to *one* indicator group within that group set. In the
+defined as exclusive, which means that an indicator can _only_ be
+allocated to _one_ indicator group within that group set. In the
 **Metadata Management** app, choose **Indicators and Predictors** > **Indicator groups** to
 review each indicator identified in the integrity check. Either remove
 the indicator from all groups except the one that it should be allocated
@@ -179,7 +179,7 @@ relevant group allocation.
 ### Orgunits that are not in all compulsory orgunit group sets
 
 These organisation units have not been assigned to any organisation
-unit group within one of the *compulsory* organisation unit group sets.
+unit group within one of the _compulsory_ organisation unit group sets.
 When a group set is defined as compulsory, it means that an organisation
 unit must be allocated to at least one organisation unit group within
 that group set. For instance, all organisation units must belong to one
@@ -194,7 +194,7 @@ check. Allocate all organisation units to exactly one compulsory group.
 Some organisation units have been allocated to several organisation unit
 groups that are members of the same organisation unit group set. All
 group sets in DHIS2 are defined as exclusive, which means that an
-organisation unit can *only* be allocated to *one* organisation unit
+organisation unit can _only_ be allocated to _one_ organisation unit
 group within that group set. For instance, an organisation unit cannot
 normally belong to both the 'Hospital' and 'Clinic' groups, but
 only to one of them. In the **Metadata Management** app, choose **Organisation units** > **Organisation
@@ -309,20 +309,20 @@ To run maintenance functions, open the **Data Administration** app and click **M
 
 Table: Data maintenance functions in the Data Administration app
 
-| Function | Description |
-|---|---|
-| Clear analytics tables | Deletes the analytics tables from the database. These tables are used to generate aggregate data for the pivot tables, GIS, and reports. |
-| Analyze analytics tables | Performs a PostgreSQL `analyze` operation on all analytics tables. |
-| Remove zero data values | Removes zero data values from the database. DHIS2 removes a zero value only if its data element has the aggregation operator sum and does not have **Zero is significant** chosen. DHIS2 keeps zero values for data elements with other aggregation operators, such as average, because such values are significant when you aggregate the data.<br> <br>Reducing the number of data values improves system performance. |
-| Permanently remove soft deleted data values / events / enrollments / tracked entity instances | When you delete a data value in DHIS2, the system marks the corresponding database row as deleted and does not actually delete the row.<br> <br>Running this maintenance function physically removes these data value rows from the database. |
-| Prune periods | Removes all periods that are not in use. A period is in use when a data value, a data set completion, an approval, a data input period, a lock exception, a validation result, or a saved visualization, map, event report, or interpretation refers to it. Reducing the number of periods improves system performance. |
-| Remove expired invitations | Deletes users that represent user account invitations that are past their expiry date. |
-| Drop SQL views | DHIS2 lets you create and manage SQL views as system objects with corresponding database SQL views.<br> <br>Running this maintenance function drops the underlying SQL views for all system views. Use the **Create SQL views** function to recreate these SQL views. |
-| Create SQL views | Recreates all SQL views in the database. |
-| Update category option combinations | Rebuilds the category option combinations. This might be required after you change the category options that belong to a given category. |
-| Update organisation unit paths | The `organisationunit` table in the DHIS2 database has a column `path` that contains a concatenated string of all ancestors in the hierarchy for each organisation unit.<br> <br>Running this maintenance function updates these values and makes sure that they are in sync with the current organisation unit hierarchy. DHIS2 manages this column, but a manual update might be useful when you load data directly in the database.<br> <br>In 2.43.2 and later, this function does nothing. |
-| Clear application cache | Clears the server caches: the Hibernate cache and the analytics partition caches. It does not clear the cache in your web browser. If you modify the database directly, clear the application cache for the change to take effect. |
-| Reload apps | Manually reloads and detects installed DHIS2 apps.<br> <br>DHIS2 also detects the installed apps when the system starts and when you install or uninstall apps. |
+| Function                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Clear analytics tables                                                                        | Deletes the analytics tables from the database. These tables are used to generate aggregate data for the pivot tables, GIS, and reports.                                                                                                                                                                                                                                                                                                                                                        |
+| Analyze analytics tables                                                                      | Performs a PostgreSQL `analyze` operation on all analytics tables.                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Remove zero data values                                                                       | Removes zero data values from the database. DHIS2 removes a zero value only if its data element has the aggregation operator sum and does not have **Zero is significant** chosen. DHIS2 keeps zero values for data elements with other aggregation operators, such as average, because such values are significant when you aggregate the data.<br> <br>Reducing the number of data values improves system performance.                                                                        |
+| Permanently remove soft deleted data values / events / enrollments / tracked entity instances | When you delete a data value in DHIS2, the system marks the corresponding database row as deleted and does not actually delete the row.<br> <br>Running this maintenance function physically removes these data value rows from the database.                                                                                                                                                                                                                                                   |
+| Prune periods                                                                                 | Removes all periods that are not in use. A period is in use when a data value, a data set completion, an approval, a data input period, a lock exception, a validation result, or a saved visualization, map, event report, or interpretation refers to it. Reducing the number of periods improves system performance.                                                                                                                                                                         |
+| Remove expired invitations                                                                    | Deletes users that represent user account invitations that are past their expiry date.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Drop SQL views                                                                                | DHIS2 lets you create and manage SQL views as system objects with corresponding database SQL views.<br> <br>Running this maintenance function drops the underlying SQL views for all system views. Use the **Create SQL views** function to recreate these SQL views.                                                                                                                                                                                                                           |
+| Create SQL views                                                                              | Recreates all SQL views in the database.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Update category option combinations                                                           | Rebuilds the category option combinations. This might be required after you change the category options that belong to a given category.                                                                                                                                                                                                                                                                                                                                                        |
+| Update organisation unit paths                                                                | The `organisationunit` table in the DHIS2 database has a column `path` that contains a concatenated string of all ancestors in the hierarchy for each organisation unit.<br> <br>Running this maintenance function updates these values and makes sure that they are in sync with the current organisation unit hierarchy. DHIS2 manages this column, but a manual update might be useful when you load data directly in the database.<br> <br>In 2.43.2 and later, this function does nothing. |
+| Clear application cache                                                                       | Clears the server caches: the Hibernate cache and the analytics partition caches. It does not clear the cache in your web browser. If you modify the database directly, clear the application cache for the change to take effect.                                                                                                                                                                                                                                                              |
+| Reload apps                                                                                   | Manually reloads and detects installed DHIS2 apps.<br> <br>DHIS2 also detects the installed apps when the system starts and when you install or uninstall apps.                                                                                                                                                                                                                                                                                                                                 |
 
 #### 2.43.2 and later { #data_admin_maintenance_2_43_2_and_later }
 
@@ -343,7 +343,7 @@ analytics process.
 
 To generate the resource tables, open the **Data Administration** app, click **Resource Tables**, and click **Generate tables**. To run this function, you must have the authority `F_PERFORM_MAINTENANCE`.
 
-  - **Organisation unit structure** (`analytics_rs_orgunitstructure`)
+-   **Organisation unit structure** (`analytics_rs_orgunitstructure`)
 
     You should regenerate this table any time the organisation unit
     hierarchy changes. This table
@@ -352,21 +352,21 @@ To generate the resource tables, open the **Data Administration** app, click **R
     unit level and the organisation unit identifiers for all parents in
     the lineage as values.
 
-  - **Data element group set structure** (`analytics_rs_dataelementgroupsetstructure`)
+-   **Data element group set structure** (`analytics_rs_dataelementgroupsetstructure`)
 
     This table provides information about which data elements are
     members of which data element group sets. The table has one row for
     each data element, one column for each data element group set and
     the names of the data element group as values.
 
-  - **Indicator group set structure** (`analytics_rs_indicatorgroupsetstructure`)
+-   **Indicator group set structure** (`analytics_rs_indicatorgroupsetstructure`)
 
     This table provides information about which indicators are members
     of which indicator group sets. The table has one row for each
     indicator, one column for each indicator group set and the names of
     the indicator group as values.
 
-  - **Organisation unit group set structure**
+-   **Organisation unit group set structure**
     (`analytics_rs_organisationunitgroupsetstructure`)
 
     This table provides information about which organisation units are
@@ -374,20 +374,20 @@ To generate the resource tables, open the **Data Administration** app, click **R
     for each organisation unit, one column for each organisation unit
     group set and the names of the organisation unit groups as values.
 
-  - **Category structure** (`analytics_rs_categorystructure`)
+-   **Category structure** (`analytics_rs_categorystructure`)
 
     This table provides information about which data elements are
     members of which categories. The table has one row for each data
     element, one column for each category and the names of the category
     options as values.
 
-  - **Data element category option combo name** (`analytics_rs_categoryoptioncomboname`)
+-   **Data element category option combo name** (`analytics_rs_categoryoptioncomboname`)
 
     You should regenerate this table any time the category combination
     names change. It contains readable names
     for the various combinations of categories.
 
-  - **Data element structure** (`analytics_rs_dataelementstructure`)
+-   **Data element structure** (`analytics_rs_dataelementstructure`)
 
     This table provides information about all data elements and which
     period type (frequency) they capture data at. The period type is
@@ -395,31 +395,30 @@ To generate the resource tables, open the **Data Administration** app, click **R
     elements being members of data sets with similar period types to have
     a defined behavior.
 
-  - **Date period structure** (`analytics_rs_dateperiodstructure`)
+-   **Date period structure** (`analytics_rs_dateperiodstructure`)
 
     This table provides information about all periods and which period
     type they are associated with. For each period type with lower
     frequency than itself, it contains information about which period it
     falls within.
 
-  - **Period structure** (`analytics_rs_periodstructure`)
+-   **Period structure** (`analytics_rs_periodstructure`)
 
     Similar to `analytics_rs_dateperiodstructure`, containing a scoped set of
     periods more adapted for aggregated analytics.
     It is based on `period` and `periodtype` tables.
 
-  - **Data element category option combinations**
+-   **Data element category option combinations**
     (`analytics_rs_dataelementcategoryoptioncombo`)
 
     This table provides a mapping between data elements and all possible
     category option combinations.
 
-  - **Data set organisation unit category** (`analytics_rs_datasetorganisationunitcategory`)
+-   **Data set organisation unit category** (`analytics_rs_datasetorganisationunitcategory`)
 
     This table provides information related to data sets, organisation units
     and their associated category option combinations. If no association is found,
     it uses the default category option combo.
-  
 
 #### v40 and earlier { #data_admin_resource_tables_v40_and_earlier }
 
@@ -450,24 +449,24 @@ To generate the analytics tables, you must have the authority `F_PERFORM_MAINTEN
 
 2.  Choose the parts of the analytics process that you want to skip:
 
-      - **Skip generation of aggregate data and completeness data**
+    -   **Skip generation of aggregate data and completeness data**
 
-      - **Skip generation of resource tables**
+    -   **Skip generation of resource tables**
 
-      - **Skip generation of event data**
+    -   **Skip generation of event data**
 
-      - **Skip generation of enrollment data**
+    -   **Skip generation of enrollment data**
 
-      - **Skip generation of organisation unit ownership data**
+    -   **Skip generation of organisation unit ownership data**
 
-      - **Skip generation of tracked entity data** (checked by default)
+    -   **Skip generation of tracked entity data** (checked by default)
 
-      - **Skip generation of outlier data** (checked by default)
+    -   **Skip generation of outlier data** (checked by default)
 
 3.  Choose **Number of last years of data to include**. The default is **All**. If you choose 0,
-then you run latest or continuous analytics, as defined in
-[Continuous analytics table](scheduler-app.html#scheduling_continuous_analytics_table).
-A value of 3 includes the current year and the two years before it.
+    then you run latest or continuous analytics, as defined in
+    [Continuous analytics table](scheduler-app.html#scheduling_continuous_analytics_table).
+    A value of 3 includes the current year and the two years before it.
 
 4.  Click **Start export**.
 
@@ -483,7 +482,7 @@ In v40 and earlier, the **Data Administration** app does not have the option **S
 
 In v40 and earlier, the **Data Administration** app does not have the option **Skip generation of outlier data**.
 
-## Data statistics { #data_admin__data_statistics }
+## Data statistics { #data_admin\_\_data_statistics }
 
 The data statistics module provides an overview of the number of objects
 stored in the DHIS2 database.
@@ -509,7 +508,7 @@ In v42 and earlier, the **Data Administration** app (version 100.1.8 and later) 
 
 In v43 and later, the **Data Administration** app shows the **Active users** table and the **Users logged in** table.
 
-## Lock exceptions { #data_admin__lock_exception }
+## Lock exceptions { #data_admin\_\_lock_exception }
 
 Lock exceptions provide fine-grained control over exemption from a
 locked data set.
@@ -568,7 +567,7 @@ remove all of them in one action instead of one at a time.
    **Batch delete lock exceptions** (trash can icon).
 4. Click **Yes, remove lock exception** to confirm.
 
-This removes the lock exception for that data set and period across *all*
+This removes the lock exception for that data set and period across _all_
 organisation units it applies to, not just one.
 
 ## Min-Max Value Generation { #data_admin_min_max_value_generation }
